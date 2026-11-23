@@ -1,0 +1,44 @@
+{
+ "type": "B3",
+ "solid": "truncated cuboctahedron",
+ "V": 48,
+ "E": 72,
+ "F": 26,
+ "systems": {
+  "edge plates (Vacuus)": {
+   "planes": 36,
+   "planes_on_coxeter_mirrors": 0,
+   "pieces": 1160,
+   "over_one_face": 1160,
+   "classes": {
+    "pyramid from O over a 4-gon (in a 6-gon face)": 216,
+    "pyramid from O over a 4-gon (in a 8-gon face)": 216,
+    "pyramid from O over a 3-gon (in a 4-gon face)": 168,
+    "pyramid from O over a 3-gon (in a 6-gon face)": 144,
+    "pyramid from O over a 3-gon (in a 8-gon face)": 144,
+    "pyramid from O over a 4-gon (in a 4-gon face)": 96,
+    "pyramid from O over a 5-gon (in a 4-gon face)": 72,
+    "pyramid from O over a 7-gon (in a 6-gon face)": 24,
+    "pyramid from O over a 5-gon (in a 6-gon face)": 24,
+    "pyramid from O over a 7-gon (in a 8-gon face)": 24,
+    "pyramid from O over a 5-gon (in a 8-gon face)": 24,
+    "pyramid from O over a 6-gon (in a 6-gon face)": 8
+   },
+   "shell_frusta_convex": 1160,
+   "shell_frusta_bent_ends": 0
+  },
+  "face-parallel planes": {
+   "planes": 13,
+   "planes_on_coxeter_mirrors": 9,
+   "pieces": 96,
+   "over_one_face": 0,
+   "classes": {
+    "cone from O over a bent patch: 3 faces [4, 6, 8], 6 corners, 3 lateral faces, holds a corner of P": 48,
+    "cone from O over a bent patch: 2 faces [4, 6], 5 corners, 3 lateral faces": 48
+   },
+   "shell_frusta_convex": 0,
+   "shell_frusta_bent_ends": 96
+  }
+ },
+ "secs": 5.7
+}

@@ -1,0 +1,48 @@
+{
+ "type": "H3",
+ "solid": "truncated icosidodecahedron",
+ "V": 120,
+ "E": 180,
+ "F": 62,
+ "systems": {
+  "edge plates (Vacuus)": {
+   "planes": 90,
+   "planes_on_coxeter_mirrors": 0,
+   "pieces": 7592,
+   "over_one_face": 7592,
+   "classes": {
+    "pyramid from O over a 4-gon (in a 6-gon face)": 1260,
+    "pyramid from O over a 3-gon (in a 6-gon face)": 1080,
+    "pyramid from O over a 3-gon (in a 4-gon face)": 960,
+    "pyramid from O over a 3-gon (in a 10-gon face)": 840,
+    "pyramid from O over a 4-gon (in a 10-gon face)": 840,
+    "pyramid from O over a 4-gon (in a 4-gon face)": 780,
+    "pyramid from O over a 5-gon (in a 4-gon face)": 480,
+    "pyramid from O over a 5-gon (in a 10-gon face)": 480,
+    "pyramid from O over a 5-gon (in a 6-gon face)": 480,
+    "pyramid from O over a 6-gon (in a 6-gon face)": 140,
+    "pyramid from O over a 6-gon (in a 10-gon face)": 120,
+    "pyramid from O over a 6-gon (in a 4-gon face)": 60,
+    "pyramid from O over a 8-gon (in a 6-gon face)": 60,
+    "pyramid from O over a 10-gon (in a 10-gon face)": 12
+   },
+   "shell_frusta_convex": 7592,
+   "shell_frusta_bent_ends": 0
+  },
+  "face-parallel planes": {
+   "planes": 31,
+   "planes_on_coxeter_mirrors": 15,
+   "pieces": 480,
+   "over_one_face": 120,
+   "classes": {
+    "cone from O over a bent patch: 2 faces [4, 6], 5 corners, 3 lateral faces": 120,
+    "cone from O over a bent patch: 3 faces [4, 6, 10], 6 corners, 3 lateral faces, holds a corner of P": 120,
+    "cone from O over a bent patch: 2 faces [4, 10], 5 corners, 3 lateral faces": 120,
+    "pyramid from O over a 3-gon (in a 10-gon face)": 120
+   },
+   "shell_frusta_convex": 120,
+   "shell_frusta_bent_ends": 360
+  }
+ },
+ "secs": 61.1
+}

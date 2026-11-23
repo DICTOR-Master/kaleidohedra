@@ -1,0 +1,18 @@
+=== amber  truncated_octahedron  fcc  s0 = 6 = 6.000000  s = 6/5 s0 = 7.200000  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 12  (0.3s)
+outer pattern computed (0.5s); faces with an empty outer cell: []
+adjacency: inner pairs 36, outer pairs 36, shared 36, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 24: (inner, outer) vertex counts {(1, 1): 24}; Y vertices 0; persistent inner edges 36/36
+sampling cross-check: 1848 points (1226 in the resin), points not covered exactly once: 0, max winding rounding 4.07e-15
+volume sum - resin = 0 (exact 0); resin = 61.312000; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 14, scutoid frusta with a Y vertex 0, kinds 2 (T_h orbit members congruent: True); 157.7612 present: False
+  kind quad face 0 (6 per cell): facets 17 vertices 13 Y 0 scutoid False vol 3.863556  C1-side neighbours [1, 2, 4, 12] mould-side [1, 2, 4, 12]
+     angles at C1 edges: [143.0824]
+     all dihedrals: 55.76808792 [not in basis]; 120.0 [2/3pi]; 122.9771004 [not in basis]; 143.082427 [not in basis]; 200.5797595 [not in basis]
+  kind hex face 1 (8 per cell): facets 16 vertices 16 Y 0 scutoid False vol 4.766333  C1-side neighbours [0, 2, 8, 10, 12, 13] mould-side [0, 2, 8, 10, 12, 13]
+     angles at C1 edges: [91.6532, 125.2644]
+     all dihedrals: 90.0 [1/2pi]; 91.65318329 [not in basis]; 118.5114498 [not in basis]; 120.0 [2/3pi]; 124.2319121 [not in basis]; 125.2643897 [1/2pi + 1gamma]; 159.4202405 [not in basis]
+RESULT fcc 6/5 cen: valid=True  partition; scutoid frusta with a Y vertex 0; kinds 2; Y vertices 0; 157.7612 present False
+(3.9s)

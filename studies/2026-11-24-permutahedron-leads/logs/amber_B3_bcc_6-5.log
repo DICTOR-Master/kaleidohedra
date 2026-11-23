@@ -1,0 +1,21 @@
+=== amber  B3_permutahedron_123  bcc  s0 = 8 = 8.000000  s = 6/5 s0 = 9.600000  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 14  (0.4s)
+outer pattern computed (0.9s); faces with an empty outer cell: []
+adjacency: inner pairs 72, outer pairs 72, shared 72, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 48: (inner, outer) vertex counts {(1, 1): 48}; Y vertices 0; persistent inner edges 72/72
+sampling cross-check: 3729 points (2326 in the resin), points not covered exactly once: 0, max winding rounding 1.47e-14
+volume sum - resin = 0 (exact 0); resin = 270.368000; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 26, scutoid frusta with a Y vertex 0, kinds 3 (T_h orbit members congruent: True); 157.7612 present: False
+  kind quad face 0 (12 per cell): facets 19 vertices 16 Y 0 scutoid False vol 8.733716  C1-side neighbours [1, 7, 11, 23] mould-side [1, 7, 11, 23]
+     angles at C1 edges: [119.2099, 149.1232]
+     all dihedrals: 50.66311098 [not in basis]; 84.04286889 [not in basis]; 96.05449848 [not in basis]; 109.4712206 [1pi + -2gamma]; 111.977766 [not in basis]; 119.2098912 [not in basis]; 125.2643897 [1/2pi + 1gamma]; 149.1231869 [not in basis]; 160.1338533 [not in basis]; 185.2828565 [not in basis]; 191.1197836 [not in basis]
+  kind hex face 1 (8 per cell): facets 8 vertices 12 Y 0 scutoid False vol 4.969440  C1-side neighbours [0, 3, 6, 11, 18, 23] mould-side [0, 3, 6, 11, 18, 23]
+     angles at C1 edges: [96.0545, 147.849]
+     all dihedrals: 32.15097813 [not in basis]; 83.94550152 [not in basis]; 96.05449848 [not in basis]; 110.7255304 [not in basis]; 147.8490219 [not in basis]
+  kind oct face 11 (6 per cell): facets 34 vertices 28 Y 0 scutoid False vol 20.967982  C1-side neighbours [0, 1, 2, 3, 4, 7, 12, 15] mould-side [0, 1, 2, 3, 4, 7, 12, 15]
+     angles at C1 edges: [75.8768, 86.8866]
+     all dihedrals: 75.87681308 [not in basis]; 86.88658845 [not in basis]; 95.95713111 [not in basis]; 125.2643897 [1/2pi + 1gamma]; 129.336889 [not in basis]; 137.2967036 [not in basis]; 147.8490219 [not in basis]; 168.8802164 [not in basis]; 174.7171435 [not in basis]; 199.8661467 [not in basis]
+RESULT bcc 6/5 cen: valid=True  partition; scutoid frusta with a Y vertex 0; kinds 3; Y vertices 0; 157.7612 present False
+(9.6s)

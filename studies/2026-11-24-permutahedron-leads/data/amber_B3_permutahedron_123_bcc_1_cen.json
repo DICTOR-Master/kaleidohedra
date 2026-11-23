@@ -1,0 +1,349 @@
+{
+ "solid": "B3_permutahedron_123",
+ "s0": "8",
+ "s0_float": 8.0,
+ "n_faces": 26,
+ "contact_edges": 48,
+ "contact_faces": 8,
+ "lattice": "bcc",
+ "factor": "1",
+ "s": 8.0,
+ "seeds": "cen",
+ "tau": "1/2",
+ "contact_vertices": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  47
+ ],
+ "inner_pairs": 72,
+ "outer_pairs": 72,
+ "shared_pairs": 72,
+ "fins_cancelled": 0,
+ "volume_gap": "0",
+ "resin": 84.0,
+ "n_Y": 0,
+ "persistent": 72,
+ "clusters": [
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   1
+  ]
+ ],
+ "problems": [
+  [
+   0,
+   "self-intersecting surface"
+  ],
+  [
+   1,
+   "self-intersecting surface"
+  ],
+  [
+   2,
+   "self-intersecting surface"
+  ],
+  [
+   3,
+   "self-intersecting surface"
+  ],
+  [
+   4,
+   "self-intersecting surface"
+  ],
+  [
+   5,
+   "self-intersecting surface"
+  ],
+  [
+   6,
+   "self-intersecting surface"
+  ],
+  [
+   7,
+   "self-intersecting surface"
+  ],
+  [
+   8,
+   "self-intersecting surface"
+  ],
+  [
+   9,
+   "self-intersecting surface"
+  ],
+  [
+   10,
+   "self-intersecting surface"
+  ],
+  [
+   12,
+   "self-intersecting surface"
+  ],
+  [
+   14,
+   "self-intersecting surface"
+  ],
+  [
+   15,
+   "self-intersecting surface"
+  ],
+  [
+   16,
+   "self-intersecting surface"
+  ],
+  [
+   17,
+   "self-intersecting surface"
+  ],
+  [
+   21,
+   "self-intersecting surface"
+  ],
+  [
+   22,
+   "self-intersecting surface"
+  ],
+  [
+   24,
+   "self-intersecting surface"
+  ],
+  [
+   25,
+   "self-intersecting surface"
+  ]
+ ],
+ "valid": false,
+ "why": "partition checks failed: [(0, 'self-intersecting surface'), (1, 'self-intersecting surface'), (2, 'self-intersecting surface'), (3, 'self-intersecting surface')], volume ok True"
+}

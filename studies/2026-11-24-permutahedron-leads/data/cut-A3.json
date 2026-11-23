@@ -1,0 +1,37 @@
+{
+ "type": "A3",
+ "solid": "truncated octahedron",
+ "V": 24,
+ "E": 36,
+ "F": 14,
+ "systems": {
+  "edge plates (Vacuus)": {
+   "planes": 15,
+   "planes_on_coxeter_mirrors": 0,
+   "pieces": 176,
+   "over_one_face": 176,
+   "classes": {
+    "pyramid from O over a 3-gon (in a 6-gon face)": 96,
+    "pyramid from O over a 5-gon (in a 6-gon face)": 24,
+    "pyramid from O over a 4-gon (in a 6-gon face)": 24,
+    "pyramid from O over a 3-gon (in a 4-gon face)": 24,
+    "pyramid from O over a 6-gon (in a 6-gon face)": 8
+   },
+   "shell_frusta_convex": 176,
+   "shell_frusta_bent_ends": 0
+  },
+  "face-parallel planes": {
+   "planes": 7,
+   "planes_on_coxeter_mirrors": 0,
+   "pieces": 32,
+   "over_one_face": 8,
+   "classes": {
+    "cone from O over a bent patch: 2 faces [4, 6], 5 corners, 3 lateral faces": 24,
+    "pyramid from O over a 3-gon (in a 6-gon face)": 8
+   },
+   "shell_frusta_convex": 8,
+   "shell_frusta_bent_ends": 24
+  }
+ },
+ "secs": 0.6
+}

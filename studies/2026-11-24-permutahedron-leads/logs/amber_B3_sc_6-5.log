@@ -1,0 +1,21 @@
+=== amber  B3_permutahedron_123  sc  s0 = 6 = 6.000000  s = 6/5 s0 = 7.200000  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 6  (0.1s)
+outer pattern computed (0.6s); faces with an empty outer cell: []
+adjacency: inner pairs 72, outer pairs 72, shared 72, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 48: (inner, outer) vertex counts {(1, 1): 48}; Y vertices 0; persistent inner edges 72/72
+sampling cross-check: 6000 points (3212 in the resin), points not covered exactly once: 0, max winding rounding 3.14e-14
+volume sum - resin = 0 (exact 0); resin = 201.248000; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 26, scutoid frusta with a Y vertex 0, kinds 3 (T_h orbit members congruent: True); 157.7612 present: False
+  kind quad face 0 (12 per cell): facets 11 vertices 10 Y 0 scutoid False vol 6.012960  C1-side neighbours [1, 7, 11, 23] mould-side [1, 7, 11, 23]
+     angles at C1 edges: [113.4563, 179.029]
+     all dihedrals: 45.97102193 [not in basis]; 66.02774176 [not in basis]; 90.0 [1/2pi]; 113.4563321 [not in basis]; 116.2138125 [not in basis]; 179.0289781 [not in basis]; 188.1338536 [not in basis]
+  kind hex face 1 (8 per cell): facets 16 vertices 16 Y 0 scutoid False vol 11.234950  C1-side neighbours [0, 3, 6, 11, 18, 23] mould-side [0, 3, 6, 11, 18, 23]
+     angles at C1 edges: [101.8081, 172.674]
+     all dihedrals: 62.06164727 [not in basis]; 90.0 [1/2pi]; 101.8080575 [not in basis]; 103.0009947 [not in basis]; 113.9722582 [not in basis]; 171.8661464 [not in basis]; 172.673963 [not in basis]
+  kind oct face 11 (6 per cell): facets 10 vertices 16 Y 0 scutoid False vol 6.535480  C1-side neighbours [0, 1, 2, 3, 4, 7, 12, 15] mould-side [0, 1, 2, 3, 4, 7, 12, 15]
+     angles at C1 edges: [45.971, 62.0616]
+     all dihedrals: 45.97102193 [not in basis]; 62.06164727 [not in basis]; 117.9383527 [not in basis]; 134.0289781 [not in basis]; 140.7851927 [not in basis]
+RESULT sc 6/5 cen: valid=True  partition; scutoid frusta with a Y vertex 0; kinds 3; Y vertices 0; 157.7612 present False
+(7.9s)

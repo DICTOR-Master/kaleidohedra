@@ -1,0 +1,10 @@
+=== amber  truncated_icosidodecahedron  sc  s0 = 7+1r5 = 9.236068  s = 1 s0 = 9.236068  seeds cen  tau 1/2
+solid vertices on the mould surface: 24; edges on it 24; faces on it 6
+mould faces 6  (0.6s)
+outer pattern computed (3.3s); faces with an empty outer cell: []
+adjacency: inner pairs 180, outer pairs 180, shared 144, outer-only 36, inner-only 36
+pinched inner edges: 36 {('dec', 'hex'): 36}
+clusters 84: (inner, outer) vertex counts {(1, 1): 48, (2, 2): 36}; Y vertices 36; persistent inner edges 144/180
+volume sum - resin = 0 (exact 0); resin = 397.325052; problems 6: [(0, 'self-intersecting surface'), (8, 'self-intersecting surface'), (23, 'self-intersecting surface'), (26, 'self-intersecting surface'), (51, 'self-intersecting surface'), (58, 'self-intersecting surface')]
+RESULT sc 1 cen: valid=False  partition checks failed: [(0, 'self-intersecting surface'), (8, 'self-intersecting surface'), (23, 'self-intersecting surface'), (26, 'self-intersecting surface')], volume ok True
+(22.0s)
