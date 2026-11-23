@@ -54,7 +54,8 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   build host (full build + axioms + sorry count, FINAL ok line), then README line + commit.
 * Done: M9c part 1 (Margin.lean).
 * Done: M9c part 2 (Coercive.lean).
-* In progress: M9d `Existence.lean` (not in the Milestones list = not finished).
+* Done: M9d (Existence.lean). Next: M6b (spherically convex ω ≠ S² lies in a closed hemisphere), then
+  a corollary file for the fair dice (κ_j = 4π/N) and an iff statement.
 * Then M9c part 2 `Coercive.lean`: with a_j = −log r_j (0 < r ≤ 1, some r_j = 1), T = max a_j,
   mx(x) = max_j (ψ_j if ε‖x‖ < ⟪n_j,x⟫ else −T): (a) log(supp r/supp 1) ≥ log ε + mx pointwise;
   (b) layer cake (`lintegral_eq_lintegral_meas_lt`) on −mx over the ball and on Σκ_j a_j, compared
@@ -129,6 +130,13 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   level by level with the margin). `exists_coercive`: under Alexandrov's condition there is δ > 0
   with Phi r < 0 = Phi 1 on the slice whenever some r_i < δ. Full build ok (`logs/build-M9c2.log`,
   FINAL ok); 0 sorry; standard axioms.
+
+* M9d (2026-11-24) `Alexandrov/Existence.lean`: **Step 2 done.** `alexandrov_existence`: distinct
+  unit n_i not in one closed hemisphere, κ_j ≥ 0, Σκ_j = 4π, and Alexandrov's condition
+  Σ_{i∈I} κ_i < area(open π/2-neighbourhood of the rays in I) for every nonempty proper I ⇒ there are
+  r_i > 0 whose polytope has curvature κ_j at every corner (maximize Phi on the box δ ≤ r ≤ 1, extend by
+  scaling and coercivity, apply M8). Full build ok (`logs/build-M9d.log`, FINAL ok); 0 sorry; standard
+  axioms. With M3 (uniqueness) and M6 (necessity) this is the whole polyhedral theorem used by #112.
 
 ## Next steps: existence (small pieces, variational route of Oliker 2007)
 
