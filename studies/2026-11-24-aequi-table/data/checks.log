@@ -1,0 +1,7 @@
+picker dice: 1232; groups ['Ih', 'O', 'Oh', 'T', 'Td', 'Th']; m range 2..11
+classification CSV (group, m) table equals picker table: True
+CSV row n matches picker index n-1 (group, m, N) for all 1232: True
+source: complete study frame groups 149, two placements 1083, sum 1232
+source tables (complete frame-group rows + two placements) equal picker table cell by cell: True 
+picker part A (149) equals complete-study frame rows: True; part B (1083) equals two-placements table: True
+table total 1232 (expected 1232): True
