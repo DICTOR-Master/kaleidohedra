@@ -332,7 +332,8 @@ def main():
     print("sequences", nseq, "excluded (two faces share two edges)", len(excluded), "types", len(types), "fails", len(fails))
     for kk in sorted(counts, key=lambda s: tuple(map(int, s.split(",")))):
         print("n,m,k =", kk, " types (mirror pairs as one):", counts[kk][0], " counting both hands:", counts[kk][1])
-    print("FINAL ok" if not fails else "FINAL with failures")
+    print("FINAL ok" if not fails else "FINAL FAIL (unrealised sequences)")
+    sys.exit(0 if not fails else 1)
 
 
 if __name__ == "__main__":

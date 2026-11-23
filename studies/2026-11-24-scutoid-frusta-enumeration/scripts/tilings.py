@@ -66,3 +66,4 @@ good = (all(lab in P and lab in Sg for lab in ("even", "odd")) and Sg.get("glide
         and (P["even"]["bottom"], P["even"]["top"], P["even"]["Y"]) == (6, 4, 2) and (P["odd"]["bottom"], P["odd"]["top"], P["odd"]["Y"]) == (6, 8, 2)
         and P["even"]["every_lateral_meets_end"] and P["odd"]["every_lateral_meets_end"] and Sg["even"]["every_lateral_meets_end"])
 print("FINAL ok" if good else "FINAL FAIL (a tiling cell is missing or not as expected)")
+sys.exit(0 if good else 1)

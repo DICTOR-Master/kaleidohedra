@@ -80,3 +80,4 @@ for fn, NM in (("types_n8_k2.json", 8), ("types_n14_k2.json", 14)):
                 if isinstance(c, dict):
                     print("  tiling", name, lab, "cell", c["bottom"], "->", c["top"], "Y", c["Y"], "= type", ids.get(json.dumps(c["code"]), "outside the n,m<=8, Y<=2 table"))
 print("FINAL ok" if bad == 0 else "FINAL FAILED")
+sys.exit(0 if bad == 0 else 1)

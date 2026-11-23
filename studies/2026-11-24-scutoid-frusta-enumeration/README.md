@@ -35,17 +35,23 @@ lateral = n + m − t, t = number of lateral faces meeting both ends, with 0 ≤
 outside the wedge misses the solid; a projective map sending that plane to infinity keeps the solid convex, keeps every face, and makes the end
 planes parallel. ∎ So the enumeration may take parallel ends, without loss.
 
-**Against the 2018 definition.** Gómez-Gálvez et al. define a scutoid as a solid between two parallel surfaces whose boundary on each surface
-is a polygon, the vertices of the two polygons joined by an edge or by a Y-shaped connection, with at least one vertex between the surfaces;
-its lateral faces may be curved. Our convex definition is the flat-faced, convex, simple case of this, plus frusta (k = 0) in the same family.
-It adds condition 2 (no lateral face lying wholly between the ends), which the 2018 text does not state.
+**Against the 2018 paper (checked against the text itself, open-access copy PMC6063940).** Gómez-Gálvez et al. give no formal
+definition. They model epithelial cells as Voronoi cells between two curved surfaces (apical and basal: cylinders, spheroids) and
+contrast them with "prisms" (flat tissue) and "frusta" (bent tissue). When neighbours change between the two surfaces, "the exchange of
+neighbours involved the appearance of a vertex along the apico-basal axis of these solids"; "We coin the term scutoid to name this
+geometrical solid"; "Scutoids, in contrast to prisms/frusta, are not necessarily convex, and present non-planar lateral faces". So their
+scutoid has curved ends and curved, possibly non-convex walls, and is marked by at least one vertex between the surfaces. (The often-quoted
+sentence "a geometrical solid between two parallel surfaces ... joined by either a curve or a Y-shaped connection" is NOT in the paper; it
+comes from secondary sources. Our earlier wording followed it; corrected here.) Our convex definition is therefore a flat-faced, convex,
+simple subclass, which the paper itself places on the prism/frustum side for k = 0; it adds condition 2 (no lateral face lying wholly between
+the ends), which the paper does not discuss. The wider tier below (bent walls, curved ends) matches the paper's scutoids.
 
 **Against our own pieces** (scripts/amber_types.py, data/amber_types.json; stored data of the three studies, nothing recomputed):
 
 | our pieces | fit the convex definition? |
 |---|---|
 | slanted rhombic prism S (scutoid stand-in, step 2) | yes: frustum SF 4-4-0 |
-| amber-cell sweep, Amber-Ammann, Aequi cells: 2428 kinds (counted per cell) | 1917 kinds not convex (a dihedral angle over 180°; walls folded where they pinch to a Y vertex) |
+| amber-cell sweep, Amber-Ammann, Aequi cells: 2389 kinds (counted per cell; the Aequi cell files were absent from their study folder at the rerun, so only sweep and Ammann are counted) | 1894 kinds not convex (a dihedral angle over 180°; walls folded where they pinch to a Y vertex) |
 | same, side-count law | 454 kinds break k ≥ \|n − m\|, k ≡ n + m: their vertices are not all of degree 3 (walls end at core or mould vertices, fins), so "Y vertex" there is not a Y-corner of a simple solid |
 | convex, law-respecting, with Y | Amber-Ammann C1 (Fullerene Star) cells: 20 kinds 3 → 4, one Y (type SF 3-4-1); C2 (Rollerball) cells: 10 Ammann kinds + 1 sweep kind (fcc, s0) 3 → 5, two Y (SF 3-5-2.1 or .2); truncated dodecahedron, sc 6/5: one kind 3 → 6, three Y. These fit **if** the mould-side end is one flat polygon: not checked (the stored data has no face planes; LEAD 3). Their ends are not parallel; Lemma 2 shows that does not matter. |
 | central (cone) division of Proposition 12, #117 | k = 0 pieces; frusta if the mould end is flat (not checked) |
@@ -59,7 +65,7 @@ end; Y-corners = vertices in the band. Question 1 asks which tier is "the" defin
 1. **Tier.** Is a scutoid frustum (a) the convex flat-faced solid above, or (b) the general piece with bent walls (which includes our amber
    pieces)? Proposal: name both: "Scutoid Frusta" = (b), "convex Scutoid Frusta" = (a), the enumerated class.
 2. **Planar ends?** Amber pieces have their mould end on the mould surface, which can bend over a mould edge. Must both ends be flat?
-3. **Convex?** 1917 of 2428 amber kinds are not convex.
+3. **Convex?** 1894 of 2389 amber kinds are not convex.
 4. **Parallel ends?** Lemma 2: for convex pieces this changes no type; it matters only for the shape. Require it or not?
 5. **Every lateral face meets an end?** Without this, a face can start and end between the ends (a "hidden" face).
 6. **Simple (three edges at every vertex)?** Without it, two Y-corners can merge into one four-edged corner, and edges can run straight to an end vertex.
@@ -159,7 +165,7 @@ No natural new sequence: the counts are linear in n (formulas above, e.g. n for 
 A richer count, such as all types by number of faces with k free, could give one (LEAD 6).
 
 ## Sources checked
-Gómez-Gálvez et al. 2018 (definition as recalled; wording to be checked against the paper, LEAD 5); our studies 2026-11-21-scutoid-stand-in, -amber-cell-sweep,
+Gómez-Gálvez et al., Nat. Commun. 9, 2960 (2018), full text read (open-access copy PMC6063940) for the definition; our studies 2026-11-21-scutoid-stand-in, -amber-cell-sweep,
 -y-junction-axes, -amber-ammann, 2026-11-24-aequi-vacuus-scutoids; paper #117 (Dehn packets, Proposition 12, 17). Methods borrowed:
 Steinitz's theorem; projective transformations of polytopes; power diagrams (F. Aurenhammer, SIAM J. Comput. 16, 1987); linear programming
 (HiGHS via SciPy) only to find coordinates, every result then checked exactly.
@@ -171,7 +177,7 @@ Steinitz's theorem; projective transformations of polytopes; power diagrams (F. 
 3. Amber pieces: test whether the mould-side end of the 32 convex kinds with Y (Ammann C1, C2; sweep C2, truncated dodecahedron) is one flat
    polygon; if so, name their types (SF 3-4-1 expected for Ammann C1).
 4. Prove the (n, n, 2) count for all n.
-5. Literature: search for earlier counts of scutoid or "prismatoid with Y-junction" combinatorial types before any public claim.
+5. Literature: search for later papers (2019 on) that define scutoids formally, and for earlier counts of scutoid or "prismatoid with Y-junction" combinatorial types before any public claim.
 6. General tier: enumerate k = 3, 4 (the method extends without change) and count by faces; check for an OEIS match.
 7. V + SF: Vacuus plates as end faces: which table types occur between inner and outer Vacuus.
 

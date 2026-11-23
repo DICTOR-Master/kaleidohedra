@@ -30,4 +30,6 @@ print("kinds (with repeats over cells):", total, " non-convex:", nonconvex, " br
 print("small end, large end, Y, convex -> pieces (members summed over all valid cells)")
 for key in sorted(tally):
     print("  ", key, tally[key])
-print("FINAL ok" if total > 0 and len(rows) == total else "FINAL FAIL (no kinds read)")
+good = total > 0 and len(rows) == total
+print("FINAL ok" if good else "FINAL FAIL (no kinds read)")
+sys.exit(0 if good else 1)
