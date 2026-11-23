@@ -1,0 +1,164 @@
+family,solid,exact,V,E,F,symmetry,centrally_symmetric,unique_symmetry_centre,mirrors,kind,edge_plates,edge_plate_classes (count x edges/plate sheet slice [M=mirror]),edge_plates_on_mirrors,face_plates,face_plate_classes (count x faces slice [M]),face_plates_on_mirrors
+Platonic,tetrahedron,yes,4,6,4,Td,False,True,6,non-heart,6,6x1 single 3-gon (2 side lengths) M,6,4,4x3 regular 3-gon,0
+Platonic,cube,yes,8,12,6,Oh,True,True,9,heart,6,6x2 full 4-gon (2 side lengths) M,6,3,3x4+4 regular 4-gon M,3
+Platonic,octahedron,yes,6,12,8,Oh,True,True,9,heart,3,3x4 full regular 4-gon M,3,4,4x3+3 regular 6-gon,0
+Platonic,dodecahedron,yes,20,30,12,Ih,True,True,15,heart,15,15x2 full 6-gon (2 side lengths) M,15,6,6x5+5 regular 10-gon,0
+Platonic,icosahedron,yes,12,30,20,Ih,True,True,15,heart,15,15x2 full 6-gon (2 side lengths) M,15,10,10x3+3 12-gon (1 side length),0
+Archimedean,truncated tetrahedron,yes,12,18,8,Td,False,True,6,non-heart,18,12x1 single 4-gon (3 side lengths); 6x1 single 5-gon (3 side lengths) M,6,4,4x3+6 6-gon (2 side lengths),0
+Catalan,triakis tetrahedron,yes,8,18,12,Td,False,True,6,inherited heart,6,6x3 shared 5-gon (3 side lengths) M,6,12,12x3 8-gon (4 side lengths),0
+Archimedean,cuboctahedron,yes,12,24,14,Oh,True,True,9,heart,4,4x6 full regular 6-gon,0,7,4x3+3 regular 6-gon; 3x4+4 regular 4-gon M,3
+Catalan,rhombic dodecahedron,yes,14,24,12,Oh,True,True,9,heart,6,6x4 full 6-gon (2 side lengths) M,6,6,6x4+4 6-gon (2 side lengths) M,6
+Archimedean,truncated cube,yes,24,36,14,Oh,True,True,9,heart,18,12x2 full 6-gon (2 side lengths); 6x2 full 8-gon (3 side lengths) M,6,7,4x3+3 regular 6-gon; 3x8+8 regular 4-gon M,3
+Catalan,triakis octahedron,yes,14,36,24,Oh,True,True,9,heart,9,6x4 full 8-gon (2 side lengths) M; 3x4 full regular 4-gon M,9,12,12x3+3 12-gon (3 side lengths),0
+Archimedean,truncated octahedron,yes,24,36,14,Oh,True,True,9,heart,15,12x2 full 6-gon (2 side lengths); 3x4 full 8-gon (2 side lengths) M,3,7,4x6+6 regular 6-gon; 3x4+4 8-gon (2 side lengths) M,3
+Catalan,tetrakis hexahedron,yes,14,36,24,Oh,True,True,9,heart,6,6x6 full 6-gon (2 side lengths) M,6,12,12x3+3 10-gon (3 side lengths),0
+Archimedean,rhombicuboctahedron,yes,24,48,26,Oh,True,True,9,heart,24,24x2 full 8-gon (3 side lengths),0,13,6x4+4 8-gon (3 side lengths) M; 4x3+3 12-gon (2 side lengths); 3x4+4 regular 8-gon M,9
+Catalan,deltoidal icositetrahedron,yes,26,48,24,Oh,True,True,9,heart,9,6x4 full 8-gon (2 side lengths) M; 3x8 full regular 8-gon M,9,12,12x4+4 8-gon (2 side lengths),0
+Archimedean,truncated cuboctahedron,yes,48,72,26,Oh,True,True,9,heart,36,24x2 full 8-gon (3 side lengths); 12x2 full 12-gon (4 side lengths),0,13,6x4+4 8-gon (3 side lengths) M; 4x6+6 12-gon (2 side lengths); 3x8+8 8-gon (2 side lengths) M,9
+Catalan,disdyakis dodecahedron,yes,26,72,48,Oh,True,True,9,heart,9,6x8 full 8-gon (2 side lengths) M; 3x8 full 8-gon (1 side length) M,9,24,24x3+3 18-gon (9 side lengths),0
+Archimedean,icosidodecahedron,yes,30,60,32,Ih,True,True,15,heart,6,6x10 full regular 10-gon,0,16,10x3+3 regular 6-gon; 6x5+5 regular 10-gon,0
+Catalan,rhombic triacontahedron,yes,32,60,30,Ih,True,True,15,heart,15,15x4 full 8-gon (3 side lengths) M,15,15,15x4+4 8-gon (3 side lengths) M,15
+Archimedean,truncated icosahedron,yes,60,90,32,Ih,True,True,15,heart,45,30x2 full 10-gon (3 side lengths); 15x2 full 10-gon (3 side lengths) M,15,16,10x6+6 18-gon (2 side lengths); 6x5+5 regular 10-gon,0
+Catalan,pentakis dodecahedron,yes,32,90,60,Ih,True,True,15,heart,15,15x6 full 10-gon (3 side lengths) M,15,30,30x3+3 20-gon (5 side lengths),0
+Archimedean,truncated dodecahedron,yes,60,90,32,Ih,True,True,15,heart,45,30x2 full 10-gon (3 side lengths); 15x2 full 10-gon (3 side lengths) M,15,16,10x3+3 regular 6-gon; 6x10+10 regular 10-gon,0
+Catalan,triakis icosahedron,yes,32,90,60,Ih,True,True,15,heart,15,15x6 full 10-gon (3 side lengths) M,15,30,30x3+3 24-gon (6 side lengths),0
+Archimedean,rhombicosidodecahedron,yes,60,120,62,Ih,True,True,15,heart,60,30x2 full 12-gon (4 side lengths); 30x2 full 16-gon (5 side lengths),0,31,15x4+4 12-gon (3 side lengths) M; 10x3+3 12-gon (2 side lengths); 6x5+5 20-gon (2 side lengths),15
+Catalan,deltoidal hexecontahedron,yes,62,120,60,Ih,True,True,15,heart,15,15x8 full 12-gon (3 side lengths) M,15,30,30x4+4 14-gon (3 side lengths),0
+Archimedean,truncated icosidodecahedron,yes,120,180,62,Ih,True,True,15,heart,90,60x2 full 12-gon (4 side lengths); 30x2 full 20-gon (6 side lengths),0,31,15x4+4 12-gon (3 side lengths) M; 10x6+6 12-gon (2 side lengths); 6x10+10 20-gon (2 side lengths),15
+Catalan,disdyakis triacontahedron,yes,62,180,120,Ih,True,True,15,heart,15,15x12 full 12-gon (3 side lengths) M,15,60,60x3+3 30-gon (14 side lengths),0
+Archimedean,snub cube,yes,24,60,38,O,False,True,0,inherited heart,48,24x1 single 12-gon (11 side lengths); 12x1 single 13-gon (7 side lengths); 12x2 shared 10-gon (6 side lengths),0,31,24x3 15-gon (9 side lengths); 4x3+3 18-gon (3 side lengths); 3x4+4 12-gon (2 side lengths),0
+Catalan,pentagonal icositetrahedron,yes,38,60,24,O,False,True,0,inherited heart,48,24x1 single 9-gon (8 side lengths); 12x1 single 9-gon (5 side lengths); 12x2 shared 8-gon (4 side lengths),0,24,24x5 9-gon (6 side lengths),0
+Archimedean,snub dodecahedron,yes,60,150,92,I,False,True,0,non-heart,150,60x1 single 17-gon (17 side lengths); 60x1 single 20-gon (19 side lengths); 30x1 single 21-gon (11 side lengths),0,76,60x3 21-gon (21 side lengths); 10x3+3 18-gon (3 side lengths); 6x5+5 30-gon (3 side lengths),0
+Catalan,pentagonal hexecontahedron,yes,92,150,60,I,False,True,0,non-heart,150,60x1 single 13-gon (13 side lengths); 60x1 single 15-gon (14 side lengths); 30x1 single 17-gon (9 side lengths),0,60,60x5 15-gon (15 side lengths),0
+prism,3-gonal prism,yes,6,9,5,n=3,False,True,4,non-heart,9,6x1 single 4-gon (3 side lengths); 3x1 single 4-gon (2 side lengths) M,3,4,3x4 4-gon (2 side lengths); 1x3+3 regular 3-gon M,1
+bipyramid,3-gonal bipyramid,yes,5,9,6,n=3,False,True,4,inherited heart,4,3x2 shared 4-gon (2 side lengths) M; 1x3 shared regular 3-gon M,4,6,6x3 5-gon (3 side lengths),0
+antiprism,3-gonal antiprism,yes,6,12,8,n=3,True,True,9,heart,3,3x4 full regular 4-gon M,3,4,4x3+3 regular 6-gon,0
+trapezohedron,3-gonal trapezohedron,yes,8,12,6,n=3,True,True,9,heart,6,6x2 full 4-gon (2 side lengths) M,6,3,3x4+4 regular 4-gon M,3
+prism,4-gonal prism,yes,8,12,6,n=4,True,True,9,heart,6,6x2 full 4-gon (2 side lengths) M,6,3,3x4+4 regular 4-gon M,3
+bipyramid,4-gonal bipyramid,yes,6,12,8,n=4,True,True,9,heart,3,3x4 full regular 4-gon M,3,4,4x3+3 regular 6-gon,0
+antiprism,4-gonal antiprism,yes,8,16,10,n=4,False,True,4,non-heart,16,8x1 single 5-gon (3 side lengths); 8x1 single 6-gon (4 side lengths),0,9,8x3 6-gon (4 side lengths); 1x4+4 regular 8-gon,0
+trapezohedron,4-gonal trapezohedron,yes,10,16,8,n=4,False,True,4,inherited heart,12,8x1 single 5-gon (3 side lengths); 4x2 shared 4-gon (2 side lengths) M,4,8,8x4 5-gon (3 side lengths),0
+prism,5-gonal prism,yes,10,15,7,n=5,False,True,6,non-heart,15,10x1 single 6-gon (4 side lengths); 5x1 single 4-gon (2 side lengths) M,5,6,5x4 4-gon (2 side lengths); 1x5+5 regular 5-gon M,1
+bipyramid,5-gonal bipyramid,yes,7,15,10,n=5,False,True,6,inherited heart,6,5x2 shared 4-gon (2 side lengths) M; 1x5 shared regular 5-gon M,6,10,10x3 7-gon (4 side lengths),0
+antiprism,5-gonal antiprism,yes,10,20,12,n=5,True,True,5,heart,10,5x2 full 4-gon (2 side lengths); 5x2 full 6-gon (2 side lengths),0,6,5x3+3 6-gon (2 side lengths); 1x5+5 regular 10-gon,0
+trapezohedron,5-gonal trapezohedron,yes,12,20,10,n=5,True,True,5,heart,10,5x2 full 4-gon (2 side lengths) M; 5x2 full 6-gon (2 side lengths),5,5,5x4+4 8-gon (2 side lengths),0
+prism,6-gonal prism,yes,12,18,8,n=6,True,True,7,heart,9,6x2 full 6-gon (2 side lengths); 3x2 full 4-gon (2 side lengths) M,3,4,3x4+4 4-gon (2 side lengths) M; 1x6+6 regular 6-gon M,4
+bipyramid,6-gonal bipyramid,yes,8,18,12,n=6,True,True,7,heart,4,3x4 full 4-gon (1 side length) M; 1x6 full regular 6-gon M,4,6,6x3+3 6-gon (2 side lengths),0
+antiprism,6-gonal antiprism,yes,12,24,14,n=6,False,True,6,non-heart,24,12x1 single 10-gon (6 side lengths); 12x1 single 5-gon (3 side lengths),0,13,12x3 6-gon (4 side lengths); 1x6+6 regular 12-gon,0
+trapezohedron,6-gonal trapezohedron,yes,14,24,12,n=6,False,True,6,inherited heart,18,12x1 single 7-gon (4 side lengths); 6x2 shared 4-gon (2 side lengths) M,6,12,12x4 7-gon (4 side lengths),0
+prism,7-gonal prism,yes,14,21,9,n=7,False,True,8,non-heart,21,14x1 single 8-gon (5 side lengths); 7x1 single 4-gon (2 side lengths) M,7,8,7x4 4-gon (2 side lengths); 1x7+7 regular 7-gon M,1
+bipyramid,7-gonal bipyramid,yes,9,21,14,n=7,False,True,8,inherited heart,8,7x2 shared 4-gon (2 side lengths) M; 1x7 shared regular 7-gon M,8,14,14x3 9-gon (5 side lengths),0
+antiprism,7-gonal antiprism,yes,14,28,16,n=7,True,True,7,heart,14,7x2 full 10-gon (3 side lengths); 7x2 full 4-gon (2 side lengths),0,8,7x3+3 6-gon (2 side lengths); 1x7+7 regular 14-gon,0
+trapezohedron,7-gonal trapezohedron,yes,16,28,14,n=7,True,True,7,heart,14,7x2 full 4-gon (2 side lengths) M; 7x2 full 8-gon (3 side lengths),7,7,7x4+4 8-gon (2 side lengths),0
+prism,8-gonal prism,yes,16,24,10,n=8,True,True,9,heart,12,8x2 full 8-gon (3 side lengths); 4x2 full 4-gon (2 side lengths) M,4,5,4x4+4 4-gon (2 side lengths) M; 1x8+8 regular 8-gon M,5
+bipyramid,8-gonal bipyramid,yes,10,24,16,n=8,True,True,9,heart,5,4x4 full 4-gon (1 side length) M; 1x8 full regular 8-gon M,5,8,8x3+3 10-gon (3 side lengths),0
+antiprism,8-gonal antiprism,yes,16,32,18,n=8,False,True,8,non-heart,32,16x1 single 14-gon (8 side lengths); 16x1 single 5-gon (3 side lengths),0,17,16x3 6-gon (4 side lengths); 1x8+8 regular 16-gon,0
+trapezohedron,8-gonal trapezohedron,yes,18,32,16,n=8,False,True,8,inherited heart,24,16x1 single 9-gon (5 side lengths); 8x2 shared 4-gon (2 side lengths) M,8,16,16x4 9-gon (5 side lengths),0
+prism,9-gonal prism,yes,18,27,11,n=9,False,True,10,non-heart,27,18x1 single 10-gon (6 side lengths); 9x1 single 4-gon (2 side lengths) M,9,10,9x4 4-gon (2 side lengths); 1x9+9 regular 9-gon M,1
+bipyramid,9-gonal bipyramid,yes,11,27,18,n=9,False,True,10,inherited heart,10,9x2 shared 4-gon (2 side lengths) M; 1x9 shared regular 9-gon M,10,18,18x3 11-gon (6 side lengths),0
+antiprism,9-gonal antiprism,yes,18,36,20,n=9,True,True,9,heart,18,9x2 full 14-gon (4 side lengths); 9x2 full 4-gon (2 side lengths),0,10,9x3+3 6-gon (2 side lengths); 1x9+9 regular 18-gon,0
+trapezohedron,9-gonal trapezohedron,yes,20,36,18,n=9,True,True,9,heart,18,9x2 full 10-gon (3 side lengths); 9x2 full 4-gon (2 side lengths) M,9,9,9x4+4 12-gon (3 side lengths),0
+prism,10-gonal prism,yes,20,30,12,n=10,True,True,11,heart,15,10x2 full 10-gon (3 side lengths); 5x2 full 4-gon (2 side lengths) M,5,6,5x4+4 4-gon (2 side lengths) M; 1x10+10 regular 10-gon M,6
+bipyramid,10-gonal bipyramid,yes,12,30,20,n=10,True,True,11,heart,6,5x4 full 4-gon (1 side length) M; 1x10 full regular 10-gon M,6,10,10x3+3 10-gon (3 side lengths),0
+antiprism,10-gonal antiprism,yes,20,40,22,n=10,False,True,10,non-heart,40,20x1 single 18-gon (10 side lengths); 20x1 single 5-gon (3 side lengths),0,21,20x3 6-gon (4 side lengths); 1x10+10 regular 20-gon,0
+trapezohedron,10-gonal trapezohedron,yes,22,40,20,n=10,False,True,10,inherited heart,30,20x1 single 11-gon (6 side lengths); 10x2 shared 4-gon (2 side lengths) M,10,20,20x4 11-gon (6 side lengths),0
+prism,11-gonal prism,yes,22,33,13,n=11,False,True,12,non-heart,33,22x1 single 12-gon (7 side lengths); 11x1 single 4-gon (2 side lengths) M,11,12,11x4 4-gon (2 side lengths); 1x11+11 regular 11-gon M,1
+bipyramid,11-gonal bipyramid,yes,13,33,22,n=11,False,True,12,inherited heart,12,11x2 shared 4-gon (2 side lengths) M; 1x11 shared regular 11-gon M,12,22,22x3 13-gon (7 side lengths),0
+antiprism,11-gonal antiprism,yes,22,44,24,n=11,True,True,11,heart,22,11x2 full 18-gon (5 side lengths); 11x2 full 4-gon (2 side lengths),0,12,11x3+3 6-gon (2 side lengths); 1x11+11 regular 22-gon,0
+trapezohedron,11-gonal trapezohedron,yes,24,44,22,n=11,True,True,11,heart,22,11x2 full 12-gon (4 side lengths); 11x2 full 4-gon (2 side lengths) M,11,11,11x4+4 12-gon (3 side lengths),0
+prism,12-gonal prism,yes,24,36,14,n=12,True,True,13,heart,18,12x2 full 12-gon (4 side lengths); 6x2 full 4-gon (2 side lengths) M,6,7,6x4+4 4-gon (2 side lengths) M; 1x12+12 regular 12-gon M,7
+bipyramid,12-gonal bipyramid,yes,14,36,24,n=12,True,True,13,heart,7,6x4 full 4-gon (1 side length) M; 1x12 full regular 12-gon M,7,12,12x3+3 14-gon (4 side lengths),0
+antiprism,12-gonal antiprism,yes,24,48,26,n=12,False,True,12,non-heart,48,24x1 single 22-gon (12 side lengths); 24x1 single 5-gon (3 side lengths),0,25,24x3 6-gon (4 side lengths); 1x12+12 regular 24-gon,0
+trapezohedron,12-gonal trapezohedron,yes,26,48,24,n=12,False,True,12,inherited heart,36,24x1 single 13-gon (7 side lengths); 12x2 shared 4-gon (2 side lengths) M,12,24,24x4 13-gon (7 side lengths),0
+Johnson,J1_SQUARE_PYRAMID,no (float pilot),5,8,5,order 8,False,False,4,inherited heart,6,4x1 single 4-gon; 2x2 shared 3-gon M,2,,,
+Johnson,J2_PENTAGONAL_PYRAMID,no (float pilot),6,10,6,order 10,False,False,5,non-heart,10,5x1 single 5-gon; 5x1 single 3-gon M,5,,,
+Johnson,J3_TRIANGULAR_CUPOLA,no (float pilot),9,15,8,order 6,False,False,3,non-heart,15,9x1 single 4-gon; 6x1 single 6-gon,0,,,
+Johnson,J4_SQUARE_CUPOLA,no (float pilot),12,20,10,order 8,False,False,4,non-heart,20,8x1 single 8-gon; 8x1 single 5-gon; 4x1 single 4-gon,0,,,
+Johnson,J5_PENTAGONAL_CUPOLA,no (float pilot),15,25,12,order 10,False,False,5,non-heart,25,10x1 single 10-gon; 10x1 single 4-gon; 5x1 single 6-gon,0,,,
+Johnson,J6_PENTAGONAL_ROTUNDA,no (float pilot),20,35,17,order 10,False,False,5,non-heart,35,25x1 single 6-gon; 10x1 single 10-gon,0,,,
+Johnson,J7_ELONGATED_TRIANGULAR_PYRAMID,no (float pilot),7,12,7,order 6,False,False,3,inherited heart,9,3x1 single 5-gon; 3x2 shared 5-gon M; 3x1 single 3-gon,3,,,
+Johnson,J8_ELONGATED_SQUARE_PYRAMID,no (float pilot),9,16,9,order 8,False,False,4,inherited heart,10,4x1 single 6-gon; 4x1 single 4-gon; 2x4 shared 5-gon M,2,,,
+Johnson,J9_ELONGATED_PENTAGONAL_PYRAMID,no (float pilot),11,20,11,order 10,False,False,5,inherited heart,15,5x1 single 7-gon; 5x2 shared 5-gon M; 5x1 single 5-gon,5,,,
+Johnson,J10_GYROELONGATED_SQUARE_PYRAMID,no (float pilot),9,20,13,order 8,False,False,4,inherited heart,18,12x1 single 6-gon; 4x1 single 7-gon; 2x2 shared 5-gon M,2,,,
+Johnson,J11_GYROELONGATED_PENTAGONAL_PYRAMID,no (float pilot),11,25,16,order 10,False,False,5,non-heart,25,10x1 single 8-gon; 10x1 single 7-gon; 5x1 single 5-gon M,5,,,
+Johnson,J12_TRIANGULAR_BIPYRAMID,no (float pilot),5,9,6,order 12,False,True,4,inherited heart,4,3x2 shared 4-gon M; 1x3 shared 3-gon M,4,,,
+Johnson,J13_PENTAGONAL_BIPYRAMID,no (float pilot),7,15,10,order 20,False,True,6,inherited heart,6,5x2 shared 4-gon M; 1x5 shared 5-gon M,6,,,
+Johnson,J14_ELONGATED_TRIANGULAR_BIPYRAMID,no (float pilot),8,15,9,order 12,False,True,4,inherited heart,9,6x1 single 5-gon; 3x3 shared 6-gon M,3,,,
+Johnson,J15_ELONGATED_SQUARE_BIPYRAMID,no (float pilot),10,20,12,order 16,True,True,5,heart,6,4x2 full 4-gon; 2x6 full 6-gon M,2,,,
+Johnson,J16_ELONGATED_PENTAGONAL_BIPYRAMID,no (float pilot),12,25,15,order 20,False,True,6,inherited heart,15,10x1 single 7-gon; 5x3 shared 6-gon M,5,,,
+Johnson,J17_GYROELONGATED_SQUARE_BIPYRAMID,no (float pilot),10,24,16,order 16,False,True,4,inherited heart,20,16x1 single 7-gon; 4x2 shared 6-gon M,4,,,
+Johnson,J18_ELONGATED_TRIANGULAR_CUPOLA,no (float pilot),15,27,14,order 6,False,False,3,inherited heart,24,9x1 single 8-gon; 6x1 single 6-gon; 6x1 single 7-gon; 3x2 shared 6-gon,0,,,
+Johnson,J19_ELONGATED_SQUARE_CUPOLA,no (float pilot),20,36,18,order 8,False,False,4,inherited heart,32,8x1 single 10-gon; 8x1 single 8-gon; 8x1 single 7-gon; 4x2 shared 6-gon; 4x1 single 6-gon,0,,,
+Johnson,J20_ELONGATED_PENTAGONAL_CUPOLA,no (float pilot),25,45,22,order 10,False,False,5,inherited heart,40,15x1 single 8-gon; 10x1 single 12-gon; 10x1 single 10-gon; 5x2 shared 6-gon,0,,,
+Johnson,J21_ELONGATED_PENTAGONAL_ROTUNDA,no (float pilot),30,55,27,order 10,False,False,5,inherited heart,50,25x1 single 8-gon; 10x1 single 10-gon; 10x1 single 12-gon; 5x2 shared 8-gon,0,,,
+Johnson,J22_GYROELONGATED_TRIANGULAR_CUPOLA,no (float pilot),15,33,20,order 6,False,False,3,non-heart,33,18x1 single 7-gon; 6x1 single 9-gon; 6x1 single 10-gon; 3x1 single 8-gon,0,,,
+Johnson,J23_GYROELONGATED_SQUARE_CUPOLA,no (float pilot),20,44,26,order 8,False,False,4,non-heart,44,20x1 single 8-gon; 8x1 single 13-gon; 8x1 single 14-gon; 8x1 single 7-gon,0,,,
+Johnson,J24_GYROELONGATED_PENTAGONAL_CUPOLA,no (float pilot),25,55,32,order 10,False,False,5,non-heart,55,10x1 single 17-gon; 10x1 single 7-gon; 10x1 single 9-gon; 10x1 single 18-gon; 10x1 single 8-gon; 5x1 single 12-gon,0,,,
+Johnson,J25_GYROELONGATED_PENTAGONAL_ROTUNDA,no (float pilot),30,65,37,order 10,False,False,5,non-heart,65,45x1 single 10-gon; 10x1 single 9-gon; 10x1 single 15-gon,0,,,
+Johnson,J26_GYROBIFASTIGIUM,no (float pilot),8,14,8,order 8,False,True,2,inherited heart,7,4x2 shared 4-gon; 2x1 single 5-gon M; 1x4 shared 4-gon,2,,,
+Johnson,J27_TRIANGULAR_ORTHOBICUPOLA,no (float pilot),12,24,14,order 12,False,True,4,inherited heart,7,6x3 shared 6-gon; 1x6 shared 6-gon M,1,,,
+Johnson,J28_SQUARE_ORTHOBICUPOLA,no (float pilot),16,32,18,order 16,True,True,5,heart,13,12x2 full 6-gon; 1x8 full 8-gon M,1,,,
+Johnson,J29_SQUARE_GYROBICUPOLA,no (float pilot),16,32,18,order 16,False,True,4,inherited heart,17,8x2 shared 6-gon; 8x1 single 8-gon; 1x8 shared 8-gon,0,,,
+Johnson,J30_PENTAGONAL_ORTHOBICUPOLA,no (float pilot),20,40,22,order 20,False,True,6,inherited heart,21,10x2 shared 6-gon; 10x1 single 8-gon; 1x10 shared 10-gon M,1,,,
+Johnson,J31_PENTAGONAL_GYROBICUPOLA,no (float pilot),20,40,22,order 20,True,True,5,heart,11,5x4 full 6-gon; 5x2 full 6-gon; 1x10 full 10-gon,0,,,
+Johnson,J32_PENTAGONAL_ORTHOCUPOLAROTUNDA,no (float pilot),25,50,27,order 10,False,False,5,non-heart,50,25x1 single 10-gon; 25x1 single 8-gon,0,,,
+Johnson,J33_PENTAGONAL_GYROCUPOLAROTUNDA,no (float pilot),25,50,27,order 10,False,False,5,non-heart,50,40x1 single 10-gon; 10x1 single 9-gon,0,,,
+Johnson,J34_PENTAGONAL_ORTHOBIROTUNDA,no (float pilot),30,60,32,order 20,False,True,6,inherited heart,11,10x5 shared 10-gon; 1x10 shared 10-gon M,1,,,
+Johnson,J35_ELONGATED_TRIANGULAR_ORTHOBICUPOLA,no (float pilot),18,36,20,order 12,False,True,4,inherited heart,27,12x1 single 8-gon; 6x1 single 10-gon; 6x2 shared 6-gon; 3x2 shared 8-gon,0,,,
+Johnson,J36_ELONGATED_TRIANGULAR_GYROBICUPOLA,no (float pilot),18,36,20,order 12,True,True,3,heart,18,9x2 full 8-gon; 6x2 full 6-gon; 3x2 full 10-gon,0,,,
+Johnson,J37_ELONGATED_SQUARE_GYROBICUPOLA,no (float pilot),24,48,26,order 16,False,True,4,inherited heart,36,16x1 single 9-gon; 12x2 shared 8-gon; 8x1 single 10-gon,0,,,
+Johnson,J38_ELONGATED_PENTAGONAL_ORTHOBICUPOLA,no (float pilot),30,60,32,order 20,False,True,6,inherited heart,45,20x1 single 9-gon; 10x1 single 12-gon; 10x2 shared 10-gon; 5x2 shared 8-gon,0,,,
+Johnson,J39_ELONGATED_PENTAGONAL_GYROBICUPOLA,no (float pilot),30,60,32,order 20,True,True,5,heart,30,25x2 full 10-gon; 5x2 full 8-gon,0,,,
+Johnson,J40_ELONGATED_PENTAGONAL_ORTHOCUPOLAROTUNDA,no (float pilot),35,70,37,order 10,False,False,5,inherited heart,65,40x1 single 12-gon; 10x1 single 11-gon; 10x1 single 10-gon; 5x2 shared 10-gon,0,,,
+Johnson,J41_ELONGATED_PENTAGONAL_GYROCUPOLAROTUNDA,no (float pilot),35,70,37,order 10,False,False,5,inherited heart,65,25x1 single 12-gon; 15x1 single 14-gon; 10x1 single 13-gon; 10x1 single 10-gon; 5x2 shared 10-gon,0,,,
+Johnson,J42_ELONGATED_PENTAGONAL_ORTHOBIROTUNDA,no (float pilot),40,80,42,order 20,False,True,6,inherited heart,65,30x1 single 14-gon; 20x1 single 12-gon; 10x2 shared 10-gon; 5x2 shared 12-gon,0,,,
+Johnson,J43_ELONGATED_PENTAGONAL_GYROBIROTUNDA,no (float pilot),40,80,42,order 20,True,True,5,heart,40,15x2 full 14-gon; 15x2 full 12-gon; 10x2 full 10-gon,0,,,
+Johnson,J44_GYROELONGATED_TRIANGULAR_BICUPOLA,no (float pilot),18,42,26,order 6,False,True,0,non-heart,42,18x1 single 11-gon; 12x1 single 10-gon; 12x1 single 9-gon,0,,,
+Johnson,J45_GYROELONGATED_SQUARE_BICUPOLA,no (float pilot),24,56,34,order 8,False,True,0,non-heart,56,32x1 single 11-gon; 16x1 single 15-gon; 8x1 single 9-gon,0,,,
+Johnson,J46_GYROELONGATED_PENTAGONAL_BICUPOLA,no (float pilot),30,70,42,order 10,False,True,0,non-heart,70,30x1 single 11-gon; 20x1 single 19-gon; 15x1 single 13-gon; 5x1 single 9-gon,0,,,
+Johnson,J47_GYROELONGATED_PENTAGONAL_CUPOLAROTUNDA,no (float pilot),35,80,47,order 5,False,False,0,non-heart,80,35x1 single 13-gon; 25x1 single 15-gon; 10x1 single 14-gon; 10x1 single 18-gon,0,,,
+Johnson,J48_GYROELONGATED_PENTAGONAL_BIROTUNDA,no (float pilot),40,90,52,order 10,False,True,0,non-heart,90,30x1 single 15-gon; 20x1 single 14-gon; 20x1 single 19-gon; 20x1 single 13-gon,0,,,
+Johnson,J49_AUGMENTED_TRIANGULAR_PRISM,no (float pilot),7,13,8,order 4,False,False,2,inherited heart,11,4x1 single 4-gon; 4x1 single 5-gon; 2x2 shared 4-gon; 1x1 single 5-gon M,1,,,
+Johnson,J50_BIAUGMENTED_TRIANGULAR_PRISM,no (float pilot),8,17,11,order 4,False,False,2,non-heart,17,12x1 single 6-gon; 4x1 single 5-gon; 1x1 single 4-gon M,1,,,
+Johnson,J51_TRIAUGMENTED_TRIANGULAR_PRISM,no (float pilot),9,21,14,order 12,False,True,4,inherited heart,15,6x1 single 6-gon; 6x2 shared 6-gon; 3x1 single 5-gon M,3,,,
+Johnson,J52_AUGMENTED_PENTAGONAL_PRISM,no (float pilot),11,19,10,order 4,False,False,2,inherited heart,17,8x1 single 7-gon; 4x1 single 4-gon; 2x1 single 6-gon; 2x2 shared 6-gon; 1x1 single 5-gon M,1,,,
+Johnson,J53_BIAUGMENTED_PENTAGONAL_PRISM,no (float pilot),12,23,13,order 4,False,False,2,non-heart,23,10x1 single 8-gon; 8x1 single 7-gon; 2x1 single 6-gon; 2x1 single 4-gon; 1x1 single 4-gon M,1,,,
+Johnson,J54_AUGMENTED_HEXAGONAL_PRISM,no (float pilot),13,22,11,order 4,False,False,2,inherited heart,20,6x1 single 8-gon; 4x1 single 6-gon; 4x1 single 7-gon; 4x1 single 4-gon; 2x2 shared 5-gon,0,,,
+Johnson,J55_PARABIAUGMENTED_HEXAGONAL_PRISM,no (float pilot),14,26,14,order 8,True,True,3,heart,11,4x2 full 8-gon; 2x2 full 6-gon; 2x2 full 4-gon; 2x4 full 6-gon; 1x2 full 4-gon M,1,,,
+Johnson,J56_METABIAUGMENTED_HEXAGONAL_PRISM,no (float pilot),14,26,14,order 4,False,False,2,non-heart,26,8x1 single 7-gon; 6x1 single 8-gon; 4x1 single 9-gon; 4x1 single 4-gon; 2x1 single 6-gon; 2x1 single 10-gon,0,,,
+Johnson,J57_TRIAUGMENTED_HEXAGONAL_PRISM,no (float pilot),15,30,17,order 12,False,True,4,inherited heart,15,6x2 shared 8-gon; 6x2 shared 5-gon; 3x2 shared 4-gon,0,,,
+Johnson,J58_AUGMENTED_DODECAHEDRON,no (float pilot),21,35,16,order 10,False,False,5,inherited heart,25,15x1 single 6-gon; 5x1 single 8-gon; 5x3 shared 7-gon M,5,,,
+Johnson,J59_PARABIAUGMENTED_DODECAHEDRON,no (float pilot),22,40,20,order 20,True,True,5,heart,15,10x2 full 6-gon; 5x4 full 8-gon M,5,,,
+Johnson,J60_METABIAUGMENTED_DODECAHEDRON,no (float pilot),22,40,20,order 4,False,False,2,inherited heart,36,14x1 single 8-gon; 8x1 single 6-gon; 4x1 single 10-gon; 4x1 single 7-gon; 4x1 single 9-gon; 1x2 shared 6-gon M; 1x4 shared 8-gon M,2,,,
+Johnson,J61_TRIAUGMENTED_DODECAHEDRON,no (float pilot),23,45,24,order 6,False,False,3,inherited heart,39,18x1 single 8-gon; 6x1 single 11-gon; 6x1 single 7-gon; 3x3 shared 7-gon M; 3x1 single 12-gon; 3x1 single 10-gon,3,,,
+Johnson,J62_METABIDIMINISHED_ICOSAHEDRON,no (float pilot),10,20,12,order 4,False,False,2,inherited heart,19,14x1 single 6-gon; 4x1 single 5-gon; 1x2 shared 6-gon M,1,,,
+Johnson,J63_TRIDIMINISHED_ICOSAHEDRON,no (float pilot),9,15,8,order 6,False,False,3,non-heart,15,9x1 single 4-gon; 3x1 single 6-gon; 3x1 single 5-gon M,3,,,
+Johnson,J64_AUGMENTED_TRIDIMINISHED_ICOSAHEDRON,no (float pilot),10,18,10,order 6,False,False,3,inherited heart,15,9x1 single 6-gon; 3x1 single 4-gon; 3x2 shared 6-gon M,3,,,
+Johnson,J65_AUGMENTED_TRUNCATED_TETRAHEDRON,no (float pilot),15,27,14,order 6,False,False,3,non-heart,27,21x1 single 6-gon; 3x1 single 7-gon M; 3x1 single 8-gon,3,,,
+Johnson,J66_AUGMENTED_TRUNCATED_CUBE,no (float pilot),28,48,22,order 8,False,False,4,inherited heart,46,24x1 single 8-gon; 8x1 single 9-gon; 4x1 single 6-gon; 4x1 single 10-gon; 4x1 single 12-gon; 2x2 shared 10-gon M,2,,,
+Johnson,J67_BIAUGMENTED_TRUNCATED_CUBE,no (float pilot),32,60,30,order 16,True,True,5,heart,30,16x2 full 10-gon; 4x2 full 8-gon; 4x2 full 6-gon; 4x2 full 14-gon; 2x2 full 12-gon M,2,,,
+Johnson,J68_AUGMENTED_TRUNCATED_DODECAHEDRON,no (float pilot),65,105,42,order 10,False,False,5,inherited heart,100,40x1 single 12-gon; 25x1 single 10-gon; 10x1 single 14-gon; 10x1 single 13-gon; 10x1 single 11-gon; 5x2 shared 12-gon M,5,,,
+Johnson,J69_PARABIAUGMENTED_TRUNCATED_DODECAHEDRON,no (float pilot),70,120,52,order 20,True,True,5,heart,60,35x2 full 14-gon; 20x2 full 10-gon; 5x2 full 14-gon M,5,,,
+Johnson,J70_METABIAUGMENTED_TRUNCATED_DODECAHEDRON,no (float pilot),70,120,52,order 4,False,False,2,inherited heart,116,38x1 single 14-gon; 26x1 single 12-gon; 16x1 single 13-gon; 12x1 single 15-gon; 10x1 single 10-gon; 4x1 single 18-gon; 4x1 single 11-gon; 2x2 shared 14-gon; 2x1 single 16-gon; 1x2 shared 10-gon M; 1x2 shared 14-gon M,2,,,
+Johnson,J71_TRIAUGMENTED_TRUNCATED_DODECAHEDRON,no (float pilot),75,135,62,order 6,False,False,3,inherited heart,132,30x1 single 14-gon; 24x1 single 12-gon; 18x1 single 15-gon; 15x1 single 16-gon; 12x1 single 13-gon; 12x1 single 11-gon; 6x1 single 20-gon; 6x1 single 18-gon; 6x1 single 17-gon; 3x2 shared 12-gon M,3,,,
+Johnson,J72_GYRATE_RHOMBICOSIDODECAHEDRON,no (float pilot),60,120,62,order 10,False,False,5,inherited heart,75,20x2 shared 16-gon; 20x1 single 15-gon; 15x2 shared 12-gon; 10x2 shared 13-gon; 5x1 single 14-gon; 5x1 single 18-gon,0,,,
+Johnson,J73_PARABIGYRATE_RHOMBICOSIDODECAHEDRON,no (float pilot),60,120,62,order 20,True,True,5,heart,60,35x2 full 16-gon; 15x2 full 12-gon; 10x2 full 14-gon,0,,,
+Johnson,J74_METABIGYRATE_RHOMBICOSIDODECAHEDRON,no (float pilot),60,120,62,order 4,False,False,2,inherited heart,88,36x1 single 15-gon; 12x2 shared 16-gon; 12x2 shared 13-gon; 10x1 single 18-gon; 6x2 shared 12-gon; 6x1 single 14-gon; 4x1 single 16-gon; 2x2 shared 14-gon,0,,,
+Johnson,J75_TRIGYRATE_RHOMBICOSIDODECAHEDRON,no (float pilot),60,120,62,order 6,False,False,3,inherited heart,99,42x1 single 15-gon; 15x1 single 18-gon; 15x1 single 16-gon; 12x2 shared 13-gon; 6x2 shared 16-gon; 6x1 single 14-gon; 3x2 shared 14-gon,0,,,
+Johnson,J76_DIMINISHED_RHOMBICOSIDODECAHEDRON,no (float pilot),55,105,52,order 10,False,False,5,non-heart,105,25x1 single 12-gon; 25x1 single 14-gon; 15x1 single 10-gon; 10x1 single 16-gon; 10x1 single 15-gon; 10x1 single 13-gon; 10x1 single 18-gon,0,,,
+Johnson,J77_PARAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON,no (float pilot),55,105,52,order 10,False,False,5,non-heart,105,30x1 single 14-gon; 25x1 single 12-gon; 10x1 single 18-gon; 10x1 single 13-gon; 10x1 single 11-gon; 10x1 single 15-gon; 10x1 single 16-gon,0,,,
+Johnson,J78_METAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON,no (float pilot),55,105,52,order 2,False,False,1,non-heart,105,25x1 single 14-gon; 18x1 single 12-gon; 18x1 single 13-gon; 16x1 single 16-gon; 9x1 single 18-gon; 9x1 single 10-gon; 8x1 single 15-gon; 2x1 single 11-gon,0,,,
+Johnson,J79_BIGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON,no (float pilot),55,105,52,order 2,False,False,1,non-heart,105,26x1 single 14-gon; 20x1 single 13-gon; 18x1 single 16-gon; 13x1 single 12-gon; 10x1 single 15-gon; 10x1 single 18-gon; 6x1 single 10-gon; 2x1 single 11-gon,0,,,
+Johnson,J80_PARABIDIMINISHED_RHOMBICOSIDODECAHEDRON,no (float pilot),50,90,42,order 20,True,True,5,heart,45,15x2 full 12-gon; 10x2 full 16-gon; 10x2 full 10-gon; 10x2 full 8-gon,0,,,
+Johnson,J81_METABIDIMINISHED_RHOMBICOSIDODECAHEDRON,no (float pilot),50,90,42,order 4,False,False,2,inherited heart,88,24x1 single 10-gon; 16x1 single 12-gon; 12x1 single 13-gon; 12x1 single 11-gon; 8x1 single 15-gon; 6x1 single 8-gon; 4x1 single 14-gon; 4x1 single 16-gon; 2x2 shared 12-gon,0,,,
+Johnson,J82_GYRATE_BIDIMINISHED_RHOMBICOSIDODECAHEDRON,no (float pilot),50,90,42,order 2,False,False,1,inherited heart,88,16x1 single 10-gon; 14x1 single 13-gon; 14x1 single 11-gon; 14x1 single 14-gon; 13x1 single 12-gon; 4x1 single 15-gon; 4x1 single 16-gon; 4x1 single 9-gon; 3x1 single 8-gon; 2x2 shared 13-gon,0,,,
+Johnson,J83_TRIDIMINISHED_RHOMBICOSIDODECAHEDRON,no (float pilot),45,75,32,order 6,False,False,3,non-heart,75,39x1 single 10-gon; 12x1 single 8-gon; 9x1 single 12-gon; 6x1 single 11-gon; 6x1 single 13-gon; 3x1 single 6-gon,0,,,
+Johnson,J84_SNUB_DISPHENOID,no (float pilot),8,18,12,order 8,False,True,2,inherited heart,14,8x1 single 6-gon; 4x1 single 5-gon; 2x3 shared 5-gon M,2,,,
+Johnson,J85_SNUB_SQUARE_ANTIPRISM,no (float pilot),16,40,26,order 16,False,True,4,inherited heart,36,24x1 single 10-gon; 8x1 single 11-gon; 4x2 shared 6-gon M,4,,,
+Johnson,J86_SPHENOCORONA,no (float pilot),10,22,14,order 4,False,False,2,inherited heart,20,8x1 single 7-gon; 8x1 single 6-gon; 2x1 single 8-gon; 1x3 shared 5-gon M; 1x1 single 5-gon M,2,,,
+Johnson,J87_AUGMENTED_SPHENOCORONA,no (float pilot),11,26,17,order 2,False,False,1,non-heart,26,10x1 single 8-gon; 9x1 single 7-gon; 4x1 single 9-gon; 2x1 single 6-gon; 1x1 single 6-gon M,1,,,
+Johnson,J88_SPHENOMEGACORONA,no (float pilot),12,28,18,order 4,False,False,2,inherited heart,24,10x1 single 8-gon; 4x1 single 7-gon; 4x1 single 9-gon; 4x1 single 6-gon; 1x5 shared 7-gon M; 1x1 single 5-gon M,2,,,
+Johnson,J89_HEBESPHENOMEGACORONA,no (float pilot),14,33,21,order 4,False,False,2,inherited heart,32,16x1 single 9-gon; 12x1 single 8-gon; 2x1 single 10-gon; 1x2 shared 7-gon M; 1x1 single 6-gon M,2,,,
+Johnson,J90_DISPHENOCINGULUM,no (float pilot),16,38,24,order 8,False,True,2,inherited heart,34,20x1 single 9-gon; 12x1 single 11-gon; 2x3 shared 7-gon M,2,,,
+Johnson,J91_BILUNABIROTUNDA,no (float pilot),14,26,14,order 8,True,True,3,heart,9,6x2 full 6-gon; 2x6 full 6-gon; 1x2 full 8-gon M,1,,,
+Johnson,J92_TRIANGULAR_HEBESPHENOROTUNDA,no (float pilot),18,36,20,order 6,False,False,3,non-heart,36,12x1 single 8-gon; 12x1 single 10-gon; 6x1 single 7-gon; 6x1 single 9-gon,0,,,

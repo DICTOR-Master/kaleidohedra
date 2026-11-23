@@ -1,0 +1,4389 @@
+[
+ {
+  "name": "J1_SQUARE_PYRAMID",
+  "V": 5,
+  "E": 8,
+  "F": 5,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 6,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 3,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 5.40116869512417e-17,
+  "min_separate_defect": 0.3849001794597504,
+  "J": 1
+ },
+ {
+  "name": "J2_PENTAGONAL_PYRAMID",
+  "V": 6,
+  "E": 10,
+  "F": 6,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 10,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 3,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.148477355176042,
+  "J": 2
+ },
+ {
+  "name": "J3_TRIANGULAR_CUPOLA",
+  "V": 9,
+  "E": 15,
+  "F": 8,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 15,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 9,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.13644702475094922,
+  "J": 3
+ },
+ {
+  "name": "J4_SQUARE_CUPOLA",
+  "V": 12,
+  "E": 20,
+  "F": 10,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 20,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.1466771310905755,
+  "J": 4
+ },
+ {
+  "name": "J5_PENTAGONAL_CUPOLA",
+  "V": 15,
+  "E": 25,
+  "F": 12,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 25,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.06992988304660733,
+  "J": 5
+ },
+ {
+  "name": "J6_PENTAGONAL_ROTUNDA",
+  "V": 20,
+  "E": 35,
+  "F": 17,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 35,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.12612068430237153,
+  "J": 6
+ },
+ {
+  "name": "J7_ELONGATED_TRIANGULAR_PYRAMID",
+  "V": 7,
+  "E": 12,
+  "F": 7,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 9,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 5,
+    "mirror": true
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 3,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 1.1285339708892308e-16,
+  "min_separate_defect": 0.6346806287577953,
+  "J": 7
+ },
+ {
+  "name": "J8_ELONGATED_SQUARE_PYRAMID",
+  "V": 9,
+  "E": 16,
+  "F": 9,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 10,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 4,
+    "sheet": "shared",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 7.194121208492541e-17,
+  "min_separate_defect": 0.27055964694605245,
+  "J": 8
+ },
+ {
+  "name": "J9_ELONGATED_PENTAGONAL_PYRAMID",
+  "V": 11,
+  "E": 20,
+  "F": 11,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 15,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 5,
+    "mirror": true
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 1.1692174188836367e-16,
+  "min_separate_defect": 0.3979541894984699,
+  "J": 9
+ },
+ {
+  "name": "J10_GYROELONGATED_SQUARE_PYRAMID",
+  "V": 9,
+  "E": 20,
+  "F": 13,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 18,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 1.1102230246251565e-16,
+  "min_separate_defect": 0.27374527367361823,
+  "J": 10
+ },
+ {
+  "name": "J11_GYROELONGATED_PENTAGONAL_PYRAMID",
+  "V": 11,
+  "E": 25,
+  "F": 16,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 25,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.11219287358254594,
+  "J": 11
+ },
+ {
+  "name": "J12_TRIANGULAR_BIPYRAMID",
+  "V": 5,
+  "E": 9,
+  "F": 6,
+  "group_order": 12,
+  "rotations": 6,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 4,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 3,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 4,
+    "mirror": true
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 3,
+    "sheet": "shared",
+    "slice_sides": 3,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.9999999999999999,
+  "J": 12
+ },
+ {
+  "name": "J13_PENTAGONAL_BIPYRAMID",
+  "V": 7,
+  "E": 15,
+  "F": 10,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 6,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 6,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 4,
+    "mirror": true
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 5,
+    "sheet": "shared",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 1.166111295956906e-16,
+  "min_separate_defect": 0.6180339887498947,
+  "J": 13
+ },
+ {
+  "name": "J14_ELONGATED_TRIANGULAR_BIPYRAMID",
+  "V": 8,
+  "E": 15,
+  "F": 9,
+  "group_order": 12,
+  "rotations": 6,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 9,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 3,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 1.5772401847219518e-16,
+  "min_separate_defect": 0.7071067811865472,
+  "J": 14
+ },
+ {
+  "name": "J15_ELONGATED_SQUARE_BIPYRAMID",
+  "V": 10,
+  "E": 20,
+  "F": 12,
+  "group_order": 16,
+  "rotations": 8,
+  "mirrors": 5,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 6,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 4,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 6,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 8.189913335492026e-17,
+  "min_separate_defect": 0.9999999999999998,
+  "J": 15
+ },
+ {
+  "name": "J16_ELONGATED_PENTAGONAL_BIPYRAMID",
+  "V": 12,
+  "E": 25,
+  "F": 15,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 6,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 15,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 3,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 1.2560213590716607e-16,
+  "min_separate_defect": 0.3632712640026804,
+  "J": 16
+ },
+ {
+  "name": "J17_GYROELONGATED_SQUARE_BIPYRAMID",
+  "V": 10,
+  "E": 24,
+  "F": 16,
+  "group_order": 16,
+  "rotations": 8,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 20,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 16,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.4142135623730949,
+  "J": 17
+ },
+ {
+  "name": "J18_ELONGATED_TRIANGULAR_CUPOLA",
+  "V": 15,
+  "E": 27,
+  "F": 14,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 24,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 9,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 4.710277376051325e-16,
+  "min_separate_defect": 0.07667980257248443,
+  "J": 18
+ },
+ {
+  "name": "J19_ELONGATED_SQUARE_CUPOLA",
+  "V": 20,
+  "E": 36,
+  "F": 18,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 32,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 3.3306690738754696e-16,
+  "min_separate_defect": 0.16031499428861248,
+  "J": 19
+ },
+ {
+  "name": "J20_ELONGATED_PENTAGONAL_CUPOLA",
+  "V": 25,
+  "E": 45,
+  "F": 22,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 40,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 15,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 2.482534153247273e-16,
+  "min_separate_defect": 0.11630428587398962,
+  "J": 20
+ },
+ {
+  "name": "J21_ELONGATED_PENTAGONAL_ROTUNDA",
+  "V": 30,
+  "E": 55,
+  "F": 27,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 50,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 8,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 1.3880968509837276e-13,
+  "min_separate_defect": 0.006881663459196968,
+  "J": 21
+ },
+ {
+  "name": "J22_GYROELONGATED_TRIANGULAR_CUPOLA",
+  "V": 15,
+  "E": 33,
+  "F": 20,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 33,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 18,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.06025569371777855,
+  "J": 22
+ },
+ {
+  "name": "J23_GYROELONGATED_SQUARE_CUPOLA",
+  "V": 20,
+  "E": 44,
+  "F": 26,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 44,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 20,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.12674558759380475,
+  "J": 23
+ },
+ {
+  "name": "J24_GYROELONGATED_PENTAGONAL_CUPOLA",
+  "V": 25,
+  "E": 55,
+  "F": 32,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 55,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 17,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.09516554419474485,
+  "J": 24
+ },
+ {
+  "name": "J25_GYROELONGATED_PENTAGONAL_ROTUNDA",
+  "V": 30,
+  "E": 65,
+  "F": 37,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 65,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 45,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.01546397029125227,
+  "J": 25
+ },
+ {
+  "name": "J26_GYROBIFASTIGIUM",
+  "V": 8,
+  "E": 14,
+  "F": 8,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 7,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 4,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": true
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 4,
+    "sheet": "shared",
+    "slice_sides": 4,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.7559289460184546,
+  "J": 26
+ },
+ {
+  "name": "J27_TRIANGULAR_ORTHOBICUPOLA",
+  "V": 12,
+  "E": 24,
+  "F": 14,
+  "group_order": 12,
+  "rotations": 6,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 7,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 6,
+    "edges_per_plate": 3,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 6,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 4.1910000110727263e-16,
+  "min_separate_defect": 0.6666666666666667,
+  "J": 27
+ },
+ {
+  "name": "J28_SQUARE_ORTHOBICUPOLA",
+  "V": 16,
+  "E": 32,
+  "F": 18,
+  "group_order": 16,
+  "rotations": 8,
+  "mirrors": 5,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 13,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 12,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 8,
+    "sheet": "full",
+    "slice_sides": 8,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 4.041272810440265e-16,
+  "min_separate_defect": 0.4222131572793581,
+  "J": 28
+ },
+ {
+  "name": "J29_SQUARE_GYROBICUPOLA",
+  "V": 16,
+  "E": 32,
+  "F": 18,
+  "group_order": 16,
+  "rotations": 8,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 17,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 8,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 8,
+    "sheet": "shared",
+    "slice_sides": 8,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 7.870063977598499e-16,
+  "min_separate_defect": 0.42221315727935793,
+  "J": 29
+ },
+ {
+  "name": "J30_PENTAGONAL_ORTHOBICUPOLA",
+  "V": 20,
+  "E": 40,
+  "F": 22,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 6,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 21,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 10,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 10,
+    "sheet": "shared",
+    "slice_sides": 10,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 2.5438405243138006e-16,
+  "min_separate_defect": 0.37518494817015985,
+  "J": 30
+ },
+ {
+  "name": "J31_PENTAGONAL_GYROBICUPOLA",
+  "V": 20,
+  "E": 40,
+  "F": 22,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 5,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 11,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 5,
+    "edges_per_plate": 4,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 10,
+    "sheet": "full",
+    "slice_sides": 10,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 4.335559509131367e-16,
+  "min_separate_defect": 0.6408518201709874,
+  "J": 31
+ },
+ {
+  "name": "J32_PENTAGONAL_ORTHOCUPOLAROTUNDA",
+  "V": 25,
+  "E": 50,
+  "F": 27,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 50,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.06947994063069335,
+  "J": 32
+ },
+ {
+  "name": "J33_PENTAGONAL_GYROCUPOLAROTUNDA",
+  "V": 25,
+  "E": 50,
+  "F": 27,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 50,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 40,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.06947994063069332,
+  "J": 33
+ },
+ {
+  "name": "J34_PENTAGONAL_ORTHOBIROTUNDA",
+  "V": 30,
+  "E": 60,
+  "F": 32,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 6,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 11,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 10,
+    "edges_per_plate": 5,
+    "sheet": "shared",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 10,
+    "sheet": "shared",
+    "slice_sides": 10,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 7.488517177807565e-13,
+  "min_separate_defect": 0.5527864044996631,
+  "J": 34
+ },
+ {
+  "name": "J35_ELONGATED_TRIANGULAR_ORTHOBICUPOLA",
+  "V": 18,
+  "E": 36,
+  "F": 20,
+  "group_order": 12,
+  "rotations": 6,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 27,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 8,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 4.577566798522237e-16,
+  "min_separate_defect": 0.1384954724362164,
+  "J": 35
+ },
+ {
+  "name": "J36_ELONGATED_TRIANGULAR_GYROBICUPOLA",
+  "V": 18,
+  "E": 36,
+  "F": 20,
+  "group_order": 12,
+  "rotations": 6,
+  "mirrors": 3,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 18,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 9,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 10,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 6.843874359417885e-16,
+  "min_separate_defect": 0.13849547243621596,
+  "J": 36
+ },
+ {
+  "name": "J37_ELONGATED_SQUARE_GYROBICUPOLA",
+  "V": 24,
+  "E": 48,
+  "F": 26,
+  "group_order": 16,
+  "rotations": 8,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 36,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 16,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 2.603703785810335e-16,
+  "min_separate_defect": 0.2071067811865475,
+  "J": 37
+ },
+ {
+  "name": "J38_ELONGATED_PENTAGONAL_ORTHOBICUPOLA",
+  "V": 30,
+  "E": 60,
+  "F": 32,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 6,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 45,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 20,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 8,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 3.1401849173675503e-16,
+  "min_separate_defect": 0.19098300562505244,
+  "J": 38
+ },
+ {
+  "name": "J39_ELONGATED_PENTAGONAL_GYROBICUPOLA",
+  "V": 30,
+  "E": 60,
+  "F": 32,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 5,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 30,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 25,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 8,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 5.688200336284365e-16,
+  "min_separate_defect": 0.19098300562505244,
+  "J": 39
+ },
+ {
+  "name": "J40_ELONGATED_PENTAGONAL_ORTHOCUPOLAROTUNDA",
+  "V": 35,
+  "E": 70,
+  "F": 37,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 65,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 40,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 10,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 1.1898509349040433e-13,
+  "min_separate_defect": 0.0303402563627758,
+  "J": 40
+ },
+ {
+  "name": "J41_ELONGATED_PENTAGONAL_GYROCUPOLAROTUNDA",
+  "V": 35,
+  "E": 70,
+  "F": 37,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 65,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 15,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 10,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 1.2472609581571448e-13,
+  "min_separate_defect": 0.030340256362779768,
+  "J": 41
+ },
+ {
+  "name": "J42_ELONGATED_PENTAGONAL_ORTHOBIROTUNDA",
+  "V": 40,
+  "E": 80,
+  "F": 42,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 6,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 65,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 30,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 20,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 12,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 8.073510232129158e-13,
+  "min_separate_defect": 0.07083903402512007,
+  "J": 42
+ },
+ {
+  "name": "J43_ELONGATED_PENTAGONAL_GYROBIROTUNDA",
+  "V": 40,
+  "E": 80,
+  "F": 42,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 5,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 40,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 15,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 15,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 10,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 8.108805947036971e-13,
+  "min_separate_defect": 0.0708390340251198,
+  "J": 43
+ },
+ {
+  "name": "J44_GYROELONGATED_TRIANGULAR_BICUPOLA",
+  "V": 18,
+  "E": 42,
+  "F": 26,
+  "group_order": 6,
+  "rotations": 6,
+  "mirrors": 0,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 42,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 18,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.12335276139925631,
+  "J": 44
+ },
+ {
+  "name": "J45_GYROELONGATED_SQUARE_BICUPOLA",
+  "V": 24,
+  "E": 56,
+  "F": 34,
+  "group_order": 8,
+  "rotations": 8,
+  "mirrors": 0,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 56,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 32,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 16,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.1309722019128766,
+  "J": 45
+ },
+ {
+  "name": "J46_GYROELONGATED_PENTAGONAL_BICUPOLA",
+  "V": 30,
+  "E": 70,
+  "F": 42,
+  "group_order": 10,
+  "rotations": 10,
+  "mirrors": 0,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 70,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 30,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 20,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 19,
+    "mirror": false
+   },
+   {
+    "count": 15,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.08441742741100745,
+  "J": 46
+ },
+ {
+  "name": "J47_GYROELONGATED_PENTAGONAL_CUPOLAROTUNDA",
+  "V": 35,
+  "E": 80,
+  "F": 47,
+  "group_order": 5,
+  "rotations": 5,
+  "mirrors": 0,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 80,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 35,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.021305408386509846,
+  "J": 47
+ },
+ {
+  "name": "J48_GYROELONGATED_PENTAGONAL_BIROTUNDA",
+  "V": 40,
+  "E": 90,
+  "F": 52,
+  "group_order": 10,
+  "rotations": 10,
+  "mirrors": 0,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 90,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 30,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 20,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 20,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 19,
+    "mirror": false
+   },
+   {
+    "count": 20,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.06294413451300675,
+  "J": 48
+ },
+ {
+  "name": "J49_AUGMENTED_TRIANGULAR_PRISM",
+  "V": 7,
+  "E": 13,
+  "F": 8,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 11,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.3974486216802711,
+  "J": 49
+ },
+ {
+  "name": "J50_BIAUGMENTED_TRIANGULAR_PRISM",
+  "V": 8,
+  "E": 17,
+  "F": 11,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 17,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.16381755026482722,
+  "J": 50
+ },
+ {
+  "name": "J51_TRIAUGMENTED_TRIANGULAR_PRISM",
+  "V": 9,
+  "E": 21,
+  "F": 14,
+  "group_order": 12,
+  "rotations": 6,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 15,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 5.551115123125783e-17,
+  "min_separate_defect": 0.4819056412137453,
+  "J": 51
+ },
+ {
+  "name": "J52_AUGMENTED_PENTAGONAL_PRISM",
+  "V": 11,
+  "E": 19,
+  "F": 10,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 17,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 1.2412670766236366e-16,
+  "min_separate_defect": 0.24258841619928492,
+  "J": 52
+ },
+ {
+  "name": "J53_BIAUGMENTED_PENTAGONAL_PRISM",
+  "V": 12,
+  "E": 23,
+  "F": 13,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 23,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.0704346612712249,
+  "J": 53
+ },
+ {
+  "name": "J54_AUGMENTED_HEXAGONAL_PRISM",
+  "V": 13,
+  "E": 22,
+  "F": 11,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 20,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 5,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.06064361649984057,
+  "J": 54
+ },
+ {
+  "name": "J55_PARABIAUGMENTED_HEXAGONAL_PRISM",
+  "V": 14,
+  "E": 26,
+  "F": 14,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 3,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 11,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 4,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 4,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 4,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 4.965068306494546e-16,
+  "min_separate_defect": 0.4035872804148024,
+  "J": 55
+ },
+ {
+  "name": "J56_METABIAUGMENTED_HEXAGONAL_PRISM",
+  "V": 14,
+  "E": 26,
+  "F": 14,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 26,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.05629419881959302,
+  "J": 56
+ },
+ {
+  "name": "J57_TRIAUGMENTED_HEXAGONAL_PRISM",
+  "V": 15,
+  "E": 30,
+  "F": 17,
+  "group_order": 12,
+  "rotations": 6,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 15,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 6,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 5,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 4,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 3.510833468576701e-16,
+  "min_separate_defect": 0.4035872804148022,
+  "J": 57
+ },
+ {
+  "name": "J58_AUGMENTED_DODECAHEDRON",
+  "V": 21,
+  "E": 35,
+  "F": 16,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 25,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 15,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 3,
+    "sheet": "shared",
+    "slice_sides": 7,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 3.554447978966673e-16,
+  "min_separate_defect": 0.0628314432138244,
+  "J": 58
+ },
+ {
+  "name": "J59_PARABIAUGMENTED_DODECAHEDRON",
+  "V": 22,
+  "E": 40,
+  "F": 20,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 5,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 15,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 10,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 4,
+    "sheet": "full",
+    "slice_sides": 8,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 2.0014830212433605e-16,
+  "min_separate_defect": 0.6180339887498947,
+  "J": 59
+ },
+ {
+  "name": "J60_METABIAUGMENTED_DODECAHEDRON",
+  "V": 22,
+  "E": 40,
+  "F": 20,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 36,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 14,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": true
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 4,
+    "sheet": "shared",
+    "slice_sides": 8,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.01327806746215485,
+  "J": 60
+ },
+ {
+  "name": "J61_TRIAUGMENTED_DODECAHEDRON",
+  "V": 23,
+  "E": 45,
+  "F": 24,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 39,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 18,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 3,
+    "sheet": "shared",
+    "slice_sides": 7,
+    "mirror": true
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 2.220446049250313e-16,
+  "min_separate_defect": 0.007829128742523712,
+  "J": 61
+ },
+ {
+  "name": "J62_METABIDIMINISHED_ICOSAHEDRON",
+  "V": 10,
+  "E": 20,
+  "F": 12,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 19,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 14,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 5.1098794829776977e-17,
+  "min_separate_defect": 0.07662937858839604,
+  "J": 62
+ },
+ {
+  "name": "J63_TRIDIMINISHED_ICOSAHEDRON",
+  "V": 9,
+  "E": 15,
+  "F": 8,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 15,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 9,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.05268963581541783,
+  "J": 63
+ },
+ {
+  "name": "J64_AUGMENTED_TRIDIMINISHED_ICOSAHEDRON",
+  "V": 10,
+  "E": 18,
+  "F": 10,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 15,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 9,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 4,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 2.363799567336573e-16,
+  "min_separate_defect": 0.0927054293619463,
+  "J": 64
+ },
+ {
+  "name": "J65_AUGMENTED_TRUNCATED_TETRAHEDRON",
+  "V": 15,
+  "E": 27,
+  "F": 14,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 27,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 21,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": true
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.029888789711054218,
+  "J": 65
+ },
+ {
+  "name": "J66_AUGMENTED_TRUNCATED_CUBE",
+  "V": 28,
+  "E": 48,
+  "F": 22,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 46,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 24,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 10,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.13135773136596643,
+  "J": 66
+ },
+ {
+  "name": "J67_BIAUGMENTED_TRUNCATED_CUBE",
+  "V": 32,
+  "E": 60,
+  "F": 30,
+  "group_order": 16,
+  "rotations": 8,
+  "mirrors": 5,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 30,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 16,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 12,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 1.568523152056956e-13,
+  "min_separate_defect": 0.20610318662884244,
+  "J": 67
+ },
+ {
+  "name": "J68_AUGMENTED_TRUNCATED_DODECAHEDRON",
+  "V": 65,
+  "E": 105,
+  "F": 42,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 100,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 40,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 12,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 1.5023434429005537e-14,
+  "min_separate_defect": 0.012457401229048698,
+  "J": 68
+ },
+ {
+  "name": "J69_PARABIAUGMENTED_TRUNCATED_DODECAHEDRON",
+  "V": 70,
+  "E": 120,
+  "F": 52,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 5,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 60,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 35,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 20,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 14,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 1.6640133100202772e-14,
+  "min_separate_defect": 0.10557280899992261,
+  "J": 69
+ },
+ {
+  "name": "J70_METABIAUGMENTED_TRUNCATED_DODECAHEDRON",
+  "V": 70,
+  "E": 120,
+  "F": 52,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 116,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 38,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 26,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 16,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 10,
+    "mirror": true
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 14,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 1.63169989740831e-14,
+  "min_separate_defect": 0.00818566129551484,
+  "J": 70
+ },
+ {
+  "name": "J71_TRIAUGMENTED_TRUNCATED_DODECAHEDRON",
+  "V": 75,
+  "E": 135,
+  "F": 62,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 132,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 30,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 24,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 18,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 15,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 20,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 17,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 12,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 8.541685388095873e-15,
+  "min_separate_defect": 0.007635580370868325,
+  "J": 71
+ },
+ {
+  "name": "J72_GYRATE_RHOMBICOSIDODECAHEDRON",
+  "V": 60,
+  "E": 120,
+  "F": 62,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 75,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 20,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 20,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 15,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 5,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 3.4492933804544066e-15,
+  "min_separate_defect": 0.10557280900004777,
+  "J": 72
+ },
+ {
+  "name": "J73_PARABIGYRATE_RHOMBICOSIDODECAHEDRON",
+  "V": 60,
+  "E": 120,
+  "F": 62,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 5,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 60,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 35,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 15,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 14,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 1.8486130188118636e-15,
+  "min_separate_defect": 0.10557280900004655,
+  "J": 73
+ },
+ {
+  "name": "J74_METABIGYRATE_RHOMBICOSIDODECAHEDRON",
+  "V": 60,
+  "E": 120,
+  "F": 62,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 88,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 36,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 14,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 5.454800387622359e-15,
+  "min_separate_defect": 0.10557280900004741,
+  "J": 74
+ },
+ {
+  "name": "J75_TRIGYRATE_RHOMBICOSIDODECAHEDRON",
+  "V": 60,
+  "E": 120,
+  "F": 62,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 99,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 42,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 15,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   },
+   {
+    "count": 15,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 14,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 7.83676109362777e-15,
+  "min_separate_defect": 0.10557280900004733,
+  "J": 75
+ },
+ {
+  "name": "J76_DIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "V": 55,
+  "E": 105,
+  "F": 52,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 105,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 15,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.02087401842526782,
+  "J": 76
+ },
+ {
+  "name": "J77_PARAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "V": 55,
+  "E": 105,
+  "F": 52,
+  "group_order": 10,
+  "rotations": 5,
+  "mirrors": 5,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 105,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 30,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 16,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.020874018425271507,
+  "J": 77
+ },
+ {
+  "name": "J78_METAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "V": 55,
+  "E": 105,
+  "F": 52,
+  "group_order": 2,
+  "rotations": 1,
+  "mirrors": 1,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 2,
+  "plates": 105,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 25,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 18,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 18,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 16,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 9,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   },
+   {
+    "count": 9,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.020874018425266507,
+  "J": 78
+ },
+ {
+  "name": "J79_BIGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "V": 55,
+  "E": 105,
+  "F": 52,
+  "group_order": 2,
+  "rotations": 1,
+  "mirrors": 1,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 2,
+  "plates": 105,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 26,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 20,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 18,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 13,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 18,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.014736780837312934,
+  "J": 79
+ },
+ {
+  "name": "J80_PARABIDIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "V": 50,
+  "E": 90,
+  "F": 42,
+  "group_order": 20,
+  "rotations": 10,
+  "mirrors": 5,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 45,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 15,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 10,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 8,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 7.850462293418876e-17,
+  "min_separate_defect": 0.2297529205473361,
+  "J": 80
+ },
+ {
+  "name": "J81_METABIDIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "V": 50,
+  "E": 90,
+  "F": 42,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 88,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 24,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 16,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 12,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 3.18935598425068e-15,
+  "min_separate_defect": 0.023085659566071528,
+  "J": 81
+ },
+ {
+  "name": "J82_GYRATE_BIDIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "V": 50,
+  "E": 90,
+  "F": 42,
+  "group_order": 2,
+  "rotations": 1,
+  "mirrors": 1,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 2,
+  "plates": 88,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 16,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 14,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 14,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 14,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 14,
+    "mirror": false
+   },
+   {
+    "count": 13,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 15,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 16,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 13,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 2.7510242291670354e-15,
+  "min_separate_defect": 0.0230856595660691,
+  "J": 82
+ },
+ {
+  "name": "J83_TRIDIMINISHED_RHOMBICOSIDODECAHEDRON",
+  "V": 45,
+  "E": 75,
+  "F": 32,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 75,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 39,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 9,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 12,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 13,
+    "mirror": false
+   },
+   {
+    "count": 3,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.01579196673553529,
+  "J": 83
+ },
+ {
+  "name": "J84_SNUB_DISPHENOID",
+  "V": 8,
+  "E": 18,
+  "F": 12,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 14,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 3,
+    "sheet": "shared",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.3380444588483517,
+  "J": 84
+ },
+ {
+  "name": "J85_SNUB_SQUARE_ANTIPRISM",
+  "V": 16,
+  "E": 40,
+  "F": 26,
+  "group_order": 16,
+  "rotations": 8,
+  "mirrors": 4,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 36,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 24,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 6,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 5.075551425021695e-16,
+  "min_separate_defect": 0.11352424021637485,
+  "J": 85
+ },
+ {
+  "name": "J86_SPHENOCORONA",
+  "V": 10,
+  "E": 22,
+  "F": 14,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 20,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 8,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 3,
+    "sheet": "shared",
+    "slice_sides": 5,
+    "mirror": true
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.26182683476080476,
+  "J": 86
+ },
+ {
+  "name": "J87_AUGMENTED_SPHENOCORONA",
+  "V": 11,
+  "E": 26,
+  "F": 17,
+  "group_order": 2,
+  "rotations": 1,
+  "mirrors": 1,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 2,
+  "plates": 26,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 9,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.11635321048472881,
+  "J": 87
+ },
+ {
+  "name": "J88_SPHENOMEGACORONA",
+  "V": 12,
+  "E": 28,
+  "F": 18,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 24,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 10,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 4,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 5,
+    "sheet": "shared",
+    "slice_sides": 7,
+    "mirror": true
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 5,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.033875383990740755,
+  "J": 88
+ },
+ {
+  "name": "J89_HEBESPHENOMEGACORONA",
+  "V": 14,
+  "E": 33,
+  "F": 21,
+  "group_order": 4,
+  "rotations": 2,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 32,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 16,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 2,
+    "sheet": "shared",
+    "slice_sides": 7,
+    "mirror": true
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 6,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.12968311282293132,
+  "J": 89
+ },
+ {
+  "name": "J90_DISPHENOCINGULUM",
+  "V": 16,
+  "E": 38,
+  "F": 24,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 2,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 34,
+  "kind": "inherited heart",
+  "plate_classes": [
+   {
+    "count": 20,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 11,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 3,
+    "sheet": "shared",
+    "slice_sides": 7,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.16017285203225268,
+  "J": 90
+ },
+ {
+  "name": "J91_BILUNABIROTUNDA",
+  "V": 14,
+  "E": 26,
+  "F": 14,
+  "group_order": 8,
+  "rotations": 4,
+  "mirrors": 3,
+  "centrally_symmetric": true,
+  "unique_symmetry_centre": true,
+  "fixed_dim": 0,
+  "plates": 9,
+  "kind": "heart",
+  "plate_classes": [
+   {
+    "count": 6,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 2,
+    "edges_per_plate": 6,
+    "sheet": "full",
+    "slice_sides": 6,
+    "mirror": false
+   },
+   {
+    "count": 1,
+    "edges_per_plate": 2,
+    "sheet": "full",
+    "slice_sides": 8,
+    "mirror": true
+   }
+  ],
+  "max_merged_defect": 1.1102230246251565e-16,
+  "min_separate_defect": 0.26628047813928923,
+  "J": 91
+ },
+ {
+  "name": "J92_TRIANGULAR_HEBESPHENOROTUNDA",
+  "V": 18,
+  "E": 36,
+  "F": 20,
+  "group_order": 6,
+  "rotations": 3,
+  "mirrors": 3,
+  "centrally_symmetric": false,
+  "unique_symmetry_centre": false,
+  "fixed_dim": 1,
+  "plates": 36,
+  "kind": "non-heart",
+  "plate_classes": [
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 8,
+    "mirror": false
+   },
+   {
+    "count": 12,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 10,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 7,
+    "mirror": false
+   },
+   {
+    "count": 6,
+    "edges_per_plate": 1,
+    "sheet": "single",
+    "slice_sides": 9,
+    "mirror": false
+   }
+  ],
+  "max_merged_defect": 0.0,
+  "min_separate_defect": 0.08145823491863383,
+  "J": 92
+ }
+]
