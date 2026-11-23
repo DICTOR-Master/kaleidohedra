@@ -1,0 +1,20 @@
+=== amber  aequus-236  sc  s0 = -9204521936548669126612/4307404901290013464929+9204521936548669126612/4307404901290013464929r5 = 2.641362  s = 6/5 s0 = 3.169634  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 6  (0.8s)
+outer pattern computed (2.1s); faces with an empty outer cell: []
+adjacency: inner pairs 60, outer pairs 60, shared 60, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 34: (inner, outer) vertex counts {(1, 1): 34}; Y vertices 0; persistent inner edges 60/60
+sampling cross-check: 6000 points (4629 in the resin), points not covered exactly once: 0, max winding rounding 2.09e-13
+volume sum - resin = 0 (exact 0); resin = 24.485977; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 28, scutoid frusta with a Y vertex 0, kinds 2 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hex face 0 (4 per cell): facets 16 vertices 13 Y 0 neighbours change False vol 1.242998  C1-side neighbours [8, 9, 11, 18, 23, 25] mould-side [8, 9, 11, 18, 23, 25]
+     angles at C1 edges: [109.906]
+     all dihedrals: 90.0 [1/2pi]; 109.905987 [not in basis]; 123.4021829 [not in basis]; 132.6470663 [not in basis]; 138.308347 [not in basis]; 163.5053176 [not in basis]
+  kind quad face 4 (24 per cell): facets 7 vertices 8 Y 0 neighbours change False vol 0.813083  C1-side neighbours [1, 19, 21, 26] mould-side [1, 19, 21, 26]
+     angles at C1 edges: [90.9992, 97.7612, 102.6214, 124.8941]
+     all dihedrals: 45.0 [1/4pi]; 56.59781715 [not in basis]; 60.0 [1/3pi]; 90.0 [1/2pi]; 90.99917043 [not in basis]; 97.76124391 [not in basis]; 102.6214165 [not in basis]; 110.8458265 [not in basis]; 113.6764669 [not in basis]; 124.8940991 [not in basis]; 196.4946824 [not in basis]
+SCUTOID FRUSTA: 28 pieces; keep their side count 28; change it 0; neighbour set changes (Y vertex) 0; convex 4/28
+RESULT sc 6/5 cen: valid=True  partition; scutoid frusta with a Y vertex 0; kinds 2; Y vertices 0; 157.7612 present False
+(10.8s)
+SIGNS: tests 47776, zero at the point 12159, nonzero certified over the box 35593, nonzero depth-free (constants) 24, nonzero NOT certified 0; sequence sha256 6a97183afffdd9e295c27e016465e77241578a8bede602e49ac8b2788189785e

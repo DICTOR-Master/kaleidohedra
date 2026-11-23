@@ -1,0 +1,20 @@
+=== amber  aequus-61  bcc  s0 = 18497471516248775871343/4241145702501669510077 = 4.361433  s = 6/5 s0 = 5.233719  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 14  (2.3s)
+outer pattern computed (3.9s); faces with an empty outer cell: []
+adjacency: inner pairs 42, outer pairs 42, shared 42, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 28: (inner, outer) vertex counts {(1, 1): 28}; Y vertices 0; persistent inner edges 42/42
+sampling cross-check: 3729 points (3307 in the resin), points not covered exactly once: 0, max winding rounding 1.53e-14
+volume sum - resin = 0 (exact 0); resin = 63.223637; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 16, scutoid frusta with a Y vertex 0, kinds 2 (T_h orbit members congruent: True); 157.7612 present: False
+  kind tri face 0 (4 per cell): facets 8 vertices 6 Y 0 neighbours change False vol 2.272518  C1-side neighbours [8, 9, 11] mould-side [8, 9, 11]
+     angles at C1 edges: [111.4892]
+     all dihedrals: 76.92984476 [not in basis]; 88.28837162 [not in basis]; 111.4892387 [not in basis]; 155.2770901 [not in basis]
+  kind hex face 4 (12 per cell): facets 21 vertices 19 Y 0 neighbours change False vol 4.511130  C1-side neighbours [1, 5, 6, 10, 12, 14] mould-side [1, 5, 6, 10, 12, 14]
+     angles at C1 edges: [89.4159, 93.2749, 122.7251, 126.0, 135.0]
+     all dihedrals: 65.67279096 [not in basis]; 70.46980461 [not in basis]; 76.12913793 [not in basis]; 77.89032261 [not in basis]; 89.41591879 [not in basis]; 90.0 [1/2pi]; 91.71162838 [not in basis]; 93.27485756 [not in basis]; 102.1096774 [not in basis]; 103.8708621 [not in basis]; 106.313953 [not in basis]; 109.4712206 [not in basis]; 109.5301954 [not in basis]; 114.327209 [not in basis]; 119.7145012 [not in basis]; 120.0 [2/3pi]; 122.7251424 [not in basis]; 125.2643897 [not in basis]; 126.0 [7/10pi]; 133.5434622 [not in basis]; 133.9715458 [not in basis]; 135.0 [3/4pi]; 135.0066189 [not in basis]; 148.0268399 [not in basis]; 148.0635364 [not in basis]; 160.2531224 [not in basis]; 167.9552746 [not in basis]; 168.4271085 [not in basis]; 191.5728915 [not in basis]; 192.0447254 [not in basis]; 199.7468776 [not in basis]; 204.7229099 [not in basis]; 211.9731601 [not in basis]; 226.4565378 [not in basis]
+SCUTOID FRUSTA: 16 pieces; keep their side count 16; change it 0; neighbour set changes (Y vertex) 0; convex 4/16
+RESULT bcc 6/5 cen: valid=True  partition; scutoid frusta with a Y vertex 0; kinds 2; Y vertices 0; 157.7612 present False
+(39.3s)
+SIGNS: tests 63827, zero at the point 17040, nonzero certified over the box 46091, nonzero depth-free (constants) 696, nonzero NOT certified 0; sequence sha256 516e3c1be953ece85e306c834a22585ad4060381c2c55d454c2182a72f5170c6

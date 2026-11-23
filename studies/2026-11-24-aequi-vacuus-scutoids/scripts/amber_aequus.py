@@ -216,6 +216,8 @@ def min_area_tri(poly, X):
     return best[0][1]
 
 def main():
+    if os.environ.get("AEQ_MODE", "stand") != "stand":
+        import certify; certify.install_logging()
     solid, lat, fac, seedmode = sys.argv[1], sys.argv[2], Fr(sys.argv[3]), sys.argv[4]
     tau = Fr(sys.argv[5]) if len(sys.argv) > 5 else Fr(1, 2)
     C = build(solid); V, faces, planes = C["V"], C["faces"], C["planes"]
@@ -297,7 +299,7 @@ def main():
     res = dict(solid=solid, s0=str(s0), s0_float=float(s0), n_faces=NF, contact_edges=cedges, contact_faces=cfaces, lattice=lat, factor=str(fac), s=float(s), seeds=seedmode, tau=str(tau), contact_vertices=contact)
     def finish(ok, why):
         res["valid"] = ok; res["why"] = why
-        json.dump(res, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), f"../data/cells/amber_{solid}_{lat}_{str(fac).replace('/', '-')}_{seedmode}.json"), "w"), indent=1, default=str)
+        json.dump(res, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), f"../data/cells/{os.environ.get('AEQ_MODE','stand').replace(':','')}/amber_{solid}_{lat}_{str(fac).replace('/', '-')}_{seedmode}.json"), "w"), indent=1, default=str)
         pr(f"RESULT {lat} {fac} {seedmode}: valid={ok}  {why}")
         pr(f"({time.time()-T0:.1f}s)")
     if empty: return finish(False, f"empty outer cells {empty}")
@@ -688,9 +690,9 @@ def main():
         else: kinds.append(dict(r, members=list(o)))
     orbit_ok = all(abs(recs[f]["vol"] - recs[o[0]]["vol"]) < 1e-9 and congruent(np.array(recs[f]["verts"]), np.array(recs[o[0]]["verts"])) for o in orbits for f in o[:3])
     nsc = sum(1 for r in recs if r["scutoid"])
-    pr(f"PARTITION (manifold, embedded, cancelling, exact volume).  pieces {NF}, scutoid pieces {nsc}, kinds {len(kinds)} (T_h orbit members congruent: {orbit_ok}); 157.7612 present: {lam_any}")
+    pr(f"PARTITION (manifold, embedded, cancelling, exact volume).  pieces {NF}, scutoid frusta with a Y vertex {nsc}, kinds {len(kinds)} (T_h orbit members congruent: {orbit_ok}); 157.7612 present: {lam_any}")
     for k in kinds:
-        pr(f"  kind {k['kind']} face {k['F']} ({len(k['members'])} per cell): facets {k['n_facets']} vertices {k['n_vertices']} Y {k['Y']} scutoid {k['scutoid']} "
+        pr(f"  kind {k['kind']} face {k['F']} ({len(k['members'])} per cell): facets {k['n_facets']} vertices {k['n_vertices']} Y {k['Y']} neighbours change {k['scutoid']} "
            f"vol {k['vol']:.6f}  C1-side neighbours {k['Nin']} mould-side {k['Nout']}")
         pr(f"     angles at C1 edges: {k['c1_edge_angles']}")
         pr(f"     all dihedrals: " + "; ".join(f"{d} [{b or 'not in basis'}]" for d, b in sorted(k['angle_basis'].items(), key=lambda x: float(x[0]))))
@@ -699,7 +701,9 @@ def main():
     res.update(n_change_sides=nchg, n_keep_sides=NF - nchg, n_convex=ncvx, geom=geom, solid_V=[[float(c) for c in v] for v in V], solid_faces=[f for f, k in faces], mould=[[[float(c) for c in p] for p in P] for mi, P in MF])
     res.update(n_scutoid_pieces=nsc, n_kinds=len(kinds), lambda_present=lam_any, orbit_members_congruent=orbit_ok,
                kinds=[{x: k[x] for x in k if x != "verts"} for k in kinds], pieces=[{x: r[x] for x in r if x not in ("verts", "angle_basis")} for r in recs])
-    finish(True, f"partition; scutoid pieces {nsc}; kinds {len(kinds)}; Y vertices {nY}; 157.7612 present {lam_any}")
+    finish(True, f"partition; scutoid frusta with a Y vertex {nsc}; kinds {len(kinds)}; Y vertices {nY}; 157.7612 present {lam_any}")
 
 if __name__ == "__main__":
     main()
+    if os.environ.get("AEQ_MODE", "stand") != "stand":
+        import certify; certify.report(pr)

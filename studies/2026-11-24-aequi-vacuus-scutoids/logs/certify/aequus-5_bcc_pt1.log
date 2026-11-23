@@ -1,0 +1,20 @@
+=== amber  aequus-5  bcc  s0 = 33316123594132838189717551175082521536058123164366423451119/14224835938090967354191272533750934247833600000000000000000 = 2.342110  s = 6/5 s0 = 2.810531  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 14  (2.6s)
+outer pattern computed (3.2s); faces with an empty outer cell: []
+adjacency: inner pairs 36, outer pairs 36, shared 36, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 24: (inner, outer) vertex counts {(1, 1): 24}; Y vertices 0; persistent inner edges 36/36
+sampling cross-check: 3729 points (1914 in the resin), points not covered exactly once: 0, max winding rounding 7.22e-15
+volume sum - resin = 0 (exact 0); resin = 5.605868; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 14, scutoid frusta with a Y vertex 0, kinds 2 (T_h orbit members congruent: True); 157.7612 present: False
+  kind quad face 0 (6 per cell): facets 10 vertices 12 Y 0 neighbours change False vol 0.533527  C1-side neighbours [6, 7, 12, 13] mould-side [6, 7, 12, 13]
+     angles at C1 edges: [112.8908]
+     all dihedrals: 98.70239105 [not in basis]; 109.4712206 [not in basis]; 112.8907776 [not in basis]; 121.8448327 [not in basis]; 125.2643897 [not in basis]
+  kind hex face 6 (8 per cell): facets 8 vertices 12 Y 0 neighbours change False vol 0.300588  C1-side neighbours [0, 3, 4, 7, 8, 12] mould-side [0, 3, 4, 7, 8, 12]
+     angles at C1 edges: [121.8448, 125.2644]
+     all dihedrals: 54.73561032 [not in basis]; 58.15516727 [not in basis]; 121.8448327 [not in basis]; 125.2643897 [not in basis]; 130.6488045 [not in basis]
+SCUTOID FRUSTA: 14 pieces; keep their side count 14; change it 0; neighbour set changes (Y vertex) 0; convex 14/14
+RESULT bcc 6/5 cen: valid=True  partition; scutoid frusta with a Y vertex 0; kinds 2; Y vertices 0; 157.7612 present False
+(10.9s)
+SIGNS: tests 48810, zero at the point 14441, nonzero certified over the box 0, nonzero depth-free (constants) 34369, nonzero NOT certified 0; sequence sha256 6900fcf121e487b19f1ccef489758907908c89b8d6e7191cb0263cd6bef1e434

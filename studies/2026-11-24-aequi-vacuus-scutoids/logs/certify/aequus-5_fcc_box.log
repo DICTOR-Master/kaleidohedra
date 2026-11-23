@@ -1,0 +1,20 @@
+=== amber  aequus-5  fcc  s0 = 18060706789777197675514/5140866009109368419989 = 3.513164  s = 6/5 s0 = 4.215797  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 12  (1.4s)
+outer pattern computed (1.8s); faces with an empty outer cell: []
+adjacency: inner pairs 36, outer pairs 36, shared 36, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 24: (inner, outer) vertex counts {(1, 1): 24}; Y vertices 0; persistent inner edges 36/36
+sampling cross-check: 1848 points (1314 in the resin), points not covered exactly once: 0, max winding rounding 2.36e-15
+volume sum - resin = 0 (exact 0); resin = 13.237335; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 14, scutoid frusta with a Y vertex 0, kinds 2 (T_h orbit members congruent: True); 157.7612 present: False
+  kind quad face 0 (6 per cell): facets 17 vertices 13 Y 0 neighbours change False vol 1.067896  C1-side neighbours [6, 7, 12, 13] mould-side [6, 7, 12, 13]
+     angles at C1 edges: [115.131]
+     all dihedrals: 100.9950374 [not in basis]; 102.4774017 [not in basis]; 115.131004 [not in basis]; 120.0 [2/3pi]; 177.6518186 [not in basis]
+  kind hex face 6 (8 per cell): facets 16 vertices 16 Y 0 neighbours change False vol 0.853745  C1-side neighbours [0, 3, 4, 7, 8, 12] mould-side [0, 3, 4, 7, 8, 12]
+     angles at C1 edges: [119.6046, 125.2644]
+     all dihedrals: 79.0049626 [not in basis]; 90.0 [1/2pi]; 119.6046063 [not in basis]; 120.0 [2/3pi]; 125.2643897 [not in basis]; 128.7612991 [not in basis]; 182.3481814 [not in basis]
+SCUTOID FRUSTA: 14 pieces; keep their side count 14; change it 0; neighbour set changes (Y vertex) 0; convex 6/14
+RESULT fcc 6/5 cen: valid=True  partition; scutoid frusta with a Y vertex 0; kinds 2; Y vertices 0; 157.7612 present False
+(7.3s)
+SIGNS: tests 44552, zero at the point 12035, nonzero certified over the box 32133, nonzero depth-free (constants) 384, nonzero NOT certified 0; sequence sha256 514bdbf19933a5b7f7dc7cddd6c787c711d7d447a80a6b347cdc2ad116019c37

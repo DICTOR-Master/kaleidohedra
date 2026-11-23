@@ -680,7 +680,7 @@ def main():
         else: kinds.append(dict(r, members=list(o)))
     orbit_ok = all(abs(recs[f]["vol"] - recs[o[0]]["vol"]) < 1e-9 and congruent(np.array(recs[f]["verts"]), np.array(recs[o[0]]["verts"])) for o in orbits for f in o[:3])
     nsc = sum(1 for r in recs if r["scutoid"])
-    pr(f"PARTITION (manifold, embedded, cancelling, exact volume).  pieces {NF}, scutoid pieces {nsc}, kinds {len(kinds)} (T_h orbit members congruent: {orbit_ok}); 157.7612 present: {lam_any}")
+    pr(f"PARTITION (manifold, embedded, cancelling, exact volume).  pieces {NF}, scutoid frusta with a Y vertex {nsc}, kinds {len(kinds)} (T_h orbit members congruent: {orbit_ok}); 157.7612 present: {lam_any}")
     for k in kinds:
         pr(f"  kind {k['kind']} face {k['F']} ({len(k['members'])} per cell): facets {k['n_facets']} vertices {k['n_vertices']} Y {k['Y']} scutoid {k['scutoid']} "
            f"vol {k['vol']:.6f}  C1-side neighbours {k['Nin']} mould-side {k['Nout']}")
@@ -688,7 +688,7 @@ def main():
         pr(f"     all dihedrals: " + "; ".join(f"{d} [{b or 'not in basis'}]" for d, b in sorted(k['angle_basis'].items(), key=lambda x: float(x[0]))))
     res.update(n_scutoid_pieces=nsc, n_kinds=len(kinds), lambda_present=lam_any, orbit_members_congruent=orbit_ok,
                kinds=[{x: k[x] for x in k if x != "verts"} for k in kinds], pieces=[{x: r[x] for x in r if x not in ("verts", "angle_basis")} for r in recs])
-    finish(True, f"partition; scutoid pieces {nsc}; kinds {len(kinds)}; Y vertices {nY}; 157.7612 present {lam_any}")
+    finish(True, f"partition; scutoid frusta with a Y vertex {nsc}; kinds {len(kinds)}; Y vertices {nY}; 157.7612 present {lam_any}")
 
 if __name__ == "__main__":
     main()

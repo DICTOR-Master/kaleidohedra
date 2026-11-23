@@ -1,0 +1,23 @@
+=== amber  aequus-1  sc  s0 = -37314194958424744769494482668197169171738688516392384915971/21543360503840702963233232026553102106624000000000000000000+37314194958424744769494482668197169171738688516392384915971/21543360503840702963233232026553102106624000000000000000000r5 = 2.140933  s = 6/5 s0 = 2.569119  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 6  (1.1s)
+outer pattern computed (5.3s); faces with an empty outer cell: []
+adjacency: inner pairs 90, outer pairs 90, shared 90, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 60: (inner, outer) vertex counts {(1, 1): 60}; Y vertices 0; persistent inner edges 90/90
+sampling cross-check: 6000 points (4398 in the resin), points not covered exactly once: 0, max winding rounding 1.31e-14
+volume sum - resin = 0 (exact 0); resin = 12.354753; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 32, scutoid frusta with a Y vertex 0, kinds 3 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hex face 0 (8 per cell): facets 16 vertices 16 Y 0 neighbours change False vol 0.641163  C1-side neighbours [14, 16, 19, 22, 24, 31] mould-side [14, 16, 19, 22, 24, 31]
+     angles at C1 edges: [109.9758, 110.9052]
+     all dihedrals: 85.16469431 [not in basis]; 90.0 [1/2pi]; 109.97582 [not in basis]; 110.9051574 [not in basis]; 114.936054 [not in basis]; 120.0 [2/3pi]; 124.1169296 [not in basis]; 124.2378394 [not in basis]; 179.3078713 [not in basis]; 179.6929785 [not in basis]
+  kind hex face 8 (12 per cell): facets 10 vertices 12 Y 0 neighbours change False vol 0.248142  C1-side neighbours [6, 7, 14, 20, 24, 26] mould-side [6, 7, 14, 20, 24, 26]
+     angles at C1 edges: [109.6866, 110.8716, 110.9052]
+     all dihedrals: 49.40823637 [not in basis]; 60.0 [1/3pi]; 81.12015248 [not in basis]; 90.0 [1/2pi]; 109.6866062 [not in basis]; 110.8716122 [not in basis]; 110.9051574 [not in basis]; 124.0550492 [not in basis]; 124.3025855 [not in basis]; 124.4492145 [not in basis]; 179.1131828 [not in basis]
+  kind pent face 20 (12 per cell): facets 14 vertices 12 Y 0 neighbours change False vol 0.353978  C1-side neighbours [6, 7, 8, 12, 18] mould-side [6, 7, 8, 12, 18]
+     angles at C1 edges: [106.5058, 107.4015, 107.6908]
+     all dihedrals: 65.06394604 [not in basis]; 90.0 [1/2pi]; 94.83530569 [not in basis]; 98.87984752 [not in basis]; 106.505756 [not in basis]; 107.4015481 [not in basis]; 107.690762 [not in basis]; 111.3948291 [not in basis]; 111.4338559 [not in basis]; 111.7071114 [not in basis]; 130.5917636 [not in basis]; 180.3070215 [not in basis]; 180.6921287 [not in basis]; 180.8868172 [not in basis]
+SCUTOID FRUSTA: 32 pieces; keep their side count 32; change it 0; neighbour set changes (Y vertex) 0; convex 20/32
+RESULT sc 6/5 cen: valid=True  partition; scutoid frusta with a Y vertex 0; kinds 3; Y vertices 0; 157.7612 present False
+(74.8s)
+SIGNS: tests 111491, zero at the point 26496, nonzero certified over the box 0, nonzero depth-free (constants) 84995, nonzero NOT certified 0; sequence sha256 859a7218e852d99506c53297c28032076e4e6a7362100e41ef15f379773e8de2

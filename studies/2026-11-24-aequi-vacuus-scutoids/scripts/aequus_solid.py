@@ -15,6 +15,26 @@ import classify as C
 mp.mp.dps = 70
 KIND = {3: "tri", 4: "quad", 5: "pent", 6: "hex", 7: "hept", 8: "oct", 9: "non", 10: "dec"}
 
+MODE = os.environ.get("AEQ_MODE", "stand")
+BOX_R = Fr(1, 10**18)
+_rand = {}
+def depth_value(k, exact_mp):
+    """stand: rational stand-in (denominator <= 10^15).  box: centre c (denominator <= 10^22) with the ball [c - r, c + r], r = 1e-18.
+    pt:SEED: the exact random point c + r*(2u - 1), u a 64-bit random rational (same for every plane of orbit k)."""
+    if MODE == "stand": return Q(Fr(str(mp.nstr(exact_mp, 40))).limit_denominator(10**15))
+    c = Fr(str(mp.nstr(exact_mp, 45))).limit_denominator(10**22)
+    assert abs(mp.mpf(c.numerator)/c.denominator - exact_mp) < mp.mpf(10)**-20
+    if MODE == "box":
+        import certify
+        from flint import arb, fmpq
+        return certify.HQ(c, 0, z=arb(fmpq(c.numerator, c.denominator)) + arb(0, arb(fmpq(1, 10**18))))
+    if MODE.startswith("pt:"):
+        import random
+        if k not in _rand:
+            rng = random.Random(f"{MODE}-{k}"); _rand[k] = Fr(2*rng.getrandbits(64) - 2**64 + 1, 2**64)
+        return Q(c + BOX_R*_rand[k])
+    raise SystemExit("AEQ_MODE")
+
 def build(name):
     n = int(name.split("-")[1])
     D = json.load(open(os.path.join(HERE, "../src/dice.json"))); e = D["dice"][n - 1]
@@ -32,8 +52,7 @@ def build(name):
         for i in D["groups"][e["g"]][oi]["dirs"]:
             u = [Q(c.a, c.b) for c in ED[i][0]]
             uu = dot(u, u); nrm = mp.sqrt(mp.mpf(uu.a.numerator)/uu.a.denominator + mp.mpf(uu.b.numerator)/uu.b.denominator*mp.sqrt(5))
-            Dk = Fr(str(mp.nstr(d60[dep[k]]*nrm, 40))).limit_denominator(10**15)
-            H.append((u, Q(Dk), D["groups"][e["g"]][oi]["lab"]))
+            H.append((u, depth_value(k, d60[dep[k]]*nrm), D["groups"][e["g"]][oi]["lab"]))
     P = polytope(H)
     V = P["verts"]; faces, planes = [], []
     import numpy as np, math

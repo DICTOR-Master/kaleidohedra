@@ -39,7 +39,7 @@ Method (exact):
   122 directions exactly (exact parallelism in Q(√5)); a face may go only to a face of the same depth. Same orbit: equal depth by
   construction. Different orbits: the 60-digit depths differ by at least 3.1e-5 wherever this was needed.
 - One die has two orbits at the same depth to 60 digits: Aequus CIRT-30, T 26 (its C6 and RT24/12a faces both at depth 1). Its
-  group was checked both ways (depths equal / unequal): T either way.
+  group was checked both ways (depths equal / unequal): T either way. The equality is now proved exact (next section).
 - Vacuus kind: heart = centrally symmetric; inherited heart = not centrally symmetric, yet some plate carries a face and its parallel
   opposite face; non-heart = no two faces parallel. Plates = one per line through the centre carrying face normals = N − (parallel pairs):
   heart N/2; non-heart N.
@@ -57,6 +57,21 @@ The five non-heart Aequi:
 | 237 | (not yet named) | Td | O8/4a + RT24+RT24′/24b | 28 |
 | 499 | (not yet named) | T | O8/4a + RT24/12a + RT24′/12a | 28 |
 
+## CIRT-30: C6 and RT24/12a at exactly the same depth (scripts/cirt30_exact.py; logs/cirt30_exact.log)
+
+**Theorem (exact).** The fair die Aequus CIRT-30, T 26 has its 6 C6 faces and its 12 RT24/12a faces at exactly the same distance from
+the centre. Its 12 I12 faces sit at x/√3 times that distance, where x is the real root near 1.758 of 16x⁴ − 40x³ − 100x² + 130x + 145.
+
+Certificate. (1) The candidate die (C6 and RT24/12a at depth 1, I12 at x/√3) has every vertex in K = Q(√5, x). Its 44 vertices are
+verified exactly: zero in K on their own planes, and strictly inside all other planes (arb enclosures). (2) For a face cone with
+corners v_k, cos Ω = (−1)ⁿ Re ∏(α_k + i√G_k)/M, with α_k, G_k and M in K (interior angles of the spherical polygon). (3) β = cos Ω − cos(2π/15)
+is a root of a polynomial P in Q[B], obtained exactly by resultants in PARI (eliminating the √G_k, cos(2π/15), x and √5). P = B^k·Q
+with Q(0) ≠ 0, so a nonzero β would have |β| ≥ |q₀|/(|q₀| + max|qᵢ|) (Cauchy). The arb enclosure of |β| lies far below that bound,
+so β = 0. Ω lies in (0, π), so Ω = 2π/15 = 4π/30. CIRT30_RESULTS. The I12 faces then also have 4π/30, since the 30 cones fill the
+sphere. (4) The fair die of an orbit set is unique up to scale (Alexandrov's uniqueness for given normals and curvatures; the search
+found exactly one), so the fair CIRT-30 is this die. The polynomial q came from an integer relation on the 60-digit depth. It serves
+only to name the candidate; the proof does not depend on how it was found.
+
 ## Study 2: amber cells (A), first set (scripts/aequus_solid.py, amber_aequus.py, run_cells.sh; data/cells; logs/cells)
 
 Amber cell (A): the die as core at every point of a cubic lattice (sc, bcc, fcc), mould = its Voronoi cell at 6/5 s0 (s0 = smallest
@@ -65,10 +80,27 @@ scale with the die inside), resin = mould minus die, divided by DICTO's combined
 unchanged except: the core is the die; orbits are taken under the frame rotation group T (every Aequus has it); each piece is also
 tested for convexity exactly; geometry is saved for the renders.
 
-The die in exact arithmetic: the fair depths are not algebraic, so each die is built from its face planes u·x ≤ D with u exact in
-Q(φ)³ and D the rational nearest d·|u| with denominator ≤ 10^15 (d = 60-digit fair depth). All vertices are exact in Q(√5). This
-stand-in keeps the frame symmetry exactly, its depths agree with the fair die's to better than 1e-14, and its face lattice is checked
-to be the fair die's (face count, corner count, side counts of the faces).
+### What is exact, and for which die
+
+The fair depths are not known in closed form in general (CIRT-30, above, is an exception), so each die is built from its face planes
+u·x ≤ D, with u exact in Q(φ)³ and D rational. Claims:
+
+- **Exact for the rational stand-in** (D within 1e-14 of d·|u|, d the 60-digit fair depth; data/cells/stand, logs/cells): the
+  stand-in's face lattice equals the fair die's (face count, corners, side counts). Every piece is a closed oriented embedded surface,
+  and wall triangles cancel in pairs. Piece volumes are exact and add to mould − die exactly (gap 0 in Q(√5)). Convexity of each piece
+  is decided exactly. Piece counts, side counts, kinds and Y vertices are exact for this polytope.
+- **Certified for every depth vector in the box B** of radius 1e-18 around a rational centre within 1e-20 of the 60-digit fair
+  depths (scripts/certify.py, run_certify.sh; logs/certify). The amber code runs once with every number carried two ways: exactly at the
+  centre, and as an arb ball enclosing its value over all of B. Every nonzero sign the code tests is certified to keep that sign over
+  the whole box (CERTIFY_COUNTS). Every sign that is zero at the centre was tested again, in exact arithmetic, at two random rational
+  points of B. Both gave the same sign sequence (equal sha256) and the same counts. So the code takes one path on all of B, and the
+  combinatorics (pieces, side counts, kinds, Y vertices, convexity) is the same everywhere in B. One part of this is randomised: that
+  the zero tests vanish on all of B, not only at the centre and the two random points, rests on a Schwartz–Zippel identity test
+  (64-bit random offsets). It is not a deterministic proof.
+- **Transfer to the real fair die** needs its depth vector to lie in B, that is, within 1e-20 of the 60-digit values. The search
+  studies confirmed the depths to 80 digits (residual 1e-100) but gave no interval proof of where the root lies. That step is the one
+  link not yet certified (LEAD 7).
+- Not claimed: the volumes of the real die's pieces (transcendental in general). Only their combinatorics carries over.
 
 Checks on every cell (all 15 pass): each piece is a closed oriented embedded surface; every wall triangle is used by exactly two pieces
 with opposite orientation; every piece has positive exact volume; **piece volumes add to mould − die exactly (gap 0 in Q(√5))**;
@@ -90,8 +122,10 @@ The Th die: DICTO's page writes it "RD12+I12′+RT24′" (60 faces, squares at t
 RD12, I12′ and RT24′ is no. 377, RD12 + D12 + I12′ + RT24′: 12 heptagons (RD12), **12 squares (D12, the dodecahedron's sites)**,
 12 + 24 hexagons. So the squares are the D12 faces; the label needs D12 added.
 
-Renders (pull-apart view; die in the app's face colours, its scutoid frusta moved outward along the ray through each piece's centre;
-light grey keeps its side count, dark grey changes it; bent walls show their crease edges): renders/ and the reading folder,
+Renders (scripts/render_cells.py: the house three.js renderer of study 2026-11-21-scutoid-stand-in, unchanged: solid faces, edge tubes
+depth-tested so no hidden edge shows through a face; composed in the house look). Pull-apart view: the die in the app's face colours,
+its scutoid frusta moved out along the ray through each piece's centre; pearl = keeps its side count, bronze = changes it (neutral
+labels); bent walls show their crease edges. In renders/ and the reading folder:
 RENDER-aequus-amber-Th-RD12-D12-I12p-RT24p-60-bcc.png, -DI-32-Ih1-bcc, -CO-14-Oh1-bcc, -Td-O8-4a-RT24-RT24p-28-bcc, -TRT-16-T3-bcc,
 -TRT-16-T3-sc (the one cell whose scutoid frusta change their side count).
 
@@ -111,4 +145,17 @@ RENDER-aequus-amber-Th-RD12-D12-I12p-RT24p-60-bcc.png, -DI-32-Ih1-bcc, -CO-14-Oh
 4. All 1232 at bcc 6/5 s0 (each run seconds to minutes): the full count of dice whose cells contain side-changing scutoid frusta.
 5. Cores (B) and (C) of DICTO's page: die faces grown inward to an icosahedral core, for the 4 Ih dice (parallel cores listed in the CSV).
 6. Name for no. 377 (the 60-face Th die DICTO picked out): DICTO's choice.
-7. Exact check of page item 1 (Vacuus of the dodecahedral permutahedron) is still open (classification item 3).
+7. Interval proof (Krawczyk) that each fair die's depth vector lies within 1e-20 of its 60-digit values: the last link from the certified box to the real die.
+8. CIRT-30 has algebraic depths: run the integer-relation search on all 1232 and certify each hit as here.
+9. Exact check of page item 1 (Vacuus of the dodecahedral permutahedron) is still open (classification item 3).
+
+## Resume (checkpoint 24 Nov, before the 10:00 JST power cut)
+
+State: study 1 complete; study 2 stand-in cells complete (data/cells/stand, logs/cells); renders final (renders/, house renderer);
+depth-box certification and the CIRT-30 exact proof were running (logs/certify, logs/cirt30_exact.log hold what finished; the box and
+random-point runs keep only their logs, their data files repeat the stand-in combinatorics).
+To resume, from scripts/ with a python that has numpy, scipy, mpmath, python-flint and cypari2:
+- certification: `PY=<python> bash run_certify.sh` (45 runs; FINAL ok line at the end), then fill CERTIFY_COUNTS above from logs/certify;
+- CIRT-30: `<python> cirt30_exact.py > ../logs/cirt30_exact.log` (C6 face done in minutes; the RT24/12a pentagon is the long step), then
+  fill CIRT30_RESULTS above;
+- renders: `<python> render_cells.py scenes`, `node shots.mjs ../renders/shots/cells.html ../renders/shots` (playwright), `<python> render_cells.py compose`.
