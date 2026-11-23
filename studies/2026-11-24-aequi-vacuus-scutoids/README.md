@@ -67,7 +67,7 @@ verified exactly: zero in K on their own planes, and strictly inside all other p
 corners v_k, cos Ω = (−1)ⁿ Re ∏(α_k + i√G_k)/M, with α_k, G_k and M in K (interior angles of the spherical polygon). (3) β = cos Ω − cos(2π/15)
 is a root of a polynomial P in Q[B], obtained exactly by resultants in PARI (eliminating the √G_k, cos(2π/15), x and √5). P = B^k·Q
 with Q(0) ≠ 0, so a nonzero β would have |β| ≥ |q₀|/(|q₀| + max|qᵢ|) (Cauchy). The arb enclosure of |β| lies far below that bound,
-so β = 0. Ω lies in (0, π), so Ω = 2π/15 = 4π/30. CIRT30_RESULTS. The I12 faces then also have 4π/30, since the 30 cones fill the
+so β = 0. Ω lies in (0, π), so Ω = 2π/15 = 4π/30. Results: C6 hexagon, P of degree 512, |β| < 4e-1186 against the bound 3.5e-181; RT24/12a pentagon, P of degree 2048, |β| < 3e-1193 against the bound 1.8e-729 (logs/cirt30_exact.log, FINAL ok). The I12 faces then also have 4π/30, since the 30 cones fill the
 sphere. (4) The fair die of an orbit set is unique up to scale (Alexandrov's uniqueness for given normals and curvatures; the search
 found exactly one), so the fair CIRT-30 is this die. The polynomial q came from an integer relation on the 60-digit depth. It serves
 only to name the candidate; the proof does not depend on how it was found.
@@ -152,10 +152,9 @@ RENDER-aequus-amber-Th-RD12-D12-I12p-RT24p-60-bcc.png, -DI-32-Ih1-bcc, -CO-14-Oh
 ## Resume (checkpoint 24 Nov, before the 10:00 JST power cut)
 
 State: study 1 complete; study 2 stand-in cells complete (data/cells/stand, logs/cells); renders final (renders/, house renderer);
-depth-box certification finished (FINAL ok); the CIRT-30 exact proof was running (logs/certify, logs/cirt30_exact.log hold what finished; the box and
+depth-box certification and the CIRT-30 exact proof both finished (FINAL ok) (logs/certify, logs/cirt30_exact.log hold what finished; the box and
 random-point runs keep only their logs, their data files repeat the stand-in combinatorics).
 To resume, from scripts/ with a python that has numpy, scipy, mpmath, python-flint and cypari2:
 - certification: done (FINAL ok); to repeat: `PY=<python> bash run_certify.sh`;
-- CIRT-30: `<python> cirt30_exact.py > ../logs/cirt30_exact.log` (C6 face done in minutes; the RT24/12a pentagon is the long step), then
-  fill CIRT30_RESULTS above;
+- CIRT-30: done (FINAL ok); to repeat: `<python> cirt30_exact.py > ../logs/cirt30_exact.log` (the pentagon is the long step);
 - renders: `<python> render_cells.py scenes`, `node shots.mjs ../renders/shots/cells.html ../renders/shots` (playwright), `<python> render_cells.py compose`.
