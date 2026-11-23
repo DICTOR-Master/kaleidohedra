@@ -48,6 +48,20 @@ set I of rays; if the complement J is nonempty, the cells of the I-corners only 
 point between the I-cells and J-cells (found by connectedness of R³∖{0}) they grow by an open set, so
 some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
 
+## RESUME NOTES (kept current; power outage 2026-11-24 10:00 JST)
+
+* Done and committed: M1-M8, M9a, M9b (see Milestones). Each milestone: `check.sh TAG thm...` on the
+  build host (full build + axioms + sorry count, FINAL ok line), then README line + commit.
+* In progress: M9c part 1 `Alexandrov/Margin.lean` (`exists_cover`, `exists_margin`: uniform margin
+  η and one ε in Alexandrov's condition). If it is not in the Milestones list it was not finished:
+  recompile it with `lake env lean Alexandrov/Margin.lean` and fix the first error.
+* Then M9c part 2 `Coercive.lean`: with a_j = −log r_j (0 < r ≤ 1, some r_j = 1), T = max a_j,
+  mx(x) = max_j (ψ_j if ε‖x‖ < ⟪n_j,x⟫ else −T): (a) log(supp r/supp 1) ≥ log ε + mx pointwise;
+  (b) layer cake (`lintegral_eq_lintegral_meas_lt`) on −mx over the ball and on Σκ_j a_j, compared
+  for each level t using `exists_margin`; result Phi r ≤ −4π log ε − η T, so Phi r < 0 once
+  min r_j < δ. Then M9d: maximize Phi on {δ ≤ r_j ≤ 1} (compact, M9b), extend by scaling (M9a),
+  apply M8. M6b (spherically convex ω ≠ S² lies in a closed hemisphere) after that.
+
 ## Milestones (each: clean build, no sorry, committed and mirrored)
 
 * M1 (2026-11-22) `Alexandrov/Basic.lean`: definitions; normal cone of the ray polytope at a corner =
