@@ -92,7 +92,7 @@ u·x ≤ D, with u exact in Q(φ)³ and D rational. Claims:
 - **Certified for every depth vector in the box B** of radius 1e-18 around a rational centre within 1e-20 of the 60-digit fair
   depths (scripts/certify.py, run_certify.sh; logs/certify). The amber code runs once with every number carried two ways: exactly at the
   centre, and as an arb ball enclosing its value over all of B. Every nonzero sign the code tests is certified to keep that sign over
-  the whole box (CERTIFY_COUNTS). Every sign that is zero at the centre was tested again, in exact arithmetic, at two random rational
+  the whole box: in all 15 cells, 0 nonzero signs uncertified, out of 36 507 to 291 800 sign tests per cell (logs/run_certify.log, FINAL ok); the box runs give the same counts as the stand-in in every cell. Every sign that is zero at the centre was tested again, in exact arithmetic, at two random rational
   points of B. Both gave the same sign sequence (equal sha256) and the same counts. So the code takes one path on all of B, and the
   combinatorics (pieces, side counts, kinds, Y vertices, convexity) is the same everywhere in B. One part of this is randomised: that
   the zero tests vanish on all of B, not only at the centre and the two random points, rests on a Schwartz–Zippel identity test
@@ -152,10 +152,10 @@ RENDER-aequus-amber-Th-RD12-D12-I12p-RT24p-60-bcc.png, -DI-32-Ih1-bcc, -CO-14-Oh
 ## Resume (checkpoint 24 Nov, before the 10:00 JST power cut)
 
 State: study 1 complete; study 2 stand-in cells complete (data/cells/stand, logs/cells); renders final (renders/, house renderer);
-depth-box certification and the CIRT-30 exact proof were running (logs/certify, logs/cirt30_exact.log hold what finished; the box and
+depth-box certification finished (FINAL ok); the CIRT-30 exact proof was running (logs/certify, logs/cirt30_exact.log hold what finished; the box and
 random-point runs keep only their logs, their data files repeat the stand-in combinatorics).
 To resume, from scripts/ with a python that has numpy, scipy, mpmath, python-flint and cypari2:
-- certification: `PY=<python> bash run_certify.sh` (45 runs; FINAL ok line at the end), then fill CERTIFY_COUNTS above from logs/certify;
+- certification: done (FINAL ok); to repeat: `PY=<python> bash run_certify.sh`;
 - CIRT-30: `<python> cirt30_exact.py > ../logs/cirt30_exact.log` (C6 face done in minutes; the RT24/12a pentagon is the long step), then
   fill CIRT30_RESULTS above;
 - renders: `<python> render_cells.py scenes`, `node shots.mjs ../renders/shots/cells.html ../renders/shots` (playwright), `<python> render_cells.py compose`.
