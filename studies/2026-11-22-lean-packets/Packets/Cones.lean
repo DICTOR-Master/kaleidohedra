@@ -17,9 +17,9 @@ No `sorry`.
 -/
 module
 
-public import DehnCanon.Dehn10Edges
-public import DehnCanon.Dehn7Dodeca
-public import DehnCanon.Dehn4Similar
+public import Packets.Canon.Dehn10Edges
+public import Packets.Canon.Dehn7Dodeca
+public import Packets.Canon.Dehn4Similar
 
 @[expose] public section
 

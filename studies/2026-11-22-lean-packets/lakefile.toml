@@ -1,6 +1,6 @@
-name = "Packets"
+name = "DehnPackets"
 version = "0.1.0"
-defaultTargets = ["Packets"]
+defaultTargets = ["Packets", "Challenge", "Solution"]
 
 [[require]]
 name = "mathlib"
@@ -9,9 +9,12 @@ rev = "v4.35.0-rc2"
 
 [[lean_lib]]
 name = "Packets"
-globs = ["Packets.*"]
+globs = ["Packets.+"]
 
-[[require]]
-name = "DehnCanon"
-git = "https://github.com/DICTOR-Master/dehn-canon-lean"
-rev = "9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57"
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]

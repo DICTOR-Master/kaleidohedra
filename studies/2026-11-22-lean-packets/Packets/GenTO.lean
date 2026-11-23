@@ -20,6 +20,7 @@ open DehnCanon.Library
 set_option maxRecDepth 20000
 set_option linter.unusedTactic false
 set_option linter.unreachableTactic false
+set_option linter.unnecessarySeqFocus false
 
 /-- Outward face normals. -/
 noncomputable def toN : Fin 14 → R3 :=
@@ -50,7 +51,8 @@ def toNc : Fin 14 → V3 :=
     ![(-1, 0), (1, 0), (-1, 0)],
     ![(-1, 0), (-1, 0), (1, 0)],
     ![(-1, 0), (-1, 0), (-1, 0)]]
-def toBc : Fin 14 → Zd := ![(2, 0), (2, 0), (2, 0), (2, 0), (2, 0), (2, 0), (3, 0), (3, 0), (3, 0), (3, 0), (3, 0), (3, 0), (3, 0), (3, 0)]
+def toBc : Fin 14 → Zd :=
+  ![(2, 0), (2, 0), (2, 0), (2, 0), (2, 0), (2, 0), (3, 0), (3, 0), (3, 0), (3, 0), (3, 0), (3, 0), (3, 0), (3, 0)]
 def toPc : Fin 24 → V3 :=
   ![![(0, 0), (1, 0), (2, 0)],
     ![(0, 0), (1, 0), (-2, 0)],
@@ -78,10 +80,14 @@ def toPc : Fin 24 → V3 :=
     ![(-2, 0), (-1, 0), (0, 0)]]
 
 /-- The 36 edges: the two faces of each edge and its two corners. -/
-def toFi : Fin 36 → Fin 14 := ![0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8, 9, 10, 10, 11, 12]
-def toFj : Fin 36 → Fin 14 := ![6, 7, 8, 9, 10, 11, 12, 13, 6, 7, 10, 11, 8, 9, 12, 13, 6, 8, 10, 12, 7, 9, 11, 13, 7, 8, 10, 9, 11, 9, 12, 13, 11, 12, 13, 13]
-def toVk : Fin 36 → Fin 24 := ![4, 5, 4, 5, 6, 7, 6, 7, 8, 8, 10, 10, 9, 9, 11, 11, 0, 2, 0, 2, 1, 3, 1, 3, 8, 4, 0, 5, 1, 9, 2, 3, 10, 6, 7, 11]
-def toVl : Fin 36 → Fin 24 := ![20, 20, 21, 21, 22, 22, 23, 23, 12, 13, 12, 13, 14, 15, 14, 15, 16, 16, 18, 18, 17, 17, 19, 19, 20, 16, 12, 17, 13, 21, 14, 15, 22, 18, 19, 23]
+def toFi : Fin 36 → Fin 14 :=
+  ![0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8, 9, 10, 10, 11, 12]
+def toFj : Fin 36 → Fin 14 :=
+  ![6, 7, 8, 9, 10, 11, 12, 13, 6, 7, 10, 11, 8, 9, 12, 13, 6, 8, 10, 12, 7, 9, 11, 13, 7, 8, 10, 9, 11, 9, 12, 13, 11, 12, 13, 13]
+def toVk : Fin 36 → Fin 24 :=
+  ![4, 5, 4, 5, 6, 7, 6, 7, 8, 8, 10, 10, 9, 9, 11, 11, 0, 2, 0, 2, 1, 3, 1, 3, 8, 4, 0, 5, 1, 9, 2, 3, 10, 6, 7, 11]
+def toVl : Fin 36 → Fin 24 :=
+  ![20, 20, 21, 21, 22, 22, 23, 23, 12, 13, 12, 13, 14, 15, 14, 15, 16, 16, 18, 18, 17, 17, 19, 19, 20, 16, 12, 17, 13, 21, 14, 15, 22, 18, 19, 23]
 
 /-- Three faces through each corner. -/
 def toT : Fin 24 → Fin 14 × Fin 14 × Fin 14 :=
@@ -114,13 +120,154 @@ def toBd : Fin 6 → BCert 14 := ![⟨0, 2, 4, (1, 0), (0, 0), (0, 0), (1, 0)⟩
 
 /-- An interior point (times 1). -/
 def toZc : V3 := ![(0, 0), (0, 0), (0, 0)]
+lemma toN_eq_0 : toN 0 = toSol.n 0 := by
+  rw [Solid.n, show toSol.N 0 = ![(1, 0), (0, 0), (0, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_1 : toN 1 = toSol.n 1 := by
+  rw [Solid.n, show toSol.N 1 = ![(-1, 0), (0, 0), (0, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_2 : toN 2 = toSol.n 2 := by
+  rw [Solid.n, show toSol.N 2 = ![(0, 0), (1, 0), (0, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_3 : toN 3 = toSol.n 3 := by
+  rw [Solid.n, show toSol.N 3 = ![(0, 0), (-1, 0), (0, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_4 : toN 4 = toSol.n 4 := by
+  rw [Solid.n, show toSol.N 4 = ![(0, 0), (0, 0), (1, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_5 : toN 5 = toSol.n 5 := by
+  rw [Solid.n, show toSol.N 5 = ![(0, 0), (0, 0), (-1, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_6 : toN 6 = toSol.n 6 := by
+  rw [Solid.n, show toSol.N 6 = ![(1, 0), (1, 0), (1, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_7 : toN 7 = toSol.n 7 := by
+  rw [Solid.n, show toSol.N 7 = ![(1, 0), (1, 0), (-1, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_8 : toN 8 = toSol.n 8 := by
+  rw [Solid.n, show toSol.N 8 = ![(1, 0), (-1, 0), (1, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_9 : toN 9 = toSol.n 9 := by
+  rw [Solid.n, show toSol.N 9 = ![(1, 0), (-1, 0), (-1, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_10 : toN 10 = toSol.n 10 := by
+  rw [Solid.n, show toSol.N 10 = ![(-1, 0), (1, 0), (1, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_11 : toN 11 = toSol.n 11 := by
+  rw [Solid.n, show toSol.N 11 = ![(-1, 0), (1, 0), (-1, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_12 : toN 12 = toSol.n 12 := by
+  rw [Solid.n, show toSol.N 12 = ![(-1, 0), (-1, 0), (1, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
+lemma toN_eq_13 : toN 13 = toSol.n 13 := by
+  rw [Solid.n, show toSol.N 13 = ![(-1, 0), (-1, 0), (-1, 0)] by decide +kernel]
+  ext t; fin_cases t <;> simp [toN, evv, ev] <;> ring
+
 
 lemma toN_eq : toN = toSol.n := by
-  funext m; fin_cases m <;> ext t <;> fin_cases t <;>
-    simp [toN, toSol, toNc, Solid.n, evv, ev] <;> ring
+  funext m; fin_cases m
+  · exact toN_eq_0
+  · exact toN_eq_1
+  · exact toN_eq_2
+  · exact toN_eq_3
+  · exact toN_eq_4
+  · exact toN_eq_5
+  · exact toN_eq_6
+  · exact toN_eq_7
+  · exact toN_eq_8
+  · exact toN_eq_9
+  · exact toN_eq_10
+  · exact toN_eq_11
+  · exact toN_eq_12
+  · exact toN_eq_13
+
+
+lemma toB_eq_0 : toB 0 = toSol.b 0 := by
+  rw [Solid.b, show toSol.B 0 = (2, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_1 : toB 1 = toSol.b 1 := by
+  rw [Solid.b, show toSol.B 1 = (2, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_2 : toB 2 = toSol.b 2 := by
+  rw [Solid.b, show toSol.B 2 = (2, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_3 : toB 3 = toSol.b 3 := by
+  rw [Solid.b, show toSol.B 3 = (2, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_4 : toB 4 = toSol.b 4 := by
+  rw [Solid.b, show toSol.B 4 = (2, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_5 : toB 5 = toSol.b 5 := by
+  rw [Solid.b, show toSol.B 5 = (2, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_6 : toB 6 = toSol.b 6 := by
+  rw [Solid.b, show toSol.B 6 = (3, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_7 : toB 7 = toSol.b 7 := by
+  rw [Solid.b, show toSol.B 7 = (3, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_8 : toB 8 = toSol.b 8 := by
+  rw [Solid.b, show toSol.B 8 = (3, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_9 : toB 9 = toSol.b 9 := by
+  rw [Solid.b, show toSol.B 9 = (3, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_10 : toB 10 = toSol.b 10 := by
+  rw [Solid.b, show toSol.B 10 = (3, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_11 : toB 11 = toSol.b 11 := by
+  rw [Solid.b, show toSol.B 11 = (3, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_12 : toB 12 = toSol.b 12 := by
+  rw [Solid.b, show toSol.B 12 = (3, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
+lemma toB_eq_13 : toB 13 = toSol.b 13 := by
+  rw [Solid.b, show toSol.B 13 = (3, 0) by decide +kernel]
+  simp [toB, ev] <;> ring
+
 
 lemma toB_eq : toB = toSol.b := by
-  funext m; fin_cases m <;> simp [toB, toSol, toBc, Solid.b, ev] <;> ring
+  funext m; fin_cases m
+  · exact toB_eq_0
+  · exact toB_eq_1
+  · exact toB_eq_2
+  · exact toB_eq_3
+  · exact toB_eq_4
+  · exact toB_eq_5
+  · exact toB_eq_6
+  · exact toB_eq_7
+  · exact toB_eq_8
+  · exact toB_eq_9
+  · exact toB_eq_10
+  · exact toB_eq_11
+  · exact toB_eq_12
+  · exact toB_eq_13
 
 theorem to_bounded : Bornology.IsBounded (sol toN toB) := by
   rw [toN_eq, toB_eq]; exact toSol.bounded_of (by norm_num) toBd (by decide +kernel)
@@ -137,7 +284,8 @@ theorem to_isEdgeData : IsEdgeData toN toB toP toFi toFj toVk toVl := by
     (by decide +kernel) toCt (by decide +kernel)
 
 /-- The kinds of edges, by the Gram values (⟪n i, n j⟫, ⟪n i, n i⟫, ⟪n j, n j⟫) of their two faces. -/
-def toKd : Fin 36 → Fin 2 := ![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+def toKd : Fin 36 → Fin 2 :=
+  ![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 noncomputable def toGg : Fin 2 → ℝ := ![1, 1]
 noncomputable def toGX : Fin 2 → ℝ := ![1, 3]
 noncomputable def toGY : Fin 2 → ℝ := ![3, 3]

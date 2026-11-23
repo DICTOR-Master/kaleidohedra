@@ -5,6 +5,9 @@ Space" (DICTO DOI: 10.5281/zenodo.24411660). Project on the compute host, `~/lea
 mirrors its sources (no `.lake`). Toolchain and Mathlib pin as the Dehn Canon (`v4.35.0-rc2`).
 
 ## Status box
+- 24 Nov: sources replaced by the final Palomar entry (packets-fit assembly): Packets/ with the Dehn Canon vendored
+  unchanged from 9ea20f6 under Packets/Canon/ (imports renamed), Exact.lean, GenTID.lean, SolidTID.lean,
+  Challenge.lean, Solution.lean, entry lakefile (Mathlib only); gen/ scripts from the entry. Packets.lean removed.
 - Study, not published; no public repository (needs DICTO's approval).
 - Built clean from scratch on the compute host: `lake build`, no `sorry`, axioms only propext, Classical.choice,
   Quot.sound (logs/build.log).

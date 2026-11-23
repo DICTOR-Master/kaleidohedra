@@ -3,18 +3,6 @@
  "packagesDir": ".lake/packages",
  "packages": [
   {
-   "url": "https://github.com/DICTOR-Master/dehn-canon-lean",
-   "type": "git",
-   "subDir": null,
-   "scope": "",
-   "rev": "9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57",
-   "name": "DehnCanon",
-   "manifestFile": "lake-manifest.json",
-   "inputRev": "9ea20f6dfd64fc3f10f64b1fb59a754a77e5cf57",
-   "inherited": false,
-   "configFile": "lakefile.toml"
-  },
-  {
    "url": "https://github.com/leanprover-community/mathlib4.git",
    "type": "git",
    "subDir": null,
@@ -123,7 +111,7 @@
    "configFile": "lakefile.toml"
   }
  ],
- "name": "Packets",
+ "name": "DehnPackets",
  "lakeDir": ".lake",
  "fixedToolchain": false
 }

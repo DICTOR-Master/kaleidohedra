@@ -12,7 +12,7 @@ No `sorry`.
 -/
 module
 
-public import DehnCanon.Dehn7Dodeca
+public import Packets.Canon.Dehn7Dodeca
 
 @[expose] public section
 
