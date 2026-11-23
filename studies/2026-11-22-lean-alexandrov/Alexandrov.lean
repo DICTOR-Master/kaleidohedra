@@ -5,3 +5,4 @@ import Alexandrov.Total
 import Alexandrov.Continuity
 import Alexandrov.Monotone
 import Alexandrov.Necessity
+import Alexandrov.Variational

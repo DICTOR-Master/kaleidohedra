@@ -85,14 +85,21 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   Still to add for the textbook wording: "spherically convex ω ≠ S² lies in a closed hemisphere"
   (a separation lemma).
 
+* M8 (2026-11-24) `Alexandrov/Variational.lean`: `curvature_eq_of_maximizer`. With
+  `supp n r x = max_j r_j⟪n_j,x⟫` (support function) and
+  `gap n κ r r' = Σ κ_j log(r'_j/r_j) − 3∫_{ball} log(supp r' / supp r)` (the change of Oliker's
+  functional), if Σκ_j = 4π and gap(r, r') ≤ 0 for every r' > 0, then the curvature at every corner of
+  the polytope of r is κ_j. (No sign hypothesis on κ is needed.) Proof: push one corner out by s > 1;
+  the integrand lies in [0, log s] and vanishes off its new cell, so κ_j ≤ κ_j(r'_s); s → 1 by M5;
+  totals equal by M4. Full build ok (`logs/build-M8.log`, FINAL ok); 0 sorry; standard axioms; 1051 lines.
+
 ## Next steps: existence (small pieces, variational route of Oliker 2007)
 
-* M8 (variational characterization): for prescribed κ_j ≥ 0 with Σκ_j = 4π, set
-  D(r, r') = Σ κ_j log(r'_j/r_j) − 3 ∫_{ball} log(h_{r'}(x)/h_r(x)) dx, with h_r(x) = max_j r_j⟪n_j,x⟫
-  (the integrand is bounded, so no integrability issue). If D(r, r') ≤ 0 for all r' > 0 then
-  κ_j(r) = κ_j for all j. Proof: raise r_j by a factor s > 1; the integrand lies in [0, log s] and
-  vanishes off cell_j(r'), so κ_j ≤ κ_j(r'); let s → 1 (M5); then the totals (M4) force equality.
-* M9 (existence of a maximizer): scale invariance (normalize max r_j = 1) and coercivity of Φ from
-  Alexandrov's condition (as min r_j → 0, Φ → −∞; the several-scales case by induction on the set of
-  rays that collapse). This is the main remaining work.
+* M8 done (above).
+* M6b: spherically convex ω ≠ S² lies in a closed hemisphere (separation), giving the textbook wording.
+* M9 (existence of a maximizer), in pieces: M9a gap is a cocycle (gap(r,r'') = gap(r,r') + gap(r',r''))
+  and scale invariant, so Φ(r) := gap(r₀, r) is well defined on the slice max r_j = 1; M9b Φ continuous on
+  the positive slice; M9c coercivity from Alexandrov's condition (Φ → −∞ as min r_j → 0; several scales
+  by induction on the set of collapsing rays); M9d compactness ⇒ a maximizer exists, interior by M9c.
+  M9c is the main remaining work.
 * M10: assemble: Alexandrov's condition + Σκ = 4π ⇒ existence; corollary for the dice (κ_j = 4π/N).
