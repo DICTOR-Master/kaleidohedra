@@ -265,11 +265,27 @@ class Die:
                     enclosure=[(s.xt[i] + K[i, 0]).str(40, radius=True) for i in range(n)] if ok else None,
                     smin_ratio=None)
 
+def split_by_frame(rec):
+    """when a die's full group has maps outside the frame maps (a turned copy of a frame group), certify the larger
+    system with one depth per orbit of the frame maps that keep the labelled orbits (all equal within a label)"""
+    idx = rec['idx']; sizes = rec['sizes']; lab = np.repeat(np.arange(len(sizes)), sizes); P = DIRS[idx]; G = []
+    for g in list(OH) + list(IH):
+        img = P @ g.T; dd = np.linalg.norm(img[:, None, :] - P[None, :, :], axis=2); j = dd.argmin(1)
+        if dd.min(1).max() < 1e-9 and all(lab[j] == lab) and len(set(j)) == len(j): G.append(j)
+    seen = set(); orbs = []
+    for f in range(len(idx)):
+        if f in seen: continue
+        O = sorted({int(p[f]) for p in G}); seen |= set(O); orbs.append(O)
+    return dict(rec, idx=[idx[f] for O in orbs for f in O], sizes=[len(O) for O in orbs],
+                depths=[rec['depths'][lab[O[0]]] for O in orbs], split_from=len(sizes))
+
 def work(rec):
+    if not symmetry_check(rec['idx'], rec['sizes'])[0]: rec = split_by_frame(rec)
     t0 = time.time(); out = dict(study=rec['study'], sid=rec['sid'], file=rec['file'], label=rec['label'], group=rec['group'], m=rec['m'], N=rec['N'])
     try:
         s = Die(rec)
         out['corners_float'] = len(s.inc); out['corners_recorded'] = rec['corners']
+        if rec.get('split_from'): out['orbits_split_by_frame_maps'] = [rec['split_from'], len(rec['sizes'])]
         sym_ok, gorder = symmetry_check(rec['idx'], rec['sizes']); out['symmetry_ok'] = bool(sym_ok); out['frame_group_order'] = gorder
         s.setup()
         out['graph_ok'] = s.graph_ok; out['simple'] = not s.degenerate
