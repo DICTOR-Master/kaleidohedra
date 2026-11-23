@@ -1,0 +1,58 @@
+✔ [8932/8973] Built Packets.Angles (2.8s)
+✔ [8934/8973] Built Packets.Rings (3.0s)
+✔ [8936/8973] Built Packets.Tiling (3.2s)
+✔ [8960/8973] Built Packets.Exact (4.8s)
+✔ [8961/8973] Built Packets.Cones (5.5s)
+✔ [8962/8973] Built PlatonicFill.GenTE (5.7s)
+✔ [8963/8973] Built PlatonicFill.GenCU (6.3s)
+✔ [8964/8973] Built PlatonicFill.GenOC (7.1s)
+✔ [8965/8973] Built Packets.Lemma2 (6.7s)
+⚠ [8966/8973] Built Packets.GenDH (12s)
+warning: Packets/GenDH.lean:145:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [8967/8973] Built Packets.Pieces (5.2s)
+✔ [8968/8973] Built Packets.Values (4.6s)
+⚠ [8969/8973] Built Packets.GenIH (21s)
+warning: Packets/GenIH.lean:155:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [8971/8973] Built PlatonicFill.Solids (4.2s)
+✔ [8972/8973] Built PlatonicFill.Fill (3.3s)
+Build completed successfully (8973 jobs).
+	Command being timed: "lake build"
+	User time (seconds): 702.15
+	System time (seconds): 23.89
+	Percent of CPU this job got: 279%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:19.80
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3887428
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3646278
+	Voluntary context switches: 341656
+	Involuntary context switches: 156040
+	Swaps: 0
+	File system inputs: 80
+	File system outputs: 559128
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+'PlatonicFill.aristotle_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlatonicFill.no_tetra' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlatonicFill.no_octa' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlatonicFill.no_dodeca' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlatonicFill.no_icosa' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlatonicFill.octa_alone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlatonicFill.dodeca_alone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlatonicFill.icosa_alone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlatonicFill.platonic_mix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlatonicFill.te_edgeAngle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlatonicFill.cu_edgeAngle' depends on axioms: [propext, Classical.choice, Quot.sound]
+FINAL ok
+[exit 0]
