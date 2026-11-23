@@ -48,7 +48,7 @@ On a desktop browser every page renders; nothing fails. The slow pages are exact
 
 `light-print.mjs` (this folder) is the same `page.pdf` call as `papers/print.mjs`, preceded by one step in the page: the page is laid out at its printed width (180 mm column = 680 CSS px), and every figure whose resolution there exceeds 450 ppi is redrawn on a canvas at 300 ppi of its printed size (high-quality smoothing, PNG kept lossless; JPEG sources would stay JPEG at quality 0.92). Milder resampling is skipped on purpose: smoothing makes flat-colour renders compress worse, and a 0.9 threshold left #103 at 7.37 MB. Fonts are already subset; vector figures need no rasterising (there are none heavy).
 
-**#113 before and after** (test file in the reading folder: TEST-light-113.pdf, built from the released v2 source, paper.html unchanged since commit 994b5bc4):
+**#113 before and after** (test build with `light-print.mjs` from the released v2 source, paper.html unchanged since commit 994b5bc4):
 
 | | Original v2 | Light |
 |---|---|---|
@@ -71,11 +71,31 @@ A 300 dpi crop of p13 (the 63-piece icosahedron figure) shows no visible differe
 | #115 | 3.60 MB | 1.69 MB | 2.70 Mpx | 133 ms |
 | #103 | 7.54 MB | 5.77 MB | 4.30 Mpx | 141 ms |
 
-#103 stays larger because it has some twenty mid-size figures at 250 to 380 ppi; a target of about 3 MB there would need 200 ppi for those (a choice for DICTO).
+#103 stays larger because it has some twenty mid-size figures at 250 to 380 ppi; 200 ppi for those gives 4.17 MB (section 4).
 
 **Proposed target** for every paper: under 4 MB, no figure above 4 Mpx (inside the iPad canvas limit with room), every page under 0.3 s in the timing script. Proposed change: add the resampling step to `papers/print.mjs` as the default for final prints (an env switch for the full-resolution print), then run `papers/guard_regress.sh` as its header requires; add a guard that warns when a printed PDF exceeds 4 MB or carries an image above 4 Mpx.
 
 **Records that would need a new version** (each only after DICTO's read ok of the new PDF): Zenodo #113 (concept 24383552), #116 (24393967), #115 (24389006), #103 (24052633). The Palomar records need no change: all four cite the concept DOI ("all versions"), which resolves to the newest Zenodo version.
+
+## 4. Implemented (24 Nov 2026)
+
+- `papers/print.mjs`: the light print is now the DEFAULT. Each figure's printed width is measured on a second page laid out at the printed column width (print media); figures above 450 ppi are redrawn at 300 ppi (lossless PNG; JPEG at quality 0.92) and swapped in, an unsized figure keeping its old width as a `width` attribute so the layout does not move. `FULL_RES=1` prints figures as they are.
+- SIZE GUARD in `print.mjs` after every print: warning above 4 MB or for a figure above 4 Mpx (pdfimages); a figure above 16.7 Mpx (iPad and iPhone canvas cap) is an error: the PDF is removed, exit 11. A first version that swapped figures through `srcset` left Chromium printing the originals; the guard caught it (#113 p9 6072 × 4236), and the swap now goes through `src`.
+- `guard_regress.sh` with the new `print.mjs`: all eight translated books (Quanta and Dictonary in ja, zh, fa, ar) "written".
+- #113 end to end through its `build.sh`: figures, number audit (AUDIT OK), edgecheck, FIGCHECK OK; its last step stops as it should ("DRAFT without the red status box": the released source has no status box), so the final print was run by hand, `node print.mjs 2026-11-19-dehn-canon LIGHT-113.pdf "The Dehn Canon"`.
+
+**Light PDFs, prepared, not published** (reading folder, `LIGHT-113.pdf` … `LIGHT-103.pdf`, each from its released source, same footer as released):
+
+| PDF | Released | Light | Pages | Text against the released PDF |
+|---|---|---|---|---|
+| #113 v2 | 8.06 MB | 2.77 MB | 23 | identical |
+| #116 v4 | 6.32 MB | 2.97 MB | 18 | identical apart from blank lines (pdftotext) |
+| #115 v2 | 3.60 MB | 1.69 MB | 14 | identical |
+| #103 v8 | 7.54 MB | 5.77 MB | 44 | same words; reference 12's kanji now set in Noto Sans CJK JP instead of WenQuanYi Zen Hei (the print host's font fallback, not the light print), so pdftotext orders them differently; the page looks the same |
+
+#103 stays above 4 MB (warning only: one figure of 4.3 Mpx, p5); the 200 ppi option (`LIGHT_DPI=200`, tested) brings it to 4.17 MB, still just above the 4 MB mark; DICTO's choice. The released PDFs from 20–22 Nov were printed by Chromium m153, the light ones by m156.
+
+New Zenodo versions of #113, #116, #115, #103 wait for DICTO's read ok; the Palomar records need no change.
 
 ## Open points
 

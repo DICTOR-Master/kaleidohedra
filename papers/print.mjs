@@ -2,6 +2,10 @@
 //   node papers/print.mjs <folder> <pdf name> "<short title>" <concept DOI> <version>
 // PAGE_W/PAGE_H (e.g. 8.27in / 11.69in, the Amazon KDP A4 trim) override the A4 page size.
 // After any change here: run papers/guard_regress.sh on compute-host (every translated book must still print).
+// LIGHT PRINT (default since 24 Nov 2026, study 2026-11-24-palomar-pdf-display: Zenodo's pdf.js preview loads the whole file and
+// 6000-px figures failed to display): every figure above 450 ppi at its printed size is resampled to 300 ppi, lossless (PNG stays PNG;
+// JPEG stays JPEG at q 0.92); the layout is unchanged (an unsized figure keeps its old width as a width attribute). FULL_RES=1 prints figures as they are; LIGHT_DPI=200 resamples to 200 ppi (above 300 ppi).
+// SIZE GUARD: warns above 4 MB or for a figure above 4 Mpx; a figure above 16.7 Mpx (the iPad/iPhone canvas cap, 4096 x 4096) stops the print.
 import { chromium } from 'playwright';
 import path from 'node:path';
 const here = path.dirname(new URL(import.meta.url).pathname);
@@ -42,12 +46,56 @@ import fs from 'node:fs';
     const bad = [...new Set(body.match(BADJA) || [])];
     if ((latin.length || bad.length) && !process.env.ALLOW_BANNED) { console.error(`GUARD (${lang} text): leftover English ` + '' + latin.slice(0, 30).join(', ') + (bad.length ? '; bad variants ' + bad.join(', ') : '')); process.exit(7); } }
   if (hits.length && !process.env.ALLOW_BANNED) { console.error('BANNED PHRASE — not printed:\n  ' + hits.join('\n  ')); process.exit(2); } }
-const b = await chromium.launch();
+const b = await chromium.launch({ args: ['--allow-file-access-from-files'] });   // file:// figures may be read back from a canvas (light print)
 const page = await b.newPage();
 await page.goto('file://' + path.join(here, dir, 'paper.html'), { waitUntil: 'load' });
+if (!process.env.FULL_RES) {
+  // measure each figure's printed width on a second page laid out at the printed column width (print media), then resample on the real page
+  const mm = v => { const m = String(v).match(/^([\d.]+)\s*(mm|in)$/); return m ? (m[2] === 'in' ? m[1] * 25.4 : +m[1]) : NaN; };
+  const colMM = (process.env.PAGE_W ? mm(process.env.PAGE_W) : 210) - 30;   // left + right margins 15 mm
+  const mp = await b.newPage({ viewport: { width: Math.round(colMM * 96 / 25.4), height: 1000 } });
+  await mp.emulateMedia({ media: 'print' });
+  await mp.goto('file://' + path.join(here, dir, 'paper.html'), { waitUntil: 'load' });
+  const printedW = await mp.evaluate(() => [...document.images].map(i => Math.max(i.getBoundingClientRect().width, 0)));
+  await mp.close();
+  const done = await page.evaluate(async ([printedW, DPI]) => {
+    const out = [];
+    const imgs = [...document.images];
+    for (let k = 0; k < imgs.length; k++) {
+      const img = imgs[k]; await img.decode().catch(() => {});
+      const nw = img.naturalWidth, nh = img.naturalHeight, w = printedW[k] || img.getBoundingClientRect().width;
+      if (!w || !nw) continue;
+      const tw = Math.ceil(w * DPI / 96);
+      if (tw >= nw * 0.66) continue;   // at or below 1.5 x DPI (450 ppi): kept (mild smoothing makes flat-colour renders compress worse)
+      const th = Math.max(1, Math.round(tw * nh / nw));
+      const c = document.createElement('canvas'); c.width = tw; c.height = th;
+      const g = c.getContext('2d'); g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
+      g.drawImage(img, 0, 0, tw, th);
+      const jpeg = /\.jpe?g($|\?)/i.test(img.currentSrc || img.src);
+      const blob = await new Promise(r => c.toBlob(r, jpeg ? 'image/jpeg' : 'image/png', 0.92));
+      if (!img.getAttribute('width') && !img.getAttribute('height')) img.setAttribute('width', nw);   // same layout as before if no CSS sizes it
+      img.removeAttribute('srcset'); img.src = URL.createObjectURL(blob);
+      await img.decode().catch(() => {});
+      out.push(`${nw}x${nh}->${tw}x${th}`);
+    }
+    return out;
+  }, [printedW, Number(process.env.LIGHT_DPI || 300)]);
+  if (done.length) console.log('LIGHT: ' + done.length + ' figure(s) resampled to ' + (process.env.LIGHT_DPI || 300) + ' ppi (' + done.join(', ') + '); FULL_RES=1 keeps them as they are');
+}
 await page.pdf({ path: path.join(here, dir, pdf), ...(process.env.PAGE_W ? { width: process.env.PAGE_W, height: process.env.PAGE_H } : { format: 'A4' }), printBackground: true, displayHeaderFooter: true,
   headerTemplate: '<span></span>',
   footerTemplate: `<div style="font:8px sans-serif;width:100%;padding:0 15mm;display:flex;justify-content:space-between;color:#666"><span>${title} · DICTO · dictospheres.com${doi && doi !== 'draft' ? ' · DICTO DOI: ' + doi : ''}${ver ? ' · v' + ver : ''}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
   margin: { top: '16mm', bottom: '18mm', left: '15mm', right: '15mm' } });
 await b.close();
+{ // SIZE GUARD (24 Nov 2026): over 4 MB or a figure over 4 Mpx = warning; a figure over 16.7 Mpx (iPad canvas cap) = error, PDF removed
+  const out = path.join(here, dir, pdf), bytes = fs.statSync(out).size;
+  if (bytes > 4e6) console.warn(`SIZE: ${(bytes / 1e6).toFixed(2)} MB (above 4 MB): check figures (study 2026-11-24-palomar-pdf-display)`);
+  let rows = [];
+  try { const { execFileSync } = await import('node:child_process');
+    rows = execFileSync('pdfimages', ['-list', out]).toString().split('\n').slice(2).map(l => l.trim().split(/\s+/)).filter(r => r.length > 5 && r[2] === 'image').map(r => ({ page: +r[0], w: +r[3], h: +r[4] }));
+  } catch { console.warn('SIZE: pdfimages not found; figure sizes not checked'); }
+  const big = rows.filter(r => r.w * r.h > 4e6), huge = rows.filter(r => r.w * r.h > 16777216);
+  if (big.length) console.warn('SIZE: figure(s) above 4 Mpx: ' + big.map(r => `p${r.page} ${r.w}x${r.h}`).join(', '));
+  if (huge.length) { fs.unlinkSync(out); console.error('SIZE GUARD: figure(s) above 16.7 Mpx (iPad canvas cap), PDF not kept: ' + huge.map(r => `p${r.page} ${r.w}x${r.h}`).join(', ')); process.exit(11); }
+}
 console.log(dir + '/' + pdf + ' written');
