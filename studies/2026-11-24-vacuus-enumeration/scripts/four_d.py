@@ -106,7 +106,7 @@ def analyse4(name, F, V, roots_all, extra=None, basis=None):
                 assert not dotx(nrm, V[i]), name + ": face not on plate (exact)"
         full = cs and all(frozenset(neg[i] for i in f) in set(fs) for f in fs)
         sheet = "full" if (full and len(fs) >= 2) else ("shared" if len(fs) >= 2 else "single")
-        nf = np.array(gk); hit = np.where(np.abs(np.abs(Rf @ nf) - 1) < 1e-9)[0]
+        nf = np.array(gk); hit = np.where(np.abs(np.abs(Rf @ (nf / np.linalg.norm(nf))) - 1) < 1e-6)[0]
         mirror = False
         if len(hit):
             r = roots_all[int(hit[0])]
@@ -159,9 +159,10 @@ def main():
             for a, b in itertools.product((o, -o), repeat=2):
                 rootsB.append(tuple(a if k == i else (b if k == j else z) for k in range(4)))
     solve = weights(F, sB)
-    for nm, seed in (("tesseract", (o, o, o, o)), ("16-cell", (o, z, z, z)), ("24-cell", (o, o, z, z))):
+    rootsF4 = rootsB + [tuple(s) for s in itertools.product((o, -o), repeat=4)]  # the 24-cell's own group is F4
+    for nm, seed, rr in (("tesseract", (o, o, o, o), rootsB), ("16-cell", (o, z, z, z), rootsB), ("24-cell", (o, o, z, z), rootsF4)):
         V = orbit(F, seed, sB)
-        res.append(analyse4(nm, F, V, rootsB))
+        res.append(analyse4(nm, F, V, rr))
     V = orbit(F, solve((s2, s2, s2, o)), sB)
     res.append(analyse4("B4 omnitruncation", F, V, rootsB))
     json.dump(res, open("data/four-d.json", "w"), indent=1)

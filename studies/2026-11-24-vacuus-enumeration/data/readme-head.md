@@ -6,7 +6,7 @@ DICTO · study for the V SF A project (Vacuus, Scutoid Frusta, Aequus), row V: t
 
 **Conclusion.** Exactly computed (number fields, no rounding in any decision): the Vacuus of all 5 Platonic, 13 Archimedean and 13 Catalan solids and of the prisms, antiprisms, bipyramids and trapezohedra for n = 3 to 12 (71 rows); the 92 Johnson solids as a floating-point pilot (clear margins, not yet exact). A solid is of the **heart** kind exactly when it is centrally symmetric (Lemma 1). The Vacuus of the dodecahedral permutahedron has **90 plates** (60 + 30, all full sheets, none a mirror). The statement 31 = 15 + 10 + 6 (the 15 mirrors of H3; the 6 = the icosidodecahedron's Vacuus) holds for its **face-parallel planes**, a separate construction, not for its Vacuus. The three permutahedra and their dual dice pass every exact check of the rolling law (Section 4).
 
-Status: exact for Tables 1 and 2 and Section 4; Table 3 (Johnson) is a float pilot, to be made exact before any release.
+Status: exact for Tables 1, 2 and 4, for Section 4, and for 85 of the 92 Johnson solids in Table 3. J84–J90 are still floating point (pilot).
 
 ## 1. Definitions used (no new ones)
 
@@ -21,6 +21,8 @@ The centre O is the corner centroid (#87); for Tables 1 and 2 it is the centre o
 - `scripts/vacuus_exact.py`: coordinates exactly in Q(√2), Q(√5), Q(t) (tribonacci, snub cube), Q(ξ) (ξ³ − 2ξ = φ, snub dodecahedron, degree 6), and Q(cos π/2n, h) for the prism family (degree up to 16). The convex hull from floats is checked exactly: every face's corners coplanar, every other corner strictly inside, Euler, all edges equal for the uniform solids. Catalan solids are the polars (corner = face normal / support value). Plates are grouped by exact canonical normals; mirrors are found as the planes whose exact reflection maps the corner set to itself. Signs of nonzero field elements come from an 80-digit evaluation of the exact element.
 - The snub dodecahedron is the orbit of one listed vertex, −(2α, 2, 2β), under the 60 rotations that permute an icosahedron's corners (built exactly; of the two golden orientations, one gives 60 corners with 150 equal edges and was kept, the other failed the equal-edge check, as logged).
 - `scripts/perm_checks.py`: the permutahedron and dual-die checks of Section 4 (exact 3×3 matrices, group closure).
+- `scripts/johnson_exact.py`: each Johnson solid is built exactly from exact pieces. These are caps (pyramid, cupola, rotunda), prisms and antiprisms stacked on an axis; pyramid and cupola augmentations of the exact uniform solids (scaled by their exact edge length); corners removed (diminished solids); and caps gyrated by a half-turn (for a pentagonal cap a 36° turn equals a half-turn). J91 and J92 are recognised from the registry floats in Q(√5) and Q(√3, √5) (PSLQ, in a frame taken from their symmetry), and then checked exactly like the others. Each candidate is named by matching its pairwise-distance invariant to the registry. It is then checked exactly (planar regular faces, all edges equal, strict convexity, Euler) and analysed about the corner centroid and about the volume centroid (exact: tetrahedra from the corner centroid). J84–J90 are not built; their coordinates are roots of higher-degree systems.
+- `scripts/four_d.py`: the 4D pilot (Section 5).
 - `scripts/johnson_pilot.py`: the same definitions in floating point on the app registry's 92 Johnson solids; full symmetry group by search; every merge decision has defect ≤ 8.1e-13, every separation ≥ 6.9e-3 (per-solid values in `data/johnson-pilot.json`).
 - `scripts/coincidences.py`: equal plate systems between solids (exact keys in a shared field), and the CSV. `scripts/make_tables.py`: the tables below.
 - Prior art and sources: Archimedean solids (Archimedes; complete list Kepler 1619), Catalan solids (Catalan 1865), Johnson solids (Johnson 1966; completeness Zalgaller 1967), permutahedron (Schoute 1911), reflection groups (Coxeter 1934), Matsumoto's theorem (Matsumoto 1964; Tits 1969). The Vacuus reading of each shape is DICTO's.
@@ -29,7 +31,7 @@ The centre O is the corner centroid (#87); for Tables 1 and 2 it is the centre o
 
 **Lemma 1 (heart = centrally symmetric).** The Vacuus of (X, O) is of the heart kind exactly when X is centrally symmetric about O. Proof: if X = −X, the plate through O and edge e contains −e, so every plate is full. Conversely, if every plate is full, every edge e has −e as an edge, so the corner set, hence X, is centrally symmetric. ∎ Every row of Tables 1 to 3 agrees.
 
-**Counts.** Exact (71 rows; the cube and octahedron recur as the n = 3, 4 prism-family members): heart 44, inherited heart 13, non-heart 14. Johnson pilot (92): heart 13, inherited heart 50, non-heart 29.
+**Counts.** Exact (71 rows; the cube and octahedron recur as the n = 3, 4 prism-family members): heart 44, inherited heart 13, non-heart 14. Johnson solids: exact for 85 (heart 13, inherited heart 44, non-heart 28); J84–J90 in floating point (inherited heart 6, non-heart 1).
 
 **Proposition 2 (the Catalan Vacuus lies in the mirrors).** If every edge of a solid P has its two ends swapped by a reflection of P (all Platonic and Archimedean solids except the two snubs), then every edge plate of the polar P* is a mirror. Proof: the edge of P* dual to the edge AB of P joins (multiples of) the normals n₁, n₂ of the two faces at AB. Both faces contain AB, so n₁ and n₂ are at right angles to B − A, that is, both lie in the plane x·(B − A) = 0 through O. That plane is the mirror of the reflection swapping A and B (|A| = |B|), a symmetry by assumption, and since n₁ ≠ ±n₂ it is the plate through O, n₁, n₂. ∎ Checked exactly: every edge plate of all 11 non-snub Catalan solids and all bipyramids is a mirror; for the trapezohedra (duals of antiprisms, whose side edges are swapped by a half-turn, not a reflection) only n of the plates are mirrors.
 
@@ -41,6 +43,10 @@ The centre O is the corner centroid (#87); for Tables 1 and 2 it is the centre o
 - the octahedron's 3 square plates = the cube's face plates; the cuboctahedron's 4 hexagon plates = the face plates of tetrahedron, octahedron and truncated tetrahedron; the icosidodecahedron's 6 decagon plates = the dodecahedron's face plates.
 - face plates shared by a solid and its truncations: cuboctahedron, truncated cube, truncated octahedron (7); rhombicuboctahedron and truncated cuboctahedron (13); icosidodecahedron and truncated dodecahedron (16); rhombicosidodecahedron and truncated icosidodecahedron (31).
 - prism family: the 3-gonal antiprism (octahedron) edge plates = the 3-gonal trapezohedron (cube) face plates; for n = 4, 8, 12 the prism's face plates = the bipyramid's edge plates.
+
+**Johnson solids: the two centres (exact, 85 solids).** The corner centroid and the volume centroid coincide exactly for 37 of the 85: the 33 with a unique symmetry centre, and also J6 (pentagonal rotunda), J72, J74 and J75 (gyrate rhombicosidodecahedra), whose symmetry fixes only an axis. For the gyrate solids the reason is that a half-turn of a cap about an axis through O keeps both the cap's corner centroid and its volume centroid. For J6 no reason was found (LEAD 7). In the other 48 the two centres differ. Yet in all 85, moving the centre changes **none** of the Vacuus structure: kind, number of plates, edges per plate, sheets and mirrors are all the same about both centres. Only the slices change, in 8 solids: J7, J68, J70, J71, J78, J79, J81, J82. The reason is that every shared plate here contains the symmetry axis (or the solid's whole fixed set), so it holds for any centre on that axis.
+
+**Full sheets are local.** Following #110, a plate is a full sheet when it carries the opposite of each of its edges, even if the solid as a whole is not centrally symmetric. The float pilot had required global central symmetry; in 13 solids (J26, J27, J29, J30, J34, J35, J37, J38, J42, J57, J72, J74, J75) it therefore reported such plates as shared. The exact Table 3 uses the definition. Kinds and plate counts are the same either way.
 
 **Johnson solids with no symmetry centre.** 56 of the 92 have a symmetry group fixing a whole line or plane, so no point is singled out by symmetry; O is then only the corner centroid: J1–J11, J18–J25, J32, J33, J40, J41, J47, J49, J50, J52–J54, J56, J58, J60–J66, J68, J70–J72, J74–J79, J81–J83, J86–J89, J92. The other 36 have a unique symmetry centre (question 2).
 
@@ -78,16 +84,24 @@ The 12 hexagon-slice and 3 octagon-slice edge plates of the truncated octahedron
 
 Items 1 to 3 are checked exactly here for A3, B3 and H3 (Section 4). Items 4 and 5 are standard theorems on reflection groups (Coxeter 1934; Matsumoto 1964; Tits 1969) and are not recomputed. The reading of them as rolling an Aequus is DICTO's.
 
-## 5. LEADS
+## 5. 4D pilot (exact)
 
-1. Make Table 3 exact (Johnson coordinates in number fields; J84–J90 need cubic and higher fields).
+The Vacuus in 4D (#110): each 2-face spans with O a hyperplane through O, its plate. Corners are exact orbits under the simple reflections (Q for A4, which lives in the hyperplane sum = 0 of R⁵; Q(√2) for B4; Q(√5) for H4). The omnitruncations are the uniform ones, with each corner equidistant from the walls of its chamber. Cells and 2-faces come from a float hull (combinatorics only). Every plate is checked exactly: one exact normal per plate, and every 2-face on it lies in it exactly. Mirrors are checked as exact parallels to a root. Results are in Table 4. In short:
+- **Control:** the A4 omnitruncation (the 4D permutohedron) gives 65 plates (30 + 30 plates carrying 2 faces, 5 carrying 6 squares), as in #105.
+- **Regular polytopes:** every one except the 5-cell is centrally symmetric, hence heart (Lemma 1). Each Vacuus lies entirely in the mirrors: tesseract 12 plates (2 squares each), 16-cell 4 plates (8 triangles each), 24-cell 12 plates (8 triangles each; these are 12 of the 24 mirrors of its group F4), 120-cell 60 plates (12 pentagons each), 600-cell 60 plates (20 triangles each). The last two are the 60 mirrors of H4. The 5-cell is non-heart, with 10 plates of one triangle each, and all 10 are mirrors of A4.
+- **Omnitruncations:** all heart, and no plate is a mirror. B4: 232 plates (144 square, 64 hexagon, 24 octagon pairs). H4: 8520 plates (5400 square, 2400 hexagon, 720 decagon pairs). Beyond A4's 5 six-square plates, every plate carries exactly one face and its opposite. This is the 4D form of the 3D picture: the B3 and H3 permutahedra also have only 2-edge plates, none on a mirror.
+
+## 6. LEADS
+
+1. J84–J90 exact: their coordinates need cubic and higher fields (polish to high precision, find the minimal polynomials, verify exactly).
 2. The trapezohedra: find the rule for which of their plates are mirrors (exactly n here); more broadly, the edge plates of a polar P* are mirrors exactly at the edges of P whose ends a reflection swaps.
 3. Inherited heart without central symmetry: test whether every shared sheet is forced by a mirror or a 2-fold axis in the plate (true in all rows here).
 4. Face plates as their own object: they are shared along truncation families (7, 13, 16, 31 above); is the face-plate system of an omnitruncation always the full mirror set plus the plates of its rank-2 faces?
-5. 4D pilot, not run (cost): the omnitruncations of A4, B4, H4 with the same exact checks (A4 Vacuus already in #105: 65 plates); the 600-cell and 120-cell are in #110.
+5. 4D: done for the regular polytopes and the A4, B4, H4 omnitruncations (Section 5). Next: the other uniform 4D polytopes, and F4 (24-cell family), with the same script.
 6. V + A: the Vacuus of every Aequus (running elsewhere) can reuse `vacuus_exact.py` directly.
+7. Why the pentagonal rotunda J6 has its corner centroid equal to its volume centroid (exact here; no symmetry forces it).
 
-## 6. Questions for DICTO
+## 7. Questions for DICTO
 
 1. (Answered 24 Nov: the Vacuus is the edge-plate definition.) Do the face-parallel planes need a name of their own?
 2. (Answered 24 Nov: compute both the corner centroid and the volume centroid.)

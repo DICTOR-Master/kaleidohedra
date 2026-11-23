@@ -230,13 +230,14 @@ def gyrobifastigium():
 def recognise(name, gens, basis):
     """Exact coordinates from the registry floats: frame from symmetry, PSLQ in the given basis."""
     P = frame(np.array(reg_lookup(name), float))
+    P[:, 2] -= P[:, 2].min()  # axis origin at the lowest face (for J92 its hexagon)
     F = Fld(*gens); bv = [F.c(b) for b in basis]; bf = [float(sp.N(b, 30)) for b in basis]
     V = []
     for v in P:
         cv = []
         for x in v:
             if abs(x) < 1e-12: cv.append(F.zero); continue
-            rel = mp.pslq([mp.mpf(x)] + [mp.mpf(b) for b in bf], tol=1e-10, maxcoeff=2000, maxsteps=10**5)
+            rel = mp.pslq([mp.mpf(x)] + [mp.mpf(b) for b in bf], tol=1e-8, maxcoeff=400, maxsteps=10**5)
             if rel is None or rel[0] == 0: return None
             cv.append(sum((sp.Rational(-c, rel[0]) * bb for c, bb in zip(rel[1:], basis)), sp.Integer(0)))
         V.append(tuple(c if not isinstance(c, sp.Basic) else F.c(c) for c in cv))
@@ -255,7 +256,7 @@ def frame(P):
             if abs(np.linalg.norm(V[i]) - np.linalg.norm(V[j])) > 1e-6: continue
             m = V[i] - V[j]; m /= np.linalg.norm(m)
             if all(find(v - 2*(v @ m)*m) for v in V) and not any(abs(abs(m @ q) - 1) < 1e-6 for q in mir): mir.append(m)
-    if len(mir) == 3:
+    if len(mir) == 3 and abs(mir[0] @ mir[1]) < 1e-9 and abs(mir[0] @ mir[2]) < 1e-9 and abs(mir[1] @ mir[2]) < 1e-9:
         E = np.array(mir)
     else:
         ax = np.cross(mir[0], mir[1]); ax /= np.linalg.norm(ax)

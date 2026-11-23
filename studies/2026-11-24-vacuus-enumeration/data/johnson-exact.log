@@ -1,20 +1,20 @@
-missing: ['J84_SNUB_DISPHENOID', 'J85_SNUB_SQUARE_ANTIPRISM', 'J86_SPHENOCORONA', 'J87_AUGMENTED_SPHENOCORONA', 'J88_SPHENOMEGACORONA', 'J89_HEBESPHENOMEGACORONA', 'J90_DISPHENOCINGULUM', 'J92_TRIANGULAR_HEBESPHENOROTUNDA']
-missing: ['J84_SNUB_DISPHENOID', 'J85_SNUB_SQUARE_ANTIPRISM', 'J86_SPHENOCORONA', 'J87_AUGMENTED_SPHENOCORONA', 'J88_SPHENOMEGACORONA', 'J89_HEBESPHENOMEGACORONA', 'J90_DISPHENOCINGULUM', 'J92_TRIANGULAR_HEBESPHENOROTUNDA']
-FINAL ok 84 exact; 8 not built
-[exit 0]
+field m=3: degree 4 (0.0s)
 built J12_TRIANGULAR_BIPYRAMID <- axial m=3: pyr / none / pyr b=0
 built J7_ELONGATED_TRIANGULAR_PYRAMID <- axial m=3: pyr / prism / None b=0
 built J14_ELONGATED_TRIANGULAR_BIPYRAMID <- axial m=3: pyr / prism / pyr b=0
+field m=4: degree 8 (0.0s)
 built J1_SQUARE_PYRAMID <- axial m=4: pyr / none / None b=0
 built J8_ELONGATED_SQUARE_PYRAMID <- axial m=4: pyr / prism / None b=0
 built J15_ELONGATED_SQUARE_BIPYRAMID <- axial m=4: pyr / prism / pyr b=0
 built J10_GYROELONGATED_SQUARE_PYRAMID <- axial m=4: pyr / anti / None b=0
 built J17_GYROELONGATED_SQUARE_BIPYRAMID <- axial m=4: pyr / anti / pyr b=0
+field m=5: degree 4 (0.3s)
 built J2_PENTAGONAL_PYRAMID <- axial m=5: pyr / none / None b=0
 built J13_PENTAGONAL_BIPYRAMID <- axial m=5: pyr / none / pyr b=0
 built J9_ELONGATED_PENTAGONAL_PYRAMID <- axial m=5: pyr / prism / None b=0
 built J16_ELONGATED_PENTAGONAL_BIPYRAMID <- axial m=5: pyr / prism / pyr b=0
 built J11_GYROELONGATED_PENTAGONAL_PYRAMID <- axial m=5: pyr / anti / None b=0
+field m=6: degree 8 (0.1s)
 built J3_TRIANGULAR_CUPOLA <- axial m=6: cup / none / None b=0
 built J27_TRIANGULAR_ORTHOBICUPOLA <- axial m=6: cup / none / cup b=0
 built J18_ELONGATED_TRIANGULAR_CUPOLA <- axial m=6: cup / prism / None b=0
@@ -22,6 +22,7 @@ built J35_ELONGATED_TRIANGULAR_ORTHOBICUPOLA <- axial m=6: cup / prism / cup b=0
 built J36_ELONGATED_TRIANGULAR_GYROBICUPOLA <- axial m=6: cup / prism / cup b=2
 built J22_GYROELONGATED_TRIANGULAR_CUPOLA <- axial m=6: cup / anti / None b=0
 built J44_GYROELONGATED_TRIANGULAR_BICUPOLA <- axial m=6: cup / anti / cup b=0
+field m=8: degree 16 (0.3s)
 built J4_SQUARE_CUPOLA <- axial m=8: cup / none / None b=0
 built J28_SQUARE_ORTHOBICUPOLA <- axial m=8: cup / none / cup b=0
 built J29_SQUARE_GYROBICUPOLA <- axial m=8: cup / none / cup b=2
@@ -29,6 +30,7 @@ built J19_ELONGATED_SQUARE_CUPOLA <- axial m=8: cup / prism / None b=0
 built J37_ELONGATED_SQUARE_GYROBICUPOLA <- axial m=8: cup / prism / cup b=2
 built J23_GYROELONGATED_SQUARE_CUPOLA <- axial m=8: cup / anti / None b=0
 built J45_GYROELONGATED_SQUARE_BICUPOLA <- axial m=8: cup / anti / cup b=0
+field m=10: degree 16 (0.6s)
 built J5_PENTAGONAL_CUPOLA <- axial m=10: cup / none / None b=0
 built J30_PENTAGONAL_ORTHOBICUPOLA <- axial m=10: cup / none / cup b=0
 built J31_PENTAGONAL_GYROBICUPOLA <- axial m=10: cup / none / cup b=2
@@ -63,111 +65,117 @@ built J58_AUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0,)
 built J60_METABIAUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0, 5)
 built J59_PARABIAUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0, 10)
 built J61_TRIAUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0, 5, 7)
-built J62_METABIDIMINISHED_ICOSAHEDRON <- icosahedron minus corners (0, 2)
-built J63_TRIDIMINISHED_ICOSAHEDRON <- icosahedron minus corners (0, 2, 5)
+built J62_METABIDIMINISHED_ICOSAHEDRON <- icosahedron minus corners (0, 1)
+built J63_TRIDIMINISHED_ICOSAHEDRON <- icosahedron minus corners (0, 1, 6)
 built J64_AUGMENTED_TRIDIMINISHED_ICOSAHEDRON <- J63 + tetrahedron on face [7, 2, 5]
 built J65_AUGMENTED_TRUNCATED_TETRAHEDRON <- truncated tetrahedron + cupolas on (0,) t=(0,)
 built J66_AUGMENTED_TRUNCATED_CUBE <- truncated cube + cupolas on (0,) t=(1,)
-built J67_BIAUGMENTED_TRUNCATED_CUBE <- truncated cube + cupolas on (0, 5) t=(1, 1)
+built J67_BIAUGMENTED_TRUNCATED_CUBE <- truncated cube + cupolas on (0, 2) t=(1, 1)
 built J68_AUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0,) t=(0,)
 built J70_METABIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 1) t=(0, 0)
-built J69_PARABIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 5) t=(0, 0)
-built J71_TRIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 1, 8) t=(0, 0, 0)
+built J69_PARABIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 11) t=(0, 0)
+built J71_TRIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 1, 6) t=(0, 0, 0)
 built J72_GYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0,) g
 built J76_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0,) d
+built J74_METABIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1) gg
+built J78_METAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1) gd
+built J81_METABIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1) dd
 built J73_PARABIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 3) gg
 built J77_PARAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 3) gd
 built J80_PARABIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 3) dd
-built J74_METABIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6) gg
-built J78_METAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6) gd
-built J81_METABIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6) dd
-built J75_TRIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6, 7) ggg
-built J79_BIGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6, 7) ggd
-built J82_GYRATE_BIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6, 7) gdd
-built J83_TRIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6, 7) ddd
-PROGRESS 0.5 built 83 in 25 s
+built J75_TRIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1, 8) ggg
+built J79_BIGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1, 8) ggd
+built J82_GYRATE_BIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1, 8) gdd
+built J83_TRIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1, 8) ddd
+PROGRESS 0.5 built 83 in 29 s
 built J91_BILUNABIROTUNDA <- J91_BILUNABIROTUNDA: recognised in basis [1, sqrt(5)]
+built J92_TRIANGULAR_HEBESPHENOROTUNDA <- J92_TRIANGULAR_HEBESPHENOROTUNDA: recognised in basis [1, sqrt(3), sqrt(5), sqrt(15)]
+missing: ['J84_SNUB_DISPHENOID', 'J85_SNUB_SQUARE_ANTIPRISM', 'J86_SPHENOCORONA', 'J87_AUGMENTED_SPHENOCORONA', 'J88_SPHENOMEGACORONA', 'J89_HEBESPHENOMEGACORONA', 'J90_DISPHENOCINGULUM']
 PROGRESS 0.506 J1_SQUARE_PYRAMID corner inherited heart 6 | volume inherited heart 6 | differ False
 PROGRESS 0.512 J2_PENTAGONAL_PYRAMID corner non-heart 10 | volume non-heart 10 | differ False
 PROGRESS 0.518 J3_TRIANGULAR_CUPOLA corner non-heart 15 | volume non-heart 15 | differ False
 PROGRESS 0.524 J4_SQUARE_CUPOLA corner non-heart 20 | volume non-heart 20 | differ False
-PROGRESS 0.530 J5_PENTAGONAL_CUPOLA corner non-heart 25 | volume non-heart 25 | differ False
-PROGRESS 0.536 J6_PENTAGONAL_ROTUNDA corner non-heart 35 | volume non-heart 35 | differ False
-PROGRESS 0.542 J7_ELONGATED_TRIANGULAR_PYRAMID corner inherited heart 9 | volume inherited heart 9 | differ True
-PROGRESS 0.548 J8_ELONGATED_SQUARE_PYRAMID corner inherited heart 10 | volume inherited heart 10 | differ False
-PROGRESS 0.554 J9_ELONGATED_PENTAGONAL_PYRAMID corner inherited heart 15 | volume inherited heart 15 | differ False
-PROGRESS 0.560 J10_GYROELONGATED_SQUARE_PYRAMID corner inherited heart 18 | volume inherited heart 18 | differ False
+PROGRESS 0.529 J5_PENTAGONAL_CUPOLA corner non-heart 25 | volume non-heart 25 | differ False
+PROGRESS 0.535 J6_PENTAGONAL_ROTUNDA corner non-heart 35 | volume non-heart 35 | differ False
+PROGRESS 0.541 J7_ELONGATED_TRIANGULAR_PYRAMID corner inherited heart 9 | volume inherited heart 9 | differ True
+PROGRESS 0.547 J8_ELONGATED_SQUARE_PYRAMID corner inherited heart 10 | volume inherited heart 10 | differ False
+PROGRESS 0.553 J9_ELONGATED_PENTAGONAL_PYRAMID corner inherited heart 15 | volume inherited heart 15 | differ False
+PROGRESS 0.559 J10_GYROELONGATED_SQUARE_PYRAMID corner inherited heart 18 | volume inherited heart 18 | differ False
 PROGRESS 0.565 J11_GYROELONGATED_PENTAGONAL_PYRAMID corner non-heart 25 | volume non-heart 25 | differ False
 PROGRESS 0.571 J12_TRIANGULAR_BIPYRAMID corner inherited heart 4 | volume inherited heart 4 | differ False
-PROGRESS 0.577 J13_PENTAGONAL_BIPYRAMID corner inherited heart 6 | volume inherited heart 6 | differ False
-PROGRESS 0.583 J14_ELONGATED_TRIANGULAR_BIPYRAMID corner inherited heart 9 | volume inherited heart 9 | differ False
-PROGRESS 0.589 J15_ELONGATED_SQUARE_BIPYRAMID corner heart 6 | volume heart 6 | differ False
-PROGRESS 0.595 J16_ELONGATED_PENTAGONAL_BIPYRAMID corner inherited heart 15 | volume inherited heart 15 | differ False
-PROGRESS 0.601 J17_GYROELONGATED_SQUARE_BIPYRAMID corner inherited heart 20 | volume inherited heart 20 | differ False
-PROGRESS 0.607 J18_ELONGATED_TRIANGULAR_CUPOLA corner inherited heart 24 | volume inherited heart 24 | differ False
-PROGRESS 0.613 J19_ELONGATED_SQUARE_CUPOLA corner inherited heart 32 | volume inherited heart 32 | differ False
-PROGRESS 0.619 J20_ELONGATED_PENTAGONAL_CUPOLA corner inherited heart 40 | volume inherited heart 40 | differ False
-PROGRESS 0.625 J21_ELONGATED_PENTAGONAL_ROTUNDA corner inherited heart 50 | volume inherited heart 50 | differ False
-PROGRESS 0.631 J22_GYROELONGATED_TRIANGULAR_CUPOLA corner non-heart 33 | volume non-heart 33 | differ False
-PROGRESS 0.637 J23_GYROELONGATED_SQUARE_CUPOLA corner non-heart 44 | volume non-heart 44 | differ False
-PROGRESS 0.643 J24_GYROELONGATED_PENTAGONAL_CUPOLA corner non-heart 55 | volume non-heart 55 | differ False
-PROGRESS 0.649 J25_GYROELONGATED_PENTAGONAL_ROTUNDA corner non-heart 65 | volume non-heart 65 | differ False
-PROGRESS 0.655 J26_GYROBIFASTIGIUM corner inherited heart 7 | volume inherited heart 7 | differ False
-PROGRESS 0.661 J27_TRIANGULAR_ORTHOBICUPOLA corner inherited heart 7 | volume inherited heart 7 | differ False
-PROGRESS 0.667 J28_SQUARE_ORTHOBICUPOLA corner heart 13 | volume heart 13 | differ False
-PROGRESS 0.673 J29_SQUARE_GYROBICUPOLA corner inherited heart 17 | volume inherited heart 17 | differ False
-PROGRESS 0.679 J30_PENTAGONAL_ORTHOBICUPOLA corner inherited heart 21 | volume inherited heart 21 | differ False
-PROGRESS 0.685 J31_PENTAGONAL_GYROBICUPOLA corner heart 11 | volume heart 11 | differ False
-PROGRESS 0.690 J32_PENTAGONAL_ORTHOCUPOLAROTUNDA corner non-heart 50 | volume non-heart 50 | differ False
-PROGRESS 0.696 J33_PENTAGONAL_GYROCUPOLAROTUNDA corner non-heart 50 | volume non-heart 50 | differ False
-PROGRESS 0.702 J34_PENTAGONAL_ORTHOBIROTUNDA corner inherited heart 11 | volume inherited heart 11 | differ False
-PROGRESS 0.708 J35_ELONGATED_TRIANGULAR_ORTHOBICUPOLA corner inherited heart 27 | volume inherited heart 27 | differ False
-PROGRESS 0.714 J36_ELONGATED_TRIANGULAR_GYROBICUPOLA corner heart 18 | volume heart 18 | differ False
-PROGRESS 0.720 J37_ELONGATED_SQUARE_GYROBICUPOLA corner inherited heart 36 | volume inherited heart 36 | differ False
-PROGRESS 0.726 J38_ELONGATED_PENTAGONAL_ORTHOBICUPOLA corner inherited heart 45 | volume inherited heart 45 | differ False
-PROGRESS 0.732 J39_ELONGATED_PENTAGONAL_GYROBICUPOLA corner heart 30 | volume heart 30 | differ False
-PROGRESS 0.738 J40_ELONGATED_PENTAGONAL_ORTHOCUPOLAROTUNDA corner inherited heart 65 | volume inherited heart 65 | differ False
-PROGRESS 0.744 J41_ELONGATED_PENTAGONAL_GYROCUPOLAROTUNDA corner inherited heart 65 | volume inherited heart 65 | differ False
-PROGRESS 0.750 J42_ELONGATED_PENTAGONAL_ORTHOBIROTUNDA corner inherited heart 65 | volume inherited heart 65 | differ False
-PROGRESS 0.756 J43_ELONGATED_PENTAGONAL_GYROBIROTUNDA corner heart 40 | volume heart 40 | differ False
-PROGRESS 0.762 J44_GYROELONGATED_TRIANGULAR_BICUPOLA corner non-heart 42 | volume non-heart 42 | differ False
-PROGRESS 0.768 J45_GYROELONGATED_SQUARE_BICUPOLA corner non-heart 56 | volume non-heart 56 | differ False
-PROGRESS 0.774 J46_GYROELONGATED_PENTAGONAL_BICUPOLA corner non-heart 70 | volume non-heart 70 | differ False
-PROGRESS 0.780 J47_GYROELONGATED_PENTAGONAL_CUPOLAROTUNDA corner non-heart 80 | volume non-heart 80 | differ False
-PROGRESS 0.786 J48_GYROELONGATED_PENTAGONAL_BIROTUNDA corner non-heart 90 | volume non-heart 90 | differ False
-PROGRESS 0.792 J49_AUGMENTED_TRIANGULAR_PRISM corner inherited heart 11 | volume inherited heart 11 | differ False
-PROGRESS 0.798 J50_BIAUGMENTED_TRIANGULAR_PRISM corner non-heart 17 | volume non-heart 17 | differ False
-PROGRESS 0.804 J51_TRIAUGMENTED_TRIANGULAR_PRISM corner inherited heart 15 | volume inherited heart 15 | differ False
-PROGRESS 0.810 J52_AUGMENTED_PENTAGONAL_PRISM corner inherited heart 17 | volume inherited heart 17 | differ False
-PROGRESS 0.815 J53_BIAUGMENTED_PENTAGONAL_PRISM corner non-heart 23 | volume non-heart 23 | differ False
-PROGRESS 0.821 J54_AUGMENTED_HEXAGONAL_PRISM corner inherited heart 20 | volume inherited heart 20 | differ False
-PROGRESS 0.827 J55_PARABIAUGMENTED_HEXAGONAL_PRISM corner heart 11 | volume heart 11 | differ False
-PROGRESS 0.833 J56_METABIAUGMENTED_HEXAGONAL_PRISM corner non-heart 26 | volume non-heart 26 | differ False
-PROGRESS 0.839 J57_TRIAUGMENTED_HEXAGONAL_PRISM corner inherited heart 15 | volume inherited heart 15 | differ False
-PROGRESS 0.845 J58_AUGMENTED_DODECAHEDRON corner inherited heart 25 | volume inherited heart 25 | differ False
-PROGRESS 0.851 J59_PARABIAUGMENTED_DODECAHEDRON corner heart 15 | volume heart 15 | differ False
-PROGRESS 0.857 J60_METABIAUGMENTED_DODECAHEDRON corner inherited heart 36 | volume inherited heart 36 | differ False
-PROGRESS 0.863 J61_TRIAUGMENTED_DODECAHEDRON corner inherited heart 39 | volume inherited heart 39 | differ False
-PROGRESS 0.869 J62_METABIDIMINISHED_ICOSAHEDRON corner inherited heart 19 | volume inherited heart 19 | differ False
-PROGRESS 0.875 J63_TRIDIMINISHED_ICOSAHEDRON corner non-heart 15 | volume non-heart 15 | differ False
-PROGRESS 0.881 J64_AUGMENTED_TRIDIMINISHED_ICOSAHEDRON corner inherited heart 15 | volume inherited heart 15 | differ False
-PROGRESS 0.887 J65_AUGMENTED_TRUNCATED_TETRAHEDRON corner non-heart 27 | volume non-heart 27 | differ False
-PROGRESS 0.893 J66_AUGMENTED_TRUNCATED_CUBE corner inherited heart 46 | volume inherited heart 46 | differ False
-PROGRESS 0.899 J67_BIAUGMENTED_TRUNCATED_CUBE corner heart 30 | volume heart 30 | differ False
-PROGRESS 0.905 J68_AUGMENTED_TRUNCATED_DODECAHEDRON corner inherited heart 100 | volume inherited heart 100 | differ True
-PROGRESS 0.911 J69_PARABIAUGMENTED_TRUNCATED_DODECAHEDRON corner heart 60 | volume heart 60 | differ False
-PROGRESS 0.917 J70_METABIAUGMENTED_TRUNCATED_DODECAHEDRON corner inherited heart 116 | volume inherited heart 116 | differ True
-PROGRESS 0.923 J71_TRIAUGMENTED_TRUNCATED_DODECAHEDRON corner inherited heart 132 | volume inherited heart 132 | differ True
-PROGRESS 0.929 J72_GYRATE_RHOMBICOSIDODECAHEDRON corner inherited heart 75 | volume inherited heart 75 | differ False
-PROGRESS 0.935 J73_PARABIGYRATE_RHOMBICOSIDODECAHEDRON corner heart 60 | volume heart 60 | differ False
-PROGRESS 0.940 J74_METABIGYRATE_RHOMBICOSIDODECAHEDRON corner inherited heart 88 | volume inherited heart 88 | differ False
-PROGRESS 0.946 J75_TRIGYRATE_RHOMBICOSIDODECAHEDRON corner inherited heart 99 | volume inherited heart 99 | differ False
-PROGRESS 0.952 J76_DIMINISHED_RHOMBICOSIDODECAHEDRON corner non-heart 105 | volume non-heart 105 | differ False
-PROGRESS 0.958 J77_PARAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON corner non-heart 105 | volume non-heart 105 | differ False
-PROGRESS 0.964 J78_METAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON corner non-heart 105 | volume non-heart 105 | differ True
-PROGRESS 0.970 J79_BIGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON corner non-heart 105 | volume non-heart 105 | differ True
-PROGRESS 0.976 J80_PARABIDIMINISHED_RHOMBICOSIDODECAHEDRON corner heart 45 | volume heart 45 | differ False
-PROGRESS 0.982 J81_METABIDIMINISHED_RHOMBICOSIDODECAHEDRON corner inherited heart 88 | volume inherited heart 88 | differ True
-PROGRESS 0.988 J82_GYRATE_BIDIMINISHED_RHOMBICOSIDODECAHEDRON corner inherited heart 88 | volume inherited heart 88 | differ True
-PROGRESS 0.994 J83_TRIDIMINISHED_RHOMBICOSIDODECAHEDRON corner non-heart 75 | volume non-heart 75 | differ False
-PROGRESS 1.000 J91_BILUNABIROTUNDA corner heart 9 | volume heart 9 | differ False
+PROGRESS 0.576 J13_PENTAGONAL_BIPYRAMID corner inherited heart 6 | volume inherited heart 6 | differ False
+PROGRESS 0.582 J14_ELONGATED_TRIANGULAR_BIPYRAMID corner inherited heart 9 | volume inherited heart 9 | differ False
+PROGRESS 0.588 J15_ELONGATED_SQUARE_BIPYRAMID corner heart 6 | volume heart 6 | differ False
+PROGRESS 0.594 J16_ELONGATED_PENTAGONAL_BIPYRAMID corner inherited heart 15 | volume inherited heart 15 | differ False
+PROGRESS 0.600 J17_GYROELONGATED_SQUARE_BIPYRAMID corner inherited heart 20 | volume inherited heart 20 | differ False
+PROGRESS 0.606 J18_ELONGATED_TRIANGULAR_CUPOLA corner inherited heart 24 | volume inherited heart 24 | differ False
+PROGRESS 0.612 J19_ELONGATED_SQUARE_CUPOLA corner inherited heart 32 | volume inherited heart 32 | differ False
+PROGRESS 0.618 J20_ELONGATED_PENTAGONAL_CUPOLA corner inherited heart 40 | volume inherited heart 40 | differ False
+PROGRESS 0.624 J21_ELONGATED_PENTAGONAL_ROTUNDA corner inherited heart 50 | volume inherited heart 50 | differ False
+PROGRESS 0.629 J22_GYROELONGATED_TRIANGULAR_CUPOLA corner non-heart 33 | volume non-heart 33 | differ False
+PROGRESS 0.635 J23_GYROELONGATED_SQUARE_CUPOLA corner non-heart 44 | volume non-heart 44 | differ False
+PROGRESS 0.641 J24_GYROELONGATED_PENTAGONAL_CUPOLA corner non-heart 55 | volume non-heart 55 | differ False
+PROGRESS 0.647 J25_GYROELONGATED_PENTAGONAL_ROTUNDA corner non-heart 65 | volume non-heart 65 | differ False
+PROGRESS 0.653 J26_GYROBIFASTIGIUM corner inherited heart 7 | volume inherited heart 7 | differ False
+PROGRESS 0.659 J27_TRIANGULAR_ORTHOBICUPOLA corner inherited heart 7 | volume inherited heart 7 | differ False
+PROGRESS 0.665 J28_SQUARE_ORTHOBICUPOLA corner heart 13 | volume heart 13 | differ False
+PROGRESS 0.671 J29_SQUARE_GYROBICUPOLA corner inherited heart 17 | volume inherited heart 17 | differ False
+PROGRESS 0.676 J30_PENTAGONAL_ORTHOBICUPOLA corner inherited heart 21 | volume inherited heart 21 | differ False
+PROGRESS 0.682 J31_PENTAGONAL_GYROBICUPOLA corner heart 11 | volume heart 11 | differ False
+PROGRESS 0.688 J32_PENTAGONAL_ORTHOCUPOLAROTUNDA corner non-heart 50 | volume non-heart 50 | differ False
+PROGRESS 0.694 J33_PENTAGONAL_GYROCUPOLAROTUNDA corner non-heart 50 | volume non-heart 50 | differ False
+PROGRESS 0.700 J34_PENTAGONAL_ORTHOBIROTUNDA corner inherited heart 11 | volume inherited heart 11 | differ False
+PROGRESS 0.706 J35_ELONGATED_TRIANGULAR_ORTHOBICUPOLA corner inherited heart 27 | volume inherited heart 27 | differ False
+PROGRESS 0.712 J36_ELONGATED_TRIANGULAR_GYROBICUPOLA corner heart 18 | volume heart 18 | differ False
+PROGRESS 0.718 J37_ELONGATED_SQUARE_GYROBICUPOLA corner inherited heart 36 | volume inherited heart 36 | differ False
+PROGRESS 0.724 J38_ELONGATED_PENTAGONAL_ORTHOBICUPOLA corner inherited heart 45 | volume inherited heart 45 | differ False
+PROGRESS 0.729 J39_ELONGATED_PENTAGONAL_GYROBICUPOLA corner heart 30 | volume heart 30 | differ False
+PROGRESS 0.735 J40_ELONGATED_PENTAGONAL_ORTHOCUPOLAROTUNDA corner inherited heart 65 | volume inherited heart 65 | differ False
+PROGRESS 0.741 J41_ELONGATED_PENTAGONAL_GYROCUPOLAROTUNDA corner inherited heart 65 | volume inherited heart 65 | differ False
+PROGRESS 0.747 J42_ELONGATED_PENTAGONAL_ORTHOBIROTUNDA corner inherited heart 65 | volume inherited heart 65 | differ False
+PROGRESS 0.753 J43_ELONGATED_PENTAGONAL_GYROBIROTUNDA corner heart 40 | volume heart 40 | differ False
+PROGRESS 0.759 J44_GYROELONGATED_TRIANGULAR_BICUPOLA corner non-heart 42 | volume non-heart 42 | differ False
+PROGRESS 0.765 J45_GYROELONGATED_SQUARE_BICUPOLA corner non-heart 56 | volume non-heart 56 | differ False
+PROGRESS 0.771 J46_GYROELONGATED_PENTAGONAL_BICUPOLA corner non-heart 70 | volume non-heart 70 | differ False
+PROGRESS 0.776 J47_GYROELONGATED_PENTAGONAL_CUPOLAROTUNDA corner non-heart 80 | volume non-heart 80 | differ False
+PROGRESS 0.782 J48_GYROELONGATED_PENTAGONAL_BIROTUNDA corner non-heart 90 | volume non-heart 90 | differ False
+PROGRESS 0.788 J49_AUGMENTED_TRIANGULAR_PRISM corner inherited heart 11 | volume inherited heart 11 | differ False
+PROGRESS 0.794 J50_BIAUGMENTED_TRIANGULAR_PRISM corner non-heart 17 | volume non-heart 17 | differ False
+PROGRESS 0.800 J51_TRIAUGMENTED_TRIANGULAR_PRISM corner inherited heart 15 | volume inherited heart 15 | differ False
+PROGRESS 0.806 J52_AUGMENTED_PENTAGONAL_PRISM corner inherited heart 17 | volume inherited heart 17 | differ False
+PROGRESS 0.812 J53_BIAUGMENTED_PENTAGONAL_PRISM corner non-heart 23 | volume non-heart 23 | differ False
+PROGRESS 0.818 J54_AUGMENTED_HEXAGONAL_PRISM corner inherited heart 20 | volume inherited heart 20 | differ False
+PROGRESS 0.824 J55_PARABIAUGMENTED_HEXAGONAL_PRISM corner heart 11 | volume heart 11 | differ False
+PROGRESS 0.829 J56_METABIAUGMENTED_HEXAGONAL_PRISM corner non-heart 26 | volume non-heart 26 | differ False
+PROGRESS 0.835 J57_TRIAUGMENTED_HEXAGONAL_PRISM corner inherited heart 15 | volume inherited heart 15 | differ False
+PROGRESS 0.841 J58_AUGMENTED_DODECAHEDRON corner inherited heart 25 | volume inherited heart 25 | differ False
+PROGRESS 0.847 J59_PARABIAUGMENTED_DODECAHEDRON corner heart 15 | volume heart 15 | differ False
+PROGRESS 0.853 J60_METABIAUGMENTED_DODECAHEDRON corner inherited heart 36 | volume inherited heart 36 | differ False
+PROGRESS 0.859 J61_TRIAUGMENTED_DODECAHEDRON corner inherited heart 39 | volume inherited heart 39 | differ False
+PROGRESS 0.865 J62_METABIDIMINISHED_ICOSAHEDRON corner inherited heart 19 | volume inherited heart 19 | differ False
+PROGRESS 0.871 J63_TRIDIMINISHED_ICOSAHEDRON corner non-heart 15 | volume non-heart 15 | differ False
+PROGRESS 0.876 J64_AUGMENTED_TRIDIMINISHED_ICOSAHEDRON corner inherited heart 15 | volume inherited heart 15 | differ False
+PROGRESS 0.882 J65_AUGMENTED_TRUNCATED_TETRAHEDRON corner non-heart 27 | volume non-heart 27 | differ False
+PROGRESS 0.888 J66_AUGMENTED_TRUNCATED_CUBE corner inherited heart 46 | volume inherited heart 46 | differ False
+PROGRESS 0.894 J67_BIAUGMENTED_TRUNCATED_CUBE corner heart 30 | volume heart 30 | differ False
+PROGRESS 0.900 J68_AUGMENTED_TRUNCATED_DODECAHEDRON corner inherited heart 100 | volume inherited heart 100 | differ True
+PROGRESS 0.906 J69_PARABIAUGMENTED_TRUNCATED_DODECAHEDRON corner heart 60 | volume heart 60 | differ False
+PROGRESS 0.912 J70_METABIAUGMENTED_TRUNCATED_DODECAHEDRON corner inherited heart 116 | volume inherited heart 116 | differ True
+PROGRESS 0.918 J71_TRIAUGMENTED_TRUNCATED_DODECAHEDRON corner inherited heart 132 | volume inherited heart 132 | differ True
+PROGRESS 0.924 J72_GYRATE_RHOMBICOSIDODECAHEDRON corner inherited heart 75 | volume inherited heart 75 | differ False
+PROGRESS 0.929 J73_PARABIGYRATE_RHOMBICOSIDODECAHEDRON corner heart 60 | volume heart 60 | differ False
+PROGRESS 0.935 J74_METABIGYRATE_RHOMBICOSIDODECAHEDRON corner inherited heart 88 | volume inherited heart 88 | differ False
+PROGRESS 0.941 J75_TRIGYRATE_RHOMBICOSIDODECAHEDRON corner inherited heart 99 | volume inherited heart 99 | differ False
+PROGRESS 0.947 J76_DIMINISHED_RHOMBICOSIDODECAHEDRON corner non-heart 105 | volume non-heart 105 | differ False
+PROGRESS 0.953 J77_PARAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON corner non-heart 105 | volume non-heart 105 | differ False
+PROGRESS 0.959 J78_METAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON corner non-heart 105 | volume non-heart 105 | differ True
+PROGRESS 0.965 J79_BIGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON corner non-heart 105 | volume non-heart 105 | differ True
+PROGRESS 0.971 J80_PARABIDIMINISHED_RHOMBICOSIDODECAHEDRON corner heart 45 | volume heart 45 | differ False
+PROGRESS 0.976 J81_METABIDIMINISHED_RHOMBICOSIDODECAHEDRON corner inherited heart 88 | volume inherited heart 88 | differ True
+PROGRESS 0.982 J82_GYRATE_BIDIMINISHED_RHOMBICOSIDODECAHEDRON corner inherited heart 88 | volume inherited heart 88 | differ True
+PROGRESS 0.988 J83_TRIDIMINISHED_RHOMBICOSIDODECAHEDRON corner non-heart 75 | volume non-heart 75 | differ False
+PROGRESS 0.994 J91_BILUNABIROTUNDA corner heart 9 | volume heart 9 | differ False
+PROGRESS 1.000 J92_TRIANGULAR_HEBESPHENOROTUNDA corner non-heart 36 | volume non-heart 36 | differ False
+missing: ['J84_SNUB_DISPHENOID', 'J85_SNUB_SQUARE_ANTIPRISM', 'J86_SPHENOCORONA', 'J87_AUGMENTED_SPHENOCORONA', 'J88_SPHENOMEGACORONA', 'J89_HEBESPHENOMEGACORONA', 'J90_DISPHENOCINGULUM']
+FINAL ok 85 exact; 7 not built
+[exit 0]
