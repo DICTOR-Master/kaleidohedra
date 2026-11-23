@@ -1,5 +1,7 @@
 # Certifying and extending the Aequi (24 November 2026)
 
+DICTO · dictospheres.com · study 2026-11-24-aequi-certify-extend · with Claude (Anthropic).
+
 **Verdict, Part 1: all 1232 Aequi are rigorously certified.** For each die, ball arithmetic proves that exactly one fair depth vector lies in an explicit box around the published depths, and that the published 60-digit depths are within 5e-60 of it. The face structure is proved constant over the box. 1229 dice pass on a box where the combinatorial type does not change; the other 3 sit exactly where the type changes, and they pass with a split box. There are no failures. **Aequus CIRT-30, T 26:** its C6 and RT24/12a faces are at equal depth to within 2.2e-78 (rigorous). The exact equality is reduced to one identity along the line d(C6) = d(RT24/12a): 2Ω(RT24/12a face) − Ω(C6 face) = 4π/30 for every depth of the I12 faces. That identity holds to 1e-93 at six points but is **not yet proved**, so "exactly equal" is not claimed. One of the other two split-box dice, Td: D12+D12′/24 + RT24+RT24′/24, is settled exactly: its depth ratio is cos 18° = √(10+2√5)/4, and it is fair because its faces project onto the 48 triangles of the cube's symmetry.
 
 **Part 2:** (a) Both icosahedron placements under the 16 other subgroup classes of Oh with one fixed point: 6 924 orbit sets searched (all m = 2; m = 3 for groups of order ≥ 6; m = 4 for D3d), every set with exactly one fair die, giving **5 935 new Aequi, all rigorously certified**. (b) Widening the depth box to e^±3 for the seven frame groups (234 sets) found the same single die in every set, and nothing new; <<CAPS-VERDICT>> (c) the pilot of faces off the symmetry axes: along every one-parameter family tried (9 families, 5 groups) there is **exactly one fair die for every value of the parameter**, so these dice come as **continuous families**, not as isolated dice. The enumeration problem is therefore one of counting cells (group, orbit types, combinatorial type), not dice. It is defined below.
@@ -121,7 +123,22 @@ D6h and D3h are prisms, as in the earlier study (symmetry outside the frame maps
 
 **Wider depth box (scripts/solve_wide.py, run2b.sh, compare2b.py; data/raw/sol-2b.jsonl, data/compare2b.json; a small compute host).** Every orbit set of the seven frame groups (one placement, as in study 2026-11-19-aequi-complete: 234 sets, m = 2 to 8) was searched again with the depth box widened from e^±1.5 to e^±3 (depth ratios 0.050 to 20.1) and denser starts: 41 starts for m = 2; 11², 7³, 5⁴ grids for m = 3 to 5; 512 Sobol points for m ≥ 6 (about 75 000 starts in all). Result: **every set again has exactly one fair die, the same one as before** (depths agree to 1e-6 in all 234 sets; 0 sets with none, 0 with two or more). All depth ratios lie in 0.888 to 1.193, so the old box was never close to binding for these groups. This is still a search inside a box, not a proof of "one die per set".
 
-<<CAPS>>
+**Raised caps (scripts/solve1.py = the study-1 solver unchanged, run2b.sh with SOLVER=solve1.py, collect1.py, post2a.py with prefix 2caps; logs/job-aequi-2capsb.log, collect2caps.log, post2caps.log, certify2caps.log, structural2caps.log).** One placement, study-1 box e^±1.5. The run started on the small compute host. It was stopped after 122 of the 126 D3d m = 5 sets because that host was too slow for the time before the power cut, and it was resumed from the same file on the larger host.
+
+*Batch 1: D3d (9 orbits) and C2h (9 orbits), completed to every m.* These had been capped at m ≤ 4. Now m = 5..9 are searched: D3d 126 + 84 + 36 + 9 + 1 sets, C2h 76 + 52 + 24 + 7 + 1 sets (416 sets). **Every set has exactly one fair die.** The 416 solutions are 396 distinct Aequi:
+- 8 have a group containing T (Ih 4, Oh 4) and were met before;
+- 52 are congruent to dice of study 2026-11-19-aequi-complete;
+- **336 are new**, all rigorously certified (Krawczyk on constant-type boxes; structural corners in 107 dice, 236 exact checks, 0 failures; uniqueness half-widths 1e-2: 20, 1e-3: 94, 1e-4: 209, 1e-5: 12, 1e-6: 1).
+
+| group | m=5 | m=6 | m=7 | m=8 | total |
+|---|---|---|---|---|---|
+| D3d | 125 | 83 | 35 | 9 | 252 |
+| C2h | 45 | 29 | 9 | 1 | 84 |
+| all | 170 | 112 | 44 | 10 | 336 |
+
+So the classes D3d (9 orbits) and C2h (9 orbits) are now complete for every m, like the classes that study 2026-11-19 completed.
+
+<<CAPS2>>
 
 ### (c) Pilot: faces off the symmetry axes (scripts/pilot2c.py, data/pilot2c.json, logs/pilot2c.log)
 
@@ -166,13 +183,14 @@ The axis-only catalogue (the 1232 and the 4553) is the p = 0 layer. The pilot sh
 2. Row 124 (Td, N = 56): the same hyperplane d(RT) = cos 18° d(D) as row 95, but no projection symmetry. Find the mechanism.
 3. "Fair by projection": a die whose central projection has more symmetry than the solid (row 95: Td solid, Oh projection). Search the catalogue for more.
 4. Off-axis families: run E1 for all mirror orbits of Oh, Td, Th, Ih (one parameter), then general orbits (two parameters), with certified tracking of type changes.
-5. <<LEAD5>>
+5. Remaining caps: both placements at m ≥ 4 (m ≥ 5 for D3d) under the subgroups of Oh, and m = 3 for S4, C2h, D2; one placement: D2 (20 orbits) and C2h (23 orbits) above m = 4 and m = 3, Ci above m = 3. Every set searched so far (6 924 + 416 + the second batch here + 234 re-searched) has exactly one fair die. A proof of "one fair die per orbit set" for groups with one fixed point would make all these counts exact.
+6. The new dice of Part 2 (5 935 + 336 + batch 2) are certified but not yet drawn: renders and Vacuus sheets, as in the earlier studies.
 
 ## Questions for DICTO
 
 1. Off-axis dice come in continuous families. Should a family count as one Aequus (one name per fair cell), or should only special members get names (where the family meets an axis, or where its symmetry rises)?
 2. Row 95 (Td: D12+D12′/24 + RT24+RT24′/24, N = 48) is fair because its projection is the disdyakis dodecahedron. Should it get a name now? It is among the 1083 waiting for numbers.
-3. <<Q3>>
+3. Do the new Aequi of Part 2 (both placements under the subgroups of Oh; dice above the old caps) go into the numbered catalogue, or stay a dataset below the frame groups like the 4553?
 
 ## Files
 
