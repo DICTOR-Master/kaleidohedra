@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Aequi Picker · Kaleidohedra</title>
-<meta name="description" content="DICTO's Aequi: 1232 fair dice whose faces all have the same chance. Pick a die, or make one fair, and save it as an STL to print.">
+<meta name="description" content="DICTO's Aequi: 1232 fair dice whose faces all have the same chance, each with its own name. Pick a die, number its faces (plain, opposites, spin-down or balanced), or make one fair, and save it as an STL to print.">
 <link rel="icon" href="/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
@@ -69,7 +69,11 @@ select { padding-right: 10px; min-width: 120px; }
 .item .sws { display: flex; gap: 3px; flex: 0 0 auto; }
 .item .sw { width: 12px; height: 12px; }
 .item .meta { margin-left: auto; color: var(--muted); font-size: 13px; white-space: nowrap; }
-.item .nm { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.item .nm { min-width: 0; overflow: hidden; text-overflow: ellipsis; display: flex; flex-direction: column; line-height: 1.25; }
+.item .nm .tech { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.numrow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 4px 0 8px; }
+.numrow .seg { flex-wrap: wrap; }
+.numrow .seg button { min-height: 44px; font-size: 15px; padding: 0 12px; }
 .sec { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin: 8px 2px 2px; }
 h2 { font-size: 18px; margin: 0 0 4px; }
 .sub { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
@@ -279,7 +283,64 @@ $('tabFair').onclick = function () { setTab('fair'); };
 
 // ---------------- Pick a die
 var data = null, fair = null;
-var st = { g: null, ticked: [], mode: 'tick', vac: false, hand: false };
+var st = { g: null, ticked: [], mode: 'tick', vac: false, hand: false, num: 'off' };
+var NAMES = null, NUMS = null;   // approved names (names.json); face numbers of the finished dice (numberings.json)
+function nameOf(e) { return NAMES ? NAMES[e.k] : dieTitle(e); }
+// face numbers: off, plain (face i gets i + 1), and from numberings.json: o opposites (N + 1), s spin-down, b balanced
+var SCHEMES = [['off', 'Off'], ['plain', 'Plain'], ['o', 'Opposites'], ['s', 'Spin-down'], ['b', 'Balanced']];
+function schemesOf(e) { var x = NUMS && NUMS[e.k + 1]; return SCHEMES.filter(function (s) { return s[0] === 'off' || s[0] === 'plain' || (x && x[s[0]]); }); }
+function numScheme(e) { var has = schemesOf(e).some(function (s) { return s[0] === st.num; }); return has ? st.num : 'plain'; }
+function numbersFor(e, k) { if (k === 'plain') { var p = []; for (var i = 0; i < e.N; i++) p.push(i + 1); return p; } return NUMS[e.k + 1][k]; }
+function numRow(e) {
+  if (st.vac) return '';
+  var k = numScheme(e);
+  return '<div class="numrow"><span class="sub" style="margin:0">Face numbers</span><div class="seg" id="numSeg" role="group" aria-label="Face numbers">' +
+    schemesOf(e).map(function (s) { return '<button data-k="' + s[0] + '" aria-pressed="' + (s[0] === k) + '">' + s[1] + '</button>'; }).join('') + '</div></div>';
+}
+// a number on each face: a small square of text in the face's plane, upright toward the die's y axis
+var texCache = {};
+function ambiguous(s) { // reads as another number upside down: underline it (6, 9, 66, 68, 86, 99, 106 ...)
+  if (!/^[01689]+$/.test(s)) return false;
+  var r = s.split('').reverse().map(function (c) { return c === '6' ? '9' : c === '9' ? '6' : c; }).join('');
+  return r !== s && r[0] !== '0';
+}
+function numTex(n, dark) {
+  var key = n + (dark ? 'd' : 'l');
+  if (texCache[key]) return texCache[key];
+  var c = document.createElement('canvas'); c.width = c.height = 128;
+  var g = c.getContext('2d'), s = String(n), fs = s.length >= 3 ? 56 : 74;
+  g.font = '650 ' + fs + 'px system-ui, -apple-system, "Segoe UI", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.lineJoin = 'round'; g.lineWidth = 6; g.strokeStyle = dark ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.45)'; g.fillStyle = dark ? '#121417' : '#ffffff';
+  g.strokeText(s, 64, 66); g.fillText(s, 64, 66);
+  if (ambiguous(s)) { var w = g.measureText(s).width; g.fillRect(64 - w / 2, 66 + fs * 0.44, w, Math.max(4, fs * 0.08)); }
+  var t = new THREE.CanvasTexture(c); t.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+  return (texCache[key] = t);
+}
+function labelGroup(S, nums, colours, mirror) {
+  var lg = new THREE.Group(), R = radius(S), sx = mirror ? -1 : 1, col = new THREE.Color();
+  S.faces.forEach(function (f) {
+    var vs = f.v.map(function (i) { return S.verts[i]; }), c = [0, 0, 0];
+    vs.forEach(function (v) { c[0] += v[0] / vs.length; c[1] += v[1] / vs.length; c[2] += v[2] / vs.length; });
+    var r = Infinity;   // distance from the centre point to the nearest side
+    vs.forEach(function (a, t) {
+      var b = vs[(t + 1) % vs.length], ab = [b[0] - a[0], b[1] - a[1], b[2] - a[2]], ac = [c[0] - a[0], c[1] - a[1], c[2] - a[2]];
+      var x = G.cross(ab, ac); r = Math.min(r, Math.hypot(x[0], x[1], x[2]) / Math.hypot(ab[0], ab[1], ab[2]));
+    });
+    var Z = new THREE.Vector3(sx * f.n[0], f.n[1], f.n[2]).normalize();
+    var Y = new THREE.Vector3(0, 1, 0); if (Math.abs(Z.y) > 0.96) Y.set(0, 0, -Math.sign(Z.y));
+    Y.addScaledVector(Z, -Y.dot(Z)).normalize();
+    var X = new THREE.Vector3().crossVectors(Y, Z);
+    col.set(colours[f.k]);
+    var dark = 0.2126 * col.r + 0.7152 * col.g + 0.0722 * col.b > 0.42;
+    var size = r * 1.5;
+    var m = new THREE.Mesh(new THREE.PlaneGeometry(size, size), new THREE.MeshBasicMaterial({ map: numTex(nums[f.p], dark), transparent: true, depthWrite: false }));
+    m.matrixAutoUpdate = false;
+    m.matrix.makeBasis(X, Y, Z).setPosition(new THREE.Vector3(sx * c[0], c[1], c[2]).addScaledVector(Z, R * 0.002));
+    lg.add(m);
+  });
+  var s = 1 / R; lg.scale.set(s, s, s);
+  return lg;
+}
 var GROUP_WORDS = { Ih: 'Ih · icosahedral, 120', Oh: 'Oh · cube, 48', O: 'O · cube turns only, 24', Td: 'Td · tetrahedral with mirrors, 24', Th: 'Th · pyritohedral, 24', T: 'T · tetrahedral turns only, 12' };
 function dieTitle(e) { return e.s === 'A' ? e.name : e.g + ': ' + e.o.map(function (oi) { return data.groups[e.g][oi].lab; }).join(' + '); }
 function groupDice(g) {
@@ -318,11 +379,11 @@ function renderChoices() {
       var sel = e.o.slice().sort(function (a, b) { return a - b; }).join(',') === cur;
       return '<button class="item' + (sel ? ' sel' : '') + '" data-k="' + e.k + '"><span class="sws">' +
         e.o.map(function (oi) { return '<span class="sw" style="background:' + colOf(orbs[oi].col) + '"></span>'; }).join('') +
-        '</span><span class="nm">' + esc(e.s === 'A' ? e.name : e.o.map(function (oi) { return orbs[oi].lab; }).join(' + ')) + '</span><span class="meta">m ' + e.m + ' · N ' + e.N + '</span></button>';
+        '</span><span class="nm"><span>' + esc(nameOf(e)) + '</span><span class="tech">' + esc(e.s === 'A' ? e.name : e.o.map(function (oi) { return orbs[oi].lab; }).join(' + ')) + '</span></span><span class="meta">m ' + e.m + ' · N ' + e.N + '</span></button>';
     };
     var h = '';
     if (L.A.length) h += '<div class="sec">Main catalogue · ' + L.A.length + '</div><div class="list">' + L.A.map(item).join('') + '</div>';
-    if (L.B.length) h += '<div class="sec">Both icosahedron placements · ' + L.B.length + ' (not yet named)</div><div class="list">' + L.B.map(item).join('') + '</div>';
+    if (L.B.length) h += '<div class="sec">Both icosahedron placements · ' + L.B.length + '</div><div class="list">' + L.B.map(item).join('') + '</div>';
     box.innerHTML = h;
     box.querySelectorAll('.item').forEach(function (b) {
       b.onclick = function () {
@@ -368,7 +429,7 @@ function updatePick() {
     planes = G.planesFor(data, e, G.inverse(r.t.p));
     colours = e.o.map(function (oi) { return colOf(data.groups[e.g][oi].col); });
     if (!r.exact) {
-      html += '<div class="msg">Under ' + st.g + ' this set of faces has no die of its own: its full symmetry is <b>' + e.g + '</b>, a larger group, and the die is ' + esc(dieTitle(e)) + '.' +
+      html += '<div class="msg">Under ' + st.g + ' this set of faces has no die of its own: its full symmetry is <b>' + e.g + '</b>, a larger group, and the die is ' + esc(nameOf(e)) + ', ' + esc(dieTitle(e)) + '.' +
         '<br><button class="btn" id="goLarger">Open it under ' + e.g + '</button></div>';
     } else if (r.t.id !== 'I') {
       var how = !r.t.improper ? esc(dieTitle(e)) + ' turned a quarter turn about the z axis'
@@ -394,14 +455,19 @@ function updatePick() {
   if (e) console.assert(S.verts.length === e.c, 'corner count ' + S.verts.length + ' differs from ' + e.c);
   var mirrorShow = !!(e && e.h && st.hand);
   var plates = show(S, colours, mirrorShow);
+  var nk = e && !st.vac ? numScheme(e) : 'off';
+  if (nk !== 'off') {   // the numbers sit beside the solid (not inside its mirrored scale, so they never read backwards)
+    var both = new THREE.Group(); holder.remove(content); both.add(content); both.add(labelGroup(S, numbersFor(e, nk), colours, mirrorShow));
+    content = both; holder.add(both); dirty = true;
+  }
   if (e) {
     if (e.h) { $('handBtn').hidden = false; $('handBtn').setAttribute('aria-pressed', st.hand); }
     var kinds = e.o.map(function (oi, j) {
       var o = data.groups[e.g][oi];
       return '<tr><td>' + picker(o.col) + '</td><td>' + esc(o.plain) + '<br><span class="tech">' + esc(o.lab) + '</span></td><td class="num">' + polyCounts(S, j) + '</td><td class="num">' + e.d[j].toFixed(12) + '</td></tr>';
     }).join('');
-    html += '<h2>' + esc(dieTitle(e)) + '</h2>' +
-      '<p class="sub">' + (e.s === 'A' ? 'Main catalogue, ' + e.g + ' no. ' + e.num + (e.book ? ' · book atom ' + esc(e.book) : '') : 'Both icosahedron placements · not yet named') + '</p>' +
+    html += '<h2>' + esc(nameOf(e)) + '</h2>' +
+      '<p class="sub">' + esc(dieTitle(e)) + ' · ' + (e.s === 'A' ? 'Main catalogue, ' + e.g + ' no. ' + e.num + (e.book ? ' · book atom ' + esc(e.book) : '') : 'Both icosahedron placements') + '</p>' + numRow(e) +
       (e.m >= 4 ? '<span class="badge">Aequus Mosaicus</span>' : '') + (e.h ? '<span class="badge">two hands</span>' : '') +
       '<dl><dt>group</dt><dd>' + e.g + '</dd><dt>kinds of face m</dt><dd>' + e.m + '</dd><dt>faces N</dt><dd>' + e.N + ' (built: ' + S.faces.length + ')</dd><dt>corners</dt><dd>' + S.verts.length + '</dd>' +
       '<dt>hands</dt><dd>' + (e.h ? 'two hands (chiral)' + (st.hand ? ' · showing the other hand' : '') : 'one (mirror-symmetric)') + '</dd></dl>' +
@@ -417,6 +483,7 @@ function updatePick() {
   $('stlBtn').hidden = !canSave;
   var go = $('goLarger');
   if (go) go.onclick = function () { setGroup(e.g, e.o); };
+  panel.querySelectorAll('#numSeg button').forEach(function (b) { b.onclick = function () { st.num = b.dataset.k; updatePick(); }; });
 }
 
 // ---------------- Make it fair
@@ -532,8 +599,10 @@ $('stlBtn').onclick = exportSTL; $('stlBtn2').onclick = exportSTL;
 dl = { save: function (o) { return new Promise(function (ok) { var u = URL.createObjectURL(o.data); var a = document.createElement('a'); a.href = u; a.download = o.filename; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(u); }, 4000); ok(); }); } }; canSave = true;
 
 // ---------------- load
-Promise.all([fetch('/aequi/dice.json').then(function (r) { return r.json(); }), fetch('/aequi/fair.json').then(function (r) { return r.json(); })]).then(function (res) {
-  data = res[0]; fair = res[1];
+var numsLoad = fetch('/aequi/numberings.json').then(function (r) { return r.json(); }).catch(function () { return null; });
+Promise.all([fetch('/aequi/dice.json').then(function (r) { return r.json(); }), fetch('/aequi/fair.json').then(function (r) { return r.json(); }), fetch('/aequi/names.json').then(function (r) { return r.json(); })]).then(function (res) {
+  data = res[0]; fair = res[1]; NAMES = res[2];
+  numsLoad.then(function (x) { NUMS = x; if (tab === 'pick') updatePick(); });
   G.prepare(data);
   fillGroups(); fillLines();
   setGroup('Oh', [0, 1]);   // opens on Aequus CO-14
