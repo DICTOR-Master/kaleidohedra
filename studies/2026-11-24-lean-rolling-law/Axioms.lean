@@ -36,3 +36,10 @@ open RollingLaw
 #print axioms H3.exists_shortestRoll_le
 #print axioms H3.exists_shortestRoll_eq
 #print axioms H3.heights_pos
+#print axioms A3.card_mirrors
+#print axioms A3.longest_crosses_each_once
+#print axioms B3.card_mirrors
+#print axioms B3.longest_crosses_each_once
+#print axioms H3.card_mirrors
+#print axioms H3.longest_crosses_each_once
+#print axioms mirrorsCrossed_swaps

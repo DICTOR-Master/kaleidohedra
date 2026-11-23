@@ -104,18 +104,28 @@ for name,(gens,u,axes,(m01,m12,m02)) in GROUPS.items():
     for (i,_),xs in idx.items():
         assert len(xs)==2; a,b=xs; r[i][a]=b; r[i][b]=a
     # base face = face of u (identity matrix is G[0])
-    order=[0]; seen={0:0}; d={0:0}; q=0
+    order=[0]; seen={0:0}; d={0:0}; q=0; word={0:[]}
     while q<len(order):
         x=order[q]; q+=1
         for i in range(3):
             y=r[i][x]
-            if y not in seen: seen[y]=len(order); order.append(y); d[y]=d[x]+1
+            if y not in seen: seen[y]=len(order); order.append(y); d[y]=d[x]+1; word[y]=word[x]+[i]
     assert len(order)==N
     p=seen
     rt=[[p[r[i][x]] for x in order] for i in range(3)]
     dt=[d[x] for x in order]
     nt=[normals[x] for x in order]
     ft=[fv[x] for x in order]
+    wt=[word[x] for x in order]
+    # 4 g_x: exact symmetry matrices (scaled by 4 so that entries lie in Z[sqrt5])
+    gm=[tuple(tuple(e*Q(4) for e in row) for row in G[x]) for x in order]
+    for g in gm:
+        for row in g:
+            for e in row: assert e.a.denominator==1 and e.b.denominator==1
+    nkey={tuple(x.key() for x in n):z for z,n in enumerate(nt)}
+    perm=[[nkey[tuple((e*Q(F(1,4))).key() for e in mv(g,n))] for n in nt] for g in gm]
+    gkey={tuple(e.key() for row in g for e in row):x for x,g in enumerate(gm)}
+    inv=[gkey[tuple(g[c][r].key() for r in range(3) for c in range(3))] for g in gm]
     val=[sum(1 for f in fv if v in f) for v in range(len(verts))]
     exp={0:2*m12,1:2*m02,2:2*m01}
     assert all(val[v]==exp[types[v]] for v in range(len(verts))), (name, set(zip(types,val)))
@@ -130,6 +140,8 @@ and RollingLaw/Die.lean.
 import RollingLaw.Q5
 
 namespace RollingLaw.Data.{name}
+
+set_option maxRecDepth 100000
 
 /-- number of faces -/
 def N : Nat := {N}
@@ -163,6 +175,22 @@ def normal : List (List Q5) :=
 /-- `fv[x][k]`: the vertex of type `k` of face `x` -/
 def fv : List (List Nat) :=
   {str([list(t) for t in ft]).replace(' ','')}
+
+/-- `word[x]`: a shortest roll (edge types) from face 0 to face `x` -/
+def word : List (List Nat) :=
+  {str(wt).replace(' ','')}
+
+/-- `gm[x]`: 4 × the symmetry matrix (rows) taking face 0 to face `x` -/
+def gm : List (List (List Q5)) :=
+  {L(L(L(lean_q(e) for e in row) for row in g) for g in gm)}
+
+/-- `inv[x]`: the face whose symmetry is the inverse (= transpose) of that of face `x` -/
+def inv : List Nat :=
+  {str(inv).replace(' ','')}
+
+/-- `perm[x][z]`: the symmetry of face `x` takes the normal of face `z` to that of face `perm[x][z]` -/
+def perm : List (List Nat) :=
+  {str(perm).replace(' ','')}
 
 end RollingLaw.Data.{name}
 """)
