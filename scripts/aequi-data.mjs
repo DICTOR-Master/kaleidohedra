@@ -44,7 +44,15 @@ for (const f of files) {
     });
     r.o = o; nO++;
   }
-  if (s.spin_down && isPerm(s.spin_down.numbers, e.N)) { r.s = s.spin_down.numbers; nS++; }
+  if (s.spin_down && isPerm(s.spin_down.numbers, e.N)) {
+    // consecutive numbers on faces that share a side (and N next to 1 for a cycle)
+    const sp = s.spin_down.numbers, at = []; sp.forEach((v, i) => { at[v] = i; });
+    const sides = x.face_vertices.map((fv) => new Set(fv.map((a, t) => { const b = fv[(t + 1) % fv.length]; return a < b ? a + '_' + b : b + '_' + a; })));
+    const adj = (i, j) => [...sides[i]].some((k) => sides[j].has(k));
+    for (let v = 1; v < e.N; v++) if (!adj(at[v], at[v + 1])) throw new Error(`${f}: spin-down ${v}, ${v + 1} not on adjacent faces`);
+    if (s.spin_down.kind === 'cycle' && !adj(at[e.N], at[1])) throw new Error(`${f}: spin-down cycle not closed`);
+    r.s = sp; nS++;
+  }
   if (s.balanced && isPerm(s.balanced.numbers, e.N)) { r.b = s.balanced.numbers; nB++; }
   out[x.n] = r;
 }
