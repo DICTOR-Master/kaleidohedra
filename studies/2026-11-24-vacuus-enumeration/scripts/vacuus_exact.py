@@ -21,7 +21,7 @@ import sympy as sp
 import mpmath as mp
 from sympy import QQ
 import numpy as np
-from scipy.spatial import ConvexHull
+from scipy.spatial import ConvexHull, cKDTree
 
 mp.mp.dps = 80
 
@@ -66,7 +66,7 @@ def vkey(F, v): return tuple(F.key(x) for x in v)
 
 def fl(F, v): return [float(F.val(x)) for x in v]
 
-def analyse(name, F, V, uniform=True, extra=None):
+def analyse(name, F, V, uniform=True, extra=None, check_centre=True):
     t0 = time.time()
     n = len(V)
     keys = {vkey(F, v): i for i, v in enumerate(V)}
@@ -74,7 +74,7 @@ def analyse(name, F, V, uniform=True, extra=None):
     # centre: corner centroid, must be the origin here
     cen = tuple(sum((v[i] for v in V), F.zero) for i in range(3))
     centred = all(not x for x in cen)
-    assert centred, name + ": centroid not at origin"
+    assert centred or not check_centre, name + ": centroid not at origin"
     P = np.array([fl(F, v) for v in V])
     hull = ConvexHull(P)
     # group facets by plane
@@ -113,6 +113,10 @@ def analyse(name, F, V, uniform=True, extra=None):
     nE, nF = len(edges), len(faces)
     assert n - nE + nF == 2, "Euler"
     if uniform:
+        for f in faces:
+            p = f["verts"]; k = len(p)
+            cf = tuple(sum((V[i][t] for i in p), F.zero) / k for t in range(3))
+            assert len({F.key(dot(vsub(V[i], cf), vsub(V[i], cf))) for i in p}) == 1, name + ": face not cyclic"
         L = {F.key(dot(vsub(V[a], V[b]), vsub(V[a], V[b]))) for a, b in edges}
         assert len(L) == 1, name + ": edges not all equal"
     ekeys = {(min(a, b), max(a, b)) for a, b in edges}
@@ -132,6 +136,10 @@ def analyse(name, F, V, uniform=True, extra=None):
     for i in range(n):
         for j in range(i+1, n):
             if nrm[i] == nrm[j]:
+                mf = P[i] - P[j]; mf = mf / np.linalg.norm(mf)
+                R_ = P - 2 * np.outer(P @ mf, mf)
+                if cKDTree(P).query(R_)[0].max() > 1e-6:
+                    continue
                 m = canon(F, vsub(V[i], V[j]))
                 cand.setdefault(vkey(F, m), m)
     mirrors = {k: m for k, m in cand.items() if reflect_ok(m)}
