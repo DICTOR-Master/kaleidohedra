@@ -1,0 +1,25 @@
+=== amber  aequus-377  sc  s0 = -1487470636937773/860300085494144+1487470636937773/860300085494144r5 = 2.137178  s = 6/5 s0 = 2.564614  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 6  (1.0s)
+outer pattern computed (7.1s); faces with an empty outer cell: []
+adjacency: inner pairs 174, outer pairs 174, shared 174, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 116: (inner, outer) vertex counts {(1, 1): 116}; Y vertices 0; persistent inner edges 174/174
+sampling cross-check: 6000 points (4416 in the resin), points not covered exactly once: 0, max winding rounding 3.33e-15
+volume sum - resin = 0 (exact 0); resin = 12.322994; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 60, scutoid pieces 0, kinds 4 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hept face 0 (12 per cell): facets 22 vertices 18 Y 0 scutoid False vol 0.239916  C1-side neighbours [17, 30, 31, 38, 45, 54, 58] mould-side [17, 30, 31, 38, 45, 54, 58]
+     angles at C1 edges: [94.9127, 98.9464, 133.2041, 140.9572]
+     all dihedrals: 52.08640157 [not in basis]; 85.92518249 [not in basis]; 87.71562805 [not in basis]; 90.0 [1/2pi]; 94.91268792 [not in basis]; 98.94642385 [not in basis]; 114.6986855 [not in basis]; 127.6257039 [not in basis]; 130.0873121 [not in basis]; 133.2040865 [not in basis]; 134.378007 [not in basis]; 136.0012146 [not in basis]; 139.4610931 [not in basis]; 140.9571527 [not in basis]; 158.6473164 [not in basis]; 170.9582387 [not in basis]; 176.98559 [not in basis]; 178.5094179 [not in basis]; 184.358151 [not in basis]; 185.5919751 [not in basis]; 188.8273659 [not in basis]
+  kind quad face 12 (12 per cell): facets 8 vertices 8 Y 0 scutoid False vol 0.142255  C1-side neighbours [2, 28, 41, 52] mould-side [2, 28, 41, 52]
+     angles at C1 edges: [91.2798, 94.2037, 98.3698]
+     all dihedrals: 49.91268792 [not in basis]; 87.5891295 [not in basis]; 87.9552622 [not in basis]; 90.09380435 [not in basis]; 91.27979037 [not in basis]; 94.20370648 [not in basis]; 98.36983767 [not in basis]; 117.5137679 [not in basis]; 184.2463946 [not in basis]
+  kind hex face 24 (12 per cell): facets 12 vertices 12 Y 0 scutoid False vol 0.085998  C1-side neighbours [2, 8, 18, 33, 49, 55] mould-side [2, 8, 18, 33, 49, 55]
+     angles at C1 edges: [95.4533, 96.6086, 104.3233, 110.9052]
+     all dihedrals: 62.48623207 [not in basis]; 70.75104353 [not in basis]; 90.0 [1/2pi]; 94.07481751 [not in basis]; 95.45334774 [not in basis]; 96.60861048 [not in basis]; 104.323333 [not in basis]; 110.2694535 [not in basis]; 110.9051574 [not in basis]; 133.0297046 [not in basis]; 133.1470593 [not in basis]; 164.6100599 [not in basis]; 174.4080249 [not in basis]
+  kind hex face 36 (24 per cell): facets 18 vertices 14 Y 0 scutoid False vol 0.279373  C1-side neighbours [3, 7, 13, 27, 40, 57] mould-side [3, 7, 13, 27, 40, 57]
+     angles at C1 edges: [76.8041, 96.5818, 98.3337, 103.2923, 106.7202, 117.6663]
+     all dihedrals: 51.57013924 [not in basis]; 65.3013145 [not in basis]; 68.20562423 [not in basis]; 76.80409119 [not in basis]; 90.0 [1/2pi]; 92.28437195 [not in basis]; 92.4108705 [not in basis]; 96.58182443 [not in basis]; 98.33374658 [not in basis]; 103.2923322 [not in basis]; 106.7202096 [not in basis]; 109.2489565 [not in basis]; 110.9134832 [not in basis]; 117.6662534 [not in basis]; 120.0 [2/3pi]; 121.4608128 [not in basis]; 127.9135984 [not in basis]; 128.4298608 [not in basis]; 136.8764911 [not in basis]; 137.6667308 [not in basis]; 166.2572836 [not in basis]; 171.1726341 [not in basis]; 175.641849 [not in basis]; 175.7536054 [not in basis]; 181.4905821 [not in basis]; 183.01441 [not in basis]; 189.0417613 [not in basis]; 193.7427164 [not in basis]; 195.3899401 [not in basis]; 223.9987854 [not in basis]
+SCUTOID FRUSTA: 60 pieces; keep their side count 60; change it 0; neighbour set changes (Y vertex) 0; convex 12/60
+RESULT sc 6/5 cen: valid=True  partition; scutoid pieces 0; kinds 4; Y vertices 0; 157.7612 present False
+(50.0s)
