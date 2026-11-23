@@ -54,8 +54,8 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   build host (full build + axioms + sorry count, FINAL ok line), then README line + commit.
 * Done: M9c part 1 (Margin.lean).
 * Done: M9c part 2 (Coercive.lean).
-* Done: M9d (Existence.lean), M6b (Hemisphere.lean). Done: `Main.lean` (M10). In progress:
-  `Dice.lean` (fair-dice corollary with #112 Lemma 1); not in the Milestones list = not finished.
+* Done: M9d (Existence.lean), M6b (Hemisphere.lean). Done: `Main.lean` (M10), `Dice.lean` (M11).
+  Open: #112 Theorem A (b) symmetry group and (c) centroid; the finite test for equal masses.
 * Then M9c part 2 `Coercive.lean`: with a_j = −log r_j (0 < r ≤ 1, some r_j = 1), T = max a_j,
   mx(x) = max_j (ψ_j if ε‖x‖ < ⟪n_j,x⟫ else −T): (a) log(supp r/supp 1) ≥ log ε + mx pointwise;
   (b) layer cake (`lintegral_eq_lintegral_meas_lt`) on −mx over the ball and on Σκ_j a_j, compared
@@ -151,6 +151,15 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   (Σ_{i∈I} κ_i < area of the open π/2-neighbourhood of the rays in I, every nonempty proper I);
   `alexandrov_unique`: it is unique up to scaling about 0; `alexandrov_necessary` is the ⇒ half.
   Full build ok (`logs/build-M10.log`, FINAL ok); 0 sorry; standard axioms; 1987 lines.
+
+* M11 (2026-11-24) `Alexandrov/Dice.lean`: fair dice. `die n d = {x | ⟪n_j,x⟫ ≤ d_j ∀ j}`;
+  `faceCone n d k` = directions whose ray leaves the die through face k; `solidAngle` = 3·volume of
+  that cone in the unit ball (its area); `IsFair` = every face has solid angle 4π/N.
+  `solidAngle_eq_curvature` (#112 Lemma 1, the polar identity): solid angle of face k = curvature of
+  the polar polytope (corners n_j/d_j) at corner n_k/d_k. `fair_die_iff` (#112 Theorem A (a),
+  existence): a fair die with normals n exists ⇔ `AlexandrovCondition n (4π/N)`. `fair_die_unique`:
+  two fair dice with the same normals are equal up to scaling about 0. Full build ok
+  (`logs/build-M11.log`, FINAL ok); 0 sorry; standard axioms; 2128 lines.
 
 ## Next steps: existence (small pieces, variational route of Oliker 2007)
 

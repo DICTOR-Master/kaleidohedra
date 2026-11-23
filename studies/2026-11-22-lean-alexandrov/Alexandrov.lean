@@ -13,3 +13,4 @@ import Alexandrov.Coercive
 import Alexandrov.Existence
 import Alexandrov.Hemisphere
 import Alexandrov.Main
+import Alexandrov.Dice
