@@ -68,11 +68,31 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   4π/3 from Mathlib). So Σκ_i = 4π is necessary; for the dice κ_i = 4π/N. Full build ok
   (`logs/build-M4.log`, FINAL ok); 0 sorry; standard axioms only; 522 lines.
 
-## Next steps (existence, small pieces)
+* M5 (2026-11-24) `Alexandrov/Continuity.lean`: `continuousAt_curvature`: at every r with all r_i > 0,
+  the curvature at each corner is continuous in r (dominated convergence; off the tie planes of r,
+  which have volume 0, membership in a cell is decided by strict inequalities that persist nearby).
+* M7 (2026-11-24) `Alexandrov/Monotone.lean`: moving one corner k outward along its ray, with the others
+  fixed, enlarges its cell and shrinks every other cell: `curvature_le_of_raise`
+  (κ_k does not decrease), `curvature_le_of_raise_other` (each κ_j, j ≠ k, does not increase).
+* M6 (2026-11-24) `Alexandrov/Necessity.lean`: `curvature_lt_of_hemisphere`: for any set C of
+  directions that contains a nonzero vector and lies in a closed hemisphere,
+  Σ_{n_i ∈ C} κ_i < area of the open π/2-neighbourhood of C. Every nonempty spherically convex
+  ω ≠ S² lies in a closed hemisphere, so this gives the necessity half of Alexandrov's condition in its
+  stronger (open-neighbourhood) form; convexity is not needed. Proof: the cells of those corners lie in
+  the neighbourhood, and a boundary point of the neighbourhood (connectedness of R³∖{0}) shows an open
+  piece of it is left over.
+  Full build ok (`logs/build-M6.log`, FINAL ok); 0 sorry; standard axioms only; 821 lines.
+  Still to add for the textbook wording: "spherically convex ω ≠ S² lies in a closed hemisphere"
+  (a separation lemma).
 
-* M5: each cell volume depends continuously on r (cell boundaries move continuously; symmetric
-  differences lie in thin wedges).
-* M6: necessity of Alexandrov's condition (Σ_{n_i∈ω} κ_i(r) < area ω^{π/2}).
-* M7: monotonicity: raising r_k alone increases κ_k and decreases every other κ_j (weakly).
-* M8+: existence for κ satisfying the condition, by Aleksandrov's continuity method or the
-  finite-dimensional variational route (Oliker 2007, Theorems 4 and 6).
+## Next steps: existence (small pieces, variational route of Oliker 2007)
+
+* M8 (variational characterization): for prescribed κ_j ≥ 0 with Σκ_j = 4π, set
+  D(r, r') = Σ κ_j log(r'_j/r_j) − 3 ∫_{ball} log(h_{r'}(x)/h_r(x)) dx, with h_r(x) = max_j r_j⟪n_j,x⟫
+  (the integrand is bounded, so no integrability issue). If D(r, r') ≤ 0 for all r' > 0 then
+  κ_j(r) = κ_j for all j. Proof: raise r_j by a factor s > 1; the integrand lies in [0, log s] and
+  vanishes off cell_j(r'), so κ_j ≤ κ_j(r'); let s → 1 (M5); then the totals (M4) force equality.
+* M9 (existence of a maximizer): scale invariance (normalize max r_j = 1) and coercivity of Φ from
+  Alexandrov's condition (as min r_j → 0, Φ → −∞; the several-scales case by induction on the set of
+  rays that collapse). This is the main remaining work.
+* M10: assemble: Alexandrov's condition + Σκ = 4π ⇒ existence; corollary for the dice (κ_j = 4π/N).
