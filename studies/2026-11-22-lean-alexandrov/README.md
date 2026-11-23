@@ -53,7 +53,8 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
 * Done and committed: M1-M8, M9a, M9b (see Milestones). Each milestone: `check.sh TAG thm...` on the
   build host (full build + axioms + sorry count, FINAL ok line), then README line + commit.
 * Done: M9c part 1 (Margin.lean).
-* In progress: M9c part 2 `Coercive.lean` (not yet in the Milestones list = not finished).
+* Done: M9c part 2 (Coercive.lean).
+* In progress: M9d `Existence.lean` (not in the Milestones list = not finished).
 * Then M9c part 2 `Coercive.lean`: with a_j = −log r_j (0 < r ≤ 1, some r_j = 1), T = max a_j,
   mx(x) = max_j (ψ_j if ε‖x‖ < ⟪n_j,x⟫ else −T): (a) log(supp r/supp 1) ≥ log ε + mx pointwise;
   (b) layer cake (`lintegral_eq_lintegral_meas_lt`) on −mx over the ball and on Σκ_j a_j, compared
@@ -121,6 +122,13 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   has every direction within ⟪n_j,x⟫ > ε₀‖x‖ of a ray (compact sphere). `exists_margin`: Alexandrov's
   condition Σ_{i∈I} κ_i < area(nbhd n 0 I) for all nonempty proper I survives with one ε > 0 and a
   uniform margin η > 0. Full build ok (`logs/build-M9c1.log`, FINAL ok); 0 sorry; standard axioms.
+
+* M9c part 2 (2026-11-24) `Alexandrov/Coercive.lean`: `Phi_le_of_margin`: on the slice
+  0 < r ≤ 1 with some r_i = 1, Phi r ≤ −4π log ε − η·max_j(−log r_j) (pointwise bound
+  log(supp r/supp 1) ≥ log ε + mx, then the layer-cake formula on the ball and on the rays, compared
+  level by level with the margin). `exists_coercive`: under Alexandrov's condition there is δ > 0
+  with Phi r < 0 = Phi 1 on the slice whenever some r_i < δ. Full build ok (`logs/build-M9c2.log`,
+  FINAL ok); 0 sorry; standard axioms.
 
 ## Next steps: existence (small pieces, variational route of Oliker 2007)
 

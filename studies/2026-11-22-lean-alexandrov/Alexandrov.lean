@@ -9,3 +9,4 @@ import Alexandrov.Variational
 import Alexandrov.Functional
 import Alexandrov.PhiContinuity
 import Alexandrov.Margin
+import Alexandrov.Coercive
