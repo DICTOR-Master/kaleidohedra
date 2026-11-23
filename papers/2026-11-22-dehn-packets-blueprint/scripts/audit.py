@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Blueprint audit for paper.html (#119 draft).
 1. Every <pre class="lean"> block must occur verbatim (whitespace collapsed, Lean comments removed) in the Lean
-   sources: the Packets files and the Dehn Canon's Dehn2Poly / Dehn2Local (same definitions as the pinned commit).
+   sources: the Packets files and the Dehn Canon files vendored unchanged under Packets/Canon/.
 2. Every Lean name in <code> inside the statement map (Table 3) must be declared in those sources.
 3. Every theorem named in the map must appear in axioms.log with exactly [propext, Classical.choice, Quot.sound].
-Usage: audit.py <packets study dir> <canon lean dir>   (prints AUDIT OK on success)"""
+Usage: audit.py <packets entry dir>   (prints AUDIT OK on success)"""
 import html, re, sys, pathlib
 here = pathlib.Path(__file__).resolve().parent
-pk, canon = map(pathlib.Path, sys.argv[1:3])
-srcs = sorted((pk / 'Packets').glob('*.lean')) + [canon / 'Dehn2Poly.lean', canon / 'Dehn2Local.lean']
+pk = pathlib.Path(sys.argv[1])
+srcs = sorted((pk / 'Packets').glob('*.lean')) + sorted((pk / 'Packets' / 'Canon').glob('*.lean'))
 def norm(s):
     s = re.sub(r'/-.*?-/', ' ', s, flags=re.S)
     s = re.sub(r'--[^\n]*', ' ', s)

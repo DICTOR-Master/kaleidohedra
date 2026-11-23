@@ -1,4 +1,7 @@
-import Packets
+import Packets.Copies
+import Packets.Tiling
+import Packets.Rings
+import Packets.Lemma2
 #print axioms Packets.lemma2
 #print axioms Packets.lemma3
 #print axioms Packets.ring_weight_le
@@ -19,6 +22,7 @@ import Packets
 #print axioms Packets.ih_edgeAngle
 #print axioms Packets.to_edgeAngle
 #print axioms Packets.tco_edgeAngle
+#print axioms Packets.tid_edgeAngle
 #print axioms Packets.theorem4a_copies
 #print axioms Packets.theorem4b_copies
 #print axioms Packets.pyrD_eq
