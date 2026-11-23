@@ -4,7 +4,7 @@ DICTO · dictospheres.com · study 2026-11-24-aequi-certify-extend · with Claud
 
 **Verdict, Part 1: all 1232 Aequi are rigorously certified.** For each die, ball arithmetic proves that exactly one fair depth vector lies in an explicit box around the published depths, and that the published 60-digit depths are within 5e-60 of it. The face structure is proved constant over the box. 1229 dice pass on a box where the combinatorial type does not change; the other 3 sit exactly where the type changes, and they pass with a split box. There are no failures. **Aequus CIRT-30, T 26:** its C6 and RT24/12a faces are at equal depth to within 2.2e-78 (rigorous). The exact equality is reduced to one identity along the line d(C6) = d(RT24/12a): 2Ω(RT24/12a face) − Ω(C6 face) = 4π/30 for every depth of the I12 faces. That identity holds to 1e-93 at six points but is **not yet proved**, so "exactly equal" is not claimed. One of the other two split-box dice, Td: D12+D12′/24 + RT24+RT24′/24, is settled exactly: its depth ratio is cos 18° = √(10+2√5)/4, and it is fair because its faces project onto the 48 triangles of the cube's symmetry.
 
-**Part 2:** (a) Both icosahedron placements under the 16 other subgroup classes of Oh with one fixed point: 6 924 orbit sets searched (all m = 2; m = 3 for groups of order ≥ 6; m = 4 for D3d), every set with exactly one fair die, giving **5 935 new Aequi, all rigorously certified**. (b) Widening the depth box to e^±3 for the seven frame groups (234 sets) found the same single die in every set, and nothing new; <<CAPS-VERDICT>> (c) the pilot of faces off the symmetry axes: along every one-parameter family tried (9 families, 5 groups) there is **exactly one fair die for every value of the parameter**, so these dice come as **continuous families**, not as isolated dice. The enumeration problem is therefore one of counting cells (group, orbit types, combinatorial type), not dice. It is defined below.
+**Part 2:** (a) Both icosahedron placements under the 16 other subgroup classes of Oh with one fixed point: 6 924 orbit sets searched (all m = 2; m = 3 for groups of order ≥ 6; m = 4 for D3d), every set with exactly one fair die, giving **5 935 new Aequi, all rigorously certified**. (b) Widening the depth box to e^±3 for the seven frame groups (234 sets) found the same single die in every set, and nothing new; raising the caps (D3d and C2h with 9 orbits completed to every m; D3 and S6 at m = 5) searched 2 141 more sets, again with exactly one fair die per set, and gave **1 711 more new Aequi (336 + 1 375), all certified**. D2h (16 orbits) m = 5 is checkpointed at 1 426 of 1 455 sets. (c) the pilot of faces off the symmetry axes: along every one-parameter family tried (9 families, 5 groups) there is **exactly one fair die for every value of the parameter**, so these dice come as **continuous families**, not as isolated dice. The enumeration problem is therefore one of counting cells (group, orbit types, combinatorial type), not dice. It is defined below.
 
 **Part 3:** none of the 1232 (nor the new dice of Part 2) appears in the catalogues checked (sources listed below). The method of fixing one free parameter between two kinds of face (fair by continuity) is credited to Diaconis and Keller. Fair dice built by setting every face's solid angle to 4π/N are credited to Rawlins.
 
@@ -138,7 +138,16 @@ D6h and D3h are prisms, as in the earlier study (symmetry outside the frame maps
 
 So the classes D3d (9 orbits) and C2h (9 orbits) are now complete for every m, like the classes that study 2026-11-19 completed.
 
-<<CAPS2>>
+*Batch 2: D3 (12 orbits) and S6 (13 orbits) at m = 5.* These had been capped at m ≤ 4. 438 D3 sets and 1 287 S6 sets were searched, and **every set has exactly one fair die**. The 1 725 solutions are 1 489 distinct Aequi:
+- 6 have a group containing T (Th 5, Oh 1) and were met before;
+- 108 are congruent to dice of study 2026-11-19-aequi-complete;
+- **1 375 are new**: S6 1000, D3 354, D3d 21, all with m = 5 under their full group. All are rigorously certified (Krawczyk on constant-type boxes, no multi-plane corners; uniqueness half-widths 1e-2: 32, 1e-3: 590, 1e-4: 731, 1e-5: 14, 1e-6: 7, 1e-8: 1).
+
+**Checkpoint: not finished before the power cut.**
+- D2h (16 orbits) m = 5: 1 426 of 1 455 sets were searched when the job reached its time cap. These are not yet classified. To resume, rerun `SOLVER=solve1.py bash scripts/run2b.sh PY 22 data/raw/sol-2caps2.jsonl "19:5 24:6"` (resumable from data/raw/sol-2caps2.jsonl.gz, gunzipped). Then run collect1.py with plan [[19,5],[24,6]], post2a.py with prefix 2caps3, and certify.py with DICE=data/dice2caps3-new.json.
+- D3 (12 orbits) m = 6 was not started.
+
+Data: data/counts2caps.md, counts2caps2.md, aequi2caps*.json.gz, certify2caps*.jsonl.gz, structural2caps*.json, collected2caps*.json.gz, raw/sol-2caps*.jsonl.gz.
 
 ### (c) Pilot: faces off the symmetry axes (scripts/pilot2c.py, data/pilot2c.json, logs/pilot2c.log)
 
@@ -183,8 +192,8 @@ The axis-only catalogue (the 1232 and the 4553) is the p = 0 layer. The pilot sh
 2. Row 124 (Td, N = 56): the same hyperplane d(RT) = cos 18° d(D) as row 95, but no projection symmetry. Find the mechanism.
 3. "Fair by projection": a die whose central projection has more symmetry than the solid (row 95: Td solid, Oh projection). Search the catalogue for more.
 4. Off-axis families: run E1 for all mirror orbits of Oh, Td, Th, Ih (one parameter), then general orbits (two parameters), with certified tracking of type changes.
-5. Remaining caps: both placements at m ≥ 4 (m ≥ 5 for D3d) under the subgroups of Oh, and m = 3 for S4, C2h, D2; one placement: D2 (20 orbits) and C2h (23 orbits) above m = 4 and m = 3, Ci above m = 3. Every set searched so far (6 924 + 416 + the second batch here + 234 re-searched) has exactly one fair die. A proof of "one fair die per orbit set" for groups with one fixed point would make all these counts exact.
-6. The new dice of Part 2 (5 935 + 336 + batch 2) are certified but not yet drawn: renders and Vacuus sheets, as in the earlier studies.
+5. Remaining caps: both placements at m ≥ 4 (m ≥ 5 for D3d) under the subgroups of Oh, and m = 3 for S4, C2h, D2; one placement: D2 (20 orbits) and C2h (23 orbits) above m = 4 and m = 3, Ci above m = 3. Every set searched so far (6 924 + 416 + 1 725 + 234 re-searched) has exactly one fair die. A proof of "one fair die per orbit set" for groups with one fixed point would make all these counts exact.
+6. The new dice of Part 2 (5 935 + 336 + 1 375) are certified but not yet drawn: renders and Vacuus sheets, as in the earlier studies.
 
 ## Questions for DICTO
 
@@ -197,12 +206,12 @@ The axis-only catalogue (the 1232 and the 4553) is the p = 0 layer. The pilot sh
 - scripts/:
   - certify.py (Part 1 certifier), accidental.py (split box), structural.py (exact zero proofs; row 95), line504.py (CIRT-30 on its line), summarize1.py;
   - classes2a.py, solve.py, run2a.sh, plan_check.py, collect.py, exact.py, post2a.py (Part 2a; solve/collect/exact are copies from study 2026-11-20-aequi-two-placements);
-  - solve_wide.py, run2b.sh, plan_check2.py (Part 2b);
+  - solve_wide.py, run2b.sh, plan_check2.py, compare2b.py, solve1.py, collect1.py (Part 2b);
   - pilot2c.py (Part 2c);
   - groups.py (122 directions, copy).
 - data/:
   - Part 1: certify-pass1.jsonl, certify-table.csv, certify-summary.md, accidental.json, structural.json;
-  - Part 2: classes2a.json, plan2a-stages.txt, raw/ (double-precision solutions), counts2a.md, aequi2a.json.gz, dice2a-new.json, certify2a.jsonl.gz, classes-study1.json, plan2b-stages.txt, pilot2c.json.
+  - Part 2: classes2a.json, plan2a-stages.txt, raw/ (double-precision solutions), counts2a.md, aequi2a.json.gz, dice2a-new.json, certify2a.jsonl.gz, classes-study1.json, plan2b-stages.txt, compare2b.json, plan2caps*-stages.txt, counts2caps*.md, aequi2caps*.json.gz, certify2caps*.jsonl.gz, structural2caps*.json, pilot2c.json.
 - logs/: certify, accidental, structural, line504, classes2a, pilot2c, and the Part 2 job logs.
 
 Software: python-flint 0.9.0 (arb), scipy, sympy, mpmath.
