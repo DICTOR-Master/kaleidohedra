@@ -1,0 +1,26 @@
+<!doctype html><meta charset=utf-8><body><canvas id=c></canvas>
+<script type=module>
+import * as pdfjs from '/node_modules/pdfjs-dist/build/pdf.mjs';
+pdfjs.GlobalWorkerOptions.workerSrc = '/node_modules/pdfjs-dist/build/pdf.worker.mjs';
+window.runPdf = async (url, scale) => {
+  const t0 = performance.now();
+  // same init as Zenodo's previewer: whole file, no range/stream
+  const doc = await pdfjs.getDocument({url, disableStream:true, disableRange:true, disableAutoFetch:true}).promise;
+  const tLoad = performance.now() - t0;
+  const pages = [];
+  for (let i = 1; i <= doc.numPages; i++) {
+    const p0 = performance.now();
+    try {
+      const page = await doc.getPage(i);
+      const vp = page.getViewport({scale});
+      const c = document.getElementById('c'); c.width = Math.floor(vp.width); c.height = Math.floor(vp.height);
+      await page.render({canvasContext: c.getContext('2d'), viewport: vp}).promise;
+      pages.push({page:i, ms: Math.round(performance.now()-p0)});
+      page.cleanup();
+    } catch (e) { pages.push({page:i, ms: Math.round(performance.now()-p0), error: String(e)}); }
+  }
+  await doc.destroy();
+  return {tLoad: Math.round(tLoad), pages, total: Math.round(performance.now()-t0)};
+};
+window.ready = true;
+</script>
