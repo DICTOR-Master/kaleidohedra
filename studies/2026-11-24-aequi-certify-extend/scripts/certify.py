@@ -229,6 +229,17 @@ class Die:
                 if rmin is None or r.lower() < rmin.lower(): rmin = r
                 if worst_slack is None or sl0.lower() < worst_slack.lower(): worst_slack = sl0
         return rmin.lower(), worst_slack
+    def newton(s, steps=9):
+        """refine double-precision depths to working precision (Newton with the arb Jacobian at the point)"""
+        ctx.prec = PREC; n = s.m - 1
+        for _ in range(steps):
+            X = [D(v, [arb(1) if j == i else arb(0) for j in range(n)]) for i, v in enumerate(s.xt)]
+            Fx, _ = s.F(X)
+            J = arb_mat([[arb(Fx[i].g[j].mid()) for j in range(n)] for i in range(n)])
+            f = arb_mat([[arb(Fx[i].v.mid())] for i in range(n)])
+            dx = J.solve(f)
+            s.xt = [arb((s.xt[i] - dx[i, 0]).mid()) for i in range(n)]
+        return max(float(Fx[i].v.abs_upper()) for i in range(n))
     def krawczyk(s, r):
         ctx.prec = PREC; ra = arb(r); n = s.m - 1
         X = [D(arb(v, ra), [arb(1) if j == i else arb(0) for j in range(n)]) for i, v in enumerate(s.xt)]
@@ -270,6 +281,7 @@ def work(rec):
                                                             coef=e['coef']) for e in s.accidental][:12], n_accidental=len(s.accidental))
             return out
         if not s.graph_ok: out['status'] = 'graph_fail'; return out
+        if rec.get('refine'): out['newton_last_residual'] = s.newton()
         rt, slack = s.type_radius(); out['type_radius'] = float(rt); out['min_slack'] = float(slack.lower())
         out['all_faces_mid_residual'] = float(s.all_faces_mid())
         tight = s.krawczyk(1e-40); out['tight'] = tight
@@ -289,7 +301,7 @@ def work(rec):
 
 if __name__ == '__main__':
     outp, npr = sys.argv[1], int(sys.argv[2])
-    recs = load_all()
+    recs = load_all() if not os.environ.get('DICE') else json.load(open(os.environ['DICE']))
     if len(sys.argv) > 3: want = set(sys.argv[3].split(',')); recs = [r for r in recs if '%s:%s' % (r['study'][:10], r['sid']) in want or str(r['sid']) in want]
     print('dice', len(recs), flush=True)
     done = set()

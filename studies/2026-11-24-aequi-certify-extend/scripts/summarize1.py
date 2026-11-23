@@ -31,3 +31,12 @@ L.append(''); L.append('Uniqueness half-width (nearest power of ten): ' + ', '.j
 L.append('Dice with corners where four or more planes meet: %d (structural, proved exactly: %d dice, %d distinct checks, %d failures; accidental: 3)' % (
     sum(1 for x in rows if x['multi_plane_corners']), S['dice_with_structural_corners'], S['distinct_checks'], S['failures']))
 open('data/certify-summary.md', 'w').write('\n'.join(L) + '\n'); print('\n'.join(L))
+# names (the 149 numbered in study 2026-11-20-aequi-catalogue) and file names joined into the table
+names = {}
+for r in csv.DictReader(open('../2026-11-20-aequi-catalogue/data/catalogue.csv')): names[r['source'].split('/')[-1]] = r['name']
+Rj = {(j['study'], str(j['sid'])): j for j in R}
+rows = list(csv.DictReader(open('data/certify-table.csv')))
+for r in rows:
+    j = Rj[(r['study'], r['row'])]; r['name'] = names.get(j['file'], '') if r['study'].startswith('2026-11-19') else ''; r['file'] = j['file']
+f = ['name'] + [x for x in rows[0] if x != 'name']
+w = csv.DictWriter(open('data/certify-table.csv', 'w', newline=''), fieldnames=f); w.writeheader(); w.writerows(rows)
