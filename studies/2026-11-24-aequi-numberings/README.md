@@ -3,10 +3,27 @@
 For DICTO's Aequi picker (chosen 22 Nov: all four numberings, switchable per die). DATA ONLY: no app change yet.
 App UI waits for DICTO's choice of syllable set (names below are a proposal).
 
-**Status: RUNNING** (see "Resume" below). Counts are filled in when all 1232 dice are done.
-Plain, opposite, spin-down and names: all 1232 dice done. Balanced: filled in die by die; a die not yet done has
-`"balanced": {"status": "pending"}`. The first 105 dice (largest N) ran with deterministic limits 120 + 40 (4 workers); the rest with
-8 + 4 (2 workers, 50000 swap steps), smallest N first; each die records its own limits (`det_time`).
+**Status (06:30 JST): all 1232 dice have all four numberings; balanced refinement running** (longer limits 60 + 20 on the
+dice not proved optimal, smallest first, until 09:12 JST; see "Resume"). The counts below are updated at the end.
+
+## Counts (all 1232 dice; checks.py: fast phase 0 problems; full checks rerun at the end of the refinement)
+
+| scheme | dice | notes |
+|---|---|---|
+| plain | 1232 | |
+| opposite (sum N + 1) | 276 | exactly the centrally symmetric dice (Ih 4, Oh 57, Th 215); 956 marked unavailable |
+| spin-down | 1232 | a Hamiltonian **cycle** on every die (so N is also next to 1); no die needs a path |
+| balanced | 1232 | corner spread **proved optimal for 2**: no. 9 (N = 10, spread 8) and no. 5 (N = 14, spread 5); the rest best found with the gap stated |
+
+Balanced, the rest: the solver's lower bounds are weak, so the stated gaps are wide (single corner degree, 1043 dice: median gap
+29; mixed corner degrees, 189 dice: median gap 12). Best found is not claimed optimal. Smallest corner spreads found: 5 (no. 5),
+6 (nos. 6, 12, 13, 63 with N = 18; no. 25 with N = 30). Where corners of different degree meet (189 dice), raw sums differ by
+degree, so the spread there is large by construction (as asked: raw sums).
+
+History of the run: the first 105 dice (largest N) ran with limits 120 + 40, 4 workers; the rest with 8 + 4, 2 workers, 50000 swap
+steps, smallest N first. Stage 2 can lower the corner spread below the stage-1 value; the stored `corner_spread` is the spread of the
+stored numbers (`corner_spread_stage1` keeps the stage-1 value; scripts/fix_spreads.py corrected the first runs, which had stored
+the stage-1 value for 62 dice). Each die records its own limits (`det_time`, and `refined` if the refinement pass ran on it).
 
 ## Data
 
@@ -57,8 +74,9 @@ opposite = N + 1; balanced spreads recomputed, bound ≤ value, OPTIMAL only whe
 Each die is written to its own file as soon as it is done; finished dice are skipped on restart. To resume on the compute host:
 
     cd <k-research>/studies/2026-11-24-aequi-numberings
-    MODE=balanced WORKERS=2 T1=8 T2=4 ITERS=50000 python scripts/numberings.py data/dice --procs 11 && python scripts/checks.py . | tee logs/checks.out
+    MODE=refine WORKERS=4 T1=60 T2=20 ITERS=200000 python scripts/numberings.py data/dice --procs 6 && python scripts/checks.py . | tee logs/checks.out
 
-(MODE=fast fills plain/opposite/spin-down for any missing die with balanced pending; MODE=balanced fills every pending balanced.)
+(MODE=fast fills plain/opposite/spin-down for any missing die with balanced pending; MODE=balanced fills every pending balanced; MODE=refine reruns every non-optimal die whose limits are below T1 and keeps the better
+numbering and the larger proved bound.)
 
 (Python with ortools, numpy, mpmath; the sibling study 2026-11-24-aequi-vacuus-scutoids and the two search studies must be present.)

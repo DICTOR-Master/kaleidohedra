@@ -206,7 +206,8 @@ def balanced(L):
         v2 = int(S2.ObjectiveValue()); b2 = int(round(S2.BestObjectiveBound())); s2 = st(c2)
     else:
         sol = sol1; v2 = None; b2 = None; s2 = "UNKNOWN (stage-1 numbering kept)"
-    return dict(numbers=sol, corner_spread=v1, corner_spread_lower_bound=b1, corner_status="OPTIMAL" if c1 == cp_model.OPTIMAL else "FEASIBLE",
+    va = spread_of(sol, verts)   # stage 2 may lower the corner spread below the stage-1 value
+    return dict(numbers=sol, corner_spread=va, corner_spread_stage1=v1, corner_spread_lower_bound=b1, corner_status="OPTIMAL" if va == b1 else "FEASIBLE",
                 neighbour_spread=spread_of(sol, [nb[f] for f in range(N)]), neighbour_spread_lower_bound=b2 if b2 is not None else 0,
                 neighbour_status=s2 if s2 != "OPTIMAL" else "OPTIMAL", det_time=[T1, T2], workers=WORKERS, swap_steps=ITERS)
 
@@ -253,7 +254,8 @@ def one_(n, out):
     fn = os.path.join(out, "%04d.json" % n)
     if os.path.exists(fn):
         r = json.load(open(fn))
-        if MODE != "balanced" or r["schemes"]["balanced"].get("status") != "pending": return n, "skip"
+        if MODE == "refine": pass
+        elif MODE != "balanced" or r["schemes"]["balanced"].get("status") != "pending": return n, "skip"
     t0 = time.time(); L = lattice(n); e = L["e"]; N = L["N"]
     res = dict(n=n, name=name_of(n), name_shown="%s (no. %d)" % (name_of(n), n), catalogue=e["name"] if e["s"] == "A" else None,
                group=e["g"], group_no=e.get("num"), N=N, corners=len(L["verts"]),
@@ -273,6 +275,14 @@ def one_(n, out):
         old = r["schemes"]; assert old["plain"]["numbers"] == sch["plain"]["numbers"]
         if L["opp"]: assert old["opposite"]["numbers"] == sch["opposite"]["numbers"]
         sch["spin_down"] = old["spin_down"]; sch["balanced"] = balanced(L)
+    elif MODE == "refine":   # longer limits; keep the better numbering, the larger corner bound
+        old = r["schemes"]; ob = old["balanced"]; sch["spin_down"] = old["spin_down"]
+        if ob.get("status") == "pending" or ob["corner_status"] == "OPTIMAL" or ob["det_time"][0] >= T1: return n, "skip"
+        nb_ = sch_new = balanced(L)
+        better = (nb_["corner_spread"], nb_["neighbour_spread"]) < (ob["corner_spread"], ob["neighbour_spread"])
+        keep = dict(nb_ if better else ob); keep["corner_spread_lower_bound"] = max(nb_["corner_spread_lower_bound"], ob["corner_spread_lower_bound"])
+        keep["corner_status"] = "OPTIMAL" if keep["corner_spread"] == keep["corner_spread_lower_bound"] else "FEASIBLE"
+        keep["refined"] = dict(det_time=[T1, T2], improved=better); sch["balanced"] = keep
     elif MODE == "fast":
         sch["balanced"] = dict(status="pending"); sch["spin_down"] = spin(L)
     else:
@@ -288,7 +298,7 @@ if __name__ == "__main__":
     a = sys.argv[2:]; procs = 1
     if "--procs" in a: procs = int(a[a.index("--procs") + 1]); a = a[:a.index("--procs")]
     ids = list(range(int(a[0]), int(a[1]) + 1)) if a else list(range(1, len(D["dice"]) + 1))
-    ids.sort(key=lambda n: D["dice"][n - 1]["N"] * (1 if MODE == "balanced" else -1))   # balanced: smallest first; else largest first
+    ids.sort(key=lambda n: D["dice"][n - 1]["N"] * (1 if MODE in ("balanced", "refine") else -1))   # balanced: smallest first; else largest first
     from multiprocessing import Pool
     done = 0
     with Pool(procs) as P:
