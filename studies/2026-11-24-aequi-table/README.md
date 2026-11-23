@@ -34,3 +34,25 @@ Draft paper figure (later an app view; the app is unchanged). Title "The Non-Per
 - figures/aequi-table.svg, figures/aequi-table.pdf; figures/paper.html (wrapper for figcheck).
 
 Credit: the dice and their data are from the studies named above; the face colours are the Aequi picker's.
+
+# The larger table: all subgroups (DICTO, 24 November 2026)
+
+"The Non-Periodic Table of the Aequi — all subgroups" (draft title). **All 4553 Aequi of study 2026-11-19-aequi-complete: 22 rows
+(Ih 120 … Ci 2) × m = 2..7; counts equal that study's data/counts.md and data/table.csv cell by cell, total 4553.** Same design as above,
+three dice per cell side by side. Too tall for one A4-wide page, so two panels, one page each: (a) groups of order 12 or more (13 rows),
+(b) order less than 12 (9 rows, with the column totals and the key).
+
+Vacuus kind, computed here for every die from its face planes (the 4553 were not classified before): **3159 heart, 1370 inherited heart,
+24 non-heart.** Heart exactly when the full group contains −I (all 4553); the 149 dice also in the 1232 classification get the same kind
+(149 of 149). Non-heart dice lie in T (2), D3 (10), D2 (11) and S4 (1). Depths compared at 60 digits (equal within 1e-40); no die has every
+face paired with a parallel face at a different depth.
+
+Colours: the app's face colours; an orbit mixing two families (for example C6+RT24/10) takes the colour of its icosahedral family, an
+O8/4 orbit is the tetrahedron's red, and a second orbit of one colour in a die is drawn paler.
+
+- scripts/make_table_all.py (python3 make_table_all.py <this study> <study 2026-11-19-aequi-complete>; reads its data/dice/*.json,
+  counts.md, table.csv and scripts/groups.py for the 74 directions).
+- data/all-cells.csv (every filled cell: counts by Vacuus kind, drawn dice), data/all-dice-kinds.csv (Vacuus kind of each of the 4553),
+  data/all-checks.log.
+- figures/aequi-table-all-a.svg, figures/aequi-table-all-b.svg, figures/aequi-table-all.pdf (two pages); figures/all/paper.html for
+  figcheck: FIGCHECK OK.

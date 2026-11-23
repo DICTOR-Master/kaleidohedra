@@ -93,6 +93,12 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   the integrand lies in [0, log s] and vanishes off its new cell, so κ_j ≤ κ_j(r'_s); s → 1 by M5;
   totals equal by M4. Full build ok (`logs/build-M8.log`, FINAL ok); 0 sorry; standard axioms; 1051 lines.
 
+* M9a (2026-11-24) `Alexandrov/Functional.lean`: the integrand of `gap` is bounded by
+  Σ_i |log(r'_i/r_i)| (`abs_log_ratio_le`), hence integrable; gains add along a path (`gap_add`);
+  a homothety gains (Σκ − 4π) log c (`gap_smul`). `Phi n κ r = gap n κ 1 r`: `Phi 1 = 0`,
+  `gap r r' = Phi r' − Phi r`, `Phi (c • r) = Phi r` when Σκ = 4π. Check script `check.sh`; full build ok
+  (`logs/build-M9a.log`, FINAL ok); 0 sorry; standard axioms; 1232 lines.
+
 ## Next steps: existence (small pieces, variational route of Oliker 2007)
 
 * M8 done (above).
