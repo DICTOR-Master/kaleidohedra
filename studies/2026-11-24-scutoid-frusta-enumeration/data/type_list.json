@@ -1,0 +1,956 @@
+{
+"rows": [
+{
+"id": "SF 3-3-0",
+"small_end": 3,
+"large_end": 3,
+"Y": 0,
+"chiral": false,
+"vertices": 6,
+"faces": 5,
+"lateral_face_sides": [
+4,
+4,
+4
+],
+"bottom": 3,
+"top": 3,
+"events": ""
+},
+{
+"id": "SF 3-3-2",
+"small_end": 3,
+"large_end": 3,
+"Y": 2,
+"chiral": false,
+"vertices": 8,
+"faces": 6,
+"lateral_face_sides": [
+4,
+4,
+5,
+5
+],
+"bottom": 3,
+"top": 3,
+"events": "start 3 between 0,1 end 0"
+},
+{
+"id": "SF 3-4-1",
+"small_end": 3,
+"large_end": 4,
+"Y": 1,
+"chiral": false,
+"vertices": 8,
+"faces": 6,
+"lateral_face_sides": [
+3,
+4,
+5,
+5
+],
+"bottom": 3,
+"top": 4,
+"events": "start 3 between 0,1"
+},
+{
+"id": "SF 3-5-2.1",
+"small_end": 3,
+"large_end": 5,
+"Y": 2,
+"chiral": true,
+"vertices": 10,
+"faces": 7,
+"lateral_face_sides": [
+3,
+4,
+4,
+5,
+6
+],
+"bottom": 3,
+"top": 5,
+"events": "start 3 between 0,1 start 4 between 0,3"
+},
+{
+"id": "SF 3-5-2.2",
+"small_end": 3,
+"large_end": 5,
+"Y": 2,
+"chiral": false,
+"vertices": 10,
+"faces": 7,
+"lateral_face_sides": [
+3,
+3,
+5,
+5,
+6
+],
+"bottom": 3,
+"top": 5,
+"events": "start 3 between 0,1 start 4 between 1,2"
+},
+{
+"id": "SF 4-4-0",
+"small_end": 4,
+"large_end": 4,
+"Y": 0,
+"chiral": false,
+"vertices": 8,
+"faces": 6,
+"lateral_face_sides": [
+4,
+4,
+4,
+4
+],
+"bottom": 4,
+"top": 4,
+"events": ""
+},
+{
+"id": "SF 4-4-2.1",
+"small_end": 4,
+"large_end": 4,
+"Y": 2,
+"chiral": true,
+"vertices": 10,
+"faces": 7,
+"lateral_face_sides": [
+3,
+3,
+5,
+5,
+6
+],
+"bottom": 4,
+"top": 4,
+"events": "end 0 start 4 between 1,2"
+},
+{
+"id": "SF 4-4-2.2",
+"small_end": 4,
+"large_end": 4,
+"Y": 2,
+"chiral": false,
+"vertices": 10,
+"faces": 7,
+"lateral_face_sides": [
+3,
+3,
+4,
+6,
+6
+],
+"bottom": 4,
+"top": 4,
+"events": "end 0 start 4 between 3,1"
+},
+{
+"id": "SF 4-4-2.3",
+"small_end": 4,
+"large_end": 4,
+"Y": 2,
+"chiral": false,
+"vertices": 10,
+"faces": 7,
+"lateral_face_sides": [
+4,
+4,
+4,
+5,
+5
+],
+"bottom": 4,
+"top": 4,
+"events": "start 4 between 0,1 end 0"
+},
+{
+"id": "SF 4-5-1",
+"small_end": 4,
+"large_end": 5,
+"Y": 1,
+"chiral": false,
+"vertices": 10,
+"faces": 7,
+"lateral_face_sides": [
+3,
+4,
+4,
+5,
+5
+],
+"bottom": 4,
+"top": 5,
+"events": "start 4 between 0,1"
+},
+{
+"id": "SF 4-6-2.1",
+"small_end": 4,
+"large_end": 6,
+"Y": 2,
+"chiral": true,
+"vertices": 12,
+"faces": 8,
+"lateral_face_sides": [
+3,
+4,
+4,
+4,
+5,
+6
+],
+"bottom": 4,
+"top": 6,
+"events": "start 4 between 0,1 start 5 between 0,4"
+},
+{
+"id": "SF 4-6-2.2",
+"small_end": 4,
+"large_end": 6,
+"Y": 2,
+"chiral": false,
+"vertices": 12,
+"faces": 8,
+"lateral_face_sides": [
+3,
+3,
+4,
+5,
+5,
+6
+],
+"bottom": 4,
+"top": 6,
+"events": "start 4 between 0,1 start 5 between 1,2"
+},
+{
+"id": "SF 4-6-2.3",
+"small_end": 4,
+"large_end": 6,
+"Y": 2,
+"chiral": false,
+"vertices": 12,
+"faces": 8,
+"lateral_face_sides": [
+3,
+3,
+5,
+5,
+5,
+5
+],
+"bottom": 4,
+"top": 6,
+"events": "start 4 between 0,1 start 5 between 2,3"
+},
+{
+"id": "SF 5-5-0",
+"small_end": 5,
+"large_end": 5,
+"Y": 0,
+"chiral": false,
+"vertices": 10,
+"faces": 7,
+"lateral_face_sides": [
+4,
+4,
+4,
+4,
+4
+],
+"bottom": 5,
+"top": 5,
+"events": ""
+},
+{
+"id": "SF 5-5-2.1",
+"small_end": 5,
+"large_end": 5,
+"Y": 2,
+"chiral": true,
+"vertices": 12,
+"faces": 8,
+"lateral_face_sides": [
+3,
+3,
+4,
+5,
+5,
+6
+],
+"bottom": 5,
+"top": 5,
+"events": "end 0 start 5 between 1,2"
+},
+{
+"id": "SF 5-5-2.2",
+"small_end": 5,
+"large_end": 5,
+"Y": 2,
+"chiral": false,
+"vertices": 12,
+"faces": 8,
+"lateral_face_sides": [
+3,
+3,
+5,
+5,
+5,
+5
+],
+"bottom": 5,
+"top": 5,
+"events": "end 0 start 5 between 2,3"
+},
+{
+"id": "SF 5-5-2.3",
+"small_end": 5,
+"large_end": 5,
+"Y": 2,
+"chiral": false,
+"vertices": 12,
+"faces": 8,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+6,
+6
+],
+"bottom": 5,
+"top": 5,
+"events": "end 0 start 5 between 4,1"
+},
+{
+"id": "SF 5-5-2.4",
+"small_end": 5,
+"large_end": 5,
+"Y": 2,
+"chiral": false,
+"vertices": 12,
+"faces": 8,
+"lateral_face_sides": [
+4,
+4,
+4,
+4,
+5,
+5
+],
+"bottom": 5,
+"top": 5,
+"events": "start 5 between 0,1 end 0"
+},
+{
+"id": "SF 5-6-1",
+"small_end": 5,
+"large_end": 6,
+"Y": 1,
+"chiral": false,
+"vertices": 12,
+"faces": 8,
+"lateral_face_sides": [
+3,
+4,
+4,
+4,
+5,
+5
+],
+"bottom": 5,
+"top": 6,
+"events": "start 5 between 0,1"
+},
+{
+"id": "SF 5-7-2.1",
+"small_end": 5,
+"large_end": 7,
+"Y": 2,
+"chiral": true,
+"vertices": 14,
+"faces": 9,
+"lateral_face_sides": [
+3,
+4,
+4,
+4,
+4,
+5,
+6
+],
+"bottom": 5,
+"top": 7,
+"events": "start 5 between 0,1 start 6 between 0,5"
+},
+{
+"id": "SF 5-7-2.2",
+"small_end": 5,
+"large_end": 7,
+"Y": 2,
+"chiral": false,
+"vertices": 14,
+"faces": 9,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+5,
+5,
+6
+],
+"bottom": 5,
+"top": 7,
+"events": "start 5 between 0,1 start 6 between 1,2"
+},
+{
+"id": "SF 5-7-2.3",
+"small_end": 5,
+"large_end": 7,
+"Y": 2,
+"chiral": false,
+"vertices": 14,
+"faces": 9,
+"lateral_face_sides": [
+3,
+3,
+4,
+5,
+5,
+5,
+5
+],
+"bottom": 5,
+"top": 7,
+"events": "start 5 between 0,1 start 6 between 2,3"
+},
+{
+"id": "SF 6-6-0",
+"small_end": 6,
+"large_end": 6,
+"Y": 0,
+"chiral": false,
+"vertices": 12,
+"faces": 8,
+"lateral_face_sides": [
+4,
+4,
+4,
+4,
+4,
+4
+],
+"bottom": 6,
+"top": 6,
+"events": ""
+},
+{
+"id": "SF 6-6-2.1",
+"small_end": 6,
+"large_end": 6,
+"Y": 2,
+"chiral": true,
+"vertices": 14,
+"faces": 9,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+5,
+5,
+6
+],
+"bottom": 6,
+"top": 6,
+"events": "end 0 start 6 between 1,2"
+},
+{
+"id": "SF 6-6-2.2",
+"small_end": 6,
+"large_end": 6,
+"Y": 2,
+"chiral": true,
+"vertices": 14,
+"faces": 9,
+"lateral_face_sides": [
+3,
+3,
+4,
+5,
+5,
+5,
+5
+],
+"bottom": 6,
+"top": 6,
+"events": "end 0 start 6 between 2,3"
+},
+{
+"id": "SF 6-6-2.3",
+"small_end": 6,
+"large_end": 6,
+"Y": 2,
+"chiral": false,
+"vertices": 14,
+"faces": 9,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+4,
+6,
+6
+],
+"bottom": 6,
+"top": 6,
+"events": "end 0 start 6 between 5,1"
+},
+{
+"id": "SF 6-6-2.4",
+"small_end": 6,
+"large_end": 6,
+"Y": 2,
+"chiral": false,
+"vertices": 14,
+"faces": 9,
+"lateral_face_sides": [
+4,
+4,
+4,
+4,
+4,
+5,
+5
+],
+"bottom": 6,
+"top": 6,
+"events": "start 6 between 0,1 end 0"
+},
+{
+"id": "SF 6-7-1",
+"small_end": 6,
+"large_end": 7,
+"Y": 1,
+"chiral": false,
+"vertices": 14,
+"faces": 9,
+"lateral_face_sides": [
+3,
+4,
+4,
+4,
+4,
+5,
+5
+],
+"bottom": 6,
+"top": 7,
+"events": "start 6 between 0,1"
+},
+{
+"id": "SF 6-8-2.1",
+"small_end": 6,
+"large_end": 8,
+"Y": 2,
+"chiral": true,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+3,
+4,
+4,
+4,
+4,
+4,
+5,
+6
+],
+"bottom": 6,
+"top": 8,
+"events": "start 6 between 0,1 start 7 between 0,6"
+},
+{
+"id": "SF 6-8-2.2",
+"small_end": 6,
+"large_end": 8,
+"Y": 2,
+"chiral": false,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+4,
+5,
+5,
+6
+],
+"bottom": 6,
+"top": 8,
+"events": "start 6 between 0,1 start 7 between 1,2"
+},
+{
+"id": "SF 6-8-2.3",
+"small_end": 6,
+"large_end": 8,
+"Y": 2,
+"chiral": false,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+5,
+5,
+5,
+5
+],
+"bottom": 6,
+"top": 8,
+"events": "start 6 between 0,1 start 7 between 2,3"
+},
+{
+"id": "SF 6-8-2.4",
+"small_end": 6,
+"large_end": 8,
+"Y": 2,
+"chiral": false,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+5,
+5,
+5,
+5
+],
+"bottom": 6,
+"top": 8,
+"events": "start 6 between 0,1 start 7 between 3,4"
+},
+{
+"id": "SF 7-7-0",
+"small_end": 7,
+"large_end": 7,
+"Y": 0,
+"chiral": false,
+"vertices": 14,
+"faces": 9,
+"lateral_face_sides": [
+4,
+4,
+4,
+4,
+4,
+4,
+4
+],
+"bottom": 7,
+"top": 7,
+"events": ""
+},
+{
+"id": "SF 7-7-2.1",
+"small_end": 7,
+"large_end": 7,
+"Y": 2,
+"chiral": true,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+4,
+5,
+5,
+6
+],
+"bottom": 7,
+"top": 7,
+"events": "end 0 start 7 between 1,2"
+},
+{
+"id": "SF 7-7-2.2",
+"small_end": 7,
+"large_end": 7,
+"Y": 2,
+"chiral": true,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+5,
+5,
+5,
+5
+],
+"bottom": 7,
+"top": 7,
+"events": "end 0 start 7 between 2,3"
+},
+{
+"id": "SF 7-7-2.3",
+"small_end": 7,
+"large_end": 7,
+"Y": 2,
+"chiral": false,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+5,
+5,
+5,
+5
+],
+"bottom": 7,
+"top": 7,
+"events": "end 0 start 7 between 3,4"
+},
+{
+"id": "SF 7-7-2.4",
+"small_end": 7,
+"large_end": 7,
+"Y": 2,
+"chiral": false,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+4,
+4,
+6,
+6
+],
+"bottom": 7,
+"top": 7,
+"events": "end 0 start 7 between 6,1"
+},
+{
+"id": "SF 7-7-2.5",
+"small_end": 7,
+"large_end": 7,
+"Y": 2,
+"chiral": false,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+4,
+4,
+4,
+4,
+4,
+4,
+5,
+5
+],
+"bottom": 7,
+"top": 7,
+"events": "start 7 between 0,1 end 0"
+},
+{
+"id": "SF 7-8-1",
+"small_end": 7,
+"large_end": 8,
+"Y": 1,
+"chiral": false,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+3,
+4,
+4,
+4,
+4,
+4,
+5,
+5
+],
+"bottom": 7,
+"top": 8,
+"events": "start 7 between 0,1"
+},
+{
+"id": "SF 8-8-0",
+"small_end": 8,
+"large_end": 8,
+"Y": 0,
+"chiral": false,
+"vertices": 16,
+"faces": 10,
+"lateral_face_sides": [
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4
+],
+"bottom": 8,
+"top": 8,
+"events": ""
+},
+{
+"id": "SF 8-8-2.1",
+"small_end": 8,
+"large_end": 8,
+"Y": 2,
+"chiral": true,
+"vertices": 18,
+"faces": 11,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+4,
+4,
+5,
+5,
+6
+],
+"bottom": 8,
+"top": 8,
+"events": "end 0 start 8 between 1,2"
+},
+{
+"id": "SF 8-8-2.2",
+"small_end": 8,
+"large_end": 8,
+"Y": 2,
+"chiral": true,
+"vertices": 18,
+"faces": 11,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+4,
+5,
+5,
+5,
+5
+],
+"bottom": 8,
+"top": 8,
+"events": "end 0 start 8 between 2,3"
+},
+{
+"id": "SF 8-8-2.3",
+"small_end": 8,
+"large_end": 8,
+"Y": 2,
+"chiral": true,
+"vertices": 18,
+"faces": 11,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+4,
+5,
+5,
+5,
+5
+],
+"bottom": 8,
+"top": 8,
+"events": "end 0 start 8 between 3,4"
+},
+{
+"id": "SF 8-8-2.4",
+"small_end": 8,
+"large_end": 8,
+"Y": 2,
+"chiral": false,
+"vertices": 18,
+"faces": 11,
+"lateral_face_sides": [
+3,
+3,
+4,
+4,
+4,
+4,
+4,
+6,
+6
+],
+"bottom": 8,
+"top": 8,
+"events": "end 0 start 8 between 7,1"
+},
+{
+"id": "SF 8-8-2.5",
+"small_end": 8,
+"large_end": 8,
+"Y": 2,
+"chiral": false,
+"vertices": 18,
+"faces": 11,
+"lateral_face_sides": [
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+5,
+5
+],
+"bottom": 8,
+"top": 8,
+"events": "start 8 between 0,1 end 0"
+}
+],
+"same_polyhedron_other_ends": [
+[
+"SF 3-3-2",
+"SF 3-4-1"
+],
+[
+"SF 3-5-2.1",
+"SF 4-4-2.1"
+],
+[
+"SF 4-4-2.3",
+"SF 5-5-0"
+],
+[
+"SF 4-6-2.2",
+"SF 5-5-2.3"
+],
+[
+"SF 4-6-2.3",
+"SF 5-5-2.1"
+]
+]
+}

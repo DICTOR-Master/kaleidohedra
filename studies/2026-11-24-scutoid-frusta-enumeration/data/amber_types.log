@@ -1,0 +1,40 @@
+kinds (with repeats over cells): 2389  non-convex: 1894  breaking |n-m|<=Y, n-m=Y mod 2: 454
+small end, large end, Y, convex -> pieces (members summed over all valid cells)
+   (3, 3, 0, False) 252
+   (3, 3, 0, True) 1364
+   (3, 3, 1, False) 60
+   (3, 3, 2, False) 360
+   (3, 3, 3, False) 60
+   (3, 4, 1, False) 528
+   (3, 4, 1, True) 240
+   (3, 4, 2, False) 600
+   (3, 4, 3, False) 1200
+   (3, 5, 2, False) 6912
+   (3, 5, 2, True) 144
+   (3, 5, 3, False) 600
+   (3, 6, 0, False) 40
+   (3, 6, 0, True) 8
+   (3, 6, 2, False) 636
+   (3, 6, 3, False) 1876
+   (3, 6, 3, True) 8
+   (3, 7, 2, False) 300
+   (3, 7, 3, False) 120
+   (4, 4, 0, True) 150
+   (4, 6, 2, False) 132
+   (5, 5, 0, False) 192
+   (5, 5, 0, True) 1176
+   (5, 5, 2, False) 24
+   (5, 5, 3, False) 60
+   (5, 5, 4, False) 12
+   (5, 5, 5, False) 600
+   (5, 6, 1, False) 12
+   (5, 10, 5, False) 1128
+   (6, 6, 0, False) 40
+   (6, 6, 0, True) 128
+   (6, 6, 4, False) 120
+   (6, 6, 6, False) 40
+   (6, 7, 3, False) 360
+   (6, 8, 3, False) 240
+   (6, 8, 4, False) 180
+   (7, 10, 5, False) 60
+FINAL ok

@@ -1,0 +1,10 @@
+types_n8_k2.json types 45 checked (exact, Euler, cubic, 3-connected, n m k, lateral law, distinct); failures so far 0
+  (n,n,2) for n = 3..8 up to mirror: [1, 3, 4, 4, 5, 5]  both hands: [1, 4, 5, 6, 7, 8]
+  polyhedra that are Scutoid Frusta for more than one choice of ends: [['SF 3-3-2', 'SF 3-4-1'], ['SF 3-5-2.1', 'SF 4-4-2.1'], ['SF 4-4-2.3', 'SF 5-5-0'], ['SF 4-6-2.2', 'SF 5-5-2.3'], ['SF 4-6-2.3', 'SF 5-5-2.1']]
+  tiling pair even cell 6 -> 4 Y 2 = type SF 4-6-2.3
+  tiling pair odd cell 6 -> 8 Y 2 = type SF 6-8-2.4
+  tiling single even cell 8 -> 4 Y 4 = type outside the n,m<=8, Y<=2 table
+  tiling single odd cell 4 -> 8 Y 4 = type outside the n,m<=8, Y<=2 table
+types_n14_k2.json types 132 checked (exact, Euler, cubic, 3-connected, n m k, lateral law, distinct); failures so far 0
+  (n,n,2) for n = 3..14 up to mirror: [1, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8]  both hands: [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+FINAL ok
