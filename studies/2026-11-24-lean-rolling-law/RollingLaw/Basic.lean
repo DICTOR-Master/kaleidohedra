@@ -251,6 +251,10 @@ theorem matsumoto : ∀ (n : ℕ) (ω ω' : List B), roll R.r ω R.o = roll R.r 
       · simp [CoxeterSystem.length_alternatingWord]; omega
       · rw [← eb, wb]; exact hd
 
+/-- `ω` is a shortest roll from face `f` to face `g`. -/
+def ShortestRoll (f g : α) (ω : List B) : Prop :=
+  roll R.r ω f = g ∧ ∀ η : List B, roll R.r η f = g → ω.length ≤ η.length
+
 /-- Matsumoto's theorem, stated for shortest rolls. -/
 theorem matsumoto_shortest {ω ω' : List B} (hω : R.Shortest ω) (hω' : R.Shortest ω')
     (he : roll R.r ω R.o = roll R.r ω' R.o) : BraidEq M ω ω' :=

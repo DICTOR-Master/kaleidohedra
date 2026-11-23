@@ -141,6 +141,60 @@ theorem reduce_cs (ω : List B) : ∃ ω', Relation.ReflTransGen (MoveStep M) ω
   refine ⟨ω', h1, (R.isReduced_iff cs hL ω').mpr h2, R.face_injective cs hL ?_⟩
   rw [face_wordProd, face_wordProd, h3]
 
+/-- Rolling from the face of `w` along `ω` reaches the face of `w * π ω`. -/
+theorem roll_face (w : W) (ω : List B) :
+    roll R.r ω (R.face cs hL w) = R.face cs hL (w * cs.wordProd ω) := by
+  induction ω using List.reverseRecOn with
+  | nil => simp [CoxeterSystem.wordProd]
+  | append_singleton u a ih =>
+    rw [roll_append, ih, cs.wordProd_append, cs.wordProd_singleton, ← mul_assoc,
+      face_mul_simple, roll_singleton]
+
+theorem shortestRoll_face_iff (w : W) (g : α) (ω : List B) :
+    R.ShortestRoll (R.face cs hL w) g ω ↔ roll R.r ω (R.face cs hL w) = g ∧ cs.IsReduced ω := by
+  constructor
+  · rintro ⟨h, hmin⟩
+    refine ⟨h, le_antisymm (cs.length_wordProd_le ω) ?_⟩
+    obtain ⟨η, hη, he⟩ := cs.exists_isReduced (cs.wordProd ω)
+    have := hmin η (by rw [roll_face, ← he, ← roll_face, h])
+    rw [he, hη.eq]; exact this
+  · rintro ⟨h, hred⟩
+    refine ⟨h, fun η hη => ?_⟩
+    have : cs.wordProd η = cs.wordProd ω := by
+      apply mul_left_cancel (a := w)
+      apply R.face_injective cs hL
+      rw [← roll_face, ← roll_face, hη, h]
+    rw [← hred.eq, ← this]; exact cs.length_wordProd_le η
+
+/-- **The rolling law, part 1.** Two shortest rolls between the same two faces
+are joined by corner moves. -/
+theorem rolling_law {f g : α} {ω ω' : List B} (h : R.ShortestRoll f g ω)
+    (h' : R.ShortestRoll f g ω') : BraidEq M ω ω' := by
+  obtain ⟨w, rfl⟩ := R.face_surjective cs hL f
+  rw [R.shortestRoll_face_iff cs hL] at h h'
+  refine R.matsumoto_cs cs hL h.2 h'.2 ?_
+  apply mul_left_cancel (a := w)
+  apply R.face_injective cs hL
+  rw [← roll_face, ← roll_face, h.1, h'.1]
+
+/-- **The rolling law, part 2.** Every roll is brought to a shortest roll between
+the same two faces by corner moves and cancelling back-and-forth rolls. -/
+theorem rolling_reduce (f : α) (ω : List B) :
+    ∃ ω', Relation.ReflTransGen (MoveStep M) ω ω' ∧ R.ShortestRoll f (roll R.r ω f) ω' := by
+  obtain ⟨w, rfl⟩ := R.face_surjective cs hL f
+  obtain ⟨ω', h1, h2, h3⟩ := R.reduce_cs cs hL ω
+  refine ⟨ω', h1, (R.shortestRoll_face_iff cs hL _ _ _).mpr ⟨?_, h2⟩⟩
+  rw [roll_face, roll_face, h3]
+
+/-- Between any two faces there is a shortest roll, of length the Coxeter length. -/
+theorem exists_shortestRoll (f g : α) :
+    ∃ ω, R.ShortestRoll f g ω ∧ ∃ w, ω.length = cs.length w := by
+  obtain ⟨w, rfl⟩ := R.face_surjective cs hL f
+  obtain ⟨w', rfl⟩ := R.face_surjective cs hL g
+  obtain ⟨ω, hω, he⟩ := cs.exists_isReduced (w⁻¹ * w')
+  refine ⟨ω, (R.shortestRoll_face_iff cs hL _ _ _).mpr ⟨?_, hω⟩, _, hω.eq.symm⟩
+  rw [roll_face, ← he, mul_inv_cancel_left]
+
 end RollModel
 
 end RollingLaw
