@@ -7,3 +7,4 @@ import Alexandrov.Monotone
 import Alexandrov.Necessity
 import Alexandrov.Variational
 import Alexandrov.Functional
+import Alexandrov.PhiContinuity

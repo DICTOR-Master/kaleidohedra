@@ -99,6 +99,10 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
   `gap r r' = Phi r' − Phi r`, `Phi (c • r) = Phi r` when Σκ = 4π. Check script `check.sh`; full build ok
   (`logs/build-M9a.log`, FINAL ok); 0 sorry; standard axioms; 1232 lines.
 
+* M9b (2026-11-24) `Alexandrov/PhiContinuity.lean`: `continuousAt_Phi`: Oliker's functional is
+  continuous at every r with positive entries (dominated convergence with a constant bound near r).
+  Full build ok (`logs/build-M9b.log`, FINAL ok); 0 sorry; standard axioms.
+
 ## Next steps: existence (small pieces, variational route of Oliker 2007)
 
 * M8 done (above).
