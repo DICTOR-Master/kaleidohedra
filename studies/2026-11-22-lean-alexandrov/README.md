@@ -52,9 +52,8 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
 
 * Done and committed: M1-M8, M9a, M9b (see Milestones). Each milestone: `check.sh TAG thm...` on the
   build host (full build + axioms + sorry count, FINAL ok line), then README line + commit.
-* In progress: M9c part 1 `Alexandrov/Margin.lean` (`exists_cover`, `exists_margin`: uniform margin
-  η and one ε in Alexandrov's condition). If it is not in the Milestones list it was not finished:
-  recompile it with `lake env lean Alexandrov/Margin.lean` and fix the first error.
+* Done: M9c part 1 (Margin.lean).
+* In progress: M9c part 2 `Coercive.lean` (not yet in the Milestones list = not finished).
 * Then M9c part 2 `Coercive.lean`: with a_j = −log r_j (0 < r ≤ 1, some r_j = 1), T = max a_j,
   mx(x) = max_j (ψ_j if ε‖x‖ < ⟪n_j,x⟫ else −T): (a) log(supp r/supp 1) ≥ log ε + mx pointwise;
   (b) layer cake (`lintegral_eq_lintegral_meas_lt`) on −mx over the ball and on Σκ_j a_j, compared
@@ -116,6 +115,12 @@ some I-corner gains curvature: contradiction. Hence J is empty and r' = c r.
 * M9b (2026-11-24) `Alexandrov/PhiContinuity.lean`: `continuousAt_Phi`: Oliker's functional is
   continuous at every r with positive entries (dominated convergence with a constant bound near r).
   Full build ok (`logs/build-M9b.log`, FINAL ok); 0 sorry; standard axioms.
+
+* M9c part 1 (2026-11-24) `Alexandrov/Margin.lean`: `nbhd n ε I` = directions with
+  ⟪n_i,x⟫ > ε‖x‖ for some i ∈ I (`nbhd n 0 I` = open π/2-neighbourhood). `exists_cover`: some ε₀ > 0
+  has every direction within ⟪n_j,x⟫ > ε₀‖x‖ of a ray (compact sphere). `exists_margin`: Alexandrov's
+  condition Σ_{i∈I} κ_i < area(nbhd n 0 I) for all nonempty proper I survives with one ε > 0 and a
+  uniform margin η > 0. Full build ok (`logs/build-M9c1.log`, FINAL ok); 0 sorry; standard axioms.
 
 ## Next steps: existence (small pieces, variational route of Oliker 2007)
 
