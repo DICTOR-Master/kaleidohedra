@@ -150,6 +150,35 @@ rl = rd("renders/scripts/ammann_scenes.log")
 for s in ["19 prolate + 11 oblate", "wall OP: patterns agree exactly = False", "wall PP: patterns agree exactly = True", "cells 012 (oblate), 023, 024 (prolate)"]:
     ok(s in rl, "ammann_scenes.log: " + s)
 for s in ["19 prolate", "11 oblate", "600 runs", "319 prolate–prolate", "61 oblate–oblate", "618 prolate–oblate", "all 380", "30 cases"]: intext(s)
+# --- Version 2, 25 Nov: four new figures (ammann_scenes2.py, info2.json) and the RVCMG sentence
+r2 = rd("renders/scripts/ammann_scenes2.log"); I2 = json.loads(rd("renders/html/info2.json"))
+ok(r2.strip().splitlines()[-1] == "FINAL ok", "ammann_scenes2.log FINAL ok")
+for s_ in ["all 20 orientations valid, 72 Scutoid-Frusta, 30 Y-vertices, 8 kinds each", "all 402 cells, 278 prolate + 124 oblate, 20 orientations",
+           "Rollerball 72/72 Scutoid-Frusta, 30 Y; Fullerene Star 66/80 Scutoid-Frusta, 48 Y; icosidodecahedron 20/32 Scutoid-Frusta, 30 Y; icosahedron 18/20 Scutoid-Frusta, 12 Y; dodecahedron 0/12 Scutoid-Frusta, 0 Y",
+           "centre |z| < 0.9, distance from the z axis < 6.2: 42 cells, 24 prolate + 18 oblate, 16 orientations, 3024 pieces",
+           "bottom decagon, top pentagon, 10 neighbours on the core side, 5 on the mould side, 5 Y-vertices, 21 vertices, 48 edges, 29 flat faces"]:
+    ok(s_ in r2, "ammann_scenes2.log: " + s_)
+ok(I2["A"] == [402, 278, 124, 20] and I2["C"] == [42, 24, 18, 16, 3024] and I2["D"][:6] == [10, 5, 5, 21, 48, 29], "info2.json A, C, D")
+ok([b[:4] for b in I2["B"]] == [["Rollerball", 72, 72, 30], ["Fullerene Star", 66, 80, 48], ["icosidodecahedron", 20, 32, 30], ["icosahedron", 18, 20, 12], ["dodecahedron", 0, 12, 0]], "info2.json B")
+for core, (a, b_, y) in zip(["Rollerball", "Fullerene Star", "icosidodecahedron", "icosahedron", "dodecahedron"], [(72, 72, 30), (66, 80, 48), (20, 32, 30), (18, 20, 12), (0, 12, 0)]):
+    r = es(core, "S65", "cproj").splitlines()[0]; ok(f"scutoids/cell P {a}/{b_}" in r and f"Y/cell P {y} " in r, "Figure 7 vs exact S65 cproj " + core)
+ok(K[0][:2] == ("P", "dec") and K[0][4] == "5" and K[0][5] == "29" and K[0][7] == f"{I2['D'][6]:.6f}" == "43.253088", "Figure 3 piece = first kind of Table A1")
+for s_ in ["278 prolate (sand) and 124 oblate (slate), in all 20 orientations", "all 20 orientations present (Figure 2)",
+           "the first kind of Table A1, volume 43.253088", "Its face on the core is the decagon (pearl), with 10 neighbours", "its face on the mould is a pentagon (pale grey), with 5 neighbours",
+           "its 5 Y-vertices", "21 vertices, 48 edges and 29 flat faces",
+           "the 42 cells whose centres lie within 0.9 of one plane and within 6.2 of an axis normal to it", "√(2 + φ) ≈ 1.902", "24 prolate (sand) and 18 oblate (slate), in 16 of the 20 orientations", "3024 pieces in all",
+           "72 of 72 pieces Scutoid-Frusta, 30 Y-vertices", "66 of 80, 48", "20 of 32, 30", "18 of 20, 12", "0 of 12, 0",
+           "DICTO first made side-changing pieces in September 2026, the RVCMG adapters of Polyhedraverse, which join triangle, square and pentagon faces to a common hexagon by merging corners; they are degenerate Scutoid-Frusta, with the change of side count at the end rather than at Y-vertices (study rvcmg-scutoid-frusta"]: intext(s_)
+ok(abs((2 + (1 + 5 ** .5) / 2) ** .5 - 1.902) < 5e-4, "cell edge sqrt(2 + phi)")
+RV = os.path.join(S, "2026-11-24-rvcmg-scutoid-frusta", "data")
+V_ = json.load(open(os.path.join(RV, "verdicts.json")))["verdicts"]
+ok(len(V_) == 16 and all(v["flat"]["k"] == 0 for v in V_.values()) and [k for k, v in V_.items() if v["flat"]["simple"]] == ["RVCMG_V2_REGULAR_HEX_TO_UHEX"], "RVCMG: 16 pieces, no Y-vertex, 15 degenerate, 1 plain frustum")
+ok(open(os.path.join(RV, "rvcmg_exact.log")).read().strip().splitlines()[-1] == "FINAL ok", "rvcmg_exact.log FINAL ok")
+# figures: numbered 1-8 in order, every one full width, each referenced in the text
+fn = re.findall(r"<figcaption><b>Figure (\d+)\.</b>", paper); ok(fn == [str(i) for i in range(1, 9)], "figure order " + str(fn))
+ok(paper.count("<figure><img") == 8 and paper.count('<figure><img src="figures/') == paper.count('style="width:100%;margin:0 auto"'), "every figure full width")
+body_ = paper.split('<div class="abstract">')[1]
+for i in range(2, 9): ok(len(re.findall(rf"Figure {i}\b", body_)) >= 2, f"Figure {i} referenced outside its own caption")
 # --- no floating-point wording left in claims
 body = re.sub(r"<[^>]+>", "", paper.split('<div class="abstract">')[1].split("<h2>Data and reproducibility")[0])
 ok(not re.search(r"floating|float\b|numerical|margin|sampling|computed\b", body, re.I), "float wording in the claims: " + str(re.findall(r".{30}(?:floating|float\b|numerical|margin|sampling|computed\b).{30}", body, re.I)[:3]))
