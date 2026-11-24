@@ -5,3 +5,5 @@ Opening (DICTO's facts, his words tidied):
 Exact renders of the RVCMG adapters (enhanced versions; geometry check: studies/2026-11-24-rvcmg-scutoid-frusta).
 Term: Scutoid-Frustum / Scutoid-Frusta (hyphen). Content: definition (two tiers), 45 types, laws Y >= |n-m|, Y = n+m mod 2, Lemma 3 (homothetic shells give only frusta), Lemmas A, B, C, Theorem 1 (associahedron overlay shells), the amber cells (#118).
 Release only after conversation + DICTO's read ok.
+
+24 Nov (DICTO ok): RVCMG adapters are DEGENERATE Scutoid-Frusta (k = 0, side change by merged corners at the end, laws fail; Decision 6). Opening wording: "In September 2026 DICTO made side-changing pieces for a purely geometric purpose (the RVCMG adapters, which join triangle, square and pentagon faces to a common hexagon by merging corners). These are degenerate Scutoid-Frusta: each change of side count happens at the end rather than at a Y-corner between the ends. The proper form, with the changes spread into Y-corners, followed once he met the term." (RVCMG = Reversible Vertex-Coalescence Morphing Geometry, DICTO's spec 15 Sep 2026.) Confirm the last 10 pieces behave the same before use.
