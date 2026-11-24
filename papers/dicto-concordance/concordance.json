@@ -4989,7 +4989,7 @@
       {
         "src": "study 2026-11-25 (V SF A)",
         "what": "the 4D 30-gon (named in the 25 Nov work; no study README yet)",
-        "status": "open (new 25 Nov 2026). Outside: Denney et al., H4 polytopes (1.5), to check"
+        "status": "open (new 25 Nov 2026). Outside: Denney et al., H4 polytopes (1.5), to check; E8 shares Coxeter number 30 (REPEAT of entries 6, 7, 9; studies/2026-11-25-outside-clues)"
       },
       {
         "src": "study 2026-11-25-aequi-five-cubes",
@@ -5010,6 +5010,46 @@
         "src": "study 2026-11-24-lean-rolling-law-a4",
         "what": "the H4 rolling law in Lean (14 400 faces; after D4, B4, F4; tables need a build-time test first) (LEAD 3)",
         "status": "open (new 24 Nov 2026). Outside: none found yet, a search target"
+      },
+      {
+        "src": "study 2026-11-25-plate-harmony / 2026-11-24 Resonus",
+        "what": "is the Resonus of every W-permutohedron the adjoint of W's reflection arrangement (planes at right angles to its lines: A3 7, B3 13, H3 31 = the hub)?",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-outside-clues). Outside: Kühne, resonance arrangement (1.5, entry 34); credit at first use"
+      },
+      {
+        "src": "study 2026-11-25-tacitus",
+        "what": "Tacitus with area weights (variant iii); degree-1 silence of every polyhedron by Minkowski's relation",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-outside-clues). Outside: Mickel et al., Minkowski structure metrics (1.5, entry 35)"
+      },
+      {
+        "src": "study 2026-11-25-tacitus",
+        "what": "explain the 286 accidental Aequi silences (Observation 4, degrees 2–5)",
+        "status": "open (25 Nov 2026, studies/2026-11-25-outside-clues). Outside: Copi, Huterer, Starkman, multipole vectors (1.5, entry 38), a fingerprint to test"
+      },
+      {
+        "src": "study 2026-11-25-tacitus / #109",
+        "what": "exact Tacitus on S³ and silence beyond symmetry for 4D Aequi",
+        "status": "open (25 Nov 2026, studies/2026-11-25-outside-clues). Outside (REPEAT of the Aurich–Lustig–Steiner pairing): Luminet et al.; Weeks's exact polynomial eigenmodes (1.5, entry 36)"
+      },
+      {
+        "src": "study 2026-11-25-plate-harmony (Sphericus)",
+        "what": "the small circles a polyhedron's face planes cut on a sphere of radius R: circle network, crossings and regions as R varies",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-outside-clues). Outside: Cornish, Spergel, Starkman, circles in the sky (1.5, entry 37)"
+      },
+      {
+        "src": "study 2026-11-25-plate-harmony (hub)",
+        "what": "the hub (31 planes, free, exponents 1, 11, 19) in Grünbaum's catalogue of simplicial arrangements",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-outside-clues). Outside: Grünbaum 2009 (not yet read); Janasz et al. (A(31,2), A(31,3) are not the hub) (1.5, entry 40); Fuller's 31 great circles (1.5, entry 39, REPEAT)"
+      },
+      {
+        "src": "study 2026-11-25-plate-harmony (Aequus)",
+        "what": "equal-area regions not cut by great circles, against the Aequi of the same face count",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-outside-clues). Outside: HEALPix (1.5, entry 41)"
+      },
+      {
+        "src": "study 2026-11-25-stellation-cycle",
+        "what": "Kepler's insphere-to-circumsphere nesting steps against the φ-ladder; the ladder's φ³ steps beside the τ³ inflation of icosahedral quasicrystals",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-outside-clues). Outside: Kepler 1596 (1.5, entry 42); quasicrystals entries 23, 24 (REPEAT)"
       }
     ],
     "waiting": [
@@ -5809,6 +5849,13 @@
         "study": "studies/2026-11-25-plate-harmony",
         "goes_to": "The Vacuus and the Resonus paper (harmony section) or the Tacitus/Sphericus paper: DICTO to decide",
         "status": "settled; begun (91 large arrangements not run for Sphericus x Tacitus; 300-wall triples open)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Outside clues for the V SF A programme (survey, no computation): resonance arrangement (Kühne) = Resonus of the permutohedron, lead to the adjoint of every reflection arrangement; Minkowski structure metrics (area-weighted q_l) = Tacitus variant iii; PDS and Weeks's exact eigenmodes (repeat) for Tacitus on S³; circles in the sky = Sphericus small circles of face planes; multipole vectors for the 286 accidental silences; Fuller's 31 great circles (repeat) and Grünbaum's catalogue for the hub; HEALPix for equal regions; Kepler's nesting for the φ-ladder",
+        "study": "studies/2026-11-25-outside-clues",
+        "goes_to": "leads only: credits into the Vacuus and Resonus paper and the Tacitus/Sphericus paper at first use",
+        "status": "survey done; 8 new open gaps"
       }
     ]
   },
@@ -6152,6 +6199,96 @@
       "lib": false,
       "conf": "abstract; Steinhardt et al. standard",
       "status": "tested"
+    },
+    {
+      "field": "Combinatorics / physics: hyperplane arrangements",
+      "cite": "L. Kühne, The universality of the resonance arrangement and its Betti numbers, Combinatorica (2023), arXiv:2008.10553 (cites T. Evans 1995, thermal field theory; Shadrin, Shapiro, Vainshtein 2008; Cavalieri, Johnson, Markwig 2011)",
+      "says": "The resonance arrangement: all hyperplanes with nonzero 0/1 normals, the adjoint of the braid arrangement; its chambers are the generalized retarded functions of thermal field theory and the regions of polynomiality of double Hurwitz numbers.",
+      "touches": "Resonus of the permutohedron (credit at first use); lead: Resonus of every W-permutohedron = adjoint of W's reflection arrangement (A3 7, B3 13, H3 31 = hub)",
+      "kind": "credit",
+      "lib": false,
+      "conf": "abstract and ar5iv text opened; Evans and others cited by Kühne not opened",
+      "status": "to read"
+    },
+    {
+      "field": "Materials: local order",
+      "cite": "W. Mickel, S. C. Kapfer, G. E. Schröder-Turk, K. Mecke, Shortcomings of the bond orientational order parameters for the analysis of disordered particulate matter, J. Chem. Phys. 138 (2013) 044501, arXiv:1209.6180",
+      "says": "Minkowski structure metrics q'_l: Steinhardt's q_l with each Voronoi face normal weighted by its relative face area A_f/A (Eq. 2).",
+      "touches": "Tacitus: q'_l = 0 is silence in degree l with area weights, a third variant; by Minkowski's relation every closed polyhedron is silent in degree 1 with area weights (repeat of entry 33 only for q_l)",
+      "kind": "test",
+      "lib": false,
+      "conf": "abstract and Eq. 2 opened",
+      "status": "to read"
+    },
+    {
+      "field": "Astronomy: cosmic microwave background",
+      "cite": "J.-P. Luminet, J. Weeks, A. Riazuelo, R. Lehoucq, J.-P. Uzan, Nature 425 (2003) 593, arXiv:astro-ph/0310253; J. Weeks, Exact polynomial eigenmodes for homogeneous spherical 3-manifolds, Class. Quantum Grav. 23 (2006) 6971, arXiv:math/0502566",
+      "says": "The Poincaré dodecahedral space (spherical dodecahedron, 120° edge angles, 120 copies tile S³) fitted to the weak quadrupole and octopole (ℓ = 2, 3), eigenmodes k < 30; Weeks gives the eigenmodes as exact polynomials.",
+      "touches": "Tacitus on S³: the 600-cell's 11-design (#109), Queens ch. 9 mode counts (REPEAT of the Aurich–Lustig–Steiner pairing); new: Weeks's polynomials as the exact Tacitus test in 4D",
+      "kind": "anchor",
+      "lib": false,
+      "conf": "Luminet full text opened; Weeks abstract opened",
+      "status": "to read"
+    },
+    {
+      "field": "Astronomy: topology of space",
+      "cite": "N. J. Cornish, D. N. Spergel, G. D. Starkman, Circles in the sky, Class. Quantum Grav. 15 (1998) 2657, arXiv:astro-ph/9801212",
+      "says": "In a finite universe the last-scattering sphere meets its images in matched circles; two equal spheres meet in a circle in their bisector plane, which for neighbouring images is a face plane of the Dirichlet domain.",
+      "touches": "Sphericus with small circles (yantra ring) and the Resonus directions: the small circles a polyhedron's face planes cut on a sphere larger than its insphere",
+      "kind": "lead",
+      "lib": false,
+      "conf": "abstract opened",
+      "status": "to read"
+    },
+    {
+      "field": "Astronomy: CMB statistics",
+      "cite": "C. J. Copi, D. Huterer, G. D. Starkman, Multipole vectors, Phys. Rev. D 70 (2004) 043515, arXiv:astro-ph/0310511",
+      "says": "A degree-ℓ harmonic is given by ℓ unit vectors and a magnitude (the Maxwell–Sylvester representation), applied to the CMB multipoles 2 ≤ ℓ ≤ 8.",
+      "touches": "Tacitus: fingerprint of the 286 accidental Aequi silences (Observation 4) by the multipole vectors of the first non-silent degree",
+      "kind": "lead",
+      "lib": false,
+      "conf": "abstract opened; Maxwell and Sylvester not opened",
+      "status": "to read"
+    },
+    {
+      "field": "Architecture: geodesic domes",
+      "cite": "R. B. Fuller, Synergetics (1982) §457, pp. 183–185 (via Wikipedia, 31 great circles of the spherical icosahedron)",
+      "says": "The 31 great circles of the spherical icosahedron: sets of 6, 10 and 15.",
+      "touches": "The hub: the H3 permutahedron's 31 Resonus planes, free with exponents 1, 11, 19 (REPEAT of term-sphericus; freeness and regions are ours)",
+      "kind": "credit",
+      "lib": false,
+      "conf": "Wikipedia pointer opened; Synergetics online copy 404",
+      "status": "to read"
+    },
+    {
+      "field": "Combinatorics: simplicial arrangements",
+      "cite": "B. Grünbaum, A catalogue of simplicial arrangements in the real projective plane, Ars Math. Contemp. 2 (2009) 1; M. Janasz, M. Lampa-Baczyńska, G. Malara, New phenomena in the containment problem for simplicial arrangements, arXiv:1812.04382",
+      "says": "Grünbaum's catalogue lists the known sporadic simplicial arrangements; A(31,2) and A(31,3) are rational 31-line arrangements (t2 = 54, t3 = 42, t4 = 21, t5 = 6, t6 = 1, t8 = 3).",
+      "touches": "The hub as a projective arrangement (31 lines, 240 triangles, needs √5): not A(31,2) or A(31,3); its catalogue name to find",
+      "kind": "credit",
+      "lib": false,
+      "conf": "Janasz et al. full text opened; Grünbaum text not opened (free links returned HTML)",
+      "status": "to read"
+    },
+    {
+      "field": "Astronomy: sky maps",
+      "cite": "K. M. Górski et al., HEALPix, Astrophys. J. 622 (2005) 759, arXiv:astro-ph/0409513",
+      "says": "Hierarchical equal-area iso-latitude pixelisation of the sphere for CMB data.",
+      "touches": "Aequus (equal regions on the sphere) and plate harmony (5) equal areas; equal-area partitions on small circles, not great circles",
+      "kind": "lead",
+      "lib": false,
+      "conf": "abstract opened",
+      "status": "to read"
+    },
+    {
+      "field": "History of astronomy",
+      "cite": "J. Kepler, Mysterium Cosmographicum (1596), via Wikipedia, Mysterium Cosmographicum",
+      "says": "Platonic solids between the planetary spheres in the order octahedron, icosahedron, dodecahedron, tetrahedron, cube, each sphere inscribed in one solid and circumscribed about the next.",
+      "touches": "Stellation cycle Theorem 1 (shared midsphere) and the φ-ladder: are Kepler's nesting steps ladder steps φ^k",
+      "kind": "lead",
+      "lib": false,
+      "conf": "Wikipedia pointer opened; Kepler scan not opened",
+      "status": "to read"
     }
   ],
   "doi": "10.5281/zenodo.23934363",
