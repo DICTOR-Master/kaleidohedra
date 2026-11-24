@@ -85,3 +85,5 @@ Each die is written to its own file as soon as it is done; finished dice are ski
 numbering and the larger proved bound.)
 
 (Python with ortools, numpy, mpmath; the sibling study 2026-11-24-aequi-vacuus-scutoids and the two search studies must be present.)
+
+- 24 Nov 09:08: refinement stopped for the 10:00 power cut at 626/1232 (smallest first); final checks FINAL ok (1232 dice, balanced optimal proved for 14, both measures for 2). Resume: same command, plan aequi-numrefine.
