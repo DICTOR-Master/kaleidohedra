@@ -1,0 +1,20 @@
+cells 402, reached 402, walls 998, start cell 33
+(c) tree walls 401 (holonomy kinds {'identity': 401}); loops (non-tree walls) 597: {'improper': 368, 'proper': 202, 'identity': 27}
+    all 998 counted together as in seams_mirror.py: identity 428, improper 368, proper 202
+    597 = 27 + 368 + 202: True
+interior edges (exact cycle test) 814: {3: 364, 4: 239, 5: 156, 6: 13, 7: 30, 8: 10, 9: 2}
+    agrees with seams_mirror.py (814; 3:364 4:239 5:156 6:13 7:30 8:10 9:2): True
+odd interior edges 552; every odd-edge holonomy is a reflection whose mirror contains the edge (exact): True
+(a) ODD EDGES ALONE: rank 3, EMPTY (inconsistent)
+    distinct mirror planes among the odd edges: 96
+    certificate: 3 odd edges whose mirror planes have no common point:
+     edge ((-2, 0, -1, -1, 0, -1), (-1, 0, -1, -1, 0, -1)) cells 5 plane [-3/4+-1/4r5, 1/4+1/4r5, -1/2, 3/2+1/2r5]
+     edge ((-2, 0, -1, -1, 0, -1), (-2, 0, 0, -1, 0, -1)) cells 3 plane [0, 0, -2, 1+1r5]
+     edge ((-1, 0, -1, -1, 0, -1), (-1, 0, 0, -1, 0, -1)) cells 5 plane [-3/4+-1/4r5, 1/4+1/4r5, 1/2, 3/2+1/2r5]
+side: all 814 edge loops (odd and even): rank 3, EMPTY
+check: all 597 loops as in seams_mirror.py: rank 3, EMPTY (reproduces the original)
+FINAL ok
+
+real	0m3.341s
+user	0m9.006s
+sys	0m0.072s
