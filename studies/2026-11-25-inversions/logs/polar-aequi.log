@@ -1,0 +1,39 @@
+dice 15192 {'1232': 1232, '4404': 4404, '2a': 5935, '2caps': 336, '2caps2': 1375, '2caps3': 1910}
+PROGRESS 0.033 500 dice 19s
+PROGRESS 0.066 1000 dice 29s
+PROGRESS 0.099 1500 dice 39s
+PROGRESS 0.132 2000 dice 42s
+PROGRESS 0.165 2500 dice 44s
+PROGRESS 0.197 3000 dice 46s
+PROGRESS 0.230 3500 dice 49s
+PROGRESS 0.263 4000 dice 51s
+PROGRESS 0.296 4500 dice 52s
+PROGRESS 0.329 5000 dice 54s
+PROGRESS 0.362 5500 dice 55s
+PROGRESS 0.395 6000 dice 57s
+PROGRESS 0.428 6500 dice 61s
+PROGRESS 0.461 7000 dice 66s
+PROGRESS 0.494 7500 dice 69s
+PROGRESS 0.527 8000 dice 71s
+PROGRESS 0.560 8500 dice 73s
+PROGRESS 0.592 9000 dice 74s
+PROGRESS 0.625 9500 dice 76s
+PROGRESS 0.658 10000 dice 79s
+PROGRESS 0.691 10500 dice 81s
+PROGRESS 0.724 11000 dice 83s
+PROGRESS 0.757 11500 dice 84s
+PROGRESS 0.790 12000 dice 89s
+PROGRESS 0.823 12500 dice 93s
+PROGRESS 0.856 13000 dice 97s
+PROGRESS 0.889 13500 dice 100s
+PROGRESS 0.922 14000 dice 103s
+PROGRESS 0.954 14500 dice 106s
+PROGRESS 0.987 15000 dice 110s
+of these, pairs NOT explained by a congruence of normal cones: 650 [('1232', 29, 'Th: D12 + I12'), ('1232', 495, 'T: O8/4 + D12 + I12'), ('1232', 496, 'T: O8/4 + D12 + RT24/12 (1)'), ('1232', 507, 'T: D12 + I12 + RT24/12'), ('1232', 514, 'T: C6 + O8/4 + D12 + I12'), ('1232', 530, 'T: O8/4 + D12 + I12 + RT24/12 (2)'), ('1232', 65, 'O: C6 + D12+D12′/24 + RT24+RT24′/24'), ('1232', 67, 'O: O8 + D12+D12′/24 + RT24+RT24′/24'), ('1232', 73, 'O: C6 + O8 + D12+D12′/24 + RT24+RT24′/24'), ('1232', 84, 'O: C6 + O8 + D12+D12′/24 + I12+I12′/24 + RT24+RT24′/24'), ('1232', 189, 'Th: C6 + I12 + RT24′'), ('1232', 216, 'Th: C6 + RD12 + I12 + RT24′'), ('1232', 235, 'Th: C6 + D12 + RT24 + RT24′'), ('1232', 236, 'Th: C6 + I12 + RT24 + RT24′'), ('1232', 255, 'Th: C6 + O8 + D12 + I12′ + RT24′'), ('1232', 270, 'Th: O8 + D12 + I12 + D12′ + RT24′'), ('1232', 282, 'Th: C6 + RD12 + D12 + RT24 + RT24′'), ('1232', 283, 'Th: C6 + RD12 + I12 + RT24 + RT24′'), ('1232', 284, 'Th: C6 + D12 + RT24 + I12′ + RT24′'), ('1232', 299, 'Th: C6 + O8 + D12 + I12 + D12′ + RT24′')]
+candidates with one corner orbit (equal curvature proved by symmetry): 14 of 24
+dice run 15192 | failures 0 []
+polar fair candidates (all corner curvatures overlap): 24 [('1232', 3, 'Ih: O8+I12/20 + D12', 1), ('1232', 6, 'Ih: C6+RT24/30 + O8+I12/20 + D12', 1), ('1232', 10, 'Oh: C6 + O8', 1), ('1232', 13, 'Oh: C6 + O8 + RD12', 1), ('4404', 14, 'D10h: C6+RT24/10 + D12/2', 2), ('4404', 15, 'D8h: C6+RD12/8 + C6/2', 1), ('4404', 16, 'D6h: O8/2 + RD12/6', 2), ('4404', 108, 'D5d: C6+RT24/10 + D12/10 + D12/2 (3)', 2), ('4404', 188, 'D5h: C6+RT24/5 + D12/2', 1), ('4404', 222, 'D3d: D12/6 + I12/2 (2)', 1), ('4404', 477, 'D3h: O8/2 + RD12/3', 1), ('4404', 784, 'D2d: C6/2 + O8/4', 1), ('4404', 785, 'D2d: C6/2 + RD12/4', 1), ('4404', 793, 'D2d: C6/4 + C6/2 + RD12/4', 2), ('4404', 2009, 'D3: O8+I12/6 + O8/2', 2), ('2a', 1938, 'D2d: C6/2 + D12+D12p/4', 1), ('2a', 1939, 'D2d: C6/2 + D12+D12p/4', 1), ('2a', 1940, 'D2d: C6/2 + I12+I12p/4', 1), ('2a', 1941, 'D2d: C6/2 + I12+I12p/4', 1), ('2a', 1942, 'D2d: C6/2 + RT24+RT24p/4', 2)]
+dice with two corner orbits of equal curvature (ball overlap): 4322 [('1232', 29, 'Th: D12 + I12'), ('1232', 32, 'Th: D12 + RT24'), ('1232', 43, 'Th: C6 + RD12 + RT24'), ('1232', 44, 'Th: C6 + I12 + RT24'), ('1232', 46, 'Th: O8 + D12 + RT24'), ('1232', 47, 'Th: O8 + I12 + RT24'), ('1232', 50, 'Th: D12 + I12 + RT24'), ('1232', 53, 'Th: C6 + O8 + D12 + I12'), ('1232', 55, 'Th: O8 + RD12 + D12 + I12'), ('1232', 57, 'Th: C6 + O8 + D12 + RT24'), ('1232', 58, 'Th: C6 + RD12 + D12 + RT24'), ('1232', 60, 'Th: C6 + D12 + I12 + RT24'), ('1232', 63, 'Th: O8 + D12 + I12 + RT24'), ('1232', 68, 'Th: C6 + RD12 + D12 + I12 + RT24'), ('1232', 70, 'Th: C6 + O8 + RD12 + D12 + I12 + RT24'), ('1232', 479, 'T: O8/4 + D12'), ('1232', 485, 'T: D12 + RT24/12'), ('1232', 495, 'T: O8/4 + D12 + I12'), ('1232', 496, 'T: O8/4 + D12 + RT24/12 (1)'), ('1232', 498, 'T: O8/4 + I12 + RT24/12 (1)')]
+curvature classes histogram: [(1, 24), (2, 323), (3, 1438), (4, 2698), (5, 2923), (6, 3658), (7, 1812), (8, 1299), (9, 471), (10, 338), (11, 113), (12, 65), (13, 29), (14, 1)]
+FINAL ok
+[exit 0]

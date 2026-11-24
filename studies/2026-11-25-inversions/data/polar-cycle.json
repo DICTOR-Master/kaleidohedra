@@ -1,0 +1,778 @@
+{
+ "polarity_midsphere": {
+  "I": {
+   "member": "icosahedron",
+   "midradius2": "3/2 + 1/2√5",
+   "midradius2_is_phi_power": 2,
+   "polar_in_midsphere": [
+    "D",
+    0
+   ],
+   "corner_scale_of_reciprocal": null,
+   "vacuus": 15,
+   "resonus": 10,
+   "resonus_axes": [
+    "3"
+   ],
+   "corner_planes": 6,
+   "corner_axes": [
+    "5"
+   ],
+   "polar_resonus_axes": [
+    "5"
+   ],
+   "polar_corner_axes": [
+    "3"
+   ],
+   "circumradius2_ratio_polar_over_member": "3/2 - 3/10√5",
+   "circumradius_ratio_phi_power_x2": null
+  },
+  "D": {
+   "member": "dodecahedron",
+   "midradius2": "3/2 + 1/2√5",
+   "midradius2_is_phi_power": 2,
+   "polar_in_midsphere": [
+    "I",
+    0
+   ],
+   "corner_scale_of_reciprocal": null,
+   "vacuus": 15,
+   "resonus": 6,
+   "resonus_axes": [
+    "5"
+   ],
+   "corner_planes": 10,
+   "corner_axes": [
+    "3"
+   ],
+   "polar_resonus_axes": [
+    "3"
+   ],
+   "polar_corner_axes": [
+    "5"
+   ],
+   "circumradius2_ratio_polar_over_member": "5/6 + 1/6√5",
+   "circumradius_ratio_phi_power_x2": null
+  },
+  "SSD": {
+   "member": "small stellated dodecahedron {5/2,5}",
+   "midradius2": "3/2 + 1/2√5",
+   "midradius2_is_phi_power": 2,
+   "polar_in_midsphere": [
+    "GD",
+    -1
+   ],
+   "corner_scale_of_reciprocal": null,
+   "vacuus": 15,
+   "resonus": 6,
+   "resonus_axes": [
+    "5"
+   ],
+   "corner_planes": 6,
+   "corner_axes": [
+    "5"
+   ],
+   "polar_resonus_axes": [
+    "5"
+   ],
+   "polar_corner_axes": [
+    "5"
+   ],
+   "circumradius2_ratio_polar_over_member": "3/2 - 1/2√5",
+   "circumradius_ratio_phi_power_x2": -2
+  },
+  "GD": {
+   "member": "great dodecahedron {5,5/2}",
+   "midradius2": "7/2 + 3/2√5",
+   "midradius2_is_phi_power": 4,
+   "polar_in_midsphere": [
+    "SSD",
+    1
+   ],
+   "corner_scale_of_reciprocal": null,
+   "vacuus": 15,
+   "resonus": 6,
+   "resonus_axes": [
+    "5"
+   ],
+   "corner_planes": 6,
+   "corner_axes": [
+    "5"
+   ],
+   "polar_resonus_axes": [
+    "5"
+   ],
+   "polar_corner_axes": [
+    "5"
+   ],
+   "circumradius2_ratio_polar_over_member": "3/2 + 1/2√5",
+   "circumradius_ratio_phi_power_x2": 2
+  },
+  "GSD": {
+   "member": "great stellated dodecahedron {5/2,3}",
+   "midradius2": "7/2 + 3/2√5",
+   "midradius2_is_phi_power": 4,
+   "polar_in_midsphere": [
+    "GI",
+    -1
+   ],
+   "corner_scale_of_reciprocal": null,
+   "vacuus": 15,
+   "resonus": 6,
+   "resonus_axes": [
+    "5"
+   ],
+   "corner_planes": 10,
+   "corner_axes": [
+    "3"
+   ],
+   "polar_resonus_axes": [
+    "3"
+   ],
+   "polar_corner_axes": [
+    "5"
+   ],
+   "circumradius2_ratio_polar_over_member": "5/6 - 1/6√5",
+   "circumradius_ratio_phi_power_x2": null
+  },
+  "GI": {
+   "member": "great icosahedron {3,5/2}",
+   "midradius2": "9 + 4√5",
+   "midradius2_is_phi_power": 6,
+   "polar_in_midsphere": [
+    "GSD",
+    1
+   ],
+   "corner_scale_of_reciprocal": null,
+   "vacuus": 15,
+   "resonus": 10,
+   "resonus_axes": [
+    "3"
+   ],
+   "corner_planes": 6,
+   "corner_axes": [
+    "5"
+   ],
+   "polar_resonus_axes": [
+    "5"
+   ],
+   "polar_corner_axes": [
+    "3"
+   ],
+   "circumradius2_ratio_polar_over_member": "3/2 + 3/10√5",
+   "circumradius_ratio_phi_power_x2": null
+  }
+ },
+ "off_ladder_example": {
+  "R2": "3",
+  "polar_of_I0_is": "(3/phi^2) D0",
+  "on_ladder": false
+ },
+ "compound_counterexample": {
+  "five_cubes": {
+   "vacuus": 30,
+   "vacuus_axes": [
+    "other"
+   ],
+   "resonus": 15,
+   "resonus_axes": [
+    "2"
+   ]
+  },
+  "five_octahedra": {
+   "vacuus": 15,
+   "vacuus_axes": [
+    "2"
+   ],
+   "resonus": 10,
+   "resonus_axes": [
+    "3"
+   ],
+   "corners": 30,
+   "corner_axes": [
+    "2"
+   ],
+   "corner_radius2": [
+    "7/2 + 3/2√5"
+   ]
+  }
+ },
+ "faceting_classes": {
+  "I0": {
+   "chords": [
+    {
+     "chord2": "4",
+     "chords": 30,
+     "vacuus_axes": [
+      "2"
+     ],
+     "vacuus_planes": 15,
+     "direction_axes": [
+      "2"
+     ]
+    },
+    {
+     "chord2": "6 + 2√5",
+     "chords": 30,
+     "vacuus_axes": [
+      "2"
+     ],
+     "vacuus_planes": 15,
+     "direction_axes": [
+      "2"
+     ]
+    }
+   ],
+   "planes": [
+    {
+     "axis": "3",
+     "dist2": "1/2 - 1/6√5",
+     "corners_on_plane": 3,
+     "planes": 20
+    },
+    {
+     "axis": "5",
+     "dist2": "1/2 + 1/10√5",
+     "corners_on_plane": 5,
+     "planes": 12
+    },
+    {
+     "axis": "3",
+     "dist2": "7/6 + 1/2√5",
+     "corners_on_plane": 3,
+     "planes": 20
+    }
+   ]
+  },
+  "D0": {
+   "chords": [
+    {
+     "chord2": "6 - 2√5",
+     "chords": 30,
+     "vacuus_axes": [
+      "2"
+     ],
+     "vacuus_planes": 15,
+     "direction_axes": [
+      "2"
+     ]
+    },
+    {
+     "chord2": "4",
+     "chords": 60,
+     "vacuus_axes": [
+      "other"
+     ],
+     "vacuus_planes": 30,
+     "direction_axes": [
+      "2"
+     ]
+    },
+    {
+     "chord2": "8",
+     "chords": 60,
+     "vacuus_axes": [
+      "other"
+     ],
+     "vacuus_planes": 30,
+     "direction_axes": [
+      "other"
+     ]
+    },
+    {
+     "chord2": "6 + 2√5",
+     "chords": 30,
+     "vacuus_axes": [
+      "2"
+     ],
+     "vacuus_planes": 15,
+     "direction_axes": [
+      "2"
+     ]
+    }
+   ],
+   "planes": [
+    {
+     "axis": "other",
+     "dist2": "19/41 - 8/41√5",
+     "corners_on_plane": 3,
+     "planes": 60
+    },
+    {
+     "axis": "5",
+     "dist2": "1 - 2/5√5",
+     "corners_on_plane": 5,
+     "planes": 12
+    },
+    {
+     "axis": "3",
+     "dist2": "1/3",
+     "corners_on_plane": 6,
+     "planes": 20
+    },
+    {
+     "axis": "other",
+     "dist2": "5/7",
+     "corners_on_plane": 3,
+     "planes": 60
+    },
+    {
+     "axis": "other",
+     "dist2": "19/41 + 8/41√5",
+     "corners_on_plane": 3,
+     "planes": 60
+    },
+    {
+     "axis": "2",
+     "dist2": "1",
+     "corners_on_plane": 4,
+     "planes": 30
+    },
+    {
+     "axis": "3",
+     "dist2": "5/3",
+     "corners_on_plane": 3,
+     "planes": 20
+    },
+    {
+     "axis": "5",
+     "dist2": "1 + 2/5√5",
+     "corners_on_plane": 5,
+     "planes": 12
+    }
+   ]
+  }
+ },
+ "faceting_ladder": [
+  {
+   "corners": "I_-2",
+   "faceting": "SSD",
+   "as_stellation_of": "D_-3",
+   "step": -1
+  },
+  {
+   "corners": "I_-1",
+   "faceting": "SSD",
+   "as_stellation_of": "D_-2",
+   "step": -1
+  },
+  {
+   "corners": "I_0",
+   "faceting": "SSD",
+   "as_stellation_of": "D_-1",
+   "step": -1
+  },
+  {
+   "corners": "I_1",
+   "faceting": "SSD",
+   "as_stellation_of": "D_0",
+   "step": -1
+  },
+  {
+   "corners": "I_2",
+   "faceting": "SSD",
+   "as_stellation_of": "D_1",
+   "step": -1
+  },
+  {
+   "corners": "I_-2",
+   "faceting": "GD",
+   "as_stellation_of": "D_-3",
+   "step": -1
+  },
+  {
+   "corners": "I_-1",
+   "faceting": "GD",
+   "as_stellation_of": "D_-2",
+   "step": -1
+  },
+  {
+   "corners": "I_0",
+   "faceting": "GD",
+   "as_stellation_of": "D_-1",
+   "step": -1
+  },
+  {
+   "corners": "I_1",
+   "faceting": "GD",
+   "as_stellation_of": "D_0",
+   "step": -1
+  },
+  {
+   "corners": "I_2",
+   "faceting": "GD",
+   "as_stellation_of": "D_1",
+   "step": -1
+  },
+  {
+   "corners": "I_-2",
+   "faceting": "GI",
+   "as_stellation_of": "I_-5",
+   "step": -3
+  },
+  {
+   "corners": "I_-1",
+   "faceting": "GI",
+   "as_stellation_of": "I_-4",
+   "step": -3
+  },
+  {
+   "corners": "I_0",
+   "faceting": "GI",
+   "as_stellation_of": "I_-3",
+   "step": -3
+  },
+  {
+   "corners": "I_1",
+   "faceting": "GI",
+   "as_stellation_of": "I_-2",
+   "step": -3
+  },
+  {
+   "corners": "I_2",
+   "faceting": "GI",
+   "as_stellation_of": "I_-1",
+   "step": -3
+  },
+  {
+   "corners": "D_-2",
+   "faceting": "GSD",
+   "as_stellation_of": "D_-5",
+   "step": -3
+  },
+  {
+   "corners": "D_-1",
+   "faceting": "GSD",
+   "as_stellation_of": "D_-4",
+   "step": -3
+  },
+  {
+   "corners": "D_0",
+   "faceting": "GSD",
+   "as_stellation_of": "D_-3",
+   "step": -3
+  },
+  {
+   "corners": "D_1",
+   "faceting": "GSD",
+   "as_stellation_of": "D_-2",
+   "step": -3
+  },
+  {
+   "corners": "D_2",
+   "faceting": "GSD",
+   "as_stellation_of": "D_-1",
+   "step": -3
+  }
+ ],
+ "inversion": {
+  "tetrahedron": {
+   "R2": "1",
+   "face_spheres": 4,
+   "sphere_radius2": [
+    "3/4"
+   ],
+   "centres_are_half_poles": true,
+   "tangent_planes_at_O_are_resonus": true,
+   "edge_circles": 6,
+   "circle_planes": 6,
+   "circle_planes_are_vacuus": true,
+   "circle_diameter2": [
+    "1"
+   ],
+   "tangent_lines_at_O": 6,
+   "circles_per_tangent_line": [
+    1
+   ],
+   "crossings_besides_O": {
+    "vertex, 3 circles, 3 arcs": 4
+   },
+   "crossing_angle_cos2": [
+    "1/4"
+   ],
+   "face_sphere_angles_cos2_sign": [
+    [
+     "1/9",
+     -1
+    ]
+   ],
+   "sphere": "midsphere"
+  },
+  "cube": {
+   "R2": "2",
+   "face_spheres": 6,
+   "sphere_radius2": [
+    "1"
+   ],
+   "centres_are_half_poles": true,
+   "tangent_planes_at_O_are_resonus": true,
+   "edge_circles": 12,
+   "circle_planes": 6,
+   "circle_planes_are_vacuus": true,
+   "circle_diameter2": [
+    "2"
+   ],
+   "tangent_lines_at_O": 3,
+   "circles_per_tangent_line": [
+    4
+   ],
+   "crossings_besides_O": {
+    "vertex, 3 circles, 3 arcs": 8
+   },
+   "crossing_angle_cos2": [
+    "0"
+   ],
+   "face_sphere_angles_cos2_sign": [
+    [
+     "0",
+     0
+    ]
+   ],
+   "sphere": "midsphere"
+  },
+  "octahedron": {
+   "R2": "1/2",
+   "face_spheres": 8,
+   "sphere_radius2": [
+    "3/16"
+   ],
+   "centres_are_half_poles": true,
+   "tangent_planes_at_O_are_resonus": true,
+   "edge_circles": 12,
+   "circle_planes": 3,
+   "circle_planes_are_vacuus": true,
+   "circle_diameter2": [
+    "1/2"
+   ],
+   "tangent_lines_at_O": 6,
+   "circles_per_tangent_line": [
+    2
+   ],
+   "crossings_besides_O": {
+    "vertex, 4 circles, 4 arcs": 6
+   },
+   "crossing_angle_cos2": [
+    "0",
+    "1/4"
+   ],
+   "face_sphere_angles_cos2_sign": [
+    [
+     "1/9",
+     1
+    ]
+   ],
+   "sphere": "midsphere"
+  },
+  "icosahedron": {
+   "R2": "3/2 + 1/2√5",
+   "face_spheres": 20,
+   "sphere_radius2": [
+    "3/4"
+   ],
+   "centres_are_half_poles": true,
+   "tangent_planes_at_O_are_resonus": true,
+   "edge_circles": 30,
+   "circle_planes": 15,
+   "circle_planes_are_vacuus": true,
+   "circle_diameter2": [
+    "3/2 + 1/2√5"
+   ],
+   "tangent_lines_at_O": 15,
+   "circles_per_tangent_line": [
+    2
+   ],
+   "crossings_besides_O": {
+    "other, 3 circles, 0 arcs": 20,
+    "vertex, 5 circles, 5 arcs": 12
+   },
+   "crossing_angle_cos2": [
+    "1/4",
+    "3/8 + 1/8√5",
+    "3/8 - 1/8√5"
+   ],
+   "face_sphere_angles_cos2_sign": [
+    [
+     "5/9",
+     1
+    ]
+   ],
+   "sphere": "midsphere"
+  },
+  "dodecahedron": {
+   "R2": "3/2 + 1/2√5",
+   "face_spheres": 12,
+   "sphere_radius2": [
+    "5/8 + 1/8√5"
+   ],
+   "centres_are_half_poles": true,
+   "tangent_planes_at_O_are_resonus": true,
+   "edge_circles": 30,
+   "circle_planes": 15,
+   "circle_planes_are_vacuus": true,
+   "circle_diameter2": [
+    "3/2 + 1/2√5"
+   ],
+   "tangent_lines_at_O": 15,
+   "circles_per_tangent_line": [
+    2
+   ],
+   "crossings_besides_O": {
+    "other, 5 circles, 0 arcs": 12,
+    "vertex, 3 circles, 3 arcs": 20
+   },
+   "crossing_angle_cos2": [
+    "1/4",
+    "3/8 + 1/8√5",
+    "3/8 - 1/8√5"
+   ],
+   "face_sphere_angles_cos2_sign": [
+    [
+     "1/5",
+     1
+    ]
+   ],
+   "sphere": "midsphere"
+  },
+  "small stellated dodecahedron {5/2,5}": {
+   "R2": "3/2 + 1/2√5",
+   "face_spheres": 12,
+   "sphere_radius2": [
+    "5/8 + 1/8√5"
+   ],
+   "centres_are_half_poles": true,
+   "tangent_planes_at_O_are_resonus": true,
+   "edge_circles": 30,
+   "circle_planes": 15,
+   "circle_planes_are_vacuus": true,
+   "circle_diameter2": [
+    "3/2 + 1/2√5"
+   ],
+   "tangent_lines_at_O": 15,
+   "circles_per_tangent_line": [
+    2
+   ],
+   "crossings_besides_O": {
+    "other, 3 circles, 3 arcs": 20,
+    "vertex, 5 circles, 5 arcs": 12
+   },
+   "crossing_angle_cos2": [
+    "1/4",
+    "3/8 + 1/8√5",
+    "3/8 - 1/8√5"
+   ],
+   "face_sphere_angles_cos2_sign": [
+    [
+     "1/5",
+     1
+    ]
+   ],
+   "sphere": "midsphere"
+  },
+  "great dodecahedron {5,5/2}": {
+   "R2": "7/2 + 3/2√5",
+   "face_spheres": 12,
+   "sphere_radius2": [
+    "25/8 + 11/8√5"
+   ],
+   "centres_are_half_poles": true,
+   "tangent_planes_at_O_are_resonus": true,
+   "edge_circles": 30,
+   "circle_planes": 15,
+   "circle_planes_are_vacuus": true,
+   "circle_diameter2": [
+    "7/2 + 3/2√5"
+   ],
+   "tangent_lines_at_O": 15,
+   "circles_per_tangent_line": [
+    2
+   ],
+   "crossings_besides_O": {
+    "other, 3 circles, 0 arcs": 20,
+    "vertex, 5 circles, 5 arcs": 12
+   },
+   "crossing_angle_cos2": [
+    "1/4",
+    "3/8 + 1/8√5",
+    "3/8 - 1/8√5"
+   ],
+   "face_sphere_angles_cos2_sign": [
+    [
+     "1/5",
+     -1
+    ]
+   ],
+   "sphere": "midsphere"
+  },
+  "great stellated dodecahedron {5/2,3}": {
+   "R2": "7/2 + 3/2√5",
+   "face_spheres": 12,
+   "sphere_radius2": [
+    "25/8 + 11/8√5"
+   ],
+   "centres_are_half_poles": true,
+   "tangent_planes_at_O_are_resonus": true,
+   "edge_circles": 30,
+   "circle_planes": 15,
+   "circle_planes_are_vacuus": true,
+   "circle_diameter2": [
+    "7/2 + 3/2√5"
+   ],
+   "tangent_lines_at_O": 15,
+   "circles_per_tangent_line": [
+    2
+   ],
+   "crossings_besides_O": {
+    "other, 5 circles, 5 arcs": 12,
+    "vertex, 3 circles, 3 arcs": 20
+   },
+   "crossing_angle_cos2": [
+    "1/4",
+    "3/8 + 1/8√5",
+    "3/8 - 1/8√5"
+   ],
+   "face_sphere_angles_cos2_sign": [
+    [
+     "1/5",
+     -1
+    ]
+   ],
+   "sphere": "midsphere"
+  },
+  "great icosahedron {3,5/2}": {
+   "R2": "9 + 4√5",
+   "face_spheres": 20,
+   "sphere_radius2": [
+    "141/8 + 63/8√5"
+   ],
+   "centres_are_half_poles": true,
+   "tangent_planes_at_O_are_resonus": true,
+   "edge_circles": 30,
+   "circle_planes": 15,
+   "circle_planes_are_vacuus": true,
+   "circle_diameter2": [
+    "9 + 4√5"
+   ],
+   "tangent_lines_at_O": 15,
+   "circles_per_tangent_line": [
+    2
+   ],
+   "crossings_besides_O": {
+    "other, 3 circles, 3 arcs": 20,
+    "vertex, 5 circles, 5 arcs": 12
+   },
+   "crossing_angle_cos2": [
+    "1/4",
+    "3/8 + 1/8√5",
+    "3/8 - 1/8√5"
+   ],
+   "face_sphere_angles_cos2_sign": [
+    [
+     "5/9",
+     -1
+    ]
+   ],
+   "sphere": "midsphere"
+  }
+ },
+ "seconds": 27.7
+}
