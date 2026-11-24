@@ -24,3 +24,6 @@ Release: only after conversation + DICTO's explicit read ok.
 - Opening guiding thought (DICTO): the relevance of the Vacuus and Resonus to current mathematics lies in their emptiness as well as their form; his words to confirm.
 - Wording: polyhedra / polytopes, never "solids".
 - Epigraph footnote (DICTO yes 24 Nov): "Śūnya, 'empty', is the Sanskrit word for both the emptiness (śūnyatā) of the Heart Sutra and the zero of Indian arithmetic (Brahmagupta, Brāhmasphuṭasiddhānta, 628 CE)." Sources to be OPENED first; no causal claim; Heart Sutra origin wording careful (Nattier 1992 argues Chinese composition).
+
+## DICTO decisions on draft v0 (24 Nov, conversation)
+- Title: "The Vacuus and the Resonus: Form and Emptiness in the Planes of Polyhedra".
