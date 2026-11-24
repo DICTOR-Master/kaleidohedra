@@ -17,3 +17,9 @@ Release: only after conversation + DICTO's explicit read ok.
 4D section (DICTO yes 24 Nov): #110's 360 walls = the Resonus of the two Queens (300 cross walls = Resonus(600-cell), 60 mirrors = Resonus(120-cell) = both Vacuus). Credit classical content: 120-cell cell centres = H4 roots (Coxeter, Humphreys; Coxeter cited not opened); 25x12 split also in Denney et al. Adv. Geom. 20 (2020), arXiv 1912.06156 §2 (dual form). New: the naming + two general laws (Resonus plane is a mirror iff a reflection carries its facet to the opposite; Vacuus plate is a mirror iff a reflection swaps the two facets at its ridge); "only the 120-cell" (dimension >= 2). Studies: resonus-4d, resonus-4d-recheck.
 - 24 Nov (DICTO): all his PET-bottle and B1NR sculptures are built as Vacuus; the opening can say so in his words (meaning to confirm).
 - DICTO 24 Nov: his Vacuus builds are four: cardboard octahedron, B1NR cube, cuboctahedron Vacuus, dodecahedron Vacuus.
+
+24 Nov (DICTO yes):
+- Epigraph: 色即是空、空即是色 / "Form is emptiness, emptiness is form" (Heart Sutra), credited.
+- New section "The emptiness": region counts (Zaslavsky) and the complement's Betti numbers / Poincaré polynomial (Orlik–Solomon) for the Vacuus and the Resonus, exact from the characteristic polynomials; credit Zaslavsky and Orlik–Solomon at point of use; one line separating "Resonus" from "resonance varieties" (Falk; Cohen–Suciu). Close with the exact statement: the planes (form) determine the empty regions and the shape of their complement (emptiness) through one polynomial.
+- Opening guiding thought (DICTO): the relevance of the Vacuus and Resonus to current mathematics lies in their emptiness as well as their form; his words to confirm.
+- Wording: polyhedra / polytopes, never "solids".
