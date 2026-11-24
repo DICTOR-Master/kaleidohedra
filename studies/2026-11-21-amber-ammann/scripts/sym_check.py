@@ -11,13 +11,16 @@ All arithmetic exact: Q(sqrt5) as pairs of Fractions (a + b sqrt5); no floating 
     A5. The symmetric shift gamma = 0: search {-1,0,1}^6 x 20 triples for a tile window having 0 on its boundary (singular shift).
  B. The finite 402-tile patch of the paper: every isometry of the patch fixes the barycentre b of the tile centres and has its linear part
     in I_h (A1); test all 120 maps x -> g(x - b) + b on the set of tiles (centre, triple), exactly.
- C. The layer: equivariance of the cell division (Rollerball, S0, centroid seeds; the 20 exact runs of exact_cell.py, data/exact/).
+ C. The layer: equivariance of the cell division (default Rollerball C2, S0, centroid seeds; any core and setting
+    given as arguments; the 20 exact runs of exact_cell.py, data/exact/).
     Each piece is compared by its facets (maximal flat faces, as boundary-edge sets of exact points), so the comparison does not
-    depend on how a flat facet was triangulated.  Checks: (i) the 12 elements of the stabiliser (D3d) of the base triple map its 72
-    pieces onto themselves; (ii) for every other triple A of the same type one g in I_h with g(base) = A maps the pieces of base onto
+    depend on how a flat facet was triangulated.  Checks: (i) the 12 elements of the stabiliser (D3d) of the base triple map its
+    pieces onto themselves (72 for the Rollerball: one per core face); (ii) for every other triple A of the same type one g in I_h with g(base) = A maps the pieces of base onto
     the pieces of A.  Together: g(pieces(A)) = pieces(gA) for all 120 g and all 20 A.
 Last line FINAL ok only if: |I_h| = 120 with g' acting as g; A2, A3 hold; exactly one g (the identity) has d_g in pi'(Z^6), with k = 0;
-B finds only the identity; C (i), (ii) hold for both types.  Usage: python sym_check.py  (part C skipped with a note if data/exact absent)."""
+B finds only the identity; C (i), (ii) hold for both types in every setting asked.
+Usage: python sym_check.py [core:scale:seed ...]  (default C2:S0:cen, the Rollerball of Theorem 1; e.g. C1:S0:cproj;
+part C fails with a note if data/exact is absent)."""
 import itertools, json, os, sys
 from fractions import Fraction as Fr
 from math import lcm
@@ -175,16 +178,18 @@ for idx, (g, p, eps) in enumerate(IH):
 check(sym == ident, f"isometries of the patch: {len(sym)} ({'identity only' if sym == ident else sym})")
 
 # ---------- C: equivariance of the layer ----------
-pr("C. the Scutoid-Frusta layer (Rollerball, S0, centroid seeds): g(pieces(A)) = pieces(gA)")
+# settings "core:scale:seed" from the command line (default the Rollerball C2:S0:cen of Theorem 1)
+SETTINGS = [tuple(a.split(":")) for a in sys.argv[1:]] or [("C2", "S0", "cen")]
 XD = os.path.join(HERE, "../data/exact")
 KIND = {tuple(t["A"]): t["kind"] for t in T}
 def kindA(A): return KIND[tuple(A)]
-if not os.path.exists(os.path.join(XD, "ammann_C2_012_S0_cen.json")):
-    pr("     data/exact absent here: part C not run"); ok = False
-else:
+for core, sc, seed in SETTINGS:
+    pr(f"C. the Scutoid-Frusta layer ({core}, {sc}, {seed} seeds): g(pieces(A)) = pieces(gA)")
+    if not os.path.exists(os.path.join(XD, f"ammann_{core}_012_{sc}_{seed}.json")):
+        pr("     data/exact absent here: part C not run"); ok = False; continue
     def load(A):
-        d = json.load(open(os.path.join(XD, f"ammann_C2_{''.join(map(str, A))}_S0_cen.json")))
-        assert d["valid"] is True and len(d["pieces"]) == 72
+        d = json.load(open(os.path.join(XD, f"ammann_{core}_{''.join(map(str, A))}_{sc}_{seed}.json")))
+        assert d["valid"] is True and len(d["pieces"]) == d["n_faces"]
         pts = {}
         def pt(s):
             if s not in pts: pts[s] = [parseQ(x) for x in s.split(",")]
@@ -202,12 +207,12 @@ else:
         return frozenset(frozenset(frozenset(frozenset((m(a), m(b))) for a, b in fac) for fac in pc) for pc in pieces)
     for typ in ("P", "O"):
         As = [A for A in TRIPLES if kindA(A) == typ]; A0 = As[0]; base = load(A0); cb = canon(base)
-        check(len(cb) == 72, f"type {typ}: base triple {A0}: 72 distinct pieces")
+        check(len(cb) == len(base), f"type {typ}: base triple {A0}: {len(cb)} distinct pieces")
         stab = [(g, p) for g, p, eps in IH if frozenset(p[a] for a in A0) == frozenset(A0)]
         si = all(canon(base, g) == cb for g, p in stab)
         check(len(stab) == 12 and si, f"type {typ}: the {len(stab)} elements of the stabiliser of {A0} map its pieces onto themselves")
         for A in As[1:]:
             g = next(g for g, p, eps in IH if frozenset(p[a] for a in A0) == frozenset(A))
             check(canon(base, g) == canon(load(A)), f"type {typ}: g({A0}) = {A}: g maps the pieces of {A0} onto the pieces of {A}")
-            pr(f"PROGRESS {(As.index(A) + (0 if typ == 'P' else 10))/20:.2f} {typ} {A}")
+            pr(f"PROGRESS {core} {sc} {seed} {(As.index(A) + (0 if typ == 'P' else 10))/20:.2f} {typ} {A}")
 pr("FINAL ok" if ok else "FAILED")
