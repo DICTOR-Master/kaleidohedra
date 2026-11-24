@@ -95,6 +95,16 @@ for s in ["C2 S0 cen", "C2 S65 cen", "C1 S0 cproj", "C1 S65 cproj", "icosahedron
 wc = rd("logs/wall_configs.log")
 ok("{'OO': 60, 'OP': 120, 'PP': 60}; total 240" in wc and wc.count("FINAL ok") == 8 and wc.count("OO 30/60, OP 0/120, PP 30/60") == 8, "wall_configs.log 120 walls, 8 settings")
 for s in ["120 possible prolate–oblate walls", "scripts/wall_configs.py, logs/wall_configs.log", "(1, φ, φ) or (1/φ, 1/φ, 1)"]: intext(s)
+# --- Theorem 3 (v): no common region on prolate-oblate walls (wall_disjoint.py), stacked pairs never in cut and project (stacked_pairs.py)
+wd = rd("logs/wall_disjoint.log")
+ok(wd.strip().splitlines()[-1] == "FINAL ok" and wd.count("prolate-oblate configurations 120, common polygons per configuration {0: 120}") == 8
+   and wd.count("OO 30/30, PP 30/30; ok") == 8 and "settings passing: 8/8" in wd, "wall_disjoint.log: 0 common polygons, 8 settings")
+for st in [l.split(":")[0] for l in wc.splitlines() if "per configuration, outer patterns agree" in l]:
+    ok(st + ": prolate-oblate configurations 120, common polygons per configuration {0: 120}" in wd, "wall_disjoint setting " + st)
+sp_ = rd("logs/stacked_pairs.log")
+ok(sp_.strip().splitlines()[-1] == "FINAL ok" and "nonzero: True" in sp_ and "{'(1, phi, phi)': 30, '(1/phi, 1/phi, 1)': 30}; a coefficient exactly 1 in 60/60" in sp_
+   and "between two tiles of one triple (stacked): 0" in sp_ and sp_.count("inside open set: False") == 60, "stacked_pairs.log: 60/60 on the boundary")
+for s in ["scripts/wall_disjoint.py, logs/wall_disjoint.log", "scripts/stacked_pairs.py, logs/stacked_pairs.log", "share no region", "for all 60 choices of A and l"]: intext(s)
 # --- seams (Theorem 3 (iv), Remark 6)
 sl = rd("logs/seams_mirror.log")
 for s in ["2-fold axis of the core: True", "cells reached 402/402", "{'identity': 428, 'improper': 368, 'proper': 202}", "rank 3, EMPTY"]:

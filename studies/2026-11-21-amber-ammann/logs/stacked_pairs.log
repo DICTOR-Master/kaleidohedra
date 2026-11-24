@@ -1,0 +1,66 @@
+det [e_i | e_i'] (6x6) = -40*sqrt(5); nonzero: True -> Z^6 -> R^3 injective
+sum e_i e_i'^T = 0: True
+A=(0, 1, 2) l=0: e_l' = (-sqrt(5)/2 - 1/2) e3' + (1) e4' + (-sqrt(5)/2 - 1/2) e5'  |t| (1, phi, phi); inside open set: False
+A=(0, 1, 2) l=1: e_l' = (1/2 + sqrt(5)/2) e3' + (-sqrt(5)/2 - 1/2) e4' + (1) e5'  |t| (1, phi, phi); inside open set: False
+A=(0, 1, 2) l=2: e_l' = (1) e3' + (-sqrt(5)/2 - 1/2) e4' + (1/2 + sqrt(5)/2) e5'  |t| (1, phi, phi); inside open set: False
+A=(0, 1, 3) l=0: e_l' = (-sqrt(5)/2 - 1/2) e2' + (-sqrt(5)/2 - 1/2) e4' + (1) e5'  |t| (1, phi, phi); inside open set: False
+A=(0, 1, 3) l=1: e_l' = (1/2 + sqrt(5)/2) e2' + (1) e4' + (-sqrt(5)/2 - 1/2) e5'  |t| (1, phi, phi); inside open set: False
+A=(0, 1, 3) l=3: e_l' = (1) e2' + (1/2 + sqrt(5)/2) e4' + (-sqrt(5)/2 - 1/2) e5'  |t| (1, phi, phi); inside open set: False
+A=(0, 1, 4) l=0: e_l' = (1/2 - sqrt(5)/2) e2' + (-1) e3' + (1/2 - sqrt(5)/2) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 1, 4) l=1: e_l' = (1) e2' + (-1/2 + sqrt(5)/2) e3' + (1/2 - sqrt(5)/2) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 1, 4) l=4: e_l' = (1/2 - sqrt(5)/2) e2' + (-1/2 + sqrt(5)/2) e3' + (1) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 1, 5) l=0: e_l' = (-1) e2' + (1/2 - sqrt(5)/2) e3' + (1/2 - sqrt(5)/2) e4'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 1, 5) l=1: e_l' = (-1/2 + sqrt(5)/2) e2' + (1) e3' + (1/2 - sqrt(5)/2) e4'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 1, 5) l=5: e_l' = (-1/2 + sqrt(5)/2) e2' + (1/2 - sqrt(5)/2) e3' + (1) e4'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 2, 3) l=0: e_l' = (-1) e1' + (1/2 - sqrt(5)/2) e4' + (1/2 - sqrt(5)/2) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 2, 3) l=2: e_l' = (-1/2 + sqrt(5)/2) e1' + (1/2 - sqrt(5)/2) e4' + (1) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 2, 3) l=3: e_l' = (-1/2 + sqrt(5)/2) e1' + (1) e4' + (1/2 - sqrt(5)/2) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 2, 4) l=0: e_l' = (1/2 - sqrt(5)/2) e1' + (1/2 - sqrt(5)/2) e3' + (-1) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 2, 4) l=2: e_l' = (1) e1' + (1/2 - sqrt(5)/2) e3' + (-1/2 + sqrt(5)/2) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 2, 4) l=4: e_l' = (1/2 - sqrt(5)/2) e1' + (1) e3' + (-1/2 + sqrt(5)/2) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 2, 5) l=0: e_l' = (-sqrt(5)/2 - 1/2) e1' + (1) e3' + (-sqrt(5)/2 - 1/2) e4'  |t| (1, phi, phi); inside open set: False
+A=(0, 2, 5) l=2: e_l' = (1/2 + sqrt(5)/2) e1' + (-sqrt(5)/2 - 1/2) e3' + (1) e4'  |t| (1, phi, phi); inside open set: False
+A=(0, 2, 5) l=5: e_l' = (1) e1' + (-sqrt(5)/2 - 1/2) e3' + (1/2 + sqrt(5)/2) e4'  |t| (1, phi, phi); inside open set: False
+A=(0, 3, 4) l=0: e_l' = (-sqrt(5)/2 - 1/2) e1' + (1) e2' + (-sqrt(5)/2 - 1/2) e5'  |t| (1, phi, phi); inside open set: False
+A=(0, 3, 4) l=3: e_l' = (1/2 + sqrt(5)/2) e1' + (-sqrt(5)/2 - 1/2) e2' + (1) e5'  |t| (1, phi, phi); inside open set: False
+A=(0, 3, 4) l=4: e_l' = (1) e1' + (-sqrt(5)/2 - 1/2) e2' + (1/2 + sqrt(5)/2) e5'  |t| (1, phi, phi); inside open set: False
+A=(0, 3, 5) l=0: e_l' = (1/2 - sqrt(5)/2) e1' + (1/2 - sqrt(5)/2) e2' + (-1) e4'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 3, 5) l=3: e_l' = (1) e1' + (1/2 - sqrt(5)/2) e2' + (-1/2 + sqrt(5)/2) e4'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 3, 5) l=5: e_l' = (1/2 - sqrt(5)/2) e1' + (1) e2' + (-1/2 + sqrt(5)/2) e4'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(0, 4, 5) l=0: e_l' = (1) e1' + (-sqrt(5)/2 - 1/2) e2' + (-sqrt(5)/2 - 1/2) e3'  |t| (1, phi, phi); inside open set: False
+A=(0, 4, 5) l=4: e_l' = (-sqrt(5)/2 - 1/2) e1' + (1) e2' + (1/2 + sqrt(5)/2) e3'  |t| (1, phi, phi); inside open set: False
+A=(0, 4, 5) l=5: e_l' = (-sqrt(5)/2 - 1/2) e1' + (1/2 + sqrt(5)/2) e2' + (1) e3'  |t| (1, phi, phi); inside open set: False
+A=(1, 2, 3) l=1: e_l' = (-1) e0' + (1/2 - sqrt(5)/2) e4' + (1/2 - sqrt(5)/2) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(1, 2, 3) l=2: e_l' = (1/2 - sqrt(5)/2) e0' + (-1) e4' + (-1/2 + sqrt(5)/2) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(1, 2, 3) l=3: e_l' = (1/2 - sqrt(5)/2) e0' + (-1/2 + sqrt(5)/2) e4' + (-1) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(1, 2, 4) l=1: e_l' = (-sqrt(5)/2 - 1/2) e0' + (-1) e3' + (-sqrt(5)/2 - 1/2) e5'  |t| (1, phi, phi); inside open set: False
+A=(1, 2, 4) l=2: e_l' = (-sqrt(5)/2 - 1/2) e0' + (-sqrt(5)/2 - 1/2) e3' + (-1) e5'  |t| (1, phi, phi); inside open set: False
+A=(1, 2, 4) l=4: e_l' = (1) e0' + (1/2 + sqrt(5)/2) e3' + (1/2 + sqrt(5)/2) e5'  |t| (1, phi, phi); inside open set: False
+A=(1, 2, 5) l=1: e_l' = (1/2 - sqrt(5)/2) e0' + (-1/2 + sqrt(5)/2) e3' + (-1) e4'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(1, 2, 5) l=2: e_l' = (-1) e0' + (1/2 - sqrt(5)/2) e3' + (1/2 - sqrt(5)/2) e4'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(1, 2, 5) l=5: e_l' = (1/2 - sqrt(5)/2) e0' + (-1) e3' + (-1/2 + sqrt(5)/2) e4'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(1, 3, 4) l=1: e_l' = (1/2 - sqrt(5)/2) e0' + (-1/2 + sqrt(5)/2) e2' + (-1) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(1, 3, 4) l=3: e_l' = (-1) e0' + (1/2 - sqrt(5)/2) e2' + (1/2 - sqrt(5)/2) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(1, 3, 4) l=4: e_l' = (1/2 - sqrt(5)/2) e0' + (-1) e2' + (-1/2 + sqrt(5)/2) e5'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(1, 3, 5) l=1: e_l' = (-sqrt(5)/2 - 1/2) e0' + (-1) e2' + (-sqrt(5)/2 - 1/2) e4'  |t| (1, phi, phi); inside open set: False
+A=(1, 3, 5) l=3: e_l' = (-sqrt(5)/2 - 1/2) e0' + (-sqrt(5)/2 - 1/2) e2' + (-1) e4'  |t| (1, phi, phi); inside open set: False
+A=(1, 3, 5) l=5: e_l' = (1) e0' + (1/2 + sqrt(5)/2) e2' + (1/2 + sqrt(5)/2) e4'  |t| (1, phi, phi); inside open set: False
+A=(1, 4, 5) l=1: e_l' = (1) e0' + (1/2 + sqrt(5)/2) e2' + (1/2 + sqrt(5)/2) e3'  |t| (1, phi, phi); inside open set: False
+A=(1, 4, 5) l=4: e_l' = (-sqrt(5)/2 - 1/2) e0' + (-sqrt(5)/2 - 1/2) e2' + (-1) e3'  |t| (1, phi, phi); inside open set: False
+A=(1, 4, 5) l=5: e_l' = (-sqrt(5)/2 - 1/2) e0' + (-1) e2' + (-sqrt(5)/2 - 1/2) e3'  |t| (1, phi, phi); inside open set: False
+A=(2, 3, 4) l=2: e_l' = (1) e0' + (1/2 + sqrt(5)/2) e1' + (1/2 + sqrt(5)/2) e5'  |t| (1, phi, phi); inside open set: False
+A=(2, 3, 4) l=3: e_l' = (-sqrt(5)/2 - 1/2) e0' + (-1) e1' + (-sqrt(5)/2 - 1/2) e5'  |t| (1, phi, phi); inside open set: False
+A=(2, 3, 4) l=4: e_l' = (-sqrt(5)/2 - 1/2) e0' + (-sqrt(5)/2 - 1/2) e1' + (-1) e5'  |t| (1, phi, phi); inside open set: False
+A=(2, 3, 5) l=2: e_l' = (-sqrt(5)/2 - 1/2) e0' + (-1) e1' + (-sqrt(5)/2 - 1/2) e4'  |t| (1, phi, phi); inside open set: False
+A=(2, 3, 5) l=3: e_l' = (1) e0' + (1/2 + sqrt(5)/2) e1' + (1/2 + sqrt(5)/2) e4'  |t| (1, phi, phi); inside open set: False
+A=(2, 3, 5) l=5: e_l' = (-sqrt(5)/2 - 1/2) e0' + (-sqrt(5)/2 - 1/2) e1' + (-1) e4'  |t| (1, phi, phi); inside open set: False
+A=(2, 4, 5) l=2: e_l' = (1/2 - sqrt(5)/2) e0' + (-1/2 + sqrt(5)/2) e1' + (-1) e3'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(2, 4, 5) l=4: e_l' = (1/2 - sqrt(5)/2) e0' + (-1) e1' + (-1/2 + sqrt(5)/2) e3'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(2, 4, 5) l=5: e_l' = (-1) e0' + (1/2 - sqrt(5)/2) e1' + (1/2 - sqrt(5)/2) e3'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(3, 4, 5) l=3: e_l' = (1/2 - sqrt(5)/2) e0' + (-1/2 + sqrt(5)/2) e1' + (-1) e2'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(3, 4, 5) l=4: e_l' = (-1) e0' + (1/2 - sqrt(5)/2) e1' + (1/2 - sqrt(5)/2) e2'  |t| (1/phi, 1/phi, 1); inside open set: False
+A=(3, 4, 5) l=5: e_l' = (1/2 - sqrt(5)/2) e0' + (-1) e1' + (-1/2 + sqrt(5)/2) e2'  |t| (1/phi, 1/phi, 1); inside open set: False
+cases 60 (20 triples x 3); |t| patterns {'(1, phi, phi)': 30, '(1/phi, 1/phi, 1)': 30}; a coefficient exactly 1 in 60/60
+control: patch walls 998, between two tiles of one triple (stacked): 0
+RESULT: stacked same-type pairs never occur in the cut-and-project tilings, for every gamma
+FINAL ok
