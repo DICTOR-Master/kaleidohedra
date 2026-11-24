@@ -42,6 +42,20 @@ dt = [dist[x] for x in order]
 wd = [word[x] for x in order]
 assert max(dt) == 10 and dt.count(10) == 1
 
+# position swaps (left multiplication by s_j): swap the entries at positions j, j+1
+def pswap(x, j):
+    l = list(x); l[j], l[j + 1] = l[j + 1], l[j]; return tuple(l)
+lt = [[idx[pswap(x, j)] for x in order] for j in range(n)]
+# lw[x]: position swaps j1, j2, ... applied in order to face 0 reach face x
+lwd = {u: []}; q = [u]; k = 0
+while k < len(q):
+    x = q[k]; k += 1
+    for j in range(n):
+        y = pswap(x, j)
+        if y not in lwd:
+            lwd[y] = lwd[x] + [j]; q.append(y)
+lw = [lwd[x] for x in order]
+
 def L(xs): return "[" + ",".join(str(v) for v in xs) + "]"
 out = sys.argv[1]
 with open(f"{out}/A4.lean", "w") as f:
@@ -73,6 +87,15 @@ def dt : List Nat :=
 /-- `word[x]`: a shortest roll from face 0 to face `x`. -/
 def word : List (List Nat) :=
   [{",".join(L(w) for w in wd)}]
+
+/-- `lt[j][x]`: the face whose corner is the corner of face `x` with the entries at positions
+`j`, `j+1` swapped (the reflection of the die in the mirror `y_j = y_(j+1)`). -/
+def lt : List (List Nat) :=
+  [{(",\n   ").join(L(r) for r in lt)}]
+
+/-- `lw[x]`: position swaps that, applied in order to face 0, give face `x`. -/
+def lw : List (List Nat) :=
+  [{",".join(L(w) for w in lw)}]
 
 end RollingLaw.Data.A4
 ''')

@@ -16,3 +16,12 @@ open RollingLaw
 #print axioms A4.transitive
 #print axioms A4.transitive_unique
 #print axioms mirrorsCrossed_swaps
+#print axioms A4.support_int
+#print axioms A4.support
+#print axioms A4.facet0
+#print axioms A4.facet
+#print axioms A4.convex_die
+#print axioms A4.fair
+#print axioms A4.roll_symmetry_isometry
+#print axioms A4.base_q
+#print axioms A4.to_face
