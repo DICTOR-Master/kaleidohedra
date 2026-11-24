@@ -1,0 +1,168 @@
+<title>Pyrochlore Loops Worksheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one column in OEIS form order; each field: what it is, paste-ready choices, your box. */
+:root{--bg:#f6f7f9;--panel:#fff;--fg:#1d232b;--muted:#5a6573;--line:#d9dee5;--accent:#2f5d8a;--code:#eef1f5;--ok:#2e7d4f;--req:#a3461f;--note:#fbf6e8;
+--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#13171c;--panel:#1b2128;--fg:#e4e8ee;--muted:#9aa5b2;--line:#2c343e;--accent:#8db7e0;--code:#222a33;--ok:#6cc08f;--req:#e59a74;--note:#2a2618;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13171c;--panel:#1b2128;--fg:#e4e8ee;--muted:#9aa5b2;--line:#2c343e;--accent:#8db7e0;--code:#222a33;--ok:#6cc08f;--req:#e59a74;--note:#2a2618;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance}h2{font-size:1.1rem;margin:10px 0 0;color:var(--accent)}p{margin:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:9px;min-width:0}
+.top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.lab{font-weight:600;font-size:1.05rem}
+.tag{font:600 .72rem var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid}
+.tag.r{color:var(--req);border-color:var(--req)}.tag.o{color:var(--muted);border-color:var(--line)}
+.what{color:var(--muted)}
+.sub{font:600 .78rem var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.opt{display:flex;gap:8px;align-items:flex-start}
+.n{font:600 .8rem var(--sans);color:var(--muted);padding-top:9px;min-width:1.4em}
+pre{flex:1;min-width:0;margin:0;background:var(--code);border-radius:6px;padding:8px 10px;font:.86rem/1.5 var(--mono);white-space:pre-wrap;word-break:break-word}
+.bg{background:var(--note);border-radius:6px;padding:8px 10px}
+textarea{width:100%;box-sizing:border-box;min-height:3.4em;font:.9rem/1.5 var(--mono);color:var(--fg);background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:8px}
+button{font:600 .8rem var(--sans);color:var(--accent);background:none;border:1px solid var(--accent);border-radius:6px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+button.ok{color:var(--ok);border-color:var(--ok)}button:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px}summary{cursor:pointer;font-weight:600}
+.status{border-left:3px solid var(--accent);padding-left:12px}
+</style>
+<main>
+<header style="display:flex;flex-direction:column;gap:8px">
+<h1>OEIS worksheet: closed tailless walks on the pyrochlore network</h1>
+<p class="status">Home paper #102 Corollary 2 (DICTO DOI 10.5281/zenodo.24037664). #102 prints the first 8 terms. Terms checked two independent ways to n = 40 (a direct count with no formula, and the Ihara-Bass formula); not in the OEIS (searched 24 Nov).</p>
+<p>How to use it: the fields are in the same order as the OEIS submission form. Each field says what it is and whether it is <b>required</b> or <b>optional</b>. Under <b>Ready to paste</b> are complete texts: choose one and press Copy. The box at the bottom of each field is yours to write in. At the end, <b>Copy my entry</b> collects what you wrote.</p>
+</header>
+
+<div class="card"><div class="top"><span class="lab">Name</span><span class="tag r">required</span></div><p class="what">A one-line title saying what the numbers count. Choose one.</p>
+<p class="sub">Ready to paste — choose one</p>
+<div class="opt"><span class="n">1</span><pre>Number of closed non-backtracking walks of length n (cyclically non-backtracking, i.e., tailless) starting and ending at a fixed site of the pyrochlore network.</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><span class="n">2</span><pre>Number of closed tailless non-backtracking walks of length n at a site of the pyrochlore network.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-name" data-label="Name" aria-label="Your Name" placeholder="Your name (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Data</span><span class="tag r">required</span></div><p class="what">The terms, separated by commas.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>0,0,12,12,0,276,756,2988,16104,64800,278916,1286352,5738928,25845036,118098612,540178572,2482501704,11470845192,53186644596,247472898972,1155354197016,5409675441324,25398322598892,119545910744592,563987677987800,2666471876270592,12632008967689620</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-data" data-label="Data" aria-label="Your Data" placeholder="Your data (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Offset</span><span class="tag r">required</span></div><p class="what">Where the counting starts. Paste exactly.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>1,3</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-offset" data-label="Offset" aria-label="Your Offset" placeholder="Your offset (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Comments</span><span class="tag o">optional</span></div><p class="what">Extra explanation. The OEIS does not allow AI-written comments, so there is nothing ready to paste here: write it yourself, or leave it empty.</p>
+<p class="sub">Background for you (not for pasting)</p><p class="bg">What you could say, in your own words: these walks never step straight back, not even across the start; #102 Corollary 2 proves that every site of the pyrochlore network of every close-packed stacking has these same numbers; the pyrochlore network is the line graph of the diamond network.</p>
+<textarea id="f-comments" data-label="Comments" aria-label="Your Comments" placeholder="Your comments (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">References</span><span class="tag o">optional</span></div><p class="what">Books and papers without a web link. Leave this EMPTY: the source has a link, so it goes under Links.</p>
+<textarea id="f-references" data-label="References" aria-label="Your References" placeholder="Your references (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Links</span><span class="tag o">optional</span></div><p class="what">Web links to sources. Paste this line.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>DICTO, &lt;a href=&quot;https://doi.org/10.5281/zenodo.24037664&quot;&gt;Every Site Hears the Same: the Loop Equality Is a Theorem&lt;/a&gt;, Zenodo (2026).</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-links" data-label="Links" aria-label="Your Links" placeholder="Your links (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Formula</span><span class="tag o">optional</span></div><p class="what">A formula that gives the terms. Option 1 can go in now. Option 2 needs the A-number of your pyrochlore closed-walks entry in place of A??????, so add it once that number is known.</p>
+<p class="sub">Ready to paste — choose one</p>
+<div class="opt"><span class="n">1</span><pre>Sum_{n&gt;=1} a(n)*x^n/n = -2*log(1-x^2) - (1/2)*log(1+6*x^2+25*x^4) + Sum_{k&gt;=1} A002895(k)*(x/(1-2*x+5*x^2))^(2*k)/(4*k) (Ihara-Bass formula for a 6-regular net).</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><span class="n">2</span><pre>G.f.: 4*x^2/(1-x^2) - 10*x^2/(1+5*x^2) + ((1-5*x^2)/(1+5*x^2))*(P(x/(1+5*x^2)) - 1), where P(x) is the g.f. for A??????.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-formula" data-label="Formula" aria-label="Your Formula" placeholder="Your formula (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Example</span><span class="tag o">optional</span></div><p class="what">Small cases worked out. Paste these lines.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>a(3) = 12: the site lies on 6 triangles, and each triangle can be walked in 2 directions.
+a(4) = 12: the site lies on 2 tetrahedra, each with 3 four-cycles through the site, and each four-cycle can be walked in 2 directions.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-example" data-label="Example" aria-label="Your Example" placeholder="Your example (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Program</span><span class="tag o">optional</span></div><p class="what">Computer code that prints the terms. It has been run and checked.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>(Python)
+from math import comb
+from fractions import Fraction
+def domb(m):  # A002895
+    return sum(comb(m,k)**2*comb(2*k,k)*comb(2*m-2*k,m-k) for k in range(m+1))
+def w(n):  # closed n-step walks per pyrochlore site
+    return (sum(comb(n,2*i)*2**(n-2*i)*domb(i) for i in range(n//2+1)) + (-2)**n)//2
+def loops(W, q):  # Ihara-Bass per vertex of a (q+1)-regular net; W[i] = closed i-step walks
+    M = len(W)-1; c = [Fraction(0)]*(M+1)
+    for k in range(1, M//2+1): c[2*k] += Fraction(q-1, 2*k)
+    for j in range(1, M+1):
+        for i in range(j+1):
+            if 2*j-i &lt;= M: c[2*j-i] += Fraction(comb(j,i)*W[i]*(-q)**(j-i), j)
+    return [int(m*c[m]) for m in range(1, M+1)]   # lengths 1..M
+print(loops([w(i) for i in range(28)], 5))</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-program" data-label="Program" aria-label="Your Program" placeholder="Your program (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Crossrefs</span><span class="tag o">optional</span></div><p class="what">Related sequences. Choose one. Option 2 adds your pyrochlore closed-walks entry once it has its number.</p>
+<p class="sub">Ready to paste — choose one</p>
+<div class="opt"><span class="n">1</span><pre>Cf. A002895, A400949, A402231.</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><span class="n">2</span><pre>Cf. A002895, A400949 (diamond analog), A402231 (fcc analog), A??????.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-xref" data-label="Crossrefs" aria-label="Your Crossrefs" placeholder="Your crossrefs (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Keywords</span><span class="tag r">required</span></div><p class="what">Short tags. Paste exactly.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>nonn,walk</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-keyword" data-label="Keywords" aria-label="Your Keywords" placeholder="Your keywords (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Your whole entry</span><button type="button" id="all">Copy my entry</button></div><p class="what">Copies every field you filled in, labelled, in form order. Paste it back to me and I check it field by field.</p></div>
+<h2>Model entries to look at</h2><p class="what">Existing entries of the same kind, in full as the OEIS shows them. The letters mean: %N name, %S data, %F formula, %H links, %o program, %Y crossrefs, %K keywords, %O offset.</p>
+<details><summary>A400949: your own approved entry, the diamond analog: copy the shape of its name, log formula and program.</summary><pre style="margin-top:8px">%I A400949 #22 Nov 14 2026 22:12:54
+%S A400949 0,0,24,48,480,3432,25704,194256,1509072,11820000,93722376,750276792,
+%T A400949 6056400480,49241424120,402912569544,3315331754256,27416593190640,
+%U A400949 227742362372496,1899436965599880,15899758239277008,133535586308211888,1124913591689189016,9502705513658774712
+%N A400949 Number of closed non-backtracking walks of length 2n (cyclically non-backtracking, i.e., tailless) starting and ending at a fixed atom of the diamond network.
+%C A400949 A walk v_0, v_1, ..., v_{2n} = v_0 along bonds is non-backtracking if v_{i+1} != v_{i-1} for all i, including v_1 != v_{2n-1}. a(n) = (1/|V|) trace(B^(2n)) for the Hashimoto (non-backtracking edge) matrix B of the diamond network; walks of odd length do not exist since the network is bipartite.
+%C A400949 a(1) = a(2) = 0 because the shortest cycles of diamond are its six-rings.
+%C A400949 The same numbers hold at every atom of lonsdaleite (hexagonal diamond, 2H) and of the tetrahedral network of every close-packed stacking (polytypes 4H, 6H, 9R, ..., periodic or not), although their coordination sequences differ (e.g., A008253, A008264): this is DICTO&#x27;s Loop Equality, found in #74 for lengths 6 to 34 on five stackings and proved for all lengths in #102 (Theorem 1). The corresponding statement for all closed walks (A002895) is due to Nagle (1966, ice) and Thorpe (1972, periodic polytypes).
+%D A400949 H. Bass, The Ihara-Selberg zeta function of a tree lattice, Internat. J. Math. 3 (1992), 717-797.
+%D A400949 J. F. Nagle, Lattice statistics of hydrogen bonded crystals. I. The residual entropy of ice, J. Math. Phys. 7 (1966), 1484-1491.
+%H A400949 DICTO, &lt;a href=&quot;https://doi.org/10.5281/zenodo.23730421&quot;&gt;Spin Ice and Kagome Magnets on Every Stacking&lt;/a&gt;, Zenodo (2026). See Section 3.
+%H A400949 DICTO, &lt;a href=&quot;https://doi.org/10.5281/zenodo.24037664&quot;&gt;Every Site Hears the Same: the Loop Equality Is a Theorem&lt;/a&gt;, Zenodo (2026).
+%H A400949 DICTO, &lt;a href=&quot;https://doi.org/10.5281/zenodo.23731359&quot;&gt;HexOct: The Hexagonality Law, with the Window Law, the Rule of Halves &amp; the Swap Rule&lt;/a&gt;, Zenodo (2026). See Chapter 13.
+%H A400949 M. F. Thorpe, &lt;a href=&quot;https://doi.org/10.1063/1.1665973&quot;&gt;Random walks in polytype structures&lt;/a&gt;, J. Math. Phys. 13 (1972), 294-299.
+%F A400949 Sum_{n&gt;=1} a(n)*x^n/n = -2*log((1-x)*(1+3*x)) + Sum_{k&gt;=1} A002895(k)*(x/(1+3*x)^2)^k/k (Ihara-Bass formula for a 4-regular net).
+%F A400949 G.f.: 2*x/(1-x) - 6*x/(1+3*x) + ((1-3*x)/(1+3*x))*(D(x/(1+3*x)^2) - 1), where D(x) = Sum_{k&gt;=0} A002895(k)*x^k.
+%e A400949 a(3) = 24: each atom of diamond lies on 12 six-rings, and each can be walked round in 2 directions.
+%o A400949 (Python)
+%o A400949 from math import comb
+%o A400949 from fractions import Fraction
+%o A400949 def domb(n):  # A002895
+%o A400949     return sum(comb(n,k)**2*comb(2*k,k)*comb(2*n-2*k,n-k) for k in range(n+1))
+%o A400949 def loops(W, q):  # Ihara-Bass per vertex of a (q+1)-regular net; W[i] = closed i-step walks
+%o A400949     M = len(W)-1; c = [Fraction(0)]*(M+1)
+%o A400949     for k in range(1, M//2+1): c[2*k] += Fraction(q-1, 2*k)
+%o A400949     for j in range(1, M+1):
+%o A400949         for i in range(j+1):
+%o A400949             if 2*j-i &lt;= M: c[2*j-i] += Fraction(comb(j,i)*W[i]*(-q)**(j-i), j)
+%o A400949     return [int(m*c[m]) for m in range(1, M+1)]   # lengths 1..M
+%o A400949 t = loops([domb(i//2) if i%2 == 0 else 0 for i in range(47)], 3)
+%o A400949 print([t[2*n-1] for n in range(1, 24)])
+%Y A400949 Cf. A002895 (all closed walks), A002899, A008253, A008264.
+%K A400949 nonn,walk,new
+%O A400949 1,3
+%A A400949 _James Baker_, Nov 07 2026</pre><p><a href="https://oeis.org/A400949" target="_blank" rel="noopener">Open A400949 on the OEIS</a></p></details>
+<details><summary>A402231: your own approved entry, the fcc analog: its G.f. line and example have the same shape.</summary><pre style="margin-top:8px">%I A402231 #6 Nov 22 2026 16:37:20
+%S A402231 0,0,48,264,1680,17016,151872,1401720,13238400,126357120,1221557040,
+%T A402231 11927724720,117462513168,1165493695464,11640248292288,
+%U A402231 116929064980056,1180626550585152,11975554917588624,121975042856240112,1246999597381941864,12791835532462832208,131625892179685049256
+%N A402231 Number of closed non-backtracking walks of length n starting and ending at a fixed vertex of the face-centered cubic lattice.
+%C A402231 The same numbers hold at every sphere of the hexagonal close packing and of every close-packed stacking (dhcp, ..., periodic or not); the corresponding statement for all closed walks (A002899) is Thorpe (1972) for periodic stackings.
+%D A402231 M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972), 294-299.
+%H A402231 DICTO, &lt;a href=&quot;https://doi.org/10.5281/zenodo.24037664&quot;&gt;Every Site Hears the Same: the Loop Equality Is a Theorem&lt;/a&gt;, Zenodo (2026), Corollary 3.
+%F A402231 G.f.: 10*x^2/(1-x^2) - 22*x^2/(1+11*x^2) + ((1-11*x^2)/(1+11*x^2))*(F(x/(1+11*x^2)) - 1), where F(x) is the g.f. for A002899 (Ihara-Bass formula for a 12-regular net).
+%e A402231 a(3) = 48: each vertex lies on 24 triangles (the 24 edges of its cuboctahedron of neighbors), walked in 2 directions.
+%o A402231 (Python)
+%o A402231 from math import comb
+%o A402231 from fractions import Fraction
+%o A402231 def domb(n):  # A002895
+%o A402231     return sum(comb(n,k)**2*comb(2*k,k)*comb(2*n-2*k,n-k) for k in range(n+1))
+%o A402231 def fcc(n):   # A002899
+%o A402231     return sum(comb(n,k)*(-4)**(n-k)*domb(k) for k in range(n+1))
+%o A402231 def loops(W, q):  # Ihara-Bass per vertex of a (q+1)-regular net; W[i] = closed i-step walks
+%o A402231     M = len(W)-1; c = [Fraction(0)]*(M+1)
+%o A402231     for k in range(1, M//2+1): c[2*k] += Fraction(q-1, 2*k)
+%o A402231     for j in range(1, M+1):
+%o A402231         for i in range(j+1):
+%o A402231             if 2*j-i &lt;= M: c[2*j-i] += Fraction(comb(j,i)*W[i]*(-q)**(j-i), j)
+%o A402231     return [int(m*c[m]) for m in range(1, M+1)]   # lengths 1..M
+%o A402231 print(loops([fcc(i) for i in range(23)], 11))
+%Y A402231 Cf. A002899, A002895, A400949 (diamond analog), A293237.
+%K A402231 nonn,walk,new
+%O A402231 1,3
+%A A402231 _James Baker_, Nov 15 2026</pre><p><a href="https://oeis.org/A402231" target="_blank" rel="noopener">Open A402231 on the OEIS</a></p></details>
+</main>
+<script>
+function flash(b,t){var o=b.id==='all'?'Copy my entry':'Copy';b.textContent=t;b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok')},1500)}
+function copy(text,b,sel){try{navigator.clipboard.writeText(text).then(function(){flash(b,'Copied')},function(){sel&&sel();b.textContent='Selected'})}catch(e){sel&&sel();b.textContent='Selected'}}
+document.querySelectorAll('button.cp').forEach(function(b){b.addEventListener('click',function(){var p=b.previousElementSibling;copy(p.innerText,b,function(){var r=document.createRange();r.selectNodeContents(p);var s=getSelection();s.removeAllRanges();s.addRange(r)})})});
+document.querySelectorAll('textarea').forEach(function(t){try{var v=localStorage.getItem('pyroloop-'+t.id);if(v)t.value=v}catch(e){}t.addEventListener('input',function(){try{localStorage.setItem('pyroloop-'+t.id,t.value)}catch(e){}})});
+document.getElementById('all').addEventListener('click',function(){var s=[];document.querySelectorAll('textarea').forEach(function(t){if(t.value.trim())s.push(t.dataset.label+':\n'+t.value.trim())});copy(s.join('\n\n')||'(nothing written yet)',this)});
+</script>

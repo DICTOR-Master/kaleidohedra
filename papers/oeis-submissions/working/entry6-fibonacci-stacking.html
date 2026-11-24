@@ -1,0 +1,258 @@
+<title>Fibonacci Stacking Worksheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one column in OEIS form order; each field: what it is, paste-ready choices, your box. */
+:root{--bg:#f6f7f9;--panel:#fff;--fg:#1d232b;--muted:#5a6573;--line:#d9dee5;--accent:#2f5d8a;--code:#eef1f5;--ok:#2e7d4f;--req:#a3461f;--note:#fbf6e8;
+--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#13171c;--panel:#1b2128;--fg:#e4e8ee;--muted:#9aa5b2;--line:#2c343e;--accent:#8db7e0;--code:#222a33;--ok:#6cc08f;--req:#e59a74;--note:#2a2618;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13171c;--panel:#1b2128;--fg:#e4e8ee;--muted:#9aa5b2;--line:#2c343e;--accent:#8db7e0;--code:#222a33;--ok:#6cc08f;--req:#e59a74;--note:#2a2618;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance}h2{font-size:1.1rem;margin:10px 0 0;color:var(--accent)}p{margin:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:9px;min-width:0}
+.top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.lab{font-weight:600;font-size:1.05rem}
+.tag{font:600 .72rem var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid}
+.tag.r{color:var(--req);border-color:var(--req)}.tag.o{color:var(--muted);border-color:var(--line)}
+.what{color:var(--muted)}
+.sub{font:600 .78rem var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.opt{display:flex;gap:8px;align-items:flex-start}
+.n{font:600 .8rem var(--sans);color:var(--muted);padding-top:9px;min-width:1.4em}
+pre{flex:1;min-width:0;margin:0;background:var(--code);border-radius:6px;padding:8px 10px;font:.86rem/1.5 var(--mono);white-space:pre-wrap;word-break:break-word}
+.bg{background:var(--note);border-radius:6px;padding:8px 10px}
+textarea{width:100%;box-sizing:border-box;min-height:3.4em;font:.9rem/1.5 var(--mono);color:var(--fg);background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:8px}
+button{font:600 .8rem var(--sans);color:var(--accent);background:none;border:1px solid var(--accent);border-radius:6px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+button.ok{color:var(--ok);border-color:var(--ok)}button:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px}summary{cursor:pointer;font-weight:600}
+.status{border-left:3px solid var(--accent);padding-left:12px}
+</style>
+<main>
+<header style="display:flex;flex-direction:column;gap:8px">
+<h1>OEIS worksheet: the Fibonacci stacking of close-packed layers</h1>
+<p class="status">Home paper #69, The Hexagonality Law and the Fibonacci Stacking (DICTO DOI 10.5281/zenodo.23721038), which prints the rule and the first 26 letters. Terms checked two independent ways to n = 1999 (the Fibonacci-word program, and the rule applied to the exact Beatty form of the Fibonacci word, with the Jagodzinski types recovered from the letters); not in the OEIS (searched 25 Nov).</p>
+<p>How to use it: the fields are in the same order as the OEIS submission form. Each field says what it is and whether it is <b>required</b> or <b>optional</b>. Under <b>Ready to paste</b> are complete texts: choose one and press Copy. The box at the bottom of each field is yours to write in. At the end, <b>Copy my entry</b> collects what you wrote.</p>
+</header>
+
+<div class="card"><div class="top"><span class="lab">Name</span><span class="tag r">required</span></div><p class="what">A one-line title saying what the numbers count. Choose one.</p>
+<p class="sub">Ready to paste — choose one</p>
+<div class="opt"><span class="n">1</span><pre>Position (A, B, C = 0, 1, 2) of layer n in the Fibonacci stacking of close-packed layers: the layer types (c, h) follow the Fibonacci word, a(0) = 0, a(1) = 1.</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><span class="n">2</span><pre>Layer positions A, B, C = 0, 1, 2 of the close-packed stacking whose cubic and hexagonal layers follow the Fibonacci word, starting A, B.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-name" data-label="Name" aria-label="Your Name" placeholder="Your name (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Data</span><span class="tag r">required</span></div><p class="what">The terms, separated by commas (130 terms, 259 characters).</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>0,1,0,2,1,2,0,2,1,0,1,2,0,2,1,2,0,1,0,2,0,1,2,1,0,2,0,1,0,2,1,2,0,1,0,2,0,1,2,1,0,1,2,0,2,1,0,1,2,1,0,2,0,1,0,2,1,2,0,1,0,2,0,1,2,1,0,2,0,1,0,2,1,2,0,2,1,0,1,2,0,2,1,2,0,1,0,2,1,2,0,2,1,0,1,2,1,0,2,0,1,2,1,0,1,2,0,2,1,2,0,1,0,2,1,2,0,2,1,0,1,2,0,2,1,2,0,1,0,2</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-data" data-label="Data" aria-label="Your Data" placeholder="Your data (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Offset</span><span class="tag r">required</span></div><p class="what">Where the counting starts. Paste exactly.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>0,4</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-offset" data-label="Offset" aria-label="Your Offset" placeholder="Your offset (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Comments</span><span class="tag o">optional</span></div><p class="what">Extra explanation. The OEIS does not allow AI-written comments, so there is nothing ready to paste here: write it yourself, or leave it empty.</p>
+<p class="sub">Background for you (not for pasting)</p><p class="bg">Facts you could put in your own words: a layer is hexagonal (h) when its two neighbours have the same position, cubic (c) otherwise (Jagodzinski); here layer n is h exactly when A003849(n) = 1, so the types follow the Fibonacci word c -&gt; ch, h -&gt; c; each step is +1 or -1 mod 3, a cubic layer repeats the step and a hexagonal one reverses it; first layer A and first step forward (the other choices permute 0, 1, 2); hexagonal layers never touch and their share is 1/phi^2 (#69); the first 16 terms, ABACBCACBABCACBC, are #69&#x27;s 16-layer approximant.</p>
+<textarea id="f-comments" data-label="Comments" aria-label="Your Comments" placeholder="Your comments (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">References</span><span class="tag o">optional</span></div><p class="what">Leave EMPTY: the source has a link, so it goes under Links only (a work goes in References or Links, never both).</p>
+<textarea id="f-references" data-label="References" aria-label="Your References" placeholder="Your references (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Links</span><span class="tag o">optional</span></div><p class="what">Web link to the source. Paste this line.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>DICTO, &lt;a href=&quot;https://doi.org/10.5281/zenodo.23721038&quot;&gt;The Hexagonality Law and the Fibonacci Stacking&lt;/a&gt;, Zenodo (2026).</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-links" data-label="Links" aria-label="Your Links" placeholder="Your links (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Formula</span><span class="tag o">optional</span></div><p class="what">A formula that gives the terms.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>a(n) = (2*Sum_{k=2..n+1} A085002(k) - n) mod 3, i.e., the step from layer k to layer k+1 is 2*A085002(k+2) - 1.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-formula" data-label="Formula" aria-label="Your Formula" placeholder="Your formula (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Example</span><span class="tag o">optional</span></div><p class="what">A small case worked out. Paste these lines.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>Layers 0..8 are A, B, A, C, B, C, A, C, B; layer types from layer 1 on: h, c, c, h, c, h, c, c (the Fibonacci word).</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-example" data-label="Example" aria-label="Your Example" placeholder="Your example (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Program</span><span class="tag o">optional</span></div><p class="what">Computer code that prints the terms. It has been run and checked.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>(Python)
+def fib_stacking(N):   # a(0..N-1)
+    w = &#x27;c&#x27;
+    while len(w) &lt; N: w = &#x27;&#x27;.join(&#x27;ch&#x27; if t == &#x27;c&#x27; else &#x27;c&#x27; for t in w)   # Fibonacci word
+    a = [0, 1]; s = 1
+    for k in range(1, N-1):
+        if w[k] == &#x27;h&#x27;: s = -s          # a hexagonal layer reverses the step
+        a.append((a[-1] + s) % 3)
+    return a[:N]
+print(fib_stacking(130))</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-program" data-label="Program" aria-label="Your Program" placeholder="Your program (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Crossrefs</span><span class="tag o">optional</span></div><p class="what">Related sequences. Paste exactly.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>Cf. A000201, A003849, A005614, A085002.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-xref" data-label="Crossrefs" aria-label="Your Crossrefs" placeholder="Your crossrefs (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Keywords</span><span class="tag r">required</span></div><p class="what">Short tags. Paste exactly.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>nonn,easy</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-keyword" data-label="Keywords" aria-label="Your Keywords" placeholder="Your keywords (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Your whole entry</span><button type="button" id="all">Copy my entry</button></div><p class="what">Copies every field you filled in, labelled, in form order. Paste it back to me and I check it field by field.</p></div>
+<h2>Model entries to look at</h2><p class="what">Existing entries of the same kind, in full as the OEIS shows them. The letters mean: %N name, %S data, %F formula, %H links, %o program, %Y crossrefs, %K keywords, %O offset.</p>
+<details><summary>A003849: the Fibonacci word itself: your layer types (h = 1).</summary><pre style="margin-top:8px">%I A003849 #334 Aug 18 2026 00:42:34
+%S A003849 0,1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,0,1,
+%T A003849 0,1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,0,1,
+%U A003849 0,1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,1,0,0,1
+%N A003849 The infinite Fibonacci word (start with 0, apply 0-&gt;01, 1-&gt;0, take limit).
+%C A003849 A Sturmian word.
+%C A003849 Define strings S(0)=0, S(1)=01, S(n)=S(n-1)S(n-2); iterate; sequence is S(infinity). If the initial 0 is omitted from S(n) for n&gt;0, we obtain A288582(n+1).
+%C A003849 The 0&#x27;s occur at positions in A022342 (i.e., A000201 - 1), the 1&#x27;s at positions in A003622.
+%C A003849 Replace each run (1;1) with (1;0) in the infinite Fibonacci word A005614 (and add 0 as prefix) A005614 begins: 1,0,1,1,0,1,0,1,1,0,1,1,... changing runs (1,1) with (1,0) produces 1,0,0,1,0,1,0,0,1,0,0,1,... - _Benoit Cloitre_, Nov 10 2003
+%C A003849 Characteristic function of A003622. - _Philippe Deléham_, May 03 2004
+%C A003849 The fraction of 0&#x27;s in the first n terms approaches 1/phi (see for example Allouche and Shallit). - _N. J. A. Sloane_, Sep 24 2007
+%C A003849 The limiting mean and variance of the first n terms are 2-phi and 2*phi-3, respectively. - _Clark Kimberling_, Mar 12 2014, Aug 16 2018
+%C A003849 Let S(n) be defined as above. Then this sequence is S(1) + Sum_{n=0..} S(n), where the addition of strings represents concatenation. - _Isaac Saffold_, May 03 2019
+%C A003849 The word is a concatenation of three runs: 0, 1, and 00. The limiting proportions of these are respectively 1 - phi/2, 1/2, and (phi - 1)/2. The mean runlength is (phi + 1)/2. - _Clark Kimberling_, Dec 26 2010
+%C A003849 From _Amiram Eldar_, Mar 10 2021: (Start)
+%C A003849 a(n) is the number of the trailing 0&#x27;s in the dual Zeckendorf representation of (n+1) (A104326).
+%C A003849 The asymptotic density of the occurrences of k (0 or 1) is 1/phi^(k+1), where phi is the golden ratio (A001622).
+%C A003849 The asymptotic mean of this sequence is 1/phi^2 (A132338). (End)
+%C A003849 To describe Isaac Saffold&#x27;s comment above in more intuitive terms for those familiar with the standard Fibonacci sequence: After 01, concatenate the first 1 term 0, then the first 2 terms 01, then the first 3 terms 010, then the first 5 terms 01001, then the first 8 terms 01001010, then the first 13 terms 0100101001001, etc. - _Geoffrey Caveney_, Aug 16 2026
+%D A003849 J.-P. Allouche and J. Shallit, Automatic Sequences, Cambridge Univ. Press, 2003.
+%D A003849 Jean Berstel, Fibonacci words—a survey, In The book of L, pp. 13-27. Springer Berlin Heidelberg, 1986.
+%D A003849 J. C. Lagarias, Number Theory and Dynamical Systems, pp. 35-72 of S. A. Burr, ed., The Unreasonable Effectiveness of Number Theory, Proc. Sympos. Appl. Math., 46 (1992). Amer. Math. Soc. - see p. 64.
+%D A003849 Wolfdieter Lang, The Wythoff and the Zeckendorf representations of numbers are equivalent, in G. E. Bergum et al. (edts.) Application of Fibonacci numbers vol. 6, Kluwer, Dordrecht, 1996, pp. 319-337. [See A317208 for a link.]
+%D A003849 G. Melançon, Factorizing infinite words using Maple, MapleTech journal, vol. 4, no. 1, 1997, pp. 34-42, esp. p. 36.
+%D A003849 Michel Rigo, Formal Languages, Automata and Numeration Systems, 2 vols., Wiley, 2014. Mentions this sequence - see &quot;List of Sequences&quot; in Vol. 2.
+%H A003849 N. J. A. Sloane, &lt;a href=&quot;/A003849/b003849.txt&quot;&gt;Table of n, a(n) for n = 0..10945&lt;/a&gt;
+%H A003849 A. G. M. Ahmed, &lt;a href=&quot;https://archive.bridgesmathart.org/2013/bridges2013-263.pdf&quot;&gt;AA Weaving&lt;/a&gt;, in Proceedings of Bridges 2013: Mathematics, Music, Art, Architecture, Culture.
+%H A003849 Jean-Paul Allouche, Julien Cassaigne, Jeffrey Shallit, and Luca Q. Zamboni, &lt;a href=&quot;https://arxiv.org/abs/1711.10807&quot;&gt;A Taxonomy of Morphic Sequences&lt;/a&gt;, arXiv preprint arXiv:1711.10807 [cs.FL], Nov 29 2017.
+%H A003849 J.-P. Allouche and M. Mendes France, &lt;a href=&quot;https://webusers.imj-prg.fr/~jean-paul.allouche/allmendeshouches.pdf&quot;&gt;Automata and Automatic Sequences&lt;/a&gt;, in: Axel F. and Gratias D. (eds), Beyond Quasicrystals. Centre de Physique des Houches, vol 3. Springer, Berlin, Heidelberg, pp. 293-367, 1995; DOI https://doi.org/10.1007/978-3-662-03130-8_11.
+%H A003849 J.-P. Allouche and M. Mendes France, &lt;a href=&quot;/A003842/a003842.pdf&quot;&gt;Automata and Automatic Sequences&lt;/a&gt;, in: Axel F. and Gratias D. (eds), Beyond Quasicrystals. Centre de Physique des Houches, vol 3. Springer, Berlin, Heidelberg, pp. 293-367, 1995; DOI https://doi.org/10.1007/978-3-662-03130-8_11. [Local copy]
+%H A003849 P. Arnoux and E. Harriss, &lt;a href=&quot;https://www.ams.org/notices/201407/rnoti-p768.pdf&quot;&gt;What is a Rauzy Fractal?&lt;/a&gt;, Notices Amer. Math. Soc., 61 (No. 7, 2014), 768-770, also p. 704 and front cover.
+%H A003849 Scott Balchin and Dan Rust, &lt;a href=&quot;https://cs.uwaterloo.ca/journals/JIS/VOL20/Rust/rust3.html&quot;&gt;Computations for Symbolic Substitutions&lt;/a&gt;, Journal of Integer Sequences, Vol. 20 (2017), Article 17.4.1.
+%H A003849 Galyna Barabash, Yaroslav Kholyavka, and Iryna Tytar, &lt;a href=&quot;http://prima.lnu.edu.ua/faculty/mechmat/Departments/MathVisnykLU/VLUsMath-84/VisnM-84-062.pdf&quot;&gt;Periodic words connected with the Lucas numbers&lt;/a&gt;, Visnyk of the Lviv Univ. Series Mech. Math. (2017), Issue 84, 62-66.
+%H A003849 Jean Berstel, &lt;a href=&quot;http://www-igm.univ-mlv.fr/~berstel/&quot;&gt;Home Page&lt;/a&gt;
+%H A003849 J. Berstel and J. Karhumaki, &lt;a href=&quot;http://www-igm.univ-mlv.fr/~berstel/Articles/2003TutorialCoWdec03.pdf&quot;&gt;Combinatorics on words - a tutorial&lt;/a&gt;, Bull. EATCS, #79 (2003), pp. 178-228.
+%H A003849 Bryce Emerson Blackham, &lt;a href=&quot;https://scholarsarchive.byu.edu/etd/6735&quot;&gt;Subtraction Games: Range and Strict Periodicity&lt;/a&gt;, Master&#x27;s thesis, 2018.
+%H A003849 Benoit Cloitre, &lt;a href=&quot;https://arxiv.org/abs/2602.17735&quot;&gt;The Golden Sieve and its connections to Hiccup sequences and Fraenkel games&lt;/a&gt;, arXiv:2602.17735 [math.NT], 2026. See p. 30.
+%H A003849 Cristian Cobeli and Alexandru Zaharescu, &lt;a href=&quot;https://arxiv.org/abs/1811.06509&quot;&gt;A bias parity question for Sturmian words&lt;/a&gt;, arXiv:1811.06509 [math.NT], 2018.
+%H A003849 Fabien Durand, Julien Leroy, and Gwenaël Richomme, &lt;a href=&quot;https://cs.uwaterloo.ca/journals/JIS/VOL16/Durand/durand2.html&quot;&gt;Do the Properties of an S-adic Representation Determine Factor Complexity?&lt;/a&gt;, Journal of Integer Sequences, Vol. 16 (2013), #13.2.6.
+%H A003849 J. Endrullis, D. Hendriks and J. W. Klop, &lt;a href=&quot;https://joerg.endrullis.de/assets/papers/streams-degrees-2011.pdf&quot;&gt;Degrees of streams&lt;/a&gt;.
+%H A003849 S. Ferenczi, &lt;a href=&quot;https://doi.org/10.1016/S0012-365X(98)00400-2&quot;&gt;Complexity of sequences and dynamical systems&lt;/a&gt;, Discrete Math., 206 (1999), 145-154.
+%H A003849 L. Goldberg and A. V. Fraenkel, &lt;a href=&quot;https://www.wisdom.weizmann.ac.il/~fraenkel/Papers/Patterns.pdf&quot;&gt;Patterns in the generalized Fibonacci word, applied to games&lt;/a&gt;, Discrete Math., 341 2018 1675-1687.
+%H A003849 J. Grytczuk, &lt;a href=&quot;https://doi.org/10.1016/0012-365X(95)00297-A&quot;&gt;Infinite semi-similar words&lt;/a&gt;, Discrete Math. 161 (1996), 133-141.
+%H A003849 Andreas M. Hinz and Paul K. Stockmeyer, &lt;a href=&quot;https://www.fq.math.ca/Papers1/57-5/Hinz-Stockmeyer.pdf&quot;&gt;Discovering Fibonacci Numbers, Fibonacci Words, and a Fibonacci Fractal in the Tower of Hanoi&lt;/a&gt;, The Fibonacci Quarterly (2019) Vol. 57, No. 5, 72-83.
+%H A003849 A. Hof, O. Knill and B. Simon, &lt;a href=&quot;https://projecteuclid.org/euclid.cmp/1104275098&quot;&gt;Singular continuous spectrum for palindromic Schroedinger operators&lt;/a&gt;, Commun. Math. Phys. 174 (1995), 149-159.
+%H A003849 Tyler Hoffman and B. Steinhurst, &lt;a href=&quot;https://arxiv.org/abs/1601.04786&quot;&gt;Hausdorff Dimension of Generalized Fibonacci Word Fractals&lt;/a&gt;, arXiv preprint arXiv:1601.04786 [math.MG], 2016.
+%H A003849 T. Karki, A. Lacroix, and M. Rigo, &lt;a href=&quot;https://cs.uwaterloo.ca/journals/JIS/VOL13/Rigo/rigo6.html&quot;&gt;On the recognizability of self-generating sets&lt;/a&gt;, JIS 13 (2010) #10.2.2.
+%H A003849 Clark Kimberling, &lt;a href=&quot;https://cs.uwaterloo.ca/journals/JIS/VOL3/goldentext.html&quot;&gt;A Self-Generating Set and the Golden Mean&lt;/a&gt;, J. Integer Sequences, 3 (2000), #00.2.8.
+%H A003849 Clark Kimberling, &lt;a href=&quot;https://doi.org/10.4171/EM/468&quot;&gt;Intriguing infinite words composed of zeros and ones&lt;/a&gt;, Elemente der Mathematik (2021).
+%H A003849 Eve Kivivuori, &lt;a href=&quot;https://hdl.handle.net/10138/562976&quot;&gt;Implementing, analyzing, and benchmarking the Relative Lempel-Ziv compression algorithm&lt;/a&gt;, Master&#x27;s Thesis, Univ. Helsinki (Finland 2023).
+%H A003849 M. Lothaire, &lt;a href=&quot;http://www-igm.univ-mlv.fr/~berstel/Lothaire/&quot;&gt;Algebraic Combinatorics on Words&lt;/a&gt;, Cambridge, 2002, see p. 41, etc.
+%H A003849 Frédéric Mansuy, &lt;a href=&quot;https://hal.science/hal-02082456&quot;&gt;&quot;Palindromic&quot; and &quot;Quasi-crystalline&quot; characteristics of the sequence and Fibonacci words.&lt;/a&gt;, hal-02082456, 2019.
+%H A003849 Douglas M. McKenna, &lt;a href=&quot;https://archive.bridgesmathart.org/2018/bridges2018-187.html&quot;&gt;On a Better Golden Rectangle (That Is Not 61.8033...% Useless!)&lt;/a&gt;, Proceedings of Bridges (2018), 187-194.
+%H A003849 G. Melançon, &lt;a href=&quot;https://doi.org/10.1016/S0012-365X(99)00123-5&quot;&gt;Lyndon factorization of sturmian words&lt;/a&gt;, Discr. Math., 210 (2000), 137-149.
+%H A003849 F. Mignosi, A. Restivo, and M. Sciortino, &lt;a href=&quot;https://doi.org/10.1016/S0304-3975(00)00436-9&quot;&gt;Words and forbidden factors&lt;/a&gt;, WORDS (Rouen, 1999). Theoret. Comput. Sci. 273 (2002), no. 1-2, 99--117. MR1872445 (2002m:68096) - From _N. J. A. Sloane_, Jul 10 2012
+%H A003849 Kerry Mitchell, &lt;a href=&quot;https://archive.bridgesmathart.org/2013/bridges2013-403.pdf&quot;&gt;Spirolateral-Type Images from Integer Sequences&lt;/a&gt;, Bridges 2013.
+%H A003849 Kerry Mitchell, &lt;a href=&quot;/A003849/a003849.jpg&quot;&gt;Spirolateral image for this sequence&lt;/a&gt; [taken, with permission, from the Spirolateral-Type Images from Integer Sequences article]
+%H A003849 T. D. Noe, &lt;a href=&quot;/A003849/a003849.txt&quot;&gt;The first 1652 subwords, including leading zeros.&lt;/a&gt;
+%H A003849 Saúl Pilatowsky-Cameo, Soonwon Choi, and Wen Wei Ho, &lt;a href=&quot;https://arxiv.org/abs/2502.06936&quot;&gt;Critically slow Hilbert-space ergodicity in quantum morphic drives&lt;/a&gt;, arXiv:2502.06936 [quant-ph], 2025. See p. 15.
+%H A003849 Giuseppe Pirillo, &lt;a href=&quot;https://doi.org/10.1016/S0012-365X(94)00236-C&quot;&gt;Fibonacci numbers and words&lt;/a&gt;, Discrete Math. 173 (1997), no. 1-3, 197--207. MR1468849 (98g:68135)
+%H A003849 Aayush Rajasekaran, &lt;a href=&quot;https://uwspace.uwaterloo.ca/bitstream/handle/10012/13202/Rajasekaran_Aaayush.pdf?sequence=3&quot;&gt;Using Automata Theory to Solve Problems in Additive Number Theory&lt;/a&gt;, MS thesis, University of Waterloo, 2018.
+%H A003849 Aayush Rajasekaran, Narad Rampersad, and Jeffrey Shallit, &lt;a href=&quot;https://doi.org/10.1007/978-3-319-66396-8_3&quot;&gt;Overpals, Underlaps, and Underpals&lt;/a&gt;, In: Brlek S., Dolce F., Reutenauer C., Vandomme É. (eds) Combinatorics on Words, WORDS 2017, Lecture Notes in Computer Science, vol 10432.
+%H A003849 J. L. Ramírez and G. N. Rubiano, &lt;a href=&quot;https://www.mathematica-journal.com/2014/02/19/properties-and-generalizations-of-the-fibonacci-word-fractal/&quot;&gt;Properties and Generalizations of the Fibonacci Word Fractal&lt;/a&gt;, The Mathematica Journal, Vol. 16 (2014).
+%H A003849 José L. Ramírez, Gustavo N. Rubiano, and Rodrigo de Castro, &lt;a href=&quot;https://arxiv.org/abs/1212.1368&quot;&gt;A Generalization of the Fibonacci Word Fractal and the Fibonacci Snowflake&lt;/a&gt;, arXiv preprint arXiv:1212.1368 [cs.DM], 2012.
+%H A003849 M. Rigo, P. Salimov, and E. Vandomme, &lt;a href=&quot;https://cs.uwaterloo.ca/journals/JIS/VOL16/Rigo/rigo3.html&quot;&gt;Some Properties of Abelian Return Words&lt;/a&gt;, Journal of Integer Sequences, Vol. 16 (2013), #13.2.5.
+%H A003849 Luke Schaeffer and Jeffrey Shallit, &lt;a href=&quot;https://doi.org/10.37236/5752&quot;&gt;Closed, Palindromic, Rich, Privileged, Trapezoidal, and Balanced Words in Automatic Sequences&lt;/a&gt;, Electronic Journal of Combinatorics 23(1) (2016), #P1.25.
+%H A003849 N. J. A. Sloane, &lt;a href=&quot;/A115004/a115004.txt&quot;&gt;Families of Essentially Identical Sequences&lt;/a&gt;, Mar 24 2021 (Includes this sequence)
+%H A003849 Eric Weisstein&#x27;s World of Mathematics, &lt;a href=&quot;https://mathworld.wolfram.com/GoldenRatio.html&quot;&gt;Golden Ratio&lt;/a&gt;
+%H A003849 Jiemeng Zhang, Zhixiong Wen, and Wen Wu, &lt;a href=&quot;https://doi.org/10.37236/6745&quot;&gt;Some Properties of the Fibonacci Sequence on an Infinite Alphabet&lt;/a&gt;, Electronic Journal of Combinatorics, 24(2) (2017), #P2.52.
+%H A003849 &lt;a href=&quot;/index/Fi#FIXEDPOINTS&quot;&gt;Index entries for sequences that are fixed points of mappings&lt;/a&gt;
+%H A003849 &lt;a href=&quot;/index/Ch#char_fns&quot;&gt;Index entries for characteristic functions&lt;/a&gt;
+%F A003849 a(n) = floor((n+2)*r) - floor((n+1)*r) where r=phi/(1+2*phi) and phi is the Golden Ratio. - _Benoit Cloitre_, Nov 10 2003
+%F A003849 a(n) = A003714(n) mod 2 = A014417(n) mod 2. - _Philippe Deléham_, Jan 04 2004
+%F A003849 The first formula by Cloitre is just one of an infinite family of formulas. Using phi^2=1+phi, it follows that r=phi/(1+2*phi)=2-phi. Then from floor(-x)=-floor(x)-1 for non-integer x, it follows that a(n)=2-A014675(n)=2-(floor((n+2)* phi)-floor((n+1)*phi)). - _Michel Dekking_, Aug 27 2016
+%F A003849 a(n) = 1 - A096270(n+1), i.e., A096270 is the complement of this sequence. - _A.H.M. Smeets_, Mar 31 2024
+%F A003849 a(n)=1 if the fractional part of n/phi^2 is between sqrt(5)-2=.23606... and 1/phi=.61803.... Otherwise, a(n)=0. - _Geoffrey Caveney_, Aug 14 2026
+%e A003849 The word is 010010100100101001010010010100...
+%e A003849 Over the alphabet {a,b} this is a, b, a, a, b, a, b, a, a, b, a, a, b, a, b, a, a, b, a, b, a, a, b, a, a, b, a, b, a, a, b, a, a, b, a, b, a, a, b, a, b, a, a, b, a, a, b, a, b, a, a, b, a, b, a, a, b, a, a, b, a, b, a, a, b, a, a, b, a, b, a, a, b, a, b, a, a, b, a, a, b, a, b, a, a, b, a, a, b, a, b, a, a, b, a, b, a, a, b, a, a, b, a, b, a, ...
+%p A003849 z := proc(m) option remember; if m=0 then [0] elif m=1 then [0,1] else [op(z(m-1)),op(z(m-2))]; fi; end; z(12);
+%p A003849 M:=19; S[0]:=`0`; S[1]:=`01`; for n from 2 to M do S[n]:=cat(S[n-1], S[n-2]); od:
+%p A003849 t0:=S[M]: l:=length(t0); for i from 1 to l do lprint(i-1,substring(t0,i..i)); od: # _N. J. A. Sloane_, Nov 01 2006
+%t A003849 Nest[ Flatten[ # /. {0 -&gt; {0, 1}, 1 -&gt; {0}}] &amp;, {0}, 10] (* _Robert G. Wilson v_, Mar 05 2005 *)
+%t A003849 (* Alternative: *)
+%t A003849 Flatten[Nest[{#, #[[1]]} &amp;, {0, 1}, 9]] (* _IWABUCHI Yu(u)ki_, Oct 23 2013 *)
+%t A003849 (* Alternative: *)
+%t A003849 Table[Floor[(n + 2) #] - Floor[(n + 1) #], {n, 0, 120}] &amp;[2 - GoldenRatio] (* _Michael De Vlieger_, Aug 15 2016 *)
+%t A003849 (* Alternative: *)
+%t A003849 SubstitutionSystem[{0-&gt;{0,1},1-&gt;{0}},{0},{10}][[1]] (* _Harvey P. Dale_, Dec 20 2021 *)
+%o A003849 (Magma) t1:=[ n le 2 select [&quot;0&quot;,&quot;0,1&quot;][n] else Self(n-1) cat &quot;,&quot; cat Self(n-2) : n in [1..12]]; t1[12];
+%o A003849 (Haskell)
+%o A003849 a003849 n = a003849_list !! n
+%o A003849 a003849_list = tail $ concat fws where
+%o A003849    fws = [1] : [0] : (zipWith (++) fws $ tail fws)
+%o A003849 -- _Reinhard Zumkeller_, Nov 01 2013, Apr 07 2012
+%o A003849 (PARI) a(n)=my(k=2);while(fibonacci(k)&lt;=n,k++);while(n&gt;1,while(fibonacci(k--)&gt;n,); n-=fibonacci(k)); n==1 \\ _Charles R Greathouse IV_, Feb 03 2014
+%o A003849 (PARI) M3849=[2,2,1,0]/*L(k),S(k),L(k-1),S(k-1)*/; A003849(n)={while(n&gt;M3849[1],M3849=vecextract(M3849,[1,2,1,2])+[M3849[3],M3849[4]&lt;&lt;M3849[1],0,0]);bittest(M3849[2],n)} \\ Much faster at the expense of using ~ Nmax/5 bytes of memory (~ 250 KB for n &lt;= 1.3e6). - _M. F. Hasler_, Apr 07 2021
+%o A003849 (PARI) a(n)= my(phi=quadgen(5)); 2 + (n+1)*phi\1 - (n+2)*phi\1; \\ _Ruud H.G. van Tol_, Jan 15 2026
+%o A003849 (Python)
+%o A003849 def fib(n):
+%o A003849     &quot;&quot;&quot;Return the concatenation of A003849(0..F-1) where F is the smallest
+%o A003849        Fibonacci number &gt; n, so that the result contains a(n) at index n.&quot;&quot;&quot;
+%o A003849     a, b = &#x27;10&#x27;
+%o A003849     while len(b)&lt;=n:
+%o A003849         a, b = b, b + a
+%o A003849     return b # _Robert FERREOL_, Apr 15 2016, edited by _M. F. Hasler_, Apr 07 2021
+%o A003849 (Python)
+%o A003849 from math import isqrt
+%o A003849 def A003849(n): return 2-(n+2+isqrt(m:=5*(n+2)**2)&gt;&gt;1)+(n+1+isqrt(m-10*n-15)&gt;&gt;1) # _Chai Wah Wu_, Aug 25 2022
+%Y A003849 There are several versions of this sequence in the OEIS. This one and A003842 are probably the most important. See also A008352, A076662, A288581, A288582.
+%Y A003849 Binary complement of A005614. Cf. A014675, A036299, A003714, A014417, A096268, A096270, A133235, A182028, A213975.
+%Y A003849 Positions of 1&#x27;s gives A003622.
+%Y A003849 Sequences mentioned in the Allouche et al. &quot;Taxonomy&quot; paper, listed by example number: 1: A003849, 2: A010060, 3: A010056, 4: A020985 and A020987, 5: A191818, 6: A316340 and A273129, 18: A316341, 19: A030302, 20: A063438, 21: A316342, 22: A316343, 23: A003849 minus its first term, 24: A316344, 25: A316345 and A316824, 26: A020985 and A020987, 27: A316825, 28: A159689, 29: A049320, 30: A003849, 31: A316826, 32: A316827, 33: A316828, 34: A316344, 35: A043529, 36: A316829, 37: A010060.
+%Y A003849 Cf. A001622, A104326, A132338.
+%Y A003849 The following sequences are all essentially the same, in the sense that they are simple transformations of each other, with A000201 as the parent: A000201, A001030, A001468, A001950, A003622, A003842, A003849, A004641, A005614, A014675, A022342, A088462, A096270, A114986, A124841. - _N. J. A. Sloane_, Mar 11 2021
+%K A003849 nonn,easy,nice
+%O A003849 0,1
+%A A003849 _N. J. A. Sloane_
+%E A003849 Revised by _N. J. A. Sloane_, Jul 03 2012</pre><p><a href="https://oeis.org/A003849" target="_blank" rel="noopener">Open A003849 on the OEIS</a></p></details>
+<details><summary>A085002: the sequence your Formula line uses for the steps.</summary><pre style="margin-top:8px">%I A085002 #66 Mar 22 2026 09:28:45
+%S A085002 1,1,0,0,0,1,1,0,0,0,1,1,1,0,0,1,1,1,0,0,1,1,1,0,0,0,1,1,0,0,0,1,1,1,
+%T A085002 0,0,1,1,1,0,0,1,1,1,0,0,0,1,1,0,0,0,1,1,0,0,0,1,1,1,0,0,1,1,1,0,0,0,
+%U A085002 1,1,0,0,0,1,1,0,0,0,1,1,1,0,0,1,1,1,0,0,0,1,1,0,0,0,1,1,0,0,0,1,1,1,0,0,1
+%N A085002 a(n) = floor(phi*n) - 2*floor(phi*n/2) where phi is the golden ratio.
+%C A085002 The lower Wythoff sequence (A000201) mod 2 (see formula section). - _Michel Dekking_, Feb 01 2021
+%C A085002 A fractal sequence.
+%C A085002 From _Michel Dekking_, Apr 24 2018: (Start)
+%C A085002 Usually an integer sequence is called &#x27;fractal&#x27; if it has the self-generating properties of a morphic sequence, i.e., the letter to letter projection of a fixed point of a morphism. Indeed, take the alphabet {1,2,...,8} and the morphism eta defined by
+%C A085002     eta:  1-&gt;5, 2-&gt;7, 3-&gt;8, 4-&gt;6, 5-&gt;53, 6-&gt;71, 7-&gt;82, 8-&gt;64.
+%C A085002 Then eta has fixed point
+%C A085002     x = (5,3,8,6,4,7,1,6,8,2,5,7,1,6,4,7,5,3,...).
+%C A085002 Let pi be the projection morphism
+%C A085002   pi(1)=1, pi(2)=0, pi(3)=1, pi(4)=0, pi(5)=1, pi(6)=0, pi(7)=1, pi(8)=0.
+%C A085002 Then pi(x) = (a(n)).
+%C A085002 To prove this, one may use my paper &quot;Iteration of maps by an automaton&quot;.
+%C A085002 The two maps are phi_a and phi_b defined by
+%C A085002     phi_a(0) = 1, phi_a(1) = 0, phi_b(0) = 0, phi_b(1) = 1.
+%C A085002 The substitution is the Fibonacci substitution sigma given by
+%C A085002     sigma(a) = b, sigma(b) = ba.
+%C A085002 Since the first differences of the lower Wythoff sequence are given by the Fibonacci substitution 1-&gt;2, 2-&gt; 21, it follows from replacing 1 with a and 2 with b that (a(n)) is generated by iterating the two maps phi_a and phi_b according to the fixed point babba...of sigma. The two maps phi_a and phi_b are commuting bijections on {a,b}, exactly as in the Example on page 85 of &quot;Iteration of maps by an automaton&quot;. It follows as in that example that (a(n)) is generated by the projection of a fixed point of a substitution on an alphabet of 8 letters, and a simple computation as on that page yields the morphism eta. (End)
+%H A085002 Antti Karttunen, &lt;a href=&quot;/A085002/b085002.txt&quot;&gt;Table of n, a(n) for n = 1..10946&lt;/a&gt;
+%H A085002 B. Cloitre, &lt;a href=&quot;http://web.archive.org/web/20060326144944/http://membres.lycos.fr/bgourevitch/temporaires/benoit/phifractal.jpg&quot;&gt;Graph of A085005(n) for n=1 up to 3874&lt;/a&gt; [archive.org link]
+%H A085002 Benoit Cloitre, &lt;a href=&quot;/A085002/a085002.png&quot;&gt;Fractal walk starting at (0,0) with step of unit length turning 90° right if a(n)=0 left otherwise for n=1 up to 10^6&lt;/a&gt;
+%H A085002 Michel Dekking, &lt;a href=&quot;https://doi.org/10.1016/0012-365X(94)90254-2&quot;&gt;Iteration of maps by an automaton&lt;/a&gt;, Discrete Mathematics 126 (1994), 81-86.
+%H A085002 M. Schaefer, E. Sedgwick, and D. Štefankovič, &lt;a href=&quot;https://doi.org/10.1007/s00453-009-9362-8&quot;&gt;Spiraling and folding: the word view&lt;/a&gt;, Algorithmica 60 (2011), 609-626. See section 4.
+%F A085002 a(n) = A105774(n) mod 2 = A000201(n) mod 2. - _Benoit Cloitre_, May 10 2005
+%F A085002 From _Michel Dekking_, Apr 24 2018: (Start)
+%F A085002 Proof that this sequence is the parity sequence of the lower Wythoff sequence:
+%F A085002 if n*phi/2 = M + e, with 0 &lt; e &lt; 1, then 2*floor(phi*n/2) = 2M, and
+%F A085002 floor(phi*n) = floor(2M+2e) = 2M or 2M+1.
+%F A085002 So floor(phi*n) - 2*floor(phi*n/2) = 0 if floor(phi*n) is even, and equals 1 if floor(phi*n) is odd. (End)
+%t A085002 Table[Floor[GoldenRatio n] - 2 Floor[GoldenRatio n/2], {n, 110}] (* _Harvey P. Dale_, Dec 11 2012 *)
+%o A085002 (PARI) a(n)=(n+sqrtint(5*n^2))%4&gt;1 \\ _Charles R Greathouse IV_, Feb 07 2013
+%o A085002 (Scheme) (define (A085002 n) (A000035 (A105774 n))) ;; _Antti Karttunen_, Mar 17 2017
+%o A085002 (Python)
+%o A085002 from math import isqrt
+%o A085002 def A085002(n): return ((n+isqrt(5*n**2))&amp;2)&gt;&gt;1 # _Chai Wah Wu_, Aug 10 2022
+%Y A085002 Characteristic function of A283766.
+%Y A085002 Cf. A000035, A001622, A083035, A083036, A083037, A083038, A085003 (partial sums), A085004, A085005, A105774.
+%Y A085002 See also A171587.
+%K A085002 nonn,easy
+%O A085002 1,1
+%A A085002 _Benoit Cloitre_, Jun 17 2003</pre><p><a href="https://oeis.org/A085002" target="_blank" rel="noopener">Open A085002 on the OEIS</a></p></details>
+</main>
+<script>
+function flash(b,t){var o=b.id==='all'?'Copy my entry':'Copy';b.textContent=t;b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok')},1500)}
+function copy(text,b,sel){try{navigator.clipboard.writeText(text).then(function(){flash(b,'Copied')},function(){sel&&sel();b.textContent='Selected'})}catch(e){sel&&sel();b.textContent='Selected'}}
+document.querySelectorAll('button.cp').forEach(function(b){b.addEventListener('click',function(){var p=b.previousElementSibling;copy(p.innerText,b,function(){var r=document.createRange();r.selectNodeContents(p);var s=getSelection();s.removeAllRanges();s.addRange(r)})})});
+document.querySelectorAll('textarea').forEach(function(t){try{var v=localStorage.getItem('fibstack-'+t.id);if(v)t.value=v}catch(e){}t.addEventListener('input',function(){try{localStorage.setItem('fibstack-'+t.id,t.value)}catch(e){}})});
+document.getElementById('all').addEventListener('click',function(){var s=[];document.querySelectorAll('textarea').forEach(function(t){if(t.value.trim())s.push(t.dataset.label+':\n'+t.value.trim())});copy(s.join('\n\n')||'(nothing written yet)',this)});
+</script>
