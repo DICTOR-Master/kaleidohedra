@@ -33,7 +33,7 @@ All terms below were recomputed on 7 November 2026: `studies/2026-11-07-oeis-can
 
 ---
 
-STATUS 24 Nov 2026 (DICTO): A400949, A402231 and A402191 APPROVED. OPEN NOW (3 = the limit): the A008264 comment; pyrochlore closed walks (Sweep 1, submitted 24 Nov); pyrochlore closed tailless walks (Sweep 2, submitted 24 Nov). Next goes in only when one comes out (rule 14).
+STATUS 24 Nov 2026 (DICTO): A400949, A402231 and A402191 APPROVED. A008264 comment PUBLISHED (DICTO 25 Nov). OPEN NOW (2): pyrochlore closed walks (Sweep 1, submitted 24 Nov); pyrochlore closed tailless walks (Sweep 2, submitted 24 Nov). One place free; the next COMMENT may go in (like for like, rule 14).
 
 ## QUEUE (DICTO 18 Nov 2026: "Queue all possible sequences"; MAX 3 OPEN, one in one out, rule 14)
 
