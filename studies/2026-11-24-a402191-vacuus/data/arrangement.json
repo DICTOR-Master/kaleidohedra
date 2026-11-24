@@ -1,0 +1,67 @@
+[
+ {
+  "case": "A Vacuus, n=4 (permutohedron of dimension 3)",
+  "hyperplanes": 15,
+  "rank": 3,
+  "flats_per_rank": [
+   1,
+   15,
+   69,
+   1
+  ],
+  "chi_coeffs": [
+   1,
+   -15,
+   87,
+   -73
+  ],
+  "regions": 176,
+  "wall_incidences": 624,
+  "simplicial": false,
+  "mean_walls_per_chamber": "39/11"
+ },
+ {
+  "case": "A Vacuus, n=5 (permutohedron of dimension 4)",
+  "hyperplanes": 65,
+  "rank": 4,
+  "flats_per_rank": [
+   1,
+   65,
+   1615,
+   11575,
+   1
+  ],
+  "chi_coeffs": [
+   1,
+   -65,
+   1810,
+   -22060,
+   20314
+  ],
+  "regions": 44250,
+  "wall_incidences": 230120,
+  "simplicial": false,
+  "mean_walls_per_chamber": "23012/4425"
+ },
+ {
+  "case": "uniform B3 Vacuus (truncated cuboctahedron)",
+  "hyperplanes": 36,
+  "rank": 3,
+  "flats_per_rank": [
+   1,
+   36,
+   537,
+   1
+  ],
+  "chi_coeffs": [
+   1,
+   -36,
+   579,
+   -544
+  ],
+  "regions": 1160,
+  "wall_incidences": 4464,
+  "simplicial": false,
+  "mean_walls_per_chamber": "558/145"
+ }
+]
