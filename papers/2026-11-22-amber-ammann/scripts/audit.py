@@ -95,8 +95,19 @@ for s in ["C2 S0 cen", "C2 S65 cen", "C1 S0 cproj", "C1 S65 cproj", "icosahedron
 sl = rd("logs/seams_mirror.log")
 for s in ["2-fold axis of the core: True", "cells reached 402/402", "{'identity': 428, 'improper': 368, 'proper': 202}", "rank 3, EMPTY"]:
     ok(s in sl, "seams_mirror.log: " + s)
-ok(364 + 239 + 156 + 13 + 30 + 10 + 2 == 814 and 364 + 156 + 30 + 2 == 552 and 428 + 368 + 202 == 998, "edge and loop sums")
-for s in ["552 of the 814", "428 identity, 368 improper and 202 proper", "3 at 364 edges, 4 at 239, 5 at 156, 6 at 13, 7 at 30, 8 at 10, 9 at 2", "401 form a spanning tree"]: intext(s)
+ok(364 + 239 + 156 + 13 + 30 + 10 + 2 == 814 and 364 + 156 + 30 + 2 == 552 and 428 + 368 + 202 == 998 and 27 + 368 + 202 == 597 == 998 - 401, "edge and loop sums")
+# --- Version 2 (decisions of 24 Nov): odd edges alone (items 1-3), symmetries (item 5), buried hexagons (item 6), Figure 3 dots (item 7)
+oe = rd("logs/odd_edges.log")
+for s in ["tree walls 401 (holonomy kinds {'identity': 401}); loops (non-tree walls) 597: {'improper': 368, 'proper': 202, 'identity': 27}", "odd interior edges 552",
+          "(a) ODD EDGES ALONE: rank 3, EMPTY (inconsistent)", "distinct mirror planes among the odd edges: 96", "cells 5 plane", "cells 3 plane [0, 0, -2, 1+1r5]", "FINAL ok"]:
+    ok(s in oe, "odd_edges.log: " + s)
+for f in ("logs/sym_check.log", "logs/sym_check_cores.log", "logs/buried_hex.log"): ok("FINAL ok" in rd(f), f + " FINAL ok")
+bh = rd("logs/buried_hex.log"); ok("sigma = -83/4+55/4r5" in bh and "15/2+3/2r5" in bh, "buried_hex sigma (-83+55r5)/4 below s0")
+G = {t: json.load(open(os.path.join(A, f"renders/data/geom_C2_{t}_S0_cen.json"))) for t in ("023", "012")}
+for t, g in G.items():
+    Y = set(g["geom"]["Y"]); ok(len(Y) == 30 and sum(len({v for tr in pc["tris"] for v in tr} & Y) for pc in g["geom"]["pieces"]) == 180, "Figure 3 dots " + t)
+for s in ["96 distinct planes", "180 separate dots", "(−83 + 55√5)/4", "597 holonomies", "AmberMirror.no_mirror_placement"]: intext(s)
+for s in ["552 of the 814", "27 identity, 368 improper and 202 proper", "3 at 364 edges, 4 at 239, 5 at 156, 6 at 13, 7 at 30, 8 at 10, 9 at 2", "401 form a spanning tree"]: intext(s)
 import glob
 sw = sorted(glob.glob(os.path.join(A, "logs/exact/seam_*.log")))
 ok(len(sw) == 30 and all("RESULT" in open(f).read() and "valid=False" in open(f).read() for f in sw), "wall-cast 30/30 fail (exact)")
@@ -109,6 +120,6 @@ for s in ["19 prolate", "11 oblate", "600 runs", "319 prolate–prolate", "61 ob
 body = re.sub(r"<[^>]+>", "", paper.split('<div class="abstract">')[1].split("<h2>Data and reproducibility")[0])
 ok(not re.search(r"floating|float\b|numerical|margin|sampling|computed\b", body, re.I), "float wording in the claims: " + str(re.findall(r".{30}(?:floating|float\b|numerical|margin|sampling|computed\b).{30}", body, re.I)[:3]))
 # --- text consistency
-for s in ["10.5281/zenodo.24411660", "10.5281/zenodo.24384789", "10.5281/zenodo.24111864", "Paper #118 · Version 1", "10.5281/zenodo.24491405"]: intext(s)
+for s in ["10.5281/zenodo.24411660", "10.5281/zenodo.24384789", "10.5281/zenodo.24111864", "Paper #118 · Version 2", "10.5281/zenodo.24491405"]: intext(s)
 ok(not re.search(r"signature thread|Winston|house style|DICTO asked", text, re.I), "banned wording")
 print("\n".join("FAIL " + f for f in fails) if fails else "AUDIT OK")
