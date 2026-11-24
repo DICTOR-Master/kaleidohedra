@@ -8,5 +8,5 @@ H=${PRINT_HOST:?set PRINT_HOST to the print host}
 R=${PRINT_DIR:-kaleidohedra-papers}
 rsync -a --delete --exclude '*.pdf' ./ $H:$R/$D/
 rsync -a ../paper.css ../dicto-logo.png ../print.mjs ../figcheck.mjs $H:$R/
-ssh $H "cd ~/$R && node figcheck.mjs $D && node print.mjs $D DRAFT-vacuus-resonus-v0.pdf 'The Vacuus and the Resonus' draft"
-rsync -a $H:$R/$D/DRAFT-vacuus-resonus-v0.pdf ./
+ssh $H "cd ~/$R && node figcheck.mjs $D && node print.mjs $D DRAFT-vacuus-resonus-v1.pdf 'The Vacuus and the Resonus: Form and Emptiness in the Planes of Polyhedra' draft"
+rsync -a $H:$R/$D/DRAFT-vacuus-resonus-v1.pdf ./

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The emptiness (§8): Betti numbers of the complexified complement (Orlik-Solomon) and region counts (Zaslavsky) of every Vacuus and Resonus in the catalogue, exact integers from the catalogue study's intersection data. Rank 3: chi(t)=t^3-N t^2+b2 t-b3 with b2=sum over intersection lines of (m-1), b3=b2-N+1 (chi(1)=0); Poincare polynomial 1+N t+b2 t^2+b3 t^3; regions = its value at 1, asserted equal to the traced region count."""
+"""The emptiness (§8): Betti numbers of the complexified complement (Orlik-Solomon) and region counts (Zaslavsky) of every Vacuus and Resonus in the catalogue, exact integers from the catalogue study's intersection data. Rank 3: chi(t)=t^3-N t^2+b2 t-b3 with b2=sum over intersection lines of (m-1), b3=b2-N+1 (chi(1)=0); Poincare polynomial (-t)^3 chi(-1/t) = 1+N t+b2 t^2+b3 t^3; regions = its value at 1, asserted equal to the traced region count."""
 import os, json, math
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','..','studies','2026-11-24-vacuus-resonus-catalogue','data'))
 d=json.load(open('catalogue-all.json'))
