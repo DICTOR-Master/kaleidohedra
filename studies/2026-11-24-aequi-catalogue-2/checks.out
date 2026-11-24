@@ -1,0 +1,32 @@
+ok   Nos. consecutive from 1233 (last 10725)
+ok   rows = 3 + 9556 - 66 = 9493
+ok   batch 2a: 5935 dice, each catalogued once or left out as a repeat
+ok   batch 2caps: 336 dice, each catalogued once or left out as a repeat
+ok   batch 2caps2: 1375 dice, each catalogued once or left out as a repeat
+ok   batch 2caps3: 1910 dice, each catalogued once or left out as a repeat
+ok   Nos. 1233-1235 reserved: Inimisa, Inimiyo, Inimigo
+ok   rule reproduces all 1232 names and shown names of names.csv
+ok   names follow the rule
+ok   name_shown is exactly "Name (No.N)"
+ok   all 10725 names distinct (with the 1232)
+ok   every name has exactly one parse, its own number
+ok   order: group order desc, m, N, then group, corners, batch, index
+ok   group, m, N agree with the source data
+ok   no new die has a full group containing T (so none is one of the 1232 by group alone)
+ok   batch 2a: every die certified (labels match; split-box dice: split Krawczyk ok)
+ok   batch 2caps: every die certified (labels match; split-box dice: split Krawczyk ok)
+ok   batch 2caps2: every die certified (labels match; split-box dice: split Krawczyk ok)
+ok   batch 2caps3: every die certified (labels match; split-box dice: split Krawczyk ok)
+ok   the 66 left out are each congruent to exactly one catalogued die of an earlier batch
+ok   catalogued 9490 + left out 66 = 9556; catalogued dice mutually non-congruent
+ok   study 2026-11-19: 4553 dice, mutually non-congruent by this test
+ok   no new die congruent to a die of study 2026-11-19-aequi-complete (0 hits)
+ok   the catalogued 1232: mutually non-congruent by this test
+ok   no new die congruent to any of the catalogued 1232 (0 hits)
+ok   positive control 2a: 0 dice set aside, 0 found again in 2026-11-19
+ok   positive control 2caps: 52 dice set aside, 52 found again in 2026-11-19
+ok   positive control 2caps2: 108 dice set aside, 108 found again in 2026-11-19
+ok   positive control 2caps3: 50 dice set aside, 50 found again in 2026-11-19
+ok   signature stability: dot margin 2.7e-07, smallest level gap 1.6e-06, widest level 9.1e-12
+ok   row 95 (Td: D12+D12′/24 + RT24+RT24′/24, N = 48) is already catalogued: Niyoo (No.240)
+FINAL ok
