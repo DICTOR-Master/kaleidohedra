@@ -50,6 +50,8 @@ Sequences:
 8. DICTO'S CALL: sweep 4, the slope of the great triangles of Kulaichev's Sri Yantra (#103 Thm 10). He dropped the yantra region sequence on 17 Nov.
 9. NEEDS A HOME FIRST: sweep 5 (stackings by period and number of hexagonal layers; check McLarnan/Iglesias first) and sweep 6 (the 19-design station, which is only in a draft).
 
+Candidates waiting for a home paper (DICTO 24 Nov): the type-B Vacuus count (5^n - 2*3^n + 1)/2 (not in OEIS), plus any genuinely new Resonus/Vacuus sequences found by studies/2026-11-24-resonus-sequences; they go in only after the Vacuus and Resonus paper is released. Entry 2 (4H) and Sweep 1 (pyrochlore) go first (working pages in working/).
+
 Comments:
 - A038515 (diamond polygons, #102 Thm 5). READY once the factor of 2 in #102's wording is checked.
 - A008651, with sweep 3.
