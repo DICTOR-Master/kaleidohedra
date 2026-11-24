@@ -1,0 +1,6912 @@
+{
+"type": "A3",
+"results": {
+"s1 s2 s3 (linear)": {
+"checks": {
+"overlay volumes sum to the shell volume": true,
+"outer cells sum to vol(Asso)": true,
+"inner pieces sum to the shell volume": true,
+"per removed face: overlay sums to its inner piece": true,
+"per associahedron face: overlay sums to vol(cell) - vol(cell meet P)": true,
+"every wall matches its partner piece vertex for vertex": true,
+"inner ends tile each removed face (areas)": true,
+"outer ends tile each associahedron face minus its kept face (areas)": true,
+"every overlay piece closed, Euler 2": true,
+"every Y-corner lies in the open shell": true
+},
+"overlay": [
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 0)",
+"('O', 10)",
+"('O', 2)",
+"('W', 12)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 2)",
+"('R', 5)",
+"('W', 12)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 5,
+"A": 0,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+0.8660254037844386,
+-3.0,
+-0.8660254037844386
+],
+[
+-1.0,
+-2.0,
+0.0
+],
+[
+0.5,
+-2.0,
+-0.5
+],
+[
+0.0,
+-2.0,
+-1.0
+],
+[
+0.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-3.0,
+0.0
+]
+],
+"faces": {
+"('F', 0)": [
+0,
+5,
+1,
+3
+],
+"('R', 5)": [
+1,
+4,
+2,
+3
+],
+"('W', 12)": [
+0,
+3,
+2
+],
+"('O', 2)": [
+0,
+2,
+4,
+5
+],
+"('O', 10)": [
+5,
+4,
+1
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 2)",
+"('O', 0)",
+"('O', 10)",
+"('W', 12)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 10)",
+"('R', 5)",
+"('W', 12)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 5,
+"A": 2,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+0.8660254037844386,
+-3.0,
+-0.8660254037844386
+],
+[
+0.5,
+-2.0,
+-0.5
+],
+[
+1.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-3.0,
+0.0
+],
+[
+0.0,
+-2.0,
+1.0
+]
+],
+"faces": {
+"('F', 2)": [
+4,
+0,
+2,
+5
+],
+"('R', 5)": [
+5,
+2,
+1,
+3
+],
+"('W', 12)": [
+0,
+1,
+2
+],
+"('O', 0)": [
+0,
+4,
+3,
+1
+],
+"('O', 10)": [
+4,
+5,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 3,
+"m": 3,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 2,
+"neighbours_in": [
+"('F', 10)",
+"('O', 0)",
+"('O', 2)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 2)",
+"('R', 5)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 4,
+"E": 6,
+"F": 4,
+"R": 5,
+"A": 10,
+"R_sides": 4,
+"volume": "1/6",
+"verts_float": [
+[
+-1.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-2.0,
+1.0
+],
+[
+0.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-3.0,
+0.0
+]
+],
+"faces": {
+"('F', 10)": [
+3,
+1,
+0
+],
+"('R', 5)": [
+0,
+1,
+2
+],
+"('O', 0)": [
+3,
+0,
+2
+],
+"('O', 2)": [
+3,
+2,
+1
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 0)",
+"('O', 3)",
+"('W', 11)",
+"('W', 12)"
+],
+"neighbours_out": [
+"('O', 3)",
+"('R', 6)",
+"('W', 11)",
+"('W', 12)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 6,
+"A": 0,
+"R_sides": 4,
+"volume": "(1/3)+(1/6)*sqrt[3]",
+"verts_float": [
+[
+-0.8660254037844386,
+0.8660254037844386,
+-3.0
+],
+[
+-0.5,
+0.5,
+-2.0
+],
+[
+0.0,
+-1.0,
+-2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+-3.0
+],
+[
+0.5,
+-0.5,
+-2.0
+],
+[
+-1.0,
+0.0,
+-2.0
+]
+],
+"faces": {
+"('F', 0)": [
+2,
+5,
+0,
+3
+],
+"('R', 6)": [
+1,
+5,
+2,
+4
+],
+"('W', 11)": [
+5,
+1,
+0
+],
+"('W', 12)": [
+2,
+3,
+4
+],
+"('O', 3)": [
+0,
+1,
+4,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 3)",
+"('O', 0)",
+"('W', 11)",
+"('W', 12)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('R', 6)",
+"('W', 11)",
+"('W', 12)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 6,
+"A": 3,
+"R_sides": 4,
+"volume": "(1/3)+(1/6)*sqrt[3]",
+"verts_float": [
+[
+-0.8660254037844386,
+0.8660254037844386,
+-3.0
+],
+[
+-0.5,
+0.5,
+-2.0
+],
+[
+0.0,
+1.0,
+-2.0
+],
+[
+1.0,
+0.0,
+-2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+-3.0
+],
+[
+0.5,
+-0.5,
+-2.0
+]
+],
+"faces": {
+"('F', 3)": [
+4,
+0,
+2,
+3
+],
+"('R', 6)": [
+3,
+2,
+1,
+5
+],
+"('W', 11)": [
+1,
+2,
+0
+],
+"('W', 12)": [
+4,
+3,
+5
+],
+"('O', 0)": [
+0,
+4,
+5,
+1
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 1)",
+"('O', 13)",
+"('O', 3)",
+"('W', 11)"
+],
+"neighbours_out": [
+"('O', 13)",
+"('O', 3)",
+"('R', 8)",
+"('W', 11)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 8,
+"A": 1,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+0.0,
+2.0,
+0.0
+],
+[
+0.0,
+2.0,
+1.0
+],
+[
+-0.5,
+2.0,
+-0.5
+],
+[
+0.0,
+3.0,
+0.0
+],
+[
+-1.0,
+2.0,
+0.0
+],
+[
+-0.8660254037844386,
+3.0,
+-0.8660254037844386
+]
+],
+"faces": {
+"('F', 1)": [
+3,
+5,
+4,
+1
+],
+"('R', 8)": [
+1,
+4,
+2,
+0
+],
+"('W', 11)": [
+5,
+2,
+4
+],
+"('O', 3)": [
+3,
+0,
+2,
+5
+],
+"('O', 13)": [
+3,
+1,
+0
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 3)",
+"('O', 1)",
+"('O', 13)",
+"('W', 11)"
+],
+"neighbours_out": [
+"('O', 1)",
+"('O', 13)",
+"('R', 8)",
+"('W', 11)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 8,
+"A": 3,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+0.0,
+2.0,
+0.0
+],
+[
+-0.5,
+2.0,
+-0.5
+],
+[
+-0.8660254037844386,
+3.0,
+-0.8660254037844386
+],
+[
+0.0,
+3.0,
+0.0
+],
+[
+1.0,
+2.0,
+0.0
+],
+[
+0.0,
+2.0,
+-1.0
+]
+],
+"faces": {
+"('F', 3)": [
+2,
+3,
+4,
+5
+],
+"('R', 8)": [
+5,
+4,
+0,
+1
+],
+"('W', 11)": [
+2,
+5,
+1
+],
+"('O', 1)": [
+3,
+2,
+1,
+0
+],
+"('O', 13)": [
+3,
+0,
+4
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 3,
+"m": 3,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 2,
+"neighbours_in": [
+"('F', 13)",
+"('O', 1)",
+"('O', 3)"
+],
+"neighbours_out": [
+"('O', 1)",
+"('O', 3)",
+"('R', 8)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 4,
+"E": 6,
+"F": 4,
+"R": 8,
+"A": 13,
+"R_sides": 4,
+"volume": "1/6",
+"verts_float": [
+[
+0.0,
+2.0,
+1.0
+],
+[
+0.0,
+2.0,
+0.0
+],
+[
+1.0,
+2.0,
+0.0
+],
+[
+0.0,
+3.0,
+0.0
+]
+],
+"faces": {
+"('F', 13)": [
+3,
+0,
+2
+],
+"('R', 8)": [
+2,
+0,
+1
+],
+"('O', 1)": [
+3,
+1,
+0
+],
+"('O', 3)": [
+3,
+2,
+1
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 0)",
+"('O', 3)",
+"('O', 4)",
+"('W', 6)"
+],
+"neighbours_out": [
+"('O', 3)",
+"('O', 4)",
+"('R', 11)",
+"('W', 6)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 11,
+"A": 0,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+-0.8660254037844386,
+0.8660254037844386,
+-3.0
+],
+[
+-0.5,
+0.5,
+-2.0
+],
+[
+-2.0,
+0.0,
+-1.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+-1.1435935394489825
+],
+[
+-2.0,
+2.0,
+-3.0
+],
+[
+-1.0,
+0.0,
+-2.0
+]
+],
+"faces": {
+"('F', 0)": [
+2,
+4,
+0,
+5
+],
+"('R', 11)": [
+2,
+5,
+1,
+3
+],
+"('W', 6)": [
+0,
+1,
+5
+],
+"('O', 3)": [
+4,
+3,
+1,
+0
+],
+"('O', 4)": [
+2,
+3,
+4
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 1)",
+"('O', 3)",
+"('O', 4)",
+"('W', 8)"
+],
+"neighbours_out": [
+"('O', 3)",
+"('O', 4)",
+"('R', 11)",
+"('W', 8)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 11,
+"A": 1,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+-2.0,
+1.0,
+0.0
+],
+[
+-0.5,
+2.0,
+-0.5
+],
+[
+-0.8660254037844386,
+3.0,
+-0.8660254037844386
+],
+[
+-0.9282032302755088,
+1.1435935394489825,
+-0.9282032302755088
+],
+[
+-1.0,
+2.0,
+0.0
+],
+[
+-2.0,
+3.0,
+-2.0
+]
+],
+"faces": {
+"('F', 1)": [
+2,
+5,
+0,
+4
+],
+"('R', 11)": [
+1,
+4,
+0,
+3
+],
+"('W', 8)": [
+2,
+4,
+1
+],
+"('O', 3)": [
+2,
+1,
+3,
+5
+],
+"('O', 4)": [
+5,
+3,
+0
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 6,
+"m": 6,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 5,
+"neighbours_in": [
+"('F', 3)",
+"('O', 0)",
+"('O', 1)",
+"('O', 4)",
+"('W', 6)",
+"('W', 8)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 1)",
+"('O', 4)",
+"('R', 11)",
+"('W', 6)",
+"('W', 8)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 10,
+"E": 15,
+"F": 7,
+"R": 11,
+"A": 3,
+"R_sides": 6,
+"volume": "(-196)+(229/2)*sqrt[3]",
+"verts_float": [
+[
+-0.8660254037844386,
+0.8660254037844386,
+-3.0
+],
+[
+0.0,
+1.0,
+-2.0
+],
+[
+-0.5,
+0.5,
+-2.0
+],
+[
+-0.5,
+2.0,
+-0.5
+],
+[
+0.0,
+2.0,
+-1.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+-1.1435935394489825
+],
+[
+-0.9282032302755088,
+1.1435935394489825,
+-0.9282032302755088
+],
+[
+-2.0,
+3.0,
+-2.0
+],
+[
+-2.0,
+2.0,
+-3.0
+],
+[
+-0.8660254037844386,
+3.0,
+-0.8660254037844386
+]
+],
+"faces": {
+"('F', 3)": [
+0,
+8,
+7,
+9,
+4,
+1
+],
+"('R', 11)": [
+2,
+1,
+4,
+3,
+6,
+5
+],
+"('W', 6)": [
+0,
+1,
+2
+],
+"('W', 8)": [
+9,
+3,
+4
+],
+"('O', 0)": [
+8,
+0,
+2,
+5
+],
+"('O', 1)": [
+9,
+7,
+6,
+3
+],
+"('O', 4)": [
+8,
+5,
+6,
+7
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 4)",
+"('O', 0)",
+"('O', 1)",
+"('O', 3)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 1)",
+"('O', 3)",
+"('R', 11)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 11,
+"A": 4,
+"R_sides": 6,
+"volume": "(656/3)+(-376/3)*sqrt[3]",
+"verts_float": [
+[
+-2.0,
+1.0,
+0.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+-1.1435935394489825
+],
+[
+-0.9282032302755088,
+1.1435935394489825,
+-0.9282032302755088
+],
+[
+-2.0,
+2.0,
+-3.0
+],
+[
+-2.0,
+0.0,
+-1.0
+],
+[
+-2.0,
+3.0,
+-2.0
+]
+],
+"faces": {
+"('F', 4)": [
+0,
+5,
+3,
+4
+],
+"('R', 11)": [
+4,
+1,
+2,
+0
+],
+"('O', 0)": [
+4,
+3,
+1
+],
+"('O', 1)": [
+5,
+0,
+2
+],
+"('O', 3)": [
+3,
+5,
+2,
+1
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 6,
+"m": 6,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 5,
+"neighbours_in": [
+"('F', 0)",
+"('O', 2)",
+"('O', 3)",
+"('O', 9)",
+"('W', 5)",
+"('W', 6)"
+],
+"neighbours_out": [
+"('O', 2)",
+"('O', 3)",
+"('O', 9)",
+"('R', 12)",
+"('W', 5)",
+"('W', 6)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 10,
+"E": 15,
+"F": 7,
+"R": 12,
+"A": 0,
+"R_sides": 6,
+"volume": "(-196)+(229/2)*sqrt[3]",
+"verts_float": [
+[
+0.8660254037844386,
+-3.0,
+-0.8660254037844386
+],
+[
+0.5,
+-2.0,
+-0.5
+],
+[
+0.0,
+-2.0,
+-1.0
+],
+[
+0.0,
+-1.0,
+-2.0
+],
+[
+0.9282032302755088,
+-1.1435935394489825,
+-0.9282032302755088
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+-3.0
+],
+[
+2.0,
+-3.0,
+-2.0
+],
+[
+0.5,
+-0.5,
+-2.0
+],
+[
+2.0,
+-2.0,
+-3.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+-1.1435935394489825
+]
+],
+"faces": {
+"('F', 0)": [
+6,
+0,
+2,
+3,
+5,
+8
+],
+"('R', 12)": [
+7,
+3,
+2,
+1,
+4,
+9
+],
+"('W', 5)": [
+0,
+1,
+2
+],
+"('W', 6)": [
+3,
+7,
+5
+],
+"('O', 2)": [
+6,
+4,
+1,
+0
+],
+"('O', 3)": [
+5,
+7,
+9,
+8
+],
+"('O', 9)": [
+6,
+8,
+9,
+4
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 2)",
+"('O', 0)",
+"('O', 9)",
+"('W', 5)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 9)",
+"('R', 12)",
+"('W', 5)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 12,
+"A": 2,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+0.8660254037844386,
+-3.0,
+-0.8660254037844386
+],
+[
+0.5,
+-2.0,
+-0.5
+],
+[
+1.0,
+-2.0,
+0.0
+],
+[
+0.9282032302755088,
+-1.1435935394489825,
+-0.9282032302755088
+],
+[
+2.0,
+-3.0,
+-2.0
+],
+[
+2.0,
+-1.0,
+0.0
+]
+],
+"faces": {
+"('F', 2)": [
+0,
+4,
+5,
+2
+],
+"('R', 12)": [
+2,
+5,
+3,
+1
+],
+"('W', 5)": [
+0,
+2,
+1
+],
+"('O', 0)": [
+4,
+0,
+1,
+3
+],
+"('O', 9)": [
+4,
+3,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 3)",
+"('O', 0)",
+"('O', 9)",
+"('W', 6)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 9)",
+"('R', 12)",
+"('W', 6)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 12,
+"A": 3,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+1.0,
+0.0,
+-2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+-3.0
+],
+[
+0.5,
+-0.5,
+-2.0
+],
+[
+2.0,
+-2.0,
+-3.0
+],
+[
+2.0,
+0.0,
+-1.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+-1.1435935394489825
+]
+],
+"faces": {
+"('F', 3)": [
+3,
+1,
+0,
+4
+],
+"('R', 12)": [
+4,
+0,
+2,
+5
+],
+"('W', 6)": [
+2,
+0,
+1
+],
+"('O', 0)": [
+1,
+3,
+5,
+2
+],
+"('O', 9)": [
+3,
+4,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 9)",
+"('O', 0)",
+"('O', 2)",
+"('O', 3)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 2)",
+"('O', 3)",
+"('R', 12)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 12,
+"A": 9,
+"R_sides": 6,
+"volume": "(656/3)+(-376/3)*sqrt[3]",
+"verts_float": [
+[
+0.9282032302755088,
+-1.1435935394489825,
+-0.9282032302755088
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+-1.1435935394489825
+],
+[
+2.0,
+-3.0,
+-2.0
+],
+[
+2.0,
+0.0,
+-1.0
+],
+[
+2.0,
+-2.0,
+-3.0
+],
+[
+2.0,
+-1.0,
+0.0
+]
+],
+"faces": {
+"('F', 9)": [
+2,
+4,
+3,
+5
+],
+"('R', 12)": [
+5,
+3,
+1,
+0
+],
+"('O', 0)": [
+2,
+0,
+1,
+4
+],
+"('O', 2)": [
+2,
+5,
+0
+],
+"('O', 3)": [
+4,
+1,
+3
+]
+}
+}
+],
+"O": [
+{
+"corners": 16,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 5,
+"inner_faces": 4,
+"outer_faces": 1,
+"lateral_planes": 5,
+"A": 0,
+"parts": 4
+},
+{
+"corners": 8,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 2,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 1,
+"parts": 2
+},
+{
+"corners": 8,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 2,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 2,
+"parts": 2
+},
+{
+"corners": 16,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 5,
+"inner_faces": 4,
+"outer_faces": 1,
+"lateral_planes": 5,
+"A": 3,
+"parts": 4
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 4,
+"parts": 1
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 9,
+"parts": 1
+},
+{
+"corners": 4,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 2,
+"A": 10,
+"parts": 1
+},
+{
+"corners": 4,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 2,
+"A": 13,
+"parts": 1
+}
+],
+"I": [
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 1,
+"R": 5,
+"parts": 3
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 1,
+"outer_faces": 2,
+"lateral_planes": 2,
+"R": 6,
+"parts": 2
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 1,
+"R": 8,
+"parts": 3
+},
+{
+"corners": 10,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 6,
+"inner_faces": 1,
+"outer_faces": 4,
+"lateral_planes": 2,
+"R": 11,
+"parts": 4
+},
+{
+"corners": 10,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 6,
+"inner_faces": 1,
+"outer_faces": 4,
+"lateral_planes": 2,
+"R": 12,
+"parts": 4
+}
+],
+"shell_volume_float": 15.333333333333334
+},
+"s3 s2 s1 (linear, inverse)": {
+"checks": {
+"overlay volumes sum to the shell volume": true,
+"outer cells sum to vol(Asso)": true,
+"inner pieces sum to the shell volume": true,
+"per removed face: overlay sums to its inner piece": true,
+"per associahedron face: overlay sums to vol(cell) - vol(cell meet P)": true,
+"every wall matches its partner piece vertex for vertex": true,
+"inner ends tile each removed face (areas)": true,
+"outer ends tile each associahedron face minus its kept face (areas)": true,
+"every overlay piece closed, Euler 2": true,
+"every Y-corner lies in the open shell": true
+},
+"overlay": [
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 4)",
+"('O', 10)",
+"('O', 11)",
+"('O', 13)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 11)",
+"('O', 13)",
+"('R', 1)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 1,
+"A": 4,
+"R_sides": 6,
+"volume": "(656/3)+(-376/3)*sqrt[3]",
+"verts_float": [
+[
+-2.0,
+1.0,
+0.0
+],
+[
+-2.0,
+0.0,
+1.0
+],
+[
+-2.0,
+2.0,
+3.0
+],
+[
+-0.9282032302755088,
+1.1435935394489825,
+0.9282032302755088
+],
+[
+-2.0,
+3.0,
+2.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+1.1435935394489825
+]
+],
+"faces": {
+"('F', 4)": [
+4,
+0,
+1,
+2
+],
+"('R', 1)": [
+5,
+1,
+0,
+3
+],
+"('O', 10)": [
+1,
+5,
+2
+],
+"('O', 11)": [
+4,
+3,
+0
+],
+"('O', 13)": [
+4,
+2,
+5,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 10)",
+"('O', 13)",
+"('O', 4)",
+"('W', 7)"
+],
+"neighbours_out": [
+"('O', 13)",
+"('O', 4)",
+"('R', 1)",
+"('W', 7)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 1,
+"A": 10,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+-0.5,
+0.5,
+2.0
+],
+[
+-2.0,
+0.0,
+1.0
+],
+[
+-2.0,
+2.0,
+3.0
+],
+[
+-0.8660254037844386,
+0.8660254037844386,
+3.0
+],
+[
+-1.0,
+0.0,
+2.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+1.1435935394489825
+]
+],
+"faces": {
+"('F', 10)": [
+2,
+1,
+4,
+3
+],
+"('R', 1)": [
+0,
+4,
+1,
+5
+],
+"('W', 7)": [
+4,
+0,
+3
+],
+"('O', 4)": [
+1,
+2,
+5
+],
+"('O', 13)": [
+2,
+3,
+0,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 11)",
+"('O', 13)",
+"('O', 4)",
+"('W', 8)"
+],
+"neighbours_out": [
+"('O', 13)",
+"('O', 4)",
+"('R', 1)",
+"('W', 8)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 1,
+"A": 11,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+-2.0,
+1.0,
+0.0
+],
+[
+-0.5,
+2.0,
+0.5
+],
+[
+-0.9282032302755088,
+1.1435935394489825,
+0.9282032302755088
+],
+[
+-0.8660254037844386,
+3.0,
+0.8660254037844386
+],
+[
+-2.0,
+3.0,
+2.0
+],
+[
+-1.0,
+2.0,
+0.0
+]
+],
+"faces": {
+"('F', 11)": [
+5,
+0,
+4,
+3
+],
+"('R', 1)": [
+2,
+0,
+5,
+1
+],
+"('W', 8)": [
+5,
+3,
+1
+],
+"('O', 4)": [
+4,
+0,
+2
+],
+"('O', 13)": [
+4,
+2,
+1,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 6,
+"m": 6,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 5,
+"neighbours_in": [
+"('F', 13)",
+"('O', 10)",
+"('O', 11)",
+"('O', 4)",
+"('W', 7)",
+"('W', 8)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 11)",
+"('O', 4)",
+"('R', 1)",
+"('W', 7)",
+"('W', 8)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 10,
+"E": 15,
+"F": 7,
+"R": 1,
+"A": 13,
+"R_sides": 6,
+"volume": "(-196)+(229/2)*sqrt[3]",
+"verts_float": [
+[
+-0.5,
+0.5,
+2.0
+],
+[
+0.0,
+2.0,
+1.0
+],
+[
+-2.0,
+2.0,
+3.0
+],
+[
+-0.5,
+2.0,
+0.5
+],
+[
+-0.8660254037844386,
+0.8660254037844386,
+3.0
+],
+[
+-0.9282032302755088,
+1.1435935394489825,
+0.9282032302755088
+],
+[
+0.0,
+1.0,
+2.0
+],
+[
+-0.8660254037844386,
+3.0,
+0.8660254037844386
+],
+[
+-2.0,
+3.0,
+2.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+1.1435935394489825
+]
+],
+"faces": {
+"('F', 13)": [
+7,
+8,
+2,
+4,
+6,
+1
+],
+"('R', 1)": [
+1,
+6,
+0,
+9,
+5,
+3
+],
+"('W', 7)": [
+0,
+6,
+4
+],
+"('W', 8)": [
+7,
+1,
+3
+],
+"('O', 4)": [
+8,
+5,
+9,
+2
+],
+"('O', 10)": [
+2,
+9,
+0,
+4
+],
+"('O', 11)": [
+8,
+7,
+3,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 9)",
+"('O', 10)",
+"('O', 12)",
+"('O', 13)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 12)",
+"('O', 13)",
+"('R', 2)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 2,
+"A": 9,
+"R_sides": 6,
+"volume": "(656/3)+(-376/3)*sqrt[3]",
+"verts_float": [
+[
+2.0,
+-2.0,
+3.0
+],
+[
+2.0,
+-3.0,
+2.0
+],
+[
+2.0,
+0.0,
+1.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+1.1435935394489825
+],
+[
+0.9282032302755088,
+-1.1435935394489825,
+0.9282032302755088
+],
+[
+2.0,
+-1.0,
+0.0
+]
+],
+"faces": {
+"('F', 9)": [
+2,
+0,
+1,
+5
+],
+"('R', 2)": [
+2,
+5,
+4,
+3
+],
+"('O', 10)": [
+0,
+3,
+4,
+1
+],
+"('O', 12)": [
+1,
+4,
+5
+],
+"('O', 13)": [
+2,
+3,
+0
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 6,
+"m": 6,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 5,
+"neighbours_in": [
+"('F', 10)",
+"('O', 12)",
+"('O', 13)",
+"('O', 9)",
+"('W', 5)",
+"('W', 7)"
+],
+"neighbours_out": [
+"('O', 12)",
+"('O', 13)",
+"('O', 9)",
+"('R', 2)",
+"('W', 5)",
+"('W', 7)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 10,
+"E": 15,
+"F": 7,
+"R": 2,
+"A": 10,
+"R_sides": 6,
+"volume": "(-196)+(229/2)*sqrt[3]",
+"verts_float": [
+[
+2.0,
+-2.0,
+3.0
+],
+[
+2.0,
+-3.0,
+2.0
+],
+[
+0.0,
+-1.0,
+2.0
+],
+[
+0.0,
+-2.0,
+1.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+1.1435935394489825
+],
+[
+0.9282032302755088,
+-1.1435935394489825,
+0.9282032302755088
+],
+[
+0.5,
+-2.0,
+0.5
+],
+[
+0.5,
+-0.5,
+2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+3.0
+],
+[
+0.8660254037844386,
+-3.0,
+0.8660254037844386
+]
+],
+"faces": {
+"('F', 10)": [
+9,
+1,
+0,
+8,
+2,
+3
+],
+"('R', 2)": [
+3,
+2,
+7,
+4,
+5,
+6
+],
+"('W', 5)": [
+9,
+3,
+6
+],
+"('W', 7)": [
+8,
+7,
+2
+],
+"('O', 9)": [
+0,
+1,
+5,
+4
+],
+"('O', 12)": [
+9,
+6,
+5,
+1
+],
+"('O', 13)": [
+0,
+4,
+7,
+8
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 12)",
+"('O', 10)",
+"('O', 9)",
+"('W', 5)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 9)",
+"('R', 2)",
+"('W', 5)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 2,
+"A": 12,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+1.0,
+-2.0,
+0.0
+],
+[
+2.0,
+-3.0,
+2.0
+],
+[
+0.9282032302755088,
+-1.1435935394489825,
+0.9282032302755088
+],
+[
+0.5,
+-2.0,
+0.5
+],
+[
+2.0,
+-1.0,
+0.0
+],
+[
+0.8660254037844386,
+-3.0,
+0.8660254037844386
+]
+],
+"faces": {
+"('F', 12)": [
+4,
+1,
+5,
+0
+],
+"('R', 2)": [
+2,
+4,
+0,
+3
+],
+"('W', 5)": [
+5,
+3,
+0
+],
+"('O', 9)": [
+1,
+4,
+2
+],
+"('O', 10)": [
+5,
+1,
+2,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 13)",
+"('O', 10)",
+"('O', 9)",
+"('W', 7)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 9)",
+"('R', 2)",
+"('W', 7)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 2,
+"A": 13,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+2.0,
+-2.0,
+3.0
+],
+[
+1.0,
+0.0,
+2.0
+],
+[
+2.0,
+0.0,
+1.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+1.1435935394489825
+],
+[
+0.5,
+-0.5,
+2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+3.0
+]
+],
+"faces": {
+"('F', 13)": [
+5,
+0,
+2,
+1
+],
+"('R', 2)": [
+4,
+1,
+2,
+3
+],
+"('W', 7)": [
+5,
+1,
+4
+],
+"('O', 9)": [
+2,
+0,
+3
+],
+"('O', 10)": [
+0,
+5,
+4,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 3,
+"m": 3,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 2,
+"neighbours_in": [
+"('F', 0)",
+"('O', 10)",
+"('O', 12)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 12)",
+"('R', 5)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 4,
+"E": 6,
+"F": 4,
+"R": 5,
+"A": 0,
+"R_sides": 4,
+"volume": "1/6",
+"verts_float": [
+[
+-1.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-2.0,
+-1.0
+],
+[
+0.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-3.0,
+0.0
+]
+],
+"faces": {
+"('F', 0)": [
+1,
+3,
+0
+],
+"('R', 5)": [
+1,
+0,
+2
+],
+"('O', 10)": [
+3,
+2,
+0
+],
+"('O', 12)": [
+1,
+2,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 10)",
+"('O', 0)",
+"('O', 12)",
+"('W', 2)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 12)",
+"('R', 5)",
+"('W', 2)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 5,
+"A": 10,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+-1.0,
+-2.0,
+0.0
+],
+[
+0.5,
+-2.0,
+0.5
+],
+[
+0.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-3.0,
+0.0
+],
+[
+0.0,
+-2.0,
+1.0
+],
+[
+0.8660254037844386,
+-3.0,
+0.8660254037844386
+]
+],
+"faces": {
+"('F', 10)": [
+0,
+3,
+5,
+4
+],
+"('R', 5)": [
+0,
+4,
+1,
+2
+],
+"('W', 2)": [
+5,
+1,
+4
+],
+"('O', 0)": [
+3,
+0,
+2
+],
+"('O', 12)": [
+3,
+2,
+1,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 12)",
+"('O', 0)",
+"('O', 10)",
+"('W', 2)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 10)",
+"('R', 5)",
+"('W', 2)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 5,
+"A": 12,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+1.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-2.0,
+-1.0
+],
+[
+0.5,
+-2.0,
+0.5
+],
+[
+0.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-3.0,
+0.0
+],
+[
+0.8660254037844386,
+-3.0,
+0.8660254037844386
+]
+],
+"faces": {
+"('F', 12)": [
+5,
+4,
+1,
+0
+],
+"('R', 5)": [
+1,
+3,
+2,
+0
+],
+"('W', 2)": [
+5,
+0,
+2
+],
+"('O', 0)": [
+1,
+4,
+3
+],
+"('O', 10)": [
+4,
+5,
+2,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 10)",
+"('O', 13)",
+"('W', 1)",
+"('W', 2)"
+],
+"neighbours_out": [
+"('O', 13)",
+"('R', 7)",
+"('W', 1)",
+"('W', 2)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 7,
+"A": 10,
+"R_sides": 4,
+"volume": "(1/3)+(1/6)*sqrt[3]",
+"verts_float": [
+[
+-0.5,
+0.5,
+2.0
+],
+[
+0.0,
+-1.0,
+2.0
+],
+[
+0.5,
+-0.5,
+2.0
+],
+[
+-0.8660254037844386,
+0.8660254037844386,
+3.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+3.0
+],
+[
+-1.0,
+0.0,
+2.0
+]
+],
+"faces": {
+"('F', 10)": [
+5,
+1,
+4,
+3
+],
+"('R', 7)": [
+2,
+1,
+5,
+0
+],
+"('W', 1)": [
+5,
+3,
+0
+],
+"('W', 2)": [
+1,
+2,
+4
+],
+"('O', 13)": [
+4,
+2,
+0,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 13)",
+"('O', 10)",
+"('W', 1)",
+"('W', 2)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('R', 7)",
+"('W', 1)",
+"('W', 2)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 7,
+"A": 13,
+"R_sides": 4,
+"volume": "(1/3)+(1/6)*sqrt[3]",
+"verts_float": [
+[
+-0.5,
+0.5,
+2.0
+],
+[
+1.0,
+0.0,
+2.0
+],
+[
+0.5,
+-0.5,
+2.0
+],
+[
+-0.8660254037844386,
+0.8660254037844386,
+3.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+3.0
+],
+[
+0.0,
+1.0,
+2.0
+]
+],
+"faces": {
+"('F', 13)": [
+3,
+4,
+1,
+5
+],
+"('R', 7)": [
+5,
+1,
+2,
+0
+],
+"('W', 1)": [
+3,
+5,
+0
+],
+"('W', 2)": [
+2,
+1,
+4
+],
+"('O', 10)": [
+4,
+3,
+0,
+2
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 3,
+"m": 3,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 2,
+"neighbours_in": [
+"('F', 3)",
+"('O', 11)",
+"('O', 13)"
+],
+"neighbours_out": [
+"('O', 11)",
+"('O', 13)",
+"('R', 8)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 4,
+"E": 6,
+"F": 4,
+"R": 8,
+"A": 3,
+"R_sides": 4,
+"volume": "1/6",
+"verts_float": [
+[
+0.0,
+2.0,
+0.0
+],
+[
+0.0,
+3.0,
+0.0
+],
+[
+1.0,
+2.0,
+0.0
+],
+[
+0.0,
+2.0,
+-1.0
+]
+],
+"faces": {
+"('F', 3)": [
+3,
+1,
+2
+],
+"('R', 8)": [
+3,
+2,
+0
+],
+"('O', 11)": [
+3,
+0,
+1
+],
+"('O', 13)": [
+1,
+0,
+2
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 11)",
+"('O', 13)",
+"('O', 3)",
+"('W', 1)"
+],
+"neighbours_out": [
+"('O', 13)",
+"('O', 3)",
+"('R', 8)",
+"('W', 1)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 8,
+"A": 11,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+0.0,
+2.0,
+0.0
+],
+[
+-0.5,
+2.0,
+0.5
+],
+[
+-0.8660254037844386,
+3.0,
+0.8660254037844386
+],
+[
+0.0,
+3.0,
+0.0
+],
+[
+-1.0,
+2.0,
+0.0
+],
+[
+0.0,
+2.0,
+-1.0
+]
+],
+"faces": {
+"('F', 11)": [
+3,
+5,
+4,
+2
+],
+"('R', 8)": [
+5,
+0,
+1,
+4
+],
+"('W', 1)": [
+4,
+1,
+2
+],
+"('O', 3)": [
+5,
+3,
+0
+],
+"('O', 13)": [
+3,
+2,
+1,
+0
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 13)",
+"('O', 11)",
+"('O', 3)",
+"('W', 1)"
+],
+"neighbours_out": [
+"('O', 11)",
+"('O', 3)",
+"('R', 8)",
+"('W', 1)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 8,
+"A": 13,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+0.0,
+2.0,
+0.0
+],
+[
+0.0,
+2.0,
+1.0
+],
+[
+-0.5,
+2.0,
+0.5
+],
+[
+-0.8660254037844386,
+3.0,
+0.8660254037844386
+],
+[
+1.0,
+2.0,
+0.0
+],
+[
+0.0,
+3.0,
+0.0
+]
+],
+"faces": {
+"('F', 13)": [
+4,
+5,
+3,
+1
+],
+"('R', 8)": [
+4,
+1,
+2,
+0
+],
+"('W', 1)": [
+2,
+1,
+3
+],
+"('O', 3)": [
+5,
+4,
+0
+],
+"('O', 11)": [
+5,
+0,
+2,
+3
+]
+}
+}
+],
+"O": [
+{
+"corners": 4,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 2,
+"A": 0,
+"parts": 1
+},
+{
+"corners": 4,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 2,
+"A": 3,
+"parts": 1
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 4,
+"parts": 1
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 9,
+"parts": 1
+},
+{
+"corners": 16,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 5,
+"inner_faces": 4,
+"outer_faces": 1,
+"lateral_planes": 5,
+"A": 10,
+"parts": 4
+},
+{
+"corners": 8,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 2,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 11,
+"parts": 2
+},
+{
+"corners": 8,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 2,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 12,
+"parts": 2
+},
+{
+"corners": 16,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 5,
+"inner_faces": 4,
+"outer_faces": 1,
+"lateral_planes": 5,
+"A": 13,
+"parts": 4
+}
+],
+"I": [
+{
+"corners": 10,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 6,
+"inner_faces": 1,
+"outer_faces": 4,
+"lateral_planes": 2,
+"R": 1,
+"parts": 4
+},
+{
+"corners": 10,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 6,
+"inner_faces": 1,
+"outer_faces": 4,
+"lateral_planes": 2,
+"R": 2,
+"parts": 4
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 1,
+"R": 5,
+"parts": 3
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 1,
+"outer_faces": 2,
+"lateral_planes": 2,
+"R": 7,
+"parts": 2
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 1,
+"R": 8,
+"parts": 3
+}
+],
+"shell_volume_float": 15.333333333333334
+},
+"s2 s1 s3 (bipartite)": {
+"checks": {
+"overlay volumes sum to the shell volume": true,
+"outer cells sum to vol(Asso)": true,
+"inner pieces sum to the shell volume": true,
+"per removed face: overlay sums to its inner piece": true,
+"per associahedron face: overlay sums to vol(cell) - vol(cell meet P)": true,
+"every wall matches its partner piece vertex for vertex": true,
+"inner ends tile each removed face (areas)": true,
+"outer ends tile each associahedron face minus its kept face (areas)": true,
+"every overlay piece closed, Euler 2": true,
+"every Y-corner lies in the open shell": true
+},
+"overlay": [
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 5,
+"m": 5,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 4,
+"neighbours_in": [
+"('F', 9)",
+"('O', 10)",
+"('O', 13)",
+"('W', 12)",
+"('W', 5)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 13)",
+"('R', 2)",
+"('W', 12)",
+"('W', 5)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 8,
+"E": 12,
+"F": 6,
+"R": 2,
+"A": 9,
+"R_sides": 6,
+"volume": "(893/12)+(-1475/36)*sqrt[3]",
+"verts_float": [
+[
+2.0,
+-2.0,
+3.0
+],
+[
+0.9282032302755088,
+-2.0,
+0.07179676972449123
+],
+[
+2.0,
+0.0,
+1.0
+],
+[
+1.0,
+-2.0,
+0.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+1.1435935394489825
+],
+[
+2.0,
+-3.3660254037844384,
+0.0
+],
+[
+2.0,
+-1.0,
+0.0
+],
+[
+2.0,
+-4.309401076758503,
+0.6905989232414971
+]
+],
+"faces": {
+"('F', 9)": [
+6,
+2,
+0,
+7,
+5
+],
+"('R', 2)": [
+2,
+6,
+3,
+1,
+4
+],
+"('W', 5)": [
+5,
+7,
+1,
+3
+],
+"('W', 12)": [
+6,
+5,
+3
+],
+"('O', 10)": [
+0,
+4,
+1,
+7
+],
+"('O', 13)": [
+2,
+4,
+0
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 5,
+"m": 5,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 4,
+"neighbours_in": [
+"('F', 10)",
+"('O', 13)",
+"('O', 9)",
+"('W', 5)",
+"('W', 7)"
+],
+"neighbours_out": [
+"('O', 13)",
+"('O', 9)",
+"('R', 2)",
+"('W', 5)",
+"('W', 7)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 8,
+"E": 12,
+"F": 6,
+"R": 2,
+"A": 10,
+"R_sides": 6,
+"volume": "(-184/3)+(149/4)*sqrt[3]",
+"verts_float": [
+[
+2.0,
+-2.0,
+3.0
+],
+[
+0.9282032302755088,
+-2.0,
+0.07179676972449123
+],
+[
+0.0,
+-2.0,
+1.0
+],
+[
+0.0,
+-1.0,
+2.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+1.1435935394489825
+],
+[
+0.5,
+-0.5,
+2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+3.0
+],
+[
+2.0,
+-4.309401076758503,
+0.6905989232414971
+]
+],
+"faces": {
+"('F', 10)": [
+7,
+0,
+6,
+3,
+2
+],
+"('R', 2)": [
+2,
+3,
+5,
+4,
+1
+],
+"('W', 5)": [
+7,
+2,
+1
+],
+"('W', 7)": [
+6,
+5,
+3
+],
+"('O', 9)": [
+0,
+7,
+1,
+4
+],
+"('O', 13)": [
+0,
+4,
+5,
+6
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 13)",
+"('O', 10)",
+"('O', 9)",
+"('W', 7)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 9)",
+"('R', 2)",
+"('W', 7)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 2,
+"A": 13,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+2.0,
+-2.0,
+3.0
+],
+[
+1.0,
+0.0,
+2.0
+],
+[
+2.0,
+0.0,
+1.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+1.1435935394489825
+],
+[
+0.5,
+-0.5,
+2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+3.0
+]
+],
+"faces": {
+"('F', 13)": [
+5,
+0,
+2,
+1
+],
+"('R', 2)": [
+4,
+1,
+2,
+3
+],
+"('W', 7)": [
+5,
+1,
+4
+],
+"('O', 9)": [
+2,
+0,
+3
+],
+"('O', 10)": [
+0,
+5,
+4,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 0)",
+"('O', 10)",
+"('O', 9)",
+"('W', 12)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 9)",
+"('R', 5)",
+"('W', 12)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 5,
+"A": 0,
+"R_sides": 4,
+"volume": "(-47/12)+(37/12)*sqrt[3]",
+"verts_float": [
+[
+-1.0,
+-2.0,
+0.0
+],
+[
+0.0,
+-2.0,
+-1.0
+],
+[
+2.0,
+-4.309401076758503,
+-0.6905989232414971
+],
+[
+2.0,
+-5.0,
+0.0
+],
+[
+0.901923788646684,
+-2.0,
+0.0
+],
+[
+0.9282032302755088,
+-2.0,
+-0.07179676972449123
+]
+],
+"faces": {
+"('F', 0)": [
+2,
+3,
+0,
+1
+],
+"('R', 5)": [
+1,
+0,
+4,
+5
+],
+"('W', 12)": [
+2,
+1,
+5
+],
+"('O', 9)": [
+2,
+5,
+4,
+3
+],
+"('O', 10)": [
+3,
+4,
+0
+]
+}
+},
+{
+"tier": "convex frustum",
+"SF": "SF 4-4-0",
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 4,
+"neighbours_in": [
+"('O', 0)",
+"('O', 10)",
+"('W', 12)",
+"('W', 2)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 10)",
+"('W', 12)",
+"('W', 2)"
+],
+"neighbours_change": false,
+"ends_share_vertices": 0,
+"V": 8,
+"E": 12,
+"F": 6,
+"R": 5,
+"A": 9,
+"R_sides": 4,
+"volume": "(17)+(-86/9)*sqrt[3]",
+"verts_float": [
+[
+0.9282032302755088,
+-2.0,
+0.07179676972449123
+],
+[
+1.0,
+-2.0,
+0.0
+],
+[
+2.0,
+-3.3660254037844384,
+0.0
+],
+[
+2.0,
+-4.309401076758503,
+-0.6905989232414971
+],
+[
+2.0,
+-5.0,
+0.0
+],
+[
+0.901923788646684,
+-2.0,
+0.0
+],
+[
+2.0,
+-4.309401076758503,
+0.6905989232414971
+],
+[
+0.9282032302755088,
+-2.0,
+-0.07179676972449123
+]
+],
+"faces": {
+"('F', 9)": [
+4,
+3,
+2,
+6
+],
+"('R', 5)": [
+0,
+1,
+7,
+5
+],
+"('W', 2)": [
+1,
+0,
+6,
+2
+],
+"('W', 12)": [
+3,
+7,
+1,
+2
+],
+"('O', 0)": [
+3,
+4,
+5,
+7
+],
+"('O', 10)": [
+4,
+6,
+0,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 10)",
+"('O', 0)",
+"('O', 9)",
+"('W', 2)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 9)",
+"('R', 5)",
+"('W', 2)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 5,
+"A": 10,
+"R_sides": 4,
+"volume": "(-47/12)+(37/12)*sqrt[3]",
+"verts_float": [
+[
+-1.0,
+-2.0,
+0.0
+],
+[
+0.9282032302755088,
+-2.0,
+0.07179676972449123
+],
+[
+2.0,
+-5.0,
+0.0
+],
+[
+0.901923788646684,
+-2.0,
+0.0
+],
+[
+0.0,
+-2.0,
+1.0
+],
+[
+2.0,
+-4.309401076758503,
+0.6905989232414971
+]
+],
+"faces": {
+"('F', 10)": [
+0,
+2,
+5,
+4
+],
+"('R', 5)": [
+0,
+4,
+1,
+3
+],
+"('W', 2)": [
+1,
+4,
+5
+],
+"('O', 0)": [
+2,
+0,
+3
+],
+"('O', 9)": [
+2,
+3,
+1,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 0)",
+"('O', 11)",
+"('O', 3)",
+"('W', 12)"
+],
+"neighbours_out": [
+"('O', 11)",
+"('O', 3)",
+"('R', 6)",
+"('W', 12)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 6,
+"A": 0,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+0.0,
+-1.0,
+-2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+-3.0
+],
+[
+0.5,
+-0.5,
+-2.0
+],
+[
+0.0,
+0.0,
+-2.0
+],
+[
+0.0,
+0.0,
+-3.0
+],
+[
+-1.0,
+0.0,
+-2.0
+]
+],
+"faces": {
+"('F', 0)": [
+5,
+4,
+1,
+0
+],
+"('R', 6)": [
+5,
+0,
+2,
+3
+],
+"('W', 12)": [
+1,
+2,
+0
+],
+"('O', 3)": [
+4,
+3,
+2,
+1
+],
+"('O', 11)": [
+5,
+3,
+4
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 3)",
+"('O', 0)",
+"('O', 11)",
+"('W', 12)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 11)",
+"('R', 6)",
+"('W', 12)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 6,
+"A": 3,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+0.0,
+1.0,
+-2.0
+],
+[
+1.0,
+0.0,
+-2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+-3.0
+],
+[
+0.5,
+-0.5,
+-2.0
+],
+[
+0.0,
+0.0,
+-2.0
+],
+[
+0.0,
+0.0,
+-3.0
+]
+],
+"faces": {
+"('F', 3)": [
+2,
+5,
+0,
+1
+],
+"('R', 6)": [
+3,
+1,
+0,
+4
+],
+"('W', 12)": [
+2,
+1,
+3
+],
+"('O', 0)": [
+5,
+2,
+3,
+4
+],
+"('O', 11)": [
+5,
+4,
+0
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 3,
+"m": 3,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 2,
+"neighbours_in": [
+"('F', 11)",
+"('O', 0)",
+"('O', 3)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 3)",
+"('R', 6)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 4,
+"E": 6,
+"F": 4,
+"R": 6,
+"A": 11,
+"R_sides": 4,
+"volume": "1/6",
+"verts_float": [
+[
+0.0,
+0.0,
+-2.0
+],
+[
+0.0,
+0.0,
+-3.0
+],
+[
+0.0,
+1.0,
+-2.0
+],
+[
+-1.0,
+0.0,
+-2.0
+]
+],
+"faces": {
+"('F', 11)": [
+2,
+1,
+3
+],
+"('R', 6)": [
+3,
+0,
+2
+],
+"('O', 0)": [
+3,
+1,
+0
+],
+"('O', 3)": [
+1,
+2,
+0
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 3,
+"m": 3,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 2,
+"neighbours_in": [
+"('F', 1)",
+"('O', 10)",
+"('O', 13)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 13)",
+"('R', 7)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 4,
+"E": 6,
+"F": 4,
+"R": 7,
+"A": 1,
+"R_sides": 4,
+"volume": "1/6",
+"verts_float": [
+[
+0.0,
+1.0,
+2.0
+],
+[
+-1.0,
+0.0,
+2.0
+],
+[
+0.0,
+0.0,
+2.0
+],
+[
+0.0,
+0.0,
+3.0
+]
+],
+"faces": {
+"('F', 1)": [
+1,
+3,
+0
+],
+"('R', 7)": [
+1,
+0,
+2
+],
+"('O', 10)": [
+1,
+2,
+3
+],
+"('O', 13)": [
+3,
+2,
+0
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 10)",
+"('O', 1)",
+"('O', 13)",
+"('W', 2)"
+],
+"neighbours_out": [
+"('O', 1)",
+"('O', 13)",
+"('R', 7)",
+"('W', 2)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 7,
+"A": 10,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+0.0,
+-1.0,
+2.0
+],
+[
+0.0,
+0.0,
+2.0
+],
+[
+0.0,
+0.0,
+3.0
+],
+[
+0.5,
+-0.5,
+2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+3.0
+],
+[
+-1.0,
+0.0,
+2.0
+]
+],
+"faces": {
+"('F', 10)": [
+4,
+2,
+5,
+0
+],
+"('R', 7)": [
+5,
+1,
+3,
+0
+],
+"('W', 2)": [
+4,
+0,
+3
+],
+"('O', 1)": [
+5,
+2,
+1
+],
+"('O', 13)": [
+4,
+3,
+1,
+2
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 13)",
+"('O', 1)",
+"('O', 10)",
+"('W', 2)"
+],
+"neighbours_out": [
+"('O', 1)",
+"('O', 10)",
+"('R', 7)",
+"('W', 2)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 7,
+"A": 13,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+1.0,
+0.0,
+2.0
+],
+[
+0.0,
+0.0,
+2.0
+],
+[
+0.0,
+0.0,
+3.0
+],
+[
+0.5,
+-0.5,
+2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+3.0
+],
+[
+0.0,
+1.0,
+2.0
+]
+],
+"faces": {
+"('F', 13)": [
+5,
+2,
+4,
+0
+],
+"('R', 7)": [
+5,
+0,
+3,
+1
+],
+"('W', 2)": [
+4,
+3,
+0
+],
+"('O', 1)": [
+2,
+5,
+1
+],
+"('O', 10)": [
+4,
+2,
+1,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 5,
+"m": 5,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 4,
+"neighbours_in": [
+"('F', 0)",
+"('O', 3)",
+"('O', 9)",
+"('W', 5)",
+"('W', 6)"
+],
+"neighbours_out": [
+"('O', 3)",
+"('O', 9)",
+"('R', 12)",
+"('W', 5)",
+"('W', 6)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 8,
+"E": 12,
+"F": 6,
+"R": 12,
+"A": 0,
+"R_sides": 6,
+"volume": "(-184/3)+(149/4)*sqrt[3]",
+"verts_float": [
+[
+0.0,
+-2.0,
+-1.0
+],
+[
+0.0,
+-1.0,
+-2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+-3.0
+],
+[
+2.0,
+-4.309401076758503,
+-0.6905989232414971
+],
+[
+0.5,
+-0.5,
+-2.0
+],
+[
+2.0,
+-2.0,
+-3.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+-1.1435935394489825
+],
+[
+0.9282032302755088,
+-2.0,
+-0.07179676972449123
+]
+],
+"faces": {
+"('F', 0)": [
+2,
+5,
+3,
+0,
+1
+],
+"('R', 12)": [
+1,
+0,
+7,
+6,
+4
+],
+"('W', 5)": [
+3,
+7,
+0
+],
+"('W', 6)": [
+2,
+1,
+4
+],
+"('O', 3)": [
+2,
+4,
+6,
+5
+],
+"('O', 9)": [
+5,
+6,
+7,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 3)",
+"('O', 0)",
+"('O', 9)",
+"('W', 6)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 9)",
+"('R', 12)",
+"('W', 6)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 12,
+"A": 3,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+1.0,
+0.0,
+-2.0
+],
+[
+0.8660254037844386,
+-0.8660254037844386,
+-3.0
+],
+[
+0.5,
+-0.5,
+-2.0
+],
+[
+2.0,
+-2.0,
+-3.0
+],
+[
+2.0,
+0.0,
+-1.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+-1.1435935394489825
+]
+],
+"faces": {
+"('F', 3)": [
+3,
+1,
+0,
+4
+],
+"('R', 12)": [
+4,
+0,
+2,
+5
+],
+"('W', 6)": [
+1,
+2,
+0
+],
+"('O', 0)": [
+1,
+3,
+5,
+2
+],
+"('O', 9)": [
+3,
+4,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 5,
+"m": 5,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 4,
+"neighbours_in": [
+"('F', 9)",
+"('O', 0)",
+"('O', 3)",
+"('W', 2)",
+"('W', 5)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 3)",
+"('R', 12)",
+"('W', 2)",
+"('W', 5)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 8,
+"E": 12,
+"F": 6,
+"R": 12,
+"A": 9,
+"R_sides": 6,
+"volume": "(893/12)+(-1475/36)*sqrt[3]",
+"verts_float": [
+[
+1.0,
+-2.0,
+0.0
+],
+[
+2.0,
+-3.3660254037844384,
+0.0
+],
+[
+0.9282032302755088,
+-0.9282032302755088,
+-1.1435935394489825
+],
+[
+2.0,
+-4.309401076758503,
+-0.6905989232414971
+],
+[
+2.0,
+0.0,
+-1.0
+],
+[
+2.0,
+-2.0,
+-3.0
+],
+[
+2.0,
+-1.0,
+0.0
+],
+[
+0.9282032302755088,
+-2.0,
+-0.07179676972449123
+]
+],
+"faces": {
+"('F', 9)": [
+3,
+5,
+4,
+6,
+1
+],
+"('R', 12)": [
+7,
+0,
+6,
+4,
+2
+],
+"('W', 2)": [
+1,
+6,
+0
+],
+"('W', 5)": [
+3,
+1,
+0,
+7
+],
+"('O', 0)": [
+5,
+3,
+7,
+2
+],
+"('O', 3)": [
+5,
+2,
+4
+]
+}
+}
+],
+"O": [
+{
+"corners": 12,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 3,
+"outer_faces": 1,
+"lateral_planes": 4,
+"A": 0,
+"parts": 3
+},
+{
+"corners": 4,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 2,
+"A": 1,
+"parts": 1
+},
+{
+"corners": 8,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 2,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 3,
+"parts": 2
+},
+{
+"corners": 12,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 3,
+"outer_faces": 1,
+"lateral_planes": 4,
+"A": 9,
+"parts": 3
+},
+{
+"corners": 12,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 3,
+"outer_faces": 1,
+"lateral_planes": 4,
+"A": 10,
+"parts": 3
+},
+{
+"corners": 4,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 2,
+"A": 11,
+"parts": 1
+},
+{
+"corners": 8,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 2,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 13,
+"parts": 2
+}
+],
+"I": [
+{
+"corners": 10,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 5,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 3,
+"R": 2,
+"parts": 3
+},
+{
+"corners": 8,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 2,
+"R": 5,
+"parts": 3
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 1,
+"R": 6,
+"parts": 3
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 1,
+"R": 7,
+"parts": 3
+},
+{
+"corners": 10,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 5,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 3,
+"R": 12,
+"parts": 3
+}
+],
+"shell_volume_float": 20.666666666666668
+},
+"s1 s3 s2 (bipartite, inverse)": {
+"checks": {
+"overlay volumes sum to the shell volume": true,
+"outer cells sum to vol(Asso)": true,
+"inner pieces sum to the shell volume": true,
+"per removed face: overlay sums to its inner piece": true,
+"per associahedron face: overlay sums to vol(cell) - vol(cell meet P)": true,
+"every wall matches its partner piece vertex for vertex": true,
+"inner ends tile each removed face (areas)": true,
+"outer ends tile each associahedron face minus its kept face (areas)": true,
+"every overlay piece closed, Euler 2": true,
+"every Y-corner lies in the open shell": true
+},
+"overlay": [
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 5,
+"m": 5,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 4,
+"neighbours_in": [
+"('F', 4)",
+"('O', 10)",
+"('O', 13)",
+"('W', 11)",
+"('W', 8)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 13)",
+"('R', 1)",
+"('W', 11)",
+"('W', 8)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 8,
+"E": 12,
+"F": 6,
+"R": 1,
+"A": 4,
+"R_sides": 6,
+"volume": "(893/12)+(-1475/36)*sqrt[3]",
+"verts_float": [
+[
+-2.0,
+1.0,
+0.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+1.1435935394489825
+],
+[
+-2.0,
+3.3660254037844384,
+0.0
+],
+[
+-2.0,
+4.309401076758503,
+0.6905989232414971
+],
+[
+-2.0,
+0.0,
+1.0
+],
+[
+-2.0,
+2.0,
+3.0
+],
+[
+-0.9282032302755088,
+2.0,
+0.07179676972449123
+],
+[
+-1.0,
+2.0,
+0.0
+]
+],
+"faces": {
+"('F', 4)": [
+0,
+4,
+5,
+3,
+2
+],
+"('R', 1)": [
+4,
+0,
+7,
+6,
+1
+],
+"('W', 8)": [
+2,
+3,
+6,
+7
+],
+"('W', 11)": [
+0,
+2,
+7
+],
+"('O', 10)": [
+4,
+1,
+5
+],
+"('O', 13)": [
+5,
+1,
+6,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 10)",
+"('O', 13)",
+"('O', 4)",
+"('W', 7)"
+],
+"neighbours_out": [
+"('O', 13)",
+"('O', 4)",
+"('R', 1)",
+"('W', 7)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 1,
+"A": 10,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+-0.5,
+0.5,
+2.0
+],
+[
+-2.0,
+0.0,
+1.0
+],
+[
+-2.0,
+2.0,
+3.0
+],
+[
+-0.8660254037844386,
+0.8660254037844386,
+3.0
+],
+[
+-1.0,
+0.0,
+2.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+1.1435935394489825
+]
+],
+"faces": {
+"('F', 10)": [
+2,
+1,
+4,
+3
+],
+"('R', 1)": [
+4,
+1,
+5,
+0
+],
+"('W', 7)": [
+4,
+0,
+3
+],
+"('O', 4)": [
+1,
+2,
+5
+],
+"('O', 13)": [
+2,
+3,
+0,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 5,
+"m": 5,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 4,
+"neighbours_in": [
+"('F', 13)",
+"('O', 10)",
+"('O', 4)",
+"('W', 7)",
+"('W', 8)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 4)",
+"('R', 1)",
+"('W', 7)",
+"('W', 8)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 8,
+"E": 12,
+"F": 6,
+"R": 1,
+"A": 13,
+"R_sides": 6,
+"volume": "(-184/3)+(149/4)*sqrt[3]",
+"verts_float": [
+[
+-0.5,
+0.5,
+2.0
+],
+[
+0.0,
+2.0,
+1.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+1.1435935394489825
+],
+[
+-2.0,
+4.309401076758503,
+0.6905989232414971
+],
+[
+-2.0,
+2.0,
+3.0
+],
+[
+-0.8660254037844386,
+0.8660254037844386,
+3.0
+],
+[
+0.0,
+1.0,
+2.0
+],
+[
+-0.9282032302755088,
+2.0,
+0.07179676972449123
+]
+],
+"faces": {
+"('F', 13)": [
+6,
+1,
+3,
+4,
+5
+],
+"('R', 1)": [
+7,
+1,
+6,
+0,
+2
+],
+"('W', 7)": [
+0,
+6,
+5
+],
+"('W', 8)": [
+3,
+1,
+7
+],
+"('O', 4)": [
+4,
+3,
+7,
+2
+],
+"('O', 10)": [
+4,
+2,
+0,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 0)",
+"('O', 12)",
+"('O', 3)",
+"('W', 11)"
+],
+"neighbours_out": [
+"('O', 12)",
+"('O', 3)",
+"('R', 6)",
+"('W', 11)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 6,
+"A": 0,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+-0.8660254037844386,
+0.8660254037844386,
+-3.0
+],
+[
+-0.5,
+0.5,
+-2.0
+],
+[
+0.0,
+-1.0,
+-2.0
+],
+[
+0.0,
+0.0,
+-2.0
+],
+[
+0.0,
+0.0,
+-3.0
+],
+[
+-1.0,
+0.0,
+-2.0
+]
+],
+"faces": {
+"('F', 0)": [
+0,
+4,
+2,
+5
+],
+"('R', 6)": [
+2,
+3,
+1,
+5
+],
+"('W', 11)": [
+0,
+5,
+1
+],
+"('O', 3)": [
+0,
+1,
+3,
+4
+],
+"('O', 12)": [
+4,
+3,
+2
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 3)",
+"('O', 0)",
+"('O', 12)",
+"('W', 11)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 12)",
+"('R', 6)",
+"('W', 11)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 6,
+"A": 3,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+-0.8660254037844386,
+0.8660254037844386,
+-3.0
+],
+[
+0.0,
+1.0,
+-2.0
+],
+[
+1.0,
+0.0,
+-2.0
+],
+[
+-0.5,
+0.5,
+-2.0
+],
+[
+0.0,
+0.0,
+-2.0
+],
+[
+0.0,
+0.0,
+-3.0
+]
+],
+"faces": {
+"('F', 3)": [
+2,
+5,
+0,
+1
+],
+"('R', 6)": [
+2,
+1,
+3,
+4
+],
+"('W', 11)": [
+0,
+3,
+1
+],
+"('O', 0)": [
+0,
+5,
+4,
+3
+],
+"('O', 12)": [
+2,
+4,
+5
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 3,
+"m": 3,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 2,
+"neighbours_in": [
+"('F', 12)",
+"('O', 0)",
+"('O', 3)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 3)",
+"('R', 6)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 4,
+"E": 6,
+"F": 4,
+"R": 6,
+"A": 12,
+"R_sides": 4,
+"volume": "1/6",
+"verts_float": [
+[
+0.0,
+-1.0,
+-2.0
+],
+[
+0.0,
+0.0,
+-3.0
+],
+[
+1.0,
+0.0,
+-2.0
+],
+[
+0.0,
+0.0,
+-2.0
+]
+],
+"faces": {
+"('F', 12)": [
+1,
+2,
+0
+],
+"('R', 6)": [
+0,
+2,
+3
+],
+"('O', 0)": [
+1,
+0,
+3
+],
+"('O', 3)": [
+2,
+1,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 3,
+"m": 3,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 2,
+"neighbours_in": [
+"('F', 2)",
+"('O', 10)",
+"('O', 13)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 13)",
+"('R', 7)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 4,
+"E": 6,
+"F": 4,
+"R": 7,
+"A": 2,
+"R_sides": 4,
+"volume": "1/6",
+"verts_float": [
+[
+1.0,
+0.0,
+2.0
+],
+[
+0.0,
+0.0,
+2.0
+],
+[
+0.0,
+0.0,
+3.0
+],
+[
+0.0,
+-1.0,
+2.0
+]
+],
+"faces": {
+"('F', 2)": [
+2,
+3,
+0
+],
+"('R', 7)": [
+3,
+1,
+0
+],
+"('O', 10)": [
+2,
+1,
+3
+],
+"('O', 13)": [
+2,
+0,
+1
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 10)",
+"('O', 13)",
+"('O', 2)",
+"('W', 1)"
+],
+"neighbours_out": [
+"('O', 13)",
+"('O', 2)",
+"('R', 7)",
+"('W', 1)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 7,
+"A": 10,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+-0.5,
+0.5,
+2.0
+],
+[
+0.0,
+-1.0,
+2.0
+],
+[
+0.0,
+0.0,
+2.0
+],
+[
+0.0,
+0.0,
+3.0
+],
+[
+-0.8660254037844386,
+0.8660254037844386,
+3.0
+],
+[
+-1.0,
+0.0,
+2.0
+]
+],
+"faces": {
+"('F', 10)": [
+5,
+1,
+3,
+4
+],
+"('R', 7)": [
+1,
+5,
+0,
+2
+],
+"('W', 1)": [
+5,
+4,
+0
+],
+"('O', 2)": [
+3,
+1,
+2
+],
+"('O', 13)": [
+3,
+2,
+0,
+4
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 13)",
+"('O', 10)",
+"('O', 2)",
+"('W', 1)"
+],
+"neighbours_out": [
+"('O', 10)",
+"('O', 2)",
+"('R', 7)",
+"('W', 1)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 7,
+"A": 13,
+"R_sides": 4,
+"volume": "(1/4)+(1/12)*sqrt[3]",
+"verts_float": [
+[
+-0.5,
+0.5,
+2.0
+],
+[
+1.0,
+0.0,
+2.0
+],
+[
+0.0,
+0.0,
+2.0
+],
+[
+0.0,
+0.0,
+3.0
+],
+[
+-0.8660254037844386,
+0.8660254037844386,
+3.0
+],
+[
+0.0,
+1.0,
+2.0
+]
+],
+"faces": {
+"('F', 13)": [
+3,
+1,
+5,
+4
+],
+"('R', 7)": [
+0,
+5,
+1,
+2
+],
+"('W', 1)": [
+4,
+5,
+0
+],
+"('O', 2)": [
+3,
+2,
+1
+],
+"('O', 10)": [
+3,
+4,
+0,
+2
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 3)",
+"('O', 13)",
+"('O', 4)",
+"('W', 11)"
+],
+"neighbours_out": [
+"('O', 13)",
+"('O', 4)",
+"('R', 8)",
+"('W', 11)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 8,
+"A": 3,
+"R_sides": 4,
+"volume": "(-47/12)+(37/12)*sqrt[3]",
+"verts_float": [
+[
+-0.901923788646684,
+2.0,
+0.0
+],
+[
+-2.0,
+5.0,
+0.0
+],
+[
+-2.0,
+4.309401076758503,
+-0.6905989232414971
+],
+[
+-0.9282032302755088,
+2.0,
+-0.07179676972449123
+],
+[
+1.0,
+2.0,
+0.0
+],
+[
+0.0,
+2.0,
+-1.0
+]
+],
+"faces": {
+"('F', 3)": [
+2,
+1,
+4,
+5
+],
+"('R', 8)": [
+5,
+4,
+0,
+3
+],
+"('W', 11)": [
+2,
+5,
+3
+],
+"('O', 4)": [
+2,
+3,
+0,
+1
+],
+"('O', 13)": [
+1,
+0,
+4
+]
+}
+},
+{
+"tier": "convex frustum",
+"SF": "SF 4-4-0",
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 4,
+"neighbours_in": [
+"('O', 13)",
+"('O', 3)",
+"('W', 1)",
+"('W', 11)"
+],
+"neighbours_out": [
+"('O', 13)",
+"('O', 3)",
+"('W', 1)",
+"('W', 11)"
+],
+"neighbours_change": false,
+"ends_share_vertices": 0,
+"V": 8,
+"E": 12,
+"F": 6,
+"R": 8,
+"A": 4,
+"R_sides": 4,
+"volume": "(17)+(-86/9)*sqrt[3]",
+"verts_float": [
+[
+-2.0,
+3.3660254037844384,
+0.0
+],
+[
+-2.0,
+4.309401076758503,
+0.6905989232414971
+],
+[
+-0.901923788646684,
+2.0,
+0.0
+],
+[
+-2.0,
+5.0,
+0.0
+],
+[
+-2.0,
+4.309401076758503,
+-0.6905989232414971
+],
+[
+-0.9282032302755088,
+2.0,
+-0.07179676972449123
+],
+[
+-1.0,
+2.0,
+0.0
+],
+[
+-0.9282032302755088,
+2.0,
+0.07179676972449123
+]
+],
+"faces": {
+"('F', 4)": [
+3,
+4,
+0,
+1
+],
+"('R', 8)": [
+7,
+6,
+5,
+2
+],
+"('W', 1)": [
+6,
+7,
+1,
+0
+],
+"('W', 11)": [
+4,
+5,
+6,
+0
+],
+"('O', 3)": [
+4,
+3,
+2,
+5
+],
+"('O', 13)": [
+3,
+1,
+7,
+2
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 13)",
+"('O', 3)",
+"('O', 4)",
+"('W', 1)"
+],
+"neighbours_out": [
+"('O', 3)",
+"('O', 4)",
+"('R', 8)",
+"('W', 1)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 8,
+"A": 13,
+"R_sides": 4,
+"volume": "(-47/12)+(37/12)*sqrt[3]",
+"verts_float": [
+[
+0.0,
+2.0,
+1.0
+],
+[
+-0.901923788646684,
+2.0,
+0.0
+],
+[
+-2.0,
+4.309401076758503,
+0.6905989232414971
+],
+[
+-2.0,
+5.0,
+0.0
+],
+[
+1.0,
+2.0,
+0.0
+],
+[
+-0.9282032302755088,
+2.0,
+0.07179676972449123
+]
+],
+"faces": {
+"('F', 13)": [
+4,
+3,
+2,
+0
+],
+"('R', 8)": [
+4,
+0,
+5,
+1
+],
+"('W', 1)": [
+5,
+0,
+2
+],
+"('O', 3)": [
+3,
+4,
+1
+],
+"('O', 4)": [
+3,
+1,
+5,
+2
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 4,
+"m": 4,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 3,
+"neighbours_in": [
+"('F', 0)",
+"('O', 3)",
+"('O', 4)",
+"('W', 6)"
+],
+"neighbours_out": [
+"('O', 3)",
+"('O', 4)",
+"('R', 11)",
+"('W', 6)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 6,
+"E": 9,
+"F": 5,
+"R": 11,
+"A": 0,
+"R_sides": 6,
+"volume": "(-8)+(21/4)*sqrt[3]",
+"verts_float": [
+[
+-0.8660254037844386,
+0.8660254037844386,
+-3.0
+],
+[
+-0.5,
+0.5,
+-2.0
+],
+[
+-1.0,
+0.0,
+-2.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+-1.1435935394489825
+],
+[
+-2.0,
+2.0,
+-3.0
+],
+[
+-2.0,
+0.0,
+-1.0
+]
+],
+"faces": {
+"('F', 0)": [
+4,
+0,
+2,
+5
+],
+"('R', 11)": [
+5,
+2,
+1,
+3
+],
+"('W', 6)": [
+0,
+1,
+2
+],
+"('O', 3)": [
+4,
+3,
+1,
+0
+],
+"('O', 4)": [
+4,
+5,
+3
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 5,
+"m": 5,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 4,
+"neighbours_in": [
+"('F', 3)",
+"('O', 0)",
+"('O', 4)",
+"('W', 6)",
+"('W', 8)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 4)",
+"('R', 11)",
+"('W', 6)",
+"('W', 8)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 8,
+"E": 12,
+"F": 6,
+"R": 11,
+"A": 3,
+"R_sides": 6,
+"volume": "(-184/3)+(149/4)*sqrt[3]",
+"verts_float": [
+[
+-0.8660254037844386,
+0.8660254037844386,
+-3.0
+],
+[
+0.0,
+1.0,
+-2.0
+],
+[
+-0.5,
+0.5,
+-2.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+-1.1435935394489825
+],
+[
+-2.0,
+4.309401076758503,
+-0.6905989232414971
+],
+[
+-0.9282032302755088,
+2.0,
+-0.07179676972449123
+],
+[
+-2.0,
+2.0,
+-3.0
+],
+[
+0.0,
+2.0,
+-1.0
+]
+],
+"faces": {
+"('F', 3)": [
+0,
+6,
+4,
+7,
+1
+],
+"('R', 11)": [
+1,
+7,
+5,
+3,
+2
+],
+"('W', 6)": [
+0,
+1,
+2
+],
+"('W', 8)": [
+4,
+5,
+7
+],
+"('O', 0)": [
+6,
+0,
+2,
+3
+],
+"('O', 4)": [
+6,
+3,
+5,
+4
+]
+}
+},
+{
+"tier": "not a scutoid frustum: ends meet",
+"SF": null,
+"n": 5,
+"m": 5,
+"Y": 0,
+"Y_kinds": [],
+"law": true,
+"simple": true,
+"closed": true,
+"euler": true,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral": 4,
+"neighbours_in": [
+"('F', 4)",
+"('O', 0)",
+"('O', 3)",
+"('W', 1)",
+"('W', 8)"
+],
+"neighbours_out": [
+"('O', 0)",
+"('O', 3)",
+"('R', 11)",
+"('W', 1)",
+"('W', 8)"
+],
+"neighbours_change": true,
+"ends_share_vertices": 2,
+"V": 8,
+"E": 12,
+"F": 6,
+"R": 11,
+"A": 4,
+"R_sides": 6,
+"volume": "(893/12)+(-1475/36)*sqrt[3]",
+"verts_float": [
+[
+-2.0,
+1.0,
+0.0
+],
+[
+-2.0,
+3.3660254037844384,
+0.0
+],
+[
+-0.9282032302755088,
+0.9282032302755088,
+-1.1435935394489825
+],
+[
+-2.0,
+4.309401076758503,
+-0.6905989232414971
+],
+[
+-0.9282032302755088,
+2.0,
+-0.07179676972449123
+],
+[
+-2.0,
+2.0,
+-3.0
+],
+[
+-2.0,
+0.0,
+-1.0
+],
+[
+-1.0,
+2.0,
+0.0
+]
+],
+"faces": {
+"('F', 4)": [
+3,
+5,
+6,
+0,
+1
+],
+"('R', 11)": [
+4,
+7,
+0,
+6,
+2
+],
+"('W', 1)": [
+1,
+0,
+7
+],
+"('W', 8)": [
+3,
+1,
+7,
+4
+],
+"('O', 0)": [
+5,
+2,
+6
+],
+"('O', 3)": [
+5,
+3,
+4,
+2
+]
+}
+}
+],
+"O": [
+{
+"corners": 8,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 2,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 0,
+"parts": 2
+},
+{
+"corners": 4,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 2,
+"A": 2,
+"parts": 1
+},
+{
+"corners": 12,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 3,
+"outer_faces": 1,
+"lateral_planes": 4,
+"A": 3,
+"parts": 3
+},
+{
+"corners": 12,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 3,
+"outer_faces": 1,
+"lateral_planes": 4,
+"A": 4,
+"parts": 3
+},
+{
+"corners": 8,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 2,
+"outer_faces": 1,
+"lateral_planes": 3,
+"A": 10,
+"parts": 2
+},
+{
+"corners": 4,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 2,
+"inner_faces": 1,
+"outer_faces": 1,
+"lateral_planes": 2,
+"A": 12,
+"parts": 1
+},
+{
+"corners": 12,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 3,
+"outer_faces": 1,
+"lateral_planes": 4,
+"A": 13,
+"parts": 3
+}
+],
+"I": [
+{
+"corners": 10,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 5,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 3,
+"R": 1,
+"parts": 3
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 1,
+"R": 6,
+"parts": 3
+},
+{
+"corners": 6,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 4,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 1,
+"R": 7,
+"parts": 3
+},
+{
+"corners": 8,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 3,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 2,
+"R": 8,
+"parts": 3
+},
+{
+"corners": 10,
+"Y": 0,
+"Y_kinds": [],
+"ends_share_corners": 5,
+"inner_faces": 1,
+"outer_faces": 3,
+"lateral_planes": 3,
+"R": 11,
+"parts": 3
+}
+],
+"shell_volume_float": 20.666666666666668
+}
+},
+"secs": 1.5
+}

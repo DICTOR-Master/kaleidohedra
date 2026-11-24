@@ -1,0 +1,275 @@
+A3 (truncated octahedron): |W| = 24, mirrors 6, Coxeter matrix [[1, 3, 2], [3, 1, 3], [2, 3, 1]], tower radicands ['3']
+  facet types (sides): [6, 4, 6]; |n|^2 = q^2 * ['3', '1', '3']
+  permutahedron: 24 vertices, 14 faces, volume 32.000000 (exact)
+  c = s1 s2 s3 (linear): shell volume 15.333333; overlay pieces 16 (0 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'not a scutoid frustum: ends meet': 16}
+    overlay pieces with a Y-corner (any tier): 0; law Y >= |n-m|, Y = n+m mod 2 holds for 0/0 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 16}
+    O pieces (nearest associahedron face, unions): 8; with a Y-corner 0 []; ends share a corner in 8; inner faces per piece [1, 1, 1, 1, 2, 2, 4, 4]
+    I pieces (equal-speed, unions, cross-check with the first study): 5; with a Y-corner 0; ends share a corner in 5
+  c = s3 s2 s1 (linear, inverse): shell volume 15.333333; overlay pieces 16 (1 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'not a scutoid frustum: ends meet': 16}
+    overlay pieces with a Y-corner (any tier): 0; law Y >= |n-m|, Y = n+m mod 2 holds for 0/0 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 16}
+    O pieces (nearest associahedron face, unions): 8; with a Y-corner 0 []; ends share a corner in 8; inner faces per piece [1, 1, 1, 1, 2, 2, 4, 4]
+    I pieces (equal-speed, unions, cross-check with the first study): 5; with a Y-corner 0; ends share a corner in 5
+  c = s2 s1 s3 (bipartite): shell volume 20.666667; overlay pieces 15 (1 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'not a scutoid frustum: ends meet': 14, 'convex frustum': 1}
+        1 x SF 4-4-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+    overlay pieces with a Y-corner (any tier): 0; law Y >= |n-m|, Y = n+m mod 2 holds for 1/1 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 14}
+    O pieces (nearest associahedron face, unions): 7; with a Y-corner 0 []; ends share a corner in 7; inner faces per piece [1, 1, 2, 2, 3, 3, 3]
+    I pieces (equal-speed, unions, cross-check with the first study): 5; with a Y-corner 0; ends share a corner in 5
+  c = s1 s3 s2 (bipartite, inverse): shell volume 20.666667; overlay pieces 15 (2 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'not a scutoid frustum: ends meet': 14, 'convex frustum': 1}
+        1 x SF 4-4-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+    overlay pieces with a Y-corner (any tier): 0; law Y >= |n-m|, Y = n+m mod 2 holds for 1/1 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 14}
+    O pieces (nearest associahedron face, unions): 7; with a Y-corner 0 []; ends share a corner in 7; inner faces per piece [1, 1, 2, 2, 3, 3, 3]
+    I pieces (equal-speed, unions, cross-check with the first study): 5; with a Y-corner 0; ends share a corner in 5
+A3 done in 1.5 s
+PROGRESS 0.33 A3
+B3 (truncated cuboctahedron): |W| = 48, mirrors 9, Coxeter matrix [[1, 4, 2], [4, 1, 3], [2, 3, 1]], tower radicands ['2', '3']
+  facet types (sides): [6, 4, 8]; |n|^2 = q^2 * ['3', '1', '1']
+  permutahedron: 48 vertices, 26 faces, volume 334.391919 (exact)
+  c = s1 s2 s3 (linear): shell volume 372.266041; overlay pieces 33 (4 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'not a scutoid frustum: ends meet': 26, 'convex frustum': 4, 'convex Scutoid Frustum': 3}
+        1 x SF 3-4-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOO']; neighbours change True)
+        2 x SF 6-5-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOO']; neighbours change True)
+        3 x SF 4-4-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        1 x SF 6-6-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+    overlay pieces with a Y-corner (any tier): 4; law Y >= |n-m|, Y = n+m mod 2 holds for 7/7 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 26}
+    O pieces (nearest associahedron face, unions): 10; with a Y-corner 4 [['OOO'], ['OOO'], ['OOO'], ['OOO']]; ends share a corner in 10; inner faces per piece [1, 1, 1, 2, 3, 3, 3, 5, 6, 8]
+    I pieces (equal-speed, unions, cross-check with the first study): 14; with a Y-corner 0; ends share a corner in 14
+  c = s3 s2 s1 (linear, inverse): shell volume 372.266041; overlay pieces 33 (8 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'convex frustum': 4, 'not a scutoid frustum: ends meet': 26, 'convex Scutoid Frustum': 3}
+        1 x SF 3-4-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOO']; neighbours change True)
+        2 x SF 6-5-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOO']; neighbours change True)
+        3 x SF 4-4-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        1 x SF 6-6-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+    overlay pieces with a Y-corner (any tier): 4; law Y >= |n-m|, Y = n+m mod 2 holds for 7/7 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 26}
+    O pieces (nearest associahedron face, unions): 10; with a Y-corner 4 [['OOO'], ['OOO'], ['OOO'], ['OOO']]; ends share a corner in 10; inner faces per piece [1, 1, 1, 2, 3, 3, 3, 5, 6, 8]
+    I pieces (equal-speed, unions, cross-check with the first study): 14; with a Y-corner 0; ends share a corner in 14
+  c = s2 s1 s3 (bipartite): shell volume 534.452188; overlay pieces 34 (11 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'convex frustum': 10, 'not a scutoid frustum: ends meet': 24}
+        2 x SF 3-3-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        5 x SF 4-4-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        2 x SF 5-5-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        1 x SF 6-6-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+    overlay pieces with a Y-corner (any tier): 0; law Y >= |n-m|, Y = n+m mod 2 holds for 10/10 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 24}
+    O pieces (nearest associahedron face, unions): 9; with a Y-corner 0 []; ends share a corner in 9; inner faces per piece [1, 1, 3, 3, 3, 5, 5, 6, 7]
+    I pieces (equal-speed, unions, cross-check with the first study): 14; with a Y-corner 0; ends share a corner in 13
+  c = s1 s3 s2 (bipartite, inverse): shell volume 534.452188; overlay pieces 34 (15 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'not a scutoid frustum: ends meet': 24, 'convex frustum': 10}
+        2 x SF 3-3-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        5 x SF 4-4-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        2 x SF 5-5-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        1 x SF 6-6-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+    overlay pieces with a Y-corner (any tier): 0; law Y >= |n-m|, Y = n+m mod 2 holds for 10/10 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 24}
+    O pieces (nearest associahedron face, unions): 9; with a Y-corner 0 []; ends share a corner in 9; inner faces per piece [1, 1, 3, 3, 3, 5, 5, 6, 7]
+    I pieces (equal-speed, unions, cross-check with the first study): 14; with a Y-corner 0; ends share a corner in 13
+B3 done in 15.2 s
+PROGRESS 0.67 B3
+H3 (truncated icosidodecahedron): |W| = 120, mirrors 15, Coxeter matrix [[1, 5, 2], [5, 1, 3], [2, 3, 1]], tower radicands ['5', '3', '(5/2)+(1/2)*sqrt[5]']
+  facet types (sides): [6, 4, 10]; |n|^2 = q^2 * ['3', '1', 'phi+2']
+  permutahedron: 120 vertices, 62 faces, volume 390.557281 (exact)
+  c = s1 s2 s3 (linear): shell volume 1139.310070; overlay pieces 84 (45 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'not a scutoid frustum: ends meet': 46, 'convex frustum': 30, 'convex Scutoid Frustum': 4, 'not a scutoid frustum: no inner end': 1, 'not a scutoid frustum: a lateral face meets no end': 2, 'not a scutoid frustum: no outer end': 1}
+        1 x SF 3-4-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOW']; neighbours change True)
+        1 x SF 6-6-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOO', 'OOW']; neighbours change True)
+        2 x SF 9-7-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOW', 'OOW']; neighbours change True)
+       14 x SF 4-4-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        7 x SF 5-5-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        3 x SF 6-6-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        5 x SF 7-7-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        1 x SF 8-8-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+    overlay pieces with a Y-corner (any tier): 8; law Y >= |n-m|, Y = n+m mod 2 holds for 34/34 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 46, 'not a scutoid frustum: no inner end': 1, 'not a scutoid frustum: a lateral face meets no end': 2, 'not a scutoid frustum: no outer end': 1}
+    O pieces (nearest associahedron face, unions): 14; with a Y-corner 4 [['OOO'], ['OOO'], ['OOO'], ['OOO']]; ends share a corner in 14; inner faces per piece [1, 1, 1, 1, 2, 2, 5, 6, 6, 8, 8, 11, 15, 16]
+    I pieces (equal-speed, unions, cross-check with the first study): 44; with a Y-corner 0; ends share a corner in 28
+  c = s3 s2 s1 (linear, inverse): shell volume 1139.310070; overlay pieces 84 (84 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'convex frustum': 30, 'not a scutoid frustum: ends meet': 46, 'convex Scutoid Frustum': 4, 'not a scutoid frustum: no inner end': 1, 'not a scutoid frustum: a lateral face meets no end': 2, 'not a scutoid frustum: no outer end': 1}
+        1 x SF 3-4-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOW']; neighbours change True)
+        1 x SF 6-6-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOO', 'OOW']; neighbours change True)
+        2 x SF 9-7-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOW', 'OOW']; neighbours change True)
+       14 x SF 4-4-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        7 x SF 5-5-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        3 x SF 6-6-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        5 x SF 7-7-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        1 x SF 8-8-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+    overlay pieces with a Y-corner (any tier): 8; law Y >= |n-m|, Y = n+m mod 2 holds for 34/34 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 46, 'not a scutoid frustum: no inner end': 1, 'not a scutoid frustum: a lateral face meets no end': 2, 'not a scutoid frustum: no outer end': 1}
+    O pieces (nearest associahedron face, unions): 14; with a Y-corner 4 [['OOO'], ['OOO'], ['OOO'], ['OOO']]; ends share a corner in 14; inner faces per piece [1, 1, 1, 1, 2, 2, 5, 6, 6, 8, 8, 11, 15, 16]
+    I pieces (equal-speed, unions, cross-check with the first study): 44; with a Y-corner 0; ends share a corner in 28
+  c = s2 s1 s3 (bipartite): shell volume 1695.563923; overlay pieces 86 (123 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'convex Scutoid Frustum': 14, 'convex frustum': 24, 'not a scutoid frustum: ends meet': 44, 'not a scutoid frustum: no inner end': 3, 'not a scutoid frustum: no outer end': 1}
+        2 x SF 3-4-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOW']; neighbours change True)
+        1 x SF 4-4-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOW', 'OWW']; neighbours change True)
+        1 x SF 4-5-1  (convex Scutoid Frustum; Y-corner wall kinds ['OWW']; neighbours change True)
+        1 x SF 5-4-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOW']; neighbours change True)
+        2 x SF 5-4-1  (convex Scutoid Frustum; Y-corner wall kinds ['OWW']; neighbours change True)
+        1 x SF 5-5-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOW', 'OWW']; neighbours change True)
+        1 x SF 5-6-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOW']; neighbours change True)
+        1 x SF 6-6-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOW', 'OWW']; neighbours change True)
+        1 x SF 6-7-1  (convex Scutoid Frustum; Y-corner wall kinds ['OWW']; neighbours change True)
+        1 x SF 7-7-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOW', 'OWW']; neighbours change True)
+        1 x SF 8-7-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOW']; neighbours change True)
+        1 x SF 9-10-1  (convex Scutoid Frustum; Y-corner wall kinds ['OWW']; neighbours change True)
+       14 x SF 4-4-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        4 x SF 5-5-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        2 x SF 6-6-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        4 x SF 7-7-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+    overlay pieces with a Y-corner (any tier): 18; law Y >= |n-m|, Y = n+m mod 2 holds for 38/38 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 44, 'not a scutoid frustum: no inner end': 3, 'not a scutoid frustum: no outer end': 1}
+    O pieces (nearest associahedron face, unions): 13; with a Y-corner 0 []; ends share a corner in 13; inner faces per piece [1, 1, 1, 1, 5, 6, 6, 8, 8, 10, 11, 11, 14]
+    I pieces (equal-speed, unions, cross-check with the first study): 44; with a Y-corner 0; ends share a corner in 27
+  c = s1 s3 s2 (bipartite, inverse): shell volume 1695.563923; overlay pieces 86 (166 s)
+    check: overlay volumes sum to the shell volume: True
+    check: outer cells sum to vol(Asso): True
+    check: inner pieces sum to the shell volume: True
+    check: per removed face: overlay sums to its inner piece: True
+    check: per associahedron face: overlay sums to vol(cell) - vol(cell meet P): True
+    check: every wall matches its partner piece vertex for vertex: True
+    check: inner ends tile each removed face (areas): True
+    check: outer ends tile each associahedron face minus its kept face (areas): True
+    check: every overlay piece closed, Euler 2: True
+    check: every Y-corner lies in the open shell: True
+    overlay tiers: {'not a scutoid frustum: ends meet': 44, 'convex frustum': 24, 'convex Scutoid Frustum': 14, 'not a scutoid frustum: no inner end': 3, 'not a scutoid frustum: no outer end': 1}
+        2 x SF 3-4-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOW']; neighbours change True)
+        1 x SF 4-4-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOW', 'OWW']; neighbours change True)
+        1 x SF 4-5-1  (convex Scutoid Frustum; Y-corner wall kinds ['OWW']; neighbours change True)
+        2 x SF 5-4-1  (convex Scutoid Frustum; Y-corner wall kinds ['OWW']; neighbours change True)
+        1 x SF 5-4-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOW']; neighbours change True)
+        1 x SF 5-5-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOW', 'OWW']; neighbours change True)
+        1 x SF 5-6-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOW']; neighbours change True)
+        1 x SF 6-6-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOW', 'OWW']; neighbours change True)
+        1 x SF 6-7-1  (convex Scutoid Frustum; Y-corner wall kinds ['OWW']; neighbours change True)
+        1 x SF 7-7-2  (convex Scutoid Frustum; Y-corner wall kinds ['OOW', 'OWW']; neighbours change True)
+        1 x SF 8-7-1  (convex Scutoid Frustum; Y-corner wall kinds ['OOW']; neighbours change True)
+        1 x SF 9-10-1  (convex Scutoid Frustum; Y-corner wall kinds ['OWW']; neighbours change True)
+       14 x SF 4-4-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        4 x SF 5-5-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        2 x SF 6-6-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+        4 x SF 7-7-0  (convex frustum; Y-corner wall kinds []; neighbours change False)
+    overlay pieces with a Y-corner (any tier): 18; law Y >= |n-m|, Y = n+m mod 2 holds for 38/38 pieces meeting the definition
+    overlay pieces failing the definition, by reason: {'not a scutoid frustum: ends meet': 44, 'not a scutoid frustum: no inner end': 3, 'not a scutoid frustum: no outer end': 1}
+    O pieces (nearest associahedron face, unions): 13; with a Y-corner 0 []; ends share a corner in 13; inner faces per piece [1, 1, 1, 1, 5, 6, 6, 8, 8, 10, 11, 11, 14]
+    I pieces (equal-speed, unions, cross-check with the first study): 44; with a Y-corner 0; ends share a corner in 27
+H3 done in 166.0 s
+PROGRESS 1.00 H3
+FINAL ok
+[exit 0]

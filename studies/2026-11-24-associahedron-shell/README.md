@@ -111,6 +111,8 @@ was searched for or found. This is not a prior-art search.
 
 ## 6. LEADS
 
+**LEAD 1 done:** see study 2026-11-24-associahedron-shell-2 (the overlay of the two patterns gives convex Scutoid Frusta proper in B3 and H3).
+
 1. **Outer pattern by distance from the associahedron's faces.** Assign each point to its nearest associahedron face, so that the
    outer ends are flat and whole. Then refine this together with the equal-speed cells. Pieces in the refinement could change
    neighbours where the two divisions cross. This is the most direct route to Y-corners in this shell.
