@@ -20,7 +20,7 @@ Proved optimal corner spread (no., N, spread): (5, 14, 5) (6, 18, 6) (7, 20, 9) 
 (59, 16, 9) (60, 16, 11) (61, 16, 9) (62, 16, 11) (63, 18, 6) (154, 36, 12) (240, 48, 98; mixed corner degrees).
 
 The rest: the solver's lower bounds are weak, so the gaps are wide (one corner degree, 1043 dice: median gap 27, largest 163; mixed
-corner degrees, 189 dice: median gap 10, largest 155). Best found is never claimed optimal. Smallest corner spreads: 5 (no. 5),
+corner degrees, 189 dice: median gap 10, largest 155). Best found is never claimed optimal. Smallest corner spreads: 5 (No.5),
 6 (nos. 6, 12, 13, 63 with N = 18; nos. 24, 25 with N = 30). Where corners of different degree meet (189 dice), raw sums differ by
 degree, so the spread there is large by construction (as asked: raw sums).
 
@@ -34,7 +34,7 @@ numbering (corner spread, then neighbour spread) and the larger proved corner bo
 
 - `src/dice.json`: the picker's data, byte-identical to the app's `aequi/dice.json` (1232 dice).
 - `data/dice/NNNN.json`, one per die, NNNN = the picker number n (1..1232, the row of the classification CSV of study
-  2026-11-24-aequi-vacuus-scutoids). Fields: `name`, `name_shown` ("Minana (no. 377)"), `N`, `corners`, `face_direction`
+  2026-11-24-aequi-vacuus-scutoids). Fields: `name`, `name_shown` ("Minana (No.377)"), `N`, `corners`, `face_direction`
   (picker direction index of each face), `face_vertices` (corner cycle of each face), `corner_faces` (faces at each corner),
   `lattice_check`, `schemes` with `plain`, `opposite`, `balanced`, `spin_down`: each `numbers[i]` = the number on face i.
 - Face i = the picker's face order: the planes of the die's orbits in the order of `o`, each orbit's directions in the group's
@@ -64,7 +64,7 @@ recomputed at 70 digits: its planes pass through it (residual < 1e-45), every ot
 Each die's name is its picker number read digit by digit in goroawase syllables: 0 o/re/maru, 1 i/hi, 2 ni/fu, 3 mi/sa, 4 yo/shi,
 5 go/ko, 6 mu/ro, 7 na, 8 ya/ha, 9 ku (DICTO's candidate set, 22 Nov). **Rule:** the first reading of each digit, except that a
 digit whose first reading would repeat the syllable just before it takes its second reading (7 has one reading, so "na na" stays).
-First letter capitalised; shown with the number: "Minana (no. 377)". The syllable sets of different digits are disjoint;
+First letter capitalised; shown with the number: "Minana (No.377)". The syllable sets of different digits are disjoint;
 checks.py parses every name in every possible way and finds exactly its own number, and all 1232 names are distinct.
 
 ## Checks (scripts/checks.py → logs/checks.out)
