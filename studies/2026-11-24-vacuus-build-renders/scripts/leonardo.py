@@ -185,21 +185,63 @@ def fig_prisms(out):
         if n == 6:
             show = shared
         else:   # one upright-edge plate and the Resonus plane of the squares next to it: different planes, 22.5 degrees apart
-            m = sq_norm[0]; t = np.cross(m, [0, 0, 1]); r = np.linalg.norm(V[0][:2])
+            m = sq_norm[2]; t = np.cross(m, [0, 0, 1]); r = np.linalg.norm(V[0][:2])   # the Resonus plane nearest the plate
             res = [np.array([s1 * r * t[0], s1 * r * t[1], s2 * e / 2]) for s1, s2 in ((1, 1), (-1, 1), (-1, -1), (1, -1))]
             V = V + res; show = [plates[0], list(range(2 * n, 2 * n + 4))]
+            pn = np.cross(V[plates[0][0]], V[plates[0][1]]); ang = np.degrees(np.arccos(abs(pn @ m) / np.linalg.norm(pn)))
+            assert abs(ang - 22.5) < 1e-9, ang          # the two planes are 22.5 degrees apart
         up_y = np.array([[1, 0, 0], [0, 0, 1], [0, -1, 0]], float)          # turn the prism axis upright in the picture
         yaw = {6: 0.30, 8: 0.25}[n]
         draw(ax, V, E, show, rot(yaw, 0.32) @ up_y, scale=0.27, off=off, lw=1.25, joints=range(2 * n))
     fig.savefig(out, dpi=200); print("wrote", out)
 
+def sphere_regions(N):
+    """regions of the central arrangement with normals N on the unit sphere (floats, for drawing; counts asserted against the
+    exact catalogue): list of regions, each the cyclic list of its corner points"""
+    N = [n / np.linalg.norm(n) for n in N]
+    pts = []
+    for i, j in itertools.combinations(range(len(N)), 2):
+        c = np.cross(N[i], N[j]); c /= np.linalg.norm(c)
+        for v in (c, -c):
+            if not any(np.linalg.norm(v - q) < 1e-9 for q in pts): pts.append(v)
+    on = [[k for k, v in enumerate(pts) if abs(v @ n) < 1e-9] for n in N]
+    nbr = {k: set() for k in range(len(pts))}
+    for i, n in enumerate(N):
+        u = pts[on[i][0]]; w = np.cross(n, u)
+        cyc = sorted(on[i], key=lambda k: np.arctan2(pts[k] @ w, pts[k] @ u))
+        for a, b in zip(cyc, cyc[1:] + cyc[:1]): nbr[a].add(b); nbr[b].add(a)
+    rot_ = {}
+    for u in nbr:
+        p = pts[u]; r0 = pts[next(iter(nbr[u]))]; t0 = r0 - (r0 @ p) * p; t1 = np.cross(p, t0)
+        rot_[u] = sorted(nbr[u], key=lambda w: np.arctan2((pts[w] - (pts[w] @ p) * p) @ t1, (pts[w] - (pts[w] @ p) * p) @ t0))
+    seen, faces = set(), []
+    for u in rot_:
+        for w in rot_[u]:
+            if (u, w) in seen: continue
+            f = []; a, b = u, w
+            while (a, b) not in seen:
+                seen.add((a, b)); f.append(a); r = rot_[b]; c = r[(r.index(a) - 1) % len(r)]; a, b = b, c
+            faces.append(f)
+    return pts, faces
+
+def arc(p, q, m=24):
+    th = np.arccos(np.clip(p @ q, -1, 1))
+    return [(np.sin((1 - t) * th) * p + np.sin(t * th) * q) / np.sin(th) for t in np.linspace(0, 1, m)]
+
 def fig_sphere(out):
     """Theorem C2: the Resonus on the sphere: cuboctahedron, 7 great circles, all 32 regions triangles (simplicial); icosidodecahedron,
     16 great circles, 140 triangles and 12 pentagons (not simplicial)"""
     co = [np.eye(3)[k] for k in range(3)] + [np.array(v, float) for v in ((1, 1, 1), (1, 1, -1), (1, -1, 1), (-1, 1, 1))]
-    ic = [np.array(v, float) for a in (1, -1) for v in ((0, 1, a * PHI), (1, a * PHI, 0), (a * PHI, 0, 1))]      # 6 five-fold axes
-    ic += [np.array(v, float) for v in itertools.product((1, -1), (1, -1), (1,))] + \
-          [np.array(v, float) for a in (1, -1) for v in ((0, a / PHI, PHI), (a / PHI, PHI, 0), (PHI, 0, a / PHI))]          # 10 three-fold axes
+    Vi, Ei = ico()                                             # five-fold axes: corner lines; three-fold: face-centre lines
+    ic = [v for v in Vi if any(abs(x) > 1e-9 and x > 0 for x in v[:1]) or (abs(v[0]) < 1e-9 and v[1] > 0)]
+    ic = []
+    for v in Vi:
+        if not any(np.linalg.norm(np.cross(v, w)) < 1e-9 for w in ic): ic.append(v)
+    tri = [t for t in itertools.combinations(range(12), 3) if all(abs(np.linalg.norm(Vi[a] - Vi[b]) - 2) < 1e-9 for a, b in itertools.combinations(t, 2))]
+    assert len(tri) == 20
+    for t in tri:
+        c = sum(Vi[k] for k in t)
+        if not any(np.linalg.norm(np.cross(c, w)) < 1e-9 for w in ic[6:]): ic.append(c)
     assert len(co) == 7 and len(ic) == 16
     fig = plt.figure(figsize=(12, 6), dpi=200); parchment(fig)
     ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 2.0); ax.set_ylim(0, 1.0); ax.set_aspect("equal"); ax.axis("off")
@@ -207,6 +249,19 @@ def fig_sphere(out):
     for N, (cx, cy) in ((co, (0.5, 0.5)), (ic, (1.5, 0.5))):
         ax.add_patch(matplotlib.patches.Circle((cx, cy), R, facecolor="#e2cfa6", edgecolor=INK, lw=1.6, alpha=0.9, zorder=1))
         ax.add_patch(matplotlib.patches.Circle((cx - 0.12 * R, cy + 0.14 * R), 0.62 * R, facecolor="#f4e8cf", edgecolor="none", alpha=0.55, zorder=1.1))
+        pts, faces = sphere_regions(N)
+        assert len(faces) == {7: 32, 16: 152}[len(N)]
+        sides = [len(f) for f in faces]
+        assert (sides.count(3), sides.count(5)) == ({7: (32, 0), 16: (140, 12)}[len(N)])
+        tone = {3: "#e8d6ae", 5: "#a8743a"}
+        for f in faces:
+            c = M @ np.mean([pts[k] for k in f], axis=0)
+            if c[2] <= 0: continue
+            ring = []
+            for a, b in zip(f, f[1:] + f[:1]): ring += arc(pts[a], pts[b])
+            Q = [M @ x for x in ring]
+            ax.add_patch(Polygon([(cx + R * q[0], cy + R * q[1]) for q in Q], closed=True, facecolor=tone.get(len(f), "#d9bf8c"),
+                                 edgecolor="none", alpha=0.85 if len(f) == 5 else 0.55, zorder=2.5))
         t = np.linspace(0, 2 * np.pi, 721)
         for n in N:
             n = n / np.linalg.norm(n); u = np.cross(n, [0.3, 0.5, 0.7]); u /= np.linalg.norm(u); w = np.cross(n, u)
