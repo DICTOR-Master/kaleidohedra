@@ -79,6 +79,26 @@ ok(sum(int(k[2]) for k in K if k[1] == "dec" and k[0] == "P") == 12 and sum(int(
 m = re.search(r"closest prolate/oblate kind volumes: (\S+) = ([\d.]+) and (\S+) = ([\d.]+); exact difference (\S+) = (-?[\d.]+)", t)
 ok(m and (m[2], m[4]) == ("7.571397", "7.490844") and m[6] == "0.080553" and m[5] != "0", "closest pair " + (m[0] if m else "none"))
 for s in ["0.0806", "7.571397", "7.490844", "13861/3648", "73841/43776"]: intext(s)
+# --- fresh review F1, F2 (24 Nov): bound "more than 0.0805"; own scales: two core sizes, none shared with the factor phi^-3 (core_sizes.py)
+ok(m and float(m[6]) > 0.0805, "F1 gap above 0.0805"); intext("by more than 0.0805"); ok("at least 0.0806" not in text, "F1 old bound left")
+cs = rd("logs/core_sizes.log")
+ok(cs.strip().splitlines()[-1] == "FINAL ok" and "Table 2 own-scale settings passing: 3/3" in cs and cs.count("= phi^-3: True") == 3
+   and cs.count("shared with the oblate volumes times phi^-3: 0") == 3, "core_sizes.log")
+for core, n in [("Rollerball", 8), ("icosahedron", 3), ("dodecahedron", 2)]:
+    ok(f"{core} own cen: s0 P" in cs and f"prolate {n}, oblate {n}; pairs compared {n * n}" in cs.split(f"{core} own cen:")[1].split("closest")[0], "core_sizes " + core)
+for s in ["the two sizes differ by a factor of φ", "Rollerball 8 × 8, icosahedron 3 × 3, dodecahedron 2 × 2 pairs", "scripts/core_sizes.py, logs/core_sizes.log", "φ−3 = √5 − 2"]: intext(s)
+# --- fresh review F3-F8: symmetry scope, criterion, local isomorphism, figure 2 label, public citations, power-diagram credit, labels
+for s in ["Every tiling of the class has no period; the tiling built here has no symmetry other than the identity",
+          "exactly when t = π(k) with π′(k) = γ − g′γ", "neither has its 402-cell patch", "the full symmetry group of three such lines is the stabiliser D3d",
+          "Moody [9], §6, Theorems 8 to 10", "every generic 3D Penrose tiling of the class", "credited there to Aurenhammer and Imai 1988 [14]",
+          "agree up to one common positive factor", "At S0, centroid seeds, let the pattern", "the scripts count from 0 and call it 023",
+          "orientation 134", "reference cell 134 (123)", "share some segments but no region",
+          "the cores cannot be placed as mirror images of their neighbours across all walls (Theorem 3 (iv))"]: intext(s)
+ok(not re.search(r"REFEREE|referee|repetitive|Y-corner|moving the cores cannot", re.sub(r"<[^>]+>", "", paper.split('<div class="abstract">')[1])), "F: private file, repetitivity, Y-corners or old §5 lead left")
+ok(rd("renders/scripts/ammann_compose.py").count("'never-repeating setting', 'no period')") == 1, "Figure 2 label 'no period'")
+# Theorem 3 (iv) holds for the 120 elements: sym_check A2 density and A4 criterion are in the log
+sc = rd("logs/sym_check.log")
+ok("is an integer combination of e_1',...,e_6' for every i" in sc and "g with integral coordinates: 1 (the identity, k = 0)" in sc and "isometries of the patch: 1 (identity only)" in sc, "sym_check A2, A4, B")
 app = paper.split("Appendix: Table A1")[1].split("</table>")[0]
 arows = re.findall(r"<td>(prolate|oblate)</td><td>(decagon|triangle)</td><td class=\"n\">(\d+)</td><td class=\"n\">(\d+)</td><td class=\"n\">(\d+)</td><td class=\"n\">([\d.]+)</td>", app)
 exp = [({"P": "prolate", "O": "oblate"}[k[0]], {"dec": "decagon", "tri": "triangle"}[k[1]], k[2], k[4], k[5], k[7]) for k in K]

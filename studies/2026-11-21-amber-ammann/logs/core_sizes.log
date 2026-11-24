@@ -1,0 +1,19 @@
+data: 200 own-scale cell files, 10 settings
+Fullerene Star own cen: valid in 10/20 orientations; not a setting of Table 2, skipped
+Fullerene Star own cproj: valid in 10/20 orientations; not a setting of Table 2, skipped
+Rollerball own cen: s0 P 6+3r5, s0 O 21/2+9/2r5 = phi s0 P: True; oblate scale factor (s0P/s0O)^3 = -2+1r5 = phi^-3: True
+  distinct exact piece volumes: prolate 8, oblate 8; pairs compared 64; shared at core edge 1 in both: 0; shared with the oblate volumes times phi^-3: 0
+  closest pair: prolate 8124525023282369/1682571595184640+1140592242361099/560857198394880r5 = 9.376035 and oblate x phi^-3 363922512715/79876578816+827011512791/399382894080r5 = 9.186339; exact difference 8717100652159668749/31980533148949753440+-14633859540720271/394821396900614240r5 = 0.189696; ok
+Rollerball own cproj: valid in 0/20 orientations; not a setting of Table 2, skipped
+dodecahedron own cen: s0 P 3/2+3/2r5, s0 O 9/2+3/2r5 = phi s0 P: True; oblate scale factor (s0P/s0O)^3 = -2+1r5 = phi^-3: True
+  distinct exact piece volumes: prolate 2, oblate 2; pairs compared 4; shared at core edge 1 in both: 0; shared with the oblate volumes times phi^-3: 0
+  closest pair: prolate 13/16+17/48r5 = 1.604441 and oblate x phi^-3 43/48+19/48r5 = 1.780944; exact difference -1/12+-1/24r5 = -0.176503; ok
+dodecahedron own cproj: valid in 10/20 orientations; not a setting of Table 2, skipped
+icosahedron own cen: s0 P 3, s0 O 3/2+3/2r5 = phi s0 P: True; oblate scale factor (s0P/s0O)^3 = -2+1r5 = phi^-3: True
+  distinct exact piece volumes: prolate 3, oblate 3; pairs compared 9; shared at core edge 1 in both: 0; shared with the oblate volumes times phi^-3: 0
+  closest pair: prolate 13/48+-1/48r5 = 0.224249 and oblate x phi^-3 1/8+1/24r5 = 0.218169; exact difference 7/48+-1/16r5 = 0.006079; ok
+icosahedron own cproj: valid in 10/20 orientations; not a setting of Table 2, skipped
+icosidodecahedron own cen: valid in 0/20 orientations; not a setting of Table 2, skipped
+icosidodecahedron own cproj: valid in 0/20 orientations; not a setting of Table 2, skipped
+Table 2 own-scale settings passing: 3/3 (Rollerball cen, dodecahedron cen, icosahedron cen)
+FINAL ok

@@ -13,7 +13,7 @@ KINDS = [(214, 180, 106), (156, 116, 72), (127, 147, 168), (201, 158, 149), (143
 CORE = [(PEARL, 'Rollerball decagon faces'), (BLUE, 'Rollerball pyramids (icosahedron)')]
 figure('RENDER-ammann-patch.png', 'A patch of the 3D Penrose tiling with a Rollerball in every cell',
        f"{I['nP']} prolate and {I['nO']} oblate golden rhombohedra (cells drawn slightly shrunk) from an exact patch of 402 · one Rollerball at each cell centre, one size, one orientation",
-       [(s('patch', 0), 'never-repeating setting', 'prolate : oblate = golden ratio, so no period')],
+       [(s('patch', 0), 'never-repeating setting', 'no period')],
        [(SAND, 'prolate golden rhombohedron'), (SLATE, 'oblate golden rhombohedron')] + CORE, cell=1000)
 figure('RENDER-ammann-cells.png', 'Rollerball-Amber Cells: a prolate and an oblate golden rhombohedron',
        "DICTO's combined method, centroid seeds · each Rollerball core with its 72 Scutoid-Frusta pulled apart from the centre, mould far side see-through · colours label the 8 kinds in each cell",
