@@ -91,6 +91,10 @@ ok("interior edges 814 by number of cells round them (exact, integer): {3: 364, 
 for s in ["C2 S0 cen", "C2 S65 cen", "C1 S0 cproj", "C1 S65 cproj", "icosahedron S0 cen", "icosahedron S0 cproj", "dodecahedron S0 cen", "icosidodecahedron S65 cen"]:
     l = rd("logs/exact/fm_" + s.replace(" ", "_") + ".log")
     ok(l.startswith(s + ":") and "OO 61/61, OP 0/618, PP 319/319; all 380/998" in l, "facematch exact " + s)
+# --- wall configurations (Theorem 3 (v)): every face-to-face tiling, 8 common-scale settings
+wc = rd("logs/wall_configs.log")
+ok("{'OO': 60, 'OP': 120, 'PP': 60}; total 240" in wc and wc.count("FINAL ok") == 8 and wc.count("OO 30/60, OP 0/120, PP 30/60") == 8, "wall_configs.log 120 walls, 8 settings")
+for s in ["120 possible prolate–oblate walls", "scripts/wall_configs.py, logs/wall_configs.log", "(1, φ, φ) or (1/φ, 1/φ, 1)"]: intext(s)
 # --- seams (Theorem 3 (iv), Remark 6)
 sl = rd("logs/seams_mirror.log")
 for s in ["2-fold axis of the core: True", "cells reached 402/402", "{'identity': 428, 'improper': 368, 'proper': 202}", "rank 3, EMPTY"]:
