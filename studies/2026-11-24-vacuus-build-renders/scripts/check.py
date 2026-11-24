@@ -65,4 +65,81 @@ chk('dodecahedron (Q(sqrt 5)): 20 distinct corners, 30 edges of length 2/phi, 3 
 z5 = sp.Matrix([1, 0, phi])
 chk('view axis (1, 0, phi) goes through a face centre: exactly 5 corners (one pentagon) at the greatest height along it',
     sum(1 for p in D if sp.simplify(p.dot(z5) - max((p2.dot(z5) for p2 in D), key=lambda t: float(t))) == 0) == 5)
+
+# Ring-fin Vacuus (DICTO's photos of the B1NR cuboctahedron, 24 Nov): one ring per fin O, a, b, the fin's incircle, in the fin's plane.
+# Exact in Q(sqrt 3, sqrt 5). Zero tests: a nonzero value is certified by evaluation to 30 digits (sympy evalf, error-controlled);
+# a value that is not clearly nonzero must reduce to exactly 0 (rationalised and expanded, else simplify).
+def is0(x):
+    x = sp.sympify(x)
+    if abs(sp.N(x, 30)) > sp.Float('1e-20'): return False
+    if sp.expand(sp.radsimp(sp.expand(x))) == 0: return True      # canonical form a + b sqrt 3 + c sqrt 5 + d sqrt 15 is 0
+    return sp.simplify(x) == 0
+def sign(x):
+    return 0 if is0(x) else (1 if sp.N(x, 30) > 0 else -1)
+def incircle(a, b):
+    L = lambda v: sp.sqrtdenest(sp.sqrt(sp.radsimp(sp.expand(v.dot(v)))))      # exact length, denested (e.g. sqrt(6 - 2 sqrt 5) = sqrt 5 - 1)
+    la, lb, lab = L(a), L(b), L(a - b); P = la + lb + lab; n = a.cross(b)
+    assert all(is0(x ** 2 - y.dot(y)) for x, y in ((la, a), (lb, b), (lab, a - b), (L(n), n)))
+    return (lb * a + la * b) / P, n, L(n) / P          # centre (incentre formula), normal a x b, inradius 2 area / perimeter
+def ring_checks(name, V, E, nfin, nplates, per_plate, nties, at_tie, ntouch, ncop):
+    cano = lambda x: sp.expand(sp.radsimp(sp.expand(x)))       # canonical form in Q(sqrt 3, sqrt 5): rationalised, expanded
+    R = [incircle(a, b) for a, b in E]
+    R = [(c.applyfunc(cano), n, r) for c, n, r in R]
+    chk(f'{name}: {len(R)} rings, one per fin', len(R) == nfin)
+    def tangent(c, r, p, q):          # the circle's centre at distance r from line pq, the foot strictly inside the segment
+        d = q - p; f = (c - p).dot(d) / d.dot(d)
+        return is0((c - p).cross(d).dot((c - p).cross(d)) - r ** 2 * d.dot(d)) and sign(f) > 0 and sign(1 - f) > 0
+    O3 = sp.zeros(3, 1)
+    chk(f'{name}: every ring lies in its fin plane (centre . (a x b) = 0) and is tangent to the three sides O-a, O-b, a-b (at inner points)',
+        all(is0(c.dot(n)) and tangent(c, r, O3, a) and tangent(c, r, O3, b) and tangent(c, r, a, b) for (a, b), (c, n, r) in zip(E, R)))
+    chk(f'{name}: all rings congruent (one radius)', all(is0(r - R[0][2]) for c, n, r in R))
+    groups = []
+    for i, (c, n, r) in enumerate(R):
+        for g in groups:
+            if is0(R[g[0]][1].cross(n).dot(R[g[0]][1].cross(n))): g.append(i); break
+        else: groups.append([i])
+    chk(f'{name}: {nplates} plates (fins grouped by plane), {per_plate} rings in each', len(groups) == nplates and all(len(g) == per_plate for g in groups))
+    plane = {i: k for k, g in enumerate(groups) for i in g}
+    # pairs of rings: coplanar -> compare centre distance with r1 + r2; different planes through O -> each circle meets the common line
+    # L = n1 x n2 (through O) at the roots s of s^2 - 2 s (u.c) + |c|^2 - r^2 = 0 (u unit along L); the circles share a point iff they
+    # share a root. Touch = exactly one common point, and that point is a tangency (double root for both, or external tangency in a plane).
+    touch, cop, pts, bad = 0, 0, [], 0
+    for i, j in itertools.combinations(range(len(R)), 2):
+        (c1, n1, r1), (c2, n2, r2) = R[i], R[j]
+        if plane[i] == plane[j]:
+            dd = (c1 - c2).dot(c1 - c2) - (r1 + r2) ** 2
+            if is0(dd): touch += 1; cop += 1; pts.append((c1 * r2 + c2 * r1) / (r1 + r2))
+            elif sign(dd) < 0: bad += 1
+            continue
+        u = n1.cross(n2); uu = u.dot(u)
+        def roots(c, r):              # sign of the discriminant from uu * D = (u.c)^2 - uu (|c|^2 - r^2), free of square roots
+            sD = sign(u.dot(c) ** 2 - uu * (c.dot(c) - r ** 2))
+            if sD < 0: return [], sD
+            m = u.dot(c) / sp.sqrt(uu)
+            return ([m] if sD == 0 else [m - sp.sqrt(m ** 2 - c.dot(c) + r ** 2), m + sp.sqrt(m ** 2 - c.dot(c) + r ** 2)]), sD
+        A, sA = roots(c1, r1); B, sB = roots(c2, r2)
+        if sA == 0 and sB == 0:       # both circles tangent to L: one common point iff the feet (u.c / uu) u coincide (exact, no roots)
+            if is0(u.dot(c1) - u.dot(c2)): touch += 1; pts.append(u.dot(c1) / uu * u)
+            continue
+        common = [x for x in A for y in B if abs(sp.N(x - y, 30)) < sp.Float('1e-20')]
+        if common: bad += 1           # a shared point where a circle crosses L: not a tangency (none expected)
+    chk(f'{name}: {ntouch} touching pairs ({ncop} coplanar, {ntouch - ncop} across planes); no two rings cross or overlap', touch == ntouch and cop == ncop and bad == 0)
+    # the touching points: distinct points, each on a spoke O-v, where the rings of the fins at v meet (one cut cable tie each)
+    r2 = [cano(r ** 2) for c, n, r in R]
+    pts = [p.applyfunc(cano) for p in pts]
+    P = []
+    for p in pts:
+        if not any(is0((p - q).dot(p - q)) for q in P): P.append(p)
+    onspoke = all(sum(1 for v in V if is0(p.cross(v).dot(p.cross(v))) and sign(p.dot(v)) > 0) == 1 for p in P)
+    mult = [sum(1 for (c, n, r), rr in zip(R, r2) if is0((p - c).dot(p - c) - rr) and is0((p - c).dot(n))) for p in P]
+    chk(f'{name}: the touching points are {nties} (one tie each), one on every spoke, {at_tie} rings through each', len(P) == nties and onspoke and set(mult) == {at_tie})
+    return R
+Rq = ring_checks('cuboctahedron ring-fins', Q, qe, 24, 4, 6, 12, 4, 72, 24)
+c, n, r = Rq[0]
+chk('cuboctahedron: ring radius sqrt 6 / 6 (= edge sqrt 3 / 6), centre at distance 2 r = sqrt 6 / 3 from O; adjacent coplanar rings touch at the spoke midpoints',
+    is0(r - sp.sqrt(6) / 6) and is0(c.dot(c) - sp.Rational(2, 3)))
+Rd = ring_checks('dodecahedron ring-fins', D, de, 30, 15, 2, 20, 3, 60, 0)
+c, n, r = Rd[0]
+chk('dodecahedron: fin apex cos = sqrt 5 / 3, tan(apex / 2) = 1 / phi^2; tangent length from O t = sqrt 3 - 1/phi; ring radius r = t / phi^2',
+    all(is0(a.dot(b) / 3 - sp.sqrt(5) / 3) for a, b in de) and is0(r - (sp.sqrt(3) - 1 / phi) / phi ** 2))
 print('FINAL ok' if all(ok) else 'FINAL FAIL')

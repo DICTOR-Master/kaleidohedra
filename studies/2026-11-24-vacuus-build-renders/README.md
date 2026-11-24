@@ -1,12 +1,13 @@
-# Exact skeletal renders of DICTO's four Vacuus builds (24 Nov 2026)
+# Exact renders of DICTO's four Vacuus builds (24 Nov 2026)
 
 Purpose: DICTO asked for 3D renders of his physical Vacuus builds to use in paper #87 (DICTO Vacuus Solids) IN PLACE of his photos,
 "similar but better". DICTO, 24 Nov: "the way I build all my PET bottle and B1NR sculptures is as Vacuus ... and hulls ... they are
 skeletons and empty"; he confirmed SKELETAL renders. So every build is an open framework of struts (tubes) and joints (balls), with
-no faces: the empty space shows. The photos were private reference only and are not in this folder. Nothing is fitted to a photo:
-every strut joins exact corners of the solid the build realises.
+no faces: the empty space shows. The two ring-fin builds (3, 4) are drawn as he builds them: bottle rings inscribed in the Vacuus fins.
+The photos were private reference only and are not in this folder. Nothing is fitted to a photo: every strut joins exact corners of the
+solid the build realises, and every ring is the exact incircle of its fin.
 
-Result (renders/, frames on a dark ground; preview-sheet.jpg shows all eight). DICTO, 24 Nov: his Vacuus builds are exactly four.
+Result (renders/, frames on a dark ground; preview-sheet.jpg shows all nine). DICTO, 24 Nov: his Vacuus builds are exactly four.
 1. Cardboard octahedron (octahedron-cardboard-skeleton*.jpg), corners at distance 1 on the axes: the 12 edges + the 6 corner-to-centre
    struts, so the three squares x = 0, y = 0, z = 0 stand as frames (each: 4 edges + its two diagonals = 4 half-axes; each half-axis
    is shared by two squares). Cardboard-tan struts. Pull-apart: each square frame moved 9/5 along its own normal (disjoint, as 9/5 > 1).
@@ -15,13 +16,40 @@ Result (renders/, frames on a dark ground; preview-sheet.jpg shows all eight). D
    joints). Pull-apart: the six pyramid frames (4 base edges + 4 struts each) moved 27/5 along the face normals (was 9/5, where two
    frames overlapped in the picture). Checked in the drawn view by projected bounding boxes (joint balls included): all six boxes
    pairwise disjoint, smallest gap 35 px of 1600, all inside the frame (data/builds.log).
-3. B1NR cuboctahedron Vacuus, no hull (cuboctahedron-b1nr-struts*.jpg; DICTO 24 Nov, "both B1NR no hulls"): one clear rod from the
-   centre to each of the 12 corners (permutations of (+-1, +-1, 0)), no edges. This is #87's STRUTS form ("one rod from O to every
-   corner, with the solid's edges ... as an option") with the option not taken, so the reading is the definition itself. Views:
-   oblique; down a three-fold axis (1, 1, 1).
-4. B1NR dodecahedron Vacuus, no hull (dodecahedron-b1nr-struts*.jpg): one clear rod from the centre to each of the 20 corners
-   ((+-1, +-1, +-1) and cyclic (0, +-1/phi, +-phi)), no edges. Views: oblique; down a five-fold axis (1, 0, phi).
-   No pull-apart for 3 and 4: without edges a centre pyramid is a bare tuft of rods, so pulling them apart shows nothing new.
+3. B1NR cuboctahedron Vacuus, ring fins, no hull (cuboctahedron-ring-fins*.jpg; from DICTO's two photos of the build, 24 Nov):
+   one white PET-bottle security ring in each of the 24 fins (fin = triangle O, a, b of an edge ab), inscribed in the fin and lying in
+   its plane. The 24 edges lie in 4 regular hexagons through O, so the rings form 4 hexagonal plates of 6. Rings are flat bands (as the
+   real rings), the outer face exactly the incircle; slightly see-through white. At each join a cut cable tie: a small flush clasp
+   round the spoke, NO tails (DICTO 24 Nov: the build is unfinished, the tails are not part of the design, "cut them").
+   Views: oblique; down a three-fold axis (1, 1, 1) (one plate face-on); the four plates pulled apart, each 2 along its own normal
+   (1,1,1), (1,-1,-1), (-1,1,-1), (-1,-1,1), seen down (0, 0, 1), clasps removed; checked in the drawn view: the projected convex hulls
+   of the four plates are pairwise disjoint, smallest gap 57 px of 1600, all in frame (data/builds.log).
+4. B1NR dodecahedron Vacuus, ring fins, no hull (dodecahedron-ring-fins*.jpg): the same build on the dodecahedron (corners (+-1, +-1,
+   +-1) and cyclic (0, +-1/phi, +-phi)): 30 rings in 30 fins, 15 plates of 2 (each plate holds two opposite edges). Views: oblique; down
+   a five-fold axis (1, 0, phi). No pull-apart: a plate is only two rings on opposite sides of O, so 15 pulled plates show nothing new.
+   The earlier rods-only renders of 3 and 4 (12 and 20 centre struts) are replaced and deleted (git history keeps them).
+
+Reading of DICTO's photos (two private photos of the B1NR cuboctahedron, reference only, not in this folder; read 24 Nov):
+- The pieces are white bottle-cap security rings (tamper bands, with their small inner tabs), flat bands about a fifth as wide as across,
+  joined by clear cable ties whose uncut tails stick out (unfinished build). No hull, no rods: the rings alone carry the shape.
+- The rings stand in many planes; groups of rings meet at a tie, the tie closing round where several rings touch side by side, which is
+  what the incircle reading predicts (4 rings touching at each spoke midpoint). One view (IMG 9367) shows a triangle of rings in front
+  with rings fanning out round it, as the render down a three-fold axis does.
+- Counting: the rings overlap too much in two photos to count all 24 or to prove the four hexagonal planes; what is visible (ring size
+  against the whole, joins of several rings at ties, no rings at the corners) fits the reading and nothing contradicts it.
+  Verdict: CONSISTENT, not proved by the photos; the ring count 24 and the 4 x 6 plates come from the geometry.
+
+Exact ring geometry (scripts/check.py, sympy, in Q(sqrt 3, sqrt 5); builds.py uses the same formulas in floats):
+- Ring of the fin O, a, b: centre the incentre (|ab| O + |Ob| a + |Oa| b) / (|Oa| + |Ob| + |ab|), normal a x b, radius
+  |a x b| / (|Oa| + |Ob| + |ab|) (twice the area over the perimeter).
+- Cuboctahedron (corners the permutations of (+-1, +-1, 0); edge = spoke = sqrt 2): fins equilateral; centre (a + b)/3 at distance
+  sqrt 6 / 3 from O; radius sqrt 6 / 6. Two rings in one plate that share a spoke touch at its midpoint (centres 2r apart); the 4 rings of
+  the 4 fins on a spoke (2 plates x 2) all touch the spoke at its midpoint. So 12 tie points, 4 rings at each; 72 touching pairs
+  (24 within plates + 48 across plates); no other pair meets.
+- Dodecahedron (edge 2/phi, spoke sqrt 3): fin apex cos = sqrt 5 / 3, tan(apex/2) = 1/phi^2; each ring touches the two spokes at
+  t = sqrt 3 - 1/phi from O and has radius r = t / phi^2 (= 0.4255); centre at sqrt 3 (a + b) / (2 sqrt 3 + 2/phi). The 3 fins at a
+  corner v (in 3 different plates) touch the spoke O-v at the same point, so 20 tie points, 3 rings at each; 60 touching pairs, all
+  across plates (the two rings of a plate are on opposite sides of O and do not meet); no other pair meets.
 
 Withdrawn (DICTO 24 Nov): the white "Vacuus, as a solid cube" ring photo IS the B1NR cube ("just the same as fig 2": hull + centre
 struts, six pyramid frames meeting at the centre). Our earlier reading of it as six diagonal rectangles was a misreading; that render
@@ -35,12 +63,19 @@ fins with apex cos = 1/3, two in each of the six diagonal planes; six face pyram
 each octahedron square frame 4 edges + 4 half-axes, each half-axis in 2 squares; B1NR 12 + 8 struts, each pyramid 4 + 4, each centre
 strut in 3 pyramids; the pulled octahedron squares and B1NR pyramids disjoint; cuboctahedron 12 corners, 24 edges sqrt 2, centre struts
 sqrt 2; dodecahedron (in Q(sqrt 5)) 20 corners, 30 edges 2/phi, degree 3, centre struts sqrt 3; (1, 0, phi) passes through a face centre.
-builds.py asserts that no scene contains a face and the B1NR box separation (data/builds.log).
+Ring fins (Q(sqrt 3, sqrt 5)): 24 and 30 rings, one per fin; each in its fin's plane and tangent to the three sides at inner points; one
+radius each (sqrt 6 / 6; (sqrt 3 - 1/phi)/phi^2); plates 4 x 6 and 15 x 2; touching pairs 72 (24 coplanar + 48 across) and 60 (0 + 60),
+no pair crossing or overlapping; touching points 12 (4 rings each) and 20 (3 each), one on every spoke. Zero tests exact (simplify);
+nonzero values certified by 30-digit error-controlled evaluation.
+builds.py asserts that no scene contains a face, the B1NR box separation, the cuboctahedron plate hull separation, and the ring
+tangencies in floats (data/builds.log).
 
 Method: scripts/builds.py writes the scenes for the house renderer (render3d.py of study 2026-11-21-scutoid-stand-in, three.js r128,
 orthographic), with one small extension made in builds.py (the shared renderer file is unchanged): a tube may carry an opacity and an
 inner core tube, and a ball an opacity, for the clear bottle tubes. Frames by its shots.mjs (Playwright); scripts/compose.py makes the sheet.
-Sources checked: paper #87 text (Sections 1 and 6, Figures 1, 7, 8), its cut-sheet script, DICTO's photos (private, reference only).
+Sources checked: paper #87 text (Sections 1 and 6, Figures 1, 7, 8), its cut-sheet script, DICTO's photos (private, reference only),
+including the two photos of the B1NR cuboctahedron ring build (24 Nov). Rings and clasps are a second small extension in builds.py
+(flat bands from two open cylinders and two rims; clasps a small torus with a flush head).
 
 ## Pacioli's three golden rectangles (DICTO, 24 Nov: another connected origin for the Vacuus and the Resonus)
 
@@ -93,6 +128,6 @@ found); web searches for the three-rectangle attribution (results: Wikipedia, Lo
 AHES 2024 article s00407-024-00331-7; none opened gives a primary source). Not opened: Livio 2003, Burger-Starbird 2005, the Geneva and
 Ambrosiana manuscripts.
 
-LEADS: DICTO to look at the skeletal preview sheet (eight views, four builds); then the renders replace Figure 1 of #87 at its next
+LEADS: DICTO to look at the preview sheet (nine views, four builds; 3 and 4 now ring fins, ties cut); then the renders replace Figure 1 of #87 at its next
 version. Pacioli: a render of the icosahedron's golden rectangles (its 15, or Pacioli's three) is possible if wanted; where it goes (#87 or elsewhere) is DICTO's choice.
 #87's "solidus/vacuus" vs the 1509 print's "Solidum/Vacuum" could be footnoted at the next version, with the manuscript "VACVVS".

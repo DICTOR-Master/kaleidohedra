@@ -13,4 +13,18 @@ ok   B1NR pull-apart (27/5 along the face normals, as drawn): the six pyramid fr
 ok   cuboctahedron: 12 corners, 24 edges of length sqrt 2, 4 at each corner; all 12 centre struts sqrt 2 (= edge, one length)
 ok   dodecahedron (Q(sqrt 5)): 20 distinct corners, 30 edges of length 2/phi, 3 at each corner; all 20 centre struts sqrt 3
 ok   view axis (1, 0, phi) goes through a face centre: exactly 5 corners (one pentagon) at the greatest height along it
+ok   cuboctahedron ring-fins: 24 rings, one per fin
+ok   cuboctahedron ring-fins: every ring lies in its fin plane (centre . (a x b) = 0) and is tangent to the three sides O-a, O-b, a-b (at inner points)
+ok   cuboctahedron ring-fins: all rings congruent (one radius)
+ok   cuboctahedron ring-fins: 4 plates (fins grouped by plane), 6 rings in each
+ok   cuboctahedron ring-fins: 72 touching pairs (24 coplanar, 48 across planes); no two rings cross or overlap
+ok   cuboctahedron ring-fins: the touching points are 12 (one tie each), one on every spoke, 4 rings through each
+ok   cuboctahedron: ring radius sqrt 6 / 6 (= edge sqrt 3 / 6), centre at distance 2 r = sqrt 6 / 3 from O; adjacent coplanar rings touch at the spoke midpoints
+ok   dodecahedron ring-fins: 30 rings, one per fin
+ok   dodecahedron ring-fins: every ring lies in its fin plane (centre . (a x b) = 0) and is tangent to the three sides O-a, O-b, a-b (at inner points)
+ok   dodecahedron ring-fins: all rings congruent (one radius)
+ok   dodecahedron ring-fins: 15 plates (fins grouped by plane), 2 rings in each
+ok   dodecahedron ring-fins: 60 touching pairs (0 coplanar, 60 across planes); no two rings cross or overlap
+ok   dodecahedron ring-fins: the touching points are 20 (one tie each), one on every spoke, 3 rings through each
+ok   dodecahedron: fin apex cos = sqrt 5 / 3, tan(apex / 2) = 1 / phi^2; tangent length from O t = sqrt 3 - 1/phi; ring radius r = t / phi^2
 FINAL ok
