@@ -50,6 +50,8 @@ problem, and no fair die is missed outside the box.
 
 ## Theorem B (balanced directions carry a fair die)
 
+Referee gaps 1–4 closed (24 Nov).
+
 **Theorem B.** Let n_1, …, n_N (N ≥ 4) be distinct unit vectors with Σ n_k = 0, not all on one great circle. Then
 Alexandrov's condition holds for μ = (1/N)Σδ_{n_k}. Hence there is a die with these face normals that is fair about
 0, every face present, and it is unique up to scale.
@@ -72,7 +74,8 @@ hemisphere. Write a = |A| and b = N − a.
 **Step 1 (the centre of A).** Choose a unit vector c that maximises t = min_{n∈A} n·c. Since A lies in an open
 hemisphere, t > 0. Write t = cos R with 0 ≤ R < π/2. This is a convex program (maximise t subject to n·c ≥ t for n
 in A and |c| ≤ 1), and Slater's condition holds. Its KKT conditions give c = Σ λ_n n, with λ_n ≥ 0 and the sum
-taken over the active points (n·c = cos R). There are three cases:
+taken over the active points (n·c = cos R). By Carathéodory's theorem for cones in R³, c is then a positive
+combination of at most three linearly independent active points. One, two or three such points give the three cases:
 - If only one point is active, then c is that point. So R = 0 and A is that single point, a = 1.
 - Otherwise c lies in the spherical hull of two active points p, q, or of three active points p, q, r.
 
@@ -91,10 +94,15 @@ Since (a − b)/(a + b) decreases in b,
   s(φ) = 2 arcsin(sin R · sin(φ/2)), from cos s = cos²R + sin²R cos φ.
   - s is concave on [0, π]. With h(x) = arcsin(α sin x), α = sin R < 1:
     h''(x) = α(α² − 1) sin x / (1 − α² sin² x)^{3/2} ≤ 0.
-  - A concave function on the polytope {0 ≤ φ_i ≤ π, Σφ_i = 2π} takes its minimum at a vertex, a permutation of
-    (π, π, 0). So per(pqr) ≥ s(π) + s(π) + s(0) = 4R.
-  - The triangle pqr lies in the hull of A. Their polar polygons are therefore nested the other way, and Girard's
-    formula (area of polar = 2π − perimeter, as in Proposition 2) gives L(A) ≥ per(pqr) ≥ 4R.
+  - The sum s(φ_1) + s(φ_2) + s(φ_3) is continuous on the closed polytope {0 ≤ φ_i ≤ π, Σφ_i = 2π}, which is
+    compact, so its minimum there is attained. Being concave, it attains it at a vertex, a permutation of
+    (π, π, 0). The actual gaps of p, q, r lie in this closed set (they are > 0, since the points are distinct, but
+    the bound does not need that), so the minimum over the closed set bounds them:
+    per(pqr) ≥ s(π) + s(π) + s(0) = 4R.
+  - The triangle pqr lies in the hull of A, and both lie in one open hemisphere, {u : u·c > 0}, since every n in A
+    has n·c ≥ cos R > 0. For convex sets K ⊆ K′ in one open hemisphere the polars are nested the other way,
+    K′* ⊆ K*, and Girard's formula (area of polar = 2π − perimeter, as in Proposition 2) gives per K ≤ per K′.
+    This holds also when K is an arc (perimeter twice its length). So L(A) ≥ per(pqr) ≥ 4R.
 
 **Step 4 (conclusion).**
 - For a = 1: g = 2π(2 − N)/N < 0, since N ≥ 3.
@@ -104,10 +112,23 @@ Since (a − b)/(a + b) decreases in b,
   - f'' = 2π (d²/dR²) tan²(R/2) > 0, since tan²(R/2) is strictly convex on [0, π/2).
   - So f < 0 on the open interval (0, π/2), and g(A) < 0.
 
-So the condition holds, and Theorem A (a) gives existence and uniqueness. Balanced and not all on one great circle
+So the condition holds, and Theorem A (a) gives existence and uniqueness. In Lean this step is `fair_die_iff`
+(existence of positive depths with `IsFair n d` ⇔ `AlexandrovCondition n (fun _ => 4π/N)`) and `fair_die_unique`
+(two fair depth vectors d, d′ > 0 have d′ = c·d with c > 0), in `Alexandrov/Dice.lean` of study
+2026-11-22-lean-alexandrov. Their hypotheses are ours: unit vectors, distinct (`Function.Injective n`), and
+"for every x ≠ 0 some n_i·x > 0" (not in any closed hemisphere). Both depend only on the axioms propext,
+Classical.choice and Quot.sound, and the source has 0 sorry (build log M11, FINAL ok). The Lean condition reads
+Σ_{i∈I} 4π/N < area of {u : n_i·u > 0 for some i in I} for every nonempty proper I, which is the g-test of
+Proposition 2. Alexandrov's theorem is behind both: Bertrand (2016), Theorem 1.2 (existence and uniqueness up to
+homothety, condition µ(ω) < σ(ω^{π/2}) for nonempty convex ω ≠ S^m), and, for polytopes with atomic µ, Oliker
+(2007), Theorems 4 and 6 (a minimiser exists and has the prescribed curvature). Balanced and not all on one great circle
 means not in any closed hemisphere: if n·u ≥ 0 for all n and Σ n·u = 0, then every n·u = 0. ∎
 
-*Remark.* The constant is sharp in the limit only: f → 0 as R → π/2. The inequality is strict for every finite set.
+*Remark.* There is no uniform margin. The bound f(R) tends to 0 at both ends, R → 0 and R → π/2. At R → 0 the value
+of g itself tends to 0: for N = 4, the balanced set (cos α, ±sin α, 0), (−cos α, 0, ±sin α), 0 < α < π/2, lies on no
+great circle, and A = the first pair has a = 2, R = α, L = 4α, so g(A) = −4α exactly, which tends to 0 as α → 0.
+So the supremum of g(A) over all balanced sets and all A is 0, not attained. The inequality is strict for every
+finite set, which is all the theorem uses.
 
 ### Consistency check against the 87 failures (scripts/sums.py, data/sums-alexandrov-sets.csv)
 
@@ -149,9 +170,12 @@ study were checked (319 without a die in the box, plus 50 controls):
 - #112 (papers/2026-11-20-aequi, paper.html): Lemma 1, Theorem A, Proposition 2, Corollaries 3, 3′, 4.
 - Lean study 2026-11-22-lean-alexandrov: Main.lean (`AlexandrovCondition`, `alexandrov_iff`, `alexandrov_unique`),
   Dice.lean (`fair_die_iff`, `fair_die_unique`), Margin.lean (`nbhd`).
-- A. D. Aleksandrov, Doklady 35 (1942): not opened (cited via the next two, as in #112).
-- V. Oliker, Adv. Math. 213 (2007), arXiv:math/0701398.
-- J. Bertrand, Geom. Dedicata 183 (2016), arXiv:1505.04821.
+- A. D. Aleksandrov, Doklady 35 (1942): cited, not opened (cited via the next two, as in #112).
+- V. Oliker, Adv. Math. 213 (2007), arXiv:math/0701398v1, **opened** (24 Nov): Theorem 1 (Aleksandrov's theorem as
+  stated there), Theorem 4 (polytope case: under (23)–(24) a minimiser of Q_K exists, unique up to rescaling),
+  Theorem 6 (that minimiser has σ(α(x_i)) = µ_i), Theorems 7–8 (general µ).
+- J. Bertrand, Geom. Dedicata 183 (2016), arXiv:1505.04821, **opened** (24 Nov): Theorem 1.2 (Alexandrov: existence
+  and uniqueness up to homotheties under µ(ω) < σ(ω^{π/2})).
 - V. Semenov, The discrete Gauss image problem, arXiv:2210.16974v2 (2024), **full text read** (24 Nov). Its problem has the
   *target* measure λ discrete (finitely many prescribed normals u_j), not spherical Lebesgue measure. Main result (Theorem 1.1):
   for µ discrete, not concentrated on a closed hemisphere, and λ discrete equal-weight, edge-normal loop free, a solution exists
