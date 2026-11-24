@@ -467,7 +467,7 @@ function updatePick() {
       return '<tr><td>' + picker(o.col) + '</td><td>' + esc(o.plain) + '<br><span class="tech">' + esc(o.lab) + '</span></td><td class="num">' + polyCounts(S, j) + '</td><td class="num">' + e.d[j].toFixed(12) + '</td></tr>';
     }).join('');
     html += '<h2>' + esc(nameOf(e)) + '</h2>' +
-      '<p class="sub">' + esc(dieTitle(e)) + ' · ' + (e.s === 'A' ? 'Main catalogue, ' + e.g + ' no. ' + e.num + (e.book ? ' · book atom ' + esc(e.book) : '') : 'Both icosahedron placements') + '</p>' + numRow(e) +
+      '<p class="sub">' + esc(dieTitle(e)) + ' · ' + (e.s === 'A' ? 'Main catalogue, ' + e.g + ' No.' + e.num + (e.book ? ' · book atom ' + esc(e.book) : '') : 'Both icosahedron placements') + '</p>' + numRow(e) +
       (e.m >= 4 ? '<span class="badge">Aequus Mosaicus</span>' : '') + (e.h ? '<span class="badge">two hands</span>' : '') +
       '<dl><dt>group</dt><dd>' + e.g + '</dd><dt>kinds of face m</dt><dd>' + e.m + '</dd><dt>faces N</dt><dd>' + e.N + ' (built: ' + S.faces.length + ')</dd><dt>corners</dt><dd>' + S.verts.length + '</dd>' +
       '<dt>hands</dt><dd>' + (e.h ? 'two hands (chiral)' + (st.hand ? ' · showing the other hand' : '') : 'one (mirror-symmetric)') + '</dd></dl>' +
@@ -545,7 +545,7 @@ function updateFair(rebuild) {
   var A = SOLID[L.A.col], B = SOLID[L.B.col];
   $('muVal').textContent = 'μ = ' + mu.toFixed(6);
   $('panel').innerHTML = '<h2>' + esc(L.line) + ' · Aequus ' + esc(L.name) + '</h2>' +
-    '<p class="sub">A faces: ' + A + ' at distance 1 · B faces: ' + B + ' at distance μ · N = ' + L.N + ' (' + L.g + ' no. ' + L.num + ')</p>' +
+    '<p class="sub">A faces: ' + A + ' at distance 1 · B faces: ' + B + ' at distance μ · N = ' + L.N + ' (' + L.g + ' No.' + L.num + ')</p>' +
     '<span class="light' + (isFair ? ' on' : '') + '">' + (isFair ? 'fair' : 'not fair') + '</span>' +
     '<div class="bars">' + bar(0, L.A) + bar(1, L.B) + '</div>' +
     '<p class="note">Bar: the share of the view from the centre that one face takes (its solid angle over 4π). The line marks the fair share 1/N = ' + (fairShare * 100).toFixed(4) + '%. ' +

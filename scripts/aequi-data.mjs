@@ -1,5 +1,5 @@
 // Aequi picker data from the numberings study (k-research studies/2026-11-24-aequi-numberings):
-//   aequi/names.json       the 1232 approved names, in picker order (entry n-1 = "Minana (no. 377)" for n = 377)
+//   aequi/names.json       the 1232 approved names, in picker order (entry n-1 = "Minana (No.377)" for n = 377)
 //   aequi/numberings.json  face numbers for every finished die: { "<n>": { o, s, b } }, each a list with the
 //                          number on face i (face i = the i-th plane of planesFor). o = opposites (N + 1), only for
 //                          centrally symmetric dice; s = spin-down; b = balanced. Plain (face i gets i + 1) needs no data.
@@ -18,7 +18,7 @@ const D = dice.dice.length;
 const rows = (await readFile(path.join(study, 'names.csv'), 'utf8')).trim().split(/\r?\n/).slice(1).map((l) => l.split(','));
 if (rows.length !== D) throw new Error(`names.csv has ${rows.length} rows, the picker ${D} dice`);
 const names = rows.map((r, i) => {
-  if (+r[0] !== i + 1 || r[2] !== `${r[1]} (no. ${i + 1})`) throw new Error(`names.csv row ${i + 1}: ${r.join(',')}`);
+  if (+r[0] !== i + 1 || r[2] !== `${r[1]} (No.${i + 1})`) throw new Error(`names.csv row ${i + 1}: ${r.join(',')}`);
   return r[2];
 });
 if (new Set(names.map((s) => s.replace(/ \(no\. \d+\)$/, ''))).size !== D) throw new Error('names not distinct');
@@ -33,7 +33,7 @@ for (const f of files) {
   const e = dice.dice[x.n - 1];
   const dirs = e.o.flatMap((oi) => dice.groups[e.g][oi].dirs);
   if (x.N !== e.N || x.group !== e.g || JSON.stringify(x.face_direction) !== JSON.stringify(dirs)) throw new Error(`${f}: face order differs from the picker`);
-  if (x.name_shown !== names[x.n - 1]) throw new Error(`${f}: name differs from names.csv`);
+  if (x.name_shown.replace(/\(no\. (\d+)\)/, "(No.$1)") !== names[x.n - 1]) throw new Error(`${f}: name differs from names.csv`);
   const s = x.schemes, r = {};
   if (s.opposite && s.opposite.available && isPerm(s.opposite.numbers, e.N)) {
     const o = s.opposite.numbers;
