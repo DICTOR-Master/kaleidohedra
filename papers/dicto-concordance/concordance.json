@@ -5050,6 +5050,26 @@
         "src": "study 2026-11-25-stellation-cycle",
         "what": "Kepler's insphere-to-circumsphere nesting steps against the φ-ladder; the ladder's φ³ steps beside the τ³ inflation of icosahedral quasicrystals",
         "status": "open (new 25 Nov 2026, studies/2026-11-25-outside-clues). Outside: Kepler 1596 (1.5, entry 42); quasicrystals entries 23, 24 (REPEAT)"
+      },
+      {
+        "src": "study 2026-11-25-rings-cylinders-cones",
+        "what": "Equal ring sizes for the 11 non-edge-transitive Catalan polyhedra, the trapezohedra and the 92 Johnson polyhedra (catalogue centres); which Johnson polyhedra have their circumcentre inside (conjectured J11, J27, J34, J37, J62, J63, J72-J83)",
+        "status": "open (new 25 Nov 2026): exact script rings_catalogue.py written; job launch refused by the pre-flight gate (unrelated ledger match), override needs DICTO's word"
+      },
+      {
+        "src": "study 2026-11-25-rings-cylinders-cones",
+        "what": "Ring builds of the Dogstar, the Sunstar and the 1232 numbered Aequi (equal radius, ties, core ratio)",
+        "status": "open (new 25 Nov 2026): stars.py and aequi_rings.py written, not run (same blocker)"
+      },
+      {
+        "src": "study 2026-11-25-rings-cylinders-cones",
+        "what": "Round-fairness with band height: the solid angle of a ring band's sight cone; is any Aequus round-fair?",
+        "status": "open (new 25 Nov 2026): needs the Aequi screen first"
+      },
+      {
+        "src": "study 2026-11-25-rings-cylinders-cones",
+        "what": "Tie thickness: how many rings of wall e fit at one strut tie before bands collide (dihedral angles of the fins on a spoke)",
+        "status": "open (new 25 Nov 2026)"
       }
     ],
     "waiting": [
@@ -5856,6 +5876,62 @@
         "study": "studies/2026-11-25-outside-clues",
         "goes_to": "leads only: credits into the Vacuus and Resonus paper and the Tacitus/Sphericus paper at first use",
         "status": "survey done; 8 new open gaps"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Ring builds (rings = fin incircles): a convex build's rings never cross or link and meet only at tie points; every equal-edged polyhedron with all corners equidistant from O (Platonic, Archimedean, uniform prisms/antiprisms: 38 catalogue polyhedra) takes one ring size with every ring tied to all neighbours (V ties, E rings)",
+        "study": "studies/2026-11-25-rings-cylinders-cones",
+        "goes_to": "paper on DICTO's Vacuus builds (#87 next version) or a new ring-build paper: DICTO's choice",
+        "status": "PROVED POSSIBLE (Theorem 1, Lemmas 1-2)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Bipyramids (polars of the uniform prisms): equal ring sizes only for n = 4 (octahedron), all n >= 3; bracket (tau-1)(tau^2+2tau-1)",
+        "study": "studies/2026-11-25-rings-cylinders-cones",
+        "goes_to": "paper on DICTO's Vacuus builds (#87 next version) or a new ring-build paper: DICTO's choice",
+        "status": "PROVED IMPOSSIBLE for n != 4 (Theorem 3)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "All-tie ring builds need every edge to subtend one angle at O (tan(angle/2) = r/t)",
+        "study": "studies/2026-11-25-rings-cylinders-cones",
+        "goes_to": "paper on DICTO's Vacuus builds (#87 next version) or a new ring-build paper: DICTO's choice",
+        "status": "PROVED (Theorem 2, necessary condition)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Kepler-Poinsot ring builds: great dodecahedron = the icosahedron's build; small stellated, great stellated dodecahedron and great icosahedron: two rings pass through each other at every edge crossing (mirror argument)",
+        "study": "studies/2026-11-25-rings-cylinders-cones",
+        "goes_to": "paper on DICTO's Vacuus builds (#87 next version) or a new ring-build paper: DICTO's choice",
+        "status": "PROVED POSSIBLE (GD) / PROVED IMPOSSIBLE (SSD, GSD, GI)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Fin rings seen from the centre are edge-on: each covers exactly its edge arc, zero solid angle; the small-circle reading is impossible",
+        "study": "studies/2026-11-25-rings-cylinders-cones",
+        "goes_to": "paper on DICTO's Vacuus builds (#87 next version) or a new ring-build paper: DICTO's choice",
+        "status": "PROVED IMPOSSIBLE (Theorem 4)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Ring-build ties vs Tammes: tetrahedron, octahedron, square antiprism (cos = (2sqrt2-1)/7 exact), icosahedron, snub cube builds sit at the proved optima N = 4, 6, 8, 12, 24; cuboctahedron ties = fcc kissing arrangement; all other uniform builds fall short (Sloane tables)",
+        "study": "studies/2026-11-25-rings-cylinders-cones",
+        "goes_to": "paper on DICTO's Vacuus builds (#87 next version) or a new ring-build paper: DICTO's choice",
+        "status": "PROVED (N = 24: agrees to 4 decimals, Robinson 1961 cited)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Hollow core: struts of radius r at least theta apart need an empty core R = r/sin(theta/2) (flat ends a = r cot(theta/2)); B1NR cube R = sqrt3 r, a = sqrt2 r; uniform frames R/r = circumdiameter/edge; minimum sqrt(3/2) r only for the regular tetrahedron (simplex bound)",
+        "study": "studies/2026-11-25-rings-cylinders-cones",
+        "goes_to": "paper on DICTO's Vacuus builds (#87 next version) or a new ring-build paper: DICTO's choice",
+        "status": "PROVED (Theorems 5-7)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Round-fairness of ring builds (equal solid angles of ring cones) is degenerate for fin rings (all zero); with real band height, congruent-fin builds are round-fair",
+        "study": "studies/2026-11-25-rings-cylinders-cones",
+        "goes_to": "paper on DICTO's Vacuus builds (#87 next version) or a new ring-build paper: DICTO's choice",
+        "status": "PROVED (degenerate) / PROVED POSSIBLE (with thickness)"
       }
     ]
   },
