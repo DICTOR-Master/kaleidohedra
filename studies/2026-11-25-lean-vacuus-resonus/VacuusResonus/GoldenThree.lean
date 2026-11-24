@@ -18,6 +18,7 @@ The φ ladder scales by `φ ^ k`, `k : ℤ`. Gap (b) of the stellation-cycle stu
 -/
 
 open Real
+open scoped goldenRatio
 
 namespace VacuusResonus
 
@@ -65,11 +66,11 @@ theorem ratio_ne_rat_mul_zpow {r : ℝ} (hr : φ ^ 2 * r ^ 2 = 3) (q : ℚ) (k :
     r ≠ q * φ ^ k := by
   intro h
   have h3 : (3 : ℝ) = ((q ^ 2 : ℚ) : ℝ) * φ ^ (2 * k + 2) := by
-    rw [← hr, h, Rat.cast_pow, zpow_add₀ goldenRatio_ne_zero, zpow_mul]
+    rw [← hr, h, Rat.cast_pow, zpow_add₀ goldenRatio_ne_zero, mul_comm 2 k, zpow_mul]
     simp only [zpow_ofNat]
     ring
   obtain ⟨-, hq⟩ := (three_eq_rat_mul_zpow_iff _ _).1 h3
-  have hirr : Irrational (√(3 : ℕ)) := irrational_sqrt_natCast_iff.2 (by decide)
+  have hirr : Irrational (√(3 : ℕ)) := Nat.Prime.irrational_sqrt (show Nat.Prime 3 by norm_num)
   apply hirr.ne_rat |q|
   have : ((q ^ 2 : ℚ) : ℝ) = 3 := by exact_mod_cast hq
   rw [Rat.cast_pow] at this
