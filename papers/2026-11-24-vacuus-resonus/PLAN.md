@@ -11,3 +11,5 @@ Outline (DICTO, conversation 24 Nov):
 8. Where V meets SF and A (pointers only).
 9. Contributions.
 Release: only after conversation + DICTO's explicit read ok.
+
+24 Nov (DICTO): the Vacuus was introduced in #87 "DICTO Vacuus Solids" (papers/dicto-vacuus; Zenodo concept see zenodo-state.json); #105 and #110 widened it. Builds: B1NR cube (showed the cube is six pyramids meeting at the centre) and, earlier, the cardboard octahedron Vacuus (four slotted cardboard pieces = three squares through one centre), both described and photographed in #87. DICTO: his original photos are NOT reused; make exact 3D renders "similar but better" (enhanced versions) of the cardboard octahedron Vacuus and the B1NR cube, plus the white Vacuus solid cube. Show him before use.
