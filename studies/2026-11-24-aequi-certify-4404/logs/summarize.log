@@ -1,0 +1,10 @@
+dice 4404 certify records 4404 distinct 4404
+status {'certified': 4399, 'accidental': 5}
+symmetry ok 4399 | graph ok 4399 | split by frame maps 18
+tight max |K - x~|: 5e-60 | max |F(x~)|: 6.1e-59
+uniqueness half-widths {'3e-08': 1, '3e-06': 2, '3e-05': 28, '3e-04': 644, '3e-03': 1458, '1e-07': 1, '1e-06': 2, '1e-05': 9, '1e-04': 108, '1e-03': 1548, '1e-02': 598}
+split box (accidental): 5 ok 5 [(89, 'D5d: C6+RT24/10 + O8+I12/10 (4)'), (160, 'D5d: C6+RT24/10a + C6+RT24/10b + O8+I12/10a + O8+I12/10b (3)'), (307, 'D3d: C6+RT24/6 + I12/2 + RT24/12 (2)'), (310, 'D3d: O8+I12/6 + I12/2 + RT24/12'), (417, 'D3d: C6+RT24/6a + C6+RT24/6b + O8+I12/6 + RT24/12 (1)')]
+certified by group {'C2h': 888, 'Ci': 280, 'D10h': 1, 'D2': 857, 'D2d': 27, 'D2h': 848, 'D3': 344, 'D3d': 261, 'D3h': 1, 'D4h': 17, 'D5': 62, 'D5d': 112, 'D5h': 1, 'D6h': 2, 'D8h': 1, 'S4': 8, 'S6': 694}
+structural corners: dice 1366 distinct checks 2195 failures 0
+not certified 0 []
+FINAL ok
