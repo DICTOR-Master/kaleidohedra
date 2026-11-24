@@ -1,0 +1,1439 @@
+{
+ "cycle": {
+  "M15 (15 mirror planes)": {
+   "name": "M15 (15 mirror planes)",
+   "planes": 15,
+   "field_degree": 2,
+   "rank": 3,
+   "lines": 31,
+   "line_multiplicities": {
+    "2": 15,
+    "3": 10,
+    "5": 6
+   },
+   "regions": 120,
+   "simplicial": true,
+   "chi": "(t - 1)(t^2 - 14t + 45)",
+   "reflection": true,
+   "p3_equiangular": false,
+   "perpendicular_pairs": 15,
+   "p4_perp_triples": true,
+   "angle_classes": 4,
+   "p6_rational": true,
+   "angles_over_pi": [
+    "1/2",
+    "1/3",
+    "1/5",
+    "2/5"
+   ],
+   "irrational_angle_classes": 0,
+   "pencils": {
+    "2": {
+     "count": 15,
+     "regular": 15
+    },
+    "3": {
+     "count": 10,
+     "regular": 10
+    },
+    "5": {
+     "count": 6,
+     "regular": 6
+    }
+   },
+   "p9_all_pencils_regular": true,
+   "p9_pencils_k3_regular": true,
+   "sphericus": {
+    "crossing_points_histogram": {
+     "5": 12,
+     "3": 20,
+     "2": 30
+    },
+    "crossing_angle_values": 3,
+    "arc_length_values": 3,
+    "arc_length_values_per_circle_max": 3,
+    "region_sides": {
+     "3": 120
+    },
+    "area_values_over_pi": [
+     "1/30"
+    ],
+    "area_values": 1,
+    "areas_exact": true,
+    "harmonious_crossing": false
+   },
+   "p5_equal_area": true,
+   "p5_how": "reflection arrangement: congruent regions",
+   "p7_factors": true,
+   "exponents": [
+    1,
+    5,
+    9
+   ],
+   "p7_free": true,
+   "p7_how": "reflection arrangement (Saito; Terao)",
+   "tacitus_crossings": {
+    "unweighted": {
+     "G": 120,
+     "forced_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "silent_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "beyond": [],
+     "grey": []
+    },
+    "weighted": {
+     "G": 120,
+     "forced_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "silent_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "beyond": [],
+     "grey": []
+    },
+    "silent_beyond_symmetry": false
+   },
+   "secs": 0.15,
+   "inside_hub": 15
+  },
+  "R6 (5-fold Resonus)": {
+   "name": "R6 (5-fold Resonus)",
+   "planes": 6,
+   "field_degree": 2,
+   "rank": 3,
+   "lines": 15,
+   "line_multiplicities": {
+    "2": 15
+   },
+   "regions": 32,
+   "simplicial": false,
+   "chi": "(t - 1)(t^2 - 5t + 10)",
+   "reflection": false,
+   "p3_equiangular": true,
+   "perpendicular_pairs": 0,
+   "p4_perp_triples": false,
+   "angle_classes": 1,
+   "p6_rational": false,
+   "angles_over_pi": [],
+   "irrational_angle_classes": 1,
+   "pencils": {
+    "2": {
+     "count": 15,
+     "regular": 0
+    }
+   },
+   "p9_all_pencils_regular": false,
+   "p9_pencils_k3_regular": true,
+   "sphericus": {
+    "crossing_points_histogram": {
+     "2": 30
+    },
+    "crossing_angle_values": 2,
+    "arc_length_values": 1,
+    "arc_length_values_per_circle_max": 1,
+    "region_sides": {
+     "3": 20,
+     "5": 12
+    },
+    "area_values": 2,
+    "areas_exact": false,
+    "harmonious_crossing": false
+   },
+   "p5_equal_area": false,
+   "p5_how": "lune test fails: a lune with an irrational angle",
+   "p7_factors": false,
+   "p7_free": false,
+   "p7_how": "chi does not factor over Z (Terao's factorisation theorem)",
+   "tacitus_crossings": {
+    "unweighted": {
+     "G": 120,
+     "forced_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "silent_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "beyond": [],
+     "grey": []
+    },
+    "weighted": {
+     "G": 120,
+     "forced_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "silent_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "beyond": [],
+     "grey": []
+    },
+    "silent_beyond_symmetry": false
+   },
+   "secs": 0.09,
+   "inside_hub": 6
+  },
+  "R10 (3-fold Resonus)": {
+   "name": "R10 (3-fold Resonus)",
+   "planes": 10,
+   "field_degree": 2,
+   "rank": 3,
+   "lines": 45,
+   "line_multiplicities": {
+    "2": 45
+   },
+   "regions": 92,
+   "simplicial": false,
+   "chi": "(t - 1)(t^2 - 9t + 36)",
+   "reflection": false,
+   "p3_equiangular": false,
+   "perpendicular_pairs": 0,
+   "p4_perp_triples": false,
+   "angle_classes": 2,
+   "p6_rational": false,
+   "angles_over_pi": [],
+   "irrational_angle_classes": 2,
+   "pencils": {
+    "2": {
+     "count": 45,
+     "regular": 0
+    }
+   },
+   "p9_all_pencils_regular": false,
+   "p9_pencils_k3_regular": true,
+   "sphericus": {
+    "crossing_points_histogram": {
+     "2": 90
+    },
+    "crossing_angle_values": 4,
+    "arc_length_values": 2,
+    "arc_length_values_per_circle_max": 2,
+    "region_sides": {
+     "3": 60,
+     "5": 12,
+     "6": 20
+    },
+    "area_values": 3,
+    "areas_exact": false,
+    "harmonious_crossing": false
+   },
+   "p5_equal_area": false,
+   "p5_how": "lune test fails: a lune with an irrational angle",
+   "p7_factors": false,
+   "p7_free": false,
+   "p7_how": "chi does not factor over Z (Terao's factorisation theorem)",
+   "tacitus_crossings": {
+    "unweighted": {
+     "G": 120,
+     "forced_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "silent_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "beyond": [],
+     "grey": []
+    },
+    "weighted": {
+     "G": 120,
+     "forced_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "silent_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "beyond": [],
+     "grey": []
+    },
+    "silent_beyond_symmetry": false
+   },
+   "secs": 0.46,
+   "inside_hub": 10
+  },
+  "H31 (the hub)": {
+   "name": "H31 (the hub)",
+   "planes": 31,
+   "field_degree": 2,
+   "rank": 3,
+   "lines": 121,
+   "line_multiplicities": {
+    "2": 60,
+    "3": 40,
+    "5": 6,
+    "6": 15
+   },
+   "regions": 480,
+   "simplicial": true,
+   "chi": "(t - 1)(t^2 - 30t + 209)",
+   "reflection": false,
+   "p3_equiangular": false,
+   "perpendicular_pairs": 75,
+   "p4_perp_triples": false,
+   "angle_classes": 14,
+   "p6_rational": false,
+   "angles_over_pi": [
+    "1/2",
+    "1/3",
+    "1/5",
+    "2/5"
+   ],
+   "irrational_angle_classes": 10,
+   "pencils": {
+    "2": {
+     "count": 60,
+     "regular": 60
+    },
+    "3": {
+     "count": 40,
+     "regular": 10
+    },
+    "5": {
+     "count": 6,
+     "regular": 6
+    },
+    "6": {
+     "count": 15,
+     "regular": 0
+    }
+   },
+   "p9_all_pencils_regular": false,
+   "p9_pencils_k3_regular": false,
+   "sphericus": {
+    "crossing_points_histogram": {
+     "6": 30,
+     "2": 120,
+     "3": 80,
+     "5": 12
+    },
+    "crossing_angle_values": 8,
+    "arc_length_values": 6,
+    "arc_length_values_per_circle_max": 3,
+    "region_sides": {
+     "3": 480
+    },
+    "area_values": 4,
+    "areas_exact": false,
+    "harmonious_crossing": false
+   },
+   "p5_equal_area": false,
+   "p5_how": "lune test fails: a lune with an irrational angle",
+   "p7_factors": true,
+   "exponents": [
+    1,
+    11,
+    19
+   ],
+   "multirestriction": [
+    11,
+    19
+   ],
+   "p7_free": true,
+   "p7_how": "Yoshinaga's criterion (exact multirestriction)",
+   "tacitus_crossings": {
+    "unweighted": {
+     "G": 120,
+     "forced_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "silent_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "beyond": [],
+     "grey": []
+    },
+    "weighted": {
+     "G": 120,
+     "forced_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "silent_even": [
+      2,
+      4,
+      8,
+      14
+     ],
+     "beyond": [],
+     "grey": []
+    },
+    "silent_beyond_symmetry": false
+   },
+   "secs": 0.81,
+   "inside_hub": 31
+  },
+  "S69 (Sunstar Vacuus)": {
+   "name": "S69 (Sunstar Vacuus)",
+   "planes": 69,
+   "field_degree": 2,
+   "rank": 3,
+   "lines": 1597,
+   "line_multiplicities": {
+    "2": 1434,
+    "3": 90,
+    "4": 27,
+    "5": 42,
+    "6": 4
+   },
+   "regions": 3768,
+   "simplicial": false,
+   "chi": "(t - 1)(t^2 - 68t + 1815)",
+   "reflection": false,
+   "p3_equiangular": false,
+   "perpendicular_pairs": 9,
+   "p4_perp_triples": false,
+   "angle_classes": 178,
+   "p6_rational": false,
+   "angles_over_pi": [
+    "1/10",
+    "1/2",
+    "1/3",
+    "1/4",
+    "1/5"
+   ],
+   "irrational_angle_classes": 173,
+   "pencils": {
+    "2": {
+     "count": 1434,
+     "regular": 6
+    },
+    "3": {
+     "count": 90,
+     "regular": 0
+    },
+    "4": {
+     "count": 27,
+     "regular": 0
+    },
+    "5": {
+     "count": 42,
+     "regular": 0
+    },
+    "6": {
+     "count": 4,
+     "regular": 0
+    }
+   },
+   "p9_all_pencils_regular": false,
+   "p9_pencils_k3_regular": false,
+   "sphericus": {
+    "crossing_points_histogram": {
+     "5": 84,
+     "3": 180,
+     "4": 54,
+     "6": 8,
+     "2": 2868
+    },
+    "crossing_angle_values": 272,
+    "arc_length_values": 289,
+    "arc_length_values_per_circle_max": 52,
+    "region_sides": {
+     "3": 1704,
+     "4": 1608,
+     "5": 384,
+     "6": 48,
+     "7": 24
+    },
+    "area_values": 157,
+    "areas_exact": false,
+    "harmonious_crossing": false
+   },
+   "p5_equal_area": false,
+   "p5_how": "lune test fails: a lune with an irrational angle",
+   "p7_factors": false,
+   "p7_free": false,
+   "p7_how": "chi does not factor over Z (Terao's factorisation theorem)",
+   "tacitus_crossings": {
+    "note": "3194 points: not run (size cap 1000)"
+   },
+   "secs": 1.52,
+   "inside_hub": 3
+  }
+ },
+ "roots": {
+  "CLEO": {
+   "corners": 4,
+   "edges": 6,
+   "faces": 4,
+   "face_sizes": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": "[0.09726535583",
+   "centroids_equal": true,
+   "ladder": [
+    "D_0",
+    "I_-2",
+    "I_-2",
+    "I_-2"
+   ],
+   "vacuus (corner centroid)": {
+    "name": "CLEO Vacuus (corner centroid)",
+    "planes": 6,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 7,
+    "line_multiplicities": {
+     "2": 3,
+     "3": 4
+    },
+    "regions": 24,
+    "simplicial": true,
+    "chi": "(t - 1)(t^2 - 5t + 6)",
+    "reflection": false,
+    "p3_equiangular": false,
+    "perpendicular_pairs": 3,
+    "p4_perp_triples": false,
+    "angle_classes": 4,
+    "p6_rational": false,
+    "angles_over_pi": [
+     "1/2",
+     "1/3"
+    ],
+    "irrational_angle_classes": 2,
+    "pencils": {
+     "2": {
+      "count": 3,
+      "regular": 3
+     },
+     "3": {
+      "count": 4,
+      "regular": 1
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": false,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "3": 8,
+      "2": 6
+     },
+     "crossing_angle_values": 4,
+     "arc_length_values": 5,
+     "arc_length_values_per_circle_max": 3,
+     "region_sides": {
+      "3": 24
+     },
+     "area_values": 2,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune with an irrational angle",
+    "p7_factors": true,
+    "exponents": [
+     1,
+     2,
+     3
+    ],
+    "p7_free": true,
+    "p7_how": "supersolvable (modular line of 3 planes; Jambu-Terao)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.02,
+    "inside_hub": 3
+   },
+   "resonus": {
+    "name": "CLEO Resonus",
+    "planes": 4,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 6,
+    "line_multiplicities": {
+     "2": 6
+    },
+    "regions": 14,
+    "simplicial": false,
+    "chi": "(t - 1)(t^2 - 3t + 3)",
+    "reflection": false,
+    "p3_equiangular": false,
+    "perpendicular_pairs": 0,
+    "p4_perp_triples": false,
+    "angle_classes": 2,
+    "p6_rational": false,
+    "angles_over_pi": [],
+    "irrational_angle_classes": 2,
+    "pencils": {
+     "2": {
+      "count": 6,
+      "regular": 0
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": true,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "2": 12
+     },
+     "crossing_angle_values": 4,
+     "arc_length_values": 3,
+     "arc_length_values_per_circle_max": 2,
+     "region_sides": {
+      "3": 8,
+      "4": 6
+     },
+     "area_values": 3,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune with an irrational angle",
+    "p7_factors": false,
+    "p7_free": false,
+    "p7_how": "chi does not factor over Z (Terao's factorisation theorem)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.01,
+    "inside_hub": 4
+   }
+  },
+  "AXE": {
+   "corners": 4,
+   "edges": 6,
+   "faces": 4,
+   "face_sizes": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": "[0.15737865166",
+   "centroids_equal": true,
+   "ladder": [
+    "D_0",
+    "D_0",
+    "-",
+    "-"
+   ],
+   "vacuus (corner centroid)": {
+    "name": "AXE Vacuus (corner centroid)",
+    "planes": 6,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 7,
+    "line_multiplicities": {
+     "2": 3,
+     "3": 4
+    },
+    "regions": 24,
+    "simplicial": true,
+    "chi": "(t - 1)(t^2 - 5t + 6)",
+    "reflection": false,
+    "p3_equiangular": false,
+    "perpendicular_pairs": 1,
+    "p4_perp_triples": false,
+    "angle_classes": 6,
+    "p6_rational": false,
+    "angles_over_pi": [
+     "1/2"
+    ],
+    "irrational_angle_classes": 5,
+    "pencils": {
+     "2": {
+      "count": 3,
+      "regular": 1
+     },
+     "3": {
+      "count": 4,
+      "regular": 0
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": false,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "3": 8,
+      "2": 6
+     },
+     "crossing_angle_values": 7,
+     "arc_length_values": 7,
+     "arc_length_values_per_circle_max": 3,
+     "region_sides": {
+      "3": 24
+     },
+     "area_values": 4,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune with an irrational angle",
+    "p7_factors": true,
+    "exponents": [
+     1,
+     2,
+     3
+    ],
+    "p7_free": true,
+    "p7_how": "supersolvable (modular line of 3 planes; Jambu-Terao)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 8,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 8,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.01,
+    "inside_hub": 2
+   },
+   "resonus": {
+    "name": "AXE Resonus",
+    "planes": 4,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 6,
+    "line_multiplicities": {
+     "2": 6
+    },
+    "regions": 14,
+    "simplicial": false,
+    "chi": "(t - 1)(t^2 - 3t + 3)",
+    "reflection": false,
+    "p3_equiangular": false,
+    "perpendicular_pairs": 0,
+    "p4_perp_triples": false,
+    "angle_classes": 3,
+    "p6_rational": false,
+    "angles_over_pi": [],
+    "irrational_angle_classes": 3,
+    "pencils": {
+     "2": {
+      "count": 6,
+      "regular": 0
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": true,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "2": 12
+     },
+     "crossing_angle_values": 6,
+     "arc_length_values": 3,
+     "arc_length_values_per_circle_max": 2,
+     "region_sides": {
+      "3": 8,
+      "4": 6
+     },
+     "area_values": 4,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune with an irrational angle",
+    "p7_factors": false,
+    "p7_free": false,
+    "p7_how": "chi does not factor over Z (Terao's factorisation theorem)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 8,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 8,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.01,
+    "inside_hub": 4
+   }
+  },
+  "FUJI": {
+   "corners": 7,
+   "edges": 12,
+   "faces": 7,
+   "face_sizes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    6
+   ],
+   "volume": "[0.60655337083",
+   "centroids_equal": false,
+   "ladder": [
+    "D_0",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-"
+   ],
+   "vacuus (corner centroid)": {
+    "name": "FUJI Vacuus (corner centroid)",
+    "planes": 12,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 40,
+    "line_multiplicities": {
+     "2": 33,
+     "3": 6,
+     "6": 1
+    },
+    "regions": 102,
+    "simplicial": false,
+    "chi": "(t - 1)(t^2 - 11t + 39)",
+    "reflection": false,
+    "p3_equiangular": false,
+    "perpendicular_pairs": 0,
+    "p4_perp_triples": false,
+    "angle_classes": 14,
+    "p6_rational": false,
+    "angles_over_pi": [
+     "1/3"
+    ],
+    "irrational_angle_classes": 13,
+    "pencils": {
+     "2": {
+      "count": 33,
+      "regular": 0
+     },
+     "3": {
+      "count": 6,
+      "regular": 0
+     },
+     "6": {
+      "count": 1,
+      "regular": 0
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": false,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "6": 2,
+      "3": 12,
+      "2": 66
+     },
+     "crossing_angle_values": 19,
+     "arc_length_values": 16,
+     "arc_length_values_per_circle_max": 6,
+     "region_sides": {
+      "3": 78,
+      "5": 18,
+      "6": 6
+     },
+     "area_values": 11,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune with an irrational angle",
+    "p7_factors": false,
+    "p7_free": false,
+    "p7_how": "chi does not factor over Z (Terao's factorisation theorem)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.07,
+    "inside_hub": 0
+   },
+   "resonus": {
+    "name": "FUJI Resonus",
+    "planes": 7,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 15,
+    "line_multiplicities": {
+     "2": 12,
+     "3": 3
+    },
+    "regions": 38,
+    "simplicial": false,
+    "chi": "(t - 1)(t^2 - 6t + 12)",
+    "reflection": false,
+    "p3_equiangular": false,
+    "perpendicular_pairs": 0,
+    "p4_perp_triples": false,
+    "angle_classes": 5,
+    "p6_rational": false,
+    "angles_over_pi": [],
+    "irrational_angle_classes": 5,
+    "pencils": {
+     "2": {
+      "count": 12,
+      "regular": 0
+     },
+     "3": {
+      "count": 3,
+      "regular": 0
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": false,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "2": 24,
+      "3": 6
+     },
+     "crossing_angle_values": 8,
+     "arc_length_values": 4,
+     "arc_length_values_per_circle_max": 3,
+     "region_sides": {
+      "3": 24,
+      "4": 12,
+      "6": 2
+     },
+     "area_values": 5,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune with an irrational angle",
+    "p7_factors": false,
+    "p7_free": false,
+    "p7_how": "chi does not factor over Z (Terao's factorisation theorem)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.04,
+    "inside_hub": 7
+   },
+   "vacuus (volume centroid)": {
+    "name": "FUJI Vacuus (volume centroid)",
+    "planes": 12,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 40,
+    "line_multiplicities": {
+     "2": 33,
+     "3": 6,
+     "6": 1
+    },
+    "regions": 102,
+    "simplicial": false,
+    "chi": "(t - 1)(t^2 - 11t + 39)",
+    "reflection": false,
+    "p3_equiangular": false,
+    "perpendicular_pairs": 0,
+    "p4_perp_triples": false,
+    "angle_classes": 14,
+    "p6_rational": false,
+    "angles_over_pi": [
+     "1/3"
+    ],
+    "irrational_angle_classes": 13,
+    "pencils": {
+     "2": {
+      "count": 33,
+      "regular": 0
+     },
+     "3": {
+      "count": 6,
+      "regular": 0
+     },
+     "6": {
+      "count": 1,
+      "regular": 0
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": false,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "6": 2,
+      "3": 12,
+      "2": 66
+     },
+     "crossing_angle_values": 19,
+     "arc_length_values": 16,
+     "arc_length_values_per_circle_max": 6,
+     "region_sides": {
+      "3": 78,
+      "5": 18,
+      "6": 6
+     },
+     "area_values": 11,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune with an irrational angle",
+    "p7_factors": false,
+    "p7_free": false,
+    "p7_how": "chi does not factor over Z (Terao's factorisation theorem)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.07,
+    "inside_hub": 0
+   }
+  },
+  "Cleo-Icos": {
+   "corners": 4,
+   "edges": 6,
+   "faces": 4,
+   "face_sizes": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": "[0.87267799624",
+   "centroids_equal": true,
+   "ladder": [
+    "O",
+    "I_0",
+    "I_0",
+    "I_0"
+   ],
+   "vacuus (corner centroid)": {
+    "name": "Cleo-Icos Vacuus (corner centroid)",
+    "planes": 6,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 7,
+    "line_multiplicities": {
+     "2": 3,
+     "3": 4
+    },
+    "regions": 24,
+    "simplicial": true,
+    "chi": "(t - 1)(t^2 - 5t + 6)",
+    "reflection": false,
+    "p3_equiangular": false,
+    "perpendicular_pairs": 3,
+    "p4_perp_triples": false,
+    "angle_classes": 4,
+    "p6_rational": false,
+    "angles_over_pi": [
+     "1/2",
+     "1/3"
+    ],
+    "irrational_angle_classes": 2,
+    "pencils": {
+     "2": {
+      "count": 3,
+      "regular": 3
+     },
+     "3": {
+      "count": 4,
+      "regular": 1
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": false,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "3": 8,
+      "2": 6
+     },
+     "crossing_angle_values": 4,
+     "arc_length_values": 5,
+     "arc_length_values_per_circle_max": 3,
+     "region_sides": {
+      "3": 24
+     },
+     "area_values": 2,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune with an irrational angle",
+    "p7_factors": true,
+    "exponents": [
+     1,
+     2,
+     3
+    ],
+    "p7_free": true,
+    "p7_how": "supersolvable (modular line of 3 planes; Jambu-Terao)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.02,
+    "inside_hub": 3
+   },
+   "resonus": {
+    "name": "Cleo-Icos Resonus",
+    "planes": 4,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 6,
+    "line_multiplicities": {
+     "2": 6
+    },
+    "regions": 14,
+    "simplicial": false,
+    "chi": "(t - 1)(t^2 - 3t + 3)",
+    "reflection": false,
+    "p3_equiangular": false,
+    "perpendicular_pairs": 0,
+    "p4_perp_triples": false,
+    "angle_classes": 2,
+    "p6_rational": false,
+    "angles_over_pi": [
+     "2/5"
+    ],
+    "irrational_angle_classes": 1,
+    "pencils": {
+     "2": {
+      "count": 6,
+      "regular": 0
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": true,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "2": 12
+     },
+     "crossing_angle_values": 4,
+     "arc_length_values": 3,
+     "arc_length_values_per_circle_max": 2,
+     "region_sides": {
+      "3": 8,
+      "4": 6
+     },
+     "area_values": 3,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune of angle 2/5 pi holds 14/5 regions' worth",
+    "p7_factors": false,
+    "p7_free": false,
+    "p7_how": "chi does not factor over Z (Terao's factorisation theorem)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.01,
+    "inside_hub": 4
+   }
+  },
+  "Antonius": {
+   "corners": 6,
+   "edges": 12,
+   "faces": 8,
+   "face_sizes": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "volume": "[3.49071198499",
+   "centroids_equal": true,
+   "ladder": [
+    "I_0",
+    "I_0",
+    "I_0",
+    "-",
+    "-",
+    "-"
+   ],
+   "vacuus (corner centroid)": {
+    "name": "Antonius Vacuus (corner centroid)",
+    "planes": 3,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 3,
+    "line_multiplicities": {
+     "2": 3
+    },
+    "regions": 8,
+    "simplicial": true,
+    "chi": "(t - 1)(t^2 - 2t + 1)",
+    "reflection": false,
+    "p3_equiangular": true,
+    "perpendicular_pairs": 0,
+    "p4_perp_triples": false,
+    "angle_classes": 1,
+    "p6_rational": false,
+    "angles_over_pi": [],
+    "irrational_angle_classes": 1,
+    "pencils": {
+     "2": {
+      "count": 3,
+      "regular": 0
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": true,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "2": 6
+     },
+     "crossing_angle_values": 2,
+     "arc_length_values": 2,
+     "arc_length_values_per_circle_max": 2,
+     "region_sides": {
+      "3": 8
+     },
+     "area_values": 2,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune with an irrational angle",
+    "p7_factors": true,
+    "exponents": [
+     1,
+     1,
+     1
+    ],
+    "p7_free": true,
+    "p7_how": "supersolvable (modular line of 2 planes; Jambu-Terao)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.01,
+    "inside_hub": 0
+   },
+   "resonus": {
+    "name": "Antonius Resonus",
+    "planes": 4,
+    "field_degree": 2,
+    "rank": 3,
+    "lines": 6,
+    "line_multiplicities": {
+     "2": 6
+    },
+    "regions": 14,
+    "simplicial": false,
+    "chi": "(t - 1)(t^2 - 3t + 3)",
+    "reflection": false,
+    "p3_equiangular": false,
+    "perpendicular_pairs": 0,
+    "p4_perp_triples": false,
+    "angle_classes": 2,
+    "p6_rational": false,
+    "angles_over_pi": [
+     "2/5"
+    ],
+    "irrational_angle_classes": 1,
+    "pencils": {
+     "2": {
+      "count": 6,
+      "regular": 0
+     }
+    },
+    "p9_all_pencils_regular": false,
+    "p9_pencils_k3_regular": true,
+    "sphericus": {
+     "crossing_points_histogram": {
+      "2": 12
+     },
+     "crossing_angle_values": 4,
+     "arc_length_values": 3,
+     "arc_length_values_per_circle_max": 2,
+     "region_sides": {
+      "3": 8,
+      "4": 6
+     },
+     "area_values": 3,
+     "areas_exact": false,
+     "harmonious_crossing": false
+    },
+    "p5_equal_area": false,
+    "p5_how": "lune test fails: a lune with an irrational angle",
+    "p7_factors": false,
+    "p7_free": false,
+    "p7_how": "chi does not factor over Z (Terao's factorisation theorem)",
+    "tacitus_crossings": {
+     "unweighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "weighted": {
+      "G": 12,
+      "forced_even": [],
+      "silent_even": [],
+      "beyond": [],
+      "grey": []
+     },
+     "silent_beyond_symmetry": false
+    },
+    "secs": 0.01,
+    "inside_hub": 4
+   }
+  }
+ }
+}

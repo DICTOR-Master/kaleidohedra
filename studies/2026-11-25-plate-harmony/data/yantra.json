@@ -1,0 +1,579 @@
+{
+ "kulaichev": {
+  "name": "spherical Kulaichev Sri Yantra",
+  "planes": 27,
+  "u": "0.750438516022214024406084657051",
+  "lines": 254,
+  "line_multiplicities": {
+   "2": 222,
+   "3": 31,
+   "9": 1
+  },
+  "regions": 586,
+  "chi": "(t - 1)(t^2 - 26t + 266)",
+  "simplicial": false,
+  "multiple_points": [
+   [
+    "base t1",
+    "base t2",
+    "base t3",
+    "base t4",
+    "base t5",
+    "base t6",
+    "base t7",
+    "base t8",
+    "base t9"
+   ],
+   [
+    "base t1",
+    "left leg t8",
+    "right leg t8"
+   ],
+   [
+    "base t2",
+    "left leg t1",
+    "left leg t7"
+   ],
+   [
+    "base t2",
+    "left leg t6",
+    "right leg t6"
+   ],
+   [
+    "base t2",
+    "right leg t1",
+    "right leg t7"
+   ],
+   [
+    "base t3",
+    "left leg t1",
+    "left leg t8"
+   ],
+   [
+    "base t3",
+    "left leg t2",
+    "left leg t7"
+   ],
+   [
+    "base t3",
+    "left leg t9",
+    "right leg t9"
+   ],
+   [
+    "base t3",
+    "right leg t1",
+    "right leg t8"
+   ],
+   [
+    "base t3",
+    "right leg t2",
+    "right leg t7"
+   ],
+   [
+    "base t4",
+    "left leg t1",
+    "left leg t6"
+   ],
+   [
+    "base t4",
+    "left leg t4",
+    "left leg t8"
+   ],
+   [
+    "base t4",
+    "right leg t1",
+    "right leg t6"
+   ],
+   [
+    "base t4",
+    "right leg t4",
+    "right leg t8"
+   ],
+   [
+    "base t5",
+    "left leg t1",
+    "left leg t9"
+   ],
+   [
+    "base t5",
+    "left leg t5",
+    "left leg t6"
+   ],
+   [
+    "base t5",
+    "right leg t1",
+    "right leg t9"
+   ],
+   [
+    "base t5",
+    "right leg t5",
+    "right leg t6"
+   ],
+   [
+    "base t6",
+    "left leg t1",
+    "right leg t1"
+   ],
+   [
+    "base t6",
+    "left leg t2",
+    "left leg t6"
+   ],
+   [
+    "base t6",
+    "left leg t4",
+    "left leg t9"
+   ],
+   [
+    "base t6",
+    "right leg t2",
+    "right leg t6"
+   ],
+   [
+    "base t6",
+    "right leg t4",
+    "right leg t9"
+   ],
+   [
+    "base t7",
+    "left leg t2",
+    "left leg t9"
+   ],
+   [
+    "base t7",
+    "left leg t3",
+    "left leg t8"
+   ],
+   [
+    "base t7",
+    "left leg t5",
+    "right leg t5"
+   ],
+   [
+    "base t7",
+    "right leg t2",
+    "right leg t9"
+   ],
+   [
+    "base t7",
+    "right leg t3",
+    "right leg t8"
+   ],
+   [
+    "base t8",
+    "left leg t3",
+    "left leg t9"
+   ],
+   [
+    "base t8",
+    "left leg t4",
+    "right leg t4"
+   ],
+   [
+    "base t8",
+    "right leg t3",
+    "right leg t9"
+   ],
+   [
+    "base t9",
+    "left leg t2",
+    "right leg t2"
+   ]
+  ],
+  "p7_factors": false,
+  "p7_free": false,
+  "p7_how": "chi does not factor over Z (Terao)",
+  "p3_equiangular": false,
+  "perpendicular_pairs_in_box": 0,
+  "p4_perp_triples": false,
+  "reflection": false,
+  "pencils": {
+   "2": {
+    "count": 222,
+    "regular_in_box": 0
+   },
+   "3": {
+    "count": 31,
+    "regular_in_box": 0
+   },
+   "9": {
+    "count": 1,
+    "regular_in_box": 0
+   }
+  },
+  "p9_all_pencils_regular": false,
+  "p5_equal_area": false,
+  "p5_how": "lune test fails (certified): a lune of angle 0.41963693 pi holds 122.95362 regions' worth",
+  "t7_leg_angle_over_pi": "0.3741623574641743055598962",
+  "t7_leg_angle_rational": false,
+  "p6_rational": false,
+  "p6_how": "t7's leg planes meet at 2 arctan(2u); 2cos(2 theta) lies in Q(u^2) of degree <= 174; every n with phi(n) <= 348 (n <= 968845) checked: n theta/pi holds no integer (certified)",
+  "sphericus": {
+   "crossing_points_histogram": {
+    "2": 444,
+    "3": 62,
+    "9": 2
+   },
+   "crossing_angle_values_certified_apart": 278,
+   "arc_length_values_certified_apart": 272,
+   "ring": {
+    "crossing_points": 44,
+    "great_circles_per_point": {
+     "1": 34,
+     "2": 10
+    },
+    "crossing_angle_values_certified_apart": 15,
+    "arc_values_certified_apart": 22
+   },
+   "harmonious_crossing": false
+  },
+  "tacitus_crossings": {
+   "unweighted": {
+    "G": 4,
+    "silent_even": [],
+    "beyond_box_level": [],
+    "min_even_energy": 0.0019018545056181204
+   },
+   "weighted": {
+    "G": 4,
+    "silent_even": [],
+    "beyond_box_level": [],
+    "min_even_energy": 0.002124846600270944
+   }
+  }
+ },
+ "dicto": {
+  "name": "spherical DICTO Yantra",
+  "planes": 27,
+  "u": "0.679318588706774657388650310391",
+  "lines": 254,
+  "line_multiplicities": {
+   "2": 222,
+   "3": 31,
+   "9": 1
+  },
+  "regions": 586,
+  "chi": "(t - 1)(t^2 - 26t + 266)",
+  "simplicial": false,
+  "multiple_points": [
+   [
+    "base t1",
+    "base t2",
+    "base t3",
+    "base t4",
+    "base t5",
+    "base t6",
+    "base t7",
+    "base t8",
+    "base t9"
+   ],
+   [
+    "base t1",
+    "left leg t8",
+    "right leg t8"
+   ],
+   [
+    "base t2",
+    "left leg t1",
+    "left leg t7"
+   ],
+   [
+    "base t2",
+    "left leg t6",
+    "right leg t6"
+   ],
+   [
+    "base t2",
+    "right leg t1",
+    "right leg t7"
+   ],
+   [
+    "base t3",
+    "left leg t1",
+    "left leg t8"
+   ],
+   [
+    "base t3",
+    "left leg t2",
+    "left leg t7"
+   ],
+   [
+    "base t3",
+    "left leg t9",
+    "right leg t9"
+   ],
+   [
+    "base t3",
+    "right leg t1",
+    "right leg t8"
+   ],
+   [
+    "base t3",
+    "right leg t2",
+    "right leg t7"
+   ],
+   [
+    "base t4",
+    "left leg t1",
+    "left leg t6"
+   ],
+   [
+    "base t4",
+    "left leg t4",
+    "left leg t8"
+   ],
+   [
+    "base t4",
+    "right leg t1",
+    "right leg t6"
+   ],
+   [
+    "base t4",
+    "right leg t4",
+    "right leg t8"
+   ],
+   [
+    "base t5",
+    "left leg t1",
+    "left leg t9"
+   ],
+   [
+    "base t5",
+    "left leg t5",
+    "left leg t6"
+   ],
+   [
+    "base t5",
+    "right leg t1",
+    "right leg t9"
+   ],
+   [
+    "base t5",
+    "right leg t5",
+    "right leg t6"
+   ],
+   [
+    "base t6",
+    "left leg t1",
+    "right leg t1"
+   ],
+   [
+    "base t6",
+    "left leg t2",
+    "left leg t6"
+   ],
+   [
+    "base t6",
+    "left leg t4",
+    "left leg t9"
+   ],
+   [
+    "base t6",
+    "right leg t2",
+    "right leg t6"
+   ],
+   [
+    "base t6",
+    "right leg t4",
+    "right leg t9"
+   ],
+   [
+    "base t7",
+    "left leg t2",
+    "left leg t9"
+   ],
+   [
+    "base t7",
+    "left leg t3",
+    "left leg t8"
+   ],
+   [
+    "base t7",
+    "left leg t5",
+    "right leg t5"
+   ],
+   [
+    "base t7",
+    "right leg t2",
+    "right leg t9"
+   ],
+   [
+    "base t7",
+    "right leg t3",
+    "right leg t8"
+   ],
+   [
+    "base t8",
+    "left leg t3",
+    "left leg t9"
+   ],
+   [
+    "base t8",
+    "left leg t4",
+    "right leg t4"
+   ],
+   [
+    "base t8",
+    "right leg t3",
+    "right leg t9"
+   ],
+   [
+    "base t9",
+    "left leg t2",
+    "right leg t2"
+   ]
+  ],
+  "p7_factors": false,
+  "p7_free": false,
+  "p7_how": "chi does not factor over Z (Terao)",
+  "p3_equiangular": false,
+  "perpendicular_pairs_in_box": 0,
+  "p4_perp_triples": false,
+  "reflection": false,
+  "pencils": {
+   "2": {
+    "count": 222,
+    "regular_in_box": 0
+   },
+   "3": {
+    "count": 31,
+    "regular_in_box": 0
+   },
+   "9": {
+    "count": 1,
+    "regular_in_box": 0
+   }
+  },
+  "p9_all_pencils_regular": false,
+  "p5_equal_area": false,
+  "p5_how": "lune test fails (certified): a lune of angle 0.46452417 pi holds 136.10558 regions' worth",
+  "t7_leg_angle_over_pi": "0.4039360613189996207982899",
+  "t7_leg_angle_rational": false,
+  "p6_rational": false,
+  "p6_how": "t7's leg planes meet at 2 arctan(2u); 2cos(2 theta) lies in Q(u^2) of degree <= 80; every n with phi(n) <= 160 (n <= 204813) checked: n theta/pi holds no integer (certified)",
+  "sphericus": {
+   "crossing_points_histogram": {
+    "2": 444,
+    "3": 62,
+    "9": 2
+   },
+   "crossing_angle_values_certified_apart": 283,
+   "arc_length_values_certified_apart": 274,
+   "ring": {
+    "crossing_points": 44,
+    "great_circles_per_point": {
+     "1": 34,
+     "2": 10
+    },
+    "crossing_angle_values_certified_apart": 17,
+    "arc_values_certified_apart": 22
+   },
+   "harmonious_crossing": false
+  },
+  "tacitus_crossings": {
+   "unweighted": {
+    "G": 4,
+    "silent_even": [],
+    "beyond_box_level": [],
+    "min_even_energy": 0.004361140719678423
+   },
+   "weighted": {
+    "G": 4,
+    "silent_even": [],
+    "beyond_box_level": [],
+    "min_even_energy": 0.0029671959240024567
+   }
+  }
+ },
+ "stella_frame_vacuus": {
+  "name": "Vacuus of the stella-octangula yantra frame (12 edges, about the centre)",
+  "planes": 6,
+  "field_degree": 1,
+  "rank": 3,
+  "lines": 7,
+  "line_multiplicities": {
+   "2": 3,
+   "3": 4
+  },
+  "regions": 24,
+  "simplicial": true,
+  "chi": "(t - 1)(t^2 - 5t + 6)",
+  "reflection": true,
+  "p3_equiangular": false,
+  "perpendicular_pairs": 3,
+  "p4_perp_triples": false,
+  "angle_classes": 2,
+  "p6_rational": true,
+  "angles_over_pi": [
+   "1/2",
+   "1/3"
+  ],
+  "irrational_angle_classes": 0,
+  "pencils": {
+   "2": {
+    "count": 3,
+    "regular": 3
+   },
+   "3": {
+    "count": 4,
+    "regular": 4
+   }
+  },
+  "p9_all_pencils_regular": true,
+  "p9_pencils_k3_regular": true,
+  "sphericus": {
+   "crossing_points_histogram": {
+    "3": 8,
+    "2": 6
+   },
+   "crossing_angle_values": 2,
+   "arc_length_values": 2,
+   "arc_length_values_per_circle_max": 2,
+   "region_sides": {
+    "3": 24
+   },
+   "area_values_over_pi": [
+    "1/6"
+   ],
+   "area_values": 1,
+   "areas_exact": true,
+   "harmonious_crossing": false
+  },
+  "p5_equal_area": true,
+  "p5_how": "reflection arrangement: congruent regions",
+  "p7_factors": true,
+  "exponents": [
+   1,
+   2,
+   3
+  ],
+  "p7_free": true,
+  "p7_how": "reflection arrangement (Saito; Terao)",
+  "tacitus_crossings": {
+   "unweighted": {
+    "G": 48,
+    "forced_even": [
+     2
+    ],
+    "silent_even": [
+     2
+    ],
+    "beyond": [],
+    "grey": []
+   },
+   "weighted": {
+    "G": 48,
+    "forced_even": [
+     2
+    ],
+    "silent_even": [
+     2
+    ],
+    "beyond": [],
+    "grey": []
+   },
+   "silent_beyond_symmetry": false
+  },
+  "secs": 0.05
+ }
+}
