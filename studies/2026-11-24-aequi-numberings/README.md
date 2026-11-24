@@ -3,27 +3,32 @@
 For DICTO's Aequi picker (chosen 22 Nov: all four numberings, switchable per die). DATA ONLY: no app change yet.
 App UI waits for DICTO's choice of syllable set (names below are a proposal).
 
-**Status (06:30 JST): all 1232 dice have all four numberings; balanced refinement running** (longer limits 60 + 20 on the
-dice not proved optimal, smallest first, until 09:12 JST; see "Resume"). The counts below are updated at the end.
+**Status (09:15 JST): complete for all 1232 dice; checks.py FINAL ok (logs/checks.out).** The balanced refinement (limits
+60 + 20) reached the dice up to N = 62 (624 dice, 571 improved); the larger dice keep their 8 + 4 (or 120 + 40) result. Continuing
+it is optional; see "Resume".
 
-## Counts (all 1232 dice; checks.py: fast phase 0 problems; full checks rerun at the end of the refinement)
+## Counts (all 1232 dice; checks.py FINAL ok)
 
 | scheme | dice | notes |
 |---|---|---|
 | plain | 1232 | |
 | opposite (sum N + 1) | 276 | exactly the centrally symmetric dice (Ih 4, Oh 57, Th 215); 956 marked unavailable |
 | spin-down | 1232 | a Hamiltonian **cycle** on every die (so N is also next to 1); no die needs a path |
-| balanced | 1232 | corner spread **proved optimal for 2**: no. 9 (N = 10, spread 8) and no. 5 (N = 14, spread 5); the rest best found with the gap stated |
+| balanced | 1232 | corner spread **proved optimal for 14**; both stages proved for 2 (nos. 5, 9); the rest best found with the gap stated |
 
-Balanced, the rest: the solver's lower bounds are weak, so the stated gaps are wide (single corner degree, 1043 dice: median gap
-29; mixed corner degrees, 189 dice: median gap 12). Best found is not claimed optimal. Smallest corner spreads found: 5 (no. 5),
-6 (nos. 6, 12, 13, 63 with N = 18; no. 25 with N = 30). Where corners of different degree meet (189 dice), raw sums differ by
+Proved optimal corner spread (no., N, spread): (5, 14, 5) (6, 18, 6) (7, 20, 9) (9, 10, 8) (10, 16, 10) (12, 18, 6) (13, 18, 6)
+(59, 16, 9) (60, 16, 11) (61, 16, 9) (62, 16, 11) (63, 18, 6) (154, 36, 12) (240, 48, 98; mixed corner degrees).
+
+The rest: the solver's lower bounds are weak, so the gaps are wide (one corner degree, 1043 dice: median gap 27, largest 163; mixed
+corner degrees, 189 dice: median gap 10, largest 155). Best found is never claimed optimal. Smallest corner spreads: 5 (no. 5),
+6 (nos. 6, 12, 13, 63 with N = 18; nos. 24, 25 with N = 30). Where corners of different degree meet (189 dice), raw sums differ by
 degree, so the spread there is large by construction (as asked: raw sums).
 
 History of the run: the first 105 dice (largest N) ran with limits 120 + 40, 4 workers; the rest with 8 + 4, 2 workers, 50000 swap
 steps, smallest N first. Stage 2 can lower the corner spread below the stage-1 value; the stored `corner_spread` is the spread of the
 stored numbers (`corner_spread_stage1` keeps the stage-1 value; scripts/fix_spreads.py corrected the first runs, which had stored
-the stage-1 value for 62 dice). Each die records its own limits (`det_time`, and `refined` if the refinement pass ran on it).
+the stage-1 value for 62 dice). Each die records its own limits (`det_time`, and `refined` if the refinement pass ran on it). Refinement keeps the better
+numbering (corner spread, then neighbour spread) and the larger proved corner bound of the two runs.
 
 ## Data
 
