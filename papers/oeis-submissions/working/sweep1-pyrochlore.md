@@ -101,13 +101,19 @@ print([a(n) for n in range(26)])
 ### REFERENCES and LINKS (each checked against rule 13)
 | Work | Opened? | Contains the claim? | Field |
 |---|---|---|---|
+| S. T. Bramwell and M. J. P. Gingras, *Spin Ice State in Frustrated Magnetic Pyrochlore Materials*, Science 294 (2001) 1495-1501, DOI 10.1126/science.1064761; arXiv:cond-mat/0201427 | yes (arXiv PDF, 24 Nov 2026; the Science version is paywalled, not compared) | yes: p. 2, Fig. 1 caption "(C) Pyrochlore lattice of corner-sharing tetrahedra"; p. 2 "the axis joining the centers of the two tetrahedra to which it belongs"; p. 3 "the pyrochlore lattice to be the medial lattice (lattice formed by the mid points of the bonds) of the diamond-like oxide lattice" | Links only (it has a DOI, rule 11) |
+| DICTO, #60 *DICTO Janus c/h Pyrochlore*, DICTO DOI: 10.5281/zenodo.23678750 | yes (v1, the only released version; Zenodo PDF identical to the local PDF) | yes: Section 3 (Construction): "The middles of its bonds form the pyrochlore network: round each atom four middles make a regular tetrahedron of edge 1/2, and every corner belongs to exactly two tetrahedra" | Links only (it has a DOI, rule 11) |
 | DICTO, #102 *Every Site Hears the Same: the Loop Equality Is a Theorem*, DICTO DOI: 10.5281/zenodo.24037664 | yes (v6 PDF and Zenodo record) | yes: Corollary 2 (terms for lengths 1-6, every site of every stacking; S*S^T = A + 4I and S^T*S - 2I in its proof) | Links only (it has a DOI, rule 11) |
-| DICTO, #60 *DICTO Janus c/h Pyrochlore*, DICTO DOI: 10.5281/zenodo.23678750 | no (only cited in #102 for the network) | not checked | leave out unless opened and checked |
 | Line-graph spectrum theorem (Sachs 1967) | no free copy opened | - | not cited; the proof above stands alone |
 
 Links line in the house format of DICTO's approved A400949 (two wordings):
 - (a) `DICTO, <a href="https://doi.org/10.5281/zenodo.24037664">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026). See Corollary 2.`
 - (b) the same without "See Corollary 2." (as A400949 has it for #102)
+
+All Links lines in order (rule 15: table line first, if any; then by surname, DICTO under D; #60 before #102 by title):
+- `Steven T. Bramwell and Michel J. P. Gingras, <a href="https://arxiv.org/abs/cond-mat/0201427">Spin Ice State in Frustrated Magnetic Pyrochlore Materials</a>, arXiv:cond-mat/0201427 [cond-mat.dis-nn], 2002; Science, 294 (2001), 1495-1501.`
+- `DICTO, <a href="https://doi.org/10.5281/zenodo.23678750">DICTO Janus c/h Pyrochlore</a>, Zenodo (2026).`
+- `DICTO, <a href="https://doi.org/10.5281/zenodo.24037664">Every Site Hears the Same: the Loop Equality Is a Theorem</a>, Zenodo (2026).`
 
 ### COMMENTS: facts only (DICTO writes the comment; rule 0b)
 - The pyrochlore network is the network of spin ice (corner-sharing tetrahedra); it is the line graph of diamond.
