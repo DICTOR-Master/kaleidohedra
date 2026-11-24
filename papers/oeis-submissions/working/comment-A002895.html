@@ -1,0 +1,120 @@
+<title>A002895 Comment Worksheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one column in OEIS form order; each field: what it is, paste-ready choices, your box. */
+:root{--bg:#f6f7f9;--panel:#fff;--fg:#1d232b;--muted:#5a6573;--line:#d9dee5;--accent:#2f5d8a;--code:#eef1f5;--ok:#2e7d4f;--req:#a3461f;--note:#fbf6e8;
+--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#13171c;--panel:#1b2128;--fg:#e4e8ee;--muted:#9aa5b2;--line:#2c343e;--accent:#8db7e0;--code:#222a33;--ok:#6cc08f;--req:#e59a74;--note:#2a2618;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13171c;--panel:#1b2128;--fg:#e4e8ee;--muted:#9aa5b2;--line:#2c343e;--accent:#8db7e0;--code:#222a33;--ok:#6cc08f;--req:#e59a74;--note:#2a2618;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance}h2{font-size:1.1rem;margin:10px 0 0;color:var(--accent)}p{margin:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:9px;min-width:0}
+.top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.lab{font-weight:600;font-size:1.05rem}
+.tag{font:600 .72rem var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid}
+.tag.r{color:var(--req);border-color:var(--req)}.tag.o{color:var(--muted);border-color:var(--line)}
+.what{color:var(--muted)}
+.sub{font:600 .78rem var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.opt{display:flex;gap:8px;align-items:flex-start}
+.n{font:600 .8rem var(--sans);color:var(--muted);padding-top:9px;min-width:1.4em}
+pre{flex:1;min-width:0;margin:0;background:var(--code);border-radius:6px;padding:8px 10px;font:.86rem/1.5 var(--mono);white-space:pre-wrap;word-break:break-word}
+.bg{background:var(--note);border-radius:6px;padding:8px 10px}
+textarea{width:100%;box-sizing:border-box;min-height:3.4em;font:.9rem/1.5 var(--mono);color:var(--fg);background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:8px}
+button{font:600 .8rem var(--sans);color:var(--accent);background:none;border:1px solid var(--accent);border-radius:6px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+button.ok{color:var(--ok);border-color:var(--ok)}button:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px}summary{cursor:pointer;font-weight:600}
+.status{border-left:3px solid var(--accent);padding-left:12px}
+</style>
+<main>
+<header style="display:flex;flex-direction:column;gap:8px">
+<h1>OEIS comment worksheet: A002895 (Domb numbers)</h1>
+<p class="status">A comment on an existing entry, added with the entry's Edit button. Source: #102 Lemma 2 (DICTO DOI 10.5281/zenodo.24037664). Checked 25 Nov: no comment of yours on A002895 yet.</p>
+<p>How to use it: only three fields change. Each field says what it is and whether it is <b>required</b> or <b>optional</b>. Under <b>Ready to paste</b> are complete texts: choose one and press Copy. The box at the bottom of each field is yours to write in. At the end, <b>Copy my entry</b> collects what you wrote.</p>
+</header>
+
+<div class="card"><div class="top"><span class="lab">Comment</span><span class="tag r">required</span></div><p class="what">One or two sentences in your own words (the OEIS does not allow AI-written comments, so nothing here is ready to paste). End with your signature: type &quot; - ~~~~&quot; and the OEIS fills in your name and date.</p>
+<p class="sub">Background for you (not for pasting)</p><p class="bg" style="white-space:pre-line">What to say, in your own words:
+1. These numbers also count the closed 2n-step walks from any atom of lonsdaleite and of the tetrahedral network of every close-packed stacking (4H, 6H, 9R and so on, periodic or not), even though the neighbor shells of these atoms differ.
+2. For periodic stackings this was known (Thorpe 1972; Nagle 1966 for ice). New in #102 (Lemma 2) is that it holds at every single atom, including aperiodic stackings.
+Words to check in your text: &quot;lonsdaleite&quot;; &quot;polytypes&quot; (not polytopes); &quot;close-packed&quot;.</p>
+<textarea id="f-comment" data-label="Comment" aria-label="Your Comment" placeholder="Your comment"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Links</span><span class="tag r">required</span></div><p class="what">Add this line to the entry&#x27;s links (it goes after the existing lines, in alphabetical order by name).</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>DICTO, &lt;a href=&quot;https://doi.org/10.5281/zenodo.24037664&quot;&gt;Every Site Hears the Same: the Loop Equality Is a Theorem&lt;/a&gt;, Zenodo (2026).</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-links" data-label="Links" aria-label="Your Links" placeholder="Your links"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Crossrefs</span><span class="tag o">optional</span></div><p class="what">Add to the existing &quot;Cf.&quot; line.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>Cf. A008264, A400949.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-xref" data-label="Crossrefs" aria-label="Your Crossrefs" placeholder="Your crossrefs"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Your whole comment</span><button type="button" id="all">Copy my entry</button></div><p class="what">Press the button: your text appears in the box below, selected. If it does not copy by itself, press and hold, Select All, Copy, and paste it into our chat.</p><textarea id="out" readonly aria-label="Your whole entry" style="min-height:8em"></textarea></div>
+<h2>The entry as it is now</h2><p class="what">A002895 in full, so you can see its existing comments and match their style.</p>
+<details open><summary>A002895 (fetched 25 Nov 2026)</summary><pre style="margin-top:8px">%N A002895 Domb numbers: number of 2n-step polygons on diamond lattice.
+%C A002895 a(n) is the (2n)th moment of the distance from the origin of a 4-step random walk in the plane. - Peter M.W. Gill (peter.gill(AT)nott.ac.uk), Mar 03 2004
+%C A002895 Row sums of the cube of A008459. - _Peter Bala_, Mar 05 2013
+%C A002895 Conjecture: Let D(n) be the (n+1) X (n+1) Hankel-type determinant with (i,j)-entry equal to a(i+j) for all i,j = 0..n. Then the number D(n)/12^n is always a positive odd integer. - _Zhi-Wei Sun_, Aug 14 2013
+%C A002895 It appears that the expansions exp( Sum_{n &gt;= 1} a(n)*x^n/n ) = 1 + 4*x + 22*x^2 + 152*x^3 + 1241*x^4 + ... and exp( Sum_{n &gt;= 1} 1/4*a(n)*x^n/n ) = 1 + x + 4*x^2 + 25*x^3 + 199*x^4 + ... have integer coefficients. See A267219. - _Peter Bala_, Jan 12 2016
+%C A002895 This is one of the Apéry-like sequences - see Cross-references. - _Hugo Pfoertner_, Aug 06 2017
+%C A002895 Named after the British-Israeli theoretical physicist Cyril Domb (1920-2012). - _Amiram Eldar_, Mar 20 2021
+%C A002895 The conjecture of _Zhi-Wei Sun_ (Aug 14 2013) was proved in Theorem 1.2 of Zhu and Sun (2018). - _Eiver Rodríguez_, Sep 08 2026
+%D A002895 N. J. A. Sloane, A Handbook of Integer Sequences, Academic Press, 1973 (includes this sequence).
+%D A002895 N. J. A. Sloane and Simon Plouffe, The Encyclopedia of Integer Sequences, Academic Press, 1995 (includes this sequence).
+%H A002895 Indranil Ghosh, &lt;a href=&quot;/A002895/b002895.txt&quot;&gt;Table of n, a(n) for n = 0..832&lt;/a&gt; (terms 0..100 from T. D. Noe)
+%H A002895 B. Adamczewski, Jason P. Bell and E. Delaygue, &lt;a href=&quot;https://arxiv.org/abs/1603.04187&quot;&gt;Algebraic independence of G-functions and congruences &quot;a la Lucas&quot;&lt;/a&gt;, arXiv preprint arXiv:1603.04187 [math.NT], 2016.
+%H A002895 David H. Bailey, Jonathan M. Borwein, David Broadhurst and M. L. Glasser, &lt;a href=&quot;https://doi.org/10.1088/1751-8113/41/20/205203&quot;&gt;Elliptic integral evaluations of Bessel moments and applications&lt;/a&gt;, J. Phys. A: Math. Theoret. 41(20) (2008), Art. 205203; &lt;a href=&quot;https://arxiv.org/abs/0801.0891&quot;&gt;arXiv preprint&lt;/a&gt;, arXiv:0801.0891 [hep-th], 2008.
+%H A002895 Nikolai Beluhov, &lt;a href=&quot;https://arxiv.org/abs/2506.12789&quot;&gt;Powers of 2 in High-Dimensional Lattice Walks&lt;/a&gt;, arXiv:2506.12789 [math.CO], 2025. See p. 20.
+%H A002895 Roberto Blanco Gómez, &lt;a href=&quot;https://doi.org/10.5281/zenodo.23928953&quot;&gt;p-adic analyticity of the Apéry, Franel and Domb numbers along the towers mp^r&lt;/a&gt;, Zenodo, 2026.
+%H A002895 Roberto Blanco Gómez, &lt;a href=&quot;https://doi.org/10.5281/zenodo.24071393&quot;&gt;Integral Frobenius structures and supercongruences for seven sporadic Apéry-like sequences&lt;/a&gt;, Zenodo, 2026.
+%H A002895 Jonathan M. Borwein, &lt;a href=&quot;https://doi.org/10.5642/jhummath.201601.07&quot;&gt;A short walk can be beautiful&lt;/a&gt;, Journal of Humanistic Mathematics, Vol. 6, No. 1 (2016), pp. 86-109; &lt;a href=&quot;https://carmamaths.org/resources/jon/beauty.pdf&quot;&gt;preprint&lt;/a&gt;, 2015.
+%H A002895 Jonathan M. Borwein, &lt;a href=&quot;https://carmamaths.org/resources/jon/OEIStalk.pdf&quot;&gt;Adventures with the OEIS: Five sequences Tony may like&lt;/a&gt;, Guttmann 70th [Birthday] Meeting, 2015, revised May 2016.
+%H A002895 Jonathan M. Borwein, &lt;a href=&quot;/A060997/a060997.pdf&quot;&gt;Adventures with the OEIS: Five sequences Tony may like&lt;/a&gt;, Guttmann 70th [Birthday] Meeting, 2015, revised May 2016. [Cached copy, with permission]
+%H A002895 Jonathan M. Borwein and Armin Straub, &lt;a href=&quot;https://doi.org/10.1016/j.tcs.2012.10.025&quot;&gt;Mahler measures, short walks and log-sine integrals&lt;/a&gt;, Theoret. Comp. Sci. 479 (2013), 4-21.
+%H A002895 Jonathan M. Borwein, Armin Straub and Christophe Vignat, &lt;a href=&quot;https://carmamaths.org/resources/jon/dwalks.pdf&quot;&gt;Densities of short uniform random walks, Part II: Higher dimensions&lt;/a&gt;, Preprint, 2015.
+%H A002895 Jonathan M. Borwein, Dirk Nuyens, Armin Straub and James Wan, &lt;a href=&quot;https://carmamaths.org/resources/jon/Preprints/Papers/Submitted%20Papers/Walks/fpsac.pdf&quot;&gt;Random Walk Integrals&lt;/a&gt;, 2010.
+%H A002895 Alin Bostan, Andrew Elvey Price, Anthony John Guttmann and Jean-Marie Maillard, &lt;a href=&quot;https://arxiv.org/abs/2001.00393&quot;&gt;Stieltjes moment sequences for pattern-avoiding permutations&lt;/a&gt;, arXiv:2001.00393 [math.CO], 2020.
+%H A002895 Alin Bostan, Andrew Elvey Price, Anthony John Guttmann, and Jean-Marie Maillard, &lt;a href=&quot;https://doi.org/10.37236/9402&quot;&gt;Stieltjes Moment Sequences for Pattern-Avoiding Permutations&lt;/a&gt;, Electron. J. Combin. 27(4) (2020), p. 27.
+%H A002895 Kevin Calderon, &lt;a href=&quot;https://arxiv.org/abs/2610.04772&quot;&gt;Supercongruences for Domb numbers&lt;/a&gt;, arXiv:2610.04772 [math.NT], 2026.
+%H A002895 H. Huat Chan, Song Heng Chan and Zhiguo Liu, &lt;a href=&quot;https://doi.org/10.1016/j.aim.2003.07.012&quot;&gt;Domb&#x27;s numbers and Ramanujan-Sato type series for 1/pi&lt;/a&gt;, Adv. Math. 186(2) (2004), 396-410.
+%H A002895 Shaun Cooper, &lt;a href=&quot;https://arxiv.org/abs/2302.00757&quot;&gt;Apéry-like sequences defined by four-term recurrence relations&lt;/a&gt;, arXiv:2302.00757 [math.NT], 2023. See Table 2 p. 7.
+%H A002895 Shaun Cooper, James G. Wan and Wadim Zudilin, &lt;a href=&quot;https://doi.org/10.1007/978-3-319-68376-8_12&quot;&gt;Holonomic Alchemy and Series for 1/pi&lt;/a&gt;, in: G. Andrews and F. Garvan (eds.) Analytic Number Theory, Modular Forms and q-Hypergeometric Series, ALLADI60 2016, Springer Proc. Math. Stat. 221. Springer, Cham, 2016; &lt;a href=&quot;https://arxiv.org/abs/1512.04608&quot;&gt;arXiv preprint&lt;/a&gt;, arXiv:1512.04608 [math.NT], 2015.
+%H A002895 Eric Delaygue, &lt;a href=&quot;https://doi.org/10.1112/S0010437X17007552&quot;&gt;Arithmetic properties of Apéry-like numbers&lt;/a&gt;, Compositio Math. 154(2) (2018), 249-274; &lt;a href=&quot;https://arxiv.org/abs/1310.4131&quot;&gt;arXiv preprint&lt;/a&gt;, arXiv:1310.4131 [math.NT], 2013-2015.
+%H A002895 Cyril Domb, &lt;a href=&quot;https://doi.org/10.1080/00018736000101199&quot;&gt;On the theory of cooperative phenomena in crystals&lt;/a&gt;, Advances in Phys 9 (1960), 149-361.
+%H A002895 Ofir Gorodetsky, &lt;a href=&quot;https://arxiv.org/abs/2102.11839&quot;&gt;New representations for all sporadic Apéry-like sequences, with applications to congruences&lt;/a&gt;, arXiv:2102.11839 [math.NT], 2021. See alpha p. 3.
+%H A002895 John A. Hendrickson, Jr., &lt;a href=&quot;https://doi.org/10.1080/00949659508811639&quot;&gt;On the enumeration of rectangular (0,1)-matrices&lt;/a&gt;, J. Statist. Comput. Simul. 51 (1995), 291-313.
+%H A002895 Timothy Huber, Daniel Schultz, and Dongxi Ye, &lt;a href=&quot;https://doi.org/10.4064/aa220621-19-12&quot;&gt;Ramanujan-Sato series for 1/pi&lt;/a&gt;, Acta Arith. 207 (2023), 121-160. See p. 11.
+%H A002895 Pakawut Jiradilok and Elchanan Mossel, &lt;a href=&quot;https://arxiv.org/abs/2402.11990&quot;&gt;Gaussian Broadcast on Grids&lt;/a&gt;, arXiv:2402.11990 [cs.IT], 2024. See p. 27.
+%H A002895 Sergey Kirgizov, Khaydar Nurligareev, and Michael Wallner, &lt;a href=&quot;https://arxiv.org/abs/2605.16715&quot;&gt;Brick Wall Excursions: Combinatorial Interpretation of Random Flight Moments&lt;/a&gt;, arXiv:2605.16715 [math.CO], 2026. See p. 3.
+%H A002895 Ji-Cai Liu, &lt;a href=&quot;https://arxiv.org/abs/2008.02647&quot;&gt;Supercongruences for sums involving Domb numbers&lt;/a&gt;, arXiv:2008.02647 [math.NT], 2020.
+%H A002895 Rui-Li Liu and Feng-Zhen Zhao, &lt;a href=&quot;https://cs.uwaterloo.ca/journals/JIS/VOL21/Liu/liu19.html&quot;&gt;New Sufficient Conditions for Log-Balancedness, With Applications to Combinatorial Sequences&lt;/a&gt;, J. Int. Seq. 21 (2018), Art. 18.5.7.
+%H A002895 Yen Lee Loh, &lt;a href=&quot;https://doi.org/10.1088/1751-8121/aa85f6&quot;&gt;A general method for calculating lattice green functions on the branch cut&lt;/a&gt;, J. Phys. A: Math. Theoret. 50(40) (2017), 405203; &lt;a href=&quot;https://arxiv.org/abs/1706.03083&quot;&gt;arXiv preprint&lt;/a&gt;, arXiv:1706.03083 [math-ph], 2017.
+%H A002895 Amita Malik and Armin Straub, &lt;a href=&quot;https://doi.org/10.1007/s40993-016-0036-8&quot;&gt;Divisibility properties of sporadic Apéry-like numbers&lt;/a&gt;, Res. Number Theory 2(5) (2016).
+%H A002895 Guo-Shuai Mao and Yan Liu, &lt;a href=&quot;https://arxiv.org/abs/2112.00511&quot;&gt;Proof of some conjectural congruences involving Domb numbers&lt;/a&gt;, arXiv:2112.00511 [math.NT], 2021.
+%H A002895 Guo-Shuai Mao and Michael J. Schlosser, &lt;a href=&quot;https://arxiv.org/abs/2112.12732&quot;&gt;Supercongruences involving Domb numbers and binary quadratic forms&lt;/a&gt;, arXiv:2112.12732 [math.NT], 2021.
+%H A002895 Robert Osburn and Brundaban Sahu, &lt;a href=&quot;https://doi.org/10.7169/facm/2013.48.1.3&quot;&gt;A supercongruence for generalized Domb numbers&lt;/a&gt;, Funct. Approx. Comment. Math. 48(1) (2013), 29-36; &lt;a href=&quot;https://web.archive.org/web/20250821035925/http://maths.ucd.ie/~osburn/superdomb.pdf&quot;&gt;preprint&lt;/a&gt;.
+%H A002895 Yassine Otmani, &lt;a href=&quot;https://math.colgate.edu/~integers/aa136/aa136.pdf&quot;&gt;A Macmahon-Strehl type identity for the Franel numbers of order four&lt;/a&gt;, Integers (2026) Art. A136. See p. 5.
+%H A002895 L. B. Richmond and Jeffrey Shallit, &lt;a href=&quot;https://doi.org/10.37236/161&quot;&gt;Counting Abelian Squares&lt;/a&gt;, Elect. J. Comb. 16(1) (2009), Art. R72. See also &lt;a href=&quot;https://arxiv.org/abs/0807.5028&quot;&gt;arXiv preprint&lt;/a&gt;, arXiv:0807.5028 [math.CO], 2008.
+%H A002895 Alex Shvets, &lt;a href=&quot;https://arxiv.org/abs/2604.06239&quot;&gt;The Domb Apéry-limit and a proof of the Ramanujan Machine conjecture Z2&lt;/a&gt;, arXiv:2604.06239 [math.NT], 2026.
+%H A002895 Alex Shvets, &lt;a href=&quot;https://arxiv.org/abs/2604.09723&quot;&gt;Order-3 pi-formulas, Apery-like kernels, and Clausen functoriality for Conservative Matrix Fields&lt;/a&gt;, arXiv:2604.09723 [math.NT], 2026.
+%H A002895 Armin Straub, &lt;a href=&quot;https://arminstraub.com/pub/dissertation&quot;&gt;Arithmetic aspects of random walks and methods in definite integration&lt;/a&gt;, Ph. D. Dissertation, School Of Science And Engineering, Tulane University, 2012.
+%H A002895 Zhi-Hong Sun, &lt;a href=&quot;https://arxiv.org/abs/2002.12072&quot;&gt;Super congruences concerning binomial coefficients and Apéry-like numbers&lt;/a&gt;, arXiv:2002.12072 [math.NT], 2020.
+%H A002895 Zhi-Hong Sun, &lt;a href=&quot;https://arxiv.org/abs/2004.07172&quot;&gt;New congruences involving Apéry-like numbers&lt;/a&gt;, arXiv:2004.07172 [math.NT], 2020.
+%H A002895 Zhi-Hong Sun, &lt;a href=&quot;https://arxiv.org/abs/2609.29910&quot;&gt;Identities and congruences involving orthogonal polynomials and Apéry-like numbers&lt;/a&gt;, arXiv:2609.29910 [math.NT], 2026. See p. 2.
+%H A002895 Zhi-Wei Sun, &lt;a href=&quot;https://doi.org/10.1142/9789814452458_0014&quot;&gt;Conjectures involving arithmetical sequences&lt;/a&gt;, in: S. Kanemitsu, H. Li and J. Liu (eds.), Number Theory: Arithmetic in Shangri-La, Proc. the 6th China-Japan Sem. Number Theory (Shanghai, August 15-17, 2011), World Sci., Singapore, 2013, pp. 244-258; &lt;a href=&quot;http://maths.nju.edu.cn/~zwsun/143p.pdf&quot;&gt;alternative link&lt;/a&gt;.
+%H A002895 Zhi-Wei Sun, &lt;a href=&quot;https://arxiv.org/abs/2607.07638&quot;&gt;A curious congruence modulo primes&lt;/a&gt;, arXiv:2607.07638 [math.NT], 2026. See p. 6.
+%H A002895 H. A. Verrill, &lt;a href=&quot;https://arxiv.org/abs/math/0407327&quot;&gt;Sums of squares of binomial coefficients, with applications to Picard-Fuchs equations&lt;/a&gt;, arXiv:math/0407327 [math.CO], 2004.
+%H A002895 Chen Wang, &lt;a href=&quot;https://arxiv.org/abs/2003.09888&quot;&gt;Supercongruences and hypergeometric transformations&lt;/a&gt;, arXiv:2003.09888 [math.NT], 2020.
+%H A002895 Yi Wang and BaoXuan Zhu, &lt;a href=&quot;https://doi.org/10.1007/s11425-014-4851-x&quot;&gt;Proofs of some conjectures on monotonicity of number-theoretic and combinatorial sequences&lt;/a&gt;, Science China Math. 57(11) (2014), 2429-2435; &lt;a href=&quot;https://arxiv.org/abs/1303.5595&quot;&gt;arXiv preprint&lt;/a&gt;, arXiv:1303.5595 [math.CO], 2013.
+%H A002895 Bao-Xuan Zhu, &lt;a href=&quot;https://arxiv.org/abs/1309.6025&quot;&gt;Higher order log-monotonicity of combinatorial sequences&lt;/a&gt;, arXiv preprint, arXiv:1309.6025 [math.CO], 2013.
+%H A002895 Bao-Xuan Zhu and Zhi-Wei Sun, &lt;a href=&quot;https://doi.org/10.1142/S1793042118500793&quot;&gt;Hankel-type determinants for some combinatorial sequences&lt;/a&gt;, International Journal of Number Theory, Vol. 14, No. 5 (2018), pp. 1265-1277.
+%Y A002895 Cf. A002893, A008459, A169714, A169715, A228289, A267219.
+%Y A002895 The Apéry-like numbers [or Apéry-like sequences, Apery-like numbers, Apery-like sequences] include A000172, A000984, A002893, A002895, A005258, A005259, A005260, A006077, A036917, A063007, A081085, A093388, A125143 (apart from signs), A143003, A143007, A143413, A143414, A143415, A143583, A183204, A214262, A219692,A226535, A227216, A227454, A229111 (apart from signs), A260667, A260832, A262177, A264541, A264542, A279619, A290575, A290576. (The term &quot;Apery-like&quot; is not well-defined.)
+%Y A002895 For primes that do not divide the terms of the sequences A000172, A005258, A002893, A081085, A006077, A093388, A125143, A229111, A002895, A290575, A290576, A005259 see A260793, A291275-A291284 and A133370 respectively.
+%K A002895 nonn,easy,nice,walk,changed
+%O A002895 0,2</pre><p><a href="https://oeis.org/A002895" target="_blank" rel="noopener">Open A002895 on the OEIS</a></p></details></main>
+<script>
+function flash(b,t){var o=b.id==='all'?'Copy my entry':'Copy';b.textContent=t;b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok')},1500)}
+function copy(text,b,sel){try{navigator.clipboard.writeText(text).then(function(){flash(b,'Copied')},function(){sel&&sel();b.textContent='Selected'})}catch(e){sel&&sel();b.textContent='Selected'}}
+document.querySelectorAll('button.cp').forEach(function(b){b.addEventListener('click',function(){var p=b.previousElementSibling;copy(p.innerText,b,function(){var r=document.createRange();r.selectNodeContents(p);var s=getSelection();s.removeAllRanges();s.addRange(r)})})});
+document.querySelectorAll('textarea[data-label]').forEach(function(t){try{var v=localStorage.getItem('a002895-'+t.id);if(v)t.value=v}catch(e){}t.addEventListener('input',function(){try{localStorage.setItem('a002895-'+t.id,t.value)}catch(e){}})});
+document.getElementById('all').addEventListener('click',function(){var s=[];document.querySelectorAll('textarea[data-label]').forEach(function(t){if(t.value.trim())s.push(t.dataset.label+':\n'+t.value.trim())});var txt=s.join('\n\n')||'(nothing written yet)';var o=document.getElementById('out');o.value=txt;o.focus();o.select();try{o.setSelectionRange(0,txt.length)}catch(e){}copy(txt,this,function(){})});
+</script>
