@@ -171,3 +171,5 @@ compose.py, shots.mjs (2026-11-21-scutoid-stand-in).
 2. "Pieces between the solid and its Vacuus" = the shell pieces (frusta), not the cones.
 3. Name: keep the plain description "face-parallel planes" (placeholder until DICTO names them).
 4. LEAD 2 next (associahedron shell, V + SF, the main priority); LEAD 1 (H4 rolling law) in small steps later, A4 first.
+
+- 24 Nov: DICTO named the face-parallel planes **Resonus** (plural Resoni).
