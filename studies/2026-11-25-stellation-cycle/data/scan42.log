@@ -1,0 +1,131 @@
+4553 77 D5d: C6+RT24/10 + D12/2 (2) pair ['D12/2', 'C6+RT24/10'] V 20 E 30 mirrorE 20 axisV 10 4+ 0
+    S {'S': ['C6+RT24/10'], 'k': 100.0, 'target': 100.0, 'boundary_orbits': ['C6+RT24/10', 'D12/2']}
+    S {'S': ['D12/2'], 'k': 20.0, 'target': 20.0, 'boundary_orbits': ['C6+RT24/10', 'D12/2']}
+4553 87 D5d: C6+RT24/10 + O8+I12/10 (3) pair ['C6+RT24/10', 'O8+I12/10'] V 22 E 40 mirrorE 30 axisV 12 4+ 12
+    S {'S': ['C6+RT24/10'], 'k': 60.0, 'target': 60.0, 'boundary_orbits': ['C6+RT24/10', 'O8+I12/10']}
+    S {'S': ['O8+I12/10'], 'k': 60.0, 'target': 60.0, 'boundary_orbits': ['C6+RT24/10', 'O8+I12/10']}
+4553 89 D5d: C6+RT24/10 + O8+I12/10 (4) pair ['C6+RT24/10', 'O8+I12/10'] V 12 E 30 mirrorE 30 axisV 12 4+ 12
+    S {'S': ['C6+RT24/10'], 'k': 60.0, 'target': 60.0, 'boundary_orbits': ['C6+RT24/10', 'O8+I12/10']}
+    S {'S': ['O8+I12/10'], 'k': 60.0, 'target': 60.0, 'boundary_orbits': ['C6+RT24/10', 'O8+I12/10']}
+4553 301 D3d: C6+RT24/6 + O8+I12/12 + I12/2 (1) pair ['C6+RT24/6', 'I12/2'] V 24 E 42 mirrorE 30 axisV 12 4+ 12
+    S {'S': ['I12/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['C6+RT24/6', 'I12/2']}
+    S {'S': ['C6+RT24/6', 'O8+I12/12'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['C6+RT24/6', 'I12/2']}
+4553 302 D3d: C6+RT24/6 + I12/2 + RT24/12 (1) pair ['C6+RT24/6', 'I12/2'] V 24 E 42 mirrorE 24 axisV 6 4+ 12
+    S {'S': ['I12/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['C6+RT24/6', 'I12/2']}
+    S {'S': ['C6+RT24/6', 'RT24/12'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['C6+RT24/6', 'I12/2']}
+4553 310 D3d: O8+I12/6 + I12/2 + RT24/12 pair ['O8+I12/6', 'RT24/12'] V 18 E 36 mirrorE 30 axisV 12 4+ 12
+    S {'S': ['O8+I12/6'], 'k': 36.0, 'target': 36.0, 'boundary_orbits': ['I12/2', 'O8+I12/6', 'RT24/12']}
+    S {'S': ['I12/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['I12/2', 'O8+I12/6']}
+    S {'S': ['RT24/12'], 'k': 72.0, 'target': 72.0, 'boundary_orbits': ['O8+I12/6', 'RT24/12']}
+    S {'S': ['O8+I12/6', 'I12/2'], 'k': 48.0, 'target': 48.0, 'boundary_orbits': ['O8+I12/6', 'RT24/12']}
+    S {'S': ['O8+I12/6', 'RT24/12'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['I12/2', 'O8+I12/6']}
+    S {'S': ['I12/2', 'RT24/12'], 'k': 84.0, 'target': 84.0, 'boundary_orbits': ['I12/2', 'O8+I12/6', 'RT24/12']}
+4553 360 D3d: C6+RT24/6a + C6+RT24/6b + C6+RT24/6c + I12/2 pair ['C6+RT24/6a', 'I12/2'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['I12/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['C6+RT24/6a', 'I12/2']}
+    S {'S': ['C6+RT24/6a', 'C6+RT24/6b', 'C6+RT24/6c'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['C6+RT24/6a', 'I12/2']}
+4553 361 D3d: C6+RT24/6a + C6+RT24/6b + O8+I12/6 + I12/2 (2) pair ['C6+RT24/6a', 'I12/2'] V 36 E 54 mirrorE 12 axisV 6 4+ 0
+    S {'S': ['I12/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['C6+RT24/6a', 'I12/2']}
+    S {'S': ['C6+RT24/6a', 'C6+RT24/6b', 'O8+I12/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['C6+RT24/6a', 'I12/2']}
+4553 362 D3d: C6+RT24/6 + O8+I12/6 + D12/6 + I12/2 (4) pair ['C6+RT24/6', 'I12/2'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['I12/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['C6+RT24/6', 'I12/2']}
+    S {'S': ['C6+RT24/6', 'O8+I12/6', 'D12/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['C6+RT24/6', 'I12/2']}
+4553 364 D3d: C6+RT24/6a + C6+RT24/6b + D12/6 + I12/2 (4) pair ['C6+RT24/6a', 'I12/2'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['I12/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['C6+RT24/6a', 'I12/2']}
+    S {'S': ['C6+RT24/6a', 'C6+RT24/6b', 'D12/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['C6+RT24/6a', 'I12/2']}
+4553 365 D3d: C6+RT24/6 + O8+I12/6 + D12/6 + I12/2 (5) pair ['C6+RT24/6', 'I12/2'] V 36 E 54 mirrorE 12 axisV 6 4+ 0
+    S {'S': ['I12/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['C6+RT24/6', 'I12/2']}
+    S {'S': ['C6+RT24/6', 'O8+I12/6', 'D12/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['C6+RT24/6', 'I12/2']}
+4553 366 D3d: C6+RT24/6a + C6+RT24/6b + O8+I12/6 + I12/2 (3) pair ['C6+RT24/6a', 'I12/2'] V 30 E 48 mirrorE 18 axisV 6 4+ 6
+    S {'S': ['I12/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['C6+RT24/6a', 'I12/2']}
+    S {'S': ['C6+RT24/6a', 'C6+RT24/6b', 'O8+I12/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['C6+RT24/6a', 'I12/2']}
+4553 367 D3d: C6+RT24/6a + C6+RT24/6b + D12/6 + I12/2 (5) pair ['C6+RT24/6a', 'I12/2'] V 30 E 48 mirrorE 18 axisV 6 4+ 6
+    S {'S': ['I12/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['C6+RT24/6a', 'I12/2']}
+    S {'S': ['C6+RT24/6a', 'C6+RT24/6b', 'D12/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['C6+RT24/6a', 'I12/2']}
+4553 487 T: O8/4a + O8/4b + RT24/12 pair ['O8/4a', 'RT24/12'] V 36 E 54 mirrorE 24 axisV 12 4+ 0
+    S {'S': ['O8/4a'], 'k': 24.0, 'target': 24.0, 'boundary_orbits': ['O8/4a', 'RT24/12']}
+    S {'S': ['O8/4b', 'RT24/12'], 'k': 96.0, 'target': 96.0, 'boundary_orbits': ['O8/4a', 'RT24/12']}
+4553 1037 D2h: I12/4 + RT24/8a + RT24/8b (2) pair ['I12/4', 'RT24/8b'] V 20 E 38 mirrorE 30 axisV 12 4+ 16
+    S {'S': ['I12/4'], 'k': 24.0, 'target': 24.0, 'boundary_orbits': ['I12/4', 'RT24/8b']}
+    S {'S': ['RT24/8a', 'RT24/8b'], 'k': 96.0, 'target': 96.0, 'boundary_orbits': ['I12/4', 'RT24/8b']}
+4553 1039 D2h: O8 + I12/4 + RT24/8 (3) pair ['RT24/8', 'I12/4'] V 20 E 38 mirrorE 30 axisV 12 4+ 16
+    S {'S': ['I12/4'], 'k': 24.0, 'target': 24.0, 'boundary_orbits': ['I12/4', 'RT24/8']}
+    S {'S': ['O8', 'RT24/8'], 'k': 96.0, 'target': 96.0, 'boundary_orbits': ['I12/4', 'RT24/8']}
+4553 1040 D2h: I12/4 + RT24/8a + RT24/8b (3) pair ['I12/4', 'RT24/8a'] V 20 E 38 mirrorE 30 axisV 12 4+ 16
+    S {'S': ['I12/4'], 'k': 24.0, 'target': 24.0, 'boundary_orbits': ['I12/4', 'RT24/8a']}
+    S {'S': ['RT24/8a', 'RT24/8b'], 'k': 96.0, 'target': 96.0, 'boundary_orbits': ['I12/4', 'RT24/8a']}
+4553 1483 D2h: D12/4 + I12/4a + I12/4b + RT24/8 (6) pair ['RT24/8', 'I12/4b'] V 24 E 42 mirrorE 22 axisV 8 4+ 12
+    S {'S': ['I12/4b'], 'k': 24.0, 'target': 24.0, 'boundary_orbits': ['I12/4b', 'RT24/8']}
+    S {'S': ['D12/4', 'I12/4a', 'RT24/8'], 'k': 96.0, 'target': 96.0, 'boundary_orbits': ['I12/4b', 'RT24/8']}
+4553 1506 D2h: I12/4a + I12/4b + I12/4c + RT24/8 pair ['RT24/8', 'I12/4c'] V 28 E 46 mirrorE 22 axisV 8 4+ 8
+    S {'S': ['I12/4c'], 'k': 24.0, 'target': 24.0, 'boundary_orbits': ['I12/4c', 'RT24/8']}
+    S {'S': ['I12/4a', 'I12/4b', 'RT24/8'], 'k': 96.0, 'target': 96.0, 'boundary_orbits': ['I12/4c', 'RT24/8']}
+4553 1507 D2h: D12/4 + I12/4a + I12/4b + RT24/8 (9) pair ['I12/4b', 'RT24/8'] V 30 E 48 mirrorE 24 axisV 10 4+ 6
+    S {'S': ['I12/4b'], 'k': 24.0, 'target': 24.0, 'boundary_orbits': ['I12/4b', 'RT24/8']}
+    S {'S': ['D12/4', 'I12/4a', 'RT24/8'], 'k': 96.0, 'target': 96.0, 'boundary_orbits': ['I12/4b', 'RT24/8']}
+4553 2197 D3: C6+RT24/6 + O8+I12/6 + O8/2 + RT24/6 (2) pair ['RT24/6', 'O8/2'] V 36 E 54 mirrorE 15 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['C6+RT24/6', 'O8+I12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2198 D3: C6+RT24/6 + O8+I12/6 + O8/2 + RT24/6 (3) pair ['RT24/6', 'O8/2'] V 36 E 54 mirrorE 15 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['C6+RT24/6', 'O8+I12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2199 D3: C6+RT24/6 + O8/2 + I12/6 + RT24/6 (2) pair ['O8/2', 'RT24/6'] V 36 E 54 mirrorE 12 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['C6+RT24/6', 'I12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2200 D3: C6+RT24/6 + O8/2 + RT24/6a + RT24/6b pair ['O8/2', 'RT24/6b'] V 36 E 54 mirrorE 12 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+    S {'S': ['C6+RT24/6', 'RT24/6a', 'RT24/6b'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+4553 2202 D3: O8+I12/6 + O8/2 + D12/6 + RT24/6 (3) pair ['RT24/6', 'O8/2'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['O8+I12/6', 'D12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2203 D3: O8+I12/6 + O8/2 + I12/6 + RT24/6 (1) pair ['O8/2', 'RT24/6'] V 36 E 54 mirrorE 15 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['O8+I12/6', 'I12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2213 D3: C6+RT24/6 + O8/2 + D12/6 + RT24/6 (4) pair ['O8/2', 'RT24/6'] V 36 E 54 mirrorE 15 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['C6+RT24/6', 'D12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2215 D3: O8+I12/6 + O8/2 + RT24/6a + RT24/6b pair ['RT24/6b', 'O8/2'] V 36 E 54 mirrorE 15 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+    S {'S': ['O8+I12/6', 'RT24/6a', 'RT24/6b'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+4553 2631 S6: C6 + O8/6 + O8/2 + RT24/6 (4) pair ['O8/2', 'RT24/6'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['C6', 'O8/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2635 S6: C6 + O8/2 + RT24/6a + RT24/6b (2) pair ['RT24/6b', 'O8/2'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+    S {'S': ['C6', 'RT24/6a', 'RT24/6b'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+4553 2639 S6: O8/6 + O8/2 + D12/6 + RT24/6 (5) pair ['O8/2', 'RT24/6'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['O8/6', 'D12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2640 S6: O8/6 + O8/2 + RT24/6a + RT24/6b (2) pair ['RT24/6b', 'O8/2'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+    S {'S': ['O8/6', 'RT24/6a', 'RT24/6b'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+4553 2661 S6: C6 + O8/2 + D12/6 + RT24/6 (6) pair ['O8/2', 'RT24/6'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['C6', 'D12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2662 S6: C6 + O8/2 + I12/6 + RT24/6 (5) pair ['O8/2', 'RT24/6'] V 36 E 54 mirrorE 12 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['C6', 'I12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2663 S6: C6 + O8/2 + I12/6 + RT24/6 (6) pair ['O8/2', 'RT24/6'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['C6', 'I12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2664 S6: C6 + O8/2 + RT24/6a + RT24/6b (3) pair ['O8/2', 'RT24/6b'] V 36 E 54 mirrorE 12 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+    S {'S': ['C6', 'RT24/6a', 'RT24/6b'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+4553 2671 S6: O8/6 + O8/2 + I12/6 + RT24/6 (3) pair ['RT24/6', 'O8/2'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['O8/6', 'I12/6', 'RT24/6'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+4553 2672 S6: O8/6 + O8/2 + RT24/6a + RT24/6b (3) pair ['RT24/6b', 'O8/2'] V 36 E 54 mirrorE 18 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+    S {'S': ['O8/6', 'RT24/6a', 'RT24/6b'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6b']}
+ext 2caps2 31 D3: O8+I12/6 + O8/2 + RT24/6 + RT24/3a + RT24/3b pair ['RT24/6', 'O8/2'] V 36 E 54 mirrorE 12 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['O8+I12/6', 'RT24/6', 'RT24/3a', 'RT24/3b'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+ext 2caps2 29 D3: C6+RT24/6 + O8/2 + RT24/6 + RT24/3a + RT24/3b pair ['O8/2', 'RT24/6'] V 36 E 54 mirrorE 12 axisV 6 4+ 0
+    S {'S': ['O8/2'], 'k': 12.0, 'target': 12.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+    S {'S': ['C6+RT24/6', 'RT24/6', 'RT24/3a', 'RT24/3b'], 'k': 108.0, 'target': 108.0, 'boundary_orbits': ['O8/2', 'RT24/6']}
+ext 2caps3 350 D2h: C6/2a + C6/2b + D12/4 + I12/4 + RT24/8 pair ['I12/4', 'RT24/8'] V 32 E 50 mirrorE 18 axisV 8 4+ 4
+    S {'S': ['I12/4'], 'k': 24.0, 'target': 24.0, 'boundary_orbits': ['I12/4', 'RT24/8']}
+    S {'S': ['C6/2a', 'C6/2b', 'D12/4', 'RT24/8'], 'k': 96.0, 'target': 96.0, 'boundary_orbits': ['I12/4', 'RT24/8']}
+ext 2caps3 418 D2h: C6/2a + C6/2b + I12/4a + I12/4b + RT24/8 pair ['RT24/8', 'I12/4b'] V 32 E 50 mirrorE 18 axisV 8 4+ 4
+    S {'S': ['I12/4b'], 'k': 24.0, 'target': 24.0, 'boundary_orbits': ['I12/4b', 'RT24/8']}
+    S {'S': ['C6/2a', 'C6/2b', 'I12/4a', 'RT24/8'], 'k': 96.0, 'target': 96.0, 'boundary_orbits': ['I12/4b', 'RT24/8']}
+FINAL ok

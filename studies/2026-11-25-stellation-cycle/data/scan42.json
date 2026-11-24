@@ -1,0 +1,2249 @@
+[
+ {
+  "src": "4553",
+  "id": 77,
+  "label": "D5d: C6+RT24/10 + D12/2 (2)",
+  "pair": [
+   "D12/2",
+   "C6+RT24/10"
+  ],
+  "N": 12,
+  "orbits": [
+   "C6+RT24/10",
+   "D12/2"
+  ],
+  "sizes": [
+   10,
+   2
+  ],
+  "corners": 20,
+  "edges": 30,
+  "edges_in_mirrors": 20,
+  "corners_on_axes": 10,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "C6+RT24/10"
+    ],
+    "k": 100.0,
+    "target": 100.0,
+    "boundary_orbits": [
+     "C6+RT24/10",
+     "D12/2"
+    ]
+   },
+   {
+    "S": [
+     "D12/2"
+    ],
+    "k": 20.0,
+    "target": 20.0,
+    "boundary_orbits": [
+     "C6+RT24/10",
+     "D12/2"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 87,
+  "label": "D5d: C6+RT24/10 + O8+I12/10 (3)",
+  "pair": [
+   "C6+RT24/10",
+   "O8+I12/10"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/10",
+   "O8+I12/10"
+  ],
+  "sizes": [
+   10,
+   10
+  ],
+  "corners": 22,
+  "edges": 40,
+  "edges_in_mirrors": 30,
+  "corners_on_axes": 12,
+  "corners_4plus": 12,
+  "shadow_unions": [
+   {
+    "S": [
+     "C6+RT24/10"
+    ],
+    "k": 60.0,
+    "target": 60.0,
+    "boundary_orbits": [
+     "C6+RT24/10",
+     "O8+I12/10"
+    ]
+   },
+   {
+    "S": [
+     "O8+I12/10"
+    ],
+    "k": 60.0,
+    "target": 60.0,
+    "boundary_orbits": [
+     "C6+RT24/10",
+     "O8+I12/10"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 89,
+  "label": "D5d: C6+RT24/10 + O8+I12/10 (4)",
+  "pair": [
+   "C6+RT24/10",
+   "O8+I12/10"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/10",
+   "O8+I12/10"
+  ],
+  "sizes": [
+   10,
+   10
+  ],
+  "corners": 12,
+  "edges": 30,
+  "edges_in_mirrors": 30,
+  "corners_on_axes": 12,
+  "corners_4plus": 12,
+  "shadow_unions": [
+   {
+    "S": [
+     "C6+RT24/10"
+    ],
+    "k": 60.0,
+    "target": 60.0,
+    "boundary_orbits": [
+     "C6+RT24/10",
+     "O8+I12/10"
+    ]
+   },
+   {
+    "S": [
+     "O8+I12/10"
+    ],
+    "k": 60.0,
+    "target": 60.0,
+    "boundary_orbits": [
+     "C6+RT24/10",
+     "O8+I12/10"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 301,
+  "label": "D3d: C6+RT24/6 + O8+I12/12 + I12/2 (1)",
+  "pair": [
+   "C6+RT24/6",
+   "I12/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6",
+   "O8+I12/12",
+   "I12/2"
+  ],
+  "sizes": [
+   6,
+   12,
+   2
+  ],
+  "corners": 24,
+  "edges": 42,
+  "edges_in_mirrors": 30,
+  "corners_on_axes": 12,
+  "corners_4plus": 12,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "C6+RT24/6",
+     "I12/2"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6",
+     "O8+I12/12"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "C6+RT24/6",
+     "I12/2"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 302,
+  "label": "D3d: C6+RT24/6 + I12/2 + RT24/12 (1)",
+  "pair": [
+   "C6+RT24/6",
+   "I12/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6",
+   "I12/2",
+   "RT24/12"
+  ],
+  "sizes": [
+   6,
+   2,
+   12
+  ],
+  "corners": 24,
+  "edges": 42,
+  "edges_in_mirrors": 24,
+  "corners_on_axes": 6,
+  "corners_4plus": 12,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "C6+RT24/6",
+     "I12/2"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6",
+     "RT24/12"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "C6+RT24/6",
+     "I12/2"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 310,
+  "label": "D3d: O8+I12/6 + I12/2 + RT24/12",
+  "pair": [
+   "O8+I12/6",
+   "RT24/12"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8+I12/6",
+   "I12/2",
+   "RT24/12"
+  ],
+  "sizes": [
+   6,
+   2,
+   12
+  ],
+  "corners": 18,
+  "edges": 36,
+  "edges_in_mirrors": 30,
+  "corners_on_axes": 12,
+  "corners_4plus": 12,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8+I12/6"
+    ],
+    "k": 36.0,
+    "target": 36.0,
+    "boundary_orbits": [
+     "I12/2",
+     "O8+I12/6",
+     "RT24/12"
+    ]
+   },
+   {
+    "S": [
+     "I12/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "I12/2",
+     "O8+I12/6"
+    ]
+   },
+   {
+    "S": [
+     "RT24/12"
+    ],
+    "k": 72.0,
+    "target": 72.0,
+    "boundary_orbits": [
+     "O8+I12/6",
+     "RT24/12"
+    ]
+   },
+   {
+    "S": [
+     "O8+I12/6",
+     "I12/2"
+    ],
+    "k": 48.0,
+    "target": 48.0,
+    "boundary_orbits": [
+     "O8+I12/6",
+     "RT24/12"
+    ]
+   },
+   {
+    "S": [
+     "O8+I12/6",
+     "RT24/12"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "I12/2",
+     "O8+I12/6"
+    ]
+   },
+   {
+    "S": [
+     "I12/2",
+     "RT24/12"
+    ],
+    "k": 84.0,
+    "target": 84.0,
+    "boundary_orbits": [
+     "I12/2",
+     "O8+I12/6",
+     "RT24/12"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 360,
+  "label": "D3d: C6+RT24/6a + C6+RT24/6b + C6+RT24/6c + I12/2",
+  "pair": [
+   "C6+RT24/6a",
+   "I12/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6a",
+   "C6+RT24/6b",
+   "C6+RT24/6c",
+   "I12/2"
+  ],
+  "sizes": [
+   6,
+   6,
+   6,
+   2
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "C6+RT24/6a",
+     "I12/2"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6a",
+     "C6+RT24/6b",
+     "C6+RT24/6c"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "C6+RT24/6a",
+     "I12/2"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 361,
+  "label": "D3d: C6+RT24/6a + C6+RT24/6b + O8+I12/6 + I12/2 (2)",
+  "pair": [
+   "C6+RT24/6a",
+   "I12/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6a",
+   "C6+RT24/6b",
+   "O8+I12/6",
+   "I12/2"
+  ],
+  "sizes": [
+   6,
+   6,
+   6,
+   2
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 12,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "C6+RT24/6a",
+     "I12/2"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6a",
+     "C6+RT24/6b",
+     "O8+I12/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "C6+RT24/6a",
+     "I12/2"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 362,
+  "label": "D3d: C6+RT24/6 + O8+I12/6 + D12/6 + I12/2 (4)",
+  "pair": [
+   "C6+RT24/6",
+   "I12/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6",
+   "O8+I12/6",
+   "D12/6",
+   "I12/2"
+  ],
+  "sizes": [
+   6,
+   6,
+   6,
+   2
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "C6+RT24/6",
+     "I12/2"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6",
+     "O8+I12/6",
+     "D12/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "C6+RT24/6",
+     "I12/2"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 364,
+  "label": "D3d: C6+RT24/6a + C6+RT24/6b + D12/6 + I12/2 (4)",
+  "pair": [
+   "C6+RT24/6a",
+   "I12/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6a",
+   "C6+RT24/6b",
+   "D12/6",
+   "I12/2"
+  ],
+  "sizes": [
+   6,
+   6,
+   6,
+   2
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "C6+RT24/6a",
+     "I12/2"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6a",
+     "C6+RT24/6b",
+     "D12/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "C6+RT24/6a",
+     "I12/2"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 365,
+  "label": "D3d: C6+RT24/6 + O8+I12/6 + D12/6 + I12/2 (5)",
+  "pair": [
+   "C6+RT24/6",
+   "I12/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6",
+   "O8+I12/6",
+   "D12/6",
+   "I12/2"
+  ],
+  "sizes": [
+   6,
+   6,
+   6,
+   2
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 12,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "C6+RT24/6",
+     "I12/2"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6",
+     "O8+I12/6",
+     "D12/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "C6+RT24/6",
+     "I12/2"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 366,
+  "label": "D3d: C6+RT24/6a + C6+RT24/6b + O8+I12/6 + I12/2 (3)",
+  "pair": [
+   "C6+RT24/6a",
+   "I12/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6a",
+   "C6+RT24/6b",
+   "O8+I12/6",
+   "I12/2"
+  ],
+  "sizes": [
+   6,
+   6,
+   6,
+   2
+  ],
+  "corners": 30,
+  "edges": 48,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 6,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "C6+RT24/6a",
+     "I12/2"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6a",
+     "C6+RT24/6b",
+     "O8+I12/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "C6+RT24/6a",
+     "I12/2"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 367,
+  "label": "D3d: C6+RT24/6a + C6+RT24/6b + D12/6 + I12/2 (5)",
+  "pair": [
+   "C6+RT24/6a",
+   "I12/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6a",
+   "C6+RT24/6b",
+   "D12/6",
+   "I12/2"
+  ],
+  "sizes": [
+   6,
+   6,
+   6,
+   2
+  ],
+  "corners": 30,
+  "edges": 48,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 6,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "C6+RT24/6a",
+     "I12/2"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6a",
+     "C6+RT24/6b",
+     "D12/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "C6+RT24/6a",
+     "I12/2"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 487,
+  "label": "T: O8/4a + O8/4b + RT24/12",
+  "pair": [
+   "O8/4a",
+   "RT24/12"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8/4a",
+   "O8/4b",
+   "RT24/12"
+  ],
+  "sizes": [
+   4,
+   4,
+   12
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 24,
+  "corners_on_axes": 12,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/4a"
+    ],
+    "k": 24.0,
+    "target": 24.0,
+    "boundary_orbits": [
+     "O8/4a",
+     "RT24/12"
+    ]
+   },
+   {
+    "S": [
+     "O8/4b",
+     "RT24/12"
+    ],
+    "k": 96.0,
+    "target": 96.0,
+    "boundary_orbits": [
+     "O8/4a",
+     "RT24/12"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 1037,
+  "label": "D2h: I12/4 + RT24/8a + RT24/8b (2)",
+  "pair": [
+   "I12/4",
+   "RT24/8b"
+  ],
+  "N": 20,
+  "orbits": [
+   "I12/4",
+   "RT24/8a",
+   "RT24/8b"
+  ],
+  "sizes": [
+   4,
+   8,
+   8
+  ],
+  "corners": 20,
+  "edges": 38,
+  "edges_in_mirrors": 30,
+  "corners_on_axes": 12,
+  "corners_4plus": 16,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/4"
+    ],
+    "k": 24.0,
+    "target": 24.0,
+    "boundary_orbits": [
+     "I12/4",
+     "RT24/8b"
+    ]
+   },
+   {
+    "S": [
+     "RT24/8a",
+     "RT24/8b"
+    ],
+    "k": 96.0,
+    "target": 96.0,
+    "boundary_orbits": [
+     "I12/4",
+     "RT24/8b"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 1039,
+  "label": "D2h: O8 + I12/4 + RT24/8 (3)",
+  "pair": [
+   "RT24/8",
+   "I12/4"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8",
+   "I12/4",
+   "RT24/8"
+  ],
+  "sizes": [
+   8,
+   4,
+   8
+  ],
+  "corners": 20,
+  "edges": 38,
+  "edges_in_mirrors": 30,
+  "corners_on_axes": 12,
+  "corners_4plus": 16,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/4"
+    ],
+    "k": 24.0,
+    "target": 24.0,
+    "boundary_orbits": [
+     "I12/4",
+     "RT24/8"
+    ]
+   },
+   {
+    "S": [
+     "O8",
+     "RT24/8"
+    ],
+    "k": 96.0,
+    "target": 96.0,
+    "boundary_orbits": [
+     "I12/4",
+     "RT24/8"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 1040,
+  "label": "D2h: I12/4 + RT24/8a + RT24/8b (3)",
+  "pair": [
+   "I12/4",
+   "RT24/8a"
+  ],
+  "N": 20,
+  "orbits": [
+   "I12/4",
+   "RT24/8a",
+   "RT24/8b"
+  ],
+  "sizes": [
+   4,
+   8,
+   8
+  ],
+  "corners": 20,
+  "edges": 38,
+  "edges_in_mirrors": 30,
+  "corners_on_axes": 12,
+  "corners_4plus": 16,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/4"
+    ],
+    "k": 24.0,
+    "target": 24.0,
+    "boundary_orbits": [
+     "I12/4",
+     "RT24/8a"
+    ]
+   },
+   {
+    "S": [
+     "RT24/8a",
+     "RT24/8b"
+    ],
+    "k": 96.0,
+    "target": 96.0,
+    "boundary_orbits": [
+     "I12/4",
+     "RT24/8a"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 1483,
+  "label": "D2h: D12/4 + I12/4a + I12/4b + RT24/8 (6)",
+  "pair": [
+   "RT24/8",
+   "I12/4b"
+  ],
+  "N": 20,
+  "orbits": [
+   "D12/4",
+   "I12/4a",
+   "I12/4b",
+   "RT24/8"
+  ],
+  "sizes": [
+   4,
+   4,
+   4,
+   8
+  ],
+  "corners": 24,
+  "edges": 42,
+  "edges_in_mirrors": 22,
+  "corners_on_axes": 8,
+  "corners_4plus": 12,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/4b"
+    ],
+    "k": 24.0,
+    "target": 24.0,
+    "boundary_orbits": [
+     "I12/4b",
+     "RT24/8"
+    ]
+   },
+   {
+    "S": [
+     "D12/4",
+     "I12/4a",
+     "RT24/8"
+    ],
+    "k": 96.0,
+    "target": 96.0,
+    "boundary_orbits": [
+     "I12/4b",
+     "RT24/8"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 1506,
+  "label": "D2h: I12/4a + I12/4b + I12/4c + RT24/8",
+  "pair": [
+   "RT24/8",
+   "I12/4c"
+  ],
+  "N": 20,
+  "orbits": [
+   "I12/4a",
+   "I12/4b",
+   "I12/4c",
+   "RT24/8"
+  ],
+  "sizes": [
+   4,
+   4,
+   4,
+   8
+  ],
+  "corners": 28,
+  "edges": 46,
+  "edges_in_mirrors": 22,
+  "corners_on_axes": 8,
+  "corners_4plus": 8,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/4c"
+    ],
+    "k": 24.0,
+    "target": 24.0,
+    "boundary_orbits": [
+     "I12/4c",
+     "RT24/8"
+    ]
+   },
+   {
+    "S": [
+     "I12/4a",
+     "I12/4b",
+     "RT24/8"
+    ],
+    "k": 96.0,
+    "target": 96.0,
+    "boundary_orbits": [
+     "I12/4c",
+     "RT24/8"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 1507,
+  "label": "D2h: D12/4 + I12/4a + I12/4b + RT24/8 (9)",
+  "pair": [
+   "I12/4b",
+   "RT24/8"
+  ],
+  "N": 20,
+  "orbits": [
+   "D12/4",
+   "I12/4a",
+   "I12/4b",
+   "RT24/8"
+  ],
+  "sizes": [
+   4,
+   4,
+   4,
+   8
+  ],
+  "corners": 30,
+  "edges": 48,
+  "edges_in_mirrors": 24,
+  "corners_on_axes": 10,
+  "corners_4plus": 6,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/4b"
+    ],
+    "k": 24.0,
+    "target": 24.0,
+    "boundary_orbits": [
+     "I12/4b",
+     "RT24/8"
+    ]
+   },
+   {
+    "S": [
+     "D12/4",
+     "I12/4a",
+     "RT24/8"
+    ],
+    "k": 96.0,
+    "target": 96.0,
+    "boundary_orbits": [
+     "I12/4b",
+     "RT24/8"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2197,
+  "label": "D3: C6+RT24/6 + O8+I12/6 + O8/2 + RT24/6 (2)",
+  "pair": [
+   "RT24/6",
+   "O8/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6",
+   "O8+I12/6",
+   "O8/2",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   6,
+   2,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 15,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6",
+     "O8+I12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2198,
+  "label": "D3: C6+RT24/6 + O8+I12/6 + O8/2 + RT24/6 (3)",
+  "pair": [
+   "RT24/6",
+   "O8/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6",
+   "O8+I12/6",
+   "O8/2",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   6,
+   2,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 15,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6",
+     "O8+I12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2199,
+  "label": "D3: C6+RT24/6 + O8/2 + I12/6 + RT24/6 (2)",
+  "pair": [
+   "O8/2",
+   "RT24/6"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6",
+   "O8/2",
+   "I12/6",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 12,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6",
+     "I12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2200,
+  "label": "D3: C6+RT24/6 + O8/2 + RT24/6a + RT24/6b",
+  "pair": [
+   "O8/2",
+   "RT24/6b"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6",
+   "O8/2",
+   "RT24/6a",
+   "RT24/6b"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 12,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6",
+     "RT24/6a",
+     "RT24/6b"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2202,
+  "label": "D3: O8+I12/6 + O8/2 + D12/6 + RT24/6 (3)",
+  "pair": [
+   "RT24/6",
+   "O8/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8+I12/6",
+   "O8/2",
+   "D12/6",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "O8+I12/6",
+     "D12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2203,
+  "label": "D3: O8+I12/6 + O8/2 + I12/6 + RT24/6 (1)",
+  "pair": [
+   "O8/2",
+   "RT24/6"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8+I12/6",
+   "O8/2",
+   "I12/6",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 15,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "O8+I12/6",
+     "I12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2213,
+  "label": "D3: C6+RT24/6 + O8/2 + D12/6 + RT24/6 (4)",
+  "pair": [
+   "O8/2",
+   "RT24/6"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6",
+   "O8/2",
+   "D12/6",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 15,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6",
+     "D12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2215,
+  "label": "D3: O8+I12/6 + O8/2 + RT24/6a + RT24/6b",
+  "pair": [
+   "RT24/6b",
+   "O8/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8+I12/6",
+   "O8/2",
+   "RT24/6a",
+   "RT24/6b"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 15,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   },
+   {
+    "S": [
+     "O8+I12/6",
+     "RT24/6a",
+     "RT24/6b"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2631,
+  "label": "S6: C6 + O8/6 + O8/2 + RT24/6 (4)",
+  "pair": [
+   "O8/2",
+   "RT24/6"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6",
+   "O8/6",
+   "O8/2",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   6,
+   2,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "C6",
+     "O8/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2635,
+  "label": "S6: C6 + O8/2 + RT24/6a + RT24/6b (2)",
+  "pair": [
+   "RT24/6b",
+   "O8/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6",
+   "O8/2",
+   "RT24/6a",
+   "RT24/6b"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   },
+   {
+    "S": [
+     "C6",
+     "RT24/6a",
+     "RT24/6b"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2639,
+  "label": "S6: O8/6 + O8/2 + D12/6 + RT24/6 (5)",
+  "pair": [
+   "O8/2",
+   "RT24/6"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8/6",
+   "O8/2",
+   "D12/6",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "O8/6",
+     "D12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2640,
+  "label": "S6: O8/6 + O8/2 + RT24/6a + RT24/6b (2)",
+  "pair": [
+   "RT24/6b",
+   "O8/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8/6",
+   "O8/2",
+   "RT24/6a",
+   "RT24/6b"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   },
+   {
+    "S": [
+     "O8/6",
+     "RT24/6a",
+     "RT24/6b"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2661,
+  "label": "S6: C6 + O8/2 + D12/6 + RT24/6 (6)",
+  "pair": [
+   "O8/2",
+   "RT24/6"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6",
+   "O8/2",
+   "D12/6",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "C6",
+     "D12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2662,
+  "label": "S6: C6 + O8/2 + I12/6 + RT24/6 (5)",
+  "pair": [
+   "O8/2",
+   "RT24/6"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6",
+   "O8/2",
+   "I12/6",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 12,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "C6",
+     "I12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2663,
+  "label": "S6: C6 + O8/2 + I12/6 + RT24/6 (6)",
+  "pair": [
+   "O8/2",
+   "RT24/6"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6",
+   "O8/2",
+   "I12/6",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "C6",
+     "I12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2664,
+  "label": "S6: C6 + O8/2 + RT24/6a + RT24/6b (3)",
+  "pair": [
+   "O8/2",
+   "RT24/6b"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6",
+   "O8/2",
+   "RT24/6a",
+   "RT24/6b"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 12,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   },
+   {
+    "S": [
+     "C6",
+     "RT24/6a",
+     "RT24/6b"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2671,
+  "label": "S6: O8/6 + O8/2 + I12/6 + RT24/6 (3)",
+  "pair": [
+   "RT24/6",
+   "O8/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8/6",
+   "O8/2",
+   "I12/6",
+   "RT24/6"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "O8/6",
+     "I12/6",
+     "RT24/6"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "4553",
+  "id": 2672,
+  "label": "S6: O8/6 + O8/2 + RT24/6a + RT24/6b (3)",
+  "pair": [
+   "RT24/6b",
+   "O8/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8/6",
+   "O8/2",
+   "RT24/6a",
+   "RT24/6b"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   6
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   },
+   {
+    "S": [
+     "O8/6",
+     "RT24/6a",
+     "RT24/6b"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6b"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "ext 2caps2",
+  "id": 31,
+  "label": "D3: O8+I12/6 + O8/2 + RT24/6 + RT24/3a + RT24/3b",
+  "pair": [
+   "RT24/6",
+   "O8/2"
+  ],
+  "N": 20,
+  "orbits": [
+   "O8+I12/6",
+   "O8/2",
+   "RT24/6",
+   "RT24/3a",
+   "RT24/3b"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   3,
+   3
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 12,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "O8+I12/6",
+     "RT24/6",
+     "RT24/3a",
+     "RT24/3b"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "ext 2caps2",
+  "id": 29,
+  "label": "D3: C6+RT24/6 + O8/2 + RT24/6 + RT24/3a + RT24/3b",
+  "pair": [
+   "O8/2",
+   "RT24/6"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6+RT24/6",
+   "O8/2",
+   "RT24/6",
+   "RT24/3a",
+   "RT24/3b"
+  ],
+  "sizes": [
+   6,
+   2,
+   6,
+   3,
+   3
+  ],
+  "corners": 36,
+  "edges": 54,
+  "edges_in_mirrors": 12,
+  "corners_on_axes": 6,
+  "corners_4plus": 0,
+  "shadow_unions": [
+   {
+    "S": [
+     "O8/2"
+    ],
+    "k": 12.0,
+    "target": 12.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   },
+   {
+    "S": [
+     "C6+RT24/6",
+     "RT24/6",
+     "RT24/3a",
+     "RT24/3b"
+    ],
+    "k": 108.0,
+    "target": 108.0,
+    "boundary_orbits": [
+     "O8/2",
+     "RT24/6"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "ext 2caps3",
+  "id": 350,
+  "label": "D2h: C6/2a + C6/2b + D12/4 + I12/4 + RT24/8",
+  "pair": [
+   "I12/4",
+   "RT24/8"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6/2a",
+   "C6/2b",
+   "D12/4",
+   "I12/4",
+   "RT24/8"
+  ],
+  "sizes": [
+   2,
+   2,
+   4,
+   4,
+   8
+  ],
+  "corners": 32,
+  "edges": 50,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 8,
+  "corners_4plus": 4,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/4"
+    ],
+    "k": 24.0,
+    "target": 24.0,
+    "boundary_orbits": [
+     "I12/4",
+     "RT24/8"
+    ]
+   },
+   {
+    "S": [
+     "C6/2a",
+     "C6/2b",
+     "D12/4",
+     "RT24/8"
+    ],
+    "k": 96.0,
+    "target": 96.0,
+    "boundary_orbits": [
+     "I12/4",
+     "RT24/8"
+    ]
+   }
+  ]
+ },
+ {
+  "src": "ext 2caps3",
+  "id": 418,
+  "label": "D2h: C6/2a + C6/2b + I12/4a + I12/4b + RT24/8",
+  "pair": [
+   "RT24/8",
+   "I12/4b"
+  ],
+  "N": 20,
+  "orbits": [
+   "C6/2a",
+   "C6/2b",
+   "I12/4a",
+   "I12/4b",
+   "RT24/8"
+  ],
+  "sizes": [
+   2,
+   2,
+   4,
+   4,
+   8
+  ],
+  "corners": 32,
+  "edges": 50,
+  "edges_in_mirrors": 18,
+  "corners_on_axes": 8,
+  "corners_4plus": 4,
+  "shadow_unions": [
+   {
+    "S": [
+     "I12/4b"
+    ],
+    "k": 24.0,
+    "target": 24.0,
+    "boundary_orbits": [
+     "I12/4b",
+     "RT24/8"
+    ]
+   },
+   {
+    "S": [
+     "C6/2a",
+     "C6/2b",
+     "I12/4a",
+     "RT24/8"
+    ],
+    "k": 96.0,
+    "target": 96.0,
+    "boundary_orbits": [
+     "I12/4b",
+     "RT24/8"
+    ]
+   }
+  ]
+ }
+]

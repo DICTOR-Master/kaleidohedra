@@ -71,7 +71,7 @@ for f in sorted(glob.glob(os.path.join(ST, "2026-11-24-aequi-certify-extend/data
         fr = frame(orbits); key = ("ext " + batch, d["group"], fr); counts[key] = counts.get(key, 0) + 1
         if fr in ("31", "primed31"):
             t = eval(d["tight"]) if isinstance(d["tight"], str) else d["tight"]
-            dep = [D(enc.match(s).group(1)) for s in t["enclosure"]][:len(orbits)]
+            dep = [D(1)] + [D(enc.match(s).group(1)) for s in t["enclosure"]][:len(orbits) - 1]   # orbit 0 is the unit; the enclosure lists orbits 1..m-1 (fixed 25 Nov: the first run dropped the 1 and shifted the labels)
             b = test(dep, orbits)
             if equal: nequal.append(("ext " + batch, d["sid"], d["label"]))
             rows.append(dict(src="ext " + batch, id=d["sid"], label=d["label"], group=d["group"], best=b))
