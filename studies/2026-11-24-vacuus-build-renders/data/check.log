@@ -6,14 +6,11 @@ ok   every cube fin has apex cos = 1/3
 ok   six diagonal planes, each with 2 fins and 4 corners
 ok   every fin lies in exactly one diagonal plane
 ok   six face pyramids fill the cube: 6 * (1/3)(2*2)(1) = 8
-ok   each diagonal rectangle: 4 cube corners, exactly two cube edges (opposite, parallel), contains O
-ok   rectangle sides 2 (cube edge) and 2 sqrt 2 (face diagonal), area 4 sqrt 2
-ok   exactly three diagonal rectangles contain the body diagonal (-1,-1,-1)-(1,1,1): x = y, x = z, y = z
-ok   pulled trio (pull 12/5 along unit normals, as drawn): the three rectangles are pairwise disjoint
-ok   they still meet at pull sqrt(2)/2 (q = 1/2), so the pull is needed: touching threshold
 ok   octahedron skeleton 12 edges + 6 corner-to-centre struts; each square frame = 4 edges + 4 half-axes, each half-axis in 2 squares
 ok   octahedron pull-apart (9/5 along the normals, as drawn): the three square frames are pairwise disjoint (9/5 > 1)
 ok   B1NR cube skeleton: 12 edges + 8 corner-to-centre struts; each face pyramid = 4 base edges + 4 struts; each strut in 3 pyramids
-ok   white ring cube: 12 face diagonals; each rectangle frame = 2 edges + 2 face diagonals + 4 corner-to-centre struts
-ok   white ring cube: every edge and every face diagonal in exactly one frame, every corner-to-centre strut in three
+ok   B1NR pull-apart (27/5 along the face normals, as drawn): the six pyramid frames are pairwise disjoint (pyramid x_k = s lies in s x_k >= 27/5; every other has s x_k < 27/5)
+ok   cuboctahedron: 12 corners, 24 edges of length sqrt 2, 4 at each corner; all 12 centre struts sqrt 2 (= edge, one length)
+ok   dodecahedron (Q(sqrt 5)): 20 distinct corners, 30 edges of length 2/phi, 3 at each corner; all 20 centre struts sqrt 3
+ok   view axis (1, 0, phi) goes through a face centre: exactly 5 corners (one pentagon) at the greatest height along it
 FINAL ok

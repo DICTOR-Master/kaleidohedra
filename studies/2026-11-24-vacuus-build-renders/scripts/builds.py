@@ -1,4 +1,4 @@
-"""Exact SKELETAL renders of three of DICTO's Vacuus builds (paper #87 DICTO Vacuus Solids), 24 Nov 2026.
+"""Exact SKELETAL renders of DICTO's four Vacuus builds (paper #87 DICTO Vacuus Solids), 24 Nov 2026.
 DICTO, 24 Nov: "the way I build all my PET bottle and B1NR sculptures is as Vacuus ... and hulls ... they are skeletons and empty".
 So every build is drawn as an open framework: struts (tubes) and joints (balls), no faces; the empty space shows.
 Not fitted to photos: every strut joins exact corners of the solid the build realises.
@@ -6,10 +6,14 @@ Not fitted to photos: every strut joins exact corners of the solid the build rea
     squares x = 0, y = 0, z = 0 stand as frames (each: 4 edges + its 2 diagonals = 4 half-axes). Pull-apart: each square frame
     moved along its own normal.
  2. B1NR cube [-1,1]^3: the hull skeleton (12 edges) + the Vacuus skeleton (8 corner-to-centre struts): the empty cube that is six
-    square pyramids meeting at the centre O. Clear tubes. Pull-apart: the six pyramid skeletons along the face normals.
- 3. White ring cube: the six diagonal rectangles as open frames. Each rectangle = its outline (two opposite cube edges + two face
-    diagonals) + its two diagonals through O (four corner-to-centre struts). Union: 12 edges + 12 face diagonals + 8 corner-to-centre
-    struts. Views: assembled; one rectangle in white with the rest faint; the three through one body diagonal pulled apart.
+    square pyramids meeting at the centre O. Clear tubes. Pull-apart: the six pyramid skeletons along the face normals, pull 27/5,
+    chosen so that the six frames' projected bounding boxes (joint balls included) are pairwise disjoint in the drawn view.
+ 3. B1NR cuboctahedron Vacuus, NO hull (DICTO 24 Nov, "both B1NR no hulls"): the STRUTS form of #87 without its optional edges,
+    one clear rod from O to each of the 12 corners (permutations of (+-1, +-1, 0)). Views: oblique; down a three-fold axis.
+ 4. B1NR dodecahedron Vacuus, NO hull: one clear rod from O to each of the 20 corners ((+-1, +-1, +-1) and the cyclic permutations
+    of (0, +-1/phi, +-phi)). Views: oblique; down a five-fold axis (1, 0, phi).
+ No pull-apart for 3 and 4: without edges a centre pyramid is a bare tuft of rods, so pulling them apart shows nothing new.
+ (The white ring cube is the B1NR cube itself, DICTO 24 Nov; its separate diagonal-rectangle render is withdrawn.)
 Usage: python builds.py <out.html>   (house renderer render3d.write, with see-through tubes added below; frames by shots.mjs)."""
 import sys, os, itertools, numpy as np
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../2026-11-21-scutoid-stand-in/renders/scripts"))
@@ -60,7 +64,6 @@ def octa_pulled(pull):
 # ---------------- cube ----------------
 CV = [np.array(p, float) for p in itertools.product((-1, 1), repeat=3)]
 CE = [(CV[i], CV[j]) for i in range(8) for j in range(i + 1, 8) if np.abs(CV[i] - CV[j]).sum() == 2]            # 12 edges
-FD = [(CV[i], CV[j]) for i in range(8) for j in range(i + 1, 8) if np.abs(CV[i] - CV[j]).sum() == 4]            # 12 face diagonals
 CS = [(O, p) for p in CV]                                                                                       # 8 corner-to-centre struts
 CF = [(k, s) for k in range(3) for s in (1, -1)]                                                                # faces x_k = s
 
@@ -77,44 +80,45 @@ def b1nr_pulled(pull):
         out.append(b1nr([(p, q) for p, q in CE if p[k] == s and q[k] == s] + [(O, p) for p in base], np.eye(3)[k] * s * pull))
     return out
 
-# 3. white ring cube
-WHITE, WHITE_OUT, WHITE_BALL, FAINT = '#f3f0ea', '#2a2a2e', '#e6e1d6', '#5d636d'
-PLANES = {}
-for i, j in ((0, 1), (0, 2), (1, 2)):
-    for s in (1, -1):
-        nrm = np.zeros(3); nrm[i], nrm[j] = 1, -s
-        inn = lambda p: abs(np.dot(p, nrm)) < 1e-12
-        st = [(p, q) for p, q in CE + FD + CS if inn(p) and inn(q)]
-        assert len(st) == 8                      # outline: 2 edges + 2 face diagonals; X: 4 corner-to-centre struts
-        PLANES[(i, j, s)] = (nrm / np.linalg.norm(nrm), st)
-def white_all():
-    return [skel(CE + FD + CS, WHITE, WHITE_OUT, 0.0085, WHITE_BALL)]
-def white_one(key=(0, 2, -1)):
-    n, st = PLANES[key]
-    key_set = {tuple(np.round(np.r_[p, q], 6)) for p, q in st}
-    rest = [(p, q) for p, q in CE + FD + CS if tuple(np.round(np.r_[p, q], 6)) not in key_set]
-    return [skel(rest, FAINT, None, 0.0040, None), skel(st, WHITE, WHITE_OUT, 0.0095, WHITE_BALL)]
-TRIO = [((0, 1, 1), (1, -1, 0)), ((0, 2, 1), (-1, 0, 1)), ((1, 2, 1), (0, 1, -1))]
-PULL3 = 2.4
-def white_trio(pull):
-    out = []
-    for key, d in TRIO:
-        n, st = PLANES[key]; d = np.array(d, float) / np.sqrt(2); assert abs(abs(np.dot(d, n)) - 1) < 1e-12
-        out.append(skel(st, WHITE, WHITE_OUT, 0.0085, WHITE_BALL, d * pull))
-    return out
+VO = [0.85, 0.62, 1.25]; VC = [1.0, 0.62, 1.45]
 
+# 3. and 4. B1NR, no hull: the centre struts only (same clear tubes as the B1NR cube)
+PHI = (1 + 5 ** 0.5) / 2
+QV = [np.array(p, float) for p in {tuple(np.roll(q, r)) for q in itertools.product((1, -1), (1, -1), (0,)) for r in range(3)}]
+DV = [np.array(p, float) for p in itertools.product((-1, 1), repeat=3)] + \
+     [np.roll(np.array([0, a / PHI, b * PHI]), r) for a in (1, -1) for b in (1, -1) for r in range(3)]
+assert len(QV) == 12 and len(DV) == 20
+def centre_struts(V):
+    return [b1nr([(O, p) for p in V])]
+V3 = [1, 1, 1]; V5 = [1, 0, PHI]
 
-VO = [0.85, 0.62, 1.25]; VC = [1.0, 0.62, 1.45]; VT = [0.9, 0.3, -0.3]
+# B1NR pull-apart: the six pyramid frames must be clearly separate IN THE PICTURE. Check by projected bounding boxes in the drawn
+# view (render3d.project, joint ball radius as margin): every pair of boxes disjoint with a gap of at least 1.5 % of the frame.
+PULLB, EP = 5.4, 6.9
+def b1nr_boxes(pull, E):
+    pad = 1.25 * 0.0175 / 2 * render3d.PX                          # joint ball radius (1.25 rad E) in pixels
+    B = []
+    for part in b1nr_pulled(pull):
+        P = render3d.project(np.array(part['v']), VC, E)
+        B.append((P[:, 0].min() - pad, P[:, 0].max() + pad, P[:, 1].min() - pad, P[:, 1].max() + pad))
+    return B
+BX = b1nr_boxes(PULLB, EP)
+GAP = min(max(b[0] - a[1], a[0] - b[1], b[2] - a[3], a[2] - b[3]) for a, b in itertools.combinations(BX, 2))
+INFRAME = all(0 < b[0] and b[1] < render3d.PX and 0 < b[2] and b[3] < render3d.PX for b in BX)
+print('B1NR pull %.2f, E %.2f: smallest gap between projected boxes %.1f px of %d; all boxes in frame: %s'
+      % (PULLB, EP, GAP, render3d.PX, INFRAME))
+for k, b in zip(['+x', '-x', '+y', '-y', '+z', '-z'], BX): print('  pyramid %s box x %.0f-%.0f y %.0f-%.0f' % ((k,) + b))
 scenes = [
     {'E': 1.30, 'dir': VO, 'parts': octa_all()},             # p0 octahedron skeleton: 12 edges + 6 half-axes (three square frames)
     {'E': 2.95, 'dir': VO, 'parts': octa_pulled(1.8)},       # p1 the three square frames pulled apart along their normals
     {'E': 1.95, 'dir': VC, 'parts': b1nr_all()},             # p2 B1NR cube: 12 edges + 8 corner-to-centre struts
-    {'E': 4.1, 'dir': VC, 'parts': b1nr_pulled(1.8)},       # p3 its six pyramid skeletons pulled apart
-    {'E': 1.95, 'dir': VC, 'parts': white_all()},            # p4 white ring cube: six rectangle frames assembled
-    {'E': 1.95, 'dir': VC, 'parts': white_one()},            # p5 one rectangle frame (x = -z) in white, the rest faint
-    {'E': 3.6, 'dir': VT, 'parts': white_trio(PULL3)},       # p6 the three rectangle frames through one body diagonal, pulled apart
+    {'E': EP, 'dir': VC, 'parts': b1nr_pulled(PULLB)},       # p3 its six pyramid skeletons pulled apart
+    {'E': 1.62, 'dir': VC, 'parts': centre_struts(QV)},       # p4 cuboctahedron Vacuus, 12 centre struts, no hull
+    {'E': 1.62, 'dir': V3, 'parts': centre_struts(QV)},       # p5 the same down a three-fold axis
+    {'E': 1.95, 'dir': VC, 'parts': centre_struts(DV)},       # p6 dodecahedron Vacuus, 20 centre struts, no hull
+    {'E': 1.95, 'dir': V5, 'parts': centre_struts(DV)},       # p7 the same down a five-fold axis
 ]
 render3d.write(sys.argv[1], scenes)
-ok = (len(OE), len(OS), len(CE), len(FD), len(CS), len(PLANES)) == (12, 6, 12, 12, 8, 6) \
+ok = (len(OE), len(OS), len(CE), len(CS), len(QV), len(DV)) == (12, 6, 12, 8, 12, 20) and GAP >= 0.015 * render3d.PX and INFRAME \
     and all(s['parts'][0]['t'] == [] for s in scenes) and all(p['t'] == [] for s in scenes for p in s['parts'])
 print('scenes', len(scenes), 'no faces in any scene' if ok else '', 'FINAL ok' if ok else 'FINAL FAIL')
