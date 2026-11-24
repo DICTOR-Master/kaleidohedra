@@ -1,33 +1,39 @@
-# Exact renders of three Vacuus builds (24 Nov 2026)
+# Exact skeletal renders of three Vacuus builds (24 Nov 2026)
 
 Purpose: DICTO asked for 3D renders of his physical Vacuus builds to use in paper #87 (DICTO Vacuus Solids) IN PLACE of his photos,
-"similar but better". The photos were used as private reference only and are not in this folder. Nothing is fitted to a photo:
-every piece is built from the exact coordinates of the solid the build realises.
+"similar but better". DICTO, 24 Nov: "the way I build all my PET bottle and B1NR sculptures is as Vacuus ... and hulls ... they are
+skeletons and empty"; he confirmed SKELETAL renders. So every build is an open framework of struts (tubes) and joints (balls), with
+no faces: the empty space shows. The photos were private reference only and are not in this folder. Nothing is fitted to a photo:
+every strut joins exact corners of the solid the build realises.
 
 Result (renders/, frames on a dark ground; preview-sheet.jpg shows all):
-1. Cardboard octahedron Vacuus (octahedron-cardboard*.jpg): the three squares through one centre (corners at distance 1 on the
-   axes), as DICTO's four pieces A (z = 0, one slot), B (x = 0, three slots), C (y = 0) cut in two along its x-diagonal, each half with
-   one slot; board and slots to the scale of the cut sheet (edge 80 mm, board 3.5 mm, slot 3.8 mm; study 2026-11-02-vacuus-origami,
-   cardboard_octahedron.py). Pull-apart: each piece moved back along the line it slides in on.
-2. B1NR cube (cube-b1nr*.jpg, cube-vacuus-fins.jpg): the cube [-1,1]^3 as six square pyramids with apex at the centre, in clear see-through
-   faces with crisp edges; pull-apart along the face normals; the twelve fins O-A-B alone (the cube's Vacuus).
-3. White ring cube (cube-white-*.jpg), as DICTO stated on 24 Nov: the cube's SIX DIAGONAL PLANES, each a WHOLE white rectangle through
-   two opposite edges and the centre (sides 2 and 2 sqrt 2, ratio sqrt 2). The provisional bow-tie / see-through reading is removed.
-   The six cut through each other, so three views: cube-white-rectangles.jpg (assembled); cube-white-one-rectangle.jpg (the rectangle
-   x = -z alone, nearly face-on, with the cube's twelve edges as thin lines to show where it sits); cube-white-three-pulled.jpg (the three
-   rectangles through the body diagonal (-1,-1,-1)-(1,1,1), i.e. the planes x = y, x = z, y = z, each moved 2.4 along its own unit
-   normal; the three normals sum to zero, so they spread at 120 degrees about the diagonal). Exact: the three still meet at a pull of
-   sqrt(2)/2 and are pairwise disjoint beyond it, so at 2.4 they stand clear. The view of the pulled three was chosen by a search over
-   directions for the largest smallest projected area with no projected overlap.
+1. Cardboard octahedron (octahedron-cardboard-skeleton*.jpg), corners at distance 1 on the axes: the 12 edges + the 6 corner-to-centre
+   struts, so the three squares x = 0, y = 0, z = 0 stand as frames (each: 4 edges + its two diagonals = 4 half-axes; each half-axis
+   is shared by two squares). Cardboard-tan struts. Pull-apart: each square frame moved 9/5 along its own normal (disjoint, as 9/5 > 1).
+2. B1NR cube (cube-b1nr-skeleton*.jpg), [-1,1]^3: the hull skeleton (12 edges) + the Vacuus skeleton (8 corner-to-centre struts): the
+   empty cube that is six square pyramids meeting at the centre. Clear bottle-like tubes (see-through, bright core line, see-through
+   joints). Pull-apart: the six pyramid frames (4 base edges + 4 struts each) moved 9/5 along the face normals.
+3. White ring cube (cube-white-skeleton*.jpg): the six diagonal rectangles as open frames. Each frame = its outline (two opposite cube
+   edges + two face diagonals, sides 2 and 2 sqrt 2) + its two diagonals through the centre (four corner-to-centre struts). Together:
+   12 edges + 12 face diagonals + 8 corner-to-centre struts; every edge and face diagonal belongs to exactly one frame, every
+   corner-to-centre strut to three. Views: assembled; the frame x = -z in white with all other struts faint; the three frames through
+   the body diagonal (-1,-1,-1)-(1,1,1) (planes x = y, x = z, y = z), each moved 12/5 along its unit normal (the three normals sum to
+   zero, so they spread at 120 degrees about the diagonal; they still meet at pull sqrt(2)/2 and are disjoint at 12/5).
 
-Checks (scripts/check.py, sympy, exact; all ok, data/check.log): octahedron 12 fins, right-angled, four in each coordinate plane; cube 12 fins with apex
-cos = 1/3, two in each of the six diagonal planes; six face pyramids fill the cube (6 x 4/3 = 8); every crossing of two cardboard
-pieces is cleared by a slot on one of them (A x B along y, B x C along z), slot wider than board, C rests on A; white cube: each diagonal
-rectangle holds exactly two cube edges (opposite, parallel) and O, sides 2 and 2 sqrt 2; exactly three contain one body diagonal; the
-pulled three are pairwise disjoint at pull 12/5 and still meet at sqrt(2)/2.
+Superseded: the filled-plane renders of this study (slotted cardboard boards, glass-faced pyramids, the twelve fins, whole white
+rectangles; commits up to 6f890699) are replaced by the skeletal set and deleted, as nothing else referenced them; they stay in git history.
+
+Checks (scripts/check.py, sympy, exact; all ok, data/check.log): octahedron 12 fins, right-angled, four in each coordinate plane; cube 12
+fins with apex cos = 1/3, two in each of the six diagonal planes; six face pyramids fill the cube (6 x 4/3 = 8); each diagonal rectangle
+holds exactly two cube edges (opposite, parallel) and O, sides 2 and 2 sqrt 2; exactly three contain one body diagonal; the pulled three
+are pairwise disjoint at pull 12/5 and still meet at sqrt(2)/2; skeleton strut sets: each octahedron square frame 4 edges + 4 half-axes,
+each half-axis in 2 squares; B1NR 12 + 8 struts, each pyramid 4 + 4, each centre strut in 3 pyramids; white cube 12 face diagonals,
+each frame 2 edges + 2 face diagonals + 4 centre struts, memberships 1, 1, 3; the pulled octahedron squares disjoint. builds.py asserts
+that no scene contains a face.
 
 Method: scripts/builds.py writes the scenes for the house renderer (render3d.py of study 2026-11-21-scutoid-stand-in, three.js r128,
-orthographic); frames by its shots.mjs (Playwright); scripts/compose.py makes the sheet. Polygons with slots triangulated by ear clipping.
+orthographic), with one small extension made in builds.py (the shared renderer file is unchanged): a tube may carry an opacity and an
+inner core tube, and a ball an opacity, for the clear bottle tubes. Frames by its shots.mjs (Playwright); scripts/compose.py makes the sheet.
 Sources checked: paper #87 text (Sections 1 and 6, Figures 1, 7, 8), its cut-sheet script, DICTO's photos (private, reference only).
 
 ## Pacioli's three golden rectangles (DICTO, 24 Nov: another connected origin for the Vacuus and the Resonus)
@@ -82,8 +88,7 @@ found); web searches for the three-rectangle attribution (results: Wikipedia, Lo
 AHES 2024 article s00407-024-00331-7; none opened gives a primary source). Not opened: Livio 2003, Burger-Starbird 2005, the Geneva and
 Ambrosiana manuscripts.
 
-LEADS: DICTO to look at the three white-cube views (row 3 of the preview sheet); DICTO to confirm the B1NR cube as six clear pyramids;
-then the renders replace Figure 1 of #87 at its next version. Pacioli: the golden rectangle is the icosahedron's counterpart of the
+LEADS: DICTO to look at the skeletal preview sheet (seven views); then the renders replace Figure 1 of #87 at its next version. Pacioli: the golden rectangle is the icosahedron's counterpart of the
 white ring cube rectangle (both: two Vacuus fins + two centre triangles in a mirror plane through two opposite edges); a matching
 render (icosahedron's 15 rectangles, or Pacioli's three) is possible if wanted; where it goes (#87 or elsewhere) is DICTO's choice.
 #87's "solidus/vacuus" vs the 1509 print's "Solidum/Vacuum" could be footnoted at the next version, with the manuscript "VACVVS".

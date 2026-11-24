@@ -3,8 +3,7 @@ Octahedron (corners +-e_i): its 12 fins lie in the three coordinate planes, four
 and the four fins of one plane close into a square (the cardboard pieces A, B, C).
 Cube [-1,1]^3: 12 fins O-A-B, apex angle arccos(1/3); two fins in each of the six diagonal planes x_i = +-x_j; each diagonal
 rectangle = its two fins + two triangles O-(face diagonal); the six face pyramids fill the cube (volumes 6 * 4/3 = 8).
-Cardboard slots (cut-sheet sizes, edge 80 mm, board 3.5, slot 3.8): every crossing of two pieces is cleared by a slot on one of
-them over each part of the crossing line, and C rests on A."""
+Skeletons (DICTO 24 Nov): the strut sets of the three frameworks, each strut counted in its frames."""
 import itertools, sympy as sp
 ok = []
 def chk(name, c): ok.append(bool(c)); print(('ok  ' if c else 'FAIL') + ' ' + name)
@@ -75,11 +74,22 @@ chk('pulled trio (pull 12/5 along unit normals, as drawn): the three rectangles 
     all(not feasible(meet_system(A, B), pull / sp.sqrt(2)) for A, B in pairs))
 chk('they still meet at pull sqrt(2)/2 (q = 1/2), so the pull is needed: touching threshold', all(feasible(meet_system(A, B), sp.Rational(1, 2)) for A, B in pairs))
 
-# cardboard slots, in mm (half-diagonal a = 80/sqrt 2)
-a, t, w = 80 / sp.sqrt(2), sp.Rational(7, 2), sp.Rational(19, 5)
-chk('slot wider than board (w > t)', w > t)
-chk('A x B along y: A slotted on y in [0, a], B slotted on y in [-a, 0]: whole crossing cleared', True)
-chk('B x C1 along z: C1 notch z in [w/2, a/2], B slot z in [a/2, a]: whole crossing cleared', sp.Rational(1, 2) * a + sp.Rational(1, 2) * a == a)
-chk('C halves rest on A: C base at |z| = w/2 >= board half t/2', w / 2 >= t / 2)
-chk('A x C: C has the strip |z| < w/2 removed along the whole x-axis', True)
+# skeletons (DICTO 24 Nov: the builds are skeletons and empty): the strut sets drawn by builds.py
+OS = [(sp.zeros(3, 1), p) for p in E]
+inplane = lambda n, P: all(x.dot(n) == 0 for x in P)
+sq = [[s for s in oe + OS if inplane(sp.eye(3)[:, k], s)] for k in range(3)]
+chk('octahedron skeleton 12 edges + 6 corner-to-centre struts; each square frame = 4 edges + 4 half-axes, each half-axis in 2 squares',
+    all(len(f) == 8 and sum(1 for s in f if s in OS) == 4 for f in sq) and all(sum(1 for f in sq if s in f) == 2 for s in OS))
+# pulled squares: square k moved to x_k = +-9/5; every point of square m has |x_k| <= 1 for k != m, so two moved squares cannot meet
+pullO = sp.Rational(9, 5)
+chk('octahedron pull-apart (9/5 along the normals, as drawn): the three square frames are pairwise disjoint (9/5 > 1)', pullO > 1)
+O3 = sp.zeros(3, 1); CS = [(O3, p) for p in C]
+fd = [(p, q) for p, q in itertools.combinations(C, 2) if sum(abs(x) for x in (p - q)) == 4]
+chk('B1NR cube skeleton: 12 edges + 8 corner-to-centre struts; each face pyramid = 4 base edges + 4 struts; each strut in 3 pyramids',
+    len(ce) == 12 and len(CS) == 8 and all(sum(1 for k in range(3) for s in (1, -1) if p[k] == s) == 3 for _, p in CS))
+frames = [[s for s in ce + fd + CS if inplane(n, s)] for n, cs, ed in rects.values()]
+chk('white ring cube: 12 face diagonals; each rectangle frame = 2 edges + 2 face diagonals + 4 corner-to-centre struts',
+    len(fd) == 12 and all((sum(s in ce for s in f), sum(s in fd for s in f), sum(s in CS for s in f)) == (2, 2, 4) for f in frames))
+chk('white ring cube: every edge and every face diagonal in exactly one frame, every corner-to-centre strut in three',
+    all(sum(s in f for f in frames) == 1 for s in ce + fd) and all(sum(s in f for f in frames) == 3 for s in CS))
 print('FINAL ok' if all(ok) else 'FINAL FAIL')

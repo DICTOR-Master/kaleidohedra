@@ -11,9 +11,9 @@ ok   rectangle sides 2 (cube edge) and 2 sqrt 2 (face diagonal), area 4 sqrt 2
 ok   exactly three diagonal rectangles contain the body diagonal (-1,-1,-1)-(1,1,1): x = y, x = z, y = z
 ok   pulled trio (pull 12/5 along unit normals, as drawn): the three rectangles are pairwise disjoint
 ok   they still meet at pull sqrt(2)/2 (q = 1/2), so the pull is needed: touching threshold
-ok   slot wider than board (w > t)
-ok   A x B along y: A slotted on y in [0, a], B slotted on y in [-a, 0]: whole crossing cleared
-ok   B x C1 along z: C1 notch z in [w/2, a/2], B slot z in [a/2, a]: whole crossing cleared
-ok   C halves rest on A: C base at |z| = w/2 >= board half t/2
-ok   A x C: C has the strip |z| < w/2 removed along the whole x-axis
+ok   octahedron skeleton 12 edges + 6 corner-to-centre struts; each square frame = 4 edges + 4 half-axes, each half-axis in 2 squares
+ok   octahedron pull-apart (9/5 along the normals, as drawn): the three square frames are pairwise disjoint (9/5 > 1)
+ok   B1NR cube skeleton: 12 edges + 8 corner-to-centre struts; each face pyramid = 4 base edges + 4 struts; each strut in 3 pyramids
+ok   white ring cube: 12 face diagonals; each rectangle frame = 2 edges + 2 face diagonals + 4 corner-to-centre struts
+ok   white ring cube: every edge and every face diagonal in exactly one frame, every corner-to-centre strut in three
 FINAL ok
