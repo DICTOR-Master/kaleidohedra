@@ -1,0 +1,42 @@
+PROGRESS 0.062 RVCMG_V2_TRIANGLE_TO_UHEX (cached)
+PROGRESS 0.125 RVCMG_V2_SQUARE_TO_UHEX (cached)
+PROGRESS 0.188 RVCMG_V2_PENTAGON_TO_UHEX (cached)
+PROGRESS 0.250 RVCMG_V2_GOLDEN_RHOMBUS_TO_UHEX (cached)
+PROGRESS 0.312 RVCMG_V2_RD_NATIVE_RHOMBUS_TO_UHEX (cached)
+PROGRESS 0.375 RVCMG_V2_DI_KITE_TO_UHEX (cached)
+PROGRESS 0.438 RVCMG_V2_DH_KITE_TO_UHEX (cached)
+PROGRESS 0.500 RVCMG_V2_REGULAR_HEX_TO_UHEX (cached)
+PROGRESS 0.562 RVCMG_TRIANGLE_TO_RDH (cached)
+PROGRESS 0.625 RVCMG_SQUARE_TO_RDH (cached)
+PROGRESS 0.688 RVCMG_PENTAGON_TO_RDH (cached)
+PROGRESS 0.750 RVCMG_GOLDEN_RHOMBUS_TO_RDH (cached)
+PROGRESS 0.812 RVCMG_DI_KITE_TO_RDH (cached)
+PROGRESS 0.875 RVCMG_DH_KITE_TO_RDH (cached)
+PROGRESS 0.938 RVCMG_REGULAR_HEX_TO_RDH (cached)
+RVCMG_RD_HEMI err 0.0e+00 {'n': 6, 'm': 4, 'k': 0, 'F': 8, 'convex': True, 'simple': False, 'cond2': True, 'law_bound': False, 'law_parity': True, 'lateral_sides': [3, 3, 4, 4, 4, 4]} degs [3, 3, 3, 3, 3, 3, 3, 3, 4, 4]
+CHECK ok  Catalan face RHOMBIC_TRIACONTAHEDRON: exact = app to 2.5e-14, planar exactly
+CHECK ok  Catalan face RHOMBIC_DODECAHEDRON: exact = app to 1.5e-17, planar exactly
+CHECK ok  Catalan face DELTOIDAL_ICOSITETRAHEDRON: exact = app to 9.8e-15, planar exactly
+CHECK ok  Catalan face DELTOIDAL_HEXECONTAHEDRON: exact = app to 9.5e-15, planar exactly
+CHECK ok  RVCMG_V2_TRIANGLE_TO_UHEX: exact model = app vertices (pairwise distances to 4.4e-16, handedness True)
+CHECK ok  RVCMG_V2_SQUARE_TO_UHEX: exact model = app vertices (pairwise distances to 4.4e-16, handedness True)
+CHECK ok  RVCMG_V2_PENTAGON_TO_UHEX: exact model = app vertices (pairwise distances to 4.4e-16, handedness True)
+CHECK ok  RVCMG_V2_GOLDEN_RHOMBUS_TO_UHEX: exact model = app vertices (pairwise distances to 2.6e-14, handedness True)
+CHECK ok  RVCMG_V2_RD_NATIVE_RHOMBUS_TO_UHEX: exact model = app vertices (pairwise distances to 4.4e-16, handedness True)
+CHECK ok  RVCMG_V2_DI_KITE_TO_UHEX: exact model = app vertices (pairwise distances to 1.1e-14, handedness True)
+CHECK ok  RVCMG_V2_DH_KITE_TO_UHEX: exact model = app vertices (pairwise distances to 6.3e-15, handedness True)
+CHECK ok  RVCMG_V2_REGULAR_HEX_TO_UHEX: exact model = app vertices (pairwise distances to 6.7e-16, handedness True)
+CHECK ok  RVCMG_TRIANGLE_TO_RDH: exact model = app vertices (pairwise distances to 4.4e-16, handedness True)
+CHECK ok  RVCMG_SQUARE_TO_RDH: exact model = app vertices (pairwise distances to 3.3e-16, handedness True)
+CHECK ok  RVCMG_PENTAGON_TO_RDH: exact model = app vertices (pairwise distances to 4.4e-16, handedness True)
+CHECK ok  RVCMG_GOLDEN_RHOMBUS_TO_RDH: exact model = app vertices (pairwise distances to 2.6e-14, handedness True)
+CHECK ok  RVCMG_DI_KITE_TO_RDH: exact model = app vertices (pairwise distances to 1.1e-14, handedness True)
+CHECK ok  RVCMG_DH_KITE_TO_RDH: exact model = app vertices (pairwise distances to 6.3e-15, handedness True)
+CHECK ok  RVCMG_REGULAR_HEX_TO_RDH: exact model = app vertices (pairwise distances to 6.7e-16, handedness True)
+CHECK ok  RD-Hemi: exact rational model = app (0.0e+00); rhombus edges sqrt(3)/2; one face disjoint from the hexagon (crown)
+CHECK ok  v2 triangle: target corners at angles ['-pi/2', 'pi/6', '5*pi/6'] (exact)
+CHECK ok  v2 square: target corners at angles ['0', 'pi/2', 'pi', '-pi/2'] (exact)
+CHECK ok  v2 pentagon: target corners at angles ['pi/30', '13*pi/30', '5*pi/6', '-23*pi/30', '-11*pi/30'] (exact)
+CHECK ok  v2 hexagon: target corners at angles ['0', 'pi/3', '2*pi/3', 'pi', '4*pi/3', '5*pi/3'] (exact)
+phases proved exact multiples of pi: 30 ['-11*pi/12 + atan(sqrt(2)/4)/2', '-17*pi/20 + atan(sqrt(2)/4)/2', '-2*pi/3', '-21*pi/20 + atan(sqrt(2)/4)/2', '-23*pi/30', '-29*pi/30', '-5*pi/6', '-5*pi/6 - atan(sqrt(2)/2)', '-7*pi/12 + atan(sqrt(2)/4)/2', '-pi/2', '-pi/2 - atan(sqrt(2)/2)', '0', 'pi', 'pi/2']
+FINAL ok
