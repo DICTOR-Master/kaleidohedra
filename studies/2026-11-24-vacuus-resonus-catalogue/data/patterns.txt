@@ -1,0 +1,112 @@
+solids: 163 ; solid-centre pairs: 215
+Lemma 1 (heart iff centrally symmetric): holds on all 215
+Theorem A(b) (centrally symmetric => all Resonus planes carry 2 faces): holds on all
+A(c) scope: every Resonus plane carries 2 faces but the solid is not centrally symmetric: ['truncated tetrahedron']
+Resonus with both kinds of plane: 116 ; only single-face planes (no two faces parallel): ['J1 (corner centroid)', 'J1 (volume centroid)', 'J12 (corner centroid)', 'J14 (corner centroid)', 'J13 (corner centroid)', 'J2 (corner centroid)', 'J2 (volume centroid)', 'J16 (corner centroid)', 'J10 (corner centroid)', 'J10 (volume centroid)', 'J17 (corner centroid)', 'pentagonal icositetrahedron', 'J64 (corner centroid)', 'J64 (volume centroid)', 'J7 (corner centroid)', 'J7 (volume centroid)', 'J9 (corner centroid)', 'J9 (volume centroid)', '3-gonal bipyramid', '5-gonal bipyramid', '4-gonal trapezohedron', '6-gonal trapezohedron', '7-gonal bipyramid', 'tetrahedron', 'triakis tetrahedron', '9-gonal bipyramid', '10-gonal trapezohedron', '8-gonal trapezohedron', '12-gonal trapezohedron', '11-gonal bipyramid', 'pentagonal hexecontahedron', 'J84 (corner centroid)', 'J86 (corner centroid)', 'J86 (volume centroid)', 'J87 (corner centroid)', 'J87 (volume centroid)', 'J90 (corner centroid)', 'J89 (corner centroid)', 'J89 (volume centroid)', 'J88 (corner centroid)', 'J88 (volume centroid)']
+Johnson solids whose Vacuus data differ between the two centres: [(20, ['vacuus arrangement: same counts, different region shapes or crossing points']), (60, ['vacuus arrangement: same counts, different region shapes or crossing points']), (66, ['vacuus arrangement counts']), (33, ['vacuus arrangement: same counts, different region shapes or crossing points']), (23, ['vacuus arrangement: same counts, different region shapes or crossing points']), (32, ['vacuus arrangement: same counts, different region shapes or crossing points']), (68, ['vacuus arrangement: same counts, different region shapes or crossing points']), (81, ['vacuus arrangement: same counts, different region shapes or crossing points']), (41, ['vacuus arrangement: same counts, different region shapes or crossing points']), (24, ['vacuus arrangement: same counts, different region shapes or crossing points']), (83, ['vacuus arrangement: same counts, different region shapes or crossing points']), (40, ['vacuus arrangement: same counts, different region shapes or crossing points']), (76, ['vacuus arrangement: same counts, different region shapes or crossing points']), (82, ['vacuus arrangement: same counts, different region shapes or crossing points']), (78, ['vacuus arrangement: same counts, different region shapes or crossing points']), (79, ['vacuus arrangement: same counts, different region shapes or crossing points']), (77, ['vacuus arrangement: same counts, different region shapes or crossing points']), (70, ['vacuus arrangement: same counts, different region shapes or crossing points']), (71, ['vacuus arrangement: same counts, different region shapes or crossing points']), (25, ['vacuus arrangement: same counts, different region shapes or crossing points']), (47, ['vacuus arrangement: same counts, different region shapes or crossing points']), (87, ['vacuus arrangement: same counts, different region shapes or crossing points']), (89, ['vacuus arrangement: same counts, different region shapes or crossing points']), (88, ['vacuus arrangement: same counts, different region shapes or crossing points'])]
+Johnson solids with equal centres: [12, 15, 26, 14, 13, 27, 16, 17, 28, 31, 36, 29, 35, 30, 34, 37, 51, 39, 44, 55, 57, 59, 43, 38, 67, 69, 6, 73, 72, 80, 74, 42, 91, 45, 75, 46, 48, 84, 85, 90]
+
+Resonus ∩ Vacuus nonempty:
+  J26 (corner centroid): 2 planes (2 mirrors); 1 edge(s) on a plane parallel to faces [3, 3] (mirror); 1 edge(s) on a plane parallel to faces [3, 3] (mirror)
+  J27 (corner centroid): 7 planes (1 mirrors); 3 edge(s) on a plane parallel to faces [3]; 3 edge(s) on a plane parallel to faces [3]; 3 edge(s) on a plane parallel to faces [3]; 3 edge(s) on a plane parallel to faces [3]; 3 edge(s) on a plane parallel to faces [3]; 3 edge(s) on a plane parallel to faces [3]; 6 edge(s) on a plane parallel to faces [3, 3] (mirror)
+  J28 (corner centroid): 1 planes (1 mirrors); 8 edge(s) on a plane parallel to faces [4, 4] (mirror)
+  J18 (corner centroid): 3 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J18 (volume centroid): 3 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J31 (corner centroid): 6 planes (0 mirrors); 10 edge(s) on a plane parallel to faces [5, 5]; 2 edge(s) on a plane parallel to faces [3, 3]; 2 edge(s) on a plane parallel to faces [3, 3]; 2 edge(s) on a plane parallel to faces [3, 3]; 2 edge(s) on a plane parallel to faces [3, 3]; 2 edge(s) on a plane parallel to faces [3, 3]
+  J36 (corner centroid): 3 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J29 (corner centroid): 9 planes (0 mirrors); 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 8 edge(s) on a plane parallel to faces [4, 4]
+  J35 (corner centroid): 3 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J30 (corner centroid): 11 planes (1 mirrors); 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 1 edge(s) on a plane parallel to faces [3]; 10 edge(s) on a plane parallel to faces [5, 5] (mirror)
+  J34 (corner centroid): 11 planes (1 mirrors); 10 edge(s) on a plane parallel to faces [5, 5] (mirror); 5 edge(s) on a plane parallel to faces [5]; 5 edge(s) on a plane parallel to faces [5]; 5 edge(s) on a plane parallel to faces [5]; 5 edge(s) on a plane parallel to faces [5]; 5 edge(s) on a plane parallel to faces [5]; 5 edge(s) on a plane parallel to faces [5]; 5 edge(s) on a plane parallel to faces [5]; 5 edge(s) on a plane parallel to faces [5]; 5 edge(s) on a plane parallel to faces [5]; 5 edge(s) on a plane parallel to faces [5]
+  J39 (corner centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J55 (corner centroid): 2 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J57 (corner centroid): 3 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4]; 2 edge(s) on a plane parallel to faces [4]; 2 edge(s) on a plane parallel to faces [4]
+  J20 (corner centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J20 (volume centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J43 (corner centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J38 (corner centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J67 (corner centroid): 4 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J21 (corner centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J21 (volume centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J42 (corner centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  6-gonal prism: 3 planes (3 mirrors); 2 edge(s) on a plane parallel to faces [4, 4] (mirror); 2 edge(s) on a plane parallel to faces [4, 4] (mirror); 2 edge(s) on a plane parallel to faces [4, 4] (mirror)
+  J41 (corner centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J41 (volume centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  cuboctahedron: 4 planes (0 mirrors); 6 edge(s) on a plane parallel to faces [3, 3]; 6 edge(s) on a plane parallel to faces [3, 3]; 6 edge(s) on a plane parallel to faces [3, 3]; 6 edge(s) on a plane parallel to faces [3, 3]
+  rhombic dodecahedron: 6 planes (6 mirrors); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror)
+  icosidodecahedron: 6 planes (0 mirrors); 10 edge(s) on a plane parallel to faces [5, 5]; 10 edge(s) on a plane parallel to faces [5, 5]; 10 edge(s) on a plane parallel to faces [5, 5]; 10 edge(s) on a plane parallel to faces [5, 5]; 10 edge(s) on a plane parallel to faces [5, 5]; 10 edge(s) on a plane parallel to faces [5, 5]
+  rhombic triacontahedron: 15 planes (15 mirrors); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror)
+  truncated octahedron: 3 planes (3 mirrors); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror); 4 edge(s) on a plane parallel to faces [4, 4] (mirror)
+  J40 (corner centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  J40 (volume centroid): 5 planes (0 mirrors); 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]; 2 edge(s) on a plane parallel to faces [4, 4]
+  10-gonal prism: 5 planes (5 mirrors); 2 edge(s) on a plane parallel to faces [4, 4] (mirror); 2 edge(s) on a plane parallel to faces [4, 4] (mirror); 2 edge(s) on a plane parallel to faces [4, 4] (mirror); 2 edge(s) on a plane parallel to faces [4, 4] (mirror); 2 edge(s) on a plane parallel to faces [4, 4] (mirror)
+count nonempty: 33 of 215
+nonempty with no shared plane a mirror: ['J18 (corner centroid)', 'J18 (volume centroid)', 'J31 (corner centroid)', 'J36 (corner centroid)', 'J29 (corner centroid)', 'J35 (corner centroid)', 'J39 (corner centroid)', 'J55 (corner centroid)', 'J57 (corner centroid)', 'J20 (corner centroid)', 'J20 (volume centroid)', 'J43 (corner centroid)', 'J38 (corner centroid)', 'J67 (corner centroid)', 'J21 (corner centroid)', 'J21 (volume centroid)', 'J42 (corner centroid)', 'J41 (corner centroid)', 'J41 (volume centroid)', 'cuboctahedron', 'icosidodecahedron', 'J40 (corner centroid)', 'J40 (volume centroid)']
+
+resonus simplicial:
+  Johnson (6): ['J3 (corner centroid)', 'J3 (volume centroid)', 'J19 (corner centroid)', 'J19 (volume centroid)', 'J76 (corner centroid)', 'J76 (volume centroid)']
+  Archimedean (7): ['rhombicosidodecahedron', 'truncated icosidodecahedron', 'cuboctahedron', 'rhombicuboctahedron', 'truncated octahedron', 'truncated cube', 'truncated cuboctahedron']
+  prism (10): ['3-gonal prism', '5-gonal prism', '4-gonal prism', '6-gonal prism', '7-gonal prism', '9-gonal prism', '10-gonal prism', '8-gonal prism', '12-gonal prism', '11-gonal prism']
+  trapezohedron (1): ['3-gonal trapezohedron']
+  Platonic (1): ['cube']
+  Catalan (2): ['rhombic dodecahedron', 'rhombic triacontahedron']
+
+vacuus simplicial:
+  Johnson (9): ['J1 (corner centroid)', 'J1 (volume centroid)', 'J12 (corner centroid)', 'J15 (corner centroid)', 'J26 (corner centroid)', 'J13 (corner centroid)', 'J2 (corner centroid)', 'J2 (volume centroid)', 'J59 (corner centroid)']
+  Catalan (11): ['triakis icosahedron', 'pentakis dodecahedron', 'deltoidal hexecontahedron', 'disdyakis triacontahedron', 'rhombic dodecahedron', 'rhombic triacontahedron', 'deltoidal icositetrahedron', 'tetrakis hexahedron', 'triakis octahedron', 'triakis tetrahedron', 'disdyakis dodecahedron']
+  bipyramid (10): ['3-gonal bipyramid', '5-gonal bipyramid', '4-gonal bipyramid', '6-gonal bipyramid', '7-gonal bipyramid', '9-gonal bipyramid', '10-gonal bipyramid', '8-gonal bipyramid', '12-gonal bipyramid', '11-gonal bipyramid']
+  antiprism (1): ['3-gonal antiprism']
+  trapezohedron (5): ['3-gonal trapezohedron', '5-gonal trapezohedron', '7-gonal trapezohedron', '9-gonal trapezohedron', '11-gonal trapezohedron']
+  prism (1): ['4-gonal prism']
+  Platonic (5): ['cube', 'dodecahedron', 'icosahedron', 'octahedron', 'tetrahedron']
+
+prisms n=3..12: Resonus simplicial for all; Resonus ∩ Vacuus sizes: [(3, 0), (4, 0), (5, 0), (6, 3), (7, 0), (8, 0), (9, 0), (10, 5), (11, 0), (12, 0)]
+antiprisms: (n, Resonus planes, simplicial, both): [(3, 4, False, 0), (4, 9, False, 0), (5, 6, False, 0), (6, 13, False, 0), (7, 8, False, 0), (8, 17, False, 0), (9, 10, False, 0), (10, 21, False, 0), (11, 12, False, 0), (12, 25, False, 0)]
+bipyramids: (n, Resonus planes, simplicial, both): [(3, 6, False, 0), (4, 4, False, 0), (5, 10, False, 0), (6, 6, False, 0), (7, 14, False, 0), (8, 8, False, 0), (9, 18, False, 0), (10, 10, False, 0), (11, 22, False, 0), (12, 12, False, 0)]
+trapezohedrons: (n, Resonus planes, simplicial, both): [(3, 3, True, 0), (4, 8, False, 0), (5, 5, False, 0), (6, 12, False, 0), (7, 7, False, 0), (8, 16, False, 0), (9, 9, False, 0), (10, 20, False, 0), (11, 11, False, 0), (12, 24, False, 0)]
+
+duality (P row): |Vac(P) ∩ Res(P*)|, |Res(P) ∩ Vac(P*)|, |Res(P*)| = corner lines of P, |Vac(P*)| = edge directions of P
+  truncated dodecahedron / triakis icosahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 30 (V=60), Vac(P*) 15 (E=90)
+  truncated icosahedron / pentakis dodecahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 30 (V=60), Vac(P*) 15 (E=90)
+  snub cube / pentagonal icositetrahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 24 (V=24), Vac(P*) 48 (E=60)
+  rhombicosidodecahedron / deltoidal hexecontahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 15, Res(P*) 30 (V=60), Vac(P*) 15 (E=120)
+  truncated icosidodecahedron / disdyakis triacontahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 15, Res(P*) 60 (V=120), Vac(P*) 15 (E=180)
+  3-gonal prism / 3-gonal bipyramid: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 1, Res(P*) 6 (V=6), Vac(P*) 4 (E=9)
+  3-gonal antiprism / 3-gonal trapezohedron: Vac(P)∩Res(P*) 3, Res(P)∩Vac(P*) 0, Res(P*) 3 (V=6), Vac(P*) 6 (E=12)
+  5-gonal prism / 5-gonal bipyramid: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 1, Res(P*) 10 (V=10), Vac(P*) 6 (E=15)
+  5-gonal antiprism / 5-gonal trapezohedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 5 (V=10), Vac(P*) 10 (E=20)
+  4-gonal prism / 4-gonal bipyramid: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 3, Res(P*) 4 (V=8), Vac(P*) 3 (E=12)
+  4-gonal antiprism / 4-gonal trapezohedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 8 (V=8), Vac(P*) 12 (E=16)
+  6-gonal prism / 6-gonal bipyramid: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 1, Res(P*) 6 (V=12), Vac(P*) 4 (E=18)
+  6-gonal antiprism / 6-gonal trapezohedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 12 (V=12), Vac(P*) 18 (E=24)
+  cube / octahedron (polar of the cube): Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 3, Res(P*) 4 (V=8), Vac(P*) 3 (E=12)
+  cuboctahedron / rhombic dodecahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 6 (V=12), Vac(P*) 6 (E=24)
+  dodecahedron / icosahedron (polar of the dodecahedron): Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 10 (V=20), Vac(P*) 15 (E=30)
+  icosahedron / dodecahedron (polar of the icosahedron): Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 6 (V=12), Vac(P*) 15 (E=30)
+  octahedron / cube (polar of the octahedron): Vac(P)∩Res(P*) 3, Res(P)∩Vac(P*) 0, Res(P*) 3 (V=6), Vac(P*) 6 (E=12)
+  7-gonal prism / 7-gonal bipyramid: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 1, Res(P*) 14 (V=14), Vac(P*) 8 (E=21)
+  7-gonal antiprism / 7-gonal trapezohedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 7 (V=14), Vac(P*) 14 (E=28)
+  tetrahedron / tetrahedron (polar): Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 4 (V=4), Vac(P*) 6 (E=6)
+  icosidodecahedron / rhombic triacontahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 15 (V=30), Vac(P*) 15 (E=60)
+  rhombicuboctahedron / deltoidal icositetrahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 9, Res(P*) 12 (V=24), Vac(P*) 9 (E=48)
+  truncated octahedron / tetrakis hexahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 12 (V=24), Vac(P*) 6 (E=36)
+  truncated cube / triakis octahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 3, Res(P*) 12 (V=24), Vac(P*) 9 (E=36)
+  truncated tetrahedron / triakis tetrahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 12 (V=12), Vac(P*) 6 (E=18)
+  9-gonal prism / 9-gonal bipyramid: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 1, Res(P*) 18 (V=18), Vac(P*) 10 (E=27)
+  9-gonal antiprism / 9-gonal trapezohedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 9 (V=18), Vac(P*) 18 (E=36)
+  truncated cuboctahedron / disdyakis dodecahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 9, Res(P*) 24 (V=48), Vac(P*) 9 (E=72)
+  10-gonal prism / 10-gonal bipyramid: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 1, Res(P*) 10 (V=20), Vac(P*) 6 (E=30)
+  10-gonal antiprism / 10-gonal trapezohedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 20 (V=20), Vac(P*) 30 (E=40)
+  8-gonal prism / 8-gonal bipyramid: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 5, Res(P*) 8 (V=16), Vac(P*) 5 (E=24)
+  8-gonal antiprism / 8-gonal trapezohedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 16 (V=16), Vac(P*) 24 (E=32)
+  12-gonal prism / 12-gonal bipyramid: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 7, Res(P*) 12 (V=24), Vac(P*) 7 (E=36)
+  12-gonal antiprism / 12-gonal trapezohedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 24 (V=24), Vac(P*) 36 (E=48)
+  11-gonal prism / 11-gonal bipyramid: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 1, Res(P*) 22 (V=22), Vac(P*) 12 (E=33)
+  11-gonal antiprism / 11-gonal trapezohedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 11 (V=22), Vac(P*) 22 (E=44)
+  snub dodecahedron / pentagonal hexecontahedron: Vac(P)∩Res(P*) 0, Res(P)∩Vac(P*) 0, Res(P*) 60 (V=60), Vac(P*) 150 (E=150)
+duality counts agree on both rows of every pair
+mirror counts equal the group's (Td 6, Oh 9, Ih 15, O and I 0; D_nh n+1, D_nd n; the cube and octahedron as prism-family members 9); prism-family plate and plane counts equal the closed forms (prism 3n or 3n/2 and n+1 or n/2+1; antiprism 2n or 4n and n+1 or 2n+1; bipyramid n+1 or n/2+1 and 2n or n; trapezohedron 2n or 3n and n or 2n; odd or even n; the 3- and 4-members that are Platonic excepted)
+Johnson: mirrors, plates, kind and central symmetry equal the independent floating-point pilot (full symmetry group by search) for all 92
+
+Johnson kinds (corner centroid): Counter({'inherited heart': 50, 'non-heart': 29, 'heart': 13})
+Johnson field degrees J84-J90: {84: 6, 86: 8, 85: 12, 87: 16, 90: 24, 89: 20, 88: 32}

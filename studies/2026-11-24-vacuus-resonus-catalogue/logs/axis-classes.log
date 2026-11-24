@@ -1,0 +1,53 @@
+Oh ('4-fold',) 3 regions 8 simplicial True {'3': 8}
+Oh ('3-fold',) 4 regions 14 simplicial False {'3': 8, '4': 6}
+Oh ('2-fold',) 6 regions 24 simplicial True {'3': 24}
+Oh ('4-fold', '3-fold') 7 regions 32 simplicial True {'3': 32}
+Oh ('4-fold', '2-fold') 9 regions 48 simplicial True {'3': 48}
+Oh ('3-fold', '2-fold') 10 regions 72 simplicial False {'3': 48, '4': 24}
+Oh ('4-fold', '3-fold', '2-fold') 13 regions 96 simplicial True {'3': 96}
+Ih ('5-fold',) 6 regions 32 simplicial False {'3': 20, '5': 12}
+Ih ('3-fold',) 10 regions 92 simplicial False {'3': 60, '5': 12, '6': 20}
+Ih ('2-fold',) 15 regions 120 simplicial True {'3': 120}
+Ih ('5-fold', '3-fold') 16 regions 152 simplicial False {'3': 140, '5': 12}
+Ih ('5-fold', '2-fold') 21 regions 240 simplicial True {'3': 240}
+Ih ('3-fold', '2-fold') 25 regions 360 simplicial True {'3': 360}
+Ih ('5-fold', '3-fold', '2-fold') 31 regions 480 simplicial True {'3': 480}
+Ih' ('5-fold',) 6 regions 32 simplicial False {'3': 20, '5': 12}
+Ih' ('3-fold',) 10 regions 92 simplicial False {'3': 60, '5': 12, '6': 20}
+Ih' ('2-fold',) 15 regions 120 simplicial True {'3': 120}
+Ih' ('5-fold', '3-fold') 16 regions 152 simplicial False {'3': 140, '5': 12}
+Ih' ('5-fold', '2-fold') 21 regions 240 simplicial True {'3': 240}
+Ih' ('3-fold', '2-fold') 25 regions 360 simplicial True {'3': 360}
+Ih' ('5-fold', '3-fold', '2-fold') 31 regions 480 simplicial True {'3': 480}
+truncated dodecahedron {'resonus': '5-fold + 3-fold', 'vacuus': None}
+triakis icosahedron {'resonus': None, 'vacuus': '2-fold'}
+truncated icosahedron {'resonus': '5-fold + 3-fold', 'vacuus': None}
+pentakis dodecahedron {'resonus': None, 'vacuus': '2-fold'}
+snub cube {'resonus': None, 'vacuus': None}
+pentagonal icositetrahedron {'resonus': None, 'vacuus': None}
+rhombicosidodecahedron {'resonus': '5-fold + 3-fold + 2-fold', 'vacuus': None}
+deltoidal hexecontahedron {'resonus': None, 'vacuus': '2-fold'}
+truncated icosidodecahedron {'resonus': '5-fold + 3-fold + 2-fold', 'vacuus': None}
+disdyakis triacontahedron {'resonus': None, 'vacuus': '2-fold'}
+cube {'resonus': '4-fold', 'vacuus': '2-fold'}
+cuboctahedron {'resonus': '4-fold + 3-fold', 'vacuus': '3-fold'}
+rhombic dodecahedron {'resonus': '2-fold', 'vacuus': '2-fold'}
+dodecahedron {'resonus': '5-fold', 'vacuus': '2-fold'}
+icosahedron {'resonus': '3-fold', 'vacuus': '2-fold'}
+octahedron {'resonus': '3-fold', 'vacuus': '4-fold'}
+tetrahedron {'resonus': '3-fold', 'vacuus': '2-fold'}
+icosidodecahedron {'resonus': '5-fold + 3-fold', 'vacuus': '5-fold'}
+rhombic triacontahedron {'resonus': '2-fold', 'vacuus': '2-fold'}
+rhombicuboctahedron {'resonus': '4-fold + 3-fold + 2-fold', 'vacuus': None}
+deltoidal icositetrahedron {'resonus': None, 'vacuus': '4-fold + 2-fold'}
+truncated octahedron {'resonus': '4-fold + 3-fold', 'vacuus': None}
+tetrakis hexahedron {'resonus': None, 'vacuus': '2-fold'}
+truncated cube {'resonus': '4-fold + 3-fold', 'vacuus': None}
+triakis octahedron {'resonus': None, 'vacuus': '4-fold + 2-fold'}
+truncated tetrahedron {'resonus': '3-fold', 'vacuus': None}
+triakis tetrahedron {'resonus': None, 'vacuus': '2-fold'}
+truncated cuboctahedron {'resonus': '4-fold + 3-fold + 2-fold', 'vacuus': None}
+disdyakis dodecahedron {'resonus': None, 'vacuus': '4-fold + 2-fold'}
+snub dodecahedron {'resonus': None, 'vacuus': None}
+pentagonal hexecontahedron {'resonus': None, 'vacuus': None}
+FINAL ok axis classes 21 unions; 31 solids matched or not

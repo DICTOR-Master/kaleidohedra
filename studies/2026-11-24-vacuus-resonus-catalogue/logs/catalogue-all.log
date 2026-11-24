@@ -1,0 +1,380 @@
+field m=3: degree 4 (0.0s)
+built J12_TRIANGULAR_BIPYRAMID <- axial m=3: pyr / none / pyr b=0
+built J7_ELONGATED_TRIANGULAR_PYRAMID <- axial m=3: pyr / prism / None b=0
+built J14_ELONGATED_TRIANGULAR_BIPYRAMID <- axial m=3: pyr / prism / pyr b=0
+field m=4: degree 8 (0.0s)
+built J1_SQUARE_PYRAMID <- axial m=4: pyr / none / None b=0
+built J8_ELONGATED_SQUARE_PYRAMID <- axial m=4: pyr / prism / None b=0
+built J15_ELONGATED_SQUARE_BIPYRAMID <- axial m=4: pyr / prism / pyr b=0
+built J10_GYROELONGATED_SQUARE_PYRAMID <- axial m=4: pyr / anti / None b=0
+built J17_GYROELONGATED_SQUARE_BIPYRAMID <- axial m=4: pyr / anti / pyr b=0
+field m=5: degree 4 (0.0s)
+built J2_PENTAGONAL_PYRAMID <- axial m=5: pyr / none / None b=0
+built J13_PENTAGONAL_BIPYRAMID <- axial m=5: pyr / none / pyr b=0
+built J9_ELONGATED_PENTAGONAL_PYRAMID <- axial m=5: pyr / prism / None b=0
+built J16_ELONGATED_PENTAGONAL_BIPYRAMID <- axial m=5: pyr / prism / pyr b=0
+built J11_GYROELONGATED_PENTAGONAL_PYRAMID <- axial m=5: pyr / anti / None b=0
+field m=6: degree 8 (0.0s)
+built J3_TRIANGULAR_CUPOLA <- axial m=6: cup / none / None b=0
+built J27_TRIANGULAR_ORTHOBICUPOLA <- axial m=6: cup / none / cup b=0
+built J18_ELONGATED_TRIANGULAR_CUPOLA <- axial m=6: cup / prism / None b=0
+built J35_ELONGATED_TRIANGULAR_ORTHOBICUPOLA <- axial m=6: cup / prism / cup b=0
+built J36_ELONGATED_TRIANGULAR_GYROBICUPOLA <- axial m=6: cup / prism / cup b=2
+built J22_GYROELONGATED_TRIANGULAR_CUPOLA <- axial m=6: cup / anti / None b=0
+built J44_GYROELONGATED_TRIANGULAR_BICUPOLA <- axial m=6: cup / anti / cup b=0
+field m=8: degree 16 (0.1s)
+built J4_SQUARE_CUPOLA <- axial m=8: cup / none / None b=0
+built J28_SQUARE_ORTHOBICUPOLA <- axial m=8: cup / none / cup b=0
+built J29_SQUARE_GYROBICUPOLA <- axial m=8: cup / none / cup b=2
+built J19_ELONGATED_SQUARE_CUPOLA <- axial m=8: cup / prism / None b=0
+built J37_ELONGATED_SQUARE_GYROBICUPOLA <- axial m=8: cup / prism / cup b=2
+built J23_GYROELONGATED_SQUARE_CUPOLA <- axial m=8: cup / anti / None b=0
+built J45_GYROELONGATED_SQUARE_BICUPOLA <- axial m=8: cup / anti / cup b=0
+field m=10: degree 16 (0.5s)
+built J5_PENTAGONAL_CUPOLA <- axial m=10: cup / none / None b=0
+built J30_PENTAGONAL_ORTHOBICUPOLA <- axial m=10: cup / none / cup b=0
+built J31_PENTAGONAL_GYROBICUPOLA <- axial m=10: cup / none / cup b=2
+built J33_PENTAGONAL_GYROCUPOLAROTUNDA <- axial m=10: cup / none / rot31 b=0
+built J32_PENTAGONAL_ORTHOCUPOLAROTUNDA <- axial m=10: cup / none / rot31 b=2
+built J20_ELONGATED_PENTAGONAL_CUPOLA <- axial m=10: cup / prism / None b=0
+built J38_ELONGATED_PENTAGONAL_ORTHOBICUPOLA <- axial m=10: cup / prism / cup b=0
+built J39_ELONGATED_PENTAGONAL_GYROBICUPOLA <- axial m=10: cup / prism / cup b=2
+built J41_ELONGATED_PENTAGONAL_GYROCUPOLAROTUNDA <- axial m=10: cup / prism / rot31 b=0
+built J40_ELONGATED_PENTAGONAL_ORTHOCUPOLAROTUNDA <- axial m=10: cup / prism / rot31 b=2
+built J24_GYROELONGATED_PENTAGONAL_CUPOLA <- axial m=10: cup / anti / None b=0
+built J46_GYROELONGATED_PENTAGONAL_BICUPOLA <- axial m=10: cup / anti / cup b=0
+built J47_GYROELONGATED_PENTAGONAL_CUPOLAROTUNDA <- axial m=10: cup / anti / rot31 b=0
+built J6_PENTAGONAL_ROTUNDA <- axial m=10: rot31 / none / None b=0
+built J34_PENTAGONAL_ORTHOBIROTUNDA <- axial m=10: rot31 / none / rot31 b=0
+built J21_ELONGATED_PENTAGONAL_ROTUNDA <- axial m=10: rot31 / prism / None b=0
+built J42_ELONGATED_PENTAGONAL_ORTHOBIROTUNDA <- axial m=10: rot31 / prism / rot31 b=0
+built J43_ELONGATED_PENTAGONAL_GYROBIROTUNDA <- axial m=10: rot31 / prism / rot31 b=2
+built J25_GYROELONGATED_PENTAGONAL_ROTUNDA <- axial m=10: rot31 / anti / None b=0
+built J48_GYROELONGATED_PENTAGONAL_BIROTUNDA <- axial m=10: rot31 / anti / rot31 b=0
+built J49_AUGMENTED_TRIANGULAR_PRISM <- 3-prism + square pyramids on lateral faces (0,)
+built J50_BIAUGMENTED_TRIANGULAR_PRISM <- 3-prism + square pyramids on lateral faces (0, 1)
+built J51_TRIAUGMENTED_TRIANGULAR_PRISM <- 3-prism + square pyramids on lateral faces (0, 1, 2)
+built J52_AUGMENTED_PENTAGONAL_PRISM <- 5-prism + square pyramids on lateral faces (0,)
+built J53_BIAUGMENTED_PENTAGONAL_PRISM <- 5-prism + square pyramids on lateral faces (0, 2)
+built J54_AUGMENTED_HEXAGONAL_PRISM <- 6-prism + square pyramids on lateral faces (0,)
+built J56_METABIAUGMENTED_HEXAGONAL_PRISM <- 6-prism + square pyramids on lateral faces (0, 2)
+built J55_PARABIAUGMENTED_HEXAGONAL_PRISM <- 6-prism + square pyramids on lateral faces (0, 3)
+built J57_TRIAUGMENTED_HEXAGONAL_PRISM <- 6-prism + square pyramids on lateral faces (0, 2, 4)
+built J26_GYROBIFASTIGIUM <- gyrobifastigium: square with two ridges
+built J58_AUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0,)
+built J60_METABIAUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0, 5)
+built J59_PARABIAUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0, 10)
+built J61_TRIAUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0, 5, 7)
+built J62_METABIDIMINISHED_ICOSAHEDRON <- icosahedron minus corners (0, 1)
+built J63_TRIDIMINISHED_ICOSAHEDRON <- icosahedron minus corners (0, 1, 9)
+built J64_AUGMENTED_TRIDIMINISHED_ICOSAHEDRON <- J63 + tetrahedron on face [6, 2, 3]
+built J65_AUGMENTED_TRUNCATED_TETRAHEDRON <- truncated tetrahedron + cupolas on (0,) t=(0,)
+built J66_AUGMENTED_TRUNCATED_CUBE <- truncated cube + cupolas on (0,) t=(1,)
+built J67_BIAUGMENTED_TRUNCATED_CUBE <- truncated cube + cupolas on (0, 5) t=(1, 1)
+built J68_AUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0,) t=(0,)
+built J70_METABIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 2) t=(0, 0)
+built J69_PARABIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 11) t=(0, 0)
+built J71_TRIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 2, 7) t=(0, 0, 0)
+built J72_GYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0,) g
+built J76_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0,) d
+built J73_PARABIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 3) gg
+built J77_PARAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 3) gd
+built J80_PARABIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 3) dd
+built J74_METABIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6) gg
+built J78_METAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6) gd
+built J81_METABIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6) dd
+built J75_TRIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6, 7) ggg
+built J79_BIGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6, 7) ggd
+built J82_GYRATE_BIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6, 7) gdd
+built J83_TRIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 6, 7) ddd
+built J91_BILUNABIROTUNDA <- J91_BILUNABIROTUNDA: recognised in basis [1, sqrt(5)]
+built J92_TRIANGULAR_HEBESPHENOROTUNDA <- J92_TRIANGULAR_HEBESPHENOROTUNDA: recognised in basis [1, sqrt(3), sqrt(5), sqrt(15)]
+tasks 120
+PROGRESS 0.008 J1_SQUARE_PYRAMID: Vacuus 6 inherited heart | Resonus 5 regions 18 simpl False | both 0 (0.2s)
+PROGRESS 0.017 J12_TRIANGULAR_BIPYRAMID: Vacuus 4 inherited heart | Resonus 6 regions 32 simpl False | both 0 (0.2s)
+PROGRESS 0.025 J15_ELONGATED_SQUARE_BIPYRAMID: Vacuus 6 heart | Resonus 6 regions 28 simpl False | both 0 (0.3s)
+PROGRESS 0.033 J26_GYROBIFASTIGIUM: Vacuus 7 inherited heart | Resonus 6 regions 28 simpl False | both 2 (0.2s)
+PROGRESS 0.042 J14_ELONGATED_TRIANGULAR_BIPYRAMID: Vacuus 9 inherited heart | Resonus 9 regions 54 simpl False | both 0 (0.4s)
+PROGRESS 0.050 J13_PENTAGONAL_BIPYRAMID: Vacuus 6 inherited heart | Resonus 10 regions 92 simpl False | both 0 (0.5s)
+PROGRESS 0.058 J2_PENTAGONAL_PYRAMID: Vacuus 10 non-heart | Resonus 6 regions 32 simpl False | both 0 (0.3s)
+PROGRESS 0.067 J27_TRIANGULAR_ORTHOBICUPOLA: Vacuus 7 inherited heart | Resonus 13 regions 110 simpl False | both 7 (0.6s)
+PROGRESS 0.075 J16_ELONGATED_PENTAGONAL_BIPYRAMID: Vacuus 15 inherited heart | Resonus 15 regions 150 simpl False | both 0 (0.9s)
+PROGRESS 0.083 J10_GYROELONGATED_SQUARE_PYRAMID: Vacuus 18 inherited heart | Resonus 13 regions 130 simpl False | both 0 (1.5s)
+PROGRESS 0.092 J17_GYROELONGATED_SQUARE_BIPYRAMID: Vacuus 20 inherited heart | Resonus 16 regions 218 simpl False | both 0 (1.6s)
+PROGRESS 0.100 J11_GYROELONGATED_PENTAGONAL_PYRAMID: Vacuus 25 non-heart | Resonus 11 regions 102 simpl False | both 0 (1.8s)
+PROGRESS 0.108 J28_SQUARE_ORTHOBICUPOLA: Vacuus 13 heart | Resonus 9 regions 58 simpl False | both 1 (1.7s)
+PROGRESS 0.117 J18_ELONGATED_TRIANGULAR_CUPOLA: Vacuus 24 inherited heart | Resonus 10 regions 66 simpl False | both 3 (2.5s)
+PROGRESS 0.125 J31_PENTAGONAL_GYROBICUPOLA: Vacuus 11 heart | Resonus 11 regions 92 simpl False | both 6 (1.9s)
+PROGRESS 0.133 J36_ELONGATED_TRIANGULAR_GYROBICUPOLA: Vacuus 18 heart | Resonus 10 regions 66 simpl False | both 3 (1.0s)
+PROGRESS 0.142 truncated dodecahedron: Vacuus 45 heart | Resonus 16 regions 152 simpl False | both 0 (3.6s)
+PROGRESS 0.142 triakis icosahedron: Vacuus 15 heart | Resonus 30 regions 872 simpl False | both 0 (3.6s)
+PROGRESS 0.150 J29_SQUARE_GYROBICUPOLA: Vacuus 17 inherited heart | Resonus 17 regions 210 simpl False | both 9 (3.4s)
+PROGRESS 0.158 J35_ELONGATED_TRIANGULAR_ORTHOBICUPOLA: Vacuus 27 inherited heart | Resonus 16 regions 144 simpl False | both 3 (2.2s)
+PROGRESS 0.167 J3_TRIANGULAR_CUPOLA: Vacuus 15 non-heart | Resonus 7 regions 32 simpl True | both 0 (0.5s)
+PROGRESS 0.175 J22_GYROELONGATED_TRIANGULAR_CUPOLA: Vacuus 33 non-heart | Resonus 19 regions 296 simpl False | both 0 (4.3s)
+PROGRESS 0.183 truncated icosahedron: Vacuus 45 heart | Resonus 16 regions 152 simpl False | both 0 (4.8s)
+PROGRESS 0.183 pentakis dodecahedron: Vacuus 15 heart | Resonus 30 regions 872 simpl False | both 0 (4.8s)
+PROGRESS 0.192 snub cube: Vacuus 48 inherited heart | Resonus 31 regions 848 simpl False | both 0 (5.7s)
+PROGRESS 0.192 pentagonal icositetrahedron: Vacuus 48 inherited heart | Resonus 24 regions 482 simpl False | both 0 (5.7s)
+PROGRESS 0.200 J30_PENTAGONAL_ORTHOBICUPOLA: Vacuus 21 inherited heart | Resonus 21 regions 342 simpl False | both 11 (5.1s)
+PROGRESS 0.208 rhombicosidodecahedron: Vacuus 60 heart | Resonus 31 regions 480 simpl True | both 0 (5.9s)
+PROGRESS 0.208 deltoidal hexecontahedron: Vacuus 15 heart | Resonus 30 regions 872 simpl False | both 0 (5.9s)
+PROGRESS 0.217 J34_PENTAGONAL_ORTHOBIROTUNDA: Vacuus 11 inherited heart | Resonus 31 regions 662 simpl False | both 11 (7.6s)
+PROGRESS 0.225 J19_ELONGATED_SQUARE_CUPOLA: Vacuus 32 inherited heart | Resonus 13 regions 96 simpl True | both 0 (9.5s)
+PROGRESS 0.233 J49_AUGMENTED_TRIANGULAR_PRISM: Vacuus 11 inherited heart | Resonus 7 regions 36 simpl False | both 0 (0.3s)
+PROGRESS 0.242 J37_ELONGATED_SQUARE_GYROBICUPOLA: Vacuus 36 inherited heart | Resonus 21 regions 272 simpl False | both 0 (7.7s)
+PROGRESS 0.250 J50_BIAUGMENTED_TRIANGULAR_PRISM: Vacuus 17 non-heart | Resonus 10 regions 72 simpl False | both 0 (0.8s)
+PROGRESS 0.258 J51_TRIAUGMENTED_TRIANGULAR_PRISM: Vacuus 15 inherited heart | Resonus 13 regions 132 simpl False | both 0 (0.5s)
+PROGRESS 0.267 J39_ELONGATED_PENTAGONAL_GYROBICUPOLA: Vacuus 30 heart | Resonus 16 regions 190 simpl False | both 5 (9.2s)
+PROGRESS 0.275 J52_AUGMENTED_PENTAGONAL_PRISM: Vacuus 17 inherited heart | Resonus 9 regions 52 simpl False | both 0 (1.2s)
+PROGRESS 0.283 J44_GYROELONGATED_TRIANGULAR_BICUPOLA: Vacuus 42 non-heart | Resonus 25 regions 518 simpl False | both 0 (8.0s)
+PROGRESS 0.292 J55_PARABIAUGMENTED_HEXAGONAL_PRISM: Vacuus 11 heart | Resonus 7 regions 36 simpl False | both 2 (0.3s)
+PROGRESS 0.300 J4_SQUARE_CUPOLA: Vacuus 20 non-heart | Resonus 9 regions 58 simpl False | both 0 (3.8s)
+PROGRESS 0.308 J54_AUGMENTED_HEXAGONAL_PRISM: Vacuus 20 inherited heart | Resonus 8 regions 40 simpl False | both 0 (1.0s)
+PROGRESS 0.317 J57_TRIAUGMENTED_HEXAGONAL_PRISM: Vacuus 15 inherited heart | Resonus 16 regions 156 simpl False | both 3 (0.6s)
+PROGRESS 0.325 J20_ELONGATED_PENTAGONAL_CUPOLA: Vacuus 40 inherited heart | Resonus 16 regions 190 simpl False | both 5 (14.4s)
+PROGRESS 0.333 J53_BIAUGMENTED_PENTAGONAL_PRISM: Vacuus 23 non-heart | Resonus 12 regions 96 simpl False | both 0 (2.4s)
+PROGRESS 0.342 J59_PARABIAUGMENTED_DODECAHEDRON: Vacuus 15 heart | Resonus 10 regions 92 simpl False | both 0 (0.6s)
+PROGRESS 0.350 J56_METABIAUGMENTED_HEXAGONAL_PRISM: Vacuus 26 non-heart | Resonus 12 regions 88 simpl False | both 0 (1.8s)
+PROGRESS 0.358 J58_AUGMENTED_DODECAHEDRON: Vacuus 25 inherited heart | Resonus 11 regions 102 simpl False | both 0 (1.6s)
+PROGRESS 0.367 J62_METABIDIMINISHED_ICOSAHEDRON: Vacuus 19 inherited heart | Resonus 10 regions 78 simpl False | both 0 (1.0s)
+PROGRESS 0.375 J63_TRIDIMINISHED_ICOSAHEDRON: Vacuus 15 non-heart | Resonus 7 regions 38 simpl False | both 0 (0.6s)
+PROGRESS 0.383 J64_AUGMENTED_TRIDIMINISHED_ICOSAHEDRON: Vacuus 15 inherited heart | Resonus 10 regions 74 simpl False | both 0 (0.8s)
+PROGRESS 0.392 J65_AUGMENTED_TRUNCATED_TETRAHEDRON: Vacuus 27 non-heart | Resonus 10 regions 68 simpl False | both 0 (1.5s)
+PROGRESS 0.400 J43_ELONGATED_PENTAGONAL_GYROBIROTUNDA: Vacuus 40 heart | Resonus 21 regions 290 simpl False | both 5 (13.4s)
+PROGRESS 0.408 J38_ELONGATED_PENTAGONAL_ORTHOBICUPOLA: Vacuus 45 inherited heart | Resonus 26 regions 440 simpl False | both 5 (15.9s)
+PROGRESS 0.417 J60_METABIAUGMENTED_DODECAHEDRON: Vacuus 36 inherited heart | Resonus 16 regions 220 simpl False | both 0 (4.0s)
+PROGRESS 0.425 J67_BIAUGMENTED_TRUNCATED_CUBE: Vacuus 30 heart | Resonus 15 regions 152 simpl False | both 4 (2.0s)
+PROGRESS 0.433 truncated icosidodecahedron: Vacuus 90 heart | Resonus 31 regions 480 simpl True | both 0 (19.5s)
+PROGRESS 0.433 disdyakis triacontahedron: Vacuus 15 heart | Resonus 60 regions 3542 simpl False | both 0 (19.5s)
+PROGRESS 0.442 J5_PENTAGONAL_CUPOLA: Vacuus 25 non-heart | Resonus 11 regions 92 simpl False | both 0 (5.1s)
+PROGRESS 0.450 J61_TRIAUGMENTED_DODECAHEDRON: Vacuus 39 inherited heart | Resonus 21 regions 386 simpl False | both 0 (5.1s)
+PROGRESS 0.458 J66_AUGMENTED_TRUNCATED_CUBE: Vacuus 46 inherited heart | Resonus 15 regions 152 simpl False | both 0 (5.6s)
+PROGRESS 0.467 J69_PARABIAUGMENTED_TRUNCATED_DODECAHEDRON: Vacuus 60 heart | Resonus 26 regions 482 simpl False | both 0 (8.1s)
+PROGRESS 0.475 J6_PENTAGONAL_ROTUNDA: Vacuus 35 non-heart | Resonus 16 regions 152 simpl False | both 0 (11.1s)
+PROGRESS 0.483 J21_ELONGATED_PENTAGONAL_ROTUNDA: Vacuus 50 inherited heart | Resonus 21 regions 290 simpl False | both 5 (30.7s)
+PROGRESS 0.492 J73_PARABIGYRATE_RHOMBICOSIDODECAHEDRON: Vacuus 60 heart | Resonus 31 regions 620 simpl False | both 0 (11.3s)
+PROGRESS 0.500 J33_PENTAGONAL_GYROCUPOLAROTUNDA: Vacuus 50 non-heart | Resonus 21 regions 252 simpl False | both 0 (30.7s)
+PROGRESS 0.508 J23_GYROELONGATED_SQUARE_CUPOLA: Vacuus 44 non-heart | Resonus 25 regions 538 simpl False | both 0 (32.4s)
+PROGRESS 0.517 J7_ELONGATED_TRIANGULAR_PYRAMID: Vacuus 9 inherited heart | Resonus 7 regions 36 simpl False | both 0 (0.3s)
+PROGRESS 0.525 J72_GYRATE_RHOMBICOSIDODECAHEDRON: Vacuus 75 inherited heart | Resonus 41 regions 1020 simpl False | both 0 (13.1s)
+PROGRESS 0.533 J32_PENTAGONAL_ORTHOCUPOLAROTUNDA: Vacuus 50 non-heart | Resonus 26 regions 482 simpl False | both 0 (33.7s)
+PROGRESS 0.542 J80_PARABIDIMINISHED_RHOMBICOSIDODECAHEDRON: Vacuus 45 heart | Resonus 21 regions 240 simpl False | both 0 (5.5s)
+PROGRESS 0.550 J74_METABIGYRATE_RHOMBICOSIDODECAHEDRON: Vacuus 88 inherited heart | Resonus 48 regions 1568 simpl False | both 0 (23.5s)
+ERROR ('johnson', 'J84_SNUB_DISPHENOID') NotImplementedError('Real roots are not supported for this polynomial') 
+ Traceback (most recent call last):
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 374, in run
+    rows = {"uniform": uniform_task, "prism": prism_task, "johnson": johnson_task}[kind](arg)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 359, in johnson_task
+    Oc, Ov = JX.centroids(F, V)
+             ~~~~~~~~~~~~^^^^^^
+  File "studies/2026-11-24-vacuus-enumeration/scripts/johnson_exact.py", line 277, in centroids
+    if F.sign(d) < 0: d = -d
+       ~~~~~~^^^
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 146, in sign
+    x = self.ball(prec)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 126, in ball
+    roots = [r for r, m in self.g.real_roots()]
+                           ~~~~~~~~~~~~~~~~~^^
+  File "flint/flint_base/flint_base.pyx", line 263, in flint.flint_base.flint_base.flint_poly.real_roots
+NotImplementedError: Real roots are not supported for this polynomial
+
+PROGRESS 0.567 J42_ELONGATED_PENTAGONAL_ORTHOBIROTUNDA: Vacuus 65 inherited heart | Resonus 36 regions 800 simpl False | both 5 (41.7s)
+ERROR ('johnson', 'J86_SPHENOCORONA') NotImplementedError('Real roots are not supported for this polynomial') 
+ Traceback (most recent call last):
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 374, in run
+    rows = {"uniform": uniform_task, "prism": prism_task, "johnson": johnson_task}[kind](arg)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 359, in johnson_task
+    Oc, Ov = JX.centroids(F, V)
+             ~~~~~~~~~~~~^^^^^^
+  File "studies/2026-11-24-vacuus-enumeration/scripts/johnson_exact.py", line 277, in centroids
+    if F.sign(d) < 0: d = -d
+       ~~~~~~^^^
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 146, in sign
+    x = self.ball(prec)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 126, in ball
+    roots = [r for r, m in self.g.real_roots()]
+                           ~~~~~~~~~~~~~~~~~^^
+  File "flint/flint_base/flint_base.pyx", line 263, in flint.flint_base.flint_base.flint_poly.real_roots
+NotImplementedError: Real roots are not supported for this polynomial
+
+ERROR ('johnson', 'J85_SNUB_SQUARE_ANTIPRISM') NotImplementedError('Real roots are not supported for this polynomial') 
+ Traceback (most recent call last):
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 374, in run
+    rows = {"uniform": uniform_task, "prism": prism_task, "johnson": johnson_task}[kind](arg)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 359, in johnson_task
+    Oc, Ov = JX.centroids(F, V)
+             ~~~~~~~~~~~~^^^^^^
+  File "studies/2026-11-24-vacuus-enumeration/scripts/johnson_exact.py", line 277, in centroids
+    if F.sign(d) < 0: d = -d
+       ~~~~~~^^^
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 146, in sign
+    x = self.ball(prec)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 126, in ball
+    roots = [r for r, m in self.g.real_roots()]
+                           ~~~~~~~~~~~~~~~~~^^
+  File "flint/flint_base/flint_base.pyx", line 263, in flint.flint_base.flint_base.flint_poly.real_roots
+NotImplementedError: Real roots are not supported for this polynomial
+
+ERROR ('johnson', 'J87_AUGMENTED_SPHENOCORONA') NotImplementedError('Real roots are not supported for this polynomial') 
+ Traceback (most recent call last):
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 374, in run
+    rows = {"uniform": uniform_task, "prism": prism_task, "johnson": johnson_task}[kind](arg)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 359, in johnson_task
+    Oc, Ov = JX.centroids(F, V)
+             ~~~~~~~~~~~~^^^^^^
+  File "studies/2026-11-24-vacuus-enumeration/scripts/johnson_exact.py", line 277, in centroids
+    if F.sign(d) < 0: d = -d
+       ~~~~~~^^^
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 146, in sign
+    x = self.ball(prec)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 126, in ball
+    roots = [r for r, m in self.g.real_roots()]
+                           ~~~~~~~~~~~~~~~~~^^
+  File "flint/flint_base/flint_base.pyx", line 263, in flint.flint_base.flint_base.flint_poly.real_roots
+NotImplementedError: Real roots are not supported for this polynomial
+
+ERROR ('johnson', 'J89_HEBESPHENOMEGACORONA') NotImplementedError('Real roots are not supported for this polynomial') 
+ Traceback (most recent call last):
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 374, in run
+    rows = {"uniform": uniform_task, "prism": prism_task, "johnson": johnson_task}[kind](arg)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 359, in johnson_task
+    Oc, Ov = JX.centroids(F, V)
+             ~~~~~~~~~~~~^^^^^^
+  File "studies/2026-11-24-vacuus-enumeration/scripts/johnson_exact.py", line 277, in centroids
+    if F.sign(d) < 0: d = -d
+       ~~~~~~^^^
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 146, in sign
+    x = self.ball(prec)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 126, in ball
+    roots = [r for r, m in self.g.real_roots()]
+                           ~~~~~~~~~~~~~~~~~^^
+  File "flint/flint_base/flint_base.pyx", line 263, in flint.flint_base.flint_base.flint_poly.real_roots
+NotImplementedError: Real roots are not supported for this polynomial
+
+ERROR ('johnson', 'J88_SPHENOMEGACORONA') NotImplementedError('Real roots are not supported for this polynomial') 
+ Traceback (most recent call last):
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 374, in run
+    rows = {"uniform": uniform_task, "prism": prism_task, "johnson": johnson_task}[kind](arg)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 359, in johnson_task
+    Oc, Ov = JX.centroids(F, V)
+             ~~~~~~~~~~~~^^^^^^
+  File "studies/2026-11-24-vacuus-enumeration/scripts/johnson_exact.py", line 277, in centroids
+    if F.sign(d) < 0: d = -d
+       ~~~~~~^^^
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 146, in sign
+    x = self.ball(prec)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 126, in ball
+    roots = [r for r, m in self.g.real_roots()]
+                           ~~~~~~~~~~~~~~~~~^^
+  File "flint/flint_base/flint_base.pyx", line 263, in flint.flint_base.flint_base.flint_poly.real_roots
+NotImplementedError: Real roots are not supported for this polynomial
+
+ERROR ('johnson', 'J90_DISPHENOCINGULUM') NotImplementedError('Real roots are not supported for this polynomial') 
+ Traceback (most recent call last):
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 374, in run
+    rows = {"uniform": uniform_task, "prism": prism_task, "johnson": johnson_task}[kind](arg)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 359, in johnson_task
+    Oc, Ov = JX.centroids(F, V)
+             ~~~~~~~~~~~~^^^^^^
+  File "studies/2026-11-24-vacuus-enumeration/scripts/johnson_exact.py", line 277, in centroids
+    if F.sign(d) < 0: d = -d
+       ~~~~~~^^^
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 146, in sign
+    x = self.ball(prec)
+  File "studies/2026-11-24-vacuus-resonus-catalogue/scripts/catalogue.py", line 126, in ball
+    roots = [r for r, m in self.g.real_roots()]
+                           ~~~~~~~~~~~~~~~~~^^
+  File "flint/flint_base/flint_base.pyx", line 263, in flint.flint_base.flint_base.flint_poly.real_roots
+NotImplementedError: Real roots are not supported for this polynomial
+
+PROGRESS 0.625 J8_ELONGATED_SQUARE_PYRAMID: Vacuus 10 inherited heart | Resonus 7 regions 32 simpl False | both 0 (0.2s)
+PROGRESS 0.633 J91_BILUNABIROTUNDA: Vacuus 9 heart | Resonus 7 regions 40 simpl False | both 0 (0.3s)
+PROGRESS 0.642 J68_AUGMENTED_TRUNCATED_DODECAHEDRON: Vacuus 100 inherited heart | Resonus 26 regions 482 simpl False | both 0 (29.0s)
+PROGRESS 0.650 J9_ELONGATED_PENTAGONAL_PYRAMID: Vacuus 15 inherited heart | Resonus 11 regions 90 simpl False | both 0 (0.7s)
+PROGRESS 0.658 J92_TRIANGULAR_HEBESPHENOROTUNDA: Vacuus 36 non-heart | Resonus 16 regions 176 simpl False | both 0 (4.0s)
+PROGRESS 0.667 J45_GYROELONGATED_SQUARE_BICUPOLA: Vacuus 56 non-heart | Resonus 33 regions 946 simpl False | both 0 (45.6s)
+PROGRESS 0.675 J75_TRIGYRATE_RHOMBICOSIDODECAHEDRON: Vacuus 99 inherited heart | Resonus 52 regions 2006 simpl False | both 0 (24.6s)
+PROGRESS 0.683 3-gonal prism: Vacuus 9 non-heart | Resonus 4 regions 12 simpl True | both 0 (0.2s)
+PROGRESS 0.683 3-gonal bipyramid: Vacuus 4 inherited heart | Resonus 6 regions 32 simpl False | both 0 (0.2s)
+PROGRESS 0.683 3-gonal antiprism: Vacuus 3 heart | Resonus 4 regions 14 simpl False | both 0 (0.2s)
+PROGRESS 0.683 3-gonal trapezohedron: Vacuus 6 heart | Resonus 3 regions 8 simpl True | both 0 (0.2s)
+PROGRESS 0.692 J81_METABIDIMINISHED_RHOMBICOSIDODECAHEDRON: Vacuus 88 inherited heart | Resonus 28 regions 408 simpl False | both 0 (19.2s)
+PROGRESS 0.700 5-gonal prism: Vacuus 15 non-heart | Resonus 6 regions 20 simpl True | both 0 (0.6s)
+PROGRESS 0.700 5-gonal bipyramid: Vacuus 6 inherited heart | Resonus 10 regions 92 simpl False | both 0 (0.6s)
+PROGRESS 0.700 5-gonal antiprism: Vacuus 10 heart | Resonus 6 regions 32 simpl False | both 0 (0.6s)
+PROGRESS 0.700 5-gonal trapezohedron: Vacuus 10 heart | Resonus 5 regions 22 simpl False | both 0 (0.6s)
+PROGRESS 0.708 4-gonal prism: Vacuus 6 heart | Resonus 3 regions 8 simpl True | both 0 (1.0s)
+PROGRESS 0.708 4-gonal bipyramid: Vacuus 3 heart | Resonus 4 regions 14 simpl False | both 0 (1.0s)
+PROGRESS 0.708 4-gonal antiprism: Vacuus 16 non-heart | Resonus 9 regions 66 simpl False | both 0 (1.0s)
+PROGRESS 0.708 4-gonal trapezohedron: Vacuus 12 inherited heart | Resonus 8 regions 58 simpl False | both 0 (1.0s)
+PROGRESS 0.717 6-gonal prism: Vacuus 9 heart | Resonus 4 regions 12 simpl True | both 3 (1.6s)
+PROGRESS 0.717 6-gonal bipyramid: Vacuus 4 heart | Resonus 6 regions 32 simpl False | both 0 (1.6s)
+PROGRESS 0.717 6-gonal antiprism: Vacuus 24 non-heart | Resonus 13 regions 146 simpl False | both 0 (1.6s)
+PROGRESS 0.717 6-gonal trapezohedron: Vacuus 18 inherited heart | Resonus 12 regions 134 simpl False | both 0 (1.6s)
+PROGRESS 0.725 J41_ELONGATED_PENTAGONAL_GYROCUPOLAROTUNDA: Vacuus 65 inherited heart | Resonus 26 regions 430 simpl False | both 5 (50.9s)
+PROGRESS 0.733 cube: Vacuus 6 heart | Resonus 3 regions 8 simpl True | both 0 (0.1s)
+PROGRESS 0.733 octahedron (polar of the cube): Vacuus 3 heart | Resonus 4 regions 14 simpl False | both 0 (0.1s)
+PROGRESS 0.742 cuboctahedron: Vacuus 4 heart | Resonus 7 regions 32 simpl True | both 4 (0.1s)
+PROGRESS 0.742 rhombic dodecahedron: Vacuus 6 heart | Resonus 6 regions 24 simpl True | both 6 (0.1s)
+PROGRESS 0.750 J24_GYROELONGATED_PENTAGONAL_CUPOLA: Vacuus 55 non-heart | Resonus 31 regions 852 simpl False | both 0 (55.4s)
+PROGRESS 0.758 dodecahedron: Vacuus 15 heart | Resonus 6 regions 32 simpl False | both 0 (0.5s)
+PROGRESS 0.758 icosahedron (polar of the dodecahedron): Vacuus 15 heart | Resonus 10 regions 92 simpl False | both 0 (0.5s)
+PROGRESS 0.767 icosahedron: Vacuus 15 heart | Resonus 10 regions 92 simpl False | both 0 (0.4s)
+PROGRESS 0.767 dodecahedron (polar of the icosahedron): Vacuus 15 heart | Resonus 6 regions 32 simpl False | both 0 (0.4s)
+PROGRESS 0.775 octahedron: Vacuus 3 heart | Resonus 4 regions 14 simpl False | both 0 (0.1s)
+PROGRESS 0.775 cube (polar of the octahedron): Vacuus 6 heart | Resonus 3 regions 8 simpl True | both 0 (0.1s)
+PROGRESS 0.783 7-gonal prism: Vacuus 21 non-heart | Resonus 8 regions 28 simpl True | both 0 (4.2s)
+PROGRESS 0.783 7-gonal bipyramid: Vacuus 8 inherited heart | Resonus 14 regions 184 simpl False | both 0 (4.2s)
+PROGRESS 0.783 7-gonal antiprism: Vacuus 14 heart | Resonus 8 regions 58 simpl False | both 0 (4.2s)
+PROGRESS 0.783 7-gonal trapezohedron: Vacuus 14 heart | Resonus 7 regions 44 simpl False | both 0 (4.2s)
+PROGRESS 0.792 tetrahedron: Vacuus 6 non-heart | Resonus 4 regions 14 simpl False | both 0 (0.1s)
+PROGRESS 0.792 tetrahedron (polar): Vacuus 6 non-heart | Resonus 4 regions 14 simpl False | both 0 (0.1s)
+PROGRESS 0.800 icosidodecahedron: Vacuus 6 heart | Resonus 16 regions 152 simpl False | both 6 (0.9s)
+PROGRESS 0.800 rhombic triacontahedron: Vacuus 15 heart | Resonus 15 regions 120 simpl True | both 15 (0.9s)
+PROGRESS 0.808 rhombicuboctahedron: Vacuus 24 heart | Resonus 13 regions 96 simpl True | both 0 (0.8s)
+PROGRESS 0.808 deltoidal icositetrahedron: Vacuus 9 heart | Resonus 12 regions 134 simpl False | both 0 (0.8s)
+PROGRESS 0.817 truncated octahedron: Vacuus 15 heart | Resonus 7 regions 32 simpl True | both 3 (0.3s)
+PROGRESS 0.817 tetrakis hexahedron: Vacuus 6 heart | Resonus 12 regions 116 simpl False | both 0 (0.3s)
+PROGRESS 0.825 truncated cube: Vacuus 18 heart | Resonus 7 regions 32 simpl True | both 0 (0.8s)
+PROGRESS 0.825 triakis octahedron: Vacuus 9 heart | Resonus 12 regions 134 simpl False | both 0 (0.8s)
+PROGRESS 0.833 truncated tetrahedron: Vacuus 18 non-heart | Resonus 4 regions 14 simpl False | both 0 (0.4s)
+PROGRESS 0.833 triakis tetrahedron: Vacuus 6 inherited heart | Resonus 12 regions 134 simpl False | both 0 (0.4s)
+PROGRESS 0.842 9-gonal prism: Vacuus 27 non-heart | Resonus 10 regions 36 simpl True | both 0 (4.4s)
+PROGRESS 0.842 9-gonal bipyramid: Vacuus 10 inherited heart | Resonus 18 regions 308 simpl False | both 0 (4.4s)
+PROGRESS 0.842 9-gonal antiprism: Vacuus 18 heart | Resonus 10 regions 92 simpl False | both 0 (4.4s)
+PROGRESS 0.842 9-gonal trapezohedron: Vacuus 18 heart | Resonus 9 regions 74 simpl False | both 0 (4.4s)
+PROGRESS 0.850 J83_TRIDIMINISHED_RHOMBICOSIDODECAHEDRON: Vacuus 75 non-heart | Resonus 22 regions 272 simpl False | both 0 (20.7s)
+PROGRESS 0.858 truncated cuboctahedron: Vacuus 36 heart | Resonus 13 regions 96 simpl True | both 0 (2.7s)
+PROGRESS 0.858 disdyakis dodecahedron: Vacuus 9 heart | Resonus 24 regions 554 simpl False | both 0 (2.7s)
+PROGRESS 0.867 J40_ELONGATED_PENTAGONAL_ORTHOCUPOLAROTUNDA: Vacuus 65 inherited heart | Resonus 31 regions 660 simpl False | both 5 (60.0s)
+PROGRESS 0.875 J76_DIMINISHED_RHOMBICOSIDODECAHEDRON: Vacuus 105 non-heart | Resonus 31 regions 480 simpl True | both 0 (34.9s)
+PROGRESS 0.883 10-gonal prism: Vacuus 15 heart | Resonus 6 regions 20 simpl True | both 5 (18.7s)
+PROGRESS 0.883 10-gonal bipyramid: Vacuus 6 heart | Resonus 10 regions 92 simpl False | both 0 (18.7s)
+PROGRESS 0.883 10-gonal antiprism: Vacuus 40 non-heart | Resonus 21 regions 402 simpl False | both 0 (18.7s)
+PROGRESS 0.883 10-gonal trapezohedron: Vacuus 30 inherited heart | Resonus 20 regions 382 simpl False | both 0 (18.7s)
+PROGRESS 0.892 8-gonal prism: Vacuus 12 heart | Resonus 5 regions 16 simpl True | both 0 (13.6s)
+PROGRESS 0.892 8-gonal bipyramid: Vacuus 5 heart | Resonus 8 regions 58 simpl False | both 0 (13.6s)
+PROGRESS 0.892 8-gonal antiprism: Vacuus 32 non-heart | Resonus 17 regions 258 simpl False | both 0 (13.6s)
+PROGRESS 0.892 8-gonal trapezohedron: Vacuus 24 inherited heart | Resonus 16 regions 242 simpl False | both 0 (13.6s)
+PROGRESS 0.900 J82_GYRATE_BIDIMINISHED_RHOMBICOSIDODECAHEDRON: Vacuus 88 inherited heart | Resonus 32 regions 674 simpl False | both 0 (31.9s)
+PROGRESS 0.908 J78_METAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON: Vacuus 105 non-heart | Resonus 38 regions 900 simpl False | both 0 (36.4s)
+PROGRESS 0.917 J79_BIGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON: Vacuus 105 non-heart | Resonus 42 regions 1252 simpl False | both 0 (36.7s)
+PROGRESS 0.925 J77_PARAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON: Vacuus 105 non-heart | Resonus 31 regions 620 simpl False | both 0 (39.6s)
+PROGRESS 0.933 J70_METABIAUGMENTED_TRUNCATED_DODECAHEDRON: Vacuus 116 inherited heart | Resonus 36 regions 1004 simpl False | both 0 (51.8s)
+PROGRESS 0.942 12-gonal prism: Vacuus 18 heart | Resonus 7 regions 24 simpl True | both 0 (22.7s)
+PROGRESS 0.942 12-gonal bipyramid: Vacuus 7 heart | Resonus 12 regions 134 simpl False | both 0 (22.7s)
+PROGRESS 0.942 12-gonal antiprism: Vacuus 48 non-heart | Resonus 25 regions 578 simpl False | both 0 (22.7s)
+PROGRESS 0.942 12-gonal trapezohedron: Vacuus 36 inherited heart | Resonus 24 regions 554 simpl False | both 0 (22.7s)
+PROGRESS 0.950 11-gonal prism: Vacuus 33 non-heart | Resonus 12 regions 44 simpl True | both 0 (27.4s)
+PROGRESS 0.950 11-gonal bipyramid: Vacuus 12 inherited heart | Resonus 22 regions 464 simpl False | both 0 (27.4s)
+PROGRESS 0.950 11-gonal antiprism: Vacuus 22 heart | Resonus 12 regions 134 simpl False | both 0 (27.4s)
+PROGRESS 0.950 11-gonal trapezohedron: Vacuus 22 heart | Resonus 11 regions 112 simpl False | both 0 (27.4s)
+PROGRESS 0.958 J46_GYROELONGATED_PENTAGONAL_BICUPOLA: Vacuus 70 non-heart | Resonus 41 regions 1502 simpl False | both 0 (70.1s)
+PROGRESS 0.967 J71_TRIAUGMENTED_TRUNCATED_DODECAHEDRON: Vacuus 132 inherited heart | Resonus 46 regions 1718 simpl False | both 0 (58.5s)
+PROGRESS 0.975 snub dodecahedron: Vacuus 150 non-heart | Resonus 76 regions 5612 simpl False | both 0 (78.9s)
+PROGRESS 0.975 pentagonal hexecontahedron: Vacuus 150 non-heart | Resonus 60 regions 3422 simpl False | both 0 (78.9s)
+PROGRESS 0.983 J25_GYROELONGATED_PENTAGONAL_ROTUNDA: Vacuus 65 non-heart | Resonus 36 regions 1092 simpl False | both 0 (83.9s)
+PROGRESS 0.992 J48_GYROELONGATED_PENTAGONAL_BIROTUNDA: Vacuus 90 non-heart | Resonus 51 regions 2232 simpl False | both 0 (103.7s)
+PROGRESS 1.000 J47_GYROELONGATED_PENTAGONAL_CUPOLAROTUNDA: Vacuus 80 non-heart | Resonus 46 regions 1842 simpl False | both 0 (113.5s)
+rows 161 errors 7

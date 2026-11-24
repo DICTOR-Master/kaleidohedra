@@ -1,0 +1,101 @@
+field m=3: degree 4 (0.0s)
+built J12_TRIANGULAR_BIPYRAMID <- axial m=3: pyr / none / pyr b=0
+built J7_ELONGATED_TRIANGULAR_PYRAMID <- axial m=3: pyr / prism / None b=0
+built J14_ELONGATED_TRIANGULAR_BIPYRAMID <- axial m=3: pyr / prism / pyr b=0
+field m=4: degree 8 (0.0s)
+built J1_SQUARE_PYRAMID <- axial m=4: pyr / none / None b=0
+built J8_ELONGATED_SQUARE_PYRAMID <- axial m=4: pyr / prism / None b=0
+built J15_ELONGATED_SQUARE_BIPYRAMID <- axial m=4: pyr / prism / pyr b=0
+built J10_GYROELONGATED_SQUARE_PYRAMID <- axial m=4: pyr / anti / None b=0
+built J17_GYROELONGATED_SQUARE_BIPYRAMID <- axial m=4: pyr / anti / pyr b=0
+field m=5: degree 4 (0.0s)
+built J2_PENTAGONAL_PYRAMID <- axial m=5: pyr / none / None b=0
+built J13_PENTAGONAL_BIPYRAMID <- axial m=5: pyr / none / pyr b=0
+built J9_ELONGATED_PENTAGONAL_PYRAMID <- axial m=5: pyr / prism / None b=0
+built J16_ELONGATED_PENTAGONAL_BIPYRAMID <- axial m=5: pyr / prism / pyr b=0
+built J11_GYROELONGATED_PENTAGONAL_PYRAMID <- axial m=5: pyr / anti / None b=0
+field m=6: degree 8 (0.0s)
+built J3_TRIANGULAR_CUPOLA <- axial m=6: cup / none / None b=0
+built J27_TRIANGULAR_ORTHOBICUPOLA <- axial m=6: cup / none / cup b=0
+built J18_ELONGATED_TRIANGULAR_CUPOLA <- axial m=6: cup / prism / None b=0
+built J35_ELONGATED_TRIANGULAR_ORTHOBICUPOLA <- axial m=6: cup / prism / cup b=0
+built J36_ELONGATED_TRIANGULAR_GYROBICUPOLA <- axial m=6: cup / prism / cup b=2
+built J22_GYROELONGATED_TRIANGULAR_CUPOLA <- axial m=6: cup / anti / None b=0
+built J44_GYROELONGATED_TRIANGULAR_BICUPOLA <- axial m=6: cup / anti / cup b=0
+field m=8: degree 16 (0.1s)
+built J4_SQUARE_CUPOLA <- axial m=8: cup / none / None b=0
+built J28_SQUARE_ORTHOBICUPOLA <- axial m=8: cup / none / cup b=0
+built J29_SQUARE_GYROBICUPOLA <- axial m=8: cup / none / cup b=2
+built J19_ELONGATED_SQUARE_CUPOLA <- axial m=8: cup / prism / None b=0
+built J37_ELONGATED_SQUARE_GYROBICUPOLA <- axial m=8: cup / prism / cup b=2
+built J23_GYROELONGATED_SQUARE_CUPOLA <- axial m=8: cup / anti / None b=0
+built J45_GYROELONGATED_SQUARE_BICUPOLA <- axial m=8: cup / anti / cup b=0
+field m=10: degree 16 (0.5s)
+built J5_PENTAGONAL_CUPOLA <- axial m=10: cup / none / None b=0
+built J30_PENTAGONAL_ORTHOBICUPOLA <- axial m=10: cup / none / cup b=0
+built J31_PENTAGONAL_GYROBICUPOLA <- axial m=10: cup / none / cup b=2
+built J33_PENTAGONAL_GYROCUPOLAROTUNDA <- axial m=10: cup / none / rot31 b=0
+built J32_PENTAGONAL_ORTHOCUPOLAROTUNDA <- axial m=10: cup / none / rot31 b=2
+built J20_ELONGATED_PENTAGONAL_CUPOLA <- axial m=10: cup / prism / None b=0
+built J38_ELONGATED_PENTAGONAL_ORTHOBICUPOLA <- axial m=10: cup / prism / cup b=0
+built J39_ELONGATED_PENTAGONAL_GYROBICUPOLA <- axial m=10: cup / prism / cup b=2
+built J41_ELONGATED_PENTAGONAL_GYROCUPOLAROTUNDA <- axial m=10: cup / prism / rot31 b=0
+built J40_ELONGATED_PENTAGONAL_ORTHOCUPOLAROTUNDA <- axial m=10: cup / prism / rot31 b=2
+built J24_GYROELONGATED_PENTAGONAL_CUPOLA <- axial m=10: cup / anti / None b=0
+built J46_GYROELONGATED_PENTAGONAL_BICUPOLA <- axial m=10: cup / anti / cup b=0
+built J47_GYROELONGATED_PENTAGONAL_CUPOLAROTUNDA <- axial m=10: cup / anti / rot31 b=0
+built J6_PENTAGONAL_ROTUNDA <- axial m=10: rot31 / none / None b=0
+built J34_PENTAGONAL_ORTHOBIROTUNDA <- axial m=10: rot31 / none / rot31 b=0
+built J21_ELONGATED_PENTAGONAL_ROTUNDA <- axial m=10: rot31 / prism / None b=0
+built J42_ELONGATED_PENTAGONAL_ORTHOBIROTUNDA <- axial m=10: rot31 / prism / rot31 b=0
+built J43_ELONGATED_PENTAGONAL_GYROBIROTUNDA <- axial m=10: rot31 / prism / rot31 b=2
+built J25_GYROELONGATED_PENTAGONAL_ROTUNDA <- axial m=10: rot31 / anti / None b=0
+built J48_GYROELONGATED_PENTAGONAL_BIROTUNDA <- axial m=10: rot31 / anti / rot31 b=0
+built J49_AUGMENTED_TRIANGULAR_PRISM <- 3-prism + square pyramids on lateral faces (0,)
+built J50_BIAUGMENTED_TRIANGULAR_PRISM <- 3-prism + square pyramids on lateral faces (0, 1)
+built J51_TRIAUGMENTED_TRIANGULAR_PRISM <- 3-prism + square pyramids on lateral faces (0, 1, 2)
+built J52_AUGMENTED_PENTAGONAL_PRISM <- 5-prism + square pyramids on lateral faces (0,)
+built J53_BIAUGMENTED_PENTAGONAL_PRISM <- 5-prism + square pyramids on lateral faces (0, 2)
+built J54_AUGMENTED_HEXAGONAL_PRISM <- 6-prism + square pyramids on lateral faces (0,)
+built J56_METABIAUGMENTED_HEXAGONAL_PRISM <- 6-prism + square pyramids on lateral faces (0, 2)
+built J55_PARABIAUGMENTED_HEXAGONAL_PRISM <- 6-prism + square pyramids on lateral faces (0, 3)
+built J57_TRIAUGMENTED_HEXAGONAL_PRISM <- 6-prism + square pyramids on lateral faces (0, 2, 4)
+built J26_GYROBIFASTIGIUM <- gyrobifastigium: square with two ridges
+built J58_AUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0,)
+built J60_METABIAUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0, 5)
+built J59_PARABIAUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0, 10)
+built J61_TRIAUGMENTED_DODECAHEDRON <- dodecahedron + pentagonal pyramids (0, 5, 7)
+built J62_METABIDIMINISHED_ICOSAHEDRON <- icosahedron minus corners (0, 1)
+built J63_TRIDIMINISHED_ICOSAHEDRON <- icosahedron minus corners (0, 1, 5)
+built J64_AUGMENTED_TRIDIMINISHED_ICOSAHEDRON <- J63 + tetrahedron on face [6, 2, 5]
+built J65_AUGMENTED_TRUNCATED_TETRAHEDRON <- truncated tetrahedron + cupolas on (0,) t=(0,)
+built J66_AUGMENTED_TRUNCATED_CUBE <- truncated cube + cupolas on (0,) t=(0,)
+built J67_BIAUGMENTED_TRUNCATED_CUBE <- truncated cube + cupolas on (0, 4) t=(0, 0)
+built J68_AUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0,) t=(0,)
+built J70_METABIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 1) t=(0, 0)
+built J69_PARABIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 11) t=(0, 0)
+built J71_TRIAUGMENTED_TRUNCATED_DODECAHEDRON <- truncated dodecahedron + cupolas on (0, 1, 6) t=(0, 0, 0)
+built J72_GYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0,) g
+built J76_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0,) d
+built J74_METABIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1) gg
+built J78_METAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1) gd
+built J81_METABIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1) dd
+built J73_PARABIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 3) gg
+built J77_PARAGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 3) gd
+built J80_PARABIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 3) dd
+built J75_TRIGYRATE_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1, 8) ggg
+built J79_BIGYRATE_DIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1, 8) ggd
+built J82_GYRATE_BIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1, 8) gdd
+built J83_TRIDIMINISHED_RHOMBICOSIDODECAHEDRON <- rhombicosidodecahedron caps (0, 1, 8) ddd
+built J91_BILUNABIROTUNDA <- J91_BILUNABIROTUNDA: recognised in basis [1, sqrt(5)]
+built J92_TRIANGULAR_HEBESPHENOROTUNDA <- J92_TRIANGULAR_HEBESPHENOROTUNDA: recognised in basis [1, sqrt(3), sqrt(5), sqrt(15)]
+tasks 7
+PROGRESS 0.143 J84_SNUB_DISPHENOID: Vacuus 14 inherited heart | Resonus 12 regions 134 simpl False | both 0 (0.3s)
+PROGRESS 0.286 J86_SPHENOCORONA: Vacuus 20 inherited heart | Resonus 14 regions 174 simpl False | both 0 (0.8s)
+PROGRESS 0.429 J85_SNUB_SQUARE_ANTIPRISM: Vacuus 36 inherited heart | Resonus 25 regions 578 simpl False | both 0 (2.0s)
+PROGRESS 0.571 J87_AUGMENTED_SPHENOCORONA: Vacuus 26 non-heart | Resonus 17 regions 254 simpl False | both 0 (5.9s)
+PROGRESS 0.714 J90_DISPHENOCINGULUM: Vacuus 34 inherited heart | Resonus 24 regions 534 simpl False | both 0 (9.0s)
+PROGRESS 0.857 J89_HEBESPHENOMEGACORONA: Vacuus 32 inherited heart | Resonus 21 regions 382 simpl False | both 0 (13.0s)
+PROGRESS 1.000 J88_SPHENOMEGACORONA: Vacuus 24 inherited heart | Resonus 18 regions 298 simpl False | both 0 (93.1s)
+rows 7 errors 0
+FINAL ok 7 rows

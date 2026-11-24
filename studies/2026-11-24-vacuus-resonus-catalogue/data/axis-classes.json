@@ -1,0 +1,465 @@
+{
+ "unions": {
+  "Oh: 4-fold": {
+   "planes": 3,
+   "rank": 3,
+   "sphere_V": 6,
+   "sphere_E": 12,
+   "regions": 8,
+   "point_multiplicities": {
+    "2": 3
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 8
+   }
+  },
+  "Oh: 3-fold": {
+   "planes": 4,
+   "rank": 3,
+   "sphere_V": 12,
+   "sphere_E": 24,
+   "regions": 14,
+   "point_multiplicities": {
+    "2": 6
+   },
+   "simplicial": false,
+   "region_sides": {
+    "3": 8,
+    "4": 6
+   }
+  },
+  "Oh: 2-fold": {
+   "planes": 6,
+   "rank": 3,
+   "sphere_V": 14,
+   "sphere_E": 36,
+   "regions": 24,
+   "point_multiplicities": {
+    "2": 3,
+    "3": 4
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 24
+   }
+  },
+  "Oh: 4-fold + 3-fold": {
+   "planes": 7,
+   "rank": 3,
+   "sphere_V": 18,
+   "sphere_E": 48,
+   "regions": 32,
+   "point_multiplicities": {
+    "2": 3,
+    "3": 6
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 32
+   }
+  },
+  "Oh: 4-fold + 2-fold": {
+   "planes": 9,
+   "rank": 3,
+   "sphere_V": 26,
+   "sphere_E": 72,
+   "regions": 48,
+   "point_multiplicities": {
+    "2": 6,
+    "3": 4,
+    "4": 3
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 48
+   }
+  },
+  "Oh: 3-fold + 2-fold": {
+   "planes": 10,
+   "rank": 3,
+   "sphere_V": 50,
+   "sphere_E": 120,
+   "regions": 72,
+   "point_multiplicities": {
+    "2": 15,
+    "3": 10
+   },
+   "simplicial": false,
+   "region_sides": {
+    "3": 48,
+    "4": 24
+   }
+  },
+  "Oh: 4-fold + 3-fold + 2-fold": {
+   "planes": 13,
+   "rank": 3,
+   "sphere_V": 50,
+   "sphere_E": 144,
+   "regions": 96,
+   "point_multiplicities": {
+    "2": 12,
+    "3": 4,
+    "4": 9
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 96
+   }
+  },
+  "Ih: 5-fold": {
+   "planes": 6,
+   "rank": 3,
+   "sphere_V": 30,
+   "sphere_E": 60,
+   "regions": 32,
+   "point_multiplicities": {
+    "2": 15
+   },
+   "simplicial": false,
+   "region_sides": {
+    "3": 20,
+    "5": 12
+   }
+  },
+  "Ih: 3-fold": {
+   "planes": 10,
+   "rank": 3,
+   "sphere_V": 90,
+   "sphere_E": 180,
+   "regions": 92,
+   "point_multiplicities": {
+    "2": 45
+   },
+   "simplicial": false,
+   "region_sides": {
+    "3": 60,
+    "5": 12,
+    "6": 20
+   }
+  },
+  "Ih: 2-fold": {
+   "planes": 15,
+   "rank": 3,
+   "sphere_V": 62,
+   "sphere_E": 180,
+   "regions": 120,
+   "point_multiplicities": {
+    "2": 15,
+    "3": 10,
+    "5": 6
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 120
+   }
+  },
+  "Ih: 5-fold + 3-fold": {
+   "planes": 16,
+   "rank": 3,
+   "sphere_V": 90,
+   "sphere_E": 240,
+   "regions": 152,
+   "point_multiplicities": {
+    "2": 30,
+    "4": 15
+   },
+   "simplicial": false,
+   "region_sides": {
+    "3": 140,
+    "5": 12
+   }
+  },
+  "Ih: 5-fold + 2-fold": {
+   "planes": 21,
+   "rank": 3,
+   "sphere_V": 122,
+   "sphere_E": 360,
+   "regions": 240,
+   "point_multiplicities": {
+    "2": 30,
+    "3": 10,
+    "4": 15,
+    "5": 6
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 240
+   }
+  },
+  "Ih: 3-fold + 2-fold": {
+   "planes": 25,
+   "rank": 3,
+   "sphere_V": 182,
+   "sphere_E": 540,
+   "regions": 360,
+   "point_multiplicities": {
+    "2": 30,
+    "3": 40,
+    "4": 15,
+    "5": 6
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 360
+   }
+  },
+  "Ih: 5-fold + 3-fold + 2-fold": {
+   "planes": 31,
+   "rank": 3,
+   "sphere_V": 242,
+   "sphere_E": 720,
+   "regions": 480,
+   "point_multiplicities": {
+    "2": 60,
+    "3": 40,
+    "5": 6,
+    "6": 15
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 480
+   }
+  },
+  "Ih': 5-fold": {
+   "planes": 6,
+   "rank": 3,
+   "sphere_V": 30,
+   "sphere_E": 60,
+   "regions": 32,
+   "point_multiplicities": {
+    "2": 15
+   },
+   "simplicial": false,
+   "region_sides": {
+    "3": 20,
+    "5": 12
+   }
+  },
+  "Ih': 3-fold": {
+   "planes": 10,
+   "rank": 3,
+   "sphere_V": 90,
+   "sphere_E": 180,
+   "regions": 92,
+   "point_multiplicities": {
+    "2": 45
+   },
+   "simplicial": false,
+   "region_sides": {
+    "3": 60,
+    "5": 12,
+    "6": 20
+   }
+  },
+  "Ih': 2-fold": {
+   "planes": 15,
+   "rank": 3,
+   "sphere_V": 62,
+   "sphere_E": 180,
+   "regions": 120,
+   "point_multiplicities": {
+    "2": 15,
+    "3": 10,
+    "5": 6
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 120
+   }
+  },
+  "Ih': 5-fold + 3-fold": {
+   "planes": 16,
+   "rank": 3,
+   "sphere_V": 90,
+   "sphere_E": 240,
+   "regions": 152,
+   "point_multiplicities": {
+    "2": 30,
+    "4": 15
+   },
+   "simplicial": false,
+   "region_sides": {
+    "3": 140,
+    "5": 12
+   }
+  },
+  "Ih': 5-fold + 2-fold": {
+   "planes": 21,
+   "rank": 3,
+   "sphere_V": 122,
+   "sphere_E": 360,
+   "regions": 240,
+   "point_multiplicities": {
+    "2": 30,
+    "3": 10,
+    "4": 15,
+    "5": 6
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 240
+   }
+  },
+  "Ih': 3-fold + 2-fold": {
+   "planes": 25,
+   "rank": 3,
+   "sphere_V": 182,
+   "sphere_E": 540,
+   "regions": 360,
+   "point_multiplicities": {
+    "2": 30,
+    "3": 40,
+    "4": 15,
+    "5": 6
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 360
+   }
+  },
+  "Ih': 5-fold + 3-fold + 2-fold": {
+   "planes": 31,
+   "rank": 3,
+   "sphere_V": 242,
+   "sphere_E": 720,
+   "regions": 480,
+   "point_multiplicities": {
+    "2": 60,
+    "3": 40,
+    "5": 6,
+    "6": 15
+   },
+   "simplicial": true,
+   "region_sides": {
+    "3": 480
+   }
+  }
+ },
+ "solids": {
+  "truncated dodecahedron": {
+   "resonus": "5-fold + 3-fold",
+   "vacuus": null
+  },
+  "triakis icosahedron": {
+   "resonus": null,
+   "vacuus": "2-fold"
+  },
+  "truncated icosahedron": {
+   "resonus": "5-fold + 3-fold",
+   "vacuus": null
+  },
+  "pentakis dodecahedron": {
+   "resonus": null,
+   "vacuus": "2-fold"
+  },
+  "snub cube": {
+   "resonus": null,
+   "vacuus": null
+  },
+  "pentagonal icositetrahedron": {
+   "resonus": null,
+   "vacuus": null
+  },
+  "rhombicosidodecahedron": {
+   "resonus": "5-fold + 3-fold + 2-fold",
+   "vacuus": null
+  },
+  "deltoidal hexecontahedron": {
+   "resonus": null,
+   "vacuus": "2-fold"
+  },
+  "truncated icosidodecahedron": {
+   "resonus": "5-fold + 3-fold + 2-fold",
+   "vacuus": null
+  },
+  "disdyakis triacontahedron": {
+   "resonus": null,
+   "vacuus": "2-fold"
+  },
+  "cube": {
+   "resonus": "4-fold",
+   "vacuus": "2-fold"
+  },
+  "cuboctahedron": {
+   "resonus": "4-fold + 3-fold",
+   "vacuus": "3-fold"
+  },
+  "rhombic dodecahedron": {
+   "resonus": "2-fold",
+   "vacuus": "2-fold"
+  },
+  "dodecahedron": {
+   "resonus": "5-fold",
+   "vacuus": "2-fold"
+  },
+  "icosahedron": {
+   "resonus": "3-fold",
+   "vacuus": "2-fold"
+  },
+  "octahedron": {
+   "resonus": "3-fold",
+   "vacuus": "4-fold"
+  },
+  "tetrahedron": {
+   "resonus": "3-fold",
+   "vacuus": "2-fold"
+  },
+  "icosidodecahedron": {
+   "resonus": "5-fold + 3-fold",
+   "vacuus": "5-fold"
+  },
+  "rhombic triacontahedron": {
+   "resonus": "2-fold",
+   "vacuus": "2-fold"
+  },
+  "rhombicuboctahedron": {
+   "resonus": "4-fold + 3-fold + 2-fold",
+   "vacuus": null
+  },
+  "deltoidal icositetrahedron": {
+   "resonus": null,
+   "vacuus": "4-fold + 2-fold"
+  },
+  "truncated octahedron": {
+   "resonus": "4-fold + 3-fold",
+   "vacuus": null
+  },
+  "tetrakis hexahedron": {
+   "resonus": null,
+   "vacuus": "2-fold"
+  },
+  "truncated cube": {
+   "resonus": "4-fold + 3-fold",
+   "vacuus": null
+  },
+  "triakis octahedron": {
+   "resonus": null,
+   "vacuus": "4-fold + 2-fold"
+  },
+  "truncated tetrahedron": {
+   "resonus": "3-fold",
+   "vacuus": null
+  },
+  "triakis tetrahedron": {
+   "resonus": null,
+   "vacuus": "2-fold"
+  },
+  "truncated cuboctahedron": {
+   "resonus": "4-fold + 3-fold + 2-fold",
+   "vacuus": null
+  },
+  "disdyakis dodecahedron": {
+   "resonus": null,
+   "vacuus": "4-fold + 2-fold"
+  },
+  "snub dodecahedron": {
+   "resonus": null,
+   "vacuus": null
+  },
+  "pentagonal hexecontahedron": {
+   "resonus": null,
+   "vacuus": null
+  }
+ }
+}
