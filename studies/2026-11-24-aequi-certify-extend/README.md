@@ -143,9 +143,9 @@ So the classes D3d (9 orbits) and C2h (9 orbits) are now complete for every m, l
 - 108 are congruent to dice of study 2026-11-19-aequi-complete;
 - **1 375 are new**: S6 1000, D3 354, D3d 21, all with m = 5 under their full group. All are rigorously certified (Krawczyk on constant-type boxes, no multi-plane corners; uniqueness half-widths 1e-2: 32, 1e-3: 590, 1e-4: 731, 1e-5: 14, 1e-6: 7, 1e-8: 1).
 
-**Checkpoint: not finished before the power cut.**
-- D2h (16 orbits) m = 5: 1 426 of 1 455 sets were searched when the job reached its time cap. These are not yet classified. To resume, rerun `SOLVER=solve1.py bash scripts/run2b.sh PY 22 data/raw/sol-2caps2.jsonl "19:5 24:6"` (resumable from data/raw/sol-2caps2.jsonl.gz, gunzipped). Then run collect1.py with plan [[19,5],[24,6]], post2a.py with prefix 2caps3, and certify.py with DICE=data/dice2caps3-new.json.
-- D3 (12 orbits) m = 6 was not started.
+*Batch 3 (resumed after the power cut, 24 Nov afternoon): D2h (16 orbits) m = 5 and D3 (12 orbits) m = 6, now complete.* All 1 455 D2h sets and all 508 D3 sets were searched (plan_check2: searched = sets), and **every set has exactly one fair die**. collect1.py, post2a.py (prefix 2caps3), certify.py and structural.py (logs/collect2caps3.log, post2caps3.log, certify2caps3.log, structural2caps3.log): 1 963 solutions, 1 962 distinct solids, 1 961 Aequi (one is face-transitive). 1 has a group containing T (Ih, met before), 50 are congruent to dice of study 2026-11-19-aequi-complete, and **1 910 are new** (D2h 1 449, D3 416, D3d 45). **All 1 910 are rigorously certified** (status certified 1 910 of 1 910; symmetry and face-graph checks pass for all). Structural corners: 1 116 dice, 824 distinct exact checks, 0 failures. Data: data/collected2caps3.json.gz, aequi2caps3.json.gz, dice2caps3-new.json, certify2caps3.jsonl.gz, structural2caps3.json, counts2caps3.md.
+
+New Aequi in Part 2(b) caps, all three batches: 1 711 + 1 910 = 3 621. With Part 2(a): 5 935 + 3 621 = 9 556 new certified Aequi.
 
 Data: data/counts2caps.md, counts2caps2.md, aequi2caps*.json.gz, certify2caps*.jsonl.gz, structural2caps*.json, collected2caps*.json.gz, raw/sol-2caps*.jsonl.gz.
 
