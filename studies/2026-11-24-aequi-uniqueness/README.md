@@ -152,19 +152,48 @@ study were checked (319 without a die in the box, plus 50 controls):
 - A. D. Aleksandrov, Doklady 35 (1942): not opened (cited via the next two, as in #112).
 - V. Oliker, Adv. Math. 213 (2007), arXiv:math/0701398.
 - J. Bertrand, Geom. Dedicata 183 (2016), arXiv:1505.04821.
-- V. Semenov, The discrete Gauss image problem, arXiv:2210.16974 (search summary only). It gives sufficient and
-  nearly necessary conditions through Hall's marriage theorem, including equal-weight atoms. No barycenter
-  criterion was seen; the full text was not read.
-- V. Semenov, arXiv:2210.16778, the weak Aleksandrov relation (abstract only).
-- The L_p Aleksandrov problem for origin-symmetric polytopes, arXiv:1803.10839 (abstract only).
-- Web search: "Alexandrov condition … discrete measure barycenter zero equal masses sufficient".
+- V. Semenov, The discrete Gauss image problem, arXiv:2210.16974v2 (2024), **full text read** (24 Nov). Its problem has the
+  *target* measure λ discrete (finitely many prescribed normals u_j), not spherical Lebesgue measure. Main result (Theorem 1.1):
+  for µ discrete, not concentrated on a closed hemisphere, and λ discrete equal-weight, edge-normal loop free, a solution exists
+  iff µ and λ are *weak* Aleksandrov related (Definition 3.2, µ(ω) ≤ λ(ω^{π/2}) for compact spherically convex ω), proved through
+  an assignment functional and Hall's marriage theorem (Lemma 4.3); uniqueness is of the assignment function (Theorem 1.2), and a
+  solution is never unique as a body (Proposition 5.12). No criterion in terms of Σ n_k, a barycentre or a centroid, and no
+  sufficient condition that makes the Aleksandrov relation automatic, appears anywhere in the text (searched also for "balanc",
+  "barycent", "centroid", "sum").
+- V. Semenov, The Gauss image problem with weak Aleksandrov condition, arXiv:2210.16778v3 (2024), **full text read**.
+  Theorem 1.4: µ discrete, not concentrated on a closed hemisphere, λ absolutely continuous, µ weakly Aleksandrov related to λ ⇒
+  a polytope P with vertices in the directions of µ solves µ = λ(P, ·). With λ = spherical Lebesgue measure this is our setting
+  (the polar of the die), but the hypothesis is the (weak) Aleksandrov relation itself; it is not decided for any class of µ.
+- K. J. Böröczky, E. Lutwak, D. Yang, G. Zhang, Y. Zhao, The Gauss image problem, Comm. Pure Appl. Math. 73 (2020),
+  doi:10.1002/cpa.21898 (free preprint on the NSF public-access repository, **full text read**). Theorem 1.1 (existence for λ
+  absolutely continuous under the Aleksandrov relation), Theorem 1.2 (necessity and uniqueness up to dilation when λ is positive
+  on open sets). The one class of µ for which the relation is shown to hold automatically is **even** measures: Lemma 5.6
+  ("even Borel measure … not concentrated on any great hypersphere … with |µ| = |λ| … are Aleksandrov related"), giving
+  Theorems 1.3 and 8.5 (origin-symmetric solutions). For equal point masses this is exactly #112 Corollary 3 (directions in
+  opposite pairs).
+- J. Bertrand, On the Gauss image problem, arXiv:2308.15810 (2023), **full text read**: Theorem 1.5, existence for λ
+  absolutely continuous and µ not concentrated on a closed hemisphere under the weak Aleksandrov condition (optimal transport);
+  no balanced or barycentre criterion.
+- Followed from Semenov's references: Y. Zhao, The L_p Aleksandrov problem for origin-symmetric polytopes, arXiv:1803.10839 /
+  Proc. AMS 147 (2019) (abstract: origin-symmetric, i.e. even, case only); Oliker (2007) and Bertrand (2016) above.
+- Web searches: "Alexandrov condition … discrete measure barycenter zero equal masses sufficient"; "Aleksandrov integral
+  curvature problem discrete measure equal masses centroid/barycenter at origin sufficient condition existence polytope"
+  (no such statement found).
 
-None of these sources states Theorem B, but Semenov's full text has not been read. Priority is therefore **not
-claimed**, only that the result was not found in the sources checked.
+**Finding (24 Nov).** Theorem B is not stated, nor any equivalent, in the five full texts read or in the works they cite that
+were checked. The nearest result is Böröczky–Lutwak–Yang–Zhang–Zhao, Lemma 5.6: **even** measures (with λ even, positive on
+open sets) are Aleksandrov related. **How ours differs:** Theorem B assumes only that the N equal point masses are *balanced*,
+Σ n_k = 0 (and not all on one great circle). An even set of directions is balanced, but a balanced set need not be even: for example the four face
+normals of a regular tetrahedron, the three side normals of a triangular prism (D3h), and many orbit sets of T, Td, D_n, D_nh
+(n odd) and S_4 among the Aequi are balanced and not symmetric under −1.
+So Theorem B extends the even case (BLYZZ Lemma 5.6 for equal masses; #112 Corollary 3) to all balanced equal-mass sets; its
+proof (Steps 1–4 above) uses the equal masses and the perimeter bound, and does not extend to arbitrary balanced weights as
+stated (LEAD 2). Semenov's papers and Bertrand's note treat the relation as a hypothesis and give no class of measures that
+satisfies it. Priority is still **not claimed** beyond this: the result was not found in the sources checked.
 
 ## LEADS
 
-1. Read Semenov arXiv:2210.16974 in full, for an equal-weight or barycenter criterion that might contain Theorem B.
+1. Done 24 Nov: Semenov arXiv:2210.16974 and 2210.16778, BLYZZ (2020) and Bertrand (2023) read in full; Theorem B not found (Sources checked). Cite BLYZZ Lemma 5.6 as the even case at the point of use in #112.
 2. Weighted version: Σ κ_k n_k = 0, Σκ_k = 4π and every κ_k < 2π should give the condition by the same Steps 1–4.
    For non-discrete measures, check the perimeter facts for general convex ω. This is not claimed.
 3. Formalise Theorem B in Lean on top of `fair_die_iff`. It needs:
