@@ -33,7 +33,7 @@ All terms below were recomputed on 7 November 2026: `studies/2026-11-07-oeis-can
 
 ---
 
-STATUS 24 Nov 2026 (DICTO): A400949, A402231 and A402191 APPROVED. A008264 comment PUBLISHED (DICTO 25 Nov). OPEN NOW (2): pyrochlore closed walks (Sweep 1) and pyrochlore closed tailless walks (Sweep 2), both PROPOSED (DICTO 25 Nov), awaiting editors. One place free; the next COMMENT may go in (like for like, rule 14).
+STATUS 24 Nov 2026 (DICTO): A400949, A402231 and A402191 APPROVED. A008264 comment PUBLISHED (DICTO 25 Nov). OPEN NOW (2): pyrochlore closed walks (Sweep 1) and pyrochlore closed tailless walks (Sweep 2 = A400069; editor R. C. Lyons: stray tilde in Python, fixed by DICTO 25 Nov), both PROPOSED, awaiting editors. One place free; the next COMMENT may go in (like for like, rule 14).
 
 ## QUEUE (DICTO 18 Nov 2026: "Queue all possible sequences"; MAX 3 OPEN, one in one out, rule 14)
 
