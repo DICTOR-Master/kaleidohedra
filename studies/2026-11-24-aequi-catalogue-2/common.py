@@ -39,8 +39,8 @@ def load_batch(b):
     return json.load(gzip.open(os.path.join(EXT, 'aequi%s.json.gz' % b)))['new']
 
 def sort_key(b, i, d):
-    # group order desc, m asc, N asc; tie-break: group name, corners, batch order, index in batch
-    return (-int(d['sym_order']), int(d['m']), int(d['N']), d['group'], int(d['corners']), BATCHES.index(b), i)
+    # each group one block: group order desc, group name, m asc, N asc; tie-break: corners, batch order, index in batch
+    return (-int(d['sym_order']), d['group'], int(d['m']), int(d['N']), int(d['corners']), BATCHES.index(b), i)
 
 # Congruence signature (description in checks.py, check 5).
 Q = 1e4; stat = dict(gmargin=1.0, gap=9.0, width=0.0)

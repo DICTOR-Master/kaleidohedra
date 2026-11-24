@@ -10,7 +10,7 @@ ok   names follow the rule
 ok   name_shown is exactly "Name (No.N)"
 ok   all 10725 names distinct (with the 1232)
 ok   every name has exactly one parse, its own number
-ok   order: group order desc, m, N, then group, corners, batch, index
+ok   order: group order desc, group, m, N, then corners, batch, index
 ok   group, m, N agree with the source data
 ok   no new die has a full group containing T (so none is one of the 1232 by group alone)
 ok   batch 2a: every die certified (labels match; split-box dice: split Krawczyk ok)

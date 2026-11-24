@@ -1,7 +1,7 @@
 # Checks for catalogue.csv (prints FINAL ok only if every check passes).
 #  1 counts: 3 reserved + (5935 + 336 + 1375 + 1910 - 66 repeats) rows, Nos. 1233.. consecutive, each source die once
 #  2 names: by the rule, distinct, every name decodes to exactly its own number; name_shown = "Name (No.N)"
-#  3 order: the sort key (group order desc, m, N, group, corners, batch, index) is strictly increasing
+#  3 order: the sort key (group order desc, group, m, N, corners, batch, index) is strictly increasing
 #  4 certification: every source die has a certify record with the same label, status certified, or split box ok
 #  5 congruence: no two catalogued dice congruent; each die left out congruent to one catalogued earlier; none congruent to a die of 2026-11-19-aequi-complete (4553)
 #    or to any of the catalogued 1232; positive control: the dice that post2a.py set aside as congruent to
@@ -40,7 +40,7 @@ check(len(set(allnames)) == len(allnames), 'all %d names distinct (with the 1232
 check(all(parses(r['name']) == [r['No']] for r in rows), 'every name has exactly one parse, its own number')
 # 3 order and data agreement
 keys = [sort_key(r['source_batch'], int(r['source_id']), batch[r['source_batch']][int(r['source_id'])]) for r in rows[3:]]
-check(all(a < b for a, b in zip(keys, keys[1:])), 'order: group order desc, m, N, then group, corners, batch, index')
+check(all(a < b for a, b in zip(keys, keys[1:])), 'order: group order desc, group, m, N, then corners, batch, index')
 check(all((lambda d: (d['group'], int(d['m']), int(d['N'])) == (r['group'], int(r['m']), int(r['N'])))(batch[r['source_batch']][int(r['source_id'])])
           for r in rows[3:]), 'group, m, N agree with the source data')
 check(all(d['group'] not in WITH_T for b in BATCHES for d in batch[b]),
