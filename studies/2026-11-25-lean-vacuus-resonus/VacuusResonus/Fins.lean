@@ -26,7 +26,7 @@ directions whose ray from `O` meets the face. Its area is measured with Mathlib'
 -/
 
 open MeasureTheory Set Metric
-open scoped RealInnerProductSpace ENNReal
+open scoped RealInnerProductSpace ENNReal Pointwise
 
 namespace VacuusResonus
 
@@ -63,7 +63,7 @@ def cellD (n : Fin N → E3) (d : Fin N → ℝ) (k : Fin N) : Set E3 :=
 theorem finRegion_eq (n : Fin N → E3) (d : Fin N → ℝ) (k : Fin N) :
     finRegion n d k = ((↑) : sphere (0 : E3) 1 → E3) ⁻¹' faceCone n d k := by
   ext u
-  simp [finRegion, face, faceCone, and_assoc]
+  simp [finRegion, face, faceCone]
 
 theorem zero_not_mem_faceCone {n : Fin N → E3} {d : Fin N → ℝ} (hd : ∀ j, 0 < d j) (k : Fin N) :
     (0 : E3) ∉ faceCone n d k := by
@@ -219,6 +219,8 @@ theorem volume_plane {w : E3} (hw : w ≠ 0) : volume {x : E3 | ⟪w, x⟫ = 0} 
     exact hw (inner_self_eq_zero.1 hww)
   have := Measure.addHaar_submodule volume _ hs
   convert this using 2
+  ext x
+  exact Iff.rfl
 
 /-- **Distinct fin regions overlap in a null set.** -/
 theorem toSphere_finRegion_inter {n : Fin N → E3} (hn : ∀ i, ‖n i‖ = 1)
@@ -268,5 +270,25 @@ theorem isFair_iff_finRegions {n : Fin N → E3} (hspan : ∀ x : E3, x ≠ 0 �
     {d : Fin N → ℝ} (hd : ∀ j, 0 < d j) :
     IsFair n d ↔ ∀ k, volume.toSphere (finRegion n d k) = ENNReal.ofReal (4 * Real.pi / N) := by
   simp only [IsFair, toSphere_finRegion hspan hd]
+
+/-- **Theorem A1 (a), the value.** Equal solid angles (equivalently, equal fin areas) force the value
+`4π / N`: the Aequus condition and fairness coincide. -/
+theorem aequus_iff_isFair [NeZero N] {n : Fin N → E3} (hn : ∀ i, ‖n i‖ = 1)
+    (hinj : Function.Injective n) (hspan : ∀ x : E3, x ≠ 0 → ∃ i, 0 < ⟪n i, x⟫)
+    {d : Fin N → ℝ} (hd : ∀ j, 0 < d j) :
+    (∀ j k, solidAngle n d j = solidAngle n d k) ↔ IsFair n d := by
+  constructor
+  · intro h k
+    have hs := sum_toSphere_finRegion hn hinj hspan hd
+    simp only [toSphere_finRegion hspan hd] at hs
+    rw [Finset.sum_congr rfl (fun j _ => h j k), Finset.sum_const, Finset.card_univ,
+      Fintype.card_fin, nsmul_eq_mul] at hs
+    have hN : (0 : ℝ) < N := Nat.cast_pos.2 (Nat.pos_of_ne_zero (NeZero.ne N))
+    rw [ENNReal.ofReal_div_of_pos hN, ENNReal.ofReal_natCast, ← hs, mul_comm,
+      ENNReal.mul_div_cancel_right]
+    · exact_mod_cast NeZero.ne N
+    · exact ENNReal.natCast_ne_top N
+  · intro h j k
+    rw [h j, h k]
 
 end VacuusResonus
