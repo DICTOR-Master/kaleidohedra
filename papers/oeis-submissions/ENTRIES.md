@@ -33,6 +33,8 @@ All terms below were recomputed on 7 November 2026: `studies/2026-11-07-oeis-can
 
 ---
 
+STATUS 24 Nov 2026 (DICTO): A400949, A402231 and A402191 are all APPROVED. Open now: the A008264 comment only. Two sequence places free (rule 14).
+
 ## QUEUE (DICTO 18 Nov 2026: "Queue all possible sequences"; MAX 3 OPEN, one in one out, rule 14)
 
 The order in which items go in as places free up. Sources: this file, and the sweep in studies/2026-11-18-oeis-sweep/README.md (terms computed two independent ways, FINAL ok; OEIS searched 18 Nov: not found).
@@ -312,7 +314,7 @@ Checked 16 Nov 2026: a direct count of tailless closed walks on the fcc lattice 
 
 ### Entry 8. Roundness r/R of the fair 14-face die = cot(2*Pi/7): QUEUED 18 Nov 2026 (DICTO said yes)
 
-Waits for: (1) a free sequence slot (rule 14: A402191, A402231 still proposed on 18 Nov); (2) the die's own published home with a DOI (DICTO 18 Nov: the die, "Lucky 7", is OUT of #110; held at papers/lucky-7-die-chapter-held.html for the shape language or its own paper) (the %H link must contain the claim, rule 13).
+Waits for: (1) a free sequence slot (rule 14: A402191, A402231 still proposed on 18 Nov); (2) The Golden Ladder v8 published (DICTO 18 Nov: Lucky 7 goes in Chapter 3A, 5.4, Theorem 3A.1, beside the equal-depth solid) (the %H link must contain the claim, rule 13).
 OEIS searched 18 Nov 2026: digits 7,9,7,4,7,3,3,8,8,8,8,2,4,0 -> no match; "cot 2*Pi/7 decimal", "tan 3*Pi/14 decimal", "heptagon cot" -> no entry for this constant (not found).
 Digits: 110 digits computed two ways (mpmath cot(2*Pi/7) and the root near 0.797 of 7x^6 - 35x^4 + 21x^2 - 1), agreeing to 10^-120; also equal to tan(3*Pi/14).
 
