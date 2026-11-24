@@ -186,3 +186,13 @@ scripts/sf_enum.py (enumeration), scripts/checks.py (independent checks, type id
 scripts/amber_types.py (our pieces); data/types_n8_k2.json and data/types_n14_k2.json (every type: planes, vertices, faces, events),
 data/type_list.csv/.json, data/tilings.json, data/amber_types.json and logs; checks/checks.log (FINAL ok).
 Run: `python scripts/sf_enum.py 8 2 data/types_n8_k2.json` (also with 14), then tilings.py, checks.py (Python with SciPy).
+
+## Decisions (24 Nov; DICTO: "make decisions instead of questions")
+1. Two tiers: **Scutoid Frusta** = the general piece (bent walls allowed, includes the amber pieces); **convex Scutoid Frusta** = the enumerated class.
+2. Ends flat in the convex class; may bend in the general class.
+3. Convexity required only in the convex class.
+4. Parallel ends not required (Lemma 2: no type changes).
+5. Every lateral face meets an end: required (a face starting and ending between the ends makes the piece not a scutoid frustum).
+6. Simple (three edges at every vertex): required in the enumerated class; merged Y-corners are recorded as degenerate cases.
+7. A type is a solid with a chosen pair of ends; a solid with several choices is listed under each, and solids are also counted once.
+8. Mirror images: one type, marked chiral; both counts kept in the table.

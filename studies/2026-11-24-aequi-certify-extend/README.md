@@ -216,3 +216,8 @@ The axis-only catalogue (the 1232 and the 4553) is the p = 0 layer. The pilot sh
 
 Software: python-flint 0.9.0 (arb), scipy, sympy, mpmath.
 - 2026-11-24 compute job aequi-2b finished OK; read and recorded in its study README (closed by coordinator).
+
+## Decisions (24 Nov; DICTO: "make decisions instead of questions")
+1. Off-axis families: one Aequus per fair cell (one name per family); special members (meeting an axis, or with higher symmetry) are listed under it, not named apart.
+2. Row 95 is named in the next numbering batch.
+3. The new Aequi of Part 2 enter the numbered catalogue from no. 1233, in one ordered batch after the D2h/D3 resume ends: the three permutahedron duals first (1233-1235), then by group order and m.

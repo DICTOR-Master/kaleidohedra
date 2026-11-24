@@ -165,3 +165,9 @@ and the truncated dodecahedron also gave scutoid frusta, while the dodecahedron,
 (amber cells), `scripts/render_assoc.py` + `scripts/shots.mjs` (renders); `data/`, `logs/`, `renders/`. Reused unchanged:
 `vacuus_exact.py`, `perm_checks.py` (study 2026-11-24-vacuus-enumeration), `amber.py`, `solids.py` (2026-11-21-amber-cell-sweep), render3d.py,
 compose.py, shots.mjs (2026-11-21-scutoid-stand-in).
+
+## Decisions (24 Nov; DICTO: "make decisions instead of questions")
+1. Keep both associahedra (linear c and bipartite c) for each group.
+2. "Pieces between the solid and its Vacuus" = the shell pieces (frusta), not the cones.
+3. Name: keep the plain description "face-parallel planes" (placeholder until DICTO names them).
+4. LEAD 2 next (associahedron shell, V + SF, the main priority); LEAD 1 (H4 rolling law) in small steps later, A4 first.
