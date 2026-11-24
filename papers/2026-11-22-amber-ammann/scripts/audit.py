@@ -109,6 +109,6 @@ for s in ["19 prolate", "11 oblate", "600 runs", "319 prolate–prolate", "61 ob
 body = re.sub(r"<[^>]+>", "", paper.split('<div class="abstract">')[1].split("<h2>Data and reproducibility")[0])
 ok(not re.search(r"floating|float\b|numerical|margin|sampling|computed\b", body, re.I), "float wording in the claims: " + str(re.findall(r".{30}(?:floating|float\b|numerical|margin|sampling|computed\b).{30}", body, re.I)[:3]))
 # --- text consistency
-for s in ["10.5281/zenodo.24411660", "10.5281/zenodo.24384789", "10.5281/zenodo.24111864", "#118 (proposed)"]: intext(s)
+for s in ["10.5281/zenodo.24411660", "10.5281/zenodo.24384789", "10.5281/zenodo.24111864", "Paper #118 · Version 1", "10.5281/zenodo.24491405"]: intext(s)
 ok(not re.search(r"signature thread|Winston|house style|DICTO asked", text, re.I), "banned wording")
 print("\n".join("FAIL " + f for f in fails) if fails else "AUDIT OK")
