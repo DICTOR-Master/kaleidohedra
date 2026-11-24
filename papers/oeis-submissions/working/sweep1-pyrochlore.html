@@ -1,127 +1,85 @@
 <title>Pyrochlore Walks Worksheet</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
 <style>
-/* Layout: one reading column; each OEIS field is a labelled block with its own Copy button. */
-:root{
-  --bg:#f6f7f9; --panel:#ffffff; --fg:#1d232b; --muted:#5a6573; --line:#d9dee5; --accent:#2f5d8a; --code:#eef1f5; --ok:#2e7d4f;
-  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
-}
+/* Layout: one column in OEIS form order; each field = options to copy + your own box. */
+:root{--bg:#f6f7f9;--panel:#fff;--fg:#1d232b;--muted:#5a6573;--line:#d9dee5;--accent:#2f5d8a;--code:#eef1f5;--ok:#2e7d4f;
+--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#13171c;--panel:#1b2128;--fg:#e4e8ee;--muted:#9aa5b2;--line:#2c343e;--accent:#8db7e0;--code:#222a33;--ok:#6cc08f;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#13171c;--panel:#1b2128;--fg:#e4e8ee;--muted:#9aa5b2;--line:#2c343e;--accent:#8db7e0;--code:#222a33;--ok:#6cc08f;color-scheme:dark}
-body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
-main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
-h1{font-size:1.6rem;margin:0;text-wrap:balance}
-h2{font-size:1.15rem;margin:0 0 4px;color:var(--accent);text-wrap:balance}
-p{margin:0}
-.sub{color:var(--muted)}
-section{display:flex;flex-direction:column;gap:14px}
-.field{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.label{font-weight:600;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-pre{margin:0;background:var(--code);border-radius:6px;padding:10px 12px;font-family:var(--mono);font-size:.86rem;white-space:pre-wrap;word-break:break-word;overflow-x:auto}
-button{font:600 .82rem var(--sans);color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:6px;padding:4px 12px;cursor:pointer}
-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-button.done{color:var(--ok);border-color:var(--ok)}
-.note{font-size:.92rem;color:var(--muted)}
-ul{margin:0;padding-left:20px}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance}h2{font-size:1.1rem;margin:8px 0 0;color:var(--accent)}
+p{margin:0}.muted{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.lab{font-weight:600}.hint{font-size:.9rem;color:var(--muted)}
+.opt{display:flex;gap:8px;align-items:flex-start}
+pre{flex:1;min-width:0;margin:0;background:var(--code);border-radius:6px;padding:8px 10px;font:.86rem/1.5 var(--mono);white-space:pre-wrap;word-break:break-word}
+textarea{width:100%;box-sizing:border-box;min-height:3.2em;font:.9rem/1.5 var(--mono);color:var(--fg);background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:8px}
+button{font:600 .8rem var(--sans);color:var(--accent);background:none;border:1px solid var(--accent);border-radius:6px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+button.ok{color:var(--ok);border-color:var(--ok)}button:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px}summary{cursor:pointer;font-weight:600}
 .status{border-left:3px solid var(--accent);padding-left:12px}
 </style>
-
 <main>
 <header style="display:flex;flex-direction:column;gap:6px">
 <h1>OEIS worksheet: closed walks on the pyrochlore network</h1>
-<p class="sub">DICTO · prepared 24 Nov 2026 · data and facts only. You write the entry; each field has two wordings where a choice exists. Nothing submitted.</p>
-<p class="status">Home paper: #102, Corollary 2. DICTO DOI: 10.5281/zenodo.24037664. Terms checked three independent ways to n = 40. Not in the OEIS (searched 24 Nov). Fable review 24 Nov: READY.</p>
+<p class="status">Home paper #102 Corollary 2 (DICTO DOI 10.5281/zenodo.24037664). Terms checked three ways to n = 40; not in the OEIS. Fable review: ready.</p>
+<p class="muted">The fields are in the order of the OEIS submission form. In each: the options to copy, then a box for your own text (kept in this browser). At the end, one button copies your whole entry to paste back to me.</p>
 </header>
 
-<section>
-<h2>1. The sequence</h2>
-<p>The pyrochlore network is the spin-ice lattice: the corners of corner-sharing tetrahedra, each site joined to 6 others. It is the line graph of the diamond network. a(n) counts the closed walks of n steps that start and end at a fixed site; all sites are alike.</p>
-
-<div class="field"><div class="head"><span class="label">Data (n = 0..25, 246 characters)</span><button type="button">Copy</button></div>
-<pre>1,0,6,12,78,300,1512,7056,35214,176124,902496,4679136,24590208,130560768,699729792,3779987712,20562988878,112547448924,619346672208,3424664011776,19018122975768,106021551258096,593110987716000,3328539189498432,18733818892838688,105717847936756800</pre></div>
-
-<div class="field"><div class="head"><span class="label">Offset</span><button type="button">Copy</button></div>
-<pre>0,3</pre>
-<p class="note">a(0) = 1, as in A002895, A002899 and A338672.</p></div>
-</section>
-
-<section>
-<h2>2. Fields: pick a wording or write your own</h2>
-
-<div class="field"><div class="head"><span class="label">Name, option (a)</span><button type="button">Copy</button></div>
-<pre>Number of n-step closed walks on the pyrochlore lattice.</pre>
-<p class="note">The form of A338672 ("… on kagome lattice").</p></div>
-
-<div class="field"><div class="head"><span class="label">Name, option (b)</span><button type="button">Copy</button></div>
-<pre>Number of closed walks of length n starting and ending at a fixed site of the pyrochlore network (corner-sharing tetrahedra).</pre></div>
-
-<div class="field"><div class="head"><span class="label">Formula, option (a)</span><button type="button">Copy</button></div>
-<pre>a(n) = ((-2)^n + Sum_{k=0..floor(n/2)} binomial(n,2*k)*2^(n-2*k)*A002895(k))/2.</pre>
-<p class="note">Proved for every n from the diamond incidence identities in #102's proof of Corollary 2. #102 does not print this formula, so it is your own proved formula; do not attribute it to #102. If you add a proof sketch to the entry, write it in your own words (OEIS AI policy).</p></div>
-
-<div class="field"><div class="head"><span class="label">Formula, option (b)</span><button type="button">Copy</button></div>
-<pre>a(n) = (1/2)*Sum_{i=0..n} binomial(n,i)*2^(n-i)*w(i) + (1/2)*(-2)^n, where w(i) = A002895(i/2) for even i and 0 for odd i.</pre></div>
-
-<div class="field"><div class="head"><span class="label">G.f. (optional)</span><button type="button">Copy</button></div>
-<pre>G.f.: (1/(1+2*x) + D(x^2/(1-2*x)^2)/(1-2*x))/2, where D(x) = Sum_{k>=0} A002895(k)*x^k.</pre></div>
-
-<div class="field"><div class="head"><span class="label">Example facts (numbers only; you write the sentences)</span><button type="button">Copy</button></div>
-<pre>a(1) = 0.
-a(2) = 6: out and back along each of the 6 bonds.
-a(3) = 12: the site is a corner of 2 tetrahedra; each has 3 triangles through it; each walked 2 ways; 2*3*2 = 12.
-a(4) = 78 (printed in #102 Corollary 2).</pre></div>
-
-<div class="field"><div class="head"><span class="label">Program, PARI option (a)</span><button type="button">Copy</button></div>
-<pre>(PARI) D(m)=sum(k=0,m,binomial(m,k)^2*binomial(2*k,k)*binomial(2*m-2*k,m-k));
+<div class="card"><div class="top"><span class="lab">Name</span></div><p class="hint">Two options. Pick one or write your own.</p>
+<div class="opt"><pre>Number of n-step closed walks on the pyrochlore lattice.</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><pre>Number of closed walks of length n starting and ending at a fixed site of the pyrochlore network (corner-sharing tetrahedra).</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-name" data-label="Name" aria-label="Your Name" placeholder="Your name"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Data</span></div><p class="hint">n = 0..25, 246 characters. Paste as is.</p>
+<div class="opt"><pre>1,0,6,12,78,300,1512,7056,35214,176124,902496,4679136,24590208,130560768,699729792,3779987712,20562988878,112547448924,619346672208,3424664011776,19018122975768,106021551258096,593110987716000,3328539189498432,18733818892838688,105717847936756800</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-data" data-label="Data" aria-label="Your Data" placeholder="Your data"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Offset</span></div><p class="hint">a(0) = 1, as in A338672 and A002899.</p>
+<div class="opt"><pre>0,3</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-offset" data-label="Offset" aria-label="Your Offset" placeholder="Your offset"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Comments</span></div><p class="hint">The OEIS AI policy (rule 0) forbids AI-written comments, so these are the facts to put in your own words. For style, read the comments on A002899 below.</p>
+<div class="opt"><pre>Fact: the pyrochlore network is the network of spin ice (corner-sharing tetrahedra); it is the line graph (bond midpoints) of the diamond network.
+Fact: the same numbers hold at every site of the pyrochlore network of every close-packed stacking, periodic or not (#102 Corollary 2).</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-comments" data-label="Comments" aria-label="Your Comments" placeholder="Your comments"></textarea></div>
+<div class="card"><div class="top"><span class="lab">References</span></div><p class="hint">None. Every work here has a DOI or URL, so it goes in Links only (rule 11).</p>
+<textarea id="f-references" data-label="References" aria-label="Your References" placeholder="Your references"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Links</span></div><p class="hint">In this order (alphabetical by surname). Copy each line.</p>
+<div class="opt"><pre>Steven T. Bramwell and Michel J. P. Gingras, &lt;a href=&quot;https://arxiv.org/abs/cond-mat/0201427&quot;&gt;Spin Ice State in Frustrated Magnetic Pyrochlore Materials&lt;/a&gt;, arXiv:cond-mat/0201427 [cond-mat.dis-nn], 2002; Science, 294 (2001), 1495-1501.</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><pre>DICTO, &lt;a href=&quot;https://doi.org/10.5281/zenodo.23678750&quot;&gt;DICTO Janus c/h Pyrochlore&lt;/a&gt;, Zenodo (2026).</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><pre>DICTO, &lt;a href=&quot;https://doi.org/10.5281/zenodo.24037664&quot;&gt;Every Site Hears the Same: the Loop Equality Is a Theorem&lt;/a&gt;, Zenodo (2026).</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-links" data-label="Links" aria-label="Your Links" placeholder="Your links"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Formula</span></div><p class="hint">Two options; proved for every n (worksheet proof). #102 does not print it, so do not credit it to #102.</p>
+<div class="opt"><pre>a(n) = ((-2)^n + Sum_{k=0..floor(n/2)} binomial(n,2*k)*2^(n-2*k)*A002895(k))/2.</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><pre>G.f.: (1/(1+2*x) + D(x^2/(1-2*x)^2)/(1-2*x))/2, where D(x) = Sum_{k&gt;=0} A002895(k)*x^k.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-formula" data-label="Formula" aria-label="Your Formula" placeholder="Your formula"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Example</span></div><p class="hint">Two sentence options. Pick one, mix them, or write your own.</p>
+<div class="opt"><pre><pre>a(2) = 6: the walk goes out along any one of the 6 bonds at the site and comes straight back.
+a(3) = 12: every closed 3-step walk goes round a triangle. The site lies in 2 tetrahedra, each tetrahedron has 3 triangles through the site, and each triangle can be walked in 2 directions, so a(3) = 2*3*2 = 12.</pre><button type="button" class="cp">Copy</button></div><div class="opt"><pre>a(2) = 6, since each site has 6 neighbors.
+a(3) = 12, since each site lies on 6 triangles (3 in each of its 2 tetrahedra) and each triangle gives 2 closed walks.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-example" data-label="Example" aria-label="Your Example" placeholder="Your example"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Program</span></div><p class="hint">Each prints exactly the data (checked by Fable).</p>
+<div class="opt"><pre>(PARI) D(m)=sum(k=0,m,binomial(m,k)^2*binomial(2*k,k)*binomial(2*m-2*k,m-k));
 a(n)=(sum(i=0,n\2,binomial(n,2*i)*2^(n-2*i)*D(i))+(-2)^n)/2;
-vector(26,n,a(n-1))</pre>
-<p class="note">Run with PARI/GP 2.19; prints exactly the data.</p></div>
-
-<div class="field"><div class="head"><span class="label">Program, PARI option (b), g.f. form</span><button type="button">Copy</button></div>
-<pre>(PARI) my(N=25,G=sum(m=0,N\2,sum(k=0,m,binomial(m,k)^2*binomial(2*k,k)*binomial(2*m-2*k,m-k))*x^(2*m))+O(x^(N+1))); Vec((subst(G,x,x/(1-2*x))/(1-2*x)+1/(1+2*x))/2)</pre></div>
-
-<div class="field"><div class="head"><span class="label">Program, Python</span><button type="button">Copy</button></div>
-<pre>(Python)
+vector(26,n,a(n-1))</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><pre>(Python)
 from math import comb
 def domb(m):  # A002895
     return sum(comb(m,k)**2*comb(2*k,k)*comb(2*m-2*k,m-k) for k in range(m+1))
 def a(n):
     return (sum(comb(n,2*i)*2**(n-2*i)*domb(i) for i in range(n//2+1)) + (-2)**n)//2
-print([a(n) for n in range(26)])</pre></div>
-
-<div class="field"><div class="head"><span class="label">Links: Bramwell and Gingras (first, by surname)</span><button type="button">Copy</button></div>
-<pre>Steven T. Bramwell and Michel J. P. Gingras, &lt;a href="https://arxiv.org/abs/cond-mat/0201427"&gt;Spin Ice State in Frustrated Magnetic Pyrochlore Materials&lt;/a&gt;, arXiv:cond-mat/0201427 [cond-mat.dis-nn], 2002; Science, 294 (2001), 1495-1501.</pre></div>
-
-<div class="field"><div class="head"><span class="label">Links: DICTO #60 (second, before #102)</span><button type="button">Copy</button></div>
-<pre>DICTO, &lt;a href="https://doi.org/10.5281/zenodo.23678750"&gt;DICTO Janus c/h Pyrochlore&lt;/a&gt;, Zenodo (2026).</pre></div>
-
-<div class="field"><div class="head"><span class="label">Links (recommended)</span><button type="button">Copy</button></div>
-<pre>DICTO, &lt;a href="https://doi.org/10.5281/zenodo.24037664"&gt;Every Site Hears the Same: the Loop Equality Is a Theorem&lt;/a&gt;, Zenodo (2026).</pre>
-<p class="note">Links only, not References (rule 11). The same form the editors accepted on A400949. The DOI always opens the newest version, so a section number ("See Corollary 2.") could later point to the wrong place; leave it out. Please glance at the live Zenodo page once before submitting.</p></div>
-
-<div class="field"><div class="head"><span class="label">Comment facts (you write the comment)</span><button type="button">Copy</button></div>
-<pre>- The pyrochlore network is the network of spin ice (corner-sharing tetrahedra); it is the line graph of diamond.
-- The same numbers hold at every site of the pyrochlore network of every close-packed stacking, periodic or not (#102 Corollary 2).</pre></div>
-
-<div class="field"><div class="head"><span class="label">Crossrefs, option (a)</span><button type="button">Copy</button></div>
-<pre>Cf. A002895 (diamond), A338672 (kagome), A002899 (fcc), A400949, A402231.</pre>
-<p class="note">Option (b): Cf. A002895, A002899, A338672, A400949, A402231. All five fetched and read.</p></div>
-
-<div class="field"><div class="head"><span class="label">Keywords</span><button type="button">Copy</button></div>
-<pre>nonn,walk</pre>
-<p class="note">nonn: no negative terms. walk: counts walks on a lattice, as on A338672 and A002899. Add "easy" only if you want it.</p></div>
-</section>
-
-<section>
-<h2>3. Model entries to follow</h2>
-<p class="note">The full text of each model entry, as the OEIS shows it, so you can read them here. Field codes: %N name, %S data, %F formula, %H links, %o program, %Y crossrefs, %K keywords, %O offset.</p>
-<div class="field"><div class="head"><span class="label">A338672 (fetched 24 Nov 2026)</span><a href="https://oeis.org/A338672" target="_blank" rel="noopener">open on OEIS</a></div>
-<p class="note">Same kind of sequence, one dimension down (kagome = line graph of the honeycomb). Look at %F (the (-2)^n formula), %o (one-line PARI), %K nonn,walk and %O 0,3.</p>
-<pre>%S A338672 1,0,4,4,28,60,264,784,3004,10204,37824,135784,502784,1851200,6901696,
+print([a(n) for n in range(26)])</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-program" data-label="Program" aria-label="Your Program" placeholder="Your program"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Crossrefs</span></div><p class="hint">All five checked to exist and fit.</p>
+<div class="opt"><pre>Cf. A002895, A002899, A338672, A400949, A402231.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-xref" data-label="Crossrefs" aria-label="Your Crossrefs" placeholder="Your crossrefs"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Keywords</span></div><p class="hint">nonn: no negative terms; walk: counts walks, as on A338672.</p>
+<div class="opt"><pre>nonn,walk</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-keyword" data-label="Keywords" aria-label="Your Keywords" placeholder="Your keywords"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Your whole entry</span><button type="button" id="all">Copy my entry</button></div><p class="hint">Copies every field you wrote, labelled, in form order. Paste it back to me and I check it field by field.</p></div>
+<h2>Model entries to follow</h2><p class="muted">The full text of each, as the OEIS shows it (%N name, %S data, %F formula, %H links, %o program, %Y crossrefs, %K keywords, %O offset).</p>
+<details><summary>A338672: The closest model: closed walks on the kagome lattice. Look at %F, %o, %K and %O.</summary><pre style="margin-top:8px">%S A338672 1,0,4,4,28,60,264,784,3004,10204,37824,135784,502784,1851200,6901696,
 %N A338672 Number of n-step closed walks on kagome lattice.
 %H A338672 Andrew Howroyd, &lt;a href=&quot;/A338672/b338672.txt&quot;&gt;Table of n, a(n) for n = 0..500&lt;/a&gt;
 %H A338672 Li Gan, &lt;a href=&quot;https://theses.hal.science/tel-04413106&quot;&gt;Algebraic Area of Lattice Random Walks and Exclusion Statistics&lt;/a&gt;, PhD thesis, Université Paris-Saclay, 2023. (see Appendix D.4)
@@ -136,10 +94,8 @@ print([a(n) for n in range(26)])</pre></div>
 %o A338672 (PARI) a(n)={((-2)^n + 2 * sum(k=0, n\2, sum(j=0, k, binomial(n, 2*k) * binomial(k, j)^2 * binomial(2*j, j))))/3} \\ _Andrew Howroyd_, Apr 24 2021
 %Y A338672 Cf. A005397, A001665.
 %K A338672 nonn,walk
-%O A338672 0,3</pre></div>
-<div class="field"><div class="head"><span class="label">A002899 (fetched 24 Nov 2026)</span><a href="https://oeis.org/A002899" target="_blank" rel="noopener">open on OEIS</a></div>
-<p class="note">Closed walks on fcc, covered by the same every-stacking result in #102. Look at %O and %Y.</p>
-<pre>%S A002899 1,0,12,48,540,4320,42240,403200,4038300,40958400,423550512,
+%O A338672 0,3</pre><p><a href="https://oeis.org/A338672" target="_blank" rel="noopener">Open A338672 on the OEIS</a></p></details>
+<details><summary>A002899: Closed walks on fcc. Look at %O and %Y.</summary><pre style="margin-top:8px">%S A002899 1,0,12,48,540,4320,42240,403200,4038300,40958400,423550512,
 %N A002899 Number of n-step polygons on f.c.c. lattice.
 %C A002899 a(n) is the number of 2 X n matrices with entries from {1,2,3,4}, with (1) second row a (multiset) permutation of the first, and (2) no constant columns. - _David Callan_, Aug 25 2009
 %C A002899 a(n) is the constant coefficient in the expansion of (x + y + z + 1/x + 1/y + 1/z + x/y + y/z + z/x + y/x + z/y + x/z)^n. - _Seiichi Manyama_, Oct 26 2019
@@ -156,10 +112,8 @@ print([a(n) for n in range(26)])</pre></div>
 %o A002899 print(vector(20, n, a(n-1))) \\ _David Broadhurst_, Feb 06 2008; fixed by _Vaclav Kotesovec_, Apr 08 2016
 %Y A002899 Cf. A002895, A002898.
 %K A002899 nonn,walk,nice
-%O A002899 0,3</pre></div>
-<div class="field"><div class="head"><span class="label">A400949 (fetched 24 Nov 2026)</span><a href="https://oeis.org/A400949" target="_blank" rel="noopener">open on OEIS</a></div>
-<p class="note">Your own approved entry from #102. Look at %H: the exact Links form the editors accepted for #102.</p>
-<pre>%S A400949 0,0,24,48,480,3432,25704,194256,1509072,11820000,93722376,750276792,
+%O A002899 0,3</pre><p><a href="https://oeis.org/A002899" target="_blank" rel="noopener">Open A002899 on the OEIS</a></p></details>
+<details><summary>A400949: Your own entry. Look at %H for the Links form the editors accepted.</summary><pre style="margin-top:8px">%S A400949 0,0,24,48,480,3432,25704,194256,1509072,11820000,93722376,750276792,
 %N A400949 Number of closed non-backtracking walks of length 2n (cyclically non-backtracking, i.e., tailless) starting and ending at a fixed atom of the diamond network.
 %C A400949 A walk v_0, v_1, ..., v_{2n} = v_0 along bonds is non-backtracking if v_{i+1} != v_{i-1} for all i, including v_1 != v_{2n-1}. a(n) = (1/|V|) trace(B^(2n)) for the Hashimoto (non-backtracking edge) matrix B of the diamond network; walks of odd length do not exist since the network is bipartite.
 %C A400949 a(1) = a(2) = 0 because the shortest cycles of diamond are its six-rings.
@@ -187,22 +141,12 @@ print([a(n) for n in range(26)])</pre></div>
 %o A400949 print([t[2*n-1] for n in range(1, 24)])
 %Y A400949 Cf. A002895 (all closed walks), A002899, A008253, A008264.
 %K A400949 nonn,walk,new
-%O A400949 1,3</pre></div>
-</section>
-
-<section>
-<h2>4. Your entry</h2>
-<p class="note">Paste it back to me when written; I check field by field (section 5), and you make any changes.</p>
-</section>
+%O A400949 1,3</pre><p><a href="https://oeis.org/A400949" target="_blank" rel="noopener">Open A400949 on the OEIS</a></p></details>
 </main>
-
 <script>
-document.querySelectorAll('.field button').forEach(function(b){
-  b.addEventListener('click',function(){
-    var t=b.closest('.field').querySelector('pre').innerText;
-    function mark(){b.textContent='Copied';b.classList.add('done');setTimeout(function(){b.textContent='Copy';b.classList.remove('done')},1600)}
-    function fallback(){var r=document.createRange();r.selectNodeContents(b.closest('.field').querySelector('pre'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';}
-    try{navigator.clipboard.writeText(t).then(mark,fallback)}catch(e){fallback()}
-  });
-});
+function flash(b,t){b.textContent=t;b.classList.add('ok');setTimeout(function(){b.textContent=b.id==='all'?'Copy my entry':'Copy';b.classList.remove('ok')},1500)}
+function copy(text,b,sel){try{navigator.clipboard.writeText(text).then(function(){flash(b,'Copied')},function(){sel&&sel();b.textContent='Selected'})}catch(e){sel&&sel();b.textContent='Selected'}}
+document.querySelectorAll('button.cp').forEach(function(b){b.addEventListener('click',function(){var p=b.previousElementSibling;copy(p.innerText,b,function(){var r=document.createRange();r.selectNodeContents(p);var s=getSelection();s.removeAllRanges();s.addRange(r)})})});
+document.querySelectorAll('textarea').forEach(function(t){try{var v=localStorage.getItem('pyro-'+t.id);if(v)t.value=v}catch(e){}t.addEventListener('input',function(){try{localStorage.setItem('pyro-'+t.id,t.value)}catch(e){}})});
+document.getElementById('all').addEventListener('click',function(){var s=[];document.querySelectorAll('textarea').forEach(function(t){if(t.value.trim())s.push(t.dataset.label+':\n'+t.value.trim())});copy(s.join('\n\n')||'(nothing written yet)',this)});
 </script>
