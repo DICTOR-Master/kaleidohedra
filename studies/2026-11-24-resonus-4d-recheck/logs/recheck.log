@@ -1,0 +1,17 @@
+{'name': '600-cell', 'mirrors': 60, 'resonus': 300, 'res_each': [2], 'vacuus': 60, 'vac_each': [20], 'res_cap_vac': 0, 'res_on_mir': 0, 'vac_on_mir': 60, 'facets': 600, 'ridges': 1200, 'f': (120, 720, 1200, 600)}
+{'name': '120-cell', 'mirrors': 60, 'resonus': 60, 'res_each': [2], 'vacuus': 60, 'vac_each': [12], 'res_cap_vac': 60, 'res_on_mir': 60, 'vac_on_mir': 60, 'facets': 120, 'ridges': 720, 'f': (600, 1200, 720, 120)}
+25 inscribed 24-cells: 300 middle walls = Resonus(600-cell); 12 corners each
+{'name': '5-cell', 'mirrors': 10, 'resonus': 5, 'res_each': [1], 'vacuus': 10, 'vac_each': [1], 'res_cap_vac': 0, 'res_on_mir': 0, 'vac_on_mir': 10, 'facets': 5, 'ridges': 10, 'f': (5, 10, 10, 5)}
+{'name': 'tesseract', 'mirrors': 16, 'resonus': 4, 'res_each': [2], 'vacuus': 12, 'vac_each': [2], 'res_cap_vac': 0, 'res_on_mir': 4, 'vac_on_mir': 12, 'facets': 8, 'ridges': 24, 'f': (16, 32, 24, 8)}
+{'name': '16-cell', 'mirrors': 16, 'resonus': 8, 'res_each': [2], 'vacuus': 4, 'vac_each': [8], 'res_cap_vac': 0, 'res_on_mir': 0, 'vac_on_mir': 4, 'facets': 16, 'ridges': 32, 'f': (8, 24, 32, 16)}
+{'name': '24-cell', 'mirrors': 24, 'resonus': 12, 'res_each': [2], 'vacuus': 12, 'vac_each': [8], 'res_cap_vac': 12, 'res_on_mir': 12, 'vac_on_mir': 12, 'facets': 24, 'ridges': 96, 'f': (24, 96, 96, 24)}
+{'name': '4D permutohedron', 'mirrors': 10, 'resonus': 15, 'res_each': [2], 'vacuus': 65, 'vac_each': [2, 6], 'res_cap_vac': 15, 'res_on_mir': 0, 'vac_on_mir': 0, 'facets': 30, 'ridges': 150, 'f': (120, 240, 150, 30)}
+row agrees: 600-cell (60, 300, 60, 0, 0, 60) facets-per-Resonus [2] ridges-per-plate [20]
+row agrees: 120-cell (60, 60, 60, 60, 60, 60) facets-per-Resonus [2] ridges-per-plate [12]
+row agrees: 5-cell (10, 5, 10, 0, 0, 10) facets-per-Resonus [1] ridges-per-plate [1]
+row agrees: tesseract (16, 4, 12, 0, 4, 12) facets-per-Resonus [2] ridges-per-plate [2]
+row agrees: 16-cell (16, 8, 4, 0, 0, 4) facets-per-Resonus [2] ridges-per-plate [8]
+row agrees: 24-cell (24, 12, 12, 12, 12, 12) facets-per-Resonus [2] ridges-per-plate [8]
+row agrees: 4D permutohedron (10, 15, 65, 15, 0, 0) facets-per-Resonus [2] ridges-per-plate [2, 6]
+FINAL ok (3443 exact checks)
+wall 67.42 s
