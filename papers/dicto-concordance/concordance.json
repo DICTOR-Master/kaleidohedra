@@ -3493,6 +3493,38 @@
       "date": "2026-11-21",
       "aka": "the full resin cell of the Rollerball; 'the amber cell' in running text after first use",
       "desc": "the Rollerball set in its resin pieces inside a space-filling mould (cube, Kelvin's truncated octahedron or rhombic dodecahedron; tightest: the rhombic dodecahedron): a new space-filling cell; with DICTO's combined method all 72 resin pieces are true scutoids"
+    },
+    {
+      "name": "Resonus",
+      "by": "DICTO",
+      "first": "The Vacuus and the Resonus (draft, papers/2026-11-24-vacuus-resonus)",
+      "date": "2026-11-24",
+      "aka": "plural Resoni; Latin resonus, \"resounding, echoing\"; called \"face-parallel planes\" or \"face plates\" in earlier studies",
+      "desc": "the set of planes (hyperplanes in 4D and up) through the centre O of a convex polytope, one parallel to each face (facet), parallel faces sharing one; the sibling of the Vacuus: through the polar, Resonus planes are at right angles to the polar's corner rays, Vacuus plates to its edges (study 2026-11-24-resonus)"
+    },
+    {
+      "name": "Tacitus",
+      "by": "DICTO",
+      "first": "study 2026-11-25-tacitus",
+      "date": "2026-11-25",
+      "aka": "Latin tacitus, \"silent\"; the fourth of Vacuus (empty), Resonus (echoing), Aequus (equal)",
+      "desc": "harmonic silence: a polyhedron is Tacitus in degree k when its face directions make every spherical harmonic of degree k average to zero (a spherical design); working definition, exact form and weighting open for DICTO before public use"
+    },
+    {
+      "name": "Scutoid-Frusta",
+      "by": "DICTO",
+      "first": "The Scutoid-Frusta paper (papers/2026-11-24-scutoid-frusta)",
+      "date": "2026-11-24",
+      "aka": "singular Scutoid-Frustum; hyphenated (DICTO 24 Nov); tiers Scutoid-Frusta and convex Scutoid-Frusta; never bare \"scutoids\"",
+      "desc": "DICTO's geometric formalisation of the pieces between prism and frustum (not the biological scutoids of Gómez-Gálvez et al. 2018, whom we credit); first in his work as the RVCMG adapter pieces of Polyhedraverse, 15 September 2026 (degenerate Scutoid-Frusta, study 2026-11-24-rvcmg-scutoid-frusta)"
+    },
+    {
+      "name": "Aequi catalogue Nos. 1233–10725",
+      "by": "DICTO (numbering and naming rule approved, study 2026-11-24-aequi-numberings)",
+      "first": "#112 next version (catalogue data, study 2026-11-24-aequi-catalogue-2)",
+      "date": "2026-11-24",
+      "aka": "shown as \"Name (No.N)\", the name read from the number (first goroawase reading of each digit)",
+      "desc": "No.1233 Inimisa (TO-24), No.1234 Inimiyo (TCO-48), No.1235 Inimigo (TID-120) reserved for the face-transitive permutahedron duals; Nos. 1236–10725 the 9 490 new certified Aequi"
     }
   ],
   "concepts": [
@@ -4671,7 +4703,7 @@
       ],
       [
         "The loose step O ⊂ rTI (#35)",
-        "a golden-cut station of #91 may fit it (unsure)",
+        "a golden-cut station of #91 may fit it (unsure) — ADVANCED 25 Nov 2026 (studies/2026-11-25-stellation-cycle): still open; the uniform H3 permutahedron does not close it (holding O it reaches 1.0386 of the way out of rTI); Aequi Yo (No.4) and Goi (No.51) fit strictly inside but touch neither both; next: the free-depth Aequi families",
         "the Vajrayana cycle complete",
         [
           7
@@ -4712,7 +4744,7 @@
       {
         "src": "#35",
         "what": "closing solid for the loose step O ⊂ rTI; the 9/φ⁴ coincidence; a physical build",
-        "status": "open"
+        "status": "open · ADVANCED 25 Nov 2026 (studies/2026-11-25-stellation-cycle): the closing solid is not the uniform H3 permutahedron nor any Aequus of the 31 planes (Yo No.4, Goi No.51 fit loosely); 9/φ⁴ = (R(D0)/r(I0))² exactly for the midsphere dual pair (observation; why each construction gives it not proved)"
       },
       {
         "src": "#36",
@@ -4912,7 +4944,7 @@
       {
         "src": "#112",
         "what": "a structural reason for the diameter certificate; witnesses of N − 1 directions; closed forms; the Vacuus of the 149 Aequi (only D191 checked); both placements under the subgroups of Oh; Aequi as Wulff shapes (§8)",
-        "status": "open"
+        "status": "open · ADVANCED 24 Nov 2026: existence for every balanced direction set (Theorem B, studies/2026-11-24-aequi-uniqueness), so every searched set has exactly one fair die; CIRT-30 equal depths and 14 shadow dice exact (studies/2026-11-24-aequi-exact-dice); 4 404 + 9 490 more Aequi certified (studies/2026-11-24-aequi-certify-4404, 2026-11-24-aequi-catalogue-2); 42 station dice exact (studies/2026-11-25-stellation-cycle, Theorem 8); the listed points stay open"
       },
       {
         "src": "#113",
@@ -4933,6 +4965,51 @@
         "src": "study 2026-11-20-600cell-5cell-zero",
         "what": "how the cap solid and the √2 tip 600-cell relate to the earlier 600-cell work (Part 2); whether the edge partition by 120 facets is known; a 4D union that fills space; an actual dissection to the 4-cube",
         "status": "Part 2 being checked; rest open"
+      },
+      {
+        "src": "#14",
+        "what": "the exact closure of the DICTO-Star (icosidodecahedron, 12 dodecahedra, 20 tridiminished icosahedra)",
+        "status": "open · ADVANCED 25 Nov 2026 (studies/2026-11-25-stellation-cycle, gap (c)): a D5d station die fits between the icosidodecahedron and the star's hull touching both (exact), at step 0 of the ladder; its Vacuus leaves the 15 mirrors (10 of 15 planes); exact write-up still missing. Outside: none found yet, a search target"
+      },
+      {
+        "src": "#35b",
+        "what": "the first stellation of the icosahedron puts its tips at 3/√5 times the face distance (float observation)",
+        "status": "CLOSED 25 Nov 2026 (studies/2026-11-25-stellation-cycle): exact, tip ÷ face distance = 3/√5 (the number only; the first stellation's tip hull is not the Palintriacontahedron)"
+      },
+      {
+        "src": "#33",
+        "what": "Double Vision's factor 3 between the two settings",
+        "status": "open · NAMED, NOT CLOSED 25 Nov 2026 (studies/2026-11-25-stellation-cycle): 3 is exactly the great stellated dodecahedron's spike ratio R(D_{k+2})/r(I_k) and the uniform H3 permutahedron's hexagon distance over I0's inradius; it cannot close by φ-steps (3 ≠ φ^k, proof in #33); 41 station dice carry it (r = √3/φ). Outside: none found yet, a search target"
+      },
+      {
+        "src": "#42",
+        "what": "the Sunstar leaving the cycle: its Vacuus about D0's centre has 69 planes, only 3 of them mirrors",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-stellation-cycle, Theorem 5 and gap (d)): the octahedron |x|+|y|+|z| ≤ 3 touches D0 and the Sunstar's hull but sits off the ladder at 3/φ²; is there a polyhedron at a φ-step that touches both; orbit structure of the 69 planes under Th. Outside: Escher's solid / Hart (1.5), whose tiling builds the Dogstar"
+      },
+      {
+        "src": "study 2026-11-25 (V SF A)",
+        "what": "the 4D 30-gon (named in the 25 Nov work; no study README yet)",
+        "status": "open (new 25 Nov 2026). Outside: Denney et al., H4 polytopes (1.5), to check"
+      },
+      {
+        "src": "study 2026-11-25-aequi-five-cubes",
+        "what": "the five-cube Aequi (fair dice on the directions of the five cubes in the dodecahedron) and the free-angle icosahedra",
+        "status": "open (new 25 Nov 2026; study running, no README yet). Outside: none found yet, a search target"
+      },
+      {
+        "src": "study 2026-11-24-associahedron-shell-2",
+        "what": "the inner (equal-speed) pattern has no corner in the open shell: prove it or find the reason (LEAD 2)",
+        "status": "open (new 24 Nov 2026). Outside: straight skeletons (the inner pattern is the straight skeleton of the outward offset); no source yet in 1.5, a search target"
+      },
+      {
+        "src": "study 2026-11-24-lean-rolling-law-a4",
+        "what": "the general local-to-global lemma (only if a non-reflection die needs it); affine independence of each face's vertices in Lean (LEAD 1)",
+        "status": "open (new 24 Nov 2026). Outside: none found yet, a search target"
+      },
+      {
+        "src": "study 2026-11-24-lean-rolling-law-a4",
+        "what": "the H4 rolling law in Lean (14 400 faces; after D4, B4, F4; tables need a build-time test first) (LEAD 3)",
+        "status": "open (new 24 Nov 2026). Outside: none found yet, a search target"
       }
     ],
     "waiting": [
@@ -5564,6 +5641,160 @@
         "result": "The traditional window certified: every yantra with Huet's conditions, Kulaichev's (b) and (c) and admissibility whose great slopes have product c = uv in (c_lo, c*) = (0.346198290229885…, 0.556510833490959…), the two roots of the irreducible degree-90 polynomial g90(c) = f180(√c), is unique up to the viewpoint and has the traditional form (43 regions, all triangles, 18 marmas, 24 sandhis, 74 bounded regions); for 0.3364 ≤ c < c_lo and c* < c ≤ 0.5640 it has 45 regions (41 triangles), 18 marmas and 28 sandhis. Certified sweep along the rhombus u = v (2375 boxes; every one of the 2810 non-identity triples of the 27 sides decided on each box; 115 identities exact), the crossing of t4's leg through the corner touch (5,5,6) monotone on both end boxes and placed exactly at the ends by the Krawczyk test and elimination, uniqueness by bisection in t, counts at four points by Proposition 11's pipeline. Kulaichev's yantra (c = 0.5631579663…) lies above c*. Outside 0.3364 ≤ c ≤ 0.5640 still computed only",
         "status": "certified (computer-assisted); text ready; awaits DICTO for #103 v8",
         "study": "studies/2026-11-20-yantra-traditional-interval"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "Theorem B (existence): every set of N >= 4 distinct unit face directions with sum zero, not all on one great circle, carries a fair die (every face 4pi/N); with Alexandrov uniqueness (#112 Theorem A (a), Lean fair_die_unique) exactly one up to scale. Covers every finite group fixing only the centre (T, O, Td, D_n, D_nd, D_nh, S_4, S_6, ...); #112 had it only for opposite pairs (Corollary 3). The searches' \"never none\" becomes a theorem. Not found in Semenov, BLYZZ 2020, Bertrand 2023 (read in full)",
+        "study": "studies/2026-11-24-aequi-uniqueness",
+        "goes_to": "#112 next version (Theorem B replaces Corollary 3; Corollary 4 (a) \"exactly one\"; cite BLYZZ Lemma 5.6 for the even case)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "Aequus CIRT-30, T 26: its C6 and RT24/12a faces are at exactly the same depth. Mirror proof: on d(C6) = d(RT24/12a) = 1, 2 Omega(RT24/12a) - Omega(C6) = 4pi/30 for every I12 depth t >= (7/4)/sqrt3 (exact tests in Q(sqrt5)); second proof, independent of the resultant certificate, showing why",
+        "study": "studies/2026-11-24-aequi-exact-dice (Theorem 1)",
+        "goes_to": "#112 next version",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "Shadow dice: a die is fair when its faces project from the centre onto unions of mirror triangles of the cube group (48) or icosahedron group (120), equally many under each face. Of all 15 192 catalogued fair dice exactly 14 are of this kind (10 cube, 4 icosahedron), each proved fair exactly with depths in closed form (Row 95, the D2h dice on walls at cos 18 and cos 30 deg, the ten-wall D3d die among them)",
+        "study": "studies/2026-11-24-aequi-exact-dice (Theorem 2)",
+        "goes_to": "#112 next version",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "Aequi catalogue, second batch: Nos. 1233-1235 reserved for the face-transitive permutahedron duals Inimisa (No.1233, TO-24, Oh), Inimiyo (No.1234, TCO-48, Oh), Inimigo (No.1235, TID-120, Ih); Nos. 1236-10725 = 9 490 new certified Aequi (66 of the 9 556 are repeats, left out; first name wins); all 10 725 names distinct and decoding to their numbers; Row 95 of the two-placement study is Niyoo (No.240), already catalogued. Data only, no app change",
+        "study": "studies/2026-11-24-aequi-catalogue-2",
+        "goes_to": "Aequi catalogue (data); #112 next version (catalogue count); app catalogue later",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "All 4 404 Aequi of study 2026-11-19-aequi-complete whose group does not contain T are rigorously certified by ball arithmetic (4 399 on a box of constant type, 5 on a split box, 0 failures; depths within 5.0e-60); approved by DICTO 24 Nov (item C). Numbers after No.10725 in a later batch",
+        "study": "studies/2026-11-24-aequi-certify-4404",
+        "goes_to": "#112 next version; Aequi catalogue (numbering later)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "A402191 = the number of Vacuus plates of the permutohedron, every dimension (Theorem A): the plate of ridge (B1, B2, B3) is c(a+b) Sum_B1 y + a(b+c) Sum_B3 y = 0; two-valued plates are resonance (all-subset) hyperplanes (all for n odd, the even-even half for n even); none is a mirror x_i = x_j (n >= 3). Lemma P (pencil lemma, any polytope). Theorem B: type B with generic values; uniform B_n count (5^n - 2*3^n + 1)/2 (B3 36, H3 90 exact). The Vacuus is not simplicial. Construction studied by Cellini-Marietti (2014) for root polytopes only (credit)",
+        "study": "studies/2026-11-24-a402191-vacuus",
+        "goes_to": "The Vacuus and the Resonus paper (papers/2026-11-24-vacuus-resonus, draft) (Theorems 2 and 3); #105 next version; type-B sequence 4, 36, 232, 1320, ... is an OEIS candidate awaiting DICTO",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "The Resonus (DICTO): Theorem 1 (polar link): each Resonus plane of P is at right angles to the line from O to a corner of P*, each Vacuus plate to an edge of P*. Theorem 2: the Resonus of the permutahedron is the restricted all-subset arrangement (Kamiya-Takemura-Terao 2011; the resonance arrangement, Shadrin-Shapiro-Vainshtein), regions 6, 32, 370, 11292 = A034997. Theorem 3: A3, B3, H3 Resonus have 7, 13, 31 planes, all simplicial (32, 96, 480 regions); A(7,1) and A(13,2) proved, H3 = A(31,1) every invariant matches but not proved. No mathematical use of \"Resonus\" found",
+        "study": "studies/2026-11-24-resonus",
+        "goes_to": "The Vacuus and the Resonus paper (papers/2026-11-24-vacuus-resonus, draft) (section 7)",
+        "status": "settled (Theorems 1, 2; A(7,1), A(13,2)); begun (H3 = A(31,1), LEAD 1)"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "The Resonus in 4D (Theorems 1-4): a Resonus hyperplane is a mirror exactly when a reflection carries the facet to its opposite; a Vacuus plate exactly when a reflection swaps the ridge's two facets, so the Vacuus of a regular polytope lies in its mirrors. Resonus(120-cell) = the 60 H4 mirrors (classical content: Coxeter, Humphreys; #110 v3 states it); Resonus(600-cell) = #110's 300 cross walls, its Vacuus the 60 mirrors, so #110's 360 walls = Resonus + Vacuus; the 120-cell is the only convex regular polytope of dimension >= 2 whose Resonus is its whole mirror arrangement; 24-cell Resonus = Vacuus (12); 4D permutohedron Resonus (15) inside its Vacuus (65). Independent recheck: all agree (wording \"dimension >= 2\"; 300 walls = middle walls of the 25 inscribed 24-cells already in #110)",
+        "study": "studies/2026-11-24-resonus-4d (+ 2026-11-24-resonus-4d-recheck)",
+        "goes_to": "The Vacuus and the Resonus paper (papers/2026-11-24-vacuus-resonus, draft) (4D section); #110 next version (its walls named as the Resonus of the Queens)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "Vacuus and Resonus exact catalogue of 163 polyhedra (5 Platonic, 13 Archimedean, 13 Catalan, 40 prisms/antiprisms/bipyramids/trapezohedra n = 3-12, all 92 Johnson solids about both centres; J84-J90 exact in fields of degree 6-32). Theorem A (central symmetry and two-face Resonus planes; converse fails only for the truncated tetrahedron); Theorem B (a plane is in both exactly when it holds an edge and is parallel to a face; prisms iff n = 2 mod 4; 28 polyhedra); Theorem C (simplicial cases: prisms, bipyramids; cube + CO, TC, TO, RCO, TCO, RID, TID; mirror Vacuus for Td/Oh/Ih; Johnson J3, J19, J76); Theorem D (duality: only the octahedron-cube pair has Vacuus(P) meeting Resonus(P*))",
+        "study": "studies/2026-11-24-vacuus-resonus-catalogue",
+        "goes_to": "The Vacuus and the Resonus paper (papers/2026-11-24-vacuus-resonus, draft) (section 4, catalogue, and Theorems A-D)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "The associahedron shell (Asso_c minus the permutahedron, Hohlweg-Lange-Thomas): one connected cap per group and c; under the equal-speed rule no piece is a Scutoid-Frustum proper in any of the 24 cases (3 groups x 4 Coxeter elements x 2 rules); Lemma A (the rim: a removed face with a kept neighbour gives a piece whose two ends meet); disjoint-end pieces are all frusta (0 / 1 / 16-17 per shell; convex SF 4-4-0 and SF 6-6-0 in H3)",
+        "study": "studies/2026-11-24-associahedron-shell",
+        "goes_to": "The Scutoid-Frusta paper (papers/2026-11-24-scutoid-frusta, plan)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "Two patterns overlaid in the associahedron shell give convex Scutoid-Frusta proper that change side count and neighbours: Lemma B (the outer, nearest-associahedron-face pattern never gives a Scutoid-Frustum), Lemma C (Y-corners lie in the open shell on walls of kinds WWW, WWO, WOO, OOO), Theorem 1 (H3: 4 pieces for linear c, 14 for bipartite c, types SF 3-4-1, 4-5-1, 5-4-1, 5-6-1, 6-7-1, 8-7-1, 9-10-1; 13 of 18 with n != m); B3 linear c: SF 3-4-1 once, SF 6-5-1 twice; A3 none",
+        "study": "studies/2026-11-24-associahedron-shell-2",
+        "goes_to": "The Scutoid-Frusta paper (papers/2026-11-24-scutoid-frusta, plan)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "The 16 RVCMG adapter pieces (Polyhedraverse) in exact arithmetic: 15 are degenerate Scutoid-Frusta (k = 0 Y-corners; the side count drops from 6 to m at the target end through merged corners, a Y-corner slid into the end; DICTO accepted 24 Nov); Regular-Hexagon-to-U-Hex (version 2) is a true frustum SF 6-6-0. Dated first use: RVCMG specification and version 1 adapters 15 Sep 2026, version 2 17 Sep 2026 (commit 2726f41), before the term scutoid appears in DICTO's work (October 2026)",
+        "study": "studies/2026-11-24-rvcmg-scutoid-frusta",
+        "goes_to": "The Scutoid-Frusta paper (papers/2026-11-24-scutoid-frusta, plan) (origin section with renders); one sentence in #118 at first use",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "The rolling law for the A4 die (polar of the A4 permutahedron, 120 tetrahedral faces) in Lean 4 + Mathlib (CoxeterMatrix.A 4): roll model, Coxeter relations, 120 elements, unique longest element; geometric step M4 (convex die, each face exactly the listed tetrahedron, roll-preserving permutations are isometries) and fairness M7 (fair, roll_symmetry_isometry). 0 sorry, no native_decide, standard axioms only",
+        "study": "studies/2026-11-24-lean-rolling-law-a4",
+        "goes_to": "to ask DICTO (V SF A project, Aequus row; Lean blueprint released with its paper)",
+        "status": "settled (A4); D4, B4, F4, H4 begun as leads"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "#118 Theorem 3 (iv) in Lean (AmberMirror.no_mirror_placement): no placement of points, one per cell, with neighbours mirror images in 14 walls of the patch (a tree path from cell 33 to cell 0 and the 11 walls round three odd edges of wall 3); proved from three edges instead of all 597 loops. 0 sorry, no native_decide, standard axioms only. Data link (patch cells and walls) trusted from study 2026-11-21-amber-ammann",
+        "study": "studies/2026-11-24-lean-amber-mirror",
+        "goes_to": "#118 next version (cite the three-edge certificate in place of the 597-loop elimination)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "OEIS Entry 2 (4H h-site coordination sequence) and Sweep 1 (pyrochlore closed walks): study scripts rerun and fresh second methods (geometric 4H to n = 200; line-graph pyrochlore to n = 40); every printed program run as printed; g.f. reduced, recurrence from n = 11; FINAL ok; b-files written",
+        "study": "studies/2026-11-24-oeis-entry2-sweep1",
+        "goes_to": "OEIS working pages (papers/oeis-submissions/working), Entry 2 and Sweep 1",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "Closed tailless (cyclically non-backtracking) walks per pyrochlore site, n = 1..40: direct count and two formulas (Ihara-Bass log form with diamond's spectrum, A002895 moments; ordinary g.f. in A402231's shape) agree and match #102 Corollary 2; not in the OEIS (searched 24 Nov)",
+        "study": "studies/2026-11-24-oeis-sweep2-pyrochlore-tailless",
+        "goes_to": "OEIS working page sweep2-pyrochlore-tailless (from #102 Corollary 2)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "OEIS sweep of the EKP cell, the Kaleidohedra and the Double Vision / Vajrayana shells: no new entry can be queued (no printed sequence indexed by n; golden-cycle shells periodic; Chain of Karma growth c*13^n + d); one comment possible on A001400 (Dehn-zero truncations of the tetrahedron, from #100 / Space-Fillers Chapter 2); near-misses computed two ways, n = 0..24, FINAL ok",
+        "study": "studies/2026-11-24-oeis-sweep-ekp",
+        "goes_to": "OEIS comment queue (A001400; DICTO writes the text); EKP coordination sequence a lead for #8 next version (outside the plan)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "The stellation cycle (DICTO's proposal, 25 Nov), exact in Q(sqrt5): Theorem 1 (Pacioli's I0 and D0 share the midsphere, polar in it); Theorem 2 (vertex return: the Kepler-Poinsot stars of D_k have the corners of I_{k+1} = phi I_k or D_{k+3}; the great icosahedron of I_k those of I_{k+3}; golden rectangles return at every phi^k); Theorem 4 (every star and the Dogstar has the 15 mirrors as Vacuus and keeps its core's Resonus); Theorem 5 (Dogstar tips = I_{-2} and the cube corners of D0, two constructions incl. Hart's tiling; the Sunstar: 92 corners, 150 edges, Resonus = D0's 6 planes, Vacuus 69 planes, only 3 of them mirrors); Theorem 7 (Chain of Karma #22 and the Kepler-Poinsot-UP cycle #38a are this ladder; spike ratio 3 = R(D_{k+2}) / r(I_k)); #35b Palintriacontahedron tip ratio 3/sqrt5 made exact; 9/phi^4 = (R(D0)/r(I0))^2 (observation)",
+        "study": "studies/2026-11-25-stellation-cycle",
+        "goes_to": "The Vacuus and the Resonus paper (papers/2026-11-24-vacuus-resonus, draft) section 8 \"Where V meets SF and A\" (Theorems 4, 6; where it goes to ask DICTO); #35b next version (3/sqrt5 exact); Golden Cycle book",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "The hub (Theorem 6): the uniform H3 permutahedron's 31 Resonus planes are exactly I's 10, D's 6 and the 15 mirrors; its 20 hexagon centres are the corners of phi^2 D0, a step of the cycle. 4 039 Aequi checked have their Resonus inside the 31 planes; none has a depth ratio equal to a cycle step at another scale (phi^k, k != 0)",
+        "study": "studies/2026-11-25-stellation-cycle (Theorem 6, aequi.py)",
+        "goes_to": "The Vacuus and the Resonus paper (papers/2026-11-24-vacuus-resonus, draft) section 8 (to ask DICTO)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Theorem 8 (the station dice, proved for all 42): 42 Aequi have one orbit of faces lying exactly on face planes of one icosahedron I_k (one die: dodecahedron D_k), with the neighbouring faces on the rhombus planes of RT_k at the same k; 41 of them carry Double Vision's factor 3 exactly as depth ratio r = sqrt3/phi (phi^2 r^2 = 3). Lemma 9 (shadow count) is general",
+        "study": "studies/2026-11-25-stellation-cycle (second part)",
+        "goes_to": "#112 next version; The Vacuus and the Resonus paper (papers/2026-11-24-vacuus-resonus, draft) section 8 (to ask DICTO)",
+        "status": "settled"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Gap-closers tested (DICTO's conjecture, 25 Nov): (a) loose step O in rTI not closed (uniform H3 permutahedron holding O reaches 1.0386 of the way out of rTI; Aequi Yo (No.4) and Goi (No.51) fit strictly inside, touching neither both); (b) Double Vision's factor 3 cannot close by phi-steps (proof in #33) but is named exactly (spike ratio of the great stellated dodecahedron; hexagon distance of the H3 permutahedron over I0's inradius); (c) DICTO-Star: a D5d station die fits between the icosidodecahedron and the star's hull touching both, step 0, Resonus inside the 31, Vacuus 15 planes with 10 mirrors; (d) Sunstar: the octahedron |x|+|y|+|z| <= 3 touches D0 and the Sunstar's hull, Vacuus and Resonus inside the cycle's planes, but off the ladder at 3/phi^2. No single shape closes every gap",
+        "study": "studies/2026-11-25-stellation-cycle (second part)",
+        "goes_to": "The Vacuus and the Resonus paper (papers/2026-11-24-vacuus-resonus, draft) section 8; #14, #33, #42 next versions (to ask DICTO)",
+        "status": "begun"
+      },
+      {
+        "date": "2026-11-24",
+        "result": "Resonus and Vacuus counting sequences of the type A and B permutohedra: Proposition 1 (Resonus of Pi_n has 2^{n-1} - 1 hyperplanes; of P(lambda) (3^n - 1)/2, independent of values); Proposition 2 (hyperplanes in both: 4^{floor((n-1)/2)} - 1 for Pi_n, n >= 3; 0 for generic and uniform type B in every dimension). README table, OEIS status and leads not yet filled in",
+        "study": "studies/2026-11-24-resonus-sequences",
+        "goes_to": "The Vacuus and the Resonus paper (papers/2026-11-24-vacuus-resonus, draft); OEIS candidates only after the table and search are written up",
+        "status": "begun"
       }
     ]
   },

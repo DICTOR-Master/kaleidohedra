@@ -179,7 +179,7 @@ for i, s in enumerate(D['strands'], 1):
     for x in sorted(s['papers'], key=lambda x: key(x['n'])):
         w(f'<li>{ref(x["n"], True)}: {e(fm(x["adds"], seen, where))}</li>')
     w('</ul>')
-    for l in s['links']:
+    for l in s.get('links', []):
         w(f'<p class="lk">→ {e(fm(l, seen, where))}</p>')
 SE = D.get('series')
 if SE:
