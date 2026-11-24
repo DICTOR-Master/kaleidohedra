@@ -5990,6 +5990,27 @@
         "study": "studies/2026-11-25-inversions",
         "goes_to": "the Tacitus/Sphericus paper",
         "status": "settled (proved, exact)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lean (formalised, standard axioms, no sorry): the polar link. The Resonus plane of the facet plane a·x = 1 is the orthogonal complement of the line from O to the polar corner a (any real inner-product space); in 3-space the Vacuus plate span{u, v} of an edge [u, v] on the facet planes a·x = 1 and b·x = 1 (a ≠ b, u ≠ v) is the orthogonal complement of the polar edge direction a − b (resonusPlane_eq_orthogonal, vacuusPlate_eq)",
+        "study": "studies/2026-11-25-lean-vacuus-resonus",
+        "goes_to": "the Vacuus–Resonus paper",
+        "status": "settled (Lean-formalised)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lean (formalised, standard axioms, no sorry): Aequus = equal fin regions. For a die (unit distinct normals not in one closed hemisphere, positive distances), the radial projection of each face to the unit sphere has Mathlib surface measure (volume.toSphere) equal to its solid angle; the projections cover the sphere, overlap pairwise in null sets and sum to 4π; so equal solid angles ⇔ equal fin areas ⇔ every fin area 4π/N (toSphere_finRegion, sum_toSphere_finRegion, aequus_iff_finRegions, aequus_iff_isFair). Components of S minus the arcs not formalised",
+        "study": "studies/2026-11-25-lean-vacuus-resonus",
+        "goes_to": "the Vacuus–Resonus paper (§ Aequus; placement to confirm with DICTO)",
+        "status": "settled (Lean-formalised)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lean (formalised, standard axioms, no sorry): the factor 3 is no φ-step. φ^k is irrational for every integer k ≠ 0, φ^k ≠ 3 for every k, 3 = q·φ^k (q rational) only for k = 0, q = 3; and if φ²r² = 3 (the station-die depth ratio √3/φ) then r ≠ q·φ^k for all rational q and integers k (goldenRatio_zpow_ne_three, ratio_ne_rat_mul_zpow)",
+        "study": "studies/2026-11-25-lean-vacuus-resonus",
+        "goes_to": "#33 Double Vision (next version)",
+        "status": "settled (Lean-formalised)"
       }
     ]
   },
