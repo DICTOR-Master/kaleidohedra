@@ -83,3 +83,6 @@ Nothing is created on GitHub, pushed or dispatched: that is DICTO's step.
 - `package/gen/`: the solids' generator (copied into the entry's `scripts/`).
 - `package/Challenge/`, `package/Solution/`, `package/palomar/` (formalization.yaml, README.md), `package/logs/`.
 - `package/library/` is made by prep_library.py and not kept in git.
+- 22 Nov 20:19: dbb job packets-tidgen (TID generator pilot) finished OK; read; superseded by packets-fit.
+
+- 23 Nov (read): packets-fit FINAL FAIL only on the standard profile: entry incl. TID builds at standard (4:55, 9.54 GiB) but its comparator was killed (exit 143, about 3 min; con-ron needs 18.2 GiB > 14 GB cap). At Palomar's real profile (namespace 16x32): all checks pass, con-ron 4:05 wall, 18.21 GiB (was about 25 min without TID). Per CHECKLIST line 68-71 the registry runs the namespace profile; the standard profile is the GitHub preflight runner. Next: either accept (as Grünbaum) or lower con-ron memory (--jobs, chaining).

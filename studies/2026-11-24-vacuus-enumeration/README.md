@@ -314,3 +314,5 @@ Symmetry centre: 'point' when the full symmetry group fixes only one point, 'axi
 | 120-cell | 600 | 120 | 720 | yes | **heart** | 60 | 60×12 [5+5+5+5+5+5+5+5+5+5+5+5] full (mirror) | 60 |
 | 600-cell | 120 | 600 | 1200 | yes | **heart** | 60 | 60×20 [20 faces] full (mirror) | 60 |
 | H4 omnitruncation | 14400 | 2640 | 17040 | yes | **heart** | 8520 | 5400×2 [4+4] full; 2400×2 [6+6] full; 720×2 [10+10] full | 0 |
+- 2026-11-24 dbb job four-d-vacuus finished OK; read and recorded in its study README (closed by coordinator).
+- 2026-11-24 dbb job johnson-exact finished OK; read and recorded in its study README (closed by coordinator).
