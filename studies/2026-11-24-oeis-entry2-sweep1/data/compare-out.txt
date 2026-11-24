@@ -1,0 +1,10 @@
+Entry 2: program as written (n<=57) prefix of n<=200 run: True
+Entry 2: geometric method, all 4 h sites (B, C; lower, upper) == program, n = 0..200: True
+Entry 2: empirical g.f. == program, n = 0..200: True
+Entry 2: study oeis_checks.py C3 4H h site rerun == program, n = 0..60: True
+Entry 2: c-site check (A bilayers) consistent: True
+Sweep 1: study pyrochlore.py (formula) == fresh line-graph DP, n = 0..40: True
+Sweep 1: study walks.py direct DP == formula, n = 0..30: True
+Sweep 1: PARI formula program == formula, n = 0..40: True
+Sweep 1: PARI g.f. expansion == formula, n = 0..40: True
+FINAL ok

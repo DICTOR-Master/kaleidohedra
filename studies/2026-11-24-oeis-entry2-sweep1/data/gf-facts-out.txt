@@ -1,0 +1,12 @@
+entry2 gcd(num, den) = 1 | num(1) = 42 | den = -x**10 + 2*x**9 - x**8 + x**2 - 2*x + 1
+entry2 recurrence a(n)=2a(n-1)-a(n-2)+a(n-8)-2a(n-9)+a(n-10) holds for all n from 11 to 200
+entry2 a(8m+0) = 168*m^2 + 0*m + 2  (holds for m >= 1, checked to n = 200)
+entry2 a(8m+1) = 168*m^2 + 42*m + 4  (holds for m >= 0, checked to n = 200)
+entry2 a(8m+2) = 168*m^2 + 84*m + 12  (holds for m >= 0, checked to n = 200)
+entry2 a(8m+3) = 168*m^2 + 126*m + 24  (holds for m >= 0, checked to n = 200)
+entry2 a(8m+4) = 168*m^2 + 168*m + 42  (holds for m >= 0, checked to n = 200)
+entry2 a(8m+5) = 168*m^2 + 210*m + 66  (holds for m >= 0, checked to n = 200)
+entry2 a(8m+6) = 168*m^2 + 252*m + 96  (holds for m >= 0, checked to n = 200)
+entry2 a(8m+7) = 168*m^2 + 294*m + 130  (holds for m >= 0, checked to n = 200)
+sweep1 data line: 246 chars, n = 0 .. 25 : 1,0,6,12,78,300,1512,7056,35214,176124,902496,4679136,24590208,130560768,699729792,3779987712,20562988878,112547448924,619346672208,3424664011776,19018122975768,106021551258096,593110987716000,3328539189498432,18733818892838688,105717847936756800
+entry2 data line: 260 chars, n = 0 .. 57
