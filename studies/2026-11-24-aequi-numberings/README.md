@@ -87,3 +87,4 @@ numbering and the larger proved bound.)
 (Python with ortools, numpy, mpmath; the sibling study 2026-11-24-aequi-vacuus-scutoids and the two search studies must be present.)
 
 - 24 Nov 09:08: refinement stopped for the 10:00 power cut at 626/1232 (smallest first); final checks FINAL ok (1232 dice, balanced optimal proved for 14, both measures for 2). Resume: same command, plan aequi-numrefine.
+- 24 Nov afternoon: refinement resumed after the power cut (job aequi-numrefine2) and finished all 1232 dice (FINAL ok): balanced optimum proved for 14 dice, both stages for 2; the others keep the best found with bound and gap. Per-die name_shown changed to the decided format "Name (No.N)". No further refinement (DICTO decision 13, 24 Nov).
