@@ -1,0 +1,121 @@
+[
+ {
+  "solid": "truncated_octahedron",
+  "group": "A3",
+  "vertices": 24,
+  "faces": 14,
+  "edges": 36,
+  "resonus_planes": 7,
+  "faces_per_plane": {
+   "2": 7
+  },
+  "planes_by_face_sides": {
+   "(4,)": 3,
+   "(6,)": 4
+  },
+  "f": [
+   9,
+   24,
+   16
+  ],
+  "regions_in_space": 32,
+  "t": {
+   "2": 3,
+   "3": 6
+  },
+  "r": {
+   "3": 4,
+   "4": 3
+  },
+  "simplicial": true,
+  "mirrors_among_planes": 3,
+  "mirror_face_sides": [
+   [
+    4
+   ]
+  ],
+  "polar_checks": "ok: every Resonus plane at right angles to O->polar vertex; every Vacuus plate at right angles to its dual edge (36 edges)"
+ },
+ {
+  "solid": "B3_permutahedron_123",
+  "group": "B3",
+  "vertices": 48,
+  "faces": 26,
+  "edges": 72,
+  "resonus_planes": 13,
+  "faces_per_plane": {
+   "2": 13
+  },
+  "planes_by_face_sides": {
+   "(4,)": 6,
+   "(6,)": 4,
+   "(8,)": 3
+  },
+  "f": [
+   25,
+   72,
+   48
+  ],
+  "regions_in_space": 96,
+  "t": {
+   "2": 12,
+   "3": 4,
+   "4": 9
+  },
+  "r": {
+   "4": 3,
+   "6": 10
+  },
+  "simplicial": true,
+  "mirrors_among_planes": 9,
+  "mirror_face_sides": [
+   [
+    4
+   ],
+   [
+    8
+   ]
+  ],
+  "polar_checks": "ok: every Resonus plane at right angles to O->polar vertex; every Vacuus plate at right angles to its dual edge (72 edges)"
+ },
+ {
+  "solid": "truncated_icosidodecahedron",
+  "group": "H3",
+  "vertices": 120,
+  "faces": 62,
+  "edges": 180,
+  "resonus_planes": 31,
+  "faces_per_plane": {
+   "2": 31
+  },
+  "planes_by_face_sides": {
+   "(4,)": 15,
+   "(6,)": 10,
+   "(10,)": 6
+  },
+  "f": [
+   121,
+   360,
+   240
+  ],
+  "regions_in_space": 480,
+  "t": {
+   "2": 60,
+   "3": 40,
+   "5": 6,
+   "6": 15
+  },
+  "r": {
+   "10": 6,
+   "12": 25
+  },
+  "simplicial": true,
+  "mirrors_among_planes": 15,
+  "mirror_face_sides": [
+   [
+    4
+   ]
+  ],
+  "polar_checks": "ok: every Resonus plane at right angles to O->polar vertex; every Vacuus plate at right angles to its dual edge (180 edges)"
+ }
+]
