@@ -1,0 +1,33 @@
+ok   icosahedron 12 corners, dodecahedron 20
+ok   edges: icosahedron 30 (length 2), dodecahedron 30 (2/phi), icosidodecahedron 60 (1), 30 corners
+ok   face planes up to sign: icosahedron 10, dodecahedron 6, icosidodecahedron 10 + 6 = 16
+ok   plane x = 0: 4 icosahedron corners, a golden rectangle (sides 2, 2 phi, diagonal 2 sqrt(phi+2))
+ok     (a) its two short sides are icosahedron edges, the only two in the plane: plane = Vacuus plate plane of the icosahedron
+ok     (b) not an icosahedron Resonus plane (no face parallel)
+ok     (b) not a dodecahedron Resonus plane
+ok     (c) dodecahedron: the plane holds exactly two opposite dodecahedron edges (a Vacuus plate plane), parallel to the short sides
+ok     (c) its 4 dodecahedron corners make a rectangle of sides 2/phi and 2 phi (ratio phi^2, not golden)
+ok     (c) icosidodecahedron: no edge in the plane (not a Vacuus plate plane) and no face parallel (not Resonus)
+ok     (c) the plane holds 4 icosidodecahedron corners, a square of side phi sqrt 2; two are the midpoints of the short sides
+ok   plane y = 0: 4 icosahedron corners, a golden rectangle (sides 2, 2 phi, diagonal 2 sqrt(phi+2))
+ok     (a) its two short sides are icosahedron edges, the only two in the plane: plane = Vacuus plate plane of the icosahedron
+ok     (b) not an icosahedron Resonus plane (no face parallel)
+ok     (b) not a dodecahedron Resonus plane
+ok     (c) dodecahedron: the plane holds exactly two opposite dodecahedron edges (a Vacuus plate plane), parallel to the short sides
+ok     (c) its 4 dodecahedron corners make a rectangle of sides 2/phi and 2 phi (ratio phi^2, not golden)
+ok     (c) icosidodecahedron: no edge in the plane (not a Vacuus plate plane) and no face parallel (not Resonus)
+ok     (c) the plane holds 4 icosidodecahedron corners, a square of side phi sqrt 2; two are the midpoints of the short sides
+ok   plane z = 0: 4 icosahedron corners, a golden rectangle (sides 2, 2 phi, diagonal 2 sqrt(phi+2))
+ok     (a) its two short sides are icosahedron edges, the only two in the plane: plane = Vacuus plate plane of the icosahedron
+ok     (b) not an icosahedron Resonus plane (no face parallel)
+ok     (b) not a dodecahedron Resonus plane
+ok     (c) dodecahedron: the plane holds exactly two opposite dodecahedron edges (a Vacuus plate plane), parallel to the short sides
+ok     (c) its 4 dodecahedron corners make a rectangle of sides 2/phi and 2 phi (ratio phi^2, not golden)
+ok     (c) icosidodecahedron: no edge in the plane (not a Vacuus plate plane) and no face parallel (not Resonus)
+ok     (c) the plane holds 4 icosidodecahedron corners, a square of side phi sqrt 2; two are the midpoints of the short sides
+ok   the three planes are mutually perpendicular
+ok   the icosahedron has 15 such planes (one per opposite edge pair), each with two edges; they make 5 mutually perpendicular triples
+ok   Pacioli's 12th effect holds: sqrt(a^2+M^2)/sqrt(a^2+m^2) = cube edge / icosahedron edge (same sphere)
+ok     (a, M) is a golden rectangle and (a, m) a phi^2 rectangle (the dodecahedron one in the same plane)
+ok     the dodecahedron rectangle diagonal is the dodecahedron circumdiameter 2 sqrt 3
+FINAL ok

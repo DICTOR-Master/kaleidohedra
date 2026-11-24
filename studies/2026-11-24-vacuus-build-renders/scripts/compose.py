@@ -5,15 +5,16 @@ SH, OUT, SHEET = sys.argv[1:4]
 BG = (20, 22, 28)
 FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; FB = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 names = ['octahedron-cardboard', 'octahedron-cardboard-pulled', 'cube-b1nr', 'cube-b1nr-pyramids-pulled', 'cube-vacuus-fins',
-         'cube-white-reading', 'cube-white-one-plane']
+         'cube-white-rectangles', 'cube-white-one-rectangle', 'cube-white-three-pulled']
 caps = ['Cardboard octahedron: three squares through one centre', 'Its four slotted pieces: A, B and the two halves of C',
         'B1NR cube: six pyramids meeting at the centre', 'The six pyramids pulled apart', "The cube's Vacuus: twelve fins",
-        'White cube (reading, to confirm): six diagonal planes', 'One plane: two fins (solid), two triangles (see-through)']
+        'White ring cube: six diagonal rectangles', 'One rectangle: two opposite edges and the centre',
+        'The three through one body diagonal, pulled apart']
 tiles = []
 for i, n in enumerate(names):
     fr = Image.open(f'{SH}/p{i}.png').convert('RGBA'); bg = Image.new('RGBA', fr.size, BG + (255,)); im = Image.alpha_composite(bg, fr).convert('RGB')
     im.save(f'{OUT}/{n}.jpg', quality=92); tiles.append(im)
-T = 560; rows = [[0, 1], [2, 3, 4], [5, 6]]; heads = ['1  Cardboard octahedron Vacuus', '2  B1NR cube', '3  White ring cube (reading to confirm)']
+T = 560; rows = [[0, 1], [2, 3, 4], [5, 6, 7]]; heads = ['1  Cardboard octahedron Vacuus', '2  B1NR cube', '3  White ring cube: the six diagonal planes']
 W = 3 * T + 80; H = 140 + len(rows) * (T + 110) + 40
 S = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(S)
 f1, f2, f3 = ImageFont.truetype(FB, 34), ImageFont.truetype(FB, 24), ImageFont.truetype(FONT, 18)

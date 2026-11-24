@@ -1,0 +1,19 @@
+ok   octahedron has 12 edges
+ok   all 12 octahedron fins right-angled at O
+ok   octahedron fins: four in each coordinate plane
+ok   cube has 12 edges
+ok   every cube fin has apex cos = 1/3
+ok   six diagonal planes, each with 2 fins and 4 corners
+ok   every fin lies in exactly one diagonal plane
+ok   six face pyramids fill the cube: 6 * (1/3)(2*2)(1) = 8
+ok   each diagonal rectangle: 4 cube corners, exactly two cube edges (opposite, parallel), contains O
+ok   rectangle sides 2 (cube edge) and 2 sqrt 2 (face diagonal), area 4 sqrt 2
+ok   exactly three diagonal rectangles contain the body diagonal (-1,-1,-1)-(1,1,1): x = y, x = z, y = z
+ok   pulled trio (pull 12/5 along unit normals, as drawn): the three rectangles are pairwise disjoint
+ok   they still meet at pull sqrt(2)/2 (q = 1/2), so the pull is needed: touching threshold
+ok   slot wider than board (w > t)
+ok   A x B along y: A slotted on y in [0, a], B slotted on y in [-a, 0]: whole crossing cleared
+ok   B x C1 along z: C1 notch z in [w/2, a/2], B slot z in [a/2, a]: whole crossing cleared
+ok   C halves rest on A: C base at |z| = w/2 >= board half t/2
+ok   A x C: C has the strip |z| < w/2 removed along the whole x-axis
+FINAL ok

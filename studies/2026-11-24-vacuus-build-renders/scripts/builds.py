@@ -5,8 +5,9 @@ Not fitted to photos: every piece is built from exact coordinates of the solid t
     (studies/2026-11-02-vacuus-origami/scripts/cardboard_octahedron.py: edge 80 mm, board 3.5 mm, slot 3.8 mm).
  2. B1NR cube: the cube [-1,1]^3 as six square pyramids with apex at the centre O; their shared walls are the twelve fins O-A-B,
     the cube's Vacuus (two fins in each of the cube's six diagonal planes).
- 3. White ring cube (reading to be confirmed by DICTO; no pull-apart: the six planes interpenetrate, so one plane is shown alone): the cube's six diagonal rectangles through O; in each, the two fins of
-    the Vacuus (opaque white) and the two triangles O-to-face-diagonal that complete the rectangle (see-through white).
+ 3. White ring cube (DICTO, 24 Nov): the cube's six diagonal planes, each a WHOLE white rectangle through two opposite edges and
+    the centre O (sides 2 and 2 sqrt 2). The six cut through each other, so three views: assembled; one rectangle alone; the three
+    rectangles through one body diagonal pulled apart along their normals.
 Usage: python builds.py <out.html>   (house renderer render3d.write; frames by shots.mjs)."""
 import sys, os, itertools, numpy as np
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../2026-11-21-scutoid-stand-in/renders/scripts"))
@@ -100,36 +101,48 @@ def cube_assembled():
 def cube_vacuus():
     return [tri_part(FINS, GLASS_FIN, 0.80, [(O, p) for p in CV] + [(CV[i], CV[j]) for i, j in CE], GLASS_EDGE, DARK, 0.0028)]
 
-# ---------------- 3. white ring cube (reading) ----------------
+# ---------------- 3. white ring cube (DICTO, 24 Nov: six whole diagonal rectangles) ----------------
 WHITE, WHITE_EDGE, WHITE_OUT = '#f3f0ea', '#dcd7cc', '#2a2a2e'
-PLANES = []                                     # six diagonal planes x_i = s x_j, each with its two fins and two completing triangles
+PLANES = {}                                     # six diagonal planes x_i = s x_j; each a whole rectangle through two opposite edges and O
 for i, j in ((0, 1), (0, 2), (1, 2)):
     for s in (1, -1):
         nrm = np.zeros(3); nrm[i], nrm[j] = 1, -s; nrm /= np.linalg.norm(nrm)
+        k = 3 - i - j                           # the axis along which the two cube edges of the rectangle run
         cs = [p for p in CV if p[i] == s * p[j]]
-        fins = [f for f in FINS if abs(np.dot(f[1], nrm)) < 1e-9 and abs(np.dot(f[2], nrm)) < 1e-9]
-        k = 3 - i - j                           # the axis along which the two fin edges run
-        rest = [(O, p, q) for p in cs for q in cs if p[k] == q[k] and tuple(p) < tuple(q)]
-        assert len(cs) == 4 and len(fins) == 2 and len(rest) == 2
-        PLANES.append((nrm, fins, rest, cs))
-def white_parts(pull, only=None):
-    parts = []
-    for nrm, fins, rest, cs in (PLANES if only is None else [PLANES[only]]):
-        sh = nrm * pull
-        parts.append(tri_part(fins, WHITE, 1, [(f[1], f[2]) for f in fins] + [(O, p) for p in cs], WHITE_EDGE, WHITE_OUT, 0.0026, sh))
-        parts.append(tri_part(rest, WHITE, 0.30, [(r[1], r[2]) for r in rest], WHITE_EDGE, WHITE_OUT, 0.0018, sh))
-    return parts
+        lo = sorted([p for p in cs if p[k] == -1], key=lambda p: p[i]); hi = sorted([p for p in cs if p[k] == 1], key=lambda p: p[i])
+        R = [lo[0], lo[1], hi[1], hi[0]]        # cyclic: edge lo[0]-hi[0] and edge lo[1]-hi[1] are the two opposite cube edges
+        assert len(cs) == 4 and abs(np.dot(R[0] - R[1], R[1] - R[2])) < 1e-12
+        PLANES[(i, j, s)] = (nrm, R)
+def rect_part(nrm, R, shift):
+    return tri_part([(R[0], R[1], R[2]), (R[0], R[2], R[3])], WHITE, 1, [(R[m], R[(m + 1) % 4]) for m in range(4)],
+                    WHITE_EDGE, WHITE_OUT, 0.0030, np.asarray(shift, float))
+def white_all():
+    return [rect_part(n, R, (0, 0, 0)) for n, R in PLANES.values()]
+def white_one(key=(0, 2, -1)):
+    n, R = PLANES[key]                          # the rectangle with the cube's twelve edges as thin lines, to show where it sits
+    return [rect_part(n, R, (0, 0, 0)), tri_part([], WHITE, 1, [(CV[i], CV[j]) for i, j in CE], '#8a8f99', None, 0.0016)]
+# the three rectangles through the body diagonal from (-1,-1,-1) to (1,1,1): planes x = y, x = z, y = z; their unit normals
+# (1,-1,0), (-1,0,1), (0,1,-1) (/sqrt 2) sum to zero, so pulling each along its own normal spreads them at 120 deg about the diagonal
+TRIO = [((0, 1, 1), (1, -1, 0)), ((0, 2, 1), (-1, 0, 1)), ((1, 2, 1), (0, 1, -1))]
+PULL3 = 2.4
+def white_trio(pull):
+    out = []
+    for key, d in TRIO:
+        n, R = PLANES[key]; d = np.array(d, float) / np.sqrt(2); assert abs(abs(np.dot(d, n)) - 1) < 1e-12
+        out.append(rect_part(n, R, d * pull))
+    return out
 
 
-VO = [0.85, 0.62, 1.25]; VC = [1.0, 0.62, 1.45]
+VO = [0.85, 0.62, 1.25]; VC = [1.0, 0.62, 1.45]; VT = [0.9, 0.3, -0.3]
 scenes = [
     {'E': 1.22, 'dir': VO, 'parts': octa_parts(0)},          # p0 cardboard octahedron, assembled
     {'E': 2.75, 'dir': VO, 'parts': octa_parts(1)},          # p1 its four pieces pulled apart along their slide lines
     {'E': 1.95, 'dir': VC, 'parts': cube_assembled()},       # p2 B1NR cube: six pyramids, fins inside
     {'E': 3.6, 'dir': VC, 'parts': cube_pyramids(1.25)},     # p3 the six pyramids pulled apart
     {'E': 1.95, 'dir': VC, 'parts': cube_vacuus()},          # p4 the cube's Vacuus: twelve fins
-    {'E': 1.95, 'dir': VC, 'parts': white_parts(0)},         # p5 white ring cube (reading)
-    {'E': 1.95, 'dir': VC, 'parts': white_parts(0, only=3)},  # p6 one diagonal plane alone: two fins + two completing triangles
+    {'E': 1.95, 'dir': VC, 'parts': white_all()},            # p5 white ring cube: six whole diagonal rectangles, assembled
+    {'E': 1.95, 'dir': VC, 'parts': white_one()},            # p6 one rectangle alone (plane x = -z, nearly face-on in this view)
+    {'E': 3.6, 'dir': VT, 'parts': white_trio(PULL3)},       # p7 the three rectangles through one body diagonal, pulled apart
 ]
 write(sys.argv[1], scenes)
 ok = len(FINS) == 12 and len(CE) == 12 and len(PLANES) == 6 and t < w
