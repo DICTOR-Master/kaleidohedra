@@ -1,0 +1,452 @@
+[
+ {
+  "src": "2026-11-19-aequi-complete",
+  "sid": 83,
+  "group": "D5d",
+  "N": 20,
+  "label": "D5d: C6+RT24/10a + C6+RT24/10b (3)",
+  "G": "IhA",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   6
+  ],
+  "fair": true,
+  "corners": 22,
+  "depth_ratios": [
+   "1",
+   "1"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   1.0
+  ],
+  "catalogue_agree": 0.0,
+  "corner_axes": [
+   "C6",
+   "D12",
+   "RT24"
+  ]
+ },
+ {
+  "src": "2026-11-19-aequi-complete",
+  "sid": 89,
+  "group": "D5d",
+  "N": 20,
+  "label": "D5d: C6+RT24/10 + O8+I12/10 (4)",
+  "G": "IhA",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   6
+  ],
+  "fair": true,
+  "corners": 12,
+  "depth_ratios": [
+   "1",
+   "sqrt(6)*sqrt(sqrt(5) + 3)/6"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   0.9341723589627157
+  ],
+  "catalogue_agree": 0.0,
+  "corner_axes": [
+   "D12"
+  ]
+ },
+ {
+  "src": "2026-11-19-aequi-complete",
+  "sid": 787,
+  "group": "D2d",
+  "N": 8,
+  "label": "D2d: RD12/4a + RD12/4b",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   6
+  ],
+  "fair": true,
+  "corners": 8,
+  "depth_ratios": [
+   "1",
+   "1"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   1.0
+  ],
+  "catalogue_agree": 0.0,
+  "corner_axes": [
+   "C6",
+   "RD12"
+  ]
+ },
+ {
+  "src": "2026-11-19-aequi-complete",
+  "sid": 844,
+  "group": "D2h",
+  "N": 10,
+  "label": "D2h: C6/2 + RT24/8 (1)",
+  "G": "IhA",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   12
+  ],
+  "fair": true,
+  "corners": 12,
+  "depth_ratios": [
+   "1",
+   "1"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   1.0
+  ],
+  "catalogue_agree": 0.0,
+  "corner_axes": [
+   "C6",
+   "D12"
+  ]
+ },
+ {
+  "src": "2026-11-20-aequi-two-placements",
+  "sid": 95,
+  "group": "Td",
+  "N": 48,
+  "label": "Td: D12+D12\u2032/24 + RT24+RT24\u2032/24",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   1
+  ],
+  "fair": true,
+  "corners": 26,
+  "depth_ratios": [
+   "1",
+   "sqrt(2)*sqrt(sqrt(5) + 5)/4"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   0.9510565162951535
+  ],
+  "catalogue_agree": 0.0,
+  "corner_axes": [
+   "C6",
+   "O8",
+   "RD12"
+  ]
+ },
+ {
+  "src": "2026-11-24-aequi-certify-extend/aequi2a",
+  "sid": 272,
+  "group": "D4h",
+  "N": 24,
+  "label": "RD12/8 + D12+D12p/8a + D12+D12p/8b",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   2
+  ],
+  "fair": true,
+  "corners": 14,
+  "depth_ratios": [
+   "1",
+   "sqrt(10)*sqrt(2*sqrt(5) + 5)/10",
+   "sqrt(10)*sqrt(2*sqrt(5) + 5)/10"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   0.9732489894677302,
+   0.9732489894677302
+  ],
+  "catalogue_agree": 5.720979245893432e-13,
+  "corner_axes": [
+   "C6",
+   "O8"
+  ]
+ },
+ {
+  "src": "2026-11-24-aequi-certify-extend/aequi2a",
+  "sid": 273,
+  "group": "D4h",
+  "N": 24,
+  "label": "RD12/8 + I12+I12p/8a + I12+I12p/8b",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   2
+  ],
+  "fair": true,
+  "corners": 14,
+  "depth_ratios": [
+   "1",
+   "sqrt(30)/6",
+   "sqrt(30)/6"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   0.9128709291752769,
+   0.9128709291752769
+  ],
+  "catalogue_agree": 4.747313653297169e-13,
+  "corner_axes": [
+   "C6",
+   "O8"
+  ]
+ },
+ {
+  "src": "2026-11-24-aequi-certify-extend/aequi2a",
+  "sid": 274,
+  "group": "D4h",
+  "N": 24,
+  "label": "D12+D12p/8a + D12+D12p/8b + I12+I12p/8",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   2
+  ],
+  "fair": true,
+  "corners": 14,
+  "depth_ratios": [
+   "1",
+   "1",
+   "sqrt(3)*sqrt(25 - 10*sqrt(5))/3"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   1.0,
+   0.9379623704253995
+  ],
+  "catalogue_agree": 4.032219003136106e-12,
+  "corner_axes": [
+   "C6",
+   "O8"
+  ]
+ },
+ {
+  "src": "2026-11-24-aequi-certify-extend/aequi2a",
+  "sid": 275,
+  "group": "D4h",
+  "N": 24,
+  "label": "D12+D12p/8 + I12+I12p/8a + I12+I12p/8b",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   2
+  ],
+  "fair": true,
+  "corners": 14,
+  "depth_ratios": [
+   "1",
+   "sqrt(3)*sqrt(25 - 10*sqrt(5))/3",
+   "sqrt(3)*sqrt(25 - 10*sqrt(5))/3"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   0.9379623704253995,
+   0.9379623704253995
+  ],
+  "catalogue_agree": 1.4735990205849703e-12,
+  "corner_axes": [
+   "C6",
+   "O8"
+  ]
+ },
+ {
+  "src": "2026-11-24-aequi-certify-extend/aequi2a",
+  "sid": 276,
+  "group": "D4h",
+  "N": 24,
+  "label": "D12+D12p/8 + I12+I12p/8a + I12+I12p/8b",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   2
+  ],
+  "fair": true,
+  "corners": 14,
+  "depth_ratios": [
+   "1",
+   "sqrt(3)*sqrt(25 - 10*sqrt(5))/3",
+   "sqrt(3)*sqrt(25 - 10*sqrt(5))/3"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   0.9379623704253995,
+   0.9379623704253995
+  ],
+  "catalogue_agree": 7.582823258189819e-14,
+  "corner_axes": [
+   "C6",
+   "O8"
+  ]
+ },
+ {
+  "src": "2026-11-24-aequi-certify-extend/aequi2a",
+  "sid": 1509,
+  "group": "D3d",
+  "N": 48,
+  "label": "D12+D12p/12 + RT24+RT24p/12a + RT24+RT24p/12b + RT24+RT24p/12c",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   1
+  ],
+  "fair": true,
+  "corners": 26,
+  "depth_ratios": [
+   "1",
+   "sqrt(2)*sqrt(sqrt(5) + 5)/4",
+   "sqrt(2)*sqrt(sqrt(5) + 5)/4",
+   "sqrt(2)*sqrt(sqrt(5) + 5)/4"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   0.9510565162951535,
+   0.9510565162951535,
+   0.9510565162951535
+  ],
+  "catalogue_agree": 2.23487894857044e-13,
+  "corner_axes": [
+   "C6",
+   "O8",
+   "RD12"
+  ]
+ },
+ {
+  "src": "2026-11-24-aequi-certify-extend/aequi2a",
+  "sid": 3268,
+  "group": "D2h",
+  "N": 16,
+  "label": "D12+D12p/8 + RT24+RT24p/8",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   3
+  ],
+  "fair": true,
+  "corners": 10,
+  "depth_ratios": [
+   "1",
+   "sqrt(2)*sqrt(sqrt(5) + 5)/4"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   0.9510565162951535
+  ],
+  "catalogue_agree": 1.4976908602193362e-13,
+  "corner_axes": [
+   "C6",
+   "RD12"
+  ]
+ },
+ {
+  "src": "2026-11-24-aequi-certify-extend/aequi2a",
+  "sid": 3269,
+  "group": "D2h",
+  "N": 16,
+  "label": "D12+D12p/8 + RT24+RT24p/8",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   3
+  ],
+  "fair": true,
+  "corners": 10,
+  "depth_ratios": [
+   "1",
+   "sqrt(2)*sqrt(sqrt(5) + 5)/4"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   0.9510565162951535
+  ],
+  "catalogue_agree": 5.10702591327572e-15,
+  "corner_axes": [
+   "C6",
+   "RD12"
+  ]
+ },
+ {
+  "src": "2026-11-24-aequi-certify-extend/aequi2a",
+  "sid": 3270,
+  "group": "D2h",
+  "N": 16,
+  "label": "I12+I12p/8 + RT24+RT24p/8",
+  "G": "Oh",
+  "ok": true,
+  "incidences_exact": true,
+  "sides_supporting": true,
+  "closed_surface": true,
+  "sides_on_mirrors": true,
+  "triangles_per_face": [
+   3
+  ],
+  "fair": true,
+  "corners": 10,
+  "depth_ratios": [
+   "1",
+   "sqrt(3)/2"
+  ],
+  "depth_ratios_float": [
+   1.0,
+   0.8660254037844386
+  ],
+  "catalogue_agree": 1.1268763699945339e-13,
+  "corner_axes": [
+   "C6",
+   "RD12"
+  ]
+ }
+]
