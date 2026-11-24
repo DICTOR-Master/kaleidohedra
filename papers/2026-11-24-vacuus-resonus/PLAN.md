@@ -27,3 +27,4 @@ Release: only after conversation + DICTO's explicit read ok.
 
 ## DICTO decisions on draft v0 (24 Nov, conversation)
 - Title: "The Vacuus and the Resonus: Form and Emptiness in the Planes of Polyhedra".
+- Opening guiding thought (DICTO confirmed): "DICTO builds all his PET-bottle and B1NR sculptures as Vacuus and hulls: skeletons, and empty. He sees the relevance of the Vacuus and the Resonus to current mathematics in their emptiness as well as their form, like the Heart Sutra."
