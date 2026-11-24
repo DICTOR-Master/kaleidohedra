@@ -30,3 +30,4 @@ Release: only after conversation + DICTO's explicit read ok.
 - Opening guiding thought (DICTO confirmed): "DICTO builds all his PET-bottle and B1NR sculptures as Vacuus and hulls: skeletons, and empty. He sees the relevance of the Vacuus and the Resonus to current mathematics in their emptiness as well as their form, like the Heart Sutra."
 - Builds (DICTO 24 Nov): the B1NR cuboctahedron and dodecahedron Vacuus were made about two years ago (c. 2024). Order of the cardboard octahedron and B1NR cube as in #87 (not yet confirmed by DICTO).
 - DICTO: "all around 2024": all four builds c. 2024; opening: "DICTO built all four Vacuus frameworks around 2024".
+- Figures (DICTO yes): 1 four builds (skeletal/ring-fin renders); 2 cube Vacuus and Resonus side by side; 3 catalogue grid Platonic + Archimedean with Vacuus; 4 4D walls of the Queens (#110) labelled as the Resonus.
