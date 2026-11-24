@@ -1,0 +1,195 @@
+{
+ "5-cell": {
+  "name": "5-cell",
+  "f": [
+   5,
+   10,
+   10,
+   5
+  ],
+  "mirrors": 10,
+  "resonus": 5,
+  "resonus_facets_per": [
+   1
+  ],
+  "vacuus": 10,
+  "vacuus_ridges_per": [
+   1
+  ],
+  "resonus_and_vacuus": 0,
+  "resonus_on_mirrors": 0,
+  "vacuus_on_mirrors": 10,
+  "resonus_equals_vacuus": false,
+  "resonus_equals_mirrors": false,
+  "vacuus_equals_mirrors": true
+ },
+ "tesseract": {
+  "name": "tesseract",
+  "f": [
+   16,
+   32,
+   24,
+   8
+  ],
+  "mirrors": 16,
+  "resonus": 4,
+  "resonus_facets_per": [
+   2
+  ],
+  "vacuus": 12,
+  "vacuus_ridges_per": [
+   2
+  ],
+  "resonus_and_vacuus": 0,
+  "resonus_on_mirrors": 4,
+  "vacuus_on_mirrors": 12,
+  "resonus_equals_vacuus": false,
+  "resonus_equals_mirrors": false,
+  "vacuus_equals_mirrors": false
+ },
+ "16-cell": {
+  "name": "16-cell",
+  "f": [
+   8,
+   24,
+   32,
+   16
+  ],
+  "mirrors": 16,
+  "resonus": 8,
+  "resonus_facets_per": [
+   2
+  ],
+  "vacuus": 4,
+  "vacuus_ridges_per": [
+   8
+  ],
+  "resonus_and_vacuus": 0,
+  "resonus_on_mirrors": 0,
+  "vacuus_on_mirrors": 4,
+  "resonus_equals_vacuus": false,
+  "resonus_equals_mirrors": false,
+  "vacuus_equals_mirrors": false
+ },
+ "24-cell": {
+  "name": "24-cell",
+  "f": [
+   24,
+   96,
+   96,
+   24
+  ],
+  "mirrors": 24,
+  "resonus": 12,
+  "resonus_facets_per": [
+   2
+  ],
+  "vacuus": 12,
+  "vacuus_ridges_per": [
+   8
+  ],
+  "resonus_and_vacuus": 12,
+  "resonus_on_mirrors": 12,
+  "vacuus_on_mirrors": 12,
+  "resonus_equals_vacuus": true,
+  "resonus_equals_mirrors": false,
+  "vacuus_equals_mirrors": false
+ },
+ "600-cell": {
+  "name": "600-cell",
+  "f": [
+   120,
+   720,
+   1200,
+   600
+  ],
+  "mirrors": 60,
+  "resonus": 300,
+  "resonus_facets_per": [
+   2
+  ],
+  "vacuus": 60,
+  "vacuus_ridges_per": [
+   20
+  ],
+  "resonus_and_vacuus": 0,
+  "resonus_on_mirrors": 0,
+  "vacuus_on_mirrors": 60,
+  "resonus_equals_vacuus": false,
+  "resonus_equals_mirrors": false,
+  "vacuus_equals_mirrors": true
+ },
+ "120-cell": {
+  "name": "120-cell",
+  "f": [
+   600,
+   1200,
+   720,
+   120
+  ],
+  "mirrors": 60,
+  "resonus": 60,
+  "resonus_facets_per": [
+   2
+  ],
+  "vacuus": 60,
+  "vacuus_ridges_per": [
+   12
+  ],
+  "resonus_and_vacuus": 60,
+  "resonus_on_mirrors": 60,
+  "vacuus_on_mirrors": 60,
+  "resonus_equals_vacuus": true,
+  "resonus_equals_mirrors": true,
+  "vacuus_equals_mirrors": true
+ },
+ "4D permutohedron": {
+  "name": "4D permutohedron",
+  "f": [
+   120,
+   240,
+   150,
+   30
+  ],
+  "mirrors": 10,
+  "resonus": 15,
+  "resonus_facets_per": [
+   2
+  ],
+  "vacuus": 65,
+  "vacuus_ridges_per": [
+   2,
+   6
+  ],
+  "resonus_and_vacuus": 15,
+  "resonus_on_mirrors": 0,
+  "vacuus_on_mirrors": 0,
+  "resonus_equals_vacuus": false,
+  "resonus_equals_mirrors": false,
+  "vacuus_equals_mirrors": false
+ },
+ "600-cell (#110 frame)": {
+  "name": "600-cell in #110's frame",
+  "f": [
+   120,
+   720,
+   1200,
+   600
+  ],
+  "mirrors": 60,
+  "resonus": 300,
+  "resonus_facets_per": [
+   2
+  ],
+  "vacuus": 60,
+  "vacuus_ridges_per": [
+   20
+  ],
+  "resonus_and_vacuus": 0,
+  "resonus_on_mirrors": 0,
+  "vacuus_on_mirrors": 60,
+  "resonus_equals_vacuus": false,
+  "resonus_equals_mirrors": false,
+  "vacuus_equals_mirrors": true
+ }
+}
