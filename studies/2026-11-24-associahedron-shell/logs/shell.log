@@ -1,0 +1,362 @@
+A3 (truncated octahedron): |W| = 24, mirrors 6, Coxeter matrix [[1, 3, 2], [3, 1, 3], [2, 3, 1]], tower radicands ['3']
+  facet types (sides): [6, 4, 6]; |n|^2 = q^2 * ['3', '1', '3']
+  permutahedron: 24 vertices, 14 faces, volume 32.000000 (exact)
+  c = s1 s2 s3 (linear): kept 9, removed 5 (by sides [4, 4, 4, 6, 6]); associahedron 14 vertices; shell volume 15.333333
+    rim edges (removed face next to kept face) 16; shell components (clusters of removed faces): 1, sizes [5]
+    rule equal-speed: 5 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (4 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 5}
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 2, inner rim edges 4 | outer: 4 associahedron face(s), 8 boundary edges, 2 walls, 4 rim edges | Y 0 | ends share 6 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 6 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 0/5 (m = outer boundary edges, n = face sides) and 5/5 (n, m = wall neighbours inside, outside)
+    rule cone: 5 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (4 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 5}
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 2, inner rim edges 4 | outer: 4 associahedron face(s), 8 boundary edges, 2 walls, 4 rim edges | Y 0 | ends share 6 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 6 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 0/5 (m = outer boundary edges, n = face sides) and 5/5 (n, m = wall neighbours inside, outside)
+  c = s3 s2 s1 (linear, inverse): kept 9, removed 5 (by sides [4, 4, 4, 6, 6]); associahedron 14 vertices; shell volume 15.333333
+    rim edges (removed face next to kept face) 16; shell components (clusters of removed faces): 1, sizes [5]
+    rule equal-speed: 5 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (4 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 5}
+        2 x  6-gon face: inner walls 2, inner rim edges 4 | outer: 4 associahedron face(s), 8 boundary edges, 2 walls, 4 rim edges | Y 0 | ends share 6 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 6 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 0/5 (m = outer boundary edges, n = face sides) and 5/5 (n, m = wall neighbours inside, outside)
+    rule cone: 5 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (4 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 5}
+        2 x  6-gon face: inner walls 2, inner rim edges 4 | outer: 4 associahedron face(s), 8 boundary edges, 2 walls, 4 rim edges | Y 0 | ends share 6 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 6 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 0/5 (m = outer boundary edges, n = face sides) and 5/5 (n, m = wall neighbours inside, outside)
+  c = s2 s1 s3 (bipartite): kept 9, removed 5 (by sides [4, 4, 4, 6, 6]); associahedron 14 vertices; shell volume 20.666667
+    rim edges (removed face next to kept face) 14; shell components (clusters of removed faces): 1, sizes [5]
+    rule equal-speed: 5 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (5 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 5}
+        2 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 5 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 3 associahedron face(s), 6 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 0/5 (m = outer boundary edges, n = face sides) and 5/5 (n, m = wall neighbours inside, outside)
+    rule cone: 5 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (5 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 5}
+        2 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 5 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 3 associahedron face(s), 6 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 0/5 (m = outer boundary edges, n = face sides) and 5/5 (n, m = wall neighbours inside, outside)
+  c = s1 s3 s2 (bipartite, inverse): kept 9, removed 5 (by sides [4, 4, 4, 6, 6]); associahedron 14 vertices; shell volume 20.666667
+    rim edges (removed face next to kept face) 14; shell components (clusters of removed faces): 1, sizes [5]
+    rule equal-speed: 5 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (5 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 5}
+        2 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 5 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 3 associahedron face(s), 6 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 0/5 (m = outer boundary edges, n = face sides) and 5/5 (n, m = wall neighbours inside, outside)
+    rule cone: 5 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (5 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 5}
+        2 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 5 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 3 associahedron face(s), 6 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 0/5 (m = outer boundary edges, n = face sides) and 5/5 (n, m = wall neighbours inside, outside)
+  equal-speed: piece types of s1 s2 s3 (linear) and s3 s2 s1 (linear, inverse) agree
+  equal-speed: piece types of s2 s1 s3 (bipartite) and s1 s3 s2 (bipartite, inverse) agree
+  cone: piece types of s1 s2 s3 (linear) and s3 s2 s1 (linear, inverse) agree
+  cone: piece types of s2 s1 s3 (bipartite) and s1 s3 s2 (bipartite, inverse) agree
+A3 done in 0.4 s, checks ok
+PROGRESS 0.33 A3
+B3 (truncated cuboctahedron): |W| = 48, mirrors 9, Coxeter matrix [[1, 4, 2], [4, 1, 3], [2, 3, 1]], tower radicands ['2', '3']
+  facet types (sides): [6, 4, 8]; |n|^2 = q^2 * ['3', '1', '1']
+  permutahedron: 48 vertices, 26 faces, volume 334.391919 (exact)
+  c = s1 s2 s3 (linear): kept 12, removed 14 (by sides [4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 8, 8]); associahedron 20 vertices; shell volume 372.266041
+    rim edges (removed face next to kept face) 26; shell components (clusters of removed faces): 1, sizes [14]
+    rule equal-speed: 14 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (23 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 14}
+        4 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 3 associahedron face(s), 9 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 7, inner rim edges 1 | outer: 4 associahedron face(s), 12 boundary edges, 7 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 5, inner rim edges 3 | outer: 4 associahedron face(s), 10 boundary edges, 5 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 4/14 (m = outer boundary edges, n = face sides) and 14/14 (n, m = wall neighbours inside, outside)
+    rule cone: 14 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (23 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 14}
+        4 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 3 associahedron face(s), 9 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 7, inner rim edges 1 | outer: 4 associahedron face(s), 12 boundary edges, 7 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 5, inner rim edges 3 | outer: 4 associahedron face(s), 10 boundary edges, 5 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 4/14 (m = outer boundary edges, n = face sides) and 14/14 (n, m = wall neighbours inside, outside)
+  c = s3 s2 s1 (linear, inverse): kept 12, removed 14 (by sides [4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 8, 8]); associahedron 20 vertices; shell volume 372.266041
+    rim edges (removed face next to kept face) 26; shell components (clusters of removed faces): 1, sizes [14]
+    rule equal-speed: 14 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (23 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 14}
+        4 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 3 associahedron face(s), 9 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 5, inner rim edges 3 | outer: 4 associahedron face(s), 10 boundary edges, 5 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 7, inner rim edges 1 | outer: 4 associahedron face(s), 12 boundary edges, 7 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 4/14 (m = outer boundary edges, n = face sides) and 14/14 (n, m = wall neighbours inside, outside)
+    rule cone: 14 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (23 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 14}
+        4 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 3 associahedron face(s), 9 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 5, inner rim edges 3 | outer: 4 associahedron face(s), 10 boundary edges, 5 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 7, inner rim edges 1 | outer: 4 associahedron face(s), 12 boundary edges, 7 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 4/14 (m = outer boundary edges, n = face sides) and 14/14 (n, m = wall neighbours inside, outside)
+  c = s2 s1 s3 (bipartite): kept 12, removed 14 (by sides [4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 8, 8]); associahedron 20 vertices; shell volume 534.452188
+    rim edges (removed face next to kept face) 24; shell components (clusters of removed faces): 1, sizes [14]
+    rule equal-speed: 14 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (24 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 13, 'frustum (general tier)': 1}
+        3 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 3 associahedron face(s), 9 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 3 associahedron face(s), 10 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 7 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 3 associahedron face(s), 7 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  8-gon face: inner walls 7, inner rim edges 1 | outer: 3 associahedron face(s), 11 boundary edges, 7 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 6, inner rim edges 2 | outer: 3 associahedron face(s), 10 boundary edges, 6 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 2/14 (m = outer boundary edges, n = face sides) and 14/14 (n, m = wall neighbours inside, outside)
+    rule cone: 14 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (24 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 13, 'frustum (general tier)': 1}
+        3 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 3 associahedron face(s), 9 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 3 associahedron face(s), 9 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 7 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 2 associahedron face(s), 6 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  8-gon face: inner walls 7, inner rim edges 1 | outer: 3 associahedron face(s), 11 boundary edges, 7 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 6, inner rim edges 2 | outer: 3 associahedron face(s), 10 boundary edges, 6 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 2/14 (m = outer boundary edges, n = face sides) and 14/14 (n, m = wall neighbours inside, outside)
+  c = s1 s3 s2 (bipartite, inverse): kept 12, removed 14 (by sides [4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 8, 8]); associahedron 20 vertices; shell volume 534.452188
+    rim edges (removed face next to kept face) 24; shell components (clusters of removed faces): 1, sizes [14]
+    rule equal-speed: 14 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (24 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 13, 'frustum (general tier)': 1}
+        3 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 3 associahedron face(s), 9 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 7 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 3 associahedron face(s), 10 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 3 associahedron face(s), 7 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  8-gon face: inner walls 6, inner rim edges 2 | outer: 3 associahedron face(s), 10 boundary edges, 6 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 7, inner rim edges 1 | outer: 3 associahedron face(s), 11 boundary edges, 7 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 2/14 (m = outer boundary edges, n = face sides) and 14/14 (n, m = wall neighbours inside, outside)
+    rule cone: 14 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (24 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 13, 'frustum (general tier)': 1}
+        3 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 3 associahedron face(s), 9 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 7 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 3 associahedron face(s), 9 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 2 associahedron face(s), 6 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  8-gon face: inner walls 6, inner rim edges 2 | outer: 3 associahedron face(s), 10 boundary edges, 6 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  8-gon face: inner walls 7, inner rim edges 1 | outer: 3 associahedron face(s), 11 boundary edges, 7 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 2/14 (m = outer boundary edges, n = face sides) and 14/14 (n, m = wall neighbours inside, outside)
+  equal-speed: piece types of s1 s2 s3 (linear) and s3 s2 s1 (linear, inverse) agree
+  equal-speed: piece types of s2 s1 s3 (bipartite) and s1 s3 s2 (bipartite, inverse) agree
+  cone: piece types of s1 s2 s3 (linear) and s3 s2 s1 (linear, inverse) agree
+  cone: piece types of s2 s1 s3 (bipartite) and s1 s3 s2 (bipartite, inverse) agree
+B3 done in 4.9 s, checks ok
+PROGRESS 0.67 B3
+H3 (truncated icosidodecahedron): |W| = 120, mirrors 15, Coxeter matrix [[1, 5, 2], [5, 1, 3], [2, 3, 1]], tower radicands ['5', '3', '(5/2)+(1/2)*sqrt[5]']
+  facet types (sides): [6, 4, 10]; |n|^2 = q^2 * ['3', '1', 'phi+2']
+  permutahedron: 120 vertices, 62 faces, volume 390.557281 (exact)
+  c = s1 s2 s3 (linear): kept 18, removed 44 (by sides [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 10, 10, 10, 10, 10, 10]); associahedron 32 vertices; shell volume 1139.310070
+    rim edges (removed face next to kept face) 46; shell components (clusters of removed faces): 1, sizes [44]
+    rule equal-speed: 44 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (97 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 28, 'frustum (general tier)': 10, 'convex frustum': 6}
+       10 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        5 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 1 associahedron face(s), 4 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        4 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 8 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 1 associahedron face(s), 6 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 2 associahedron face(s), 6 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        2 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 3 associahedron face(s), 13 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 5 associahedron face(s), 11 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 1 associahedron face(s), 6 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 2 associahedron face(s), 8 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 9 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 4 associahedron face(s), 8 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 7, inner rim edges 3 | outer: 3 associahedron face(s), 12 boundary edges, 7 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 2 associahedron face(s), 12 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 3 associahedron face(s), 14 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 9, inner rim edges 1 | outer: 1 associahedron face(s), 10 boundary edges, 9 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 20/44 (m = outer boundary edges, n = face sides) and 44/44 (n, m = wall neighbours inside, outside)
+    rule cone: 44 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (97 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 28, 'frustum (general tier)': 9, 'convex frustum': 7}
+       10 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        6 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 1 associahedron face(s), 4 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        4 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 8 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 1 associahedron face(s), 6 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 2 associahedron face(s), 6 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        2 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 3 associahedron face(s), 13 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 5 associahedron face(s), 11 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 1 associahedron face(s), 6 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 2 associahedron face(s), 8 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 9 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 7, inner rim edges 3 | outer: 3 associahedron face(s), 12 boundary edges, 7 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 2 associahedron face(s), 12 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 4 associahedron face(s), 14 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 9, inner rim edges 1 | outer: 1 associahedron face(s), 10 boundary edges, 9 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 21/44 (m = outer boundary edges, n = face sides) and 44/44 (n, m = wall neighbours inside, outside)
+  c = s3 s2 s1 (linear, inverse): kept 18, removed 44 (by sides [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 10, 10, 10, 10, 10, 10]); associahedron 32 vertices; shell volume 1139.310070
+    rim edges (removed face next to kept face) 46; shell components (clusters of removed faces): 1, sizes [44]
+    rule equal-speed: 44 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (97 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'frustum (general tier)': 10, 'not a scutoid frustum: ends meet': 28, 'convex frustum': 6}
+       10 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        5 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 1 associahedron face(s), 4 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        4 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 8 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 1 associahedron face(s), 6 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 2 associahedron face(s), 6 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        2 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 3 associahedron face(s), 13 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 9 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 2 associahedron face(s), 8 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 1 associahedron face(s), 6 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        1 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 5 associahedron face(s), 11 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 4 associahedron face(s), 8 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 9, inner rim edges 1 | outer: 1 associahedron face(s), 10 boundary edges, 9 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 3 associahedron face(s), 14 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 2 associahedron face(s), 12 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 7, inner rim edges 3 | outer: 3 associahedron face(s), 12 boundary edges, 7 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 20/44 (m = outer boundary edges, n = face sides) and 44/44 (n, m = wall neighbours inside, outside)
+    rule cone: 44 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (97 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'frustum (general tier)': 9, 'not a scutoid frustum: ends meet': 28, 'convex frustum': 7}
+       10 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        6 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 1 associahedron face(s), 4 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        4 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 8 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 1 associahedron face(s), 6 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 2 associahedron face(s), 6 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        2 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 3 associahedron face(s), 13 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 9 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 2 associahedron face(s), 8 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 1 associahedron face(s), 6 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        1 x  6-gon face: inner walls 3, inner rim edges 3 | outer: 3 associahedron face(s), 8 boundary edges, 3 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 5 associahedron face(s), 11 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 9, inner rim edges 1 | outer: 1 associahedron face(s), 10 boundary edges, 9 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 4 associahedron face(s), 14 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 2 associahedron face(s), 12 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 7, inner rim edges 3 | outer: 3 associahedron face(s), 12 boundary edges, 7 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 21/44 (m = outer boundary edges, n = face sides) and 44/44 (n, m = wall neighbours inside, outside)
+  c = s2 s1 s3 (bipartite): kept 18, removed 44 (by sides [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 10, 10, 10, 10, 10, 10]); associahedron 32 vertices; shell volume 1695.563923
+    rim edges (removed face next to kept face) 44; shell components (clusters of removed faces): 1, sizes [44]
+    rule equal-speed: 44 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (98 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'frustum (general tier)': 13, 'not a scutoid frustum: ends meet': 27, 'convex frustum': 4}
+        8 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 8 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 2 associahedron face(s), 6 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        4 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 1 associahedron face(s), 4 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        3 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 1 associahedron face(s), 6 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 3 associahedron face(s), 7 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        2 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 2 associahedron face(s), 12 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        2 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 3 associahedron face(s), 13 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 10 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 9 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 1 associahedron face(s), 6 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        1 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 7 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 4 associahedron face(s), 10 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 9, inner rim edges 1 | outer: 1 associahedron face(s), 10 boundary edges, 9 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  10-gon face: inner walls 8, inner rim edges 2 | outer: 2 associahedron face(s), 11 boundary edges, 8 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 15/44 (m = outer boundary edges, n = face sides) and 44/44 (n, m = wall neighbours inside, outside)
+    rule cone: 44 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (98 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'frustum (general tier)': 11, 'not a scutoid frustum: ends meet': 27, 'convex frustum': 6}
+        8 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        5 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 1 associahedron face(s), 4 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        4 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 8 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 2 associahedron face(s), 6 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        3 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 3 associahedron face(s), 13 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        2 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 1 associahedron face(s), 6 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 10 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 9 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 1 associahedron face(s), 6 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        1 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 7 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 4 associahedron face(s), 10 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 3 associahedron face(s), 7 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 9, inner rim edges 1 | outer: 1 associahedron face(s), 10 boundary edges, 9 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 2 associahedron face(s), 12 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 8, inner rim edges 2 | outer: 2 associahedron face(s), 11 boundary edges, 8 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 17/44 (m = outer boundary edges, n = face sides) and 44/44 (n, m = wall neighbours inside, outside)
+  c = s1 s3 s2 (bipartite, inverse): kept 18, removed 44 (by sides [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 10, 10, 10, 10, 10, 10]); associahedron 32 vertices; shell volume 1695.563923
+    rim edges (removed face next to kept face) 44; shell components (clusters of removed faces): 1, sizes [44]
+    rule equal-speed: 44 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (98 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 27, 'frustum (general tier)': 13, 'convex frustum': 4}
+        8 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 8 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 2 associahedron face(s), 6 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        3 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 1 associahedron face(s), 4 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        2 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 1 associahedron face(s), 6 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        2 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 3 associahedron face(s), 7 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        2 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 3 associahedron face(s), 13 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        2 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 2 associahedron face(s), 12 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 4 associahedron face(s), 10 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 7 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 1 associahedron face(s), 6 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 9 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 10 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 8, inner rim edges 2 | outer: 2 associahedron face(s), 11 boundary edges, 8 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  10-gon face: inner walls 9, inner rim edges 1 | outer: 1 associahedron face(s), 10 boundary edges, 9 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 15/44 (m = outer boundary edges, n = face sides) and 44/44 (n, m = wall neighbours inside, outside)
+    rule cone: 44 pieces; exact checks: volumes sum to vol(assoc)-vol(perm) True; inner ends = removed faces True; walls match pairwise True (98 walls); outer areas per associahedron face True
+      pieces with a Y-corner 0; neighbours change inside->outside 0; neighbour count changes 0; tiers {'not a scutoid frustum: ends meet': 27, 'frustum (general tier)': 11, 'convex frustum': 6}
+        8 x  4-gon face: inner walls 3, inner rim edges 1 | outer: 1 associahedron face(s), 4 boundary edges, 3 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        5 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 1 associahedron face(s), 4 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        4 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 8 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        4 x  4-gon face: inner walls 1, inner rim edges 3 | outer: 3 associahedron face(s), 5 boundary edges, 1 walls, 3 rim edges | Y 0 | ends share 4 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 2 associahedron face(s), 8 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  4-gon face: inner walls 2, inner rim edges 2 | outer: 2 associahedron face(s), 5 boundary edges, 2 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        3 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 2 associahedron face(s), 6 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        3 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 3 associahedron face(s), 13 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        2 x  6-gon face: inner walls 5, inner rim edges 1 | outer: 1 associahedron face(s), 6 boundary edges, 5 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 4 associahedron face(s), 10 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 4, inner rim edges 2 | outer: 2 associahedron face(s), 7 boundary edges, 4 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 1 associahedron face(s), 6 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | convex frustum
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 9 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  6-gon face: inner walls 6, inner rim edges 0 | outer: 3 associahedron face(s), 10 boundary edges, 6 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  4-gon face: inner walls 4, inner rim edges 0 | outer: 3 associahedron face(s), 7 boundary edges, 4 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 8, inner rim edges 2 | outer: 2 associahedron face(s), 11 boundary edges, 8 walls, 2 rim edges | Y 0 | ends share 3 vertices | simple True | not a scutoid frustum: ends meet
+        1 x  10-gon face: inner walls 10, inner rim edges 0 | outer: 2 associahedron face(s), 12 boundary edges, 10 walls, 0 rim edges | Y 0 | ends share 0 vertices | simple True | frustum (general tier)
+        1 x  10-gon face: inner walls 9, inner rim edges 1 | outer: 1 associahedron face(s), 10 boundary edges, 9 walls, 1 rim edges | Y 0 | ends share 2 vertices | simple True | not a scutoid frustum: ends meet
+      law Y >= |n-m|, Y = n+m mod 2 holds for 17/44 (m = outer boundary edges, n = face sides) and 44/44 (n, m = wall neighbours inside, outside)
+  equal-speed: piece types of s1 s2 s3 (linear) and s3 s2 s1 (linear, inverse) agree
+  equal-speed: piece types of s2 s1 s3 (bipartite) and s1 s3 s2 (bipartite, inverse) agree
+  cone: piece types of s1 s2 s3 (linear) and s3 s2 s1 (linear, inverse) agree
+  cone: piece types of s2 s1 s3 (bipartite) and s1 s3 s2 (bipartite, inverse) agree
+H3 done in 69.0 s, checks ok
+PROGRESS 1.00 H3
+FINAL ok
