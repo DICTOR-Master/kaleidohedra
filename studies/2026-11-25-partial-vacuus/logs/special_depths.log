@@ -1,0 +1,8 @@
+cube          on icosahedron  : one wall at 0.618034 lies on a icosahedron face plane, but not every wall (rejected)
+icosahedron   pits stop on dodecahedron  faces: apex at -6 + 3*sqrt(5) = 0.708204 of the face distance; Q inradius / P face distance = 0.562777
+dodecahedron  on tetrahedron  : one wall at 0.527864 lies on a tetrahedron face plane, but not every wall (rejected)
+dodecahedron  on octahedron   : one wall at 0.527864 lies on a octahedron face plane, but not every wall (rejected)
+dodecahedron  pits stop on icosahedron   faces: apex at 5 - 2*sqrt(5) = 0.527864 of the face distance; Q inradius / P face distance = 0.419470
+control: excavated dodecahedron found at 5 - 2 sqrt5: True
+FINAL ok
+EXIT 0
