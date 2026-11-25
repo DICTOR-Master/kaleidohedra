@@ -1,6 +1,8 @@
+import os, sys
 from PIL import Image, ImageDraw, ImageFont
-R='/home/dicto/k-research/studies/2026-11-24-vacuus-build-renders/renders/'
-P=Image.open('/home/dicto/k-research/studies/2026-11-25-slot-assemblies/renders/PREVIEW-slot-assemblies-1-dicto-construction.png').convert('RGB')
+HERE = os.path.dirname(os.path.abspath(__file__))   # usage: python onepage.py <out.pdf> <preview.jpg>
+R=os.path.join(HERE,'../renders')+'/'
+P=Image.open(os.path.join(HERE,'../../2026-11-25-slot-assemblies/renders/PREVIEW-slot-assemblies-1-dicto-construction.png')).convert('RGB')
 sx=P.width/1320; sy=P.height/1580
 crop=lambda x0,y0,x1,y1: P.crop((int(x0*sx),int(y0*sy),int(x1*sx),int(y1*sy)))
 tiles=[(crop(60,185,640,770),'Octahedral form, assembled'),(crop(60,800,640,1390),'Octahedral form: pieces A, B, C1, C2'),
@@ -37,5 +39,5 @@ for head,idx in sections:
     y+=T+80
 d.text((W-M,H-60),'DICTO · dictospheres.com',font=f3,fill=(224,184,74),anchor='ra')
 print('used height',y,'of',H)
-S.save('/home/dicto/Documents/papers-to-read/VACUUS-BUILD-RENDERS-2026-11-25.pdf','PDF',resolution=300)
-S.resize((620,877)).save('/tmp/claude-1000/-home-dicto-Downloads-pet-bottle-rhombiverse/d4219d89-8c65-4da0-9f1b-e8400fa445e8/scratchpad/onepage.jpg')
+S.save(sys.argv[1],'PDF',resolution=300)
+S.resize((620,877)).save(sys.argv[2])

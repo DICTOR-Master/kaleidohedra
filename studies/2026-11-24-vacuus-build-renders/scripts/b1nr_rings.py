@@ -1,8 +1,8 @@
 """B1NR cube as DICTO built it (25 Nov): bottle rings folded into rounded triangles. Each of the 12 fins (centre O + one cube edge) is a 3 x 3
 triangular grid of 9 rounded-triangle rings; neighbours share sides (touch, no overlap); no struts; the rounded corners leave an open space
 where the 12 fins meet at the centre. Cube [-1,1]^3. Usage: python b1nr_rings.py <out.html>. House renderer render3d.py (unchanged)."""
-import sys, itertools, numpy as np
-sys.path.insert(0, '/home/dicto/k-research/studies/2026-11-21-scutoid-stand-in/renders/scripts')
+import sys, os, itertools, numpy as np
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../2026-11-21-scutoid-stand-in/renders/scripts'))
 import render3d
 O = np.zeros(3)
 CV = [np.array(p, float) for p in itertools.product((-1, 1), repeat=3)]
