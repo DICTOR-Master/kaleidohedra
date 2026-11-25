@@ -3,7 +3,7 @@
 DICTO · project V SF A (Vacuus, Scutoid Frusta, Aequus), row SF of the Map: define, enumerate. Term "Scutoid Frusta" (singular
 scutoid frustum) and the Map are DICTO's. "Scutoid" alone below means only the 2018 biology term (Gómez-Gálvez et al., Nat. Commun. 9, 2960, 2018).
 
-> **Status box.** Study note, not published. Definition is a PROPOSAL awaiting DICTO's answers (Questions, below). All counts exact;
+> **Status box.** Study note, not published. Definition SETTLED by DICTO's decisions (below, 25 Nov). All counts exact;
 > every listed solid realised with rational coordinates and checked in exact arithmetic. Literature on counting scutoid types not yet searched (LEAD 5).
 
 **Verdict.** With the proposed convex definition, there are exactly **45 combinatorial types of Scutoid Frusta with end side counts
@@ -59,6 +59,13 @@ the ends), which the paper does not discuss. The wider tier below (bent walls, c
 So the convex definition misses nearly all amber pieces. A second, wider tier would hold them: **scutoid frustum (general)**: a solid
 topologically a ball, with two disjoint end discs, a band of lateral faces between them (faces may be bent), each lateral face meeting an
 end; Y-corners = vertices in the band. Question 1 asks which tier is "the" definition.
+
+
+**DECISIONS (DICTO, 24-25 Nov 2026).** 1 two tiers: Scutoid-Frusta = the general piece (amber pieces included); convex Scutoid-Frusta =
+the enumerated class (24 Nov). 2 flat ends for the convex tier; the general tier may have a bent mould end. 3 convexity for the convex tier
+only. 4 parallel ends not required. 5 every lateral face meets an end (required). 6 three edges at every corner required for the count;
+merged four-edged corners listed separately as limiting cases. 7 a type is the solid with its two chosen end faces; solids with more
+than one reading are noted. 8 mirror images one type, the two-handed count shown beside it (45 types; 58 with both hands).
 
 ## 2. Questions for DICTO
 
