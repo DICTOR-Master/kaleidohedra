@@ -90,7 +90,7 @@ print([a(n) for n in range(26)])</pre><button type="button" class="cp">Copy</but
 <p class="sub">Ready to paste</p>
 <div class="opt"><pre>nonn,walk</pre><button type="button" class="cp">Copy</button></div>
 <textarea id="f-keyword" data-label="Keywords" aria-label="Your Keywords" placeholder="Your keywords (paste or write here)"></textarea></div>
-<div class="card"><div class="top"><span class="lab">Your whole entry</span><button type="button" id="all">Copy my entry</button></div><p class="what">Copies every field you filled in, labelled, in form order. Paste it back to me and I check it field by field.</p></div>
+<div class="card"><div class="top"><span class="lab">Your whole entry</span><button type="button" id="all">Copy my entry</button></div><p class="what">Press the button: your whole entry appears in the box below, already selected. If it does not copy by itself, press and hold in the box, choose Select All, then Copy, and paste it into our chat.</p><textarea id="out" readonly aria-label="Your whole entry" placeholder="Your whole entry appears here" style="min-height:10em"></textarea></div>
 <h2>Model entries to look at</h2><p class="what">Existing entries of the same kind, in full as the OEIS shows them. The letters mean: %N name, %S data, %F formula, %H links, %o program, %Y crossrefs, %K keywords, %O offset.</p>
 <details><summary>A338672: the closest model: closed walks on the kagome lattice.</summary><pre style="margin-top:8px">%S A338672 1,0,4,4,28,60,264,784,3004,10204,37824,135784,502784,1851200,6901696,
 %N A338672 Number of n-step closed walks on kagome lattice.
@@ -161,5 +161,5 @@ function flash(b,t){var o=b.id==='all'?'Copy my entry':'Copy';b.textContent=t;b.
 function copy(text,b,sel){try{navigator.clipboard.writeText(text).then(function(){flash(b,'Copied')},function(){sel&&sel();b.textContent='Selected'})}catch(e){sel&&sel();b.textContent='Selected'}}
 document.querySelectorAll('button.cp').forEach(function(b){b.addEventListener('click',function(){var p=b.previousElementSibling;copy(p.innerText,b,function(){var r=document.createRange();r.selectNodeContents(p);var s=getSelection();s.removeAllRanges();s.addRange(r)})})});
 document.querySelectorAll('textarea').forEach(function(t){try{var v=localStorage.getItem('pyro-'+t.id);if(v)t.value=v}catch(e){}t.addEventListener('input',function(){try{localStorage.setItem('pyro-'+t.id,t.value)}catch(e){}})});
-document.getElementById('all').addEventListener('click',function(){var s=[];document.querySelectorAll('textarea').forEach(function(t){if(t.value.trim())s.push(t.dataset.label+':\n'+t.value.trim())});copy(s.join('\n\n')||'(nothing written yet)',this)});
+document.getElementById('all').addEventListener('click',function(){var s=[];document.querySelectorAll('textarea[data-label]').forEach(function(t){if(t.value.trim())s.push(t.dataset.label+':\n'+t.value.trim())});var txt=s.join('\n\n')||'(nothing written yet)';var o=document.getElementById('out');o.value=txt;o.focus();o.select();try{o.setSelectionRange(0,txt.length)}catch(e){}copy(txt,this,function(){})});
 </script>

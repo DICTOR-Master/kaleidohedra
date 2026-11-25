@@ -260,7 +260,8 @@ cube's Vacuus web, the rhombic dodecahedron's web and the Delone tiling of bcc.
 4. **4D: CLOSED (25 Nov, exact, scripts/web4d_24cell.py, logs/web4d_24cell.log).** The 24-cell, taken as the Voronoi cell of
    D4 = {x in Z^4 : coordinate sum even}, with corners the 8 permutations of (±1,0,0,0) and the 16 points (±½,±½,±½,±½).
    - Its Vacuus (the hyperplanes through the centre and each of its 96 triangles) and its Resonus (the hyperplanes through the centre
-     parallel to its 24 facets) are the same 12 hyperplanes r·x = 0, one for each pair ±r of the 24 roots ±e_i ± e_j.
+     parallel to its 24 facets) are the same 12 hyperplanes r·x = 0, one for each pair ±r of the 24 roots ±e_i ± e_j. This is
+     already Theorem 2 of study 2026-11-25-quality-overlaps (root polytopes); re-checked here only. New here: the web below.
    - For every family, h = 1 and the layer spacing is d = 1 (r·D4 = Z), so k = 2. The family continues (Theorem 0; the covering
      argument does not depend on the dimension).
    - The web is the set of all hyperplanes r·x ∈ Z. This is **the affine D4 (D̃4) alcove arrangement**. Only r·x = 0 meets the
