@@ -9,13 +9,10 @@
 <p class="sub">Alexandrov's theorem on polytopes with prescribed curvature, and the fair-die theorem of the Aequi paper, stated as formalised in Lean 4</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
-Version 1 · Licence CC BY-SA 4.0 · Lean source: https://github.com/DICTOR-Master/fair-dice-lean, commit 939e6c55df8c688525355ed800e30421a5f7ac15 (the paper and the Lean source are one release, at one commit; §6).<br>
+Paper #121 · Version 1 · 25 November 2026 · DICTO DOI: 10.5281/zenodo.24522000 (all versions; Version 1: 10.5281/zenodo.24522001) · Licence CC BY-SA 4.0 · Lean source: https://github.com/DICTOR-Master/fair-dice-lean, commit 939e6c55df8c688525355ed800e30421a5f7ac15 (the paper and the Lean source are one release, at one commit; §6).<br>
 DICTO: the question of when a fair die exists for given face directions, the Aequi (fair dice, #112 [1]), and the decision to formalise #112's Lemma 1 and Theorem A (a) and release the paper and the Lean source together as one work. Computation, proofs, verification and drafting with Claude (Anthropic).
 </div>
-<div class="status"><b>DRAFT of 25 November 2026, for DICTO's read; nothing published.</b><br>
-· Title DICTO's (25 Nov): "Fair Dice from Curvature: Alexandrov's Theorem, Machine-Checked"; repository name fair-dice-lean (DICTO, 25 Nov).<br>
-· The Lean source at commit 939e6c55 passed Palomar's preflight (GitHub run 45542902049, 25 Nov 2026). The paper number and the DICTO DOI are assigned at release.<br>
-· The grey boxes are copied from Challenge.lean at that commit.</div>
+
 
 <div class="abstract"><b>Abstract.</b> A die is fair, in the sense of #112 [1], when every face is seen from its centre under the same solid angle. Which face directions admit a fair die, and how many? The answer rests on a classical theorem of A. D. Alexandrov [2]: for unit vectors not all in one closed hemisphere, a polytope with corners on the rays through them and prescribed positive curvatures at those corners exists exactly when the curvatures add up to 4π and satisfy Alexandrov's condition, and it is unique up to scaling. The polytope case was proved by Oliker [3] and Bertrand [4]. Through the polar identity of #112 (the solid angle of a face of a die equals the curvature of its polar at the matching corner), a fair die with given face normals exists exactly when Alexandrov's condition holds for the equal curvatures 4π/N, and it is then unique up to scaling. We give a Lean 4 proof, with Mathlib, of Alexandrov's theorem in the polytope case (existence, necessity and uniqueness) and of these two statements on fair dice. The proof compiles with no <code>sorry</code> and only Lean's standard axioms; its five statements are registered for Palomar's comparator. The theorems are Alexandrov's, Oliker's, Bertrand's and #112's; this paper and its Lean source claim only the formalization. We found no earlier machine-checked proof of Alexandrov's theorem on prescribed curvature (§5).</div>
 
