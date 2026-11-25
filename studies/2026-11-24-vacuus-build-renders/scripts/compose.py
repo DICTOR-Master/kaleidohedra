@@ -14,11 +14,11 @@ tiles = []
 for i, n in enumerate(names):
     fr = Image.open(f'{SH}/p{i}.png').convert('RGBA'); bg = Image.new('RGBA', fr.size, BG + (255,)); im = Image.alpha_composite(bg, fr).convert('RGB')
     im.save(f'{OUT}/{n}.jpg', quality=92); tiles.append(im)
-T = 520; rows = [[0, 1], [2, 3], [4, 5, 6], [7, 8]]; heads = ['1  Cardboard octahedron Vacuus', '2  B1NR cube Vacuus: bottle rings folded into rounded triangles (no hull)', '3  B1NR cuboctahedron Vacuus: bottle rings in the fins (no hull)', '4  B1NR dodecahedron Vacuus: bottle rings in the fins (no hull)']
+T = 520; rows = [[2, 3], [4, 5, 6], [7, 8]]; heads = ['2  B1NR cube Vacuus: bottle rings folded into rounded triangles (no hull)', '3  B1NR cuboctahedron Vacuus: bottle rings in the fins (no hull)', '4  B1NR dodecahedron Vacuus: bottle rings in the fins (no hull)']
 W = 3 * T + 80; H = 140 + len(rows) * (T + 110) + 40
 S = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(S)
 f1, f2, f3 = ImageFont.truetype(FB, 34), ImageFont.truetype(FB, 24), ImageFont.truetype(FONT, 18)
-d.text((40, 40), 'DICTO Vacuus builds: exact renders', font=f1, fill=(232, 226, 214))
+d.text((40, 40), 'DICTO Vacuus builds: exact renders (1, the slotted card models, on the page before)', font=f1, fill=(232, 226, 214))
 y = 120
 for r, row in enumerate(rows):
     d.text((40, y), heads[r], font=f2, fill=(224, 184, 74)); y += 40
