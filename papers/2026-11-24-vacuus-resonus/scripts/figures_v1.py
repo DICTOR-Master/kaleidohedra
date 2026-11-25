@@ -5,6 +5,7 @@
                       and 13 Archimedean polyhedra, each with its Vacuus drawn as fins: the triangle from the centre O to every edge,
                       which spans that edge's plate). Frames by the renderer's shots.mjs (Playwright) on the print host.
   compose <shots> <figdir> : Figure 1 (the four build renders of study 2026-11-24-vacuus-build-renders, 2 x 2), Figure 2 and Figure 3.
+  fig1 <figdir>             : Figure 1 alone.
 Coordinates are the standard ones (floats for drawing only); every polyhedron is checked against the exact catalogue
 (study 2026-11-24-vacuus-resonus-catalogue, data/vacuus-resonus-catalogue.csv): corners, edges, faces, all edges equal, and the number
 of Vacuus plates (distinct planes through O and an edge) and Resonus planes (distinct planes through O parallel to a face). Ends FINAL ok."""
@@ -165,7 +166,7 @@ def scenes(out):
 def compose(SH, FIG):
     from PIL import Image, ImageDraw, ImageFont
     FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
-    names = open(os.path.join(SH, 'scenes.names')).read().splitlines()
+    names = open(os.path.join(SH, 'scenes.names')).read().splitlines() if SH else None   # SH None: Figure 1 only
     rows = {r['solid']: r for r in csv.DictReader(open(CSV))}
     def frame(i):
         fr = Image.open(f'{SH}/p{i}.png').convert('RGBA'); bg = Image.new('RGBA', fr.size, BG + (255,))
@@ -176,7 +177,7 @@ def compose(SH, FIG):
     f_lab = ImageFont.truetype(FONT, 26); f_sm = ImageFont.truetype(FONT, 21); mark = 'DICTO · dictospheres.com'
     TXT = (226, 222, 212); GOLD = (224, 184, 74)
     # Figure 1: the four builds, 2 x 2, labels a-d
-    b = ['octahedron-cardboard-skeleton', 'cube-b1nr-skeleton', 'cuboctahedron-ring-fins', 'dodecahedron-ring-fins']
+    b = ['octahedron-cardboard-cards', 'cube-b1nr-skeleton', 'cuboctahedron-ring-fins', 'dodecahedron-ring-fins']
     lab = ['a  cardboard octahedron', 'b  B1NR cube', 'c  B1NR cuboctahedron, ring fins', 'd  B1NR dodecahedron, ring fins']
     T = 760; S = Image.new('RGB', (2 * T + 60, 2 * (T + 50) + 70), BG); d = ImageDraw.Draw(S)
     for k, n in enumerate(b):
@@ -184,6 +185,7 @@ def compose(SH, FIG):
         x, y = 20 + (k % 2) * (T + 20), 20 + (k // 2) * (T + 50)
         S.paste(im.resize((T, T), Image.LANCZOS), (x, y)); d.text((x + 10, y + T + 8), lab[k], font=f_lab, fill=TXT)
     d.text((S.size[0] - 20, S.size[1] - 18), mark, font=f_sm, fill=GOLD, anchor='rd'); S.save(os.path.join(FIG, 'fig1-four-builds.jpg'), quality=91)
+    if SH is None: return
     # Figure 2: the cube, Vacuus | Resonus
     T = 900; S = Image.new('RGB', (2 * T + 60, T + 120), BG); d = ImageDraw.Draw(S)
     for k, (i, t) in enumerate([(names.index('fig2-vacuus'), 'Vacuus: 6 plates, through the centre and an edge'),
@@ -208,4 +210,5 @@ def compose(SH, FIG):
 if __name__ == '__main__':
     if sys.argv[1] == 'scenes': scenes(sys.argv[2])
     elif sys.argv[1] == 'compose': compose(sys.argv[2], sys.argv[3])
+    elif sys.argv[1] == 'fig1': compose(None, sys.argv[2])     # Figure 1 alone, from the build renders (no scene shots needed)
     print('FINAL ok' if all(OK) else 'FINAL FAIL')

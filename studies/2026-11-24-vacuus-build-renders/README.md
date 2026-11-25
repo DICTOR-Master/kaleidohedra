@@ -2,15 +2,21 @@
 
 Purpose: DICTO asked for 3D renders of his physical Vacuus builds to use in paper #87 (DICTO Vacuus Solids) IN PLACE of his photos,
 "similar but better". DICTO, 24 Nov: "the way I build all my PET bottle and B1NR sculptures is as Vacuus ... and hulls ... they are
-skeletons and empty"; he confirmed SKELETAL renders. So every build is an open framework of struts (tubes) and joints (balls), with
-no faces: the empty space shows. The two ring-fin builds (3, 4) are drawn as he builds them: bottle rings inscribed in the Vacuus fins.
-The photos were private reference only and are not in this folder. Nothing is fitted to a photo: every strut joins exact corners of the
-solid the build realises, and every ring is the exact incircle of its fin.
+skeletons and empty"; he confirmed SKELETAL renders. So builds 2-4 are open frameworks (struts and joints, or rings), with no
+faces: the empty space shows. The cardboard octahedron (1) is the exception: DICTO 25 Nov, it is "three flat squares and can only
+represent the octahedron", so it is drawn as three solid cards. The two ring-fin builds (3, 4) are drawn as he builds them: bottle rings inscribed in the Vacuus fins.
+The photos were private reference only and are not in this folder. Nothing is fitted to a photo: every card corner is an exact corner and every
+strut joins exact corners of the solid the build realises, and every ring is the exact incircle of its fin.
 
 Result (renders/, frames on a dark ground; preview-sheet.jpg shows all nine). DICTO, 24 Nov: his Vacuus builds are exactly four.
-1. Cardboard octahedron (octahedron-cardboard-skeleton*.jpg), corners at distance 1 on the axes: the 12 edges + the 6 corner-to-centre
-   struts, so the three squares x = 0, y = 0, z = 0 stand as frames (each: 4 edges + its two diagonals = 4 half-axes; each half-axis
-   is shared by two squares). Cardboard-tan struts. Pull-apart: each square frame moved 9/5 along its own normal (disjoint, as 9/5 > 1).
+1. Cardboard octahedron (octahedron-cardboard-cards*.jpg), corners at distance 1 on the axes: three solid flat square cards in the
+   planes x = 0, y = 0, z = 0 (DICTO 25 Nov: "three flat squares and can only represent the octahedron"). Each card is the square with
+   its corners on the two axes in its plane (for z = 0: (+-1, 0, 0) and (0, +-1, 0)), side sqrt 2, its 4 sides octahedron edges (builds.py
+   asserts both); any two cards meet along a whole axis, drawn as a thin crease line. How the three cards are joined is not known (three
+   whole cards at right angles cannot all be joined by simple half-slots), so no joint is drawn. Cardboard tan, solid faces, crisp dark
+   outline. Pull-apart: each card moved 9/5 along its own normal (disjoint, as 9/5 > 1), the group recentred in the picture.
+   Not the cube's Resonus cards: the cube [-1,1]^3 has its Resonus in the same three planes, but its cards are its middle squares, side 2,
+   larger and turned 45 degrees.
 2. B1NR cube (cube-b1nr-skeleton*.jpg), [-1,1]^3: the hull skeleton (12 edges) + the Vacuus skeleton (8 corner-to-centre struts): the
    empty cube that is six square pyramids meeting at the centre. Clear bottle-like tubes (see-through, bright core line, see-through
    joints). Pull-apart: the six pyramid frames (4 base edges + 4 struts each) moved 27/5 along the face normals (was 9/5, where two
@@ -55,6 +61,8 @@ Withdrawn (DICTO 24 Nov): the white "Vacuus, as a solid cube" ring photo IS the 
 struts, six pyramid frames meeting at the centre). Our earlier reading of it as six diagonal rectangles was a misreading; that render
 section, its frames and its code are deleted (they stay in git history).
 
+Superseded (25 Nov): the skeletal octahedron (12 edges + 6 half-axes as three square frames, octahedron-cardboard-skeleton*.jpg) is
+replaced by the three solid cards and deleted; it stays in git history.
 Superseded: the filled-plane renders of this study (slotted cardboard boards, glass-faced pyramids, the twelve fins, whole white
 rectangles; commits up to 6f890699) are replaced by the skeletal set and deleted, as nothing else referenced them; they stay in git history.
 
@@ -67,7 +75,7 @@ Ring fins (Q(sqrt 3, sqrt 5)): 24 and 30 rings, one per fin; each in its fin's p
 radius each (sqrt 6 / 6; (sqrt 3 - 1/phi)/phi^2); plates 4 x 6 and 15 x 2; touching pairs 72 (24 coplanar + 48 across) and 60 (0 + 60),
 no pair crossing or overlapping; touching points 12 (4 rings each) and 20 (3 each), one on every spoke. Zero tests exact (simplify);
 nonzero values certified by 30-digit error-controlled evaluation.
-builds.py asserts that no scene contains a face, the B1NR box separation, the cuboctahedron plate hull separation, and the ring
+builds.py asserts that no scene of builds 2-4 contains a face (the octahedron: 3 cards, 6 triangles), the B1NR box separation, the cuboctahedron plate hull separation, and the ring
 tangencies in floats (data/builds.log).
 
 Method: scripts/builds.py writes the scenes for the house renderer (render3d.py of study 2026-11-21-scutoid-stand-in, three.js r128,

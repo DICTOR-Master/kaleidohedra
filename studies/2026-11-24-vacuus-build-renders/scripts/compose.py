@@ -4,9 +4,9 @@ from PIL import Image, ImageDraw, ImageFont
 SH, OUT, SHEET = sys.argv[1:4]
 BG = (20, 22, 28)
 FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; FB = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
-names = ['octahedron-cardboard-skeleton', 'octahedron-cardboard-skeleton-pulled', 'cube-b1nr-skeleton', 'cube-b1nr-skeleton-pulled',
+names = ['octahedron-cardboard-cards', 'octahedron-cardboard-cards-pulled', 'cube-b1nr-skeleton', 'cube-b1nr-skeleton-pulled',
          'cuboctahedron-ring-fins', 'cuboctahedron-ring-fins-axis3', 'cuboctahedron-ring-fins-pulled', 'dodecahedron-ring-fins', 'dodecahedron-ring-fins-axis5']
-caps = ['Cardboard octahedron: three square frames', 'The three square frames pulled apart',
+caps = ['Cardboard octahedron: three square cards', 'The three cards pulled apart',
         'B1NR cube: hull + centre struts, empty', 'Its six pyramid frames pulled apart',
         'Cuboctahedron: 24 rings, one per fin', 'Down a three-fold axis', 'Its four hexagon plates pulled apart',
         'Dodecahedron: 30 rings, one per fin', 'Down a five-fold axis']

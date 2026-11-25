@@ -1,10 +1,11 @@
 """Exact SKELETAL renders of DICTO's four Vacuus builds (paper #87 DICTO Vacuus Solids), 24 Nov 2026.
 DICTO, 24 Nov: "the way I build all my PET bottle and B1NR sculptures is as Vacuus ... and hulls ... they are skeletons and empty".
-So every build is drawn as an open framework: struts (tubes) and joints (balls), no faces; the empty space shows.
+So builds 2-4 are drawn as open frameworks (struts or rings, no faces); the cardboard octahedron (1) is three solid cards.
 Not fitted to photos: every strut joins exact corners of the solid the build realises.
- 1. Cardboard octahedron (corners +-e_i): its 12 edges + the 6 corner-to-centre struts (the three half-axes pairs), so the three
-    squares x = 0, y = 0, z = 0 stand as frames (each: 4 edges + its 2 diagonals = 4 half-axes). Pull-apart: each square frame
-    moved along its own normal.
+ 1. Cardboard octahedron (corners +-e_i): DICTO 25 Nov, "three flat squares and can only represent the octahedron". Three SOLID square
+    cards in the planes x = 0, y = 0, z = 0, each the square with its corners on the two axes in its plane (for z = 0: (+-1, 0, 0) and
+    (0, +-1, 0)); any two cards meet along a whole axis (drawn as a thin crease line). How the cards are joined is not known and is not
+    drawn. Pull-apart: each card moved along its own normal.
  2. B1NR cube [-1,1]^3: the hull skeleton (12 edges) + the Vacuus skeleton (8 corner-to-centre struts): the empty cube that is six
     square pyramids meeting at the centre O. Clear tubes. Pull-apart: the six pyramid skeletons along the face normals, pull 27/5,
     chosen so that the six frames' projected bounding boxes (joint balls included) are pairwise disjoint in the drawn view.
@@ -69,13 +70,37 @@ O = np.zeros(3)
 OV = [s * np.eye(3)[k] for k in range(3) for s in (1, -1)]
 OE = [(p, q) for p, q in itertools.combinations(OV, 2) if abs(np.dot(p, q)) < 1e-12]          # 12 edges
 OS = [(O, p) for p in OV]                                                                     # 6 corner-to-centre struts
-TAN, TAN_OUT, TAN_BALL = '#c9a77c', '#5a4229', '#a8855a'
-def octa_square(k):                       # the square in the plane x_k = 0: its 4 edges and its 4 half-axes
-    return [(p, q) for p, q in OE if p[k] == 0 and q[k] == 0] + [(O, p) for p in OV if p[k] == 0]
+TAN, TAN_EDGE, TAN_CREASE = '#c9a77c', '#6b4e2e', '#7d5f3c'
+def card(k):
+    """the card in the plane x_k = 0: the square on the 4 octahedron corners in that plane, in cyclic order"""
+    i, j = [m for m in range(3) if m != k]; e = np.eye(3)
+    return [e[i], e[j], -e[i], -e[j]]
+for k in range(3):
+    Q = card(k)
+    assert all(p[k] == 0 for p in Q) and all(abs(np.linalg.norm(Q[m] - Q[(m + 1) % 4]) - 2 ** 0.5) < 1e-12 for m in range(4))
+    assert all(any(np.allclose(p, q) for q in OV) for p in Q)                                   # corners = octahedron corners
+    assert all(any(np.allclose(sorted(map(tuple, (Q[m], Q[(m + 1) % 4]))), sorted(map(tuple, e))) for e in OE) for m in range(4))  # sides = edges
+def cards_part(ks, shift=lambda k: np.zeros(3)):
+    """solid cards (two triangles each, both sides lit), their outline as crisp edge tubes, and the crease where two cards meet
+    (the whole axis common to both), drawn only when the cards are together"""
+    V, T, C, U = [], [], [], []
+    def vid(p):
+        p = list(np.round(np.array(p, float), 6))
+        if p not in V: V.append(p)
+        return V.index(p)
+    for k in ks:
+        ids = [vid(p + shift(k)) for p in card(k)]
+        T += [[ids[0], ids[1], ids[2]], [ids[0], ids[2], ids[3]]]; C += [TAN, TAN]
+        U += [[ids[m], ids[(m + 1) % 4], TAN_EDGE, None] for m in range(4)]
+    if len(ks) == 3 and not shift(0).any():
+        for k in range(3): U.append([vid(np.eye(3)[k]), vid(-np.eye(3)[k]), TAN_CREASE, None])
+    return {'v': V, 't': T, 'c': C, 'a': 1, 'tubes': U, 'rad': 0.0042, 'balls': [[i, TAN_EDGE] for i in range(len(V))]}
 def octa_all():
-    return [skel(OE + OS, TAN, TAN_OUT, 0.0105, TAN_BALL)]
-def octa_pulled(pull):
-    return [skel(octa_square(k), TAN, TAN_OUT, 0.0105, TAN_BALL, np.eye(3)[k] * pull * (1 if k != 1 else -1)) for k in range(3)]
+    return [cards_part([0, 1, 2])]
+def octa_pulled(pull):                    # each card moved along its own normal; the group recentred on the picture (mean shift taken off)
+    sh = lambda k: np.eye(3)[k] * pull * (1 if k != 1 else -1)
+    m = sum(sh(k) for k in range(3)) / 3
+    return [cards_part([k], lambda k: sh(k) - m) for k in range(3)]
 
 # ---------------- cube ----------------
 CV = [np.array(p, float) for p in itertools.product((-1, 1), repeat=3)]
@@ -213,8 +238,8 @@ for nm, V in (('cuboctahedron', QV), ('dodecahedron', DV)):
     c, n, r = rings_of(V)[0]; tp = touch_points(V)
     print('  %s ring radius %.6f, centre at %.6f from O; %d clasps, %d rings at each, at %.6f from O' % (nm, r, np.linalg.norm(c), len(tp), tp[0][2], np.linalg.norm(tp[0][0])))
 scenes = [
-    {'E': 1.30, 'dir': VO, 'parts': octa_all()},             # p0 octahedron skeleton: 12 edges + 6 half-axes (three square frames)
-    {'E': 2.95, 'dir': VO, 'parts': octa_pulled(1.8)},       # p1 the three square frames pulled apart along their normals
+    {'E': 1.30, 'dir': VO, 'parts': octa_all()},             # p0 cardboard octahedron: three solid square cards
+    {'E': 2.30, 'dir': VO, 'parts': octa_pulled(1.8)},       # p1 the three cards pulled apart along their normals
     {'E': 1.95, 'dir': VC, 'parts': b1nr_all()},             # p2 B1NR cube: 12 edges + 8 corner-to-centre struts
     {'E': EP, 'dir': VC, 'parts': b1nr_pulled(PULLB)},       # p3 its six pyramid skeletons pulled apart
     {'E': 1.50, 'dir': VC, 'parts': [ring_part(QV)]},       # p4 cuboctahedron ring-fin Vacuus: 24 rings, 12 clasps
@@ -226,5 +251,5 @@ scenes = [
 render3d.write(sys.argv[1], scenes)
 ok = (len(OE), len(OS), len(CE), len(CS), len(QV), len(DV)) == (12, 6, 12, 8, 12, 20) and GAP >= 0.015 * render3d.PX and INFRAME \
     and GAPQ >= 0.015 * render3d.PX and INQ and len(rings_of(QV)) == 24 and len(rings_of(DV)) == 30 \
-    and all(s['parts'][0]['t'] == [] for s in scenes) and all(p['t'] == [] for s in scenes for p in s['parts'])
-print('scenes', len(scenes), 'no faces in any scene' if ok else '', 'FINAL ok' if ok else 'FINAL FAIL')
+    and all(p['t'] == [] for s in scenes[2:] for p in s['parts']) and len(scenes[0]['parts'][0]['t']) == 6
+print('scenes', len(scenes), 'no faces in builds 2-4; octahedron 3 cards' if ok else '', 'FINAL ok' if ok else 'FINAL FAIL')
