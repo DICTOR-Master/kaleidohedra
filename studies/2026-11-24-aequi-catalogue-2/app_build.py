@@ -20,6 +20,9 @@ def solid_angles(idx, dep):
     H = np.hstack([D[idx], -np.array(dep)[:, None]])
     V = HalfspaceIntersection(H, np.zeros(3)).intersections
     V = np.unique(np.round(V, 12), axis=0)
+    reps = []                                   # corner count: points within 1e-8 are one corner (4+ faces meeting give float clusters)
+    for v in V:
+        if all(np.linalg.norm(v - w) > 1e-8 for w in reps): reps.append(v)
     om, sides = [], []
     for k, i in enumerate(idx):
         on = V[np.abs(V @ D[i] - dep[k]) < 1e-9]
@@ -30,7 +33,7 @@ def solid_angles(idx, dep):
             num = np.dot(c, np.cross(a, b)); den = np.linalg.norm(c) * np.linalg.norm(a) * np.linalg.norm(b) + np.dot(c, a) * np.linalg.norm(b) + np.dot(c, b) * np.linalg.norm(a) + np.dot(a, b) * np.linalg.norm(c)
             s += 2 * np.arctan2(num, den)
         om.append(abs(s)); sides.append(len(on))
-    return np.array(om), sides, len(V)
+    return np.array(om), sides, len(reps)
 def symmetries(idx, dep):
     N = D[idx]; dp = np.array(dep); maps = []
     a = 0; b = next(k for k in range(1, len(idx)) if abs(abs(N[0] @ N[k]) - 1) > 1e-6)
@@ -55,11 +58,21 @@ def work(row):
     new, cls = DATA[b]; r = new[sid]
     if (r['group'], r['m'], r['N']) != CATROW[no]: return dict(no=no, ok=False, err='catalogue row differs from source')
     out = dict(no=no, batch=b, sid=sid, group=r['group'], ok=False)
-    fu = r['found_under'][0]; C = cls[fu['cls']]
+    fu = min(r['found_under'], key=lambda f: len(f['subset'])); C = cls[fu['cls']]   # fewest searched orbits
     orbs = [C['orbits'][j] for j in fu['subset']]
     if sorted(d for o in orbs for d in o) != sorted(r['idx']): out['err'] = 'orbit union differs from idx'; return out
     vals = sorted(set(r['depths']))
-    for asg in itertools.product(vals, repeat=len(orbs)):
+    need = {v: sum(sz for sz, dv in zip(r['sizes'], r['depths']) if dv == v) for v in vals}   # faces at each depth (catalogue)
+    def assignments(j, left):
+        if j == len(orbs):
+            if all(x == 0 for x in left.values()): yield []
+            return
+        for v in vals:
+            if left[v] >= len(orbs[j]):
+                left[v] -= len(orbs[j])
+                for rest in assignments(j + 1, left): yield [v] + rest
+                left[v] += len(orbs[j])
+    for asg in assignments(0, dict(need)):
         idx = [d for o in orbs for d in o]; dep = [asg[j] for j, o in enumerate(orbs) for _ in o]
         try: om, sides, nv = solid_angles(idx, dep)
         except Exception: continue
@@ -90,10 +103,12 @@ DATA = {b: load(b) for b in sorted({r[1] for r in rows})}
 # source_id = position in the batch's 'new' list (checked: No. 2471 -> 2a 1214 is D3d, m 4, N 42)
 if __name__ == '__main__':
     pilot = os.environ.get('PILOT')
-    todo = rows[:int(pilot)] if pilot else rows
+    sl = os.environ.get('SLICE')
+    todo = rows[int(sl.split(':')[0]):int(sl.split(':')[1])] if sl else (rows[:int(pilot)] if pilot else rows)
     res = []
+    todo = sorted(todo, key=lambda x: -x[0]) if os.environ.get('REV') else todo
     with Pool(NP) as P:
-        for k, r in enumerate(P.imap(work, todo, chunksize=8)):
+        for k, r in enumerate(P.imap_unordered(work, todo, chunksize=4)):
             res.append(r)
             if k % 500 == 0: print('PROGRESS %.3f dice %d' % (k / len(todo), k), flush=True)
     bad = [r for r in res if not r['ok']]
