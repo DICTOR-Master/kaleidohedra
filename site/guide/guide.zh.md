@@ -312,6 +312,10 @@ Polyhedraverse 是肖像画廊：按家族排列的每一个形状，一次一�
 
 **◌ DICTO Vacuus**（DICTO 2026-11-03）从中心观看一个立体。放一个中心位于所有面所在平面内侧的立体（所有凸立体，以及星形八面体这样的星状立体），点条带中的 **◌ DICTO Vacuus**；其他立体没有这个按钮。五种视图：**棱锥**（从中心到每个面的棱锥）、**分解**（滑块把它们分开）、**星形**（每个棱锥翻到面外，内部是空的）、**鳍片**（中心到每条棱的鳍；同色即同形）和 **支杆**（从中心到顶点的杆，按长度着色）。棱锥视图链接到 Kaleidohedra 的 Aristotle's Pyramid，那里也链接回来。链接 [polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE) 可直接打开（加 `:exploded`、`:star`、`:sheets` 或 `:struts` 选视图）。 在 **鳍片** 中，**分开** 滑块让每张薄片（过中心的一个平面上的鳍）沿法线滑出，标签给出立体的类型（心型、继承心型或非心型），**薄片类型** 为完整薄片、共享薄片和单片鳍着色。
 
+## Vacuus 与 Resonus
+
+**Vacuus** 与 **Resonus**（DICTO 2026-11-25）位于多面体的详情中，涵盖精确目录中的 137 个多面体（柏拉图、阿基米德、卡塔兰、约翰逊、棱柱和反棱柱）。**Vacuus** 显示过中心和每条棱的平面，每块板带着它的鳍；**Resonus** 显示过中心且平行于每个面的平面。可打开其一或两者：两者共有的平面以专用颜色绘出，并在一行图例中标明。拖动旋转，双指缩放；**拆开** 把透明外壳从平面上移开。下方卡片给出板（full sheet、shared sheet、single fin）、类型（heart、inherited heart、non-heart）、位于镜面上的平面以及球面上的圆；两个中心不同的约翰逊多面体有 **中心** 切换，默认顶点重心，可改为体积重心。DICTO 的四件 Vacuus 作品与五种性质见 **Vacuus and Resonus** 页面（DICTO → 研究与工具）。
+
 ## 黄金截角
 
 **✂ 黄金截角**（论文 #88）把正多面体的每个顶点截去同样深度 x。放一个正十二面体、正二十面体、立方体、正四面体或正八面体，点条带中的 **✂ 黄金截角**；其他立体没有这个按钮。每个顶点变成金色正多边形，每个面变成立体颜色的截角多边形。拖动滑块，或点停靠点：**小黄金截角**（原边长）、**阿基米德**（所有边相等）、**大黄金截角**（顶点边长）；在两个黄金停靠点，长/短为 φ，并显示名称（正八面体上是 DICTO 的 **Unborn Axes** 和 **Icosaxes**）。**立体** 在五种之间切换。链接 [polyhedraverse.dictospheres.com/?open=goldencut:DODECAHEDRON](https://polyhedraverse.dictospheres.com/?open=goldencut:DODECAHEDRON) 可直接打开（加 `:lesser`、`:archimedean` 或 `:greater`）。

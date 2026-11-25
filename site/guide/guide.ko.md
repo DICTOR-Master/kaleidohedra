@@ -312,6 +312,10 @@ DICTO의 Polyhedraverse 칸 맨 위에서 **검색**으로 이름, 가족, 면 �
 
 **◌ DICTO Vacuus**(DICTO 2026-11-03)는 입체를 중심에서 봅니다. 중심이 모든 면의 평면 안쪽에 있는 입체(모든 볼록 입체와 스텔라 옥탕굴라 같은 별 모양 입체)를 하나 놓고 스트립의 **◌ DICTO Vacuus**를 누르세요. 다른 입체에는 버튼이 없습니다. 다섯 가지 보기: **피라미드**(중심에서 각 면으로), **분해**(슬라이더로 벌림), **별**(각 피라미드를 면 바깥으로 뒤집음, 안쪽은 빔), **핀**(중심과 각 모서리의 핀; 같은 색은 같은 모양), **스트럿**(중심에서 꼭짓점까지의 막대, 길이별 색). 피라미드에서 Kaleidohedra의 Aristotle's Pyramid로, 그곳에서 다시 돌아오는 링크가 있습니다. [polyhedraverse.dictospheres.com/?open=vacuus:CUBE](https://polyhedraverse.dictospheres.com/?open=vacuus:CUBE)로 바로 엽니다(보기는 `:exploded`, `:star`, `:sheets`, `:struts`를 붙여서). **핀**에서는 **떼어 놓기** 슬라이더가 각 시트(중심을 지나는 한 평면 위의 핀들)를 법선을 따라 밀어 내고, 라벨이 입체의 종류(하트, 물려받은 하트, 비하트)를 알려 주며, **시트 종류**가 온전한 시트·공유 시트·홀로 된 핀을 색으로 나눕니다.
 
+## Vacuus와 Resonus
+
+**Vacuus**와 **Resonus**(DICTO 2026-11-25)는 정확한 카탈로그의 다면체 137개(플라톤, 아르키메데스, 카탈랑, 존슨, 각기둥, 엇각기둥)의 상세 화면에 있습니다. **Vacuus**는 중심과 각 모서리를 지나는 평면(각 판에 핀), **Resonus**는 중심을 지나 각 면에 평행한 평면을 보여 줍니다. 하나만 또는 둘 다 켤 수 있습니다. 양쪽 모두에 속한 평면은 고유한 색으로 그려지고 한 줄 범례에 표시됩니다. 드래그로 회전, 핀치로 확대; **분해**는 투명한 껍질을 평면에서 떼어 냅니다. 아래 카드에는 판(full sheet, shared sheet, single fin), 종류(heart, inherited heart, non-heart), 거울면 위의 평면, 구면 위의 원이 나옵니다. 두 중심이 다른 존슨 다면체에는 **중심** 전환이 있으며, 꼭짓점의 무게중심으로 열리고 부피의 무게중심도 고를 수 있습니다. DICTO의 Vacuus 작품 4점과 다섯 가지 성질은 **Vacuus and Resonus** 페이지(DICTO → 연구와 도구)에 있습니다.
+
 ## 황금 절단
 
 **✂ 황금 절단**(논문 #88)은 정다면체의 모든 꼭짓점을 같은 깊이 x로 자릅니다. 정십이면체, 정이십면체, 정육면체, 정사면체, 정팔면체 중 하나를 놓고 스트립의 **✂ 황금 절단**을 탭하세요. 다른 입체에는 버튼이 없습니다. 각 꼭짓점은 금색 정다각형이, 각 면은 입체 색의 깎은 다각형이 됩니다. 슬라이더를 움직이거나 멈춤점을 탭하세요: **작은 황금 절단**(원래 변이 김), **아르키메데스**(모든 변이 같음), **큰 황금 절단**(꼭짓점 변이 김). 두 황금 멈춤점에서 긴/짧은 비는 φ이고 이름이 표시됩니다(정팔면체에서는 DICTO의 **Unborn Axes**와 **Icosaxes**). **입체**로 다섯 가지를 바꿉니다. 링크 [polyhedraverse.dictospheres.com/?open=goldencut:DODECAHEDRON](https://polyhedraverse.dictospheres.com/?open=goldencut:DODECAHEDRON)로 바로 엽니다(`:lesser`, `:archimedean`, `:greater`를 붙여서).

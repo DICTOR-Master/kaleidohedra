@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vacuus and Resonus · Kaleidohedra</title>
+<meta name="description" content="DICTO's original work: his four Vacuus builds (cardboard octahedron, B1NR cube, B1NR cuboctahedron and dodecahedron with bottle rings in the fins) and the five qualities Vacuus, Resonus, Aequus, Tacitus and Sphericus.">
+<link rel="icon" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root {
+  --bg: #f5f3ee; --surface: #ffffff; --text: #1c1e22; --muted: #5c626a; --line: #d8d3c9; --accent: #2e5c8a; --gold: #9a7414;
+  --shadow: 0 1px 3px rgba(0,0,0,.08);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141619; --surface: #1e2125; --text: #ebe9e3; --muted: #a2a8af; --line: #363a40; --accent: #8db5df; --gold: #e8c25a;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141619; --surface: #1e2125; --text: #ebe9e3; --muted: #a2a8af; --line: #363a40; --accent: #8db5df; --gold: #e8c25a;
+  --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; overflow-x: hidden; }
+body { background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-text-size-adjust: 100%; }
+a { color: var(--accent); }
+header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--surface); flex-wrap: wrap; }
+header h1 { font-size: 19px; margin: 0; font-weight: 650; letter-spacing: .01em; }
+header nav { margin-left: auto; display: flex; gap: 14px; font-size: 14px; flex-wrap: wrap; }
+main { max-width: 980px; margin: 0 auto; padding: 16px 16px 48px; }
+.own { display: inline-block; font-size: 13px; font-weight: 650; letter-spacing: .04em; color: var(--gold); border: 1px solid var(--gold); border-radius: 999px; padding: 2px 10px; margin: 0 0 10px; }
+.lead { font-size: 15px; color: var(--muted); margin: 0 0 16px; }
+.builds { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 0 0 22px; }
+figure { margin: 0; background: #14161b; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+figure img { display: block; width: 100%; height: auto; aspect-ratio: 1; }
+figcaption { padding: 8px 10px 10px; font-size: 13.5px; color: #ddd8cc; }
+figcaption b { display: block; color: #e8c25a; font-size: 14px; }
+h2 { font-size: 17px; margin: 0 0 8px; }
+dl.q { margin: 0 0 18px; display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; font-size: 15px; }
+dl.q dt { font-weight: 650; }
+dl.q dd { margin: 0; }
+@media (max-width: 460px) { dl.q { grid-template-columns: 1fr; gap: 0; } dl.q dd { margin-bottom: 8px; } }
+.links { font-size: 15px; display: flex; flex-direction: column; gap: 6px; }
+.mark { margin: 28px 0 0; text-align: right; font-size: 10px; letter-spacing: .18em; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Vacuus and Resonus</h1>
+  <nav><a href="https://polyhedraverse.dictospheres.com/">Polyhedraverse</a><a href="/aequi/">Aequi fair dice</a><a href="/">Kaleidohedra</a></nav>
+</header>
+<main>
+  <div class="own">DICTO's original work</div>
+  <p class="lead">DICTO's four Vacuus builds, drawn exactly: open frameworks and bottle rings, the empty space showing.</p>
+  <div class="builds">
+    <figure><img src="octahedron-cardboard-skeleton.jpg" alt="Cardboard octahedron Vacuus: three square frames" width="900" height="900" loading="lazy"><figcaption><b>Cardboard octahedron Vacuus</b>Three square frames</figcaption></figure>
+    <figure><img src="cube-b1nr-skeleton.jpg" alt="B1NR cube: hull and centre struts, empty" width="900" height="900" loading="lazy"><figcaption><b>B1NR cube</b>Hull + centre struts, empty</figcaption></figure>
+    <figure><img src="cuboctahedron-ring-fins.jpg" alt="B1NR cuboctahedron Vacuus: 24 bottle rings, one per fin" width="900" height="900" loading="lazy"><figcaption><b>B1NR cuboctahedron Vacuus</b>Bottle rings in the fins: 24 rings, one per fin</figcaption></figure>
+    <figure><img src="dodecahedron-ring-fins.jpg" alt="B1NR dodecahedron Vacuus: 30 bottle rings, one per fin" width="900" height="900" loading="lazy"><figcaption><b>B1NR dodecahedron Vacuus</b>Bottle rings in the fins: 30 rings, one per fin</figcaption></figure>
+  </div>
+  <h2>Five qualities</h2>
+  <dl class="q">
+    <dt>Vacuus</dt><dd>Planes through the centre and each edge.</dd>
+    <dt>Resonus</dt><dd>Planes through the centre parallel to each face.</dd>
+    <dt>Aequus</dt><dd>A fair die: equal face solid angles, i.e. equal Vacuus regions.</dd>
+    <dt>Tacitus</dt><dd>The face directions silence the low harmonics beyond symmetry.</dd>
+    <dt>Sphericus</dt><dd>The circles these planes draw on the sphere, and how they cross.</dd>
+  </dl>
+  <div class="links">
+    <a href="https://polyhedraverse.dictospheres.com/">See the Vacuus and the Resonus of 137 polyhedra in Polyhedraverse (open a polyhedron's details)</a>
+    <a href="/aequi/">Aequi picker: the fair dice</a>
+  </div>
+  <div class="mark">DICTO · <a href="/" style="color:inherit">Kaleidohedra</a></div>
+</main>
+</body>
+</html>

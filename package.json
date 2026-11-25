@@ -11,7 +11,8 @@
     "verify:about": "node scripts/verify-about.mjs",
     "verify:rhombis-i18n": "node scripts/verify-rhombis-i18n.mjs",
     "verify:catalogue": "node scripts/verify-catalogue.mjs",
-    "verify:books": "node scripts/verify-book-menu.mjs"
+    "verify:books": "node scripts/verify-book-menu.mjs",
+    "verify:vacuus-resonus": "node scripts/verify-vacuus-resonus.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",

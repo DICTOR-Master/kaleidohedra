@@ -30,6 +30,8 @@ jobs:
       - run: node scripts/verify-rhombis-i18n.mjs
       # The world menu by the books: every world and lattice piece placed exactly once.
       - run: node scripts/verify-book-menu.mjs
+      # Vacuus and Resonus: the planes the app draws agree with the exact catalogue on all 137 polyhedra (both centres for Johnson).
+      - run: node scripts/verify-vacuus-resonus.mjs
       # The repo's About text (outside the repo, so it drifts): warns only.
       - run: node scripts/verify-about.mjs
         env:
@@ -92,6 +94,8 @@ jobs:
         run: |
           DOOR=kaleidohedra node smoke.mjs
           DOOR=rhombiverse node smoke.mjs
+          # DICTO's Vacuus and Resonus through the real UI at desktop, phone and iPad sizes (both doors, the page and its links)
+          node vacuus-resonus.mjs
 
   build-check:
     # Verifies the ACTUAL production artifact (scripts/build.mjs's

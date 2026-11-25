@@ -66,6 +66,7 @@ import { gpermPreviewEdges } from './world-gperm.js';
 import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { netEligible, mountNetViewer } from './net-viewer.js';
+import { vrCatalogue, mountVacuusResonus, VR_COLORS, VR_CSS } from './vacuus-resonus-view.js';
 import { mountStarView, mountDuoprismView, mountRadialView } from './shape-views.js';
 import { STAR_POLYHEDRON_IDS, STAR_POLYHEDRON_META, STAR_POLYHEDRA } from '../krp-core/src/polyhedra/starPolyhedra.js';
 import { FOURD_CAPABLE_IDS } from '../krp-core/src/polyhedra/fourD.js';
@@ -300,7 +301,7 @@ function injectCssOnce() {
   if (document.getElementById('dim-wizard-style')) return;
   const style = document.createElement('style');
   style.id = 'dim-wizard-style';
-  style.textContent = CSS;
+  style.textContent = CSS + VR_CSS;
   document.head.appendChild(style);
 }
 
@@ -1560,11 +1561,13 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
           ${star ? '' : `<button type="button" class="poly-detail-build">${t('poly.d.build', L)}</button>`}
           <button type="button" class="poly-detail-fav" aria-pressed="${fav}">${fav ? '★' : '☆'} ${t('poly.d.fav', L)}</button>
           <button type="button" class="poly-detail-net" hidden aria-expanded="false">${t('poly.net.button', L)}</button>
+          ${star ? '' : ['vacuus', 'resonus'].map((w) => `<button type="button" class="poly-detail-vr" data-vr="${w}" hidden aria-pressed="false" style="--vr:${VR_COLORS[w]}">${w === 'vacuus' ? 'Vacuus' : 'Resonus'}</button>`).join('')}
           ${star ? '' : `<button type="button" class="poly-detail-compare">${t('poly.d.compare', L)}</button>
           ${curved ? '' : `<button type="button" class="poly-detail-4d" aria-expanded="false">${t(FOURD_CAPABLE_IDS.includes(id) ? 'poly.d.extend4d' : 'poly.d.prism4d', L)}</button>`}`}
         </div>
         <div class="poly-detail-4dbox" hidden><div class="poly-detail-stage"></div><div class="dim-wizard-desc">${fourDCells(id, L)}${t(FOURD_CAPABLE_IDS.includes(id) ? 'poly.d.extend4dNote' : 'poly.d.prism4dNote', L)}</div></div>
         <div class="poly-detail-netbox" hidden></div>
+        <div class="poly-detail-vrbox" hidden></div>
         <dl class="poly-detail-stats">
           <dt>${t('poly.d.faces', L)}</dt><dd>${s.faces.length}: ${curved ? t('poly.d.curvedFaces', L, { n: s.faces.length, k: s.faces[0].length }) : faceKindsOf(id).map((k) => `${k.count} × ${k.regular ? t('poly.d.regular', L) + ' ' : ''}${faceWord(k, L)}`).join(', ')}</dd>
           <dt>${t('poly.d.edges', L)}</dt><dd>${s.edges.length}</dd>
@@ -1586,6 +1589,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     let dispose4 = null;
     b4?.addEventListener('click', () => {
       const open = box4.hidden;
+      if (open) vrOff();
       box4.hidden = !open; b4.setAttribute('aria-expanded', String(open));
       if (open) { dispose4 = (FOURD_CAPABLE_IDS.includes(id) ? mountRadialView : mountDuoprismView)(box4.querySelector('.poly-detail-stage'), id); previewDisposers.push(() => dispose4?.()); }
       else { dispose4?.(); dispose4 = null; }
@@ -1602,10 +1606,32 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     netEligible().then((ok) => { if (ok.has(id) && netBtn.isConnected) netBtn.hidden = false; });
     netBtn.addEventListener('click', () => {
       const open = netBox.hidden;
+      if (open) vrOff();
       netBox.hidden = !open; netBtn.setAttribute('aria-expanded', String(open));
       if (open) previewDisposers.push(mountNetViewer(netBox, id, L));
     });
     bodyEl.querySelectorAll('.poly-detail-pair').forEach((b) => b.addEventListener('click', () => showShapeDetail(b.dataset.shape, () => showShapeDetail(id, backTo))));
+    // DICTO's Vacuus and Resonus (DICTO 2026-11-25, vacuus-resonus-view.js): the central planes through each edge and parallel to each
+    // face, for the 137 polyhedra of the exact catalogue. Either or both can be on; the view stands in for the preview, and the 4D
+    // and net views close (one view at a time).
+    const vrBtns = [...bodyEl.querySelectorAll('.poly-detail-vr')], vrBox = bodyEl.querySelector('.poly-detail-vrbox'), preview = bodyEl.querySelector('.poly-detail-preview');
+    let vrOn = { vacuus: false, resonus: false }, vrPanel = null, vrEntry = null;
+    function vrSync() {
+      const any = vrOn.vacuus || vrOn.resonus;
+      vrBtns.forEach((b) => b.setAttribute('aria-pressed', String(vrOn[b.dataset.vr])));
+      vrBox.hidden = !any; if (preview) preview.hidden = any;
+      if (any && !vrPanel) { vrPanel = mountVacuusResonus(vrBox, id, s, vrEntry, L); previewDisposers.push(() => { vrPanel?.dispose(); vrPanel = null; }); }
+      if (!any && vrPanel) { vrPanel.dispose(); vrPanel = null; }
+      vrPanel?.update(vrOn);
+    }
+    function vrOff() { if (vrOn.vacuus || vrOn.resonus) { vrOn = { vacuus: false, resonus: false }; vrSync(); } }
+    vrCatalogue().then((cat) => { vrEntry = cat[id]; if (vrEntry && vrBox.isConnected) vrBtns.forEach((b) => { b.hidden = false; }); });
+    vrBtns.forEach((b) => b.addEventListener('click', () => {
+      if (!box4.hidden) b4.click();
+      if (!netBox.hidden) netBtn.click();
+      vrOn = { ...vrOn, [b.dataset.vr]: !vrOn[b.dataset.vr] };
+      vrSync();
+    }));
   }
 
   overlay.querySelector('.dim-wizard-close').addEventListener('click', () => close());
