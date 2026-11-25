@@ -1,0 +1,101 @@
+octahedron: Vacuus [(0, 0, 1), (0, 1, 0), (1, 0, 0)] Resonus [(1, -1, -1), (1, -1, 1), (1, 1, -1), (1, 1, 1)]
+tetrahedron: Vacuus [(0, 1, -1), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 1), (1, 1, 0)] Resonus [(1, -1, -1), (1, -1, 1), (1, 1, -1), (1, 1, 1)]
+== tetrahedral-octahedral honeycomb
+  cells checked (corners, faces, edges): count {(6, 8, 12): 14, (4, 4, 6): 8}
+  Vacuus: 9 normal families; continue 3: [(0, 0, 1), (0, 1, 0), (1, 0, 0)]
+     breaks (0, 1, -1): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (0, 1, 1): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, -1, 0): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, 0, -1): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, 0, 1): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, 1, 0): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+  Resonus: 4 normal families; continue 0: []
+     breaks (1, -1, -1): plane n.x=1/2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, -1, 1): plane n.x=-1/2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, 1, -1): plane n.x=-1/2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, 1, 1): plane n.x=-7/2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+  Vacuus and Resonus together: 13 normal families; continue 3: [(0, 0, 1), (0, 1, 0), (1, 0, 0)]
+     breaks (0, 1, -1): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (0, 1, 1): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, -1, -1): plane n.x=1/2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, -1, 0): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, -1, 1): plane n.x=-1/2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, 0, -1): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, 0, 1): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, 1, -1): plane n.x=-1/2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, 1, 0): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, 1, 1): plane n.x=-7/2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+  ratio tetrahedra:octahedra in the box 8 14
+TRD at the origin: corners 14 faces 12 edges 24
+  Vacuus normals 9 [(0, 3, -8), (0, 3, 8), (1, -1, 0), (1, 2, 0), (2, 1, 0), (3, 0, -8), (3, 0, 8), (3, 3, -8), (3, 3, 8)]
+  Resonus normals 9 [(0, 3, -8), (0, 3, 8), (1, -1, 0), (1, 2, 0), (2, 1, 0), (3, 0, -8), (3, 0, 8), (3, 3, -8), (3, 3, 8)]
+== trapezo-rhombic dodecahedra (hcp)
+  cells checked (corners, faces, edges): count {(14, 12, 24): 35}
+  Vacuus: 9 normal families; continue 3: [(1, -1, 0), (1, 2, 0), (2, 1, 0)]
+     breaks (0, 3, -8): plane n.x=3 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (0, 3, 8): plane n.x=-13 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 0, -8): plane n.x=3 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 0, 8): plane n.x=-13 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 3, -8): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 3, 8): plane n.x=-17 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+  Resonus: 9 normal families; continue 3: [(1, -1, 0), (1, 2, 0), (2, 1, 0)]
+     breaks (0, 3, -8): plane n.x=3 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (0, 3, 8): plane n.x=-13 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 0, -8): plane n.x=3 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 0, 8): plane n.x=-13 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 3, -8): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 3, 8): plane n.x=-17 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+  Vacuus and Resonus together: 9 normal families; continue 3: [(1, -1, 0), (1, 2, 0), (2, 1, 0)]
+     breaks (0, 3, -8): plane n.x=3 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (0, 3, 8): plane n.x=-13 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 0, -8): plane n.x=3 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 0, 8): plane n.x=-13 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 3, -8): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (3, 3, 8): plane n.x=-17 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+stella tiling: every tetrahedron in |x|<=3 owned by exactly one stella: True tetrahedra 216
+stella: Vacuus (outer edges) [(0, 1, -1), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 1), (1, 1, 0)]  with inner edges [(0, 0, 1), (0, 1, -1), (0, 1, 0), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 0), (1, 0, 1), (1, 1, 0)]  Resonus [(1, -1, -1), (1, -1, 1), (1, 1, -1), (1, 1, 1)]
+== stellae octangulae + octahedra (Vacuus from outer edges)
+  cells checked (corners, faces, edges): count {(6, 8, 12): 44, (8, 24, 36): 18}
+  Vacuus: 9 normal families; continue 0: []
+     breaks (0, 0, 1): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (0, 1, -1): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (0, 1, 0): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (0, 1, 1): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, -1, 0): plane n.x=-1 cuts the cell at (Fraction(-2, 1), Fraction(-1, 1), Fraction(-2, 1))
+     breaks (1, 0, -1): plane n.x=-1 cuts the cell at (Fraction(-2, 1), Fraction(-2, 1), Fraction(-1, 1))
+     breaks (1, 0, 0): plane n.x=-1 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (1, 0, 1): plane n.x=-3 cuts the cell at (Fraction(-2, 1), Fraction(-2, 1), Fraction(-1, 1))
+     breaks (1, 1, 0): plane n.x=-3 cuts the cell at (Fraction(-2, 1), Fraction(-1, 1), Fraction(-2, 1))
+  Resonus: 4 normal families; continue 0: []
+     breaks (1, -1, -1): plane n.x=1 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (1, -1, 1): plane n.x=1 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (1, 1, -1): plane n.x=1 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (1, 1, 1): plane n.x=-7 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+  Vacuus and Resonus together: 13 normal families; continue 0: []
+     breaks (0, 0, 1): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (0, 1, -1): plane n.x=0 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (0, 1, 0): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (0, 1, 1): plane n.x=-2 cuts the cell at (Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1))
+     breaks (1, -1, -1): plane n.x=1 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (1, -1, 0): plane n.x=-1 cuts the cell at (Fraction(-2, 1), Fraction(-1, 1), Fraction(-2, 1))
+     breaks (1, -1, 1): plane n.x=1 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (1, 0, -1): plane n.x=-1 cuts the cell at (Fraction(-2, 1), Fraction(-2, 1), Fraction(-1, 1))
+     breaks (1, 0, 0): plane n.x=-1 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (1, 0, 1): plane n.x=-3 cuts the cell at (Fraction(-2, 1), Fraction(-2, 1), Fraction(-1, 1))
+     breaks (1, 1, -1): plane n.x=1 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+     breaks (1, 1, 0): plane n.x=-3 cuts the cell at (Fraction(-2, 1), Fraction(-1, 1), Fraction(-2, 1))
+     breaks (1, 1, 1): plane n.x=-7 cuts the cell at (Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1))
+-- same tiling, Vacuus including the inner edges:
+   {(0, 0, 1): 'continues', (0, 1, -1): 'breaks at ((Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1)), Fraction(0, 1))', (0, 1, 0): 'continues', (0, 1, 1): 'breaks at ((Fraction(-1, 1), Fraction(-1, 1), Fraction(-1, 1)), Fraction(-2, 1))', (1, -1, 0): 'breaks at ((Fraction(-2, 1), Fraction(-1, 1), Fraction(-2, 1)), Fraction(-1, 1))', (1, 0, -1): 'breaks at ((Fraction(-2, 1), Fraction(-2, 1), Fraction(-1, 1)), Fraction(-1, 1))', (1, 0, 0): 'continues', (1, 0, 1): 'breaks at ((Fraction(-2, 1), Fraction(-2, 1), Fraction(-1, 1)), Fraction(-3, 1))', (1, 1, 0): 'breaks at ((Fraction(-2, 1), Fraction(-1, 1), Fraction(-2, 1)), Fraction(-3, 1))'}
+== CONTROL cube tiling
+  cells checked (corners, faces, edges): count {(8, 6, 12): 27}
+  Vacuus: 6 normal families; continue 6: [(0, 1, -1), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 1), (1, 1, 0)]
+  Resonus: 3 normal families; continue 3: [(0, 0, 1), (0, 1, 0), (1, 0, 0)]
+  Vacuus and Resonus together: 9 normal families; continue 9: [(0, 0, 1), (0, 1, -1), (0, 1, 0), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 0), (1, 0, 1), (1, 1, 0)]
+== CONTROL rhombic dodecahedron tiling
+  cells checked (corners, faces, edges): count {(14, 12, 24): 13}
+  Vacuus: 6 normal families; continue 6: [(0, 1, -1), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 1), (1, 1, 0)]
+  Resonus: 6 normal families; continue 6: [(0, 1, -1), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 1), (1, 1, 0)]
+  Vacuus and Resonus together: 6 normal families; continue 6: [(0, 1, -1), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 1), (1, 1, 0)]
+CONTROLS cube True rhombic dodecahedron True stella cover True
+FINAL ok
