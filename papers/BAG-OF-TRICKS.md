@@ -30,3 +30,6 @@ What we reach for, cheapest decisive test first. Each line: the trick, what it d
 
 ## Integer codes for exact polyhedral data in Lean (#119, 25 Nov 2026)
 Code numbers in Z[sqrt d] as integer pairs with correctness lemmas (ev_add, ev_mul, inner_evv, zpos_spec); then all edge data and sign facts are checked by kernel integer computation (`decide +kernel`). Small proofs, fast builds; this let the truncated icosidodecahedron build (GenTID.lean, 135 decides) where slack lemmas had hit the 800,000-heartbeat limit. Source: dehn-packets-lean, Packets/Exact.lean. Use it for any worked example with coordinates.
+
+## Palomar preflight request_id (25 Nov 2026)
+The workflow request_id must be exactly 12 lowercase alphanumeric characters (e.g. dehnpacket01, fairdicelean); it is fixed in .github/workflows/palomar-preflight.yml, not a dispatch input. Set it when packaging each new entry.
