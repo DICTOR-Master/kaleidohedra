@@ -89,3 +89,10 @@ included); the name rule and parser are copied from study 2026-11-24-aequi-numbe
 
 1. Correct the count "9 556 new" to 9 490 in the extension study's README at its next edit.
 2. When the off-axis families are named, number them after No. 10725.
+
+## Into the picker (25 Nov 2026)
+app_build.py (dbb job aequi-app-build, FINAL ok): all 9490 dice rebuilt from their searched orbits and depths, every face's solid angle
+within 1e-9 of 4π/N, full symmetry group computed from the solid, order, face orbits, sizes and corners as catalogued: 9490 of 9490
+(first run 9484 + 6 with corners counted at 1e-12 rounding; corners now counted by 1e-8 clustering). app_data.py writes the picker data
+(labels matched by direction family and size; names re-derived from their numbers, hyphen after the second syllable from four syllables
+on); app_permutahedra.py adds Nos. 1233-1235. Deployed 25 Nov (k-mix 58c3d089 and before).
