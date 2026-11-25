@@ -6115,6 +6115,48 @@
         "study": "studies/2026-11-25-aequi-five-cubes",
         "goes_to": "The Aequi paper (catalogue extension); numbering batch after No.10725",
         "status": "settled; begun (gap tests A4, free-angle icosahedra next)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lattice webs, exact test (Theorem 0): a Vacuus or Resonus family of a parallelohedron continues through its lattice tiling iff k = 2h/d <= 2 (integer in every case; continuing families k = 1 or 2)",
+        "study": "studies/2026-11-25-vacuus-resonus-lattice-webs",
+        "goes_to": "the Vacuus and Resonus paper",
+        "status": "settled (proved)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lattice webs: cube (every parallelepiped) has both webs; Resonus = cubic planes, Vacuus = {x_i +- x_j in Z} disphenoid honeycomb, union = B3-tilde alcoves (1, 12, 24 regions per cell)",
+        "study": "studies/2026-11-25-vacuus-resonus-lattice-webs",
+        "goes_to": "the Vacuus and Resonus paper",
+        "status": "settled (proved, exact)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lattice webs: rhombic dodecahedron (Resonus = Vacuus pair) continues fully iff affine RD; its web is the same disphenoid honeycomb as the cube's Vacuus (Delone tiling of bcc, dual of the truncated-octahedron tiling); 24 regions per cell",
+        "study": "studies/2026-11-25-vacuus-resonus-lattice-webs",
+        "goes_to": "the Vacuus and Resonus paper",
+        "status": "settled (proved, exact)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lattice webs: hexagonal prism Resonus continues iff the base is affinely regular (triangular-prism honeycomb); its Vacuus never continues, for any shape and any centre (Theorem 4)",
+        "study": "studies/2026-11-25-vacuus-resonus-lattice-webs",
+        "goes_to": "the Vacuus and Resonus paper",
+        "status": "settled (proved)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lattice webs: elongated dodecahedron and truncated-octahedron types have neither web for any shape (rhombus / hexagon Resonus planes never continue; edge-in-three-cells lemma, Theorem 3); TO squares continue iff the other two opposite zone pairs are equal",
+        "study": "studies/2026-11-25-vacuus-resonus-lattice-webs",
+        "goes_to": "the Vacuus and Resonus paper",
+        "status": "settled (proved)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lattice webs, moved centre: never repairs a Resonus family (d >= h + |n.c|); Vacuus webs need c = O for cube and RD, and no centre works for hexagonal prism, ED, TO (exhaustive exact search, standard members)",
+        "study": "studies/2026-11-25-vacuus-resonus-lattice-webs",
+        "goes_to": "the Vacuus and Resonus paper",
+        "status": "settled (proved / exhaustive exact)"
       }
     ]
   },

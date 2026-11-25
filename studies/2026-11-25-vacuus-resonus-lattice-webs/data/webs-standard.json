@@ -1,0 +1,3367 @@
+[
+ {
+  "name": "cube",
+  "lam": [
+   "1",
+   "1",
+   "1"
+  ],
+  "facets": 6,
+  "edges": 12,
+  "vertices": 8,
+  "covolume": "1",
+  "resonus": [
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1/2",
+    "pass": true,
+    "k=2h/d": "1",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1/2",
+    "pass": true,
+    "k=2h/d": "1",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "1/2",
+    "pass": true,
+    "k=2h/d": "1",
+    "face": "4-gon"
+   }
+  ],
+  "resonus_planes": 3,
+  "resonus_pass": 3,
+  "resonus_web": true,
+  "resonus_pass_pieces_per_cell": 8,
+  "resonus_pass_regions_per_cell": 1,
+  "resonus_pass_vertices_per_cell": 1,
+  "resonus_pass_q": [
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    0
+   ]
+  ],
+  "vacuus": [
+   {
+    "normal": [
+     "0",
+     "1",
+     "1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ]
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   }
+  ],
+  "vacuus_planes": 6,
+  "vacuus_pass": 6,
+  "vacuus_web": true,
+  "vacuus_pass_pieces_per_cell": 24,
+  "vacuus_pass_regions_per_cell": 12,
+  "vacuus_pass_vertices_per_cell": 2,
+  "vacuus_pass_q": [
+   [
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    -1
+   ],
+   [
+    1,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    -1
+   ],
+   [
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    -1,
+    0
+   ]
+  ],
+  "union_planes": 9,
+  "union_pieces_per_cell": 48,
+  "union_regions_per_cell": 24,
+  "union_vertices_per_cell": 5
+ },
+ {
+  "name": "hexagonal prism",
+  "lam": [
+   "1",
+   "1",
+   "1",
+   "1"
+  ],
+  "facets": 8,
+  "edges": 18,
+  "vertices": 12,
+  "covolume": "3",
+  "resonus": [
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1/2",
+    "pass": true,
+    "k=2h/d": "1",
+    "face": "6-gon"
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   }
+  ],
+  "resonus_planes": 4,
+  "resonus_pass": 4,
+  "resonus_web": true,
+  "resonus_pass_pieces_per_cell": 12,
+  "resonus_pass_regions_per_cell": 6,
+  "resonus_pass_vertices_per_cell": 3,
+  "resonus_pass_q": [
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    2,
+    0
+   ],
+   [
+    2,
+    1,
+    0
+   ],
+   [
+    1,
+    -1,
+    0
+   ]
+  ],
+  "vacuus": [
+   {
+    "normal": [
+     "0",
+     "1",
+     "2"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-2"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "2"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-2",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-2"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-2",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "-2"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "2"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   }
+  ],
+  "vacuus_planes": 9,
+  "vacuus_pass": 3,
+  "vacuus_web": false,
+  "vacuus_pass_pieces_per_cell": 6
+ },
+ {
+  "name": "hexagonal prism",
+  "lam": [
+   "1",
+   "1",
+   "2",
+   "1"
+  ],
+  "facets": 8,
+  "edges": 18,
+  "vertices": 12,
+  "covolume": "6",
+  "resonus": [
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "2",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "1",
+    "face": "6-gon"
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   }
+  ],
+  "resonus_planes": 4,
+  "resonus_pass": 4,
+  "resonus_web": true,
+  "resonus_pass_pieces_per_cell": 12,
+  "resonus_pass_regions_per_cell": 6,
+  "resonus_pass_vertices_per_cell": 3,
+  "resonus_pass_q": [
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    2,
+    0
+   ],
+   [
+    2,
+    1,
+    0
+   ],
+   [
+    1,
+    -1,
+    0
+   ]
+  ],
+  "vacuus": [
+   {
+    "normal": [
+     "0",
+     "1",
+     "1"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-2",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-2",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "-1"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "1"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   }
+  ],
+  "vacuus_planes": 9,
+  "vacuus_pass": 3,
+  "vacuus_web": false,
+  "vacuus_pass_pieces_per_cell": 6
+ },
+ {
+  "name": "hexagonal prism",
+  "lam": [
+   "1",
+   "1",
+   "1*sqrt3",
+   "1"
+  ],
+  "facets": 8,
+  "edges": 18,
+  "vertices": 12,
+  "covolume": "3*sqrt3",
+  "resonus": [
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1*sqrt3",
+    "h": "1/2*sqrt3",
+    "pass": true,
+    "k=2h/d": "1",
+    "face": "6-gon"
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   }
+  ],
+  "resonus_planes": 4,
+  "resonus_pass": 4,
+  "resonus_web": true,
+  "resonus_pass_pieces_per_cell": 12,
+  "resonus_pass_regions_per_cell": 6,
+  "resonus_pass_vertices_per_cell": 3,
+  "resonus_pass_q": [
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    2,
+    0
+   ],
+   [
+    2,
+    1,
+    0
+   ],
+   [
+    1,
+    -1,
+    0
+   ]
+  ],
+  "vacuus": [
+   {
+    "normal": [
+     "0",
+     "1",
+     "2/3*sqrt3"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-2/3*sqrt3"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "2/3*sqrt3"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-2",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-2/3*sqrt3"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-2",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "-2/3*sqrt3"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "2/3*sqrt3"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-1",
+      "0"
+     ],
+     "facet_neighbour": true
+    }
+   }
+  ],
+  "vacuus_planes": 9,
+  "vacuus_pass": 3,
+  "vacuus_web": false,
+  "vacuus_pass_pieces_per_cell": 6
+ },
+ {
+  "name": "rhombic dodecahedron",
+  "lam": [
+   "1",
+   "1",
+   "1",
+   "1"
+  ],
+  "facets": 12,
+  "edges": 24,
+  "vertices": 14,
+  "covolume": "4",
+  "resonus": [
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   }
+  ],
+  "resonus_planes": 6,
+  "resonus_pass": 6,
+  "resonus_web": true,
+  "resonus_pass_pieces_per_cell": 24,
+  "resonus_pass_regions_per_cell": 24,
+  "resonus_pass_vertices_per_cell": 4,
+  "resonus_pass_q": [
+   [
+    1,
+    1,
+    2
+   ],
+   [
+    1,
+    2,
+    1
+   ],
+   [
+    0,
+    1,
+    -1
+   ],
+   [
+    2,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    -1
+   ],
+   [
+    1,
+    -1,
+    0
+   ]
+  ],
+  "vacuus": [
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     0,
+     1
+    ]
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     0,
+     2
+    ]
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     0,
+     3
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     1,
+     2
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     1,
+     3
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     2,
+     3
+    ]
+   }
+  ],
+  "vacuus_planes": 6,
+  "vacuus_pass": 6,
+  "vacuus_web": true,
+  "vacuus_pass_pieces_per_cell": 24,
+  "vacuus_pass_regions_per_cell": 24,
+  "vacuus_pass_vertices_per_cell": 4,
+  "vacuus_pass_q": [
+   [
+    1,
+    1,
+    2
+   ],
+   [
+    1,
+    2,
+    1
+   ],
+   [
+    0,
+    1,
+    -1
+   ],
+   [
+    2,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    -1
+   ],
+   [
+    1,
+    -1,
+    0
+   ]
+  ],
+  "union_planes": 6,
+  "union_pieces_per_cell": 24,
+  "union_regions_per_cell": 24,
+  "union_vertices_per_cell": 4
+ },
+ {
+  "name": "elongated dodecahedron",
+  "lam": [
+   "1",
+   "1",
+   "1",
+   "1/2*sqrt3",
+   "1"
+  ],
+  "facets": 12,
+  "edges": 28,
+  "vertices": 18,
+  "covolume": "4+2*sqrt3",
+  "resonus": [
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "6-gon"
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "None",
+    "h": "1+1/4*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-1",
+      "-2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "d": "None",
+    "h": "1+1/4*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1/2*sqrt3",
+     "nu": [
+      "-2+-1/2*sqrt3",
+      "-1+-1/2*sqrt3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "None",
+    "h": "1+1/4*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-1",
+      "-2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "d": "None",
+    "h": "1+1/4*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1/2*sqrt3",
+     "nu": [
+      "-1+-1/2*sqrt3",
+      "-2+-1/2*sqrt3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "6-gon"
+   }
+  ],
+  "resonus_planes": 6,
+  "resonus_pass": 2,
+  "resonus_web": false,
+  "resonus_pass_pieces_per_cell": 4,
+  "vacuus": [
+   {
+    "normal": [
+     "0",
+     "1",
+     "-1+-1/4*sqrt3"
+    ],
+    "d": "None",
+    "h": "1+1/2*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1/4*sqrt3",
+     "nu": [
+      "-2+-1/2*sqrt3",
+      "-1+-1/2*sqrt3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "1/4*sqrt3"
+    ],
+    "d": "None",
+    "h": "1+1/2*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      1
+     ],
+     "value": "1/4*sqrt3",
+     "nu": [
+      "-1+-1/2*sqrt3",
+      "-1/2*sqrt3",
+      "1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     0,
+     1
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-1+-1/4*sqrt3"
+    ],
+    "d": "None",
+    "h": "1+1/2*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1+1/4*sqrt3",
+     "nu": [
+      "-2+-1/2*sqrt3",
+      "-1+-1/2*sqrt3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "1/4*sqrt3"
+    ],
+    "d": "None",
+    "h": "1+1/2*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      1
+     ],
+     "value": "1+1/4*sqrt3",
+     "nu": [
+      "-1+-1/2*sqrt3",
+      "-1/2*sqrt3",
+      "1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "3/13+-4/13*sqrt3",
+     "0"
+    ],
+    "d": "None",
+    "h": "10/13+4/13*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-1+-1/2*sqrt3",
+      "-2+-1/2*sqrt3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     2,
+     4
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1+-4/3*sqrt3",
+     "0"
+    ],
+    "d": "None",
+    "h": "2+4/3*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1+4/3*sqrt3",
+     "nu": [
+      "-2+-1/2*sqrt3",
+      "-1+-1/2*sqrt3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "1"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "-1"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1+-4/3*sqrt3",
+     "4/3*sqrt3"
+    ],
+    "d": "None",
+    "h": "2+4/3*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     4
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2+-1/2*sqrt3",
+      "-1+-1/2*sqrt3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "3/13+-4/13*sqrt3",
+     "-16/13+4/13*sqrt3"
+    ],
+    "d": "None",
+    "h": "10/13+4/13*sqrt3",
+    "pass": false,
+    "k=2h/d": "dense",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     4
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "-3/13+4/13*sqrt3",
+     "nu": [
+      "-1+-1/2*sqrt3",
+      "-2+-1/2*sqrt3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   }
+  ],
+  "vacuus_planes": 12,
+  "vacuus_pass": 4,
+  "vacuus_web": false,
+  "vacuus_pass_pieces_per_cell": 8
+ },
+ {
+  "name": "elongated dodecahedron",
+  "lam": [
+   "1",
+   "1",
+   "1",
+   "1",
+   "1"
+  ],
+  "facets": 12,
+  "edges": 28,
+  "vertices": 18,
+  "covolume": "8",
+  "resonus": [
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "6-gon"
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "3",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-1",
+      "-2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "d": "1",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "3",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "3",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-1",
+      "-2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "d": "1",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "3",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "6-gon"
+   }
+  ],
+  "resonus_planes": 6,
+  "resonus_pass": 2,
+  "resonus_web": false,
+  "resonus_pass_pieces_per_cell": 4,
+  "vacuus": [
+   {
+    "normal": [
+     "0",
+     "1",
+     "-3/2"
+    ],
+    "d": "1/2",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "8",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1/2",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "1/2"
+    ],
+    "d": "1/2",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "8",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      1
+     ],
+     "value": "1/2",
+     "nu": [
+      "-2",
+      "-1",
+      "1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     0,
+     1
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-3/2"
+    ],
+    "d": "1/2",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "8",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "3/2",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "1/2"
+    ],
+    "d": "1/2",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "8",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      1
+     ],
+     "value": "3/2",
+     "nu": [
+      "-2",
+      "-1",
+      "1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1/3",
+     "0"
+    ],
+    "d": "1/3",
+    "h": "4/3",
+    "pass": false,
+    "k=2h/d": "8",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     2,
+     4
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-3",
+     "0"
+    ],
+    "d": "1",
+    "h": "4",
+    "pass": false,
+    "k=2h/d": "8",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "3",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "1"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "-1"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-3",
+     "2"
+    ],
+    "d": "1",
+    "h": "4",
+    "pass": false,
+    "k=2h/d": "8",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     4
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1/3",
+     "-2/3"
+    ],
+    "d": "1/3",
+    "h": "4/3",
+    "pass": false,
+    "k=2h/d": "8",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     4
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1/3",
+     "nu": [
+      "-2",
+      "-3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   }
+  ],
+  "vacuus_planes": 12,
+  "vacuus_pass": 4,
+  "vacuus_web": false,
+  "vacuus_pass_pieces_per_cell": 8
+ },
+ {
+  "name": "elongated dodecahedron",
+  "lam": [
+   "1",
+   "1",
+   "1",
+   "2",
+   "1"
+  ],
+  "facets": 12,
+  "edges": 28,
+  "vertices": 18,
+  "covolume": "12",
+  "resonus": [
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "6-gon"
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-1",
+      "-2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-1",
+      "-2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-1",
+      "-2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "d": "1",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "4",
+    "face": "4-gon",
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-1",
+      "-2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "6-gon"
+   }
+  ],
+  "resonus_planes": 6,
+  "resonus_pass": 2,
+  "resonus_web": false,
+  "resonus_pass_pieces_per_cell": 4,
+  "vacuus": [
+   {
+    "normal": [
+     "0",
+     "1",
+     "-2"
+    ],
+    "d": "1",
+    "h": "3",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-4",
+      "-3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "1"
+    ],
+    "d": "1",
+    "h": "3",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      1
+     ],
+     "value": "1",
+     "nu": [
+      "-3",
+      "-2",
+      "1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     0,
+     1
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-2"
+    ],
+    "d": "1",
+    "h": "3",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "2",
+     "nu": [
+      "-4",
+      "-3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "3",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      1
+     ],
+     "value": "2",
+     "nu": [
+      "-3",
+      "-2",
+      "1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1/2",
+     "0"
+    ],
+    "d": "1/2",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-3",
+      "-4",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "1",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     2,
+     4
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-2",
+     "0"
+    ],
+    "d": "1",
+    "h": "3",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "2",
+     "nu": [
+      "-4",
+      "-3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "1"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "-1"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-2",
+     "1"
+    ],
+    "d": "1",
+    "h": "3",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     4
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-4",
+      "-3",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1/2",
+     "-1/2"
+    ],
+    "d": "1/2",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     4
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1/2",
+     "nu": [
+      "-3",
+      "-4",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   }
+  ],
+  "vacuus_planes": 12,
+  "vacuus_pass": 4,
+  "vacuus_web": false,
+  "vacuus_pass_pieces_per_cell": 8
+ },
+ {
+  "name": "truncated octahedron",
+  "lam": [
+   "1",
+   "1",
+   "1",
+   "1",
+   "1",
+   "1"
+  ],
+  "facets": 14,
+  "edges": 36,
+  "vertices": 24,
+  "covolume": "16",
+  "resonus": [
+   {
+    "normal": [
+     "0",
+     "0",
+     "1"
+    ],
+    "d": "1",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "3",
+    "face": "6-gon",
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-1"
+    ],
+    "d": "1",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "3",
+    "face": "6-gon",
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "0"
+    ],
+    "d": "1",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "3",
+    "face": "6-gon",
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "1",
+     "nu": [
+      "-1",
+      "-2",
+      "-3"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "0"
+    ],
+    "d": "1",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "3",
+    "face": "6-gon",
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "1"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "face": "4-gon"
+   }
+  ],
+  "resonus_planes": 7,
+  "resonus_pass": 3,
+  "resonus_web": false,
+  "resonus_pass_pieces_per_cell": 8,
+  "resonus_pass_regions_per_cell": 4,
+  "resonus_pass_vertices_per_cell": 4,
+  "resonus_pass_q": [
+   [
+    1,
+    2,
+    1
+   ],
+   [
+    1,
+    0,
+    -1
+   ],
+   [
+    1,
+    0,
+    1
+   ]
+  ],
+  "vacuus": [
+   {
+    "normal": [
+     "0",
+     "1",
+     "0"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     0,
+     2
+    ]
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-4"
+    ],
+    "d": "2",
+    "h": "6",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "2",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "0",
+     "1",
+     "-4/3"
+    ],
+    "d": "2/3",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     0
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "2/3",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "1/3"
+    ],
+    "d": "2/3",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      1
+     ],
+     "value": "4/3",
+     "nu": [
+      "-2",
+      "0",
+      "2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "3"
+    ],
+    "d": "2",
+    "h": "6",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     1
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      1
+     ],
+     "value": "4",
+     "nu": [
+      "-2",
+      "0",
+      "2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "0",
+     "-1"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     1,
+     5
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1/4",
+     "0"
+    ],
+    "d": "1/2",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-4",
+      "-2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-3/4",
+     "0"
+    ],
+    "d": "1/2",
+    "h": "3/2",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     2
+    ],
+    "witness": {
+     "y": [
+      0,
+      -1,
+      0
+     ],
+     "value": "1",
+     "nu": [
+      "-2",
+      "-4",
+      "-2"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "-3"
+    ],
+    "d": "2",
+    "h": "6",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "2",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "1"
+    ],
+    "d": "2",
+    "h": "2",
+    "pass": true,
+    "k=2h/d": "2",
+    "edges_on_plate": 4,
+    "edge_zone": [
+     3,
+     4
+    ]
+   },
+   {
+    "normal": [
+     "1",
+     "-1",
+     "-1/3"
+    ],
+    "d": "2/3",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     3
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "2/3",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "1/3",
+     "-1/3"
+    ],
+    "d": "2/3",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     4
+    ],
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "2/3",
+     "nu": [
+      "-1",
+      "-2",
+      "-3"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "3",
+     "-3"
+    ],
+    "d": "2",
+    "h": "6",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     4
+    ],
+    "witness": {
+     "y": [
+      0,
+      0,
+      -1
+     ],
+     "value": "2",
+     "nu": [
+      "-1",
+      "-2",
+      "-3"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-4",
+     "3"
+    ],
+    "d": "2",
+    "h": "6",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     5
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "2",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   },
+   {
+    "normal": [
+     "1",
+     "-4/3",
+     "1/3"
+    ],
+    "d": "2/3",
+    "h": "2",
+    "pass": false,
+    "k=2h/d": "6",
+    "edges_on_plate": 2,
+    "edge_zone": [
+     5
+    ],
+    "witness": {
+     "y": [
+      -1,
+      0,
+      0
+     ],
+     "value": "2/3",
+     "nu": [
+      "-3",
+      "-2",
+      "-1"
+     ],
+     "facet_neighbour": true
+    }
+   }
+  ],
+  "vacuus_planes": 15,
+  "vacuus_pass": 3,
+  "vacuus_web": false,
+  "vacuus_pass_pieces_per_cell": 8,
+  "vacuus_pass_regions_per_cell": 4,
+  "vacuus_pass_vertices_per_cell": 4,
+  "vacuus_pass_q": [
+   [
+    1,
+    2,
+    1
+   ],
+   [
+    1,
+    0,
+    -1
+   ],
+   [
+    1,
+    0,
+    1
+   ]
+  ]
+ }
+]

@@ -1,0 +1,765 @@
+{
+ "partA": [
+  {
+   "type": "cube",
+   "members": 27,
+   "resonus_planes_tested": 81,
+   "vacuus_plates_tested": 162,
+   "mismatches": [],
+   "vacuus_passing_kinds": {
+    "('not a Resonus plane', (4,))": 27
+   },
+   "vacuus_passing_examples": {
+    "('not a Resonus plane', (4,))": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      3
+     ],
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      2,
+      2
+     ],
+     [
+      1,
+      2,
+      3
+     ]
+    ]
+   }
+  },
+  {
+   "type": "hexagonal prism",
+   "members": 81,
+   "resonus_planes_tested": 324,
+   "vacuus_plates_tested": 729,
+   "mismatches": [],
+   "vacuus_passing_kinds": {
+    "('Resonus plane', (6,))": 63
+   },
+   "vacuus_passing_examples": {
+    "('Resonus plane', (6,))": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      1,
+      3
+     ],
+     [
+      1,
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      1,
+      2,
+      2
+     ],
+     [
+      1,
+      1,
+      2,
+      3
+     ]
+    ]
+   }
+  },
+  {
+   "type": "rhombic dodecahedron",
+   "members": 81,
+   "resonus_planes_tested": 486,
+   "vacuus_plates_tested": 810,
+   "mismatches": [],
+   "vacuus_passing_kinds": {
+    "('Resonus plane', (6,))": 81
+   },
+   "vacuus_passing_examples": {
+    "('Resonus plane', (6,))": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      1,
+      3
+     ],
+     [
+      1,
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      1,
+      2,
+      2
+     ],
+     [
+      1,
+      1,
+      2,
+      3
+     ]
+    ]
+   }
+  },
+  {
+   "type": "elongated dodecahedron",
+   "members": 243,
+   "resonus_planes_tested": 1458,
+   "vacuus_plates_tested": 3240,
+   "mismatches": [],
+   "vacuus_passing_kinds": {
+    "('Resonus plane', (6,))": 135,
+    "('not a Resonus plane', (4,))": 63
+   },
+   "vacuus_passing_examples": {
+    "('Resonus plane', (6,))": [
+     [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      1,
+      1,
+      3
+     ],
+     [
+      1,
+      1,
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      2,
+      2
+     ],
+     [
+      1,
+      1,
+      1,
+      2,
+      3
+     ]
+    ],
+    "('not a Resonus plane', (4,))": [
+     [
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      3,
+      1
+     ],
+     [
+      1,
+      1,
+      2,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      2,
+      2,
+      2
+     ],
+     [
+      1,
+      1,
+      2,
+      3,
+      2
+     ]
+    ]
+   }
+  },
+  {
+   "type": "truncated octahedron",
+   "members": 189,
+   "resonus_planes_tested": 1323,
+   "vacuus_plates_tested": 3267,
+   "mismatches": [],
+   "vacuus_passing_kinds": {
+    "('Resonus plane', (6,))": 93
+   },
+   "vacuus_passing_examples": {
+    "('Resonus plane', (6,))": [
+     [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      1,
+      1,
+      1,
+      3
+     ],
+     [
+      1,
+      1,
+      1,
+      1,
+      2,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      1,
+      3,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+     ]
+    ]
+   }
+  }
+ ],
+ "partB": [
+  {
+   "name": "cube",
+   "lam": [
+    "1",
+    "1",
+    "1"
+   ],
+   "edges": 12,
+   "short_dual_vectors": 9,
+   "admissible_normals_per_edge": [
+    3
+   ],
+   "edges_with_no_admissible_plate": 0,
+   "vacuus_centres": [
+    {
+     "point": [
+      "1/2",
+      "1/2",
+      "-1/2"
+     ],
+     "interior": false
+    },
+    {
+     "point": [
+      "-1/2",
+      "1/2",
+      "-1/2"
+     ],
+     "interior": false
+    },
+    {
+     "point": [
+      "0",
+      "0",
+      "0"
+     ],
+     "interior": true
+    },
+    {
+     "point": [
+      "-1/2",
+      "-1/2",
+      "1/2"
+     ],
+     "interior": false
+    },
+    {
+     "point": [
+      "1/2",
+      "-1/2",
+      "1/2"
+     ],
+     "interior": false
+    },
+    {
+     "point": [
+      "1/2",
+      "-1/2",
+      "-1/2"
+     ],
+     "interior": false
+    },
+    {
+     "point": [
+      "-1/2",
+      "-1/2",
+      "-1/2"
+     ],
+     "interior": false
+    },
+    {
+     "point": [
+      "-1/2",
+      "1/2",
+      "1/2"
+     ],
+     "interior": false
+    },
+    {
+     "point": [
+      "1/2",
+      "1/2",
+      "1/2"
+     ],
+     "interior": false
+    }
+   ],
+   "resonus_slack": [
+    {
+     "normal": [
+      "0",
+      "0",
+      "1"
+     ],
+     "d_minus_h": "1/2"
+    },
+    {
+     "normal": [
+      "0",
+      "1",
+      "0"
+     ],
+     "d_minus_h": "1/2"
+    },
+    {
+     "normal": [
+      "1",
+      "0",
+      "0"
+     ],
+     "d_minus_h": "1/2"
+    }
+   ]
+  },
+  {
+   "name": "hexagonal prism",
+   "lam": [
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "edges": 18,
+   "short_dual_vectors": 7,
+   "admissible_normals_per_edge": [
+    1,
+    3
+   ],
+   "edges_with_no_admissible_plate": 0,
+   "vacuus_centres": [],
+   "resonus_slack": [
+    {
+     "normal": [
+      "0",
+      "0",
+      "1"
+     ],
+     "d_minus_h": "1/2"
+    },
+    {
+     "normal": [
+      "0",
+      "1",
+      "0"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "1",
+      "0",
+      "0"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "d_minus_h": "0"
+    }
+   ]
+  },
+  {
+   "name": "rhombic dodecahedron",
+   "lam": [
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "edges": 24,
+   "short_dual_vectors": 13,
+   "admissible_normals_per_edge": [
+    1
+   ],
+   "edges_with_no_admissible_plate": 0,
+   "vacuus_centres": [
+    {
+     "point": [
+      "0",
+      "0",
+      "0"
+     ],
+     "interior": true
+    }
+   ],
+   "resonus_slack": [
+    {
+     "normal": [
+      "0",
+      "0",
+      "1"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "0",
+      "1",
+      "0"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "1",
+      "0",
+      "0"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "d_minus_h": "0"
+    }
+   ]
+  },
+  {
+   "name": "elongated dodecahedron",
+   "lam": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "edges": 28,
+   "short_dual_vectors": 9,
+   "admissible_normals_per_edge": [
+    0,
+    1
+   ],
+   "edges_with_no_admissible_plate": 16,
+   "vacuus_centres": [],
+   "resonus_slack": [
+    {
+     "normal": [
+      "0",
+      "0",
+      "1"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "0",
+      "1",
+      "0"
+     ],
+     "d_minus_h": "-1/2"
+    },
+    {
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "d_minus_h": "-1/2"
+    },
+    {
+     "normal": [
+      "1",
+      "0",
+      "0"
+     ],
+     "d_minus_h": "-1/2"
+    },
+    {
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "d_minus_h": "-1/2"
+    },
+    {
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "d_minus_h": "0"
+    }
+   ]
+  },
+  {
+   "name": "elongated dodecahedron",
+   "lam": [
+    "1",
+    "1",
+    "1",
+    "1/2*sqrt3",
+    "1"
+   ],
+   "edges": 28,
+   "short_dual_vectors": 9,
+   "admissible_normals_per_edge": [
+    0,
+    1
+   ],
+   "edges_with_no_admissible_plate": 16,
+   "vacuus_centres": [],
+   "resonus_slack": [
+    {
+     "normal": [
+      "0",
+      "0",
+      "1"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "0",
+      "1",
+      "0"
+     ],
+     "d_minus_h": "dense"
+    },
+    {
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "d_minus_h": "dense"
+    },
+    {
+     "normal": [
+      "1",
+      "0",
+      "0"
+     ],
+     "d_minus_h": "dense"
+    },
+    {
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "d_minus_h": "dense"
+    },
+    {
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "d_minus_h": "0"
+    }
+   ]
+  },
+  {
+   "name": "truncated octahedron",
+   "lam": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "edges": 36,
+   "short_dual_vectors": 9,
+   "admissible_normals_per_edge": [
+    1
+   ],
+   "edges_with_no_admissible_plate": 0,
+   "vacuus_centres": [],
+   "resonus_slack": [
+    {
+     "normal": [
+      "0",
+      "0",
+      "1"
+     ],
+     "d_minus_h": "-1/2"
+    },
+    {
+     "normal": [
+      "0",
+      "1",
+      "0"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "0",
+      "1",
+      "-1"
+     ],
+     "d_minus_h": "-1/2"
+    },
+    {
+     "normal": [
+      "1",
+      "0",
+      "0"
+     ],
+     "d_minus_h": "-1/2"
+    },
+    {
+     "normal": [
+      "1",
+      "0",
+      "-1"
+     ],
+     "d_minus_h": "0"
+    },
+    {
+     "normal": [
+      "1",
+      "-1",
+      "0"
+     ],
+     "d_minus_h": "-1/2"
+    },
+    {
+     "normal": [
+      "1",
+      "-1",
+      "1"
+     ],
+     "d_minus_h": "0"
+    }
+   ]
+  }
+ ]
+}
