@@ -257,8 +257,17 @@ cube's Vacuus web, the rhombic dodecahedron's web and the Delone tiling of bcc.
    layers). Blocker: not yet set up. For the cube's Resonus, a shift of exactly ½ still continues, by Theorem 0.
 3. **Observed, not yet proved:** the elongated dodecahedron's two axis plates (the only plates that continue without being Resonus
    planes) continued on the grid exactly when λ1 = λ2 and λ3 = λ5.
-4. **4D.** In 4D the 24-cell (Resonus = Vacuus, overlaps study) and the 4D permutohedron are parallelotopes. Theorem 0 carries over
-   unchanged (k ≤ 2). Test whether the 24-cell's web is the D̃4 alcove arrangement.
+4. **4D: CLOSED (25 Nov, exact, scripts/web4d_24cell.py, logs/web4d_24cell.log).** The 24-cell, taken as the Voronoi cell of
+   D4 = {x in Z^4 : coordinate sum even}, with corners the 8 permutations of (±1,0,0,0) and the 16 points (±½,±½,±½,±½).
+   - Its Vacuus (the hyperplanes through the centre and each of its 96 triangles) and its Resonus (the hyperplanes through the centre
+     parallel to its 24 facets) are the same 12 hyperplanes r·x = 0, one for each pair ±r of the 24 roots ±e_i ± e_j.
+   - For every family, h = 1 and the layer spacing is d = 1 (r·D4 = Z), so k = 2. The family continues (Theorem 0; the covering
+     argument does not depend on the dimension).
+   - The web is the set of all hyperplanes r·x ∈ Z. This is **the affine D4 (D̃4) alcove arrangement**. Only r·x = 0 meets the
+     inside of a cell; the hyperplanes r·x = ±1 are its facets. So each cell holds the 192 = |W(D4)| chambers of its central
+     hyperplanes (all 192 found exactly), and each chamber is one alcove. Check: the cell's volume 2 equals the covolume of D4.
+   - This is the 4D analogue of the rhombic dodecahedron (R = V, k = 2, every region inside one cell).
+   - Still open: the 4D permutohedron (A4 Voronoi cell).
 5. **Lean.** Theorem 0 and the cube and rhombic-dodecahedron webs are finite integer statements, which suits the Lean study
    2026-11-25-lean-vacuus-resonus.
 6. **One piece, any stacking.** The disphenoid web is shared by the cubic and rhombic-dodecahedron tilings. Decorations keyed to
