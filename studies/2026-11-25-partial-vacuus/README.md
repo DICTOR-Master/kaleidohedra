@@ -93,3 +93,11 @@ excavated dodecahedron, 41.81° (the great dodecahedron: 63.43°).
 - McCooey's 162 self-duals (dbb job build-out-mccooey, 0 errors): **no special size** in any; pits disjoint at every size tested in
   all 162; **32 of 162** reach the classics' solidity (median from t ≈ 0.78), the other 130 never do (their thinnest wedge stays
   below 41.8° at every core size).
+
+**Check of the cores (scripts/special_scenes.py, 26 Nov):** the core bounded by ALL pit-wall planes was computed (halfspace
+intersection) and its face count compared with Q's. In **8 of the 12** (all icosahedral: dodecahedron on icosahedron, triakis
+icosahedron and deltoidal hexecontahedron; icosahedron on dodecahedron, pentakis dodecahedron and deltoidal hexecontahedron; rhombic
+triacontahedron on itself; triakis icosahedron on deltoidal hexecontahedron) **the core is exactly Q** (scaled). In the other 4
+(tetrahedron on triakis octahedron; octahedron on triakis tetrahedron, deltoidal hexecontahedron, disdyakis triacontahedron) every wall
+lies in a face plane of Q, but the walls do not make up Q (core 12 or 24 faces against Q's 24, 12, 60, 120): a weaker coincidence,
+listed separately from now on. LEAD 6: identify those four cores (likely a Td/Oh solid on a subset of Q's planes).
