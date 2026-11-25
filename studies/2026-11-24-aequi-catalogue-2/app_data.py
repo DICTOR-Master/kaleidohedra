@@ -22,6 +22,19 @@ ORDER = {'Ih': 120, 'Oh': 48, 'D6h': 24, 'D4h': 16, 'D3h': 12, 'D3d': 12, 'D2h':
 new_groups = sorted({r['group'] for r in res} - set(data['groups']), key=lambda g: -ORDER[g])
 for g in new_groups: data['groups'][g] = []
 data['listOnly'] = new_groups
+READ = {0: ["o", "re", "maru"], 1: ["i", "hi"], 2: ["ni", "fu"], 3: ["mi", "sa"], 4: ["yo", "shi"], 5: ["go", "ko"],
+        6: ["mu", "ro"], 7: ["na"], 8: ["ya", "ha"], 9: ["ku"]}   # the approved goroawase rule (study 2026-11-24-aequi-numberings)
+def syllables(n):
+    out = []
+    for ch in str(n):
+        rs = READ[int(ch)]; x = rs[0]
+        if out and x == out[-1] and len(rs) > 1: x = rs[1]
+        out.append(x)
+    return out
+def shown(n):
+    # DICTO 25 Nov: a hyphen after the first two syllables when a name has four or more (2-2, 2-3), e.g. Goko-goko #5555, Io-nanigo #10725
+    sy = syllables(n); w = ''.join(sy[:2]) + ('-' + ''.join(sy[2:]) if len(sy) >= 4 else ''.join(sy[2:]))
+    return w[0].upper() + w[1:] + ' #' + str(n)
 cat = {int(x['No']): x for x in csv.DictReader(open(os.path.join(HERE, 'catalogue.csv')))}
 for r in sorted(res, key=lambda r: r['no']):
     g = r['group']; orbs = data['groups'][g]; oi = []
@@ -43,7 +56,11 @@ for r in sorted(res, key=lambda r: r['no']):
 for no in range(1233, 10726):
     x = cat[no]; assert x['name_shown'].startswith(x['name'])
     names.append(x['name'] + ' #' + str(no))
-assert len(names) == 10725 and len(set(n.rsplit(' #', 1)[0] for n in names)) == 10725
+for k in range(len(names)):                   # every name re-derived from its number by the approved rule, then hyphenated
+    no = k + 1; plain = names[k].rsplit(' #', 1)[0]
+    assert ''.join(syllables(no)).capitalize() == plain, (no, plain)
+    names[k] = shown(no)
+assert len(names) == 10725 and len(set(n.rsplit(' #', 1)[0].replace('-', '') for n in names)) == 10725
 json.dump(data, open(os.path.join(KM, 'aequi/dice.json'), 'w'), separators=(',', ':'))
 json.dump(names, open(os.path.join(KM, 'aequi/names.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
 print('dice', len(data['dice']), 'names', len(names), 'new groups', new_groups, 'orbits per new group', {g: len(data['groups'][g]) for g in new_groups})
