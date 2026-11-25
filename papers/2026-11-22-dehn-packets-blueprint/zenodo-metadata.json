@@ -1,69 +1,74 @@
 {
-  "upload_type": "publication",
-  "publication_type": "preprint",
-  "creators": [
-    {
-      "name": "DICTO",
-      "affiliation": "Independent artist, Osaka, Japan",
-      "orcid": "0009-0001-2620-2036"
-    }
-  ],
-  "language": "eng",
-  "license": "cc-by-sa-4.0",
-  "access_right": "open",
-  "version": "1",
-  "publication_date": "2026-11-22",
-  "title": "Cancelling Packets That Cannot Fill Space, in Lean",
-  "subjects": [
-    {
-      "term": "MSC2020 52B45: Dissections and valuations (Hilbert's third problem, etc.)",
-      "identifier": "https://zbmath.org/classification/?q=cc:52B45",
-      "scheme": "url"
-    },
-    {
-      "term": "MSC2020 52C22: Tilings in n dimensions",
-      "identifier": "https://zbmath.org/classification/?q=cc:52C22",
-      "scheme": "url"
-    },
-    {
-      "term": "MSC2020 68V20: Formalization of mathematics in connection with theorem provers",
-      "identifier": "https://zbmath.org/classification/?q=cc:68V20",
-      "scheme": "url"
-    }
-  ],
-  "description": "<p>Twelve dodecahedron centre pyramids and one truncated icosahedron have Dehn invariants that cancel exactly, and so do twenty icosahedron centre pyramids and one truncated dodecahedron. DICTO's paper #117 proved by hand that neither pair can fill space, with or without a list of helpers, because around every edge the irrational parts of the dihedral angles cancel only in a ring of 3π. This paper and its Lean 4 source are one release: every statement in the paper is worded to match a Lean declaration, named beside it. <b>Main theorem</b> (Theorem 4, formalised): in any locally finite tiling of space by convex polytopes, not necessarily face-to-face, whose tiles are similar copies (motions, reflections, positive scalings) of the dodecahedron centre pyramid, the truncated icosahedron, the dodecahedron, the icosahedron, the truncated octahedron or the truncated cuboctahedron, all built from exact coordinates, or convex pieces with all dihedral angles nonnegative rational multiples of π, no tile is a copy of the pyramid or of the truncated icosahedron; the same for the icosahedron centre pyramid and the truncated dodecahedron; and the smallest ring of either pair's angles in which the irrational parts cancel sums to 3π. The proof builds on DICTO's Dehn Canon (#113; Palomar PALOMAR-2026-11-20-000003), pinned at commit 9ea20f6, and uses only Lean's three standard axioms.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
-  "keywords": [
-    "DICTO",
-    "Dehn invariant",
-    "tiling",
-    "space-filling",
-    "Lean 4",
-    "formalization",
-    "Mathlib",
-    "truncated icosahedron",
-    "truncated dodecahedron",
-    "centre pyramids"
-  ],
-  "related_identifiers": [
-    {
-      "identifier": "10.5281/zenodo.24411660",
-      "relation": "isSupplementTo",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "10.5281/zenodo.24383552",
-      "relation": "references",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "10.5281/zenodo.23529497",
-      "relation": "references",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "10.5281/zenodo.23345699",
-      "relation": "isPartOf",
-      "scheme": "doi"
-    }
-  ]
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "version": "1",
+ "publication_date": "2026-11-25",
+ "title": "Cancelling Packets That Cannot Fill Space, in Lean",
+ "subjects": [
+  {
+   "term": "MSC2020 52B45: Dissections and valuations (Hilbert's third problem, etc.)",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B45",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 68V20: Formalization of mathematics in connection with theorem provers",
+   "identifier": "https://zbmath.org/classification/?q=cc:68V20",
+   "scheme": "url"
+  }
+ ],
+ "description": "<p>Twelve dodecahedron centre pyramids and one truncated icosahedron have Dehn invariants that cancel exactly, and so do twenty icosahedron centre pyramids and one truncated dodecahedron. DICTO's paper #117 proved by hand that neither pair can fill space, with or without a list of helpers, because around every edge the irrational parts of the dihedral angles cancel only in a ring of 3π. This paper and its Lean 4 source are one release: every statement in the paper is worded to match a Lean declaration, named beside it. <b>Main theorem</b> (Theorem 4, formalised): in any locally finite tiling of space by convex polytopes, not necessarily face-to-face, whose tiles are similar copies (motions, reflections, positive scalings) of the dodecahedron centre pyramid, the truncated icosahedron, the dodecahedron, the icosahedron, the truncated octahedron or the truncated cuboctahedron, all built from exact coordinates, or convex pieces with all dihedral angles nonnegative rational multiples of π, no tile is a copy of the pyramid or of the truncated icosahedron; the same for the icosahedron centre pyramid and the truncated dodecahedron; and the smallest ring of either pair's angles in which the irrational parts cancel sums to 3π. The proof builds on DICTO's Dehn Canon (#113; Palomar PALOMAR-2026-11-20-000003), pinned at commit 9ea20f6, and uses only Lean's three standard axioms.</p><p>Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Dehn invariant",
+  "tiling",
+  "space-filling",
+  "Lean 4",
+  "formalization",
+  "Mathlib",
+  "truncated icosahedron",
+  "truncated dodecahedron",
+  "centre pyramids"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.24411660",
+   "relation": "isSupplementTo",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24383552",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23529497",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/dehn-packets-lean/tree/972dd3daa09d8966c295a810d329ef93223a59ee",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  }
+ ]
 }
