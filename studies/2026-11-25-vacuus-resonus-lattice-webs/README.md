@@ -269,7 +269,7 @@ cube's Vacuus web, the rhombic dodecahedron's web and the Delone tiling of bcc.
      hyperplanes (all 192 found exactly), and each chamber is one alcove. Check: the cell's volume 2 equals the covolume of D4.
    - This is the 4D analogue of the rhombic dodecahedron (R = V, k = 2, every region inside one cell).
    - Still open: the 4D permutohedron (A4 Voronoi cell).
-5. **Lean.** Theorem 0 and the cube and rhombic-dodecahedron webs are finite integer statements, which suits the Lean study
-   2026-11-25-lean-vacuus-resonus.
+5. **Lean: DONE (25 Nov, M4 of study 2026-11-25-lean-vacuus-resonus, FINAL ok).** Theorem 0 in any dimension (`web_iff`), the cube and
+   rhombic-dodecahedron webs (`cube_resonus_web`, `cube_vacuus_web`, `rd_web`) and their common planes (`same_web`).
 6. **One piece, any stacking.** The disphenoid web is shared by the cubic and rhombic-dodecahedron tilings. Decorations keyed to
    it would be seen the same way in both, which could serve the aim of one piece forcing aperiodic stacking.

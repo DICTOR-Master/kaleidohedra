@@ -18,9 +18,18 @@ DICTO · Lean 4 formalisation of three short results of the Vacuus–Resonus–A
 3. **The factor 3 (M3, formalised).** φ^k ≠ 3 for every integer k. Stronger, and what gap (b) needs: if φ²r² = 3 then r ≠ q·φ^k
    for every rational q and integer k, so no φ-step (even rescaled by a rational) reaches the station-die depth ratio √3/φ.
 
+4. **Lattice webs (M4, formalised, 25 Nov).** `VacuusResonus/LatticeWebs.lean`, `logs/build-M4.log` (`FINAL ok`, standard axioms only).
+   For a convex, centrally symmetric cell P with interior points, a nonzero functional f and h the least upper bound of f on P:
+   `plane_meets_interior_iff` (the plane f x = t meets the interior of P iff |t| < h); `plane_meets_cell_iff` (the copy through λ meets
+   the interior of the cell P + μ iff |f(λ − μ)| < h); `web_iff` (Theorem 0 of the lattice-webs study: every copy meeting a cell's
+   interior is that cell's own central plane iff every lattice vector ν has f ν = 0 or h ≤ |f ν|), in any finite dimension.
+   Concrete: `cube_resonus_web` (ℤ³, eᵢ, h = 1/2), `cube_vacuus_web` (ℤ³, eᵢ ± eⱼ, h = 1), `rd_web` (D₃, eᵢ ± eⱼ, h = 1),
+   `same_web` (for eᵢ ± eⱼ both lattices give the planes f x ∈ ℤ). Not formalised: that these normals are exactly the cube's and the
+   rhombic dodecahedron's Vacuus and Resonus planes (taken from the catalogue study), and the families that break.
+
 ## Files and build
 
-- `VacuusResonus/PolarLink.lean` (M1), `VacuusResonus/Fins.lean` (M2), `VacuusResonus/GoldenThree.lean` (M3); root `VacuusResonus.lean`.
+- `VacuusResonus/PolarLink.lean` (M1), `VacuusResonus/Fins.lean` (M2), `VacuusResonus/GoldenThree.lean` (M3), `VacuusResonus/LatticeWebs.lean` (M4); root `VacuusResonus.lean`.
 - `check.sh TAG MODULE thm…`: builds the module, prints `#print axioms` for each theorem, counts `sorry`/`admit`/`axiom`/
   `native_decide`, and writes `FINAL ok` only if the build succeeded, there is no warning or error, every axiom list is the standard
   one, and the count is 0.
