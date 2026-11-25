@@ -7,3 +7,5 @@
    (study 2026-11-24-resonus-4d-recheck, LEAD 1).
 3. The Vacuus of every regular polytope lies in its mirrors (two mirror laws, any dimension; same study), if the text states the
    mirror property case by case.
+
+4. Credit Waegell and Aravind for the 60 + 300 directions (from the Fable review of the Vacuus–Resonus draft, 25 Nov 2026); open their paper and cite exactly.
