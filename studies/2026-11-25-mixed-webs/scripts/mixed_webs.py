@@ -175,3 +175,37 @@ ok_cube=all(not b for k in ('vac','res') for b in test(cc,k,lambda c: all(abs(x)
 ok_rd=all(not b for k in ('vac','res') for b in test(cr,k,lambda c: all(abs(x)<=1 for x in c)).values())
 print('CONTROLS cube', ok_cube, 'rhombic dodecahedron', ok_rd, 'stella cover', COVER_OK)
 print('FINAL ok' if (ok_cube and ok_rd and COVER_OK) else 'FINAL FAIL (a control or the stella cover failed)')
+# ---------- second notion: "continues through mirrors" (Fable's rule, DICTO's view 25 Nov) ----------
+# a family plane may also cross a cell through its centre along a mirror plane of that cell; the family is still generated only by cells
+# that carry n. Mirrors need a metric: identity for the cubic tilings, the hcp Gram matrix G for the TRD.
+def inv3(M):
+    a,b,c=M; det=dot(a,cross(b,c)); C=[cross(b,c),cross(c,a),cross(a,b)]
+    return tuple(tuple(C[j][i]/det for j in range(3)) for i in range(3))
+I3=((F(1),F(0),F(0)),(F(0),F(1),F(0)),(F(0),F(0),F(1)))
+def is_mirror(C,n,Gm):
+    Gi=inv3(Gm); w=tuple(sum(Gi[i][j]*n[j] for j in range(3)) for i in range(3)); q=dot(n,w)
+    Vs=set(C['V'])
+    for v in C['V']:
+        r=sub(v,C['c']); s=2*dot(n,r)/q; im=tuple(v[i]-s*w[i] for i in range(3))
+        if im not in Vs: return False
+    return True
+def test_m(cells,kind,box,Gm):
+    fams={}
+    for C in cells:
+        for n in C[kind]: fams.setdefault(n,set()).add(dot(n,C['c']))
+    out={}
+    for n,ts in sorted(fams.items()):
+        bad=None
+        for C in cells:
+            if not box(C['c']) or bad: continue
+            for t in ts:
+                if meets(C,n,t):
+                    own = n in C[kind] and dot(n,C['c'])==t
+                    mir = dot(n,C['c'])==t and is_mirror(C,n,Gm)
+                    if not (own or mir): bad=(C['c'],t); break
+        out[n]=bad
+    return out
+for name,cl,bx,Gm in (('tetrahedra + octahedra',cells,box,I3),('stellae + octahedra',cellsS,box3,I3),('TRD (hcp)',cellsT,boxT,G),('CONTROL cube',cc,lambda c: all(abs(x)<=1 for x in c),I3)):
+    for kind in ('vac','res'):
+        r=test_m(cl,kind,bx,Gm); ok=[n for n,b in r.items() if b is None]
+        print(f'THROUGH MIRRORS  {name} {kind}: {len(r)} families, continue {len(ok)}: {ok}')

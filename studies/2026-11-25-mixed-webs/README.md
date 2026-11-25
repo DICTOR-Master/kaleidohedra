@@ -33,9 +33,27 @@ of the 8 tetrahedra, or runs along one of the 8 inner faces.
 **One-line conclusion.** Outside lattice tilings, the webs that survive are the coordinate-plane web (octahedra, and the stella if its
 inner edges count) and the upright web of the TRD; every face-parallel family of the tetrahedron, octahedron and stella breaks.
 
+
+## Second notion: continues through mirrors (DICTO: "it seems like continuing"; rule worded by a Fable review, 25 Nov)
+
+**Rule.** A family continues through mirrors when every one of its planes that passes through the inside of a cell goes through that
+cell's centre and is either the cell's own plane of the kind tested or a mirror plane of the cell. The family is still made only from the
+cells that carry its direction. Mirrors need a metric (the identity for the cubic tilings, the hcp Gram matrix for the TRD).
+Exact rerun (same script, `THROUGH MIRRORS` lines; the cube control is unchanged):
+
+| tiling | Vacuus through mirrors | Resonus through mirrors |
+|---|---|---|
+| tetrahedra + octahedra | **all 9 continue**: the planes x_i ∈ ℤ and x_i ± x_j ∈ ℤ | all 4 break |
+| stellae octangulae + octahedra | **all 9 continue** (the inner-edge question no longer matters) | all 4 break |
+| trapezo-rhombic dodecahedra | 3 upright continue, 6 tilted break (unchanged) | the same |
+
+The Vacuus web of both cubic mixed tilings is then the full mirror arrangement x_i, x_i ± x_j ∈ ℤ, the same arrangement as the cube's
+Vacuus + Resonus web. In lattice tilings the two notions agree (every cell carries the same directions).
+**Caution (from the review):** the second notion depends on symmetry, not only on DICTO's planes, and needs a metric; before any claim,
+check that it says more than "the planes are mirrors of the tiling".
+
 ## LEADS
-1. The broken tetrahedron planes pass through octahedron centres along octahedron mirrors: a looser test ("a plane may pass through a cell
-   along one of its mirrors") would let them continue. Worth DICTO's view: is a mirror crossing a break?
+1. DONE: mirror crossing as a second notion (section above).
 2. TRD: the upright web is the 2D web of the hexagonal layers (triangular arrangement) carried through all layers.
 3. Lean: the coordinate-plane web of the honeycomb is Theorem 0 of M4 applied to the octahedra alone (they form a lattice); the
    tetrahedra need a two-kind version of `web_iff`.

@@ -99,3 +99,11 @@ stella: Vacuus (outer edges) [(0, 1, -1), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1,
   Vacuus and Resonus together: 6 normal families; continue 6: [(0, 1, -1), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 1), (1, 1, 0)]
 CONTROLS cube True rhombic dodecahedron True stella cover True
 FINAL ok
+THROUGH MIRRORS  tetrahedra + octahedra vac: 9 families, continue 9: [(0, 0, 1), (0, 1, -1), (0, 1, 0), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 0), (1, 0, 1), (1, 1, 0)]
+THROUGH MIRRORS  tetrahedra + octahedra res: 4 families, continue 0: []
+THROUGH MIRRORS  stellae + octahedra vac: 9 families, continue 9: [(0, 0, 1), (0, 1, -1), (0, 1, 0), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 0), (1, 0, 1), (1, 1, 0)]
+THROUGH MIRRORS  stellae + octahedra res: 4 families, continue 0: []
+THROUGH MIRRORS  TRD (hcp) vac: 9 families, continue 3: [(1, -1, 0), (1, 2, 0), (2, 1, 0)]
+THROUGH MIRRORS  TRD (hcp) res: 9 families, continue 3: [(1, -1, 0), (1, 2, 0), (2, 1, 0)]
+THROUGH MIRRORS  CONTROL cube vac: 6 families, continue 6: [(0, 1, -1), (0, 1, 1), (1, -1, 0), (1, 0, -1), (1, 0, 1), (1, 1, 0)]
+THROUGH MIRRORS  CONTROL cube res: 3 families, continue 3: [(0, 0, 1), (0, 1, 0), (1, 0, 0)]
