@@ -5100,6 +5100,26 @@
         "src": "study 2026-11-25-inversions",
         "what": "constant width for inversion about a point outside the body",
         "status": "open (new 25 Nov 2026, studies/2026-11-25-inversions LEAD 6)"
+      },
+      {
+        "src": "study 2026-11-25-quality-overlaps",
+        "what": "the 60 Aequi depth coincidences (ratio balls contain √3/φ, φ, 1/φ, 1 …): prove by the station method; up to 32 dice would join Resonus ∩ Vacuus",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-quality-overlaps LEAD 1)"
+      },
+      {
+        "src": "study 2026-11-25-quality-overlaps",
+        "what": "3D classification of Resonus = Vacuus: convex polyhedra whose edge lines equal their corner lines (central symmetry forced? only linear images of RD and RT?)",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-quality-overlaps LEAD 3)"
+      },
+      {
+        "src": "study 2026-11-25-quality-overlaps",
+        "what": "E6 in the triple coincidence Resonus = Vacuus = mirrors (does W(E6) contain −r?); general ADE lemma behind the root-polytope theorem",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-quality-overlaps LEAD 4)"
+      },
+      {
+        "src": "study 2026-11-25-quality-overlaps",
+        "what": "the Sunstar: does any of its 69 plates coincide with one of its 6 Resonus planes?",
+        "status": "open (new 25 Nov 2026, studies/2026-11-25-quality-overlaps LEAD 5)"
       }
     ],
     "waiting": [
@@ -6011,6 +6031,41 @@
         "study": "studies/2026-11-25-lean-vacuus-resonus",
         "goes_to": "#33 Double Vision (next version)",
         "status": "settled (Lean-formalised)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Resonus = Vacuus from root systems (proved, exact): for Φ = A2–A5, D4, D5, E6, E7, E8, H3, H4 every edge of conv(Φ) is parallel to a root and every root line carries an edge, so Π(Φ) = {x·α ≤ 1} has Resonus = Vacuus = the root mirrors (polar test, any dimension). Members: RD (A3), RT (H3), 24-cell (D4), 120-cell (H4) and, new, the polar of the runcinated 5-cell (A4, 10 = 10). In 3D the property is invariant under linear maps, so all linear images of RD and RT qualify; exhaustive in the 163 + 15 192 Aequi + 9 compounds: only RD and RT",
+        "study": "studies/2026-11-25-quality-overlaps",
+        "goes_to": "the Vacuus and Resonus paper (next version: polar test, root polytopes)",
+        "status": "settled (proved, exact or certified)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Resonus = Vacuus = mirrors (proved): holds for Π(Φ) exactly when Aut(Φ) adds no reflection: H3 (RT), H4 (120-cell), E7, E8 and A_n, n ≥ 4 (incl. the new A4 polytope); fails for A2, A3 (RD 9 mirrors), D4 (24-cell 24), D_n n ≥ 5. In the 163 only RT",
+        "study": "studies/2026-11-25-quality-overlaps",
+        "goes_to": "the Vacuus and Resonus paper",
+        "status": "settled (proved, exact or certified)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Vacuus inside the mirrors forces face-transitivity; Resonus inside the mirrors forces central symmetry (proved, any convex polyhedron, via the two mirror laws and Minkowski). So Vacuus = mirrors is impossible for all 15 192 catalogued Aequi; Resonus = mirrors holds for one die only (Aequus CRD-18, R = the 9 Oh mirrors) and in the 163 only for RT",
+        "study": "studies/2026-11-25-quality-overlaps",
+        "goes_to": "the Vacuus and Resonus paper; the Aequi catalogue paper",
+        "status": "settled (proved, exact or certified)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Harmonious Sphericus (proved): a central plane arrangement of rank 3 with harmonious crossings is exactly three perpendicular planes. Fair dice with harmonious Resonus: the cube only; with harmonious Vacuus: exactly the octahedra with three perpendicular mutually bisecting diagonals (every axial octahedron is fair about the axis crossing). No catalogued Aequus qualifies",
+        "study": "studies/2026-11-25-quality-overlaps",
+        "goes_to": "the Sphericus write-up (with plate harmony)",
+        "status": "settled (proved, exact or certified)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Quality overlaps on the 15 192 Aequi (exact): Resonus ∩ Vacuus ≠ ∅ for 6 253 (at most 6 285), largest overlap 30 planes; Resonus ⊊ Vacuus for Aequus RDRT-24 and one T die (first 3D cases; 4D permutohedron analogue); Resonus in the 31 hub planes 4 039 (confirmed); Tacitus ∧ simplicial Resonus 9 dice (e.g. Yanagoni No.8752); doubly fair 24 confirmed, 3 of them with shared planes. In the 163: R∩V 28 (mechanisms tabulated), Vacuus ⊊ Resonus for CO, ID, J27, J34; Tacitus ∧ simplicial Resonus impossible (k ≤ 20)",
+        "study": "studies/2026-11-25-quality-overlaps",
+        "goes_to": "the Vacuus and Resonus paper; the Aequi catalogue paper",
+        "status": "settled (proved, exact or certified)"
       }
     ]
   },
