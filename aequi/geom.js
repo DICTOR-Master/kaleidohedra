@@ -113,8 +113,10 @@
     data.T = [{ id: 'I', p: I, improper: false }, { id: 'M', p: M, improper: true },
               { id: 'Q', p: Q, improper: false }, { id: 'MQ', p: compose(Q, M), improper: true }];
     data.index = {};
+    data.byK = {};
     data.dice.forEach(function (e, k) {
-      e.k = k;
+      e.k = e.no ? e.no - 1 : k;   // catalogue 2 dice carry their catalogue number (Nos. 1233-1235 are not in the picker)
+      data.byK[e.k] = e;
       var ds = [];
       e.osets = e.o.map(function (oi) { return data.groups[e.g][oi].dirs; });
       e.osets.forEach(function (s) { ds = ds.concat(s); });

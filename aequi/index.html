@@ -341,13 +341,17 @@ function labelGroup(S, nums, colours, mirror) {
   var s = 1 / R; lg.scale.set(s, s, s);
   return lg;
 }
-var GROUP_WORDS = { Ih: 'Ih · icosahedral, 120', Oh: 'Oh · cube, 48', O: 'O · cube turns only, 24', Td: 'Td · tetrahedral with mirrors, 24', Th: 'Th · pyritohedral, 24', T: 'T · tetrahedral turns only, 12' };
+var GROUP_WORDS = { Ih: 'Ih · icosahedral, 120', Oh: 'Oh · cube, 48', O: 'O · cube turns only, 24', Td: 'Td · tetrahedral with mirrors, 24', Th: 'Th · pyritohedral, 24', T: 'T · tetrahedral turns only, 12',
+  D6h: 'D6h · order 24', D4h: 'D4h · order 16', D3h: 'D3h · order 12', D3d: 'D3d · order 12', D2h: 'D2h · order 8', D2d: 'D2d · order 8', D4: 'D4 · order 8', C4h: 'C4h · order 8',
+  D3: 'D3 · order 6', S6: 'S6 · order 6', D2: 'D2 · order 4', C2h: 'C2h · order 4', S4: 'S4 · order 4' };
+function listOnly(g) { return !!(data.listOnly && data.listOnly.indexOf(g) >= 0); }   // the smaller groups of catalogue 2: list view only (too many kinds of face to tick)
 function techName(e) { return e.name.replace(/(, [A-Za-z]+) \d+$/, '$1'); }   // DICTO 25 Nov: group letters only, no number within the group
 function dieTitle(e) { return e.s === 'A' ? techName(e) : e.g + ': ' + e.o.map(function (oi) { return data.groups[e.g][oi].lab; }).join(' + '); }
 function groupDice(g) {
   var A = data.dice.filter(function (e) { return e.g === g && e.s === 'A'; }).sort(function (a, b) { return a.num - b.num; });
   var B = data.dice.filter(function (e) { return e.g === g && e.s === 'B'; }).sort(function (a, b) { return a.m - b.m || a.N - b.N || dieTitle(a).localeCompare(dieTitle(b)); });
-  return { A: A, B: B };
+  var C = data.dice.filter(function (e) { return e.g === g && e.s === 'C'; }).sort(function (a, b) { return a.k - b.k; });
+  return { A: A, B: B, C: C };
 }
 function fillGroups() {
   var sel = $('groupSel');
@@ -357,7 +361,7 @@ function fillGroups() {
   });
   sel.onchange = function () { setGroup(sel.value, []); };
 }
-function setGroup(g, ticked) { st.g = g; st.ticked = ticked.slice().sort(function (a, b) { return a - b; }); st.hand = false; $('groupSel').value = g; renderChoices(); updatePick(); }
+function setGroup(g, ticked) { if (listOnly(g)) { st.mode = 'list'; $('modeList').setAttribute('aria-pressed', 'true'); $('modeTick').setAttribute('aria-pressed', 'false'); } $('modeTick').hidden = listOnly(g); st.g = g; st.ticked = ticked.slice().sort(function (a, b) { return a - b; }); st.hand = false; $('groupSel').value = g; renderChoices(); updatePick(); }
 function renderChoices() {
   var box = $('choices'), orbs = data.groups[st.g];
   if (st.mode === 'tick') {
@@ -385,10 +389,11 @@ function renderChoices() {
     var h = '';
     if (L.A.length) h += '<div class="sec">Main catalogue · ' + L.A.length + '</div><div class="list">' + L.A.map(item).join('') + '</div>';
     if (L.B.length) h += '<div class="sec">Both icosahedron placements · ' + L.B.length + '</div><div class="list">' + L.B.map(item).join('') + '</div>';
+    if (L.C.length) h += '<div class="sec">Catalogue 2 (certified 24 November 2026) · ' + L.C.length + '</div><div class="list">' + L.C.map(item).join('') + '</div>';
     box.innerHTML = h;
     box.querySelectorAll('.item').forEach(function (b) {
       b.onclick = function () {
-        var e = data.dice[+b.dataset.k]; st.ticked = e.o.slice().sort(function (a, b) { return a - b; }); st.hand = false;
+        var e = data.byK[+b.dataset.k]; st.ticked = e.o.slice().sort(function (a, b) { return a - b; }); st.hand = false;
         box.querySelectorAll('.item').forEach(function (x) { x.classList.toggle('sel', x === b); }); updatePick();
       };
     });
@@ -468,7 +473,7 @@ function updatePick() {
       return '<tr><td>' + picker(o.col) + '</td><td>' + esc(o.plain) + '<br><span class="tech">' + esc(o.lab) + '</span></td><td class="num">' + polyCounts(S, j) + '</td><td class="num">' + e.d[j].toFixed(12) + '</td></tr>';
     }).join('');
     html += '<h2>' + esc(nameOf(e)) + '</h2>' +
-      '<p class="sub">' + esc(dieTitle(e)) + ' · ' + (e.s === 'A' ? 'Main catalogue' + (e.book ? ' · book atom ' + esc(e.book) : '') : 'Both icosahedron placements') + '</p>' + numRow(e) +
+      '<p class="sub">' + esc(dieTitle(e)) + ' · ' + (e.s === 'A' ? 'Main catalogue' + (e.book ? ' · book atom ' + esc(e.book) : '') : e.s === 'C' ? 'Catalogue 2, certified 24 November 2026' : 'Both icosahedron placements') + (e.m === 2 ? ' · Aequi Diaconis–Keller' : '') + '</p>' + numRow(e) +
       (e.m >= 4 ? '<span class="badge">Aequus Mosaicus</span>' : '') + (e.h ? '<span class="badge">two hands</span>' : '') +
       '<dl><dt>group</dt><dd>' + e.g + '</dd><dt>kinds of face m</dt><dd>' + e.m + '</dd><dt>faces N</dt><dd>' + e.N + ' (built: ' + S.faces.length + ')</dd><dt>corners</dt><dd>' + S.verts.length + '</dd>' +
       '<dt>hands</dt><dd>' + (e.h ? 'two hands (chiral)' + (st.hand ? ' · showing the other hand' : '') : 'one (mirror-symmetric)') + '</dd></dl>' +
