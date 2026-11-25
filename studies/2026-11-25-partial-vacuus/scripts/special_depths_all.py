@@ -54,6 +54,15 @@ for p in sel:
     if R is None: print('no orthogonal axis triple:', p['name'], flush=True); continue
     S[p['name']] = (V @ R.T, F, N @ R.T, D)
 print('canonical frames:', len(S), flush=True)
+ASSOC = os.environ.get('ASSOC')
+if ASSOC:   # the associahedra of study 2026-11-24-permutahedron-leads, in their permutahedra's Coxeter frames (as given; centroid 0)
+    for t in ('A3', 'B3', 'H3'):
+        d = json.load(open(os.path.join(HERE, '../../2026-11-24-permutahedron-leads/data/assoc-%s.json' % t)))
+        for c, r in d['results'].items():
+            V = r['_V']; F = r['_faces']
+            V = json.loads(V) if isinstance(V, str) else V; F = json.loads(F) if isinstance(F, str) else F
+            S['%s associahedron (c = %s)' % (t, c)] = prep(dict(verts=V, faces=F))
+    print('with associahedra:', len(S), flush=True)
 def walls(V, F, N, D):
     out = []
     for fi, f in enumerate(F):
@@ -64,6 +73,7 @@ found = []
 for P, (V, F, N, D) in S.items():
     W = walls(V, F, N, D)
     for Q, (VQ, FQ, NQ0, DQ) in S.items():
+      if ASSOC and 'associahedron' not in P + Q: continue
       seen_q = set()
       for M in FRAME:
         NQ = NQ0 @ M.T
@@ -86,7 +96,7 @@ for P, (V, F, N, D) in S.items():
                 if not any(abs(abs(m @ w) - 1) < 1e-8 and abs(dist - lam * dq) < 1e-7 for w, dq in zip(NQ, DQ)): ok = False; break
             if ok and not any(f['P'] == P and f['Q'] == Q and abs(f['s'] - s) < 1e-7 for f in found):
                 found.append(dict(P=P, Q=Q, s=s, lam=lam)); print(f'{P:40s} pits end on {Q:40s} s = {s:.8f}  scale {lam:.6f}', flush=True)
-json.dump(found, open(os.path.join(HERE, '../data-special-all.json'), 'w'), indent=1)
+json.dump(found, open(os.path.join(HERE, '../data-special-%s.json' % ('assoc' if ASSOC else 'all')), 'w'), indent=1)
 ctrl = any('dodecahedron' == f['P'].lower().replace('_', ' ') and 'icosahedron' == f['Q'].lower().replace('_', ' ') and abs(f['s'] - (5 - 2 * 5 ** .5)) < 1e-6 for f in found)
 print('special depths found', len(found), '; control (dodecahedron on icosahedron at 5-2sqrt5):', ctrl)
-print('FINAL ok' if ctrl else 'FINAL FAIL (control)')
+print('FINAL ok' if (ctrl or ASSOC) else 'FINAL FAIL (control)')

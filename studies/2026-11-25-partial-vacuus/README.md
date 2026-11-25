@@ -48,6 +48,15 @@ No Archimedean solid and no other Catalan solid has a special depth against thes
 solid whose pits end on a smaller copy of itself (scale 1/φ, pits reaching 3 − √5 of the way in): a self-similar partial Vacuus.
 Closed forms marked are fitted and checked to 1e-7; a symbolic proof (as part 1) is LEAD 4.
 
+
+**Permutahedra and associahedra (DICTO 26 Nov: "any permutahedra or associahedra etc").** The three permutahedra (truncated
+octahedron A3, truncated cuboctahedron B3, truncated icosidodecahedron H3) and their duals (tetrakis hexahedron, disdyakis
+dodecahedron, disdyakis triacontahedron) are in the run above: none has a special depth of its own; the disdyakis triacontahedron is
+the core for the octahedron's pits at s ≈ 0.3167. The twelve associahedra of study 2026-11-24-permutahedron-leads (A3, B3, H3, every
+Coxeter element computed there), in their permutahedra's Coxeter frames (checked: three half-turn axes on x, y, z, as the common frame),
+tried as pitted solid and as core against all 31 solids and each other (scripts/special_depths_all.py with ASSOC=1,
+logs/special_assoc.log): **no special depth**. Their low symmetry (order 2) leaves nothing to carry every wall onto one solid's faces.
+
 4. (LEAD) Exact derivation of every depth in part 1b, as part 1 did for the Platonic pairs.
 5. (LEAD) Which of these excavated solids are classical stellations (as the excavated dodecahedron and the great dodecahedron are).
 
