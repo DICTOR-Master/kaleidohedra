@@ -18,6 +18,9 @@ HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 STUDIES = os.path.normpath(os.path.join(ROOT, '..', '..', 'studies'))
 CSV = os.path.join(STUDIES, '2026-11-24-vacuus-resonus-catalogue', 'data', 'vacuus-resonus-catalogue.csv')
 BUILDS = os.path.join(STUDIES, '2026-11-24-vacuus-build-renders', 'renders')
+# Figure 1(a), 25 Nov: DICTO's cardboard octahedron redrawn from his Template 2 (four pieces: A, B and the third square in two halves
+# C1, C2; slots as on the template), assembled with the pieces pulled apart as an inset (study 2026-11-25-slot-assemblies, fig1a.py)
+FIG1A = os.path.join(STUDIES, '2026-11-25-slot-assemblies', 'renders', 'fig1a-dicto-octahedron-four-pieces.jpg')
 phi = (1 + 5 ** 0.5) / 2
 BG = (20, 22, 28)
 EDGE = '#efe9d8'; FIN = '#8fa9c4'; RES = '#d9b98c'; VPL = '#8fa9c4'; CORE = '#f4f0e6'
@@ -178,10 +181,11 @@ def compose(SH, FIG):
     TXT = (226, 222, 212); GOLD = (224, 184, 74)
     # Figure 1: the four builds, 2 x 2, labels a-d
     b = ['octahedron-cardboard-cards', 'cube-b1nr-skeleton', 'cuboctahedron-ring-fins', 'dodecahedron-ring-fins']
-    lab = ['a  cardboard octahedron', 'b  B1NR cube', 'c  B1NR cuboctahedron, ring fins', 'd  B1NR dodecahedron, ring fins']
+    lab = ['a  cardboard octahedron, four pieces', 'b  B1NR cube', 'c  B1NR cuboctahedron, ring fins', 'd  B1NR dodecahedron, ring fins']
     T = 760; S = Image.new('RGB', (2 * T + 60, 2 * (T + 50) + 70), BG); d = ImageDraw.Draw(S)
     for k, n in enumerate(b):
-        im = Image.open(os.path.join(BUILDS, n + '.jpg')).convert('RGB'); chk(f'Figure 1: build render {n} fully inside its frame', bbox_ok(im))
+        src = FIG1A if k == 0 else os.path.join(BUILDS, n + '.jpg')
+        im = Image.open(src).convert('RGB'); chk(f'Figure 1: build render {n} fully inside its frame', bbox_ok(im))
         x, y = 20 + (k % 2) * (T + 20), 20 + (k // 2) * (T + 50)
         S.paste(im.resize((T, T), Image.LANCZOS), (x, y)); d.text((x + 10, y + T + 8), lab[k], font=f_lab, fill=TXT)
     d.text((S.size[0] - 20, S.size[1] - 18), mark, font=f_sm, fill=GOLD, anchor='rd'); S.save(os.path.join(FIG, 'fig1-four-builds.jpg'), quality=91)

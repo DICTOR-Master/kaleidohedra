@@ -1,0 +1,59 @@
+## octahedron cut: 56425 schemes
+  pieces per card (1, 1, 1) (total 3): possible 0, impossible 7698
+  pieces per card (1, 1, 2) (total 4): possible 396, impossible 13314
+  pieces per card (1, 1, 3) (total 5): possible 528, impossible 4404
+  pieces per card (1, 2, 2) (total 5): possible 2166, impossible 7371
+  pieces per card (1, 1, 4) (total 6): possible 114, impossible 480
+  pieces per card (1, 2, 3) (total 6): possible 3000, impossible 4680
+  pieces per card (2, 2, 2) (total 6): possible 1744, impossible 784
+  pieces per card (1, 2, 4) (total 7): possible 498, impossible 510
+  pieces per card (1, 3, 3) (total 7): possible 948, impossible 720
+  pieces per card (2, 2, 3) (total 7): possible 2880, impossible 528
+  pieces per card (1, 3, 4) (total 8): possible 336, impossible 120
+  pieces per card (2, 2, 4) (total 8): possible 417, impossible 72
+  pieces per card (2, 3, 3) (total 8): possible 1572, impossible 96
+  pieces per card (1, 4, 4) (total 9): possible 30, impossible 0
+  pieces per card (2, 3, 4) (total 9): possible 480, impossible 24
+  pieces per card (3, 3, 3) (total 9): possible 304, impossible 0
+  pieces per card (2, 4, 4) (total 10): possible 36, impossible 0
+  pieces per card (3, 3, 4) (total 10): possible 150, impossible 0
+  pieces per card (3, 4, 4) (total 11): possible 24, impossible 0
+  pieces per card (4, 4, 4) (total 12): possible 1, impossible 0
+  sequential order exists for every possible scheme: True
+  fewest pieces in a possible scheme: 4
+  closed central slot in a whole card (partner holds the middle through the centre): 3096 schemes, possible 0
+  W  three whole cards (every slot stops short of the centre or of the rim): pieces per card [1, 1, 1], IMPOSSIBLE
+  (a) Y in two, both halves slide in along x: pieces per card [1, 2, 1], POSSIBLE; order: Z, Y(-x) along (1, 0, 0), Y(+x-z) along (-1, 0, 0), X along (0, -1, 0)
+  (a2) Y in two, one half slides in along z: pieces per card [1, 2, 1], POSSIBLE; order: Z, Y(-x) along (1, 0, 0), Y(+x-z) along (0, 0, 1), X along (0, 1, 0)
+  (b) Y in four: pieces per card [1, 4, 1], POSSIBLE; order: Z, Y(+x-z) along (1, 1, 1), Y(-x-z) along (1, 1, 1), Y(-x+z) along (1, 1, 0), Y(+x+z) along (1, 1, 0), X along (0, -1, 0)
+  (c) closed central slot in X, Y in two: pieces per card [1, 2, 1], IMPOSSIBLE
+## cube cut: 56425 schemes
+  pieces per card (1, 1, 1) (total 3): possible 0, impossible 7698
+  pieces per card (1, 1, 2) (total 4): possible 396, impossible 13314
+  pieces per card (1, 1, 3) (total 5): possible 528, impossible 4404
+  pieces per card (1, 2, 2) (total 5): possible 2166, impossible 7371
+  pieces per card (1, 1, 4) (total 6): possible 114, impossible 480
+  pieces per card (1, 2, 3) (total 6): possible 3000, impossible 4680
+  pieces per card (2, 2, 2) (total 6): possible 1744, impossible 784
+  pieces per card (1, 2, 4) (total 7): possible 498, impossible 510
+  pieces per card (1, 3, 3) (total 7): possible 948, impossible 720
+  pieces per card (2, 2, 3) (total 7): possible 2880, impossible 528
+  pieces per card (1, 3, 4) (total 8): possible 336, impossible 120
+  pieces per card (2, 2, 4) (total 8): possible 417, impossible 72
+  pieces per card (2, 3, 3) (total 8): possible 1572, impossible 96
+  pieces per card (1, 4, 4) (total 9): possible 30, impossible 0
+  pieces per card (2, 3, 4) (total 9): possible 480, impossible 24
+  pieces per card (3, 3, 3) (total 9): possible 304, impossible 0
+  pieces per card (2, 4, 4) (total 10): possible 36, impossible 0
+  pieces per card (3, 3, 4) (total 10): possible 150, impossible 0
+  pieces per card (3, 4, 4) (total 11): possible 24, impossible 0
+  pieces per card (4, 4, 4) (total 12): possible 1, impossible 0
+  sequential order exists for every possible scheme: True
+  fewest pieces in a possible scheme: 4
+  closed central slot in a whole card (partner holds the middle through the centre): 3096 schemes, possible 0
+  W  three whole cards (every slot stops short of the centre or of the rim): pieces per card [1, 1, 1], IMPOSSIBLE
+  (a) Y in two, both halves slide in along x: pieces per card [1, 2, 1], POSSIBLE; order: Z, Y(-x-z) along (1, 0, 0), Y(+x-z) along (-1, 0, 0), X along (0, -1, 0)
+  (a2) Y in two, one half slides in along z: pieces per card [1, 2, 1], POSSIBLE; order: Z, Y(-x-z) along (1, 0, 0), Y(+x-z) along (0, 0, 1), X along (0, 1, 0)
+  (b) Y in four: pieces per card [1, 4, 1], POSSIBLE; order: Z, Y(+x-z) along (1, 1, 1), Y(-x+z) along (1, 1, 0), Y(-x-z) along (1, 1, 1), Y(+x+z) along (1, 1, 0), X along (0, -1, 0)
+  (c) closed central slot in X, Y in two: pieces per card [1, 2, 1], IMPOSSIBLE
+FINAL ok
