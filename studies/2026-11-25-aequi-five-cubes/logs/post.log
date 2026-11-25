@@ -1,0 +1,41 @@
+catalogued dice loaded: {'4404': 4404, '1232': 1232, '9490 (9556 with repeats)': 9556}
+Aequi found 10768 | face-transitive 18 | centroid off centre 0
+congruent to a catalogued die: 8 {'9490': 8} | NEW: 10760
+  repeat D6h I12/2 + RDa+RDb/12 N 14 = ('9490', 'ext-2a:0')
+  repeat D6h C6+RT24/6 + I12/2 + RDa+RDb/12 N 20 = ('9490', 'ext-2a:1')
+  repeat D3h O8/2 + RD12+RDb/6 N 8 = ('9490', 'ext-2a:1484')
+  repeat D3h O8/2 + RD12+RDb/6 + RT24/3 N 11 = ('9490', 'ext-2a:1485')
+  repeat D3h O8/2 + RD12+RDb/6 + RT24/3 N 11 = ('9490', 'ext-2a:1486')
+  repeat D2h I12/2 + RDa/4 N 6 = ('9490', 'ext-2a:3147')
+  repeat D2h I12/2 + RDa/4 N 6 = ('9490', 'ext-2a:3149')
+  repeat D2h I12/2 + RDb/4 N 6 = ('9490', 'ext-2a:3148')
+| group | order | m=2 | m=3 | m=4 | m=5 | m=6 | m=7 | m=8 | m=9 | m=10 | m=11 | total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Ih | 120 | 3 | 3 | 1 |  |  |  |  |  |  |  | 7 |
+| Th | 24 | 13 | 35 | 54 | 48 | 25 | 7 |  |  |  |  | 182 |
+| D5d | 20 | 36 | 130 | 294 | 441 | 453 | 328 | 164 | 53 | 11 |  | 1910 |
+| D3d | 12 | 69 | 370 | 1239 |  |  |  |  |  |  |  | 1678 |
+| T | 12 | 18 | 78 | 204 | 354 | 430 | 374 | 232 | 100 | 28 | 4 | 1822 |
+| D5 | 10 | 24 | 127 |  |  |  |  |  |  |  |  | 151 |
+| S10 | 10 | 18 | 92 |  |  |  |  |  |  |  |  | 110 |
+| D2h | 8 | 37 | 335 |  |  |  |  |  |  |  |  | 372 |
+| D3 | 6 | 71 | 619 |  |  |  |  |  |  |  |  | 690 |
+| S6 | 6 | 43 | 417 |  |  |  |  |  |  |  |  | 460 |
+| C2h | 4 | 161 | 2334 |  |  |  |  |  |  |  |  | 2495 |
+| D2 | 4 | 50 | 624 |  |  |  |  |  |  |  |  | 674 |
+| Ci | 2 |  | 209 |  |  |  |  |  |  |  |  | 209 |
+| all | | 543 | 5373 | 1792 | 843 | 908 | 709 | 396 | 153 | 39 | 4 | 10760 |
+equal distance invariants but NOT congruent (different group, corners or Gram signature): 12 {('D3', 'S6'): 12}
+  twin {'group': 'D3', 'labels': ['RD12+RDa/6', 'D12/6'], 'N': 12, 'other': ('4404', '2026-11-19-aequi-complete:2365-S6-RD12-6-D12-6-2.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['RD12+RDa/6', 'RT24/6'], 'N': 12, 'other': ('4404', '2026-11-19-aequi-complete:2369-S6-RD12-6-RT24-6-2.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['O8/2', 'RD12+RDa/6', 'D12/6'], 'N': 14, 'other': ('4404', '2026-11-19-aequi-complete:2398-S6-O8-2-RD12-6-D12-6-3.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['O8/2', 'RD12+RDa/6', 'RT24/6'], 'N': 14, 'other': ('4404', '2026-11-19-aequi-complete:2401-S6-O8-2-RD12-6-RT24-6-4.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['RD12+RDa/6', 'D12/6', 'RT24/6'], 'N': 18, 'other': ('4404', '2026-11-19-aequi-complete:2436-S6-RD12-6-D12-6-RT24-6-2.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['RD12+RDa/6', 'D12/6', 'RT24/6'], 'N': 18, 'other': ('4404', '2026-11-19-aequi-complete:2437-S6-RD12-6-D12-6-RT24-6-3.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['RD12+RDa/6', 'I12/6', 'RT24/6'], 'N': 18, 'other': ('4404', '2026-11-19-aequi-complete:2438-S6-RD12-6-I12-6-RT24-6-1.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['C6+RT24/6', 'RD12+RDa/6', 'D12/6'], 'N': 18, 'other': ('4404', '2026-11-19-aequi-complete:2460-S6-C6-RD12-6-D12-6-3.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['RD12+RDa/6', 'D12/6a', 'D12/6b'], 'N': 18, 'other': ('4404', '2026-11-19-aequi-complete:2492-S6-RD12-6-D12-6a-D12-6b-2.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['RD12+RDa/6', 'D12/6', 'RT24/6'], 'N': 18, 'other': ('4404', '2026-11-19-aequi-complete:2495-S6-RD12-6-D12-6-RT24-6-7.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['RD12+RDa/6', 'D12/6', 'I12/6'], 'N': 18, 'other': ('4404', '2026-11-19-aequi-complete:2497-S6-RD12-6-D12-6-I12-6-3.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+  twin {'group': 'D3', 'labels': ['RD12+RDa/6', 'RT24/6a', 'RT24/6b'], 'N': 18, 'other': ('4404', '2026-11-19-aequi-complete:2504-S6-RD12-6-RT24-6a-RT24-6b-8.json', 'S6'), 'same_group_corners': False, 'gram_signature_equal': False}
+FINAL ok
