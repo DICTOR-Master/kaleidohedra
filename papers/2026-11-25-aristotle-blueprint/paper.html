@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Which Platonic Solids Fill Space: Aristotle's Error, Machine-Checked</title>
+<link rel="stylesheet" href="../paper.css">
+<style>pre.lean{font-size:7.6pt;white-space:pre-wrap;background:#f2efe8;padding:5px 7px;border-radius:3px;overflow-wrap:anywhere}
+table.w{border-collapse:collapse;font-size:8.6pt;margin:6px auto}table.w td,table.w th{border-bottom:1px solid #ccc4b4;padding:2px 8px;text-align:center}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Which Platonic Solids Fill Space: Aristotle's Error, Machine-Checked</h1>
+<p class="sub">No tiling of space by regular tetrahedra, octahedra, dodecahedra or icosahedra, of any sizes and not necessarily face to face, stated as formalised in Lean 4</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
+Paper #122 · Version 1 · 25 November 2026 · DICTO DOI: to be assigned at release · Licence CC BY-SA 4.0 · Lean source: https://github.com/DICTOR-Master/platonic-fill-lean, commit 541a0fab604e569b17b8173ab63691920095b3bd (the paper and the Lean source are one release, at one commit; §6).<br>
+DICTO: Aristotle's pyramid and which sets of the Platonic face pyramids fill space (#44 [1]), the question which Platonic solids fill space, and the decision to formalise the answer and release the paper and the Lean source together as one work. Computation, proofs, verification and drafting with Claude (Anthropic).
+</div>
+<div class="status"><b>Status box (draft; deleted at publication).</b> Draft 1, 25 Nov 2026. Lean: commit 541a0fab, build FINAL ok on the compute host (comparator, con-ron kernel); Palomar preflight run 45555765828 passed (11 min 52 s). Statements below copied from Challenge.lean, qualifiers dropped. Figures: exact checks in scripts/fig_checks.log. Prior art: study 2026-11-24-formal-prior-art §2 and 2026-11-24-questions-answered. Release only on "#122 read ok".</div>
+
+<div class="abstract"><b>Abstract.</b> Aristotle wrote that regular tetrahedra fill space; Regiomontanus is credited with showing that they do not. We give a Lean 4 proof of a stronger statement: no tiling of 3-space by convex polytopes, in which every tile is a similar copy of the regular tetrahedron, exists, even when the copies have different sizes, are reflected, and do not meet face to face. The same holds for the regular octahedron, dodecahedron and icosahedron. Helper tiles whose dihedral angles are rational multiples of π (cubes, for instance) do not help: with them no tile can be a copy of the polyhedron. And in a tiling by all five Platonic solids together with such helpers, no tile is a dodecahedron or an icosahedron. The proof reads each dihedral angle from the set itself, uses that the angles round an edge add up to 2π, and that π, arctan φ, arccos(1/√6) and arccos √(2/3) are linearly independent over ℚ. None of the theorems is new; this work gives their machine-checked proofs, at one public commit checked by Palomar's preflight.</div>
+
+<h2>1. What is proved</h2>
+<p class="hook">Stand five regular tetrahedra round one edge and a thin gap remains; six do not fit. Aristotle missed it. Here a computer checks that no arrangement at all, of any sizes, closes the gap.</p>
+<p>In <i>De Caelo</i> III.8 Aristotle states that among the solids only the pyramid (the regular tetrahedron) and the cube fill space [2]. The claim stood for centuries; its refutation is credited to Regiomontanus in the fifteenth century, and Lagarias and Zong tell the full history [3]. The reason is one number: the dihedral angle of the regular tetrahedron is arccos(1/3) ≈ 70.53°, which lies strictly between 360°/6 and 360°/5 (Figure 2). Paper #44 [1] found, by hand, which sets of the five Platonic face pyramids (the cones from the centre over each face) fill space. This paper is the blueprint of a Lean 4 entry that proves the claim false in the strongest usual sense, and settles the other Platonic solids the same way.</p>
+<figure><img src="figures/fig1-five.jpg" style="width:100%;margin:0 auto" alt="The five Platonic solids, dodecahedron, icosahedron, cube, tetrahedron, octahedron, each with one edge marked and its dihedral angle"><figcaption><b>Figure 1.</b> The five Platonic solids in the exact coordinates of the Lean sets, in the order dodecahedron, icosahedron, cube, tetrahedron, octahedron. Each has the same dihedral angle at every edge. Only the cube's, π/2, is a rational multiple of π.</figcaption></figure>
+<p><b>How statements are marked.</b> <span class="st">Formalised</span>: the statement as worded is the Lean declaration named beside it, proved in the library with no <code>sorry</code> and only the axioms <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>. The Lean text shown is copied from <code>Challenge.lean</code> of the entry; names are given without namespace.</p>
+
+<h2>2. The setting</h2>
+<p class="thm"><b>Definition A</b> (convex polytope). <span class="st">Formalised</span> (<code>sol</code>, <code>IsPoly</code>). A convex polytope is a bounded set of the form {x : ⟨a<sub>i</sub>, x⟩ ≤ b<sub>i</sub> for all i}, for finitely many a<sub>i</sub>, b<sub>i</sub>.</p>
+<pre class="lean">def IsPoly (P : Set E) : Prop :=
+  Bornology.IsBounded P ∧ ∃ (ι : Type) (_ : Fintype ι) (a : ι → E) (b : ι → ℝ), P = sol a b</pre>
+<p class="thm"><b>Definition B</b> (tiling). <span class="st">Formalised</span> (<code>ConvexTiling</code>). A tiling of space is a family of convex polytopes with interior points that cover space, have pairwise disjoint interiors, and are locally finite (finitely many meet any small ball). Tiles need not meet face to face.</p>
+<pre class="lean">structure ConvexTiling (ι : Type*) (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E] where
+  P : ι → Set E
+  poly : ∀ i, IsPoly (P i)
+  nonempty_interior : ∀ i, (interior (P i)).Nonempty
+  cover : ∀ x, ∃ i, x ∈ P i
+  disjoint : Pairwise fun i j => Disjoint (interior (P i)) (interior (P j))
+  locallyFinite : LocallyFinite P</pre>
+<p class="thm"><b>Definition C</b> (dihedral angle, read from the set). <span class="st">Formalised</span> (<code>tcone</code>, <code>linSpace</code>, <code>wedgeAngle</code>, <code>EdgeAngle</code>). At a point x of P, the directions that stay in P form a cone. When the directions v with v and −v both in the cone span a line, x lies on an edge, and the angle there is 2π times the share of the unit disc perpendicular to that line taken up by the cone. No list of faces or edges is assumed: the angle is a property of the set.</p>
+<pre class="lean">def EdgeAngle (P : Set E) (θ : ℝ) : Prop :=
+  ∃ x ∈ P, finrank ℝ (linSpace (tcone P x)) = 1 ∧ wedgeAngle (tcone P x) (linSpace (tcone P x)) = θ</pre>
+<p class="thm"><b>Definition D</b> (similar copy; rational angles). <span class="st">Formalised</span> (<code>SimilarCopy</code>, <code>RationalAngles</code>). Q is a similar copy of S when Q is the image of a positive multiple cS under an isometry of space (reflections allowed); each tile may have its own scale c. A set has rational angles when each of its dihedral angles is qπ for a rational q ≥ 0.</p>
+<pre class="lean">def SimilarCopy (Q S : Set E) : Prop := ∃ (g : E ≃ᵃⁱ[ℝ] E) (c : ℝ), 0 &lt; c ∧ Q = g '' (c • S)
+def RationalAngles (P : Set R3) : Prop := ∀ θ, EdgeAngle P θ → ∃ q : ℚ, 0 ≤ q ∧ θ = q * π</pre>
+<p class="thm"><b>Definition E</b> (the five solids). <span class="st">Formalised</span> (<code>dhSet</code>, <code>ihSet</code>, <code>cuSet</code>, <code>teSet</code>, <code>ocSet</code>). Each solid is the solution set of its face inequalities in exact coordinates: the tetrahedron with corners (1, 1, 1), (1, −1, −1), (−1, 1, −1), (−1, −1, 1); the octahedron with corners ±e<sub>1</sub>, ±e<sub>2</sub>, ±e<sub>3</sub>; the cube with corners (±1, ±1, ±1); the dodecahedron and the icosahedron with face data in ℚ(√5).</p>
+
+<h2>3. The theorems</h2>
+<p class="hook">Copies of one Platonic solid, other than the cube, never fill space, whatever their sizes; and in any mixture of the five, the dodecahedron and the icosahedron can never take part.</p>
+<p class="thm"><b>Theorem 1</b> (Aristotle's error). <span class="st">Formalised</span> (<code>aristotle_error</code>). There is no tiling of 3-space by similar copies of the regular tetrahedron (any sizes, reflections allowed, not necessarily face to face).</p>
+<pre class="lean">theorem aristotle_error {ι : Type*} (T : ConvexTiling ι R3) : ¬ ∀ i, SimilarCopy (T.P i) teSet</pre>
+<p class="thm"><b>Theorem 2</b> (three more solids alone). <span class="st">Formalised</span> (<code>octa_alone</code>, <code>dodeca_alone</code>, <code>icosa_alone</code>). The same holds for the regular octahedron, dodecahedron and icosahedron.</p>
+<pre class="lean">theorem octa_alone {ι : Type*} (T : ConvexTiling ι R3) : ¬ ∀ i, SimilarCopy (T.P i) ocSet
+theorem dodeca_alone {ι : Type*} (T : ConvexTiling ι R3) : ¬ ∀ i, SimilarCopy (T.P i) dhSet
+theorem icosa_alone {ι : Type*} (T : ConvexTiling ι R3) : ¬ ∀ i, SimilarCopy (T.P i) ihSet</pre>
+<p class="thm"><b>Theorem 3</b> (helpers do not help). <span class="st">Formalised</span> (<code>no_tetra</code>, <code>no_octa</code>, <code>no_dodeca</code>, <code>no_icosa</code>). In a tiling of 3-space in which every tile is a similar copy of one of these four solids or has rational angles, no tile is a copy of that solid. Shown for the tetrahedron; the other three read the same with <code>ocSet</code>, <code>dhSet</code>, <code>ihSet</code>.</p>
+<pre class="lean">theorem no_tetra {ι : Type*} (T : ConvexTiling ι R3)
+    (hk : ∀ i, SimilarCopy (T.P i) teSet ∨ RationalAngles (T.P i)) (i : ι) : ¬ SimilarCopy (T.P i) teSet</pre>
+<p class="thm"><b>Theorem 4</b> (the five together). <span class="st">Formalised</span> (<code>platonic_mix</code>). In a tiling of 3-space in which every tile is a similar copy of one of the five Platonic solids or has rational angles, no tile is a dodecahedron or an icosahedron.</p>
+<pre class="lean">theorem platonic_mix {ι : Type*} (T : ConvexTiling ι R3)
+    (hk : ∀ i, SimilarCopy (T.P i) teSet ∨ SimilarCopy (T.P i) ocSet ∨ SimilarCopy (T.P i) cuSet ∨
+      SimilarCopy (T.P i) dhSet ∨ SimilarCopy (T.P i) ihSet ∨ RationalAngles (T.P i)) (i : ι) :
+    ¬ SimilarCopy (T.P i) dhSet ∧ ¬ SimilarCopy (T.P i) ihSet</pre>
+<p>Theorem 4 is sharp on the other side. Tetrahedra and octahedra together do fill space (the tetrahedral–octahedral honeycomb), and cubes fill space alone; Figure 2 shows why the angles allow the first.</p>
+
+<h2>4. The proof</h2>
+<p class="hook">Every dihedral angle is a sum of four basic angles with rational coefficients; round an edge they must add to 2π; a well-chosen weight shows that the solid's angle is too heavy to take part.</p>
+<figure><img src="figures/fig2-edge-rings.jpg" style="width:100%;margin:0 auto" alt="Five tetrahedra round an edge leave a gap; three octahedra leave a gap; tetrahedron, octahedron, tetrahedron, octahedron close exactly"><figcaption><b>Figure 2.</b> Round one edge the angles must add up to 2π. Five tetrahedra leave a gap of 2π − 5 arccos(1/3) ≈ 7.36°, three octahedra a gap of 3 arccos(1/3) − π ≈ 31.59°; two tetrahedra and two octahedra, alternating, close exactly, since arccos(1/3) + (π − arccos(1/3)) = π. Seen along the common edge. The theorems say more than the picture: no ring of these solids and rational-angle tiles closes, with any sizes and any offsets along the edge.</figcaption></figure>
+<p class="thm"><b>Lemma 5</b> (angles round an edge; #119, Lemma 2 [4]). <span class="st">Formalised</span> (Lemma2.lean, from the packets entry). In a tiling as in Definition B, take a point on an edge of a tile. The tiles that contain the point contribute angles that add up to 2π, and each is a dihedral angle of that tile, or π (the point lies inside a face), or 2π (inside the tile).</p>
+<p class="thm"><b>Lemma 6</b> (independence; #119, Lemma 3 [4]). <span class="st">Formalised</span> (<code>lemma3</code>, Angles.lean). With α = arctan φ, β = arccos(1/√6), γ = arccos √(2/3), the numbers π, α, β, γ are linearly independent over ℚ. The proof uses Niven's theorem (Mathlib <code>niven</code>) [5] and the fact that cos 2β = −2/3 and cos 2γ = 1/3 are rational with sin 2β, sin 2γ irrational.</p>
+<p>The dihedral angles of the five solids, read from the Lean sets (<code>te_co</code>, <code>oc_co</code>, …, Fill.lean), are, in these coordinates:</p>
+<table class="w"><tr><th>solid</th><th>dihedral angle</th><th>≈</th><th>as qπ + aα + bβ + cγ</th></tr>
+<tr><td>dodecahedron</td><td>π − arccos(1/√5) = 2α</td><td>116.57°</td><td>(0, 2, 0, 0)</td></tr>
+<tr><td>icosahedron</td><td>π − arccos(√5/3) = 3π/2 − 2β</td><td>138.19°</td><td>(3/2, 0, −2, 0)</td></tr>
+<tr><td>cube</td><td>π/2</td><td>90°</td><td>(1/2, 0, 0, 0)</td></tr>
+<tr><td>tetrahedron</td><td>arccos(1/3) = 2γ</td><td>70.53°</td><td>(0, 0, 0, 2)</td></tr>
+<tr><td>octahedron</td><td>π − arccos(1/3) = π − 2γ</td><td>109.47°</td><td>(1, 0, 0, −2)</td></tr></table>
+<p><b>The weight argument.</b> For rationals u, v, t give the angle qπ + aα + bβ + cγ the weight q + ua + vb + tc; by Lemma 6 the weight of an angle is well defined. π has weight 1 and 2π weight 2. If every angle that can occur round an edge has weight ≥ 0, then, since the ring adds to 2π, each of its angles has weight at most 2 (<code>ring_wt_le</code>, <code>tiling_wt_le</code>, Fill.lean). Rational angles qπ, q ≥ 0, always have weight q ≥ 0. So it is enough to choose u, v, t that give the solid's own angle weight more than 2, while every angle allowed beside it keeps weight ≥ 0:</p>
+<table class="w"><tr><th>theorem</th><th>(u, v, t)</th><th>weight of the excluded angle</th><th>other angles</th></tr>
+<tr><td><code>no_tetra</code></td><td>(0, 0, 2)</td><td>tetrahedron 4</td><td>rational: q ≥ 0</td></tr>
+<tr><td><code>no_octa</code></td><td>(0, 0, −1)</td><td>octahedron 3</td><td>rational: q ≥ 0</td></tr>
+<tr><td><code>no_dodeca</code></td><td>(2, 0, 0)</td><td>dodecahedron 4</td><td>rational: q ≥ 0</td></tr>
+<tr><td><code>no_icosa</code></td><td>(0, −1, 0)</td><td>icosahedron 7/2</td><td>rational: q ≥ 0</td></tr>
+<tr><td><code>platonic_mix</code></td><td>(2, −1, 0)</td><td>dodecahedron 4, icosahedron 7/2</td><td>tetrahedron 0, octahedron 1, cube 1/2</td></tr></table>
+<p>Theorems 1 and 2 follow from Theorem 3 with no helper tiles, since a tiling has at least one tile. The angles of the five sets are read from the sets themselves, edge by edge, in exact arithmetic (GenTE.lean, GenOC.lean, GenCU.lean, and the dodecahedron and icosahedron files of the packets entry), so the proof depends on no picture and no floating-point value.</p>
+
+<h2>5. Earlier work</h2>
+<p><b>The mathematics.</b> Aristotle's claim is in <i>De Caelo</i> III.8 [2]; its refutation is credited to Regiomontanus, and the history, including later claims that 12 or 20 tetrahedra fill the space round a point, is told by Lagarias and Zong [3]. The edge-angle argument for regular polyhedra and their pairs is stated by Gabbrielli, Jiao and Torquato [6]; Conway, Radin and Sadun studied which rational combinations of such angles occur [7]. Niven's theorem is [5]. Paper #44 [1] found by hand which sets of the Platonic face pyramids fill space, with the same rule that the angles round an edge add up to 2π (its Lemma 1). The angle machinery (Definitions A–D, Lemmas 5 and 6, the dodecahedron and icosahedron sets) is that of our packets entry #119 [4], which used the dodecahedron and the icosahedron only as helper tiles and stated no result on them alone; the tetrahedron, octahedron and cube sets, Theorems 1–4 and the weights above are new to this entry.</p>
+<p><b>Earlier formal proofs: sources checked (24 November 2026).</b> Web searches on tetrahedra not tiling space together with Lean, Isabelle, Coq, HOL and "arccos(1/3)"; the Lean Zulip archive; Mathlib v4.35.0-rc2 (which has Niven's theorem, <code>Mathlib.NumberTheory.Niven</code>, but no tiling of space by polytopes); the Isabelle Archive of Formal Proofs; Coq-Polyhedra; HOL Light and the Flyspeck proof of the Kepler conjecture, which works with tetrahedra and their dihedral angles but does not state that they fail to tile; Freek Wiedijk's list <i>Formalizing 100 Theorems</i> [8], whose item 50, the number of Platonic solids, is formalised in Lean, HOL Light and Isabelle and classifies the solids without any tiling statement; Mizar and Metamath by web search only. We found no earlier machine-checked proof that regular tetrahedra, octahedra, dodecahedra or icosahedra do not fill space.</p>
+
+<h2>6. How to check</h2>
+<p>The repository is <code>platonic-fill-lean</code> at commit <code>541a0fab604e569b17b8173ab63691920095b3bd</code> (meta line), the commit that passed Palomar's preflight. Toolchain <code>leanprover/lean4:v4.35.0-rc2</code>, Mathlib <code>v4.35.0-rc2</code>. <code>Challenge.lean</code> holds the definitions and the eight statements with every proof <code>sorry</code> and imports only Mathlib; <code>Solution.lean</code> is the Challenge word for word with each proof taken from the library; <code>comparator.json</code> names the eight theorems for Palomar's comparator.</p>
+<pre>git clone https://github.com/DICTOR-Master/platonic-fill-lean
+cd platonic-fill-lean
+git checkout 541a0fab604e569b17b8173ab63691920095b3bd
+lake exe cache get      # Mathlib's compiled files
+lake build              # Build completed successfully</pre>
+
+<h2>Contributions</h2>
+<p>The theorems are classical: Aristotle's error is Regiomontanus's [3], and the angle argument is that of Gabbrielli, Jiao and Torquato [6]. This work gives:</p>
+<ol>
+<li>A Lean 4 proof, from the definition of a dihedral angle as a share of a disc, that no tiling of space by similar copies of the regular tetrahedron exists, with any sizes and not necessarily face to face (Theorem 1).</li>
+<li>The same for the regular octahedron, dodecahedron and icosahedron (Theorem 2), and the same again when helper tiles with rational angles are allowed (Theorem 3).</li>
+<li>A Lean proof that in any tiling by the five Platonic solids and such helpers the dodecahedron and the icosahedron cannot occur (Theorem 4), with the weights that decide each case (§4).</li>
+<li>One release: this paper and the Lean source at one public commit, checked by Palomar's preflight.</li>
+</ol>
+
+<h2>References</h2>
+<ol>
+<li>DICTO, Aristotle's Pyramid (#44), Zenodo, 2026, DICTO DOI: 10.5281/zenodo.23529497 (Lemma 1, angles round an edge).</li>
+<li>Aristotle, <i>De Caelo</i> III.8 (cited through [3], not opened).</li>
+<li>J. C. Lagarias and C. Zong, Mysteries in packing regular tetrahedra, Notices Amer. Math. Soc. 59 (2012) 1540–1549, doi:10.1090/noti918.</li>
+<li>DICTO, Cancelling Packets That Cannot Fill Space, in Lean (#119), Zenodo, 2026, DICTO DOI: 10.5281/zenodo.24518897 (Lemmas 2 and 3).</li>
+<li>I. Niven, <i>Irrational Numbers</i>, Carus Mathematical Monographs 11, MAA, 1956 (cited, not opened); Mathlib <code>Mathlib.NumberTheory.Niven</code>.</li>
+<li>R. Gabbrielli, Y. Jiao and S. Torquato, Phys. Rev. E 86 (2012) 041141 (the statement that no pair of regular polyhedra other than tetrahedra and octahedra fills space, from their dihedral angles).</li>
+<li>J. H. Conway, C. Radin and L. Sadun, On angles whose squared trigonometric functions are rational, Discrete Comput. Geom. 22 (1999) 321–332.</li>
+<li>F. Wiedijk, Formalizing 100 Theorems, https://www.cs.ru.nl/~freek/100/ (item 50).</li>
+<li>The mathlib Community, The Lean mathematical library, CPP 2020, 367–381; https://github.com/leanprover-community/mathlib4.</li>
+</ol>
+<p>DICTO · dictospheres.com</p>
+</body></html>
