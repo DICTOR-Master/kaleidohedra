@@ -1,0 +1,73 @@
+{
+ "ok": true,
+ "aixiv_id": "2611.02777",
+ "abs_url": "https://aixiv.online/abs/2611.02777",
+ "pdf_url": "https://aixiv.online/pdf/2611.02777v1",
+ "engine": null,
+ "listed": false,
+ "listing_note": "Live at abs_url with its timestamp and hash. It joins the public listings when its check passes, usually within half an hour; the result is on the paper's page and under `check` in GET /api/v1/papers/<id> with your token.",
+ "record": {
+  "aixiv_id": "2611.02777",
+  "url": "https://aixiv.online/abs/2611.02777",
+  "pdf_url": "https://aixiv.online/pdf/2611.02777",
+  "title": "The Dehn Canon: Hilbert's Third Problem, Machine-Checked — From the solids up, deciding every pair of the canon",
+  "abstract": "Two solids are scissors congruent when one can be cut into finitely many pieces that, moved rigidly, fill the other. The name comes from polygons, which can always be cut from paper with scissors and rearranged when their areas are equal (Wallace, Bolyai and Gerwien); for solids the scissors become planar cuts. Dehn proved in 1901 that a regular tetrahedron and a cube of the same volume are not: the sum over the edges of length ⊗ dihedral angle, with angles counted modulo rational multiples of π, is kept by cutting and regluing, and the two solids give different sums [1]. We prove this in Lean 4 with Mathlib from the solid upward. The angle at a point is read from the solid as a set, as a share of the area of a disc across the edge, and the lengths are Hausdorff lengths: no list of edges is ever given as input. Main theorem (Theorem 1): for convex polytopes in ℝ³, and for finite unions of them, scissors congruence keeps this invariant; the tetrahedron is not scissors congruent to any cube, in any size and position; the cube, the rhombic dodecahedron, every solid of the cube ∩ rhombic dodecahedron line, the truncated octahedron, the rhombic triacontahedron and both golden rhombohedra have invariant zero, and the dodecahedron, the icosahedron, the tetrahedron, the octahedron, every other member of the cube ∩ octahedron line (the fair 14-face die among them) and DICTO's CLEO, AXE and FUJI have nonzero invariant, so no similar copy of one of these is scissors congruent to a similar copy of a zero solid; and CLEO, AXE, FUJI, the dodecahedron and the icosahedron are pairwise not scissors congruent , in any sizes, and none of them is scissors congruent to the tetrahedron, the octahedron or a nonzero member of the cube ∩ octahedron line; with volume, which scissors congruence also keeps, every two different nonzero solids of the canon are not scissors congruent . We also prove Hilbert's question in his own words: two tetrahedra on one base with equal altitudes that are neither scissors congruent nor equicomplementable (the pair of Aigner and Ziegler); and that for every convex polytope the invariant read from the set equals the classical edge sum, with edges and dihedral angles also read from the set. These steps need two angles, α = arccos(1/√5) and β, with α + β + ε = π and α + 2β − γ = π, independent modulo π, and arccos(1/3) independent of both; we prove the first in Lean by a recurrence at the prime 3, a classical idea, and the second by comparing sines in ℚ√2 and in ℚ(√5). 43 Lean files (15,880 lines) compile with no sorry and only the three standard axioms. Each result is marked Lean (machine-checked), by hand or numerical . The Lean statements are registered on Palomar (PALOMAR-2026-11-20-000003) [33]. Since the invariant and the bridge are stated for sets and for every dissection into convex polytopes, they can serve as a base in Lean for Sydler's converse, Jessen's work in four dimensions and a theory of valuations in Mathlib; none of these is attempted here. Computation, proofs, verification and drafting with Claude (Anthropic).",
+  "authors": [
+   "DICTO"
+  ],
+  "primary_category": "math.MG",
+  "categories": [
+   "math.MG"
+  ],
+  "published": "2026-11-25",
+  "updated_at": "2026-11-25T01:08:45.000Z",
+  "latest_version": 1,
+  "license": "CC BY-SA 4.0",
+  "comments": "Paper #113 of DICTO's series; Version 3 (10.5281/zenodo.24491307) of Zenodo concept record 10.5281/zenodo.24383552 (this PDF is identical to that version). Lean entry PALOMAR-2026-11-20-000003. Licence CC BY-SA 4.0.",
+  "msc_class": "52B45, 51M20, 03B35",
+  "kind": "native",
+  "withdrawn": false,
+  "listed": false,
+  "withdrawal_reason": null,
+  "fulltext_indexed": true,
+  "claimed_by_author": true,
+  "source": null,
+  "repository": {
+   "url": "https://github.com/DICTOR-Master/dehn-canon-lean",
+   "verified": true,
+   "stars": 2,
+   "license": "Apache-2.0",
+   "last_push": "2026-11-20T08:40:53Z"
+  },
+  "ai_process": {
+   "models": "Claude Code (Opus)",
+   "contribution_level": "ai-derived",
+   "statement": null,
+   "has_process_summary": true,
+   "has_prompts_harness": false,
+   "has_verification_notes": true,
+   "has_negative_results": true,
+   "trace_url": null
+  },
+  "reproduction_status": "unverified",
+  "editors_pick": false,
+  "editorial_summary": null,
+  "comment_count": 0,
+  "priority_record": {
+   "note": "Each version is timestamped at receipt; the hash is immutable evidence of content at that time.",
+   "versions": [
+    {
+     "version": 1,
+     "submitted_utc": "2026-11-25T01:08:45.000Z",
+     "content_hash": "sha256:8cb9ff8adc27cdcb5a4556a727748ce8a4e46e7671124e3d08a663d4af464a64",
+     "hash_covers": "pdf-bytes",
+     "has_pdf": true,
+     "source_url": null,
+     "changelog": null
+    }
+   ]
+  }
+ },
+ "sessions": [],
+ "sessions_note": "No session files were sent. Attach the agent sessions behind this paper: `npx aixiv@latest attach --paper 2611.02777` in the project folder, POST /api/v1/traces, or https://aixiv.online/attach/2611.02777."
+}
