@@ -92,6 +92,28 @@
     });
   }
 
+  // the Resonus (DICTO): through the centre, one plane parallel to each face (parallel faces share it); each plate is the cross-section
+  // of the solid in that plane, ordered round its normal
+  function resonusPlates(S) {
+    var out = [], seen = [];
+    S.faces.forEach(function (f) {
+      var n = f.n;
+      if (seen.some(function (m) { return Math.abs(Math.abs(dot(m, n)) - 1) < 1e-9; })) return;
+      seen.push(n);
+      var pts = [];
+      S.verts.forEach(function (v) { if (Math.abs(dot(n, v)) < 1e-9) pts.push(v); });
+      S.edges.forEach(function (e) {
+        var a = S.verts[e[0]], b = S.verts[e[1]], sa = dot(n, a), sb = dot(n, b);
+        if ((sa > 1e-9 && sb < -1e-9) || (sa < -1e-9 && sb > 1e-9)) { var t = sa / (sa - sb); pts.push([a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]), a[2] + t * (b[2] - a[2])]); }
+      });
+      if (pts.length < 3) return;
+      var u = pts[0], lu = len(u); u = scale(u, 1 / lu); var w = cross(n, u);
+      pts.sort(function (p, q) { return Math.atan2(dot(p, w), dot(p, u)) - Math.atan2(dot(q, w), dot(q, u)); });
+      out.push({ n: n, pts: pts, mirror: isMirror(S, n) });
+    });
+    return out;
+  }
+
   // ---- data helpers
   function planesFor(data, die, perm) {
     var orbs = data.groups[die.g], P = [];
@@ -166,7 +188,7 @@
     return best;
   }
   var api = { singleOrbit: singleOrbit, ORDER: ORDER, buildSolid: buildSolid, faceSolidAngle: faceSolidAngle, triSolidAngle: triSolidAngle,
-    vacuusPlates: vacuusPlates, isMirror: isMirror, planesFor: planesFor, prepare: prepare, lookup: lookup,
+    vacuusPlates: vacuusPlates, resonusPlates: resonusPlates, isMirror: isMirror, planesFor: planesFor, prepare: prepare, lookup: lookup,
     inverse: inverse, dot: dot, cross: cross };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.AequiGeom = api;
 })(this);

@@ -131,6 +131,7 @@ input.cpick { width: 30px; height: 30px; padding: 0; border: 1px solid var(--lin
         <button id="modeList" aria-pressed="false">List</button>
       </div>
       <button class="btn" id="vacBtn" aria-pressed="false">Vacuus</button>
+      <button class="btn" id="resBtn" aria-pressed="false">Resonus</button>
       <button class="btn" id="handBtn" aria-pressed="false" hidden>Other hand</button>
       <button class="btn" id="clearBtn">Clear</button>
       <button class="btn" id="stlBtn" hidden>3D print</button>
@@ -142,6 +143,7 @@ input.cpick { width: 30px; height: 30px; padding: 0; border: 1px solid var(--lin
       <select id="lineSel" aria-label="Axis line"></select>
       <button class="btn" id="snapBtn">Snap to fair</button>
       <button class="btn" id="vacBtn2" aria-pressed="false">Vacuus</button>
+      <button class="btn" id="resBtn2" aria-pressed="false">Resonus</button>
       <button class="btn" id="stlBtn2" hidden>3D print</button>
     </div>
     <div class="row">
@@ -283,7 +285,7 @@ $('tabFair').onclick = function () { setTab('fair'); };
 
 // ---------------- Pick a die
 var data = null, fair = null;
-var st = { g: null, ticked: [], mode: 'tick', vac: false, hand: false, num: 'off' };
+var st = { g: null, ticked: [], mode: 'tick', vac: false, res: false, hand: false, num: 'off' };
 var NAMES = null, NUMS = null;   // approved names (names.json); face numbers of the finished dice (numberings.json)
 function nameOf(e) { return NAMES ? NAMES[e.k] : dieTitle(e); }
 // face numbers: off, plain (face i gets i + 1), and from numberings.json: o opposites (N + 1), s spin-down, b balanced
@@ -292,7 +294,7 @@ function schemesOf(e) { var x = NUMS && NUMS[e.k + 1]; return SCHEMES.filter(fun
 function numScheme(e) { var has = schemesOf(e).some(function (s) { return s[0] === st.num; }); return has ? st.num : 'plain'; }
 function numbersFor(e, k) { if (k === 'plain') { var p = []; for (var i = 0; i < e.N; i++) p.push(i + 1); return p; } return NUMS[e.k + 1][k]; }
 function numRow(e) {
-  if (st.vac) return '';
+  if (st.vac || st.res) return '';
   var k = numScheme(e);
   return '<div class="numrow"><span class="sub" style="margin:0">Face numbers</span><div class="seg" id="numSeg" role="group" aria-label="Face numbers">' +
     schemesOf(e).map(function (s) { return '<button data-k="' + s[0] + '" aria-pressed="' + (s[0] === k) + '">' + s[1] + '</button>'; }).join('') + '</div></div>';
@@ -428,17 +430,52 @@ $('modeList').onclick = function () { st.mode = 'list'; $('modeList').setAttribu
 $('clearBtn').onclick = function () { setGroup(st.g, []); };
 function toggleVac() { st.vac = !st.vac; $('vacBtn').setAttribute('aria-pressed', st.vac); $('vacBtn2').setAttribute('aria-pressed', st.vac); if (tab === 'pick') updatePick(); else updateFair(false); }
 $('vacBtn').onclick = toggleVac; $('vacBtn2').onclick = toggleVac;
+function toggleRes() { st.res = !st.res; $('resBtn').setAttribute('aria-pressed', st.res); $('resBtn2').setAttribute('aria-pressed', st.res); if (tab === 'pick') updatePick(); else updateFair(false); }
+$('resBtn').onclick = toggleRes; $('resBtn2').onclick = toggleRes;
 $('handBtn').onclick = function () { st.hand = !st.hand; $('handBtn').setAttribute('aria-pressed', st.hand); updatePick(); };
 
+var RES = null;   // the Resonus plates on show (for the note)
 function show(S, colours, mirror) {
-  if (st.vac) {
-    var plates = G.vacuusPlates(S);
-    setContent(vacuusObject(S, plates, mirror));
+  RES = null;
+  if (st.vac || st.res) {
+    var plates = st.vac ? G.vacuusPlates(S) : null, grp = new THREE.Group();
+    if (st.vac) grp.add(vacuusObject(S, plates, mirror));
+    if (st.res) { RES = G.resonusPlates(S); grp.add(resonusObject(S, RES, mirror)); }
+    setContent(grp);
     return plates;
   }
   setContent(solidObject(S, colours, mirror)); return null;
 }
+function resonusObject(S, plates, mirror) {   // DICTO's Resonus: the central cross-section parallel to each face
+  var grp = new THREE.Group(), pos = [], col = [], cs = new THREE.Color(SLATE), cm = new THREE.Color(SAND), O = [0, 0, 0], segs = [];
+  plates.forEach(function (p) {
+    var c = p.mirror ? cm : cs, P = p.pts;
+    for (var i = 0; i < P.length; i++) {
+      [O, P[i], P[(i + 1) % P.length]].forEach(function (v) { pos.push.apply(pos, v); col.push(c.r, c.g, c.b); });
+      segs.push([P[i], P[(i + 1) % P.length]]);
+    }
+  });
+  var geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  geo.computeVertexNormals();
+  grp.add(new THREE.Mesh(geo, new THREE.MeshPhongMaterial({ vertexColors: true, flatShading: true, shininess: 10, side: THREE.DoubleSide, transparent: true, opacity: 0.85 })));
+  if (!st.vac) segs = segs.concat(S.edges.map(function (e) { return [S.verts[e[0]], S.verts[e[1]]]; }));
+  grp.add(edgeLines(S, segs));
+  var s = 1 / radius(S); grp.scale.set(mirror ? -s : s, s, s);
+  return grp;
+}
 function vacNote(plates) {
+  return vacNote1(plates) + resNote();
+}
+function resNote() {
+  if (!RES) return '';
+  var m = RES.filter(function (p) { return p.mirror; }).length;
+  return '<p class="note">Resonus: ' + RES.length + ' plates, the cross-section through the centre parallel to each face (parallel faces share one). ' +
+    '<span class="sw" style="display:inline-block;vertical-align:-2px;background:' + SAND + '"></span> on a mirror: ' + m +
+    ' · <span class="sw" style="display:inline-block;vertical-align:-2px;background:' + SLATE + '"></span> sloping: ' + (RES.length - m) + '.</p>';
+}
+function vacNote1(plates) {
   if (!plates) return '';
   var m = plates.filter(function (p) { return p.mirror; }).length;
   return '<p class="note">Vacuus: ' + plates.length + ' plates, one triangle from the centre to each edge. ' +
@@ -486,7 +523,7 @@ function updatePick() {
   if (e) console.assert(S.verts.length === e.c, 'corner count ' + S.verts.length + ' differs from ' + e.c);
   var mirrorShow = !!(e && e.h && st.hand);
   var plates = show(S, colours, mirrorShow);
-  var nk = e && !st.vac ? numScheme(e) : 'off';
+  var nk = e && !st.vac && !st.res ? numScheme(e) : 'off';
   if (nk !== 'off') {   // the numbers sit beside the solid (not inside its mirrored scale, so they never read backwards)
     var both = new THREE.Group(); holder.remove(content); both.add(content); both.add(labelGroup(S, numbersFor(e, nk), colours, mirrorShow));
     content = both; holder.add(both); dirty = true;
