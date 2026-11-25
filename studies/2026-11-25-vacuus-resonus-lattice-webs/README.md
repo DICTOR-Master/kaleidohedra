@@ -273,7 +273,7 @@ cube's Vacuus web, the rhombic dodecahedron's web and the Delone tiling of bcc.
      **No family continues**: k = 4 or 6 for the Resonus, k = 4, 6, 12 or 16 for the Vacuus (all > 2). Control: the same code in 3D
      (the truncated octahedron) gives 7 Resonus and 15 Vacuus directions with exactly the 3 square-face planes continuing (k = 2),
      as in the table above. So the truncated octahedron's one surviving web (its squares) has no counterpart in 4D: the permutohedron
-     there has no square-type facets with k ≤ 2.
+     there has no family with k ≤ 2.
 5. **Lean: DONE (25 Nov, M4 of study 2026-11-25-lean-vacuus-resonus, FINAL ok).** Theorem 0 in any dimension (`web_iff`), the cube and
    rhombic-dodecahedron webs (`cube_resonus_web`, `cube_vacuus_web`, `rd_web`) and their common planes (`same_web`).
 6. **One piece, any stacking.** The disphenoid web is shared by the cubic and rhombic-dodecahedron tilings. Decorations keyed to
