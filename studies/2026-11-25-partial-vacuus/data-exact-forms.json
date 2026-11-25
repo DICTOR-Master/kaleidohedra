@@ -1,0 +1,157 @@
+[
+ {
+  "P": "tetrahedron",
+  "Q": "triakis octahedron",
+  "s": 0.5147186257614166,
+  "poly": [
+   -1,
+   18,
+   -9,
+   0
+  ],
+  "minpoly": "s**2 - 18*s + 9",
+  "closed": "9 - 6*sqrt(2)"
+ },
+ {
+  "P": "octahedron",
+  "Q": "triakis tetrahedron",
+  "s": 0.5999999999999662,
+  "poly": [
+   -5,
+   3,
+   0
+  ],
+  "minpoly": "5*s - 3",
+  "closed": "3/5"
+ },
+ {
+  "P": "octahedron",
+  "Q": "deltoidal hexecontahedron",
+  "s": 0.48107236977274687,
+  "poly": [
+   22,
+   -59,
+   42,
+   -9
+  ],
+  "minpoly": "11*s**2 - 24*s + 9",
+  "closed": "12/11 - 3*sqrt(5)/11"
+ },
+ {
+  "P": "octahedron",
+  "Q": "disdyakis triacontahedron",
+  "s": 0.31671842700021036,
+  "poly": [
+   -15,
+   95,
+   -57,
+   9
+  ],
+  "minpoly": "5*s**2 - 30*s + 9",
+  "closed": "3 - 6*sqrt(5)/5"
+ },
+ {
+  "P": "dodecahedron",
+  "Q": "icosahedron",
+  "s": 0.5278640450003731,
+  "poly": [
+   -2,
+   21,
+   -20,
+   5
+  ],
+  "minpoly": "s**2 - 10*s + 5",
+  "closed": "5 - 2*sqrt(5)"
+ },
+ {
+  "P": "dodecahedron",
+  "Q": "triakis icosahedron",
+  "s": 0.29925418795455644,
+  "poly": [
+   -33,
+   71,
+   -35,
+   5
+  ],
+  "minpoly": "11*s**2 - 20*s + 5",
+  "closed": "10/11 - 3*sqrt(5)/11"
+ },
+ {
+  "P": "dodecahedron",
+  "Q": "deltoidal hexecontahedron",
+  "s": 0.7453559924998967,
+  "poly": [
+   -9,
+   9,
+   5,
+   -5
+  ],
+  "minpoly": "9*s**2 - 5",
+  "closed": "sqrt(5)/3"
+ },
+ {
+  "P": "icosahedron",
+  "Q": "dodecahedron",
+  "s": 0.7082039324992954,
+  "poly": [
+   3,
+   34,
+   -51,
+   18
+  ],
+  "minpoly": "s**2 + 12*s - 9",
+  "closed": "-6 + 3*sqrt(5)"
+ },
+ {
+  "P": "icosahedron",
+  "Q": "pentakis dodecahedron",
+  "s": 0.4014916240907233,
+  "poly": [
+   -55,
+   -68,
+   81,
+   -18
+  ],
+  "minpoly": "11*s**2 + 18*s - 9",
+  "closed": "-9/11 + 6*sqrt(5)/11"
+ },
+ {
+  "P": "icosahedron",
+  "Q": "deltoidal hexecontahedron",
+  "s": 0.8977625638637693,
+  "poly": [
+   11,
+   -71,
+   105,
+   -45
+  ],
+  "minpoly": "11*s**2 - 60*s + 45",
+  "closed": "30/11 - 9*sqrt(5)/11"
+ },
+ {
+  "P": "rhombic triacontahedron",
+  "Q": "rhombic triacontahedron",
+  "s": 0.7639320225001249,
+  "poly": [
+   -1,
+   7,
+   -10,
+   4
+  ],
+  "minpoly": "s**2 - 6*s + 4",
+  "closed": "3 - sqrt(5)"
+ },
+ {
+  "P": "triakis icosahedron",
+  "Q": "deltoidal hexecontahedron",
+  "s": 0.9159606446052448,
+  "poly": [
+   228,
+   -1217,
+   1656,
+   -671
+  ],
+  "minpoly": "19*s**2 - 84*s + 61",
+  "closed": "42/19 - 11*sqrt(5)/19"
+ }
+]

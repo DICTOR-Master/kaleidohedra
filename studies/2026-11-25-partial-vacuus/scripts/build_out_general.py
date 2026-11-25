@@ -40,7 +40,7 @@ def load():
     else:
         P = json.load(open(os.path.join(HERE, '../../2026-11-25-tacitus/data/polyhedra.json')))
         for p in P:
-            if p['name'] in ('tetrahedron', 'cube', 'octahedron', 'dodecahedron', 'icosahedron', 'cuboctahedron'):
+            if SET == 'catalogue' or p['name'] in ('tetrahedron', 'cube', 'octahedron', 'dodecahedron', 'icosahedron', 'cuboctahedron'):
                 V = np.array(p['verts'], float); V -= V.mean(0); out.append((p['name'], V, p['faces']))
     return out
 class Body:
@@ -112,9 +112,10 @@ if __name__ == '__main__':
     Y = min(yard.values()); print('yardstick wedges (deg):', {k: round(v, 4) for k, v in yard.items()}, 'use', round(Y, 4), flush=True)
     res = []; L = load(); lim = int(os.environ.get('LIMIT', '0')) or len(L)
     for k, (name, V, F) in enumerate(L[:lim]):
+        fam = next((p.get('family') for p in json.load(open(os.path.join(HERE, '../../2026-11-25-tacitus/data/polyhedra.json'))) if p['name'] == name), 'McCooey') if SET != 'mccooey' else 'McCooey'
         try:
             B, r = study(name, V, F)
-            r['t_as_solid_as_classics'] = next((t for t, w in r['wedge_curve'] if w >= Y), None)
+            r['family'] = fam; r['t_as_solid_as_classics'] = next((t for t, w in r['wedge_curve'] if w >= Y), None)
             res.append(r)
             print(f"{name[:44]:44s} F{len(F):3d} special t {[round(x, 8) for x in r['special_t']]} wedge there {[round(w, 2) for w in r['special_wedge']]}  classic-solid from t = {r['t_as_solid_as_classics']}  disjoint {all(r['disjoint'].values())}", flush=True)
         except Exception as ex:
@@ -125,6 +126,6 @@ if __name__ == '__main__':
     ctrl = True
     if SET != 'mccooey':
         g = {r['name']: r for r in res}
-        ctrl = any(abs(t - (5 - 2 * 5 ** .5)) < 1e-6 for t in g['dodecahedron']['special_t']) and any(abs(t - (3 * 5 ** .5 - 6)) < 1e-6 for t in g['icosahedron']['special_t'])
+        ctrl = 'dodecahedron' in g and any(abs(t - (5 - 2 * 5 ** .5)) < 1e-6 for t in g['dodecahedron']['special_t']) and any(abs(t - (3 * 5 ** .5 - 6)) < 1e-6 for t in g['icosahedron']['special_t'])
         print('control (both classics found again):', ctrl)
     print('solids', len(res), 'errors', len(errs)); print('FINAL ok' if ctrl and not errs else 'FINAL FAIL')

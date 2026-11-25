@@ -33,20 +33,20 @@ body is a solid). Control: both depths of part 1 found again.
 |---|---|---|---|
 | tetrahedron | 0.5147186 | triakis octahedron | 9 − 6√2 |
 | octahedron | 0.6000000 | triakis tetrahedron | 3/5 |
-| octahedron | 0.3167184 | disdyakis triacontahedron | numerical (exact pending) |
-| octahedron | 0.4810724 | deltoidal hexecontahedron | numerical (exact pending) |
+| octahedron | 0.3167184 | disdyakis triacontahedron | 3 − 6√5/5 |
+| octahedron | 0.4810724 | deltoidal hexecontahedron | (12 − 3√5)/11 |
 | dodecahedron | 0.2992542 | triakis icosahedron | (10 − 3√5)/11 |
 | dodecahedron | 0.5278641 | icosahedron | 5 − 2√5 (the excavated dodecahedron, DICTO's chain stage 3) |
 | dodecahedron | 0.7453560 | deltoidal hexecontahedron | √5/3 |
 | icosahedron | 0.4014916 | pentakis dodecahedron | (6√5 − 9)/11 |
 | icosahedron | 0.7082039 | dodecahedron | 3√5 − 6 (the great dodecahedron) |
-| icosahedron | 0.8977626 | deltoidal hexecontahedron | numerical (exact pending) |
+| icosahedron | 0.8977626 | deltoidal hexecontahedron | (30 − 9√5)/11 |
 | rhombic triacontahedron | 0.7639320 | **a smaller rhombic triacontahedron** (scale 1/φ) | 3 − √5 |
-| triakis icosahedron | 0.9159606 | deltoidal hexecontahedron | numerical (exact pending) |
+| triakis icosahedron | 0.9159606 | deltoidal hexecontahedron | (42 − 11√5)/19 |
 
 No Archimedean solid and no other Catalan solid has a special depth against these solids. The rhombic triacontahedron is the one
 solid whose pits end on a smaller copy of itself (scale 1/φ, pits reaching 3 − √5 of the way in): a self-similar partial Vacuus.
-Closed forms marked are fitted and checked to 1e-7; a symbolic proof (as part 1) is LEAD 4.
+All twelve depths are roots of quadratics over Q (scripts/exact_forms.py + sympy factor; data-exact-forms.json; logs/exact_forms*.log): each depth refined over every wall at double precision, its integer polynomial found, factored, and the factor with the matching root kept. A symbolic proof from exact coordinates (as part 1) remains LEAD 4.
 
 
 **Permutahedra and associahedra (DICTO 26 Nov: "any permutahedra or associahedra etc").** The three permutahedra (truncated
