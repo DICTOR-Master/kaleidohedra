@@ -83,3 +83,13 @@ logs/special_assoc.log): **no special depth**. Their low symmetry (order 2) leav
   Akpanya, arXiv:2405.01944 (interlocking blocks built from tetrahedra and octahedra in the tetroctahedrille). Abeille's flat vault
   (1699) is the classical ancestor. None found uses face pyramids (pits and matching spikes) as the key on a space-filling piece.
   Checked: search pages and abstracts only.
+
+## Part 3: building out the core of any Vacuus, and solidity (scripts/build_out_general.py; data-build-out-*.json; FINAL ok)
+Core = the solid's polar dual scaled by lam (corners lam n_f/d_f on the face axes); t = lam / min d_f² from 0 (Vacuus) to 1 (solid).
+Solidity: the thinnest material wedge between two pits along an edge. Yardstick (DICTO: "just the classics for models"): the
+excavated dodecahedron, 41.81° (the great dodecahedron: 63.43°).
+- Platonic + cuboctahedron (control: both classics found again): cuboctahedron no special size; as solid as the classics from
+  t ≈ 0.64 (tetrahedron 0.64, cube 0.56, octahedron 0.54, dodecahedron 0.54, icosahedron 0.58; grid step 0.02).
+- McCooey's 162 self-duals (dbb job build-out-mccooey, 0 errors): **no special size** in any; pits disjoint at every size tested in
+  all 162; **32 of 162** reach the classics' solidity (median from t ≈ 0.78), the other 130 never do (their thinnest wedge stays
+  below 41.8° at every core size).
