@@ -77,3 +77,9 @@ logs/special_assoc.log): **no special depth**. Their low symmetry (order 2) leav
 - Not found anywhere: the family read **from the Vacuus outward** (the centre built out into a scaled dual core), the special sizes
   as the points where every pit wall lies on a face of a core solid, and the census over all Platonic/Archimedean/Catalan pairs
   (12 depths, including the rhombic triacontahedron on a 1/φ copy of itself). Those are DICTO's reading and this study's results.
+- **As a key** (DICTO 26 Nov: "its a kind of key" — a pit takes a spike of the same height, lock and key; given to steer the prior-art
+  search): the nearest prior art is **topological interlocking** (Dyskin, Estrin et al., 2001: term coined; Platonic solids and the
+  concavo-convex "osteomorphic" blocks interlock), Belov-Kanel et al., arXiv:0812.5089 (interlocking of convex polyhedra), and
+  Akpanya, arXiv:2405.01944 (interlocking blocks built from tetrahedra and octahedra in the tetroctahedrille). Abeille's flat vault
+  (1699) is the classical ancestor. None found uses face pyramids (pits and matching spikes) as the key on a space-filling piece.
+  Checked: search pages and abstracts only.
