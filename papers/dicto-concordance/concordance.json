@@ -6185,6 +6185,125 @@
         "study": "papers/2026-11-25-fair-dice-blueprint",
         "goes_to": "#121 (published)",
         "status": "published"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "#122 PUBLISHED: Which Platonic Solids Fill Space: Aristotle's Error, Machine-Checked. DICTO DOI 10.5281/zenodo.24523529 (v1 24523530). Lean: DICTOR-Master/platonic-fill-lean @541a0fab (Palomar preflight passed; submission waits behind packets and fair dice). aristotle_error, octa/dodeca/icosa_alone, no_tetra/octa/dodeca/icosa, platonic_mix; standard axioms only. Credits Aristotle (De Caelo III.8), Regiomontanus, Lagarias-Zong 2012, Gabbrielli-Jiao-Torquato 2012, Conway-Radin-Sadun 1999, Niven, #44, #119",
+        "study": "papers/2026-11-25-aristotle-blueprint",
+        "goes_to": "#122 (published)",
+        "status": "published"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lean source of #122 (Aristotle's error and the Platonic solids that cannot fill space): built clean, 0 sorry, standard axioms",
+        "study": "studies/2026-11-24-lean-platonic-fill",
+        "goes_to": "#122 (published)",
+        "status": "published"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lean M4 (formalised, standard axioms, no sorry): lattice webs. Theorem 0 in any finite dimension (plane_meets_interior_iff, plane_meets_cell_iff, web_iff); cube Resonus and Vacuus webs (cube_resonus_web, cube_vacuus_web), rhombic dodecahedron web (rd_web), one web for both (same_web)",
+        "study": "studies/2026-11-25-lean-vacuus-resonus",
+        "goes_to": "Vacuus-Resonus formal release (with M1-M3)",
+        "status": "settled (formalised)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Lattice webs in 4D: the 24-cell's web (12 D4 root hyperplanes, R = V by quality-overlaps Thm 2) continues into the affine D4 alcove arrangement, 192 alcoves per cell; the 4D permutohedron: no Vacuus or Resonus family continues (k = 4..16)",
+        "study": "studies/2026-11-25-vacuus-resonus-lattice-webs",
+        "goes_to": "#120 next version (Vacuus-Resonus)",
+        "status": "settled (exact)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Mixed webs (DICTO's question): tetrahedra+octahedra: only the octahedron's coordinate planes continue (own planes); with mirror crossings allowed all 9 Vacuus families continue (= the cube's V+R web); every Resonus family breaks. Stella octangula + octahedra tiling exists (each tetrahedron in one stella); outer-edge Vacuus and Resonus break; through mirrors all 9 Vacuus continue. TRD (hcp): 3 upright families continue, 6 tilted break (both notions). Second notion 'continues through mirrors' worded by a Fable review; caution: depends on symmetry",
+        "study": "studies/2026-11-25-mixed-webs",
+        "goes_to": "#120 next version (Vacuus-Resonus); V SF A",
+        "status": "settled (exact); notion 2 under review"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "All 1232 Aequi rigorously certified (ball arithmetic, unique fair depth in a box, published depths within 5e-60); 5935 new Aequi from both icosahedron placements under 16 more subgroup classes of Oh, all certified; none in the catalogues checked; fixing one parameter between two face kinds credited to Diaconis and Keller",
+        "study": "studies/2026-11-24-aequi-certify-extend",
+        "goes_to": "#112 next version (Aequi)",
+        "status": "settled (certified)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "The Non-Periodic Table of the Aequi (title DICTO's): 1232 Aequi in 6 rows (symmetry group) x 10 columns (face orbits m = 2..11), 37 filled cells, counts match the source tables",
+        "study": "studies/2026-11-24-aequi-table",
+        "goes_to": "#112 next version (figure); app view later",
+        "status": "draft figure"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Vacuus kinds of all 1232 Aequi (exact): heart 276 (Ih 4, Oh 57, Th 215), inherited heart 951 (O 31, Td 92, T 828), non-heart 5 (Td 2, T 3); amber cells study 2",
+        "study": "studies/2026-11-24-aequi-vacuus-scutoids",
+        "goes_to": "V SF A paper",
+        "status": "settled (exact)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Permutahedron leads: associahedra (A3/B3/H3) exact, not fair, inherited heart; Vacuus cones are pyramids, not Scutoid Frusta; face-parallel cuts simplicial; Lemma 3: homothetic shells give only frusta",
+        "study": "studies/2026-11-24-permutahedron-leads",
+        "goes_to": "V SF A paper",
+        "status": "settled (exact)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Scutoid Frusta enumeration under the PROPOSED convex definition: 45 combinatorial types with end side counts n, m <= 8 and at most two Y-corners (58 with mirror images): 6 frusta, 5 with one Y-corner, 34 with two",
+        "study": "studies/2026-11-24-scutoid-frusta-enumeration",
+        "goes_to": "V SF A paper",
+        "status": "waiting: definition awaits DICTO's answers"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Vacuus enumeration (edge-plate definition of #110): Platonic, Archimedean, Catalan, prisms/antiprisms/bipyramids/trapezohedra n = 3..12 exact (71 rows); Johnson 85/92 exact, J84-J90 still floating point",
+        "study": "studies/2026-11-24-vacuus-enumeration",
+        "goes_to": "#120 next version (Vacuus-Resonus)",
+        "status": "settled (exact) except J84-J90 (open: make exact)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Exact skeletal renders of DICTO's four Vacuus builds (cardboard octahedron as three cards; B1NR cube; two ring-fin builds), to replace his photos in #87",
+        "study": "studies/2026-11-24-vacuus-build-renders",
+        "goes_to": "#87 next version",
+        "status": "waiting: renders for DICTO's view"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Independent rechecks: Aequi exact dice (Theorems 1, 2) and the A402191 Vacuus (Theorem A, type-B count): every item agrees",
+        "study": "studies/2026-11-24-independent-rechecks",
+        "goes_to": "#112 and A402191 (support)",
+        "status": "support (check agrees)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Formal prior art: no earlier formal proof of Alexandrov/Minkowski or of Aristotle's error found; Matsumoto's theorem HAS earlier formal proofs (Isabelle AFP Buildings 2016; Lean thesis Bonn 2024) - cite them, ours first Lean proof with exact scope",
+        "study": "studies/2026-11-24-formal-prior-art",
+        "goes_to": "#121, #122 (used); rolling-law release (Matsumoto credit)",
+        "status": "support (used)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Questions answered: packets theorem extends Gabbrielli-Jiao-Torquato 2012; no 28 uniform honeycomb has an icosahedral cell; Chentouf-Sun 2023 rational-angle tetrahedra",
+        "study": "studies/2026-11-24-questions-answered",
+        "goes_to": "#119, #122 (used)",
+        "status": "support (used)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "Palomar PDF display: Zenodo's pdf.js loads whole files; very large figures made the PDFs display badly; fixed by the LIGHT print default (300 ppi) in print.mjs",
+        "study": "studies/2026-11-24-palomar-pdf-display",
+        "goes_to": "house tooling (applied)",
+        "status": "support (applied)"
+      },
+      {
+        "date": "2026-11-25",
+        "result": "OEIS link card for dictospheres.com and Linktree (diamond network, A400949 ring)",
+        "study": "studies/2026-11-24-oeis-site-image",
+        "goes_to": "site (no paper)",
+        "status": "dismissed from papers (site image)"
       }
     ]
   },
