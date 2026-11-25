@@ -346,12 +346,35 @@ var GROUP_WORDS = { Ih: 'Ih · icosahedral, 120', Oh: 'Oh · cube, 48', O: 'O ·
   D3: 'D3 · order 6', S6: 'S6 · order 6', D2: 'D2 · order 4', C2h: 'C2h · order 4', S4: 'S4 · order 4' };
 function listOnly(g) { return !!(data.listOnly && data.listOnly.indexOf(g) >= 0); }   // the smaller groups of catalogue 2: list view only (too many kinds of face to tick)
 function techName(e) { return e.name.replace(/(, [A-Za-z]+) \d+$/, '$1'); }   // DICTO 25 Nov: group letters only, no number within the group
-function dieTitle(e) { return e.s === 'A' ? techName(e) : e.g + ': ' + e.o.map(function (oi) { return data.groups[e.g][oi].lab; }).join(' + '); }
+// special designations (DICTO 25 Nov 2026)
+var OPP = null, NONHEART = 0;
+function opposites() {
+  OPP = data.dirs.map(function (u) { var j = -1; data.dirs.forEach(function (w, i) { if (Math.abs(w[0] + u[0]) + Math.abs(w[1] + u[1]) + Math.abs(w[2] + u[2]) < 1e-9) j = i; }); return j; });
+  NONHEART = data.dice.filter(function (e) { return vacKind(e) === 'non'; }).length;
+}
+function vacKind(e) {   // heart: centrally symmetric; inherited heart: not, but two faces parallel; non-heart: no two faces parallel
+  var dep = {}; e.osets.forEach(function (os, j) { os.forEach(function (d) { dep[d] = e.d[j]; }); });
+  var ds = Object.keys(dep).map(Number), sym = true, par = false;
+  ds.forEach(function (d) { var o = OPP[d]; if (o >= 0 && o in dep) { par = true; if (Math.abs(dep[o] - dep[d]) > 1e-9) sym = false; } else sym = false; });
+  return sym ? 'heart' : par ? 'inherited' : 'non';
+}
+function tagsOf(e) {
+  var t = [];
+  if (e.s === 'P') t.push('Aequi Permutahedra');
+  if (e.m === 1) t.push('fair by symmetry');
+  if (e.m === 2) t.push('Aequi Diaconis–Keller');
+  var v = vacKind(e); t.push(v === 'heart' ? 'Vacuus: heart' : v === 'inherited' ? 'Vacuus: inherited heart' : 'Vacuus: non-heart (one of ' + NONHEART + ')');
+  if (e.k === 4) t.push('Lucky 7');
+  return t;
+}
+function hasName(e) { return e.s === 'A' || e.s === 'P'; }
+function dieTitle(e) { return hasName(e) ? techName(e) : e.g + ': ' + e.o.map(function (oi) { return data.groups[e.g][oi].lab; }).join(' + '); }
 function groupDice(g) {
   var A = data.dice.filter(function (e) { return e.g === g && e.s === 'A'; }).sort(function (a, b) { return a.num - b.num; });
   var B = data.dice.filter(function (e) { return e.g === g && e.s === 'B'; }).sort(function (a, b) { return a.m - b.m || a.N - b.N || dieTitle(a).localeCompare(dieTitle(b)); });
   var C = data.dice.filter(function (e) { return e.g === g && e.s === 'C'; }).sort(function (a, b) { return a.k - b.k; });
-  return { A: A, B: B, C: C };
+  var P = data.dice.filter(function (e) { return e.g === g && e.s === 'P'; }).sort(function (a, b) { return a.k - b.k; });
+  return { A: A, B: B, C: C, P: P };
 }
 function fillGroups() {
   var sel = $('groupSel');
@@ -384,11 +407,12 @@ function renderChoices() {
       var sel = e.o.slice().sort(function (a, b) { return a - b; }).join(',') === cur;
       return '<button class="item' + (sel ? ' sel' : '') + '" data-k="' + e.k + '"><span class="sws">' +
         e.o.map(function (oi) { return '<span class="sw" style="background:' + colOf(orbs[oi].col) + '"></span>'; }).join('') +
-        '</span><span class="nm"><span>' + esc(nameOf(e)) + '</span><span class="tech">' + esc(e.s === 'A' ? techName(e) : e.o.map(function (oi) { return orbs[oi].lab; }).join(' + ')) + '</span></span><span class="meta">m ' + e.m + ' · N ' + e.N + '</span></button>';
+        '</span><span class="nm"><span>' + esc(nameOf(e)) + '</span><span class="tech">' + esc(hasName(e) ? techName(e) : e.o.map(function (oi) { return orbs[oi].lab; }).join(' + ')) + '</span></span><span class="meta">m ' + e.m + ' · N ' + e.N + '</span></button>';
     };
     var h = '';
     if (L.A.length) h += '<div class="sec">Main catalogue · ' + L.A.length + '</div><div class="list">' + L.A.map(item).join('') + '</div>';
     if (L.B.length) h += '<div class="sec">Both icosahedron placements · ' + L.B.length + '</div><div class="list">' + L.B.map(item).join('') + '</div>';
+    if (L.P.length) h += '<div class="sec">Aequi Permutahedra · ' + L.P.length + '</div><div class="list">' + L.P.map(item).join('') + '</div>';
     if (L.C.length) h += '<div class="sec">Catalogue 2 (certified 24 November 2026) · ' + L.C.length + '</div><div class="list">' + L.C.map(item).join('') + '</div>';
     box.innerHTML = h;
     box.querySelectorAll('.item').forEach(function (b) {
@@ -429,7 +453,8 @@ function updatePick() {
     panel.innerHTML = '<h2>' + esc(GROUP_WORDS[st.g]) + '</h2><p class="sub">Tick two or more kinds of face below, or choose List to see every die of this group.</p>';
     return;
   }
-  var r = t.length >= 2 ? G.lookup(data, st.g, t) : null, html = '', S, colours, planes, e = null;
+  var one = t.length === 1 ? data.dice.filter(function (x) { return x.g === st.g && x.m === 1 && x.o[0] === t[0]; })[0] : null;   // a die of one kind of face (the Aequi Permutahedra)
+  var r = one ? { die: one, t: data.T[0], exact: true } : t.length >= 2 ? G.lookup(data, st.g, t) : null, html = '', S, colours, planes, e = null;
   if (r) {
     e = r.die;
     planes = G.planesFor(data, e, G.inverse(r.t.p));
@@ -473,7 +498,7 @@ function updatePick() {
       return '<tr><td>' + picker(o.col) + '</td><td>' + esc(o.plain) + '<br><span class="tech">' + esc(o.lab) + '</span></td><td class="num">' + polyCounts(S, j) + '</td><td class="num">' + e.d[j].toFixed(12) + '</td></tr>';
     }).join('');
     html += '<h2>' + esc(nameOf(e)) + '</h2>' +
-      '<p class="sub">' + esc(dieTitle(e)) + ' · ' + (e.s === 'A' ? 'Main catalogue' + (e.book ? ' · book atom ' + esc(e.book) : '') : e.s === 'C' ? 'Catalogue 2, certified 24 November 2026' : 'Both icosahedron placements') + (e.m === 2 ? ' · Aequi Diaconis–Keller' : '') + '</p>' + numRow(e) +
+      '<p class="sub">' + esc(dieTitle(e)) + ' · ' + (e.s === 'A' ? 'Main catalogue' + (e.book ? ' · book atom ' + esc(e.book) : '') : e.s === 'C' ? 'Catalogue 2, certified 24 November 2026' : e.s === 'P' ? 'Duals of the three permutahedra' : 'Both icosahedron placements') + '</p><p class="tags">' + tagsOf(e).map(esc).join(' · ') + '</p>' + numRow(e) +
       (e.m >= 4 ? '<span class="badge">Aequus Mosaicus</span>' : '') + (e.h ? '<span class="badge">two hands</span>' : '') +
       '<dl><dt>group</dt><dd>' + e.g + '</dd><dt>kinds of face m</dt><dd>' + e.m + '</dd><dt>faces N</dt><dd>' + e.N + ' (built: ' + S.faces.length + ')</dd><dt>corners</dt><dd>' + S.verts.length + '</dd>' +
       '<dt>hands</dt><dd>' + (e.h ? 'two hands (chiral)' + (st.hand ? ' · showing the other hand' : '') : 'one (mirror-symmetric)') + '</dd></dl>' +
@@ -485,7 +510,7 @@ function updatePick() {
   if (S.faces.length !== N) html += '<p class="err">Check failed: built ' + S.faces.length + ' faces, expected ' + N + '.</p>';
   html += vacNote(plates);
   panel.innerHTML = html; wirePickers(panel);
-  cur = { S: S, name: e ? (e.s === 'A' ? e.name.replace(/^Aequus /, 'Aequus-') : e.g + '-' + e.o.map(function (oi) { return data.groups[e.g][oi].lab; }).join('-')) : 'solid', mirror: mirrorShow };
+  cur = { S: S, name: e ? (hasName(e) ? e.name.replace(/^Aequus /, 'Aequus-') : e.g + '-' + e.o.map(function (oi) { return data.groups[e.g][oi].lab; }).join('-')) : 'solid', mirror: mirrorShow };
   $('stlBtn').hidden = !canSave;
   var go = $('goLarger');
   if (go) go.onclick = function () { setGroup(e.g, e.o); };
@@ -609,7 +634,7 @@ var numsLoad = fetch('/aequi/numberings.json').then(function (r) { return r.json
 Promise.all([fetch('/aequi/dice.json').then(function (r) { return r.json(); }), fetch('/aequi/fair.json').then(function (r) { return r.json(); }), fetch('/aequi/names.json').then(function (r) { return r.json(); })]).then(function (res) {
   data = res[0]; fair = res[1]; NAMES = res[2];
   numsLoad.then(function (x) { NUMS = x; if (tab === 'pick') updatePick(); });
-  G.prepare(data);
+  G.prepare(data); opposites();
   fillGroups(); fillLines();
   setGroup('Oh', [0, 1]);   // opens on Aequus CO-14
   setLine(1); resize();
