@@ -13,7 +13,7 @@ def post(u, body):
     try: return json.load(urllib.request.urlopen(urllib.request.Request(u, data=json.dumps(body).encode(), headers={**H, 'Content-Type': 'application/json'}, method='POST'), timeout=300))
     except urllib.error.HTTPError as e: return {'ok': False, 'http': e.code, 'body': e.read().decode()[:1500]}
 pk = json.load(open(f'{B}/{d}/aixiv-packet/fields.json')); f = dict(pk['fields'])
-P = open(os.path.expanduser('~/dicto-alerts/privacy-pattern.txt')).read().strip()   # private list, same as the commit guard
+P = open(os.path.expanduser('~/dicto-alerts/tools/privacy-pattern.re')).read().strip()   # private list, same as the commit guard
 bad = re.findall(P, json.dumps(f, ensure_ascii=False))
 if bad: sys.exit(f'STOP privacy: {bad}')
 Q0 = json.load(open(Q)); want = next(e['label'] for e in Q0['queue'] if e['n'] == n)   # DICTO's label for this paper (queue.json)
