@@ -101,3 +101,7 @@ triacontahedron on itself; triakis icosahedron on deltoidal hexecontahedron) **t
 (tetrahedron on triakis octahedron; octahedron on triakis tetrahedron, deltoidal hexecontahedron, disdyakis triacontahedron) every wall
 lies in a face plane of Q, but the walls do not make up Q (core 12 or 24 faces against Q's 24, 12, 60, 120): a weaker coincidence,
 listed separately from now on. LEAD 6: identify those four cores (likely a Td/Oh solid on a subset of Q's planes).
+- **The whole Vacuus catalogue (163 solids; dbb job build-out-catalogue, 0 errors):** with the dual as core, the only special sizes
+  are the two classics (dodecahedron 5 − 2√5, icosahedron 3√5 − 6); pits disjoint at every size tested in all 163. As solid as the
+  classics at some core size: all 31 Platonic, Archimedean and Catalan solids, all 10 bipyramids and 10 trapezohedra, 22 of 92
+  Johnson solids, 1 of 10 prisms, 1 of 10 antiprisms.
