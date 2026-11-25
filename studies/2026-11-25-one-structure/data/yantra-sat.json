@@ -1,0 +1,80 @@
+[
+ {
+  "sat": false,
+  "vars": 5125,
+  "clauses": 13322,
+  "pencils": 1,
+  "polyhedron": "120-cell",
+  "kind": "4D",
+  "direction": "vertex-first, then 5-fold axis",
+  "secs": 0.16
+ },
+ {
+  "sat": false,
+  "vars": 7433,
+  "clauses": 20585,
+  "pencils": 7,
+  "polyhedron": "120-cell",
+  "kind": "4D",
+  "direction": "vertex-first, then 3-fold axis",
+  "secs": 0.08
+ },
+ {
+  "sat": false,
+  "vars": 7433,
+  "clauses": 20585,
+  "pencils": 7,
+  "polyhedron": "120-cell",
+  "kind": "4D",
+  "direction": "cell-first, then 3-fold axis",
+  "secs": 0.08
+ },
+ {
+  "sat": false,
+  "vars": 12835,
+  "clauses": 38097,
+  "pencils": 11,
+  "polyhedron": "120-cell",
+  "kind": "4D",
+  "direction": "vertex-first, then 2-fold axis",
+  "secs": 0.13
+ },
+ {
+  "sat": false,
+  "vars": 12835,
+  "clauses": 38097,
+  "pencils": 11,
+  "polyhedron": "120-cell",
+  "kind": "4D",
+  "direction": "cell-first, then 2-fold axis",
+  "secs": 0.13
+ },
+ {
+  "sat": null,
+  "why": "not decided within 1500 s",
+  "polyhedron": "600-cell",
+  "kind": "4D",
+  "direction": "Coxeter plane (H4)",
+  "secs": 1500.13
+ },
+ {
+  "sat": false,
+  "vars": 192875,
+  "clauses": 667211,
+  "pencils": 31,
+  "polyhedron": "120-cell",
+  "kind": "4D",
+  "direction": "Coxeter plane (H4)",
+  "secs": 1197.27
+ },
+ {
+  "sat": false,
+  "vars": 8007,
+  "clauses": 23689,
+  "pencils": 10,
+  "polyhedron": "Sunstar",
+  "kind": "symmetric",
+  "direction": "5-fold axis",
+  "secs": 0.09
+ }
+]

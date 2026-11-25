@@ -1,0 +1,1690 @@
+[
+ {
+  "polyhedron": "truncated icosahedron",
+  "capped": false,
+  "corners": 60,
+  "segments": {
+   "S": 60,
+   "SD": 1440,
+   "FD": 240,
+   "PL": 481
+  },
+  "vacuus_plates": 45,
+  "plate_lines": 481,
+  "lines": 2131,
+  "pieces": 2131,
+  "centre": {
+   "lines": 481,
+   "families": {
+    "PL": 481,
+    "S": 30,
+    "SD": 30
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 8220,
+   "3": 810,
+   "4": 230,
+   "6": 12
+  },
+  "boundary_points_by_lines": {
+   "2": 300,
+   "4": 20
+  },
+  "inside_marmas": 1052,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 4,
+    "families": {
+     "FD": 3,
+     "PL": 1
+    },
+    "points": 20
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 300
+   },
+   {
+    "where": "inside",
+    "lines": 6,
+    "families": {
+     "PL": 1,
+     "SD": 5
+    },
+    "points": 12
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "SD": 4
+    },
+    "points": 180
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "PL": 1,
+     "SD": 3
+    },
+    "points": 50
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 450
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 360
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 6960
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 1260
+   }
+  ],
+  "secs": 5.3
+ },
+ {
+  "polyhedron": "truncated dodecahedron",
+  "capped": false,
+  "corners": 60,
+  "segments": {
+   "S": 60,
+   "SD": 1260,
+   "FD": 420,
+   "PL": 481
+  },
+  "vacuus_plates": 45,
+  "plate_lines": 481,
+  "lines": 2131,
+  "pieces": 2131,
+  "centre": {
+   "lines": 481,
+   "families": {
+    "PL": 481,
+    "S": 30,
+    "SD": 30
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 7320,
+   "3": 930,
+   "4": 330,
+   "5": 30,
+   "6": 12,
+   "7": 20
+  },
+  "boundary_points_by_lines": {
+   "2": 1680,
+   "3": 240,
+   "6": 12
+  },
+  "inside_marmas": 1322,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 6,
+    "families": {
+     "FD": 5,
+     "PL": 1
+    },
+    "points": 12
+   },
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 3
+    },
+    "points": 240
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 1680
+   },
+   {
+    "where": "inside",
+    "lines": 7,
+    "families": {
+     "PL": 1,
+     "SD": 6
+    },
+    "points": 20
+   },
+   {
+    "where": "inside",
+    "lines": 6,
+    "families": {
+     "PL": 1,
+     "SD": 5
+    },
+    "points": 12
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "PL": 1,
+     "SD": 4
+    },
+    "points": 30
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "SD": 4
+    },
+    "points": 180
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "PL": 1,
+     "SD": 3
+    },
+    "points": 150
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 480
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 450
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 6180
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 1140
+   }
+  ],
+  "secs": 5.7
+ },
+ {
+  "polyhedron": "rhombicosidodecahedron",
+  "capped": false,
+  "corners": 60,
+  "segments": {
+   "S": 60,
+   "SD": 1530,
+   "FD": 120,
+   "PL": 1395
+  },
+  "vacuus_plates": 60,
+  "plate_lines": 1395,
+  "lines": 3015,
+  "pieces": 3015,
+  "centre": {
+   "lines": 1395,
+   "families": {
+    "PL": 1395,
+    "S": 30,
+    "SD": 30
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 11190,
+   "3": 1580,
+   "4": 210,
+   "5": 270,
+   "6": 20,
+   "7": 120,
+   "10": 12
+  },
+  "boundary_points_by_lines": {
+   "2": 60,
+   "3": 30
+  },
+  "inside_marmas": 2212,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 2,
+     "PL": 1
+    },
+    "points": 30
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 60
+   },
+   {
+    "where": "inside",
+    "lines": 10,
+    "families": {
+     "SD": 10
+    },
+    "points": 12
+   },
+   {
+    "where": "inside",
+    "lines": 7,
+    "families": {
+     "SD": 7
+    },
+    "points": 60
+   },
+   {
+    "where": "inside",
+    "lines": 7,
+    "families": {
+     "PL": 1,
+     "SD": 6
+    },
+    "points": 60
+   },
+   {
+    "where": "inside",
+    "lines": 6,
+    "families": {
+     "SD": 6
+    },
+    "points": 20
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "SD": 5
+    },
+    "points": 180
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "PL": 1,
+     "SD": 4
+    },
+    "points": 90
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "SD": 4
+    },
+    "points": 120
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "PL": 1,
+     "SD": 3
+    },
+    "points": 90
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 900
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 680
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 6360
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 4830
+   }
+  ],
+  "secs": 10.5
+ },
+ {
+  "polyhedron": "truncated cuboctahedron",
+  "capped": false,
+  "corners": 48,
+  "segments": {
+   "S": 48,
+   "FD": 216,
+   "SD": 840,
+   "PL": 537
+  },
+  "vacuus_plates": 36,
+  "plate_lines": 537,
+  "lines": 1569,
+  "pieces": 1569,
+  "centre": {
+   "lines": 537,
+   "families": {
+    "PL": 537,
+    "S": 24,
+    "SD": 24
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 4320,
+   "3": 420,
+   "4": 48,
+   "5": 24
+  },
+  "boundary_points_by_lines": {
+   "2": 336,
+   "3": 68,
+   "5": 6
+  },
+  "inside_marmas": 492,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 5,
+    "families": {
+     "FD": 4,
+     "PL": 1
+    },
+    "points": 6
+   },
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 3
+    },
+    "points": 56
+   },
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 2,
+     "PL": 1
+    },
+    "points": 12
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 336
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "PL": 1,
+     "SD": 4
+    },
+    "points": 24
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "SD": 4
+    },
+    "points": 48
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 372
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 48
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 2880
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 1440
+   }
+  ],
+  "secs": 2.6
+ },
+ {
+  "polyhedron": "icosidodecahedron",
+  "capped": false,
+  "corners": 30,
+  "segments": {
+   "S": 30,
+   "SD": 315,
+   "FD": 60,
+   "PL": 15
+  },
+  "vacuus_plates": 6,
+  "plate_lines": 15,
+  "lines": 375,
+  "pieces": 375,
+  "centre": {
+   "lines": 15,
+   "families": {
+    "PL": 15,
+    "S": 15,
+    "SD": 15
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 840,
+   "3": 170,
+   "5": 72
+  },
+  "boundary_points_by_lines": {
+   "2": 60
+  },
+  "inside_marmas": 242,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 60
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "PL+S+SD": 1,
+     "SD": 4
+    },
+    "points": 60
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "SD": 5
+    },
+    "points": 12
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL+S+SD": 1,
+     "SD": 2
+    },
+    "points": 90
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 80
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 840
+   }
+  ],
+  "secs": 0.5
+ },
+ {
+  "polyhedron": "truncated cube",
+  "capped": false,
+  "corners": 24,
+  "segments": {
+   "S": 24,
+   "FD": 120,
+   "SD": 120,
+   "PL": 85
+  },
+  "vacuus_plates": 18,
+  "plate_lines": 85,
+  "lines": 313,
+  "pieces": 313,
+  "centre": {
+   "lines": 85,
+   "families": {
+    "PL": 85,
+    "S": 12,
+    "SD": 12
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 288,
+   "3": 78,
+   "4": 32
+  },
+  "boundary_points_by_lines": {
+   "2": 216,
+   "3": 72,
+   "5": 6
+  },
+  "inside_marmas": 110,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 5,
+    "families": {
+     "FD": 4,
+     "PL": 1
+    },
+    "points": 6
+   },
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 3
+    },
+    "points": 48
+   },
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 2,
+     "PL": 1
+    },
+    "points": 24
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 216
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "PL": 1,
+     "SD": 3
+    },
+    "points": 32
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 54
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 24
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 168
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 120
+   }
+  ],
+  "secs": 0.2
+ },
+ {
+  "polyhedron": "truncated octahedron",
+  "capped": false,
+  "corners": 24,
+  "segments": {
+   "S": 24,
+   "FD": 84,
+   "SD": 156,
+   "PL": 69
+  },
+  "vacuus_plates": 15,
+  "plate_lines": 69,
+  "lines": 297,
+  "pieces": 297,
+  "centre": {
+   "lines": 69,
+   "families": {
+    "PL": 69,
+    "S": 12,
+    "SD": 12
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 360,
+   "3": 108,
+   "4": 12,
+   "5": 18,
+   "7": 6
+  },
+  "boundary_points_by_lines": {
+   "2": 96,
+   "3": 14
+  },
+  "inside_marmas": 144,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 3
+    },
+    "points": 8
+   },
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 2,
+     "PL": 1
+    },
+    "points": 6
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 96
+   },
+   {
+    "where": "inside",
+    "lines": 7,
+    "families": {
+     "PL": 1,
+     "SD": 6
+    },
+    "points": 6
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "PL": 1,
+     "SD": 4
+    },
+    "points": 18
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "PL": 1,
+     "SD": 3
+    },
+    "points": 12
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 84
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 24
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 192
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 96
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL+S+SD": 1,
+     "SD": 1
+    },
+    "points": 72
+   }
+  ],
+  "secs": 0.2
+ },
+ {
+  "polyhedron": "rhombicuboctahedron",
+  "capped": false,
+  "corners": 24,
+  "segments": {
+   "S": 24,
+   "FD": 36,
+   "SD": 192,
+   "PL": 153
+  },
+  "vacuus_plates": 24,
+  "plate_lines": 153,
+  "lines": 369,
+  "pieces": 369,
+  "centre": {
+   "lines": 153,
+   "families": {
+    "PL": 153,
+    "S": 12,
+    "SD": 12
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 660,
+   "3": 140,
+   "5": 6,
+   "6": 24
+  },
+  "boundary_points_by_lines": {
+   "2": 24,
+   "3": 18
+  },
+  "inside_marmas": 170,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 2,
+     "PL": 1
+    },
+    "points": 18
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 1,
+     "PL": 1
+    },
+    "points": 24
+   },
+   {
+    "where": "inside",
+    "lines": 6,
+    "families": {
+     "PL": 1,
+     "SD": 5
+    },
+    "points": 24
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "PL": 1,
+     "SD": 4
+    },
+    "points": 6
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 108
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 32
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 348
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 312
+   }
+  ],
+  "secs": 0.4
+ },
+ {
+  "polyhedron": "snub cube",
+  "capped": false,
+  "corners": 24,
+  "segments": {
+   "S": 24,
+   "FD": 12,
+   "SD": 204,
+   "PL": 669
+  },
+  "vacuus_plates": 48,
+  "plate_lines": 669,
+  "lines": 885,
+  "pieces": 885,
+  "centre": {
+   "lines": 669,
+   "families": {
+    "PL": 669,
+    "S": 24
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 900,
+   "3": 20,
+   "5": 6
+  },
+  "boundary_points_by_lines": {
+   "2": 96,
+   "3": 6
+  },
+  "inside_marmas": 26,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 2,
+     "PL": 1
+    },
+    "points": 6
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 1,
+     "PL": 1
+    },
+    "points": 96
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "PL": 1,
+     "SD": 4
+    },
+    "points": 6
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 12
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 8
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 660
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 192
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL+S": 1,
+     "SD": 1
+    },
+    "points": 48
+   }
+  ],
+  "secs": 1.0
+ },
+ {
+  "polyhedron": "dodecahedron",
+  "capped": false,
+  "corners": 20,
+  "segments": {
+   "S": 20,
+   "FD": 60,
+   "SD": 100,
+   "PL": 31
+  },
+  "vacuus_plates": 15,
+  "plate_lines": 31,
+  "lines": 181,
+  "pieces": 181,
+  "centre": {
+   "lines": 31,
+   "families": {
+    "PL": 31,
+    "S": 10,
+    "SD": 10
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 90,
+   "3": 90,
+   "6": 12
+  },
+  "boundary_points_by_lines": {
+   "2": 60
+  },
+  "inside_marmas": 102,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 60
+   },
+   {
+    "where": "inside",
+    "lines": 6,
+    "families": {
+     "PL": 1,
+     "SD": 5
+    },
+    "points": 12
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 60
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 30
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 60
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 30
+   }
+  ],
+  "secs": 0.1
+ },
+ {
+  "polyhedron": "icosahedron",
+  "capped": false,
+  "corners": 12,
+  "segments": {
+   "S": 12,
+   "SD": 36,
+   "PL": 31
+  },
+  "vacuus_plates": 15,
+  "plate_lines": 31,
+  "lines": 61,
+  "pieces": 61,
+  "centre": {
+   "lines": 31,
+   "families": {
+    "PL": 31,
+    "S": 6,
+    "SD": 6
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 30,
+   "4": 20
+  },
+  "boundary_points_by_lines": {},
+  "inside_marmas": 20,
+  "patterns": [
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "PL": 1,
+     "SD": 3
+    },
+    "points": 20
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 30
+   }
+  ],
+  "secs": 0.0
+ },
+ {
+  "polyhedron": "truncated tetrahedron",
+  "capped": false,
+  "corners": 12,
+  "segments": {
+   "S": 12,
+   "SD": 12,
+   "FD": 36,
+   "PL": 85
+  },
+  "vacuus_plates": 18,
+  "plate_lines": 85,
+  "lines": 133,
+  "pieces": 133,
+  "centre": {
+   "lines": 85,
+   "families": {
+    "PL": 85,
+    "S": 12
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 12,
+   "3": 6
+  },
+  "boundary_points_by_lines": {
+   "2": 48,
+   "4": 4
+  },
+  "inside_marmas": 6,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 4,
+    "families": {
+     "FD": 3,
+     "PL": 1
+    },
+    "points": 4
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 48
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 6
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 12
+   }
+  ],
+  "secs": 0.0
+ },
+ {
+  "polyhedron": "cuboctahedron",
+  "capped": false,
+  "corners": 12,
+  "segments": {
+   "S": 12,
+   "FD": 12,
+   "SD": 30,
+   "PL": 6
+  },
+  "vacuus_plates": 4,
+  "plate_lines": 6,
+  "lines": 42,
+  "pieces": 42,
+  "centre": {
+   "lines": 6,
+   "families": {
+    "PL": 6,
+    "S": 6,
+    "SD": 6
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 24,
+   "3": 12
+  },
+  "boundary_points_by_lines": {
+   "2": 6
+  },
+  "inside_marmas": 12,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 6
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL+S+SD": 1,
+     "SD": 2
+    },
+    "points": 12
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 24
+   }
+  ],
+  "secs": 0.0
+ },
+ {
+  "polyhedron": "cube",
+  "capped": false,
+  "corners": 8,
+  "segments": {
+   "S": 8,
+   "FD": 12,
+   "SD": 4,
+   "PL": 7
+  },
+  "vacuus_plates": 6,
+  "plate_lines": 7,
+  "lines": 19,
+  "pieces": 19,
+  "centre": {
+   "lines": 7,
+   "families": {
+    "PL": 7,
+    "S": 4,
+    "SD": 4
+   }
+  },
+  "inside_points_by_lines": {},
+  "boundary_points_by_lines": {
+   "3": 6
+  },
+  "inside_marmas": 0,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 2,
+     "PL": 1
+    },
+    "points": 6
+   }
+  ],
+  "secs": 0.0
+ },
+ {
+  "polyhedron": "octahedron",
+  "capped": false,
+  "corners": 6,
+  "segments": {
+   "S": 6,
+   "SD": 3,
+   "PL": 3
+  },
+  "vacuus_plates": 3,
+  "plate_lines": 3,
+  "lines": 3,
+  "pieces": 3,
+  "centre": {
+   "lines": 3,
+   "families": {
+    "PL": 3,
+    "S": 3,
+    "SD": 3
+   }
+  },
+  "inside_points_by_lines": {},
+  "boundary_points_by_lines": {},
+  "inside_marmas": 0,
+  "patterns": [],
+  "secs": 0.0
+ },
+ {
+  "polyhedron": "tetrahedron",
+  "capped": false,
+  "corners": 4,
+  "segments": {
+   "S": 4,
+   "PL": 7
+  },
+  "vacuus_plates": 6,
+  "plate_lines": 7,
+  "lines": 7,
+  "pieces": 7,
+  "centre": {
+   "lines": 7,
+   "families": {
+    "PL": 7,
+    "S": 4
+   }
+  },
+  "inside_points_by_lines": {},
+  "boundary_points_by_lines": {},
+  "inside_marmas": 0,
+  "patterns": [],
+  "secs": 0.0
+ },
+ {
+  "polyhedron": "snub dodecahedron",
+  "capped": false,
+  "corners": 60,
+  "segments": {
+   "S": 60,
+   "FD": 60,
+   "SD": 1560,
+   "PL": 9171
+  },
+  "vacuus_plates": 150,
+  "plate_lines": 9171,
+  "lines": 10791,
+  "pieces": 10791,
+  "centre": {
+   "lines": 9171,
+   "families": {
+    "PL": 9171,
+    "S": 60
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 7920,
+   "3": 40,
+   "6": 24
+  },
+  "boundary_points_by_lines": {
+   "2": 60
+  },
+  "inside_marmas": 64,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 60
+   },
+   {
+    "where": "inside",
+    "lines": 6,
+    "families": {
+     "PL": 1,
+     "SD": 5
+    },
+    "points": 24
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 40
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 6780
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 1080
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL+S": 1,
+     "SD": 1
+    },
+    "points": 60
+   }
+  ],
+  "secs": 40.1
+ },
+ {
+  "polyhedron": "truncated icosidodecahedron",
+  "capped": false,
+  "corners": 120,
+  "segments": {
+   "S": 120,
+   "FD": 660,
+   "SD": 6300,
+   "PL": 3675
+  },
+  "vacuus_plates": 90,
+  "plate_lines": 3675,
+  "lines": 10575,
+  "pieces": 10575,
+  "centre": {
+   "lines": 3675,
+   "families": {
+    "PL": 3675,
+    "S": 60,
+    "SD": 60
+   }
+  },
+  "inside_points_by_lines": {
+   "2": 66420,
+   "3": 3270,
+   "4": 1140,
+   "5": 270,
+   "6": 200,
+   "7": 30
+  },
+  "boundary_points_by_lines": {
+   "2": 2040,
+   "3": 290,
+   "5": 12
+  },
+  "inside_marmas": 4910,
+  "patterns": [
+   {
+    "where": "boundary",
+    "lines": 5,
+    "families": {
+     "FD": 5
+    },
+    "points": 12
+   },
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 3
+    },
+    "points": 260
+   },
+   {
+    "where": "boundary",
+    "lines": 3,
+    "families": {
+     "FD": 2,
+     "PL": 1
+    },
+    "points": 30
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 2
+    },
+    "points": 1920
+   },
+   {
+    "where": "boundary",
+    "lines": 2,
+    "families": {
+     "FD": 1,
+     "PL": 1
+    },
+    "points": 120
+   },
+   {
+    "where": "inside",
+    "lines": 7,
+    "families": {
+     "PL": 1,
+     "SD": 6
+    },
+    "points": 30
+   },
+   {
+    "where": "inside",
+    "lines": 6,
+    "families": {
+     "SD": 6
+    },
+    "points": 200
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "PL": 1,
+     "SD": 4
+    },
+    "points": 150
+   },
+   {
+    "where": "inside",
+    "lines": 5,
+    "families": {
+     "SD": 5
+    },
+    "points": 120
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "SD": 4
+    },
+    "points": 1020
+   },
+   {
+    "where": "inside",
+    "lines": 4,
+    "families": {
+     "PL": 1,
+     "SD": 3
+    },
+    "points": 120
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "PL": 1,
+     "SD": 2
+    },
+    "points": 1890
+   },
+   {
+    "where": "inside",
+    "lines": 3,
+    "families": {
+     "SD": 3
+    },
+    "points": 1380
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "SD": 2
+    },
+    "points": 54420
+   },
+   {
+    "where": "inside",
+    "lines": 2,
+    "families": {
+     "PL": 1,
+     "SD": 1
+    },
+    "points": 12000
+   }
+  ],
+  "secs": 72.7
+ }
+]

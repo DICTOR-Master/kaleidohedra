@@ -1,0 +1,35 @@
+A2a {'tetrahedron_sum_xyz': '4', 'octahedron_sum_xyz': '0', 'same_resonus_axes': True}
+A2b {'t_star_interval': ['994134708034889649/576460752303423488', '497067354017444825/288230376151711744'], 't_star_approx': 1.724548816311472, 'Omega_square_target': '4pi/15', 'Omega_octahedron_face (hexagon here)': '3pi/10', 'sign_at_lo': '[-2.12207144486653662697992185282066853165851e-18 +/- 8.50e-60]', 'sign_at_hi': '[1.10271315524473223438093521025660164491492e-18 +/- 7.53e-60]', 'square_face_shape': '4-gon (1 < t <= 2)', 'silent_degrees_P_tstar': [1, 2, 3, 4, 5, 7, 9, 11, 13, 15, 17, 19], 'silent_degrees_TO_unit_weights': [1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19], 'Oh_forced_degrees': 'odd and 2 (Tacitus study)'}
+A3 {
+ "D0_corners_squared_radius": [
+  "3"
+ ],
+ "phi2_plus_phi-2": "3",
+ "I0_on_octahedron_boundary": true,
+ "I0_corners_on_octahedron_edges": true,
+ "edge_division_ratio": "1/2 + 1/2\u221a5",
+ "octahedron_circumradius_equals_midradius_of_I1": true,
+ "midradius2_I0": "3/2 + 1/2\u221a5",
+ "inradius2_I0 (plane x+y+z = phi^2)": "7/6 + 1/2\u221a5",
+ "r2 = mid2/in2": "9/2 - 3/2\u221a5",
+ "R(O)^2/in(O)^2": "3",
+ "mid(I0)^2/R(O)^2": "3/2 - 1/2\u221a5",
+ "polarity R(D0)^2 in(I0)^2 = m^4": true,
+ "R(D0)/in(I0) squared = (m/in)^4 ? R(D0)^2/in2 = 3 * 3/phi^4": "63/2 - 27/2\u221a5",
+ "gap_d_octahedron_vs_I0_planes": "9/2 - 3/2\u221a5",
+ "norm_3_over_phi2": "9",
+ "3_inert_mod_3": true,
+ "cubes_in_D0": 5,
+ "cubes_per_D0_corner": [
+  2
+ ],
+ "I0_face_planes_are_n.x=phi^2_for_n_in_D0": true,
+ "cos2_S_B_neighbours": "1/2 + 1/6\u221a5",
+ "cos2_cube_diagonal_face": "1/3",
+ "dice": 41,
+ "hit_kinds (ratio squared = 3/phi^2 or its inverse)": {
+  "two-fold over three-fold: True": 11,
+  "three-fold over two-fold: True": 31
+ }
+}
+FINAL ok a_items
