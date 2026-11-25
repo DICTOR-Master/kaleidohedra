@@ -342,7 +342,8 @@ function labelGroup(S, nums, colours, mirror) {
   return lg;
 }
 var GROUP_WORDS = { Ih: 'Ih · icosahedral, 120', Oh: 'Oh · cube, 48', O: 'O · cube turns only, 24', Td: 'Td · tetrahedral with mirrors, 24', Th: 'Th · pyritohedral, 24', T: 'T · tetrahedral turns only, 12' };
-function dieTitle(e) { return e.s === 'A' ? e.name : e.g + ': ' + e.o.map(function (oi) { return data.groups[e.g][oi].lab; }).join(' + '); }
+function techName(e) { return e.name.replace(/(, [A-Za-z]+) \d+$/, '$1'); }   // DICTO 25 Nov: group letters only, no number within the group
+function dieTitle(e) { return e.s === 'A' ? techName(e) : e.g + ': ' + e.o.map(function (oi) { return data.groups[e.g][oi].lab; }).join(' + '); }
 function groupDice(g) {
   var A = data.dice.filter(function (e) { return e.g === g && e.s === 'A'; }).sort(function (a, b) { return a.num - b.num; });
   var B = data.dice.filter(function (e) { return e.g === g && e.s === 'B'; }).sort(function (a, b) { return a.m - b.m || a.N - b.N || dieTitle(a).localeCompare(dieTitle(b)); });
@@ -379,7 +380,7 @@ function renderChoices() {
       var sel = e.o.slice().sort(function (a, b) { return a - b; }).join(',') === cur;
       return '<button class="item' + (sel ? ' sel' : '') + '" data-k="' + e.k + '"><span class="sws">' +
         e.o.map(function (oi) { return '<span class="sw" style="background:' + colOf(orbs[oi].col) + '"></span>'; }).join('') +
-        '</span><span class="nm"><span>' + esc(nameOf(e)) + '</span><span class="tech">' + esc(e.s === 'A' ? e.name : e.o.map(function (oi) { return orbs[oi].lab; }).join(' + ')) + '</span></span><span class="meta">m ' + e.m + ' · N ' + e.N + '</span></button>';
+        '</span><span class="nm"><span>' + esc(nameOf(e)) + '</span><span class="tech">' + esc(e.s === 'A' ? techName(e) : e.o.map(function (oi) { return orbs[oi].lab; }).join(' + ')) + '</span></span><span class="meta">m ' + e.m + ' · N ' + e.N + '</span></button>';
     };
     var h = '';
     if (L.A.length) h += '<div class="sec">Main catalogue · ' + L.A.length + '</div><div class="list">' + L.A.map(item).join('') + '</div>';
@@ -467,7 +468,7 @@ function updatePick() {
       return '<tr><td>' + picker(o.col) + '</td><td>' + esc(o.plain) + '<br><span class="tech">' + esc(o.lab) + '</span></td><td class="num">' + polyCounts(S, j) + '</td><td class="num">' + e.d[j].toFixed(12) + '</td></tr>';
     }).join('');
     html += '<h2>' + esc(nameOf(e)) + '</h2>' +
-      '<p class="sub">' + esc(dieTitle(e)) + ' · ' + (e.s === 'A' ? 'Main catalogue, ' + e.g + ' No.' + e.num + (e.book ? ' · book atom ' + esc(e.book) : '') : 'Both icosahedron placements') + '</p>' + numRow(e) +
+      '<p class="sub">' + esc(dieTitle(e)) + ' · ' + (e.s === 'A' ? 'Main catalogue' + (e.book ? ' · book atom ' + esc(e.book) : '') : 'Both icosahedron placements') + '</p>' + numRow(e) +
       (e.m >= 4 ? '<span class="badge">Aequus Mosaicus</span>' : '') + (e.h ? '<span class="badge">two hands</span>' : '') +
       '<dl><dt>group</dt><dd>' + e.g + '</dd><dt>kinds of face m</dt><dd>' + e.m + '</dd><dt>faces N</dt><dd>' + e.N + ' (built: ' + S.faces.length + ')</dd><dt>corners</dt><dd>' + S.verts.length + '</dd>' +
       '<dt>hands</dt><dd>' + (e.h ? 'two hands (chiral)' + (st.hand ? ' · showing the other hand' : '') : 'one (mirror-symmetric)') + '</dd></dl>' +
@@ -545,7 +546,7 @@ function updateFair(rebuild) {
   var A = SOLID[L.A.col], B = SOLID[L.B.col];
   $('muVal').textContent = 'μ = ' + mu.toFixed(6);
   $('panel').innerHTML = '<h2>' + esc(L.line) + ' · Aequus ' + esc(L.name) + '</h2>' +
-    '<p class="sub">A faces: ' + A + ' at distance 1 · B faces: ' + B + ' at distance μ · N = ' + L.N + ' (' + L.g + ' No.' + L.num + ')</p>' +
+    '<p class="sub">A faces: ' + A + ' at distance 1 · B faces: ' + B + ' at distance μ · N = ' + L.N + ' (' + L.g + ')</p>' +
     '<span class="light' + (isFair ? ' on' : '') + '">' + (isFair ? 'fair' : 'not fair') + '</span>' +
     '<div class="bars">' + bar(0, L.A) + bar(1, L.B) + '</div>' +
     '<p class="note">Bar: the share of the view from the centre that one face takes (its solid angle over 4π). The line marks the fair share 1/N = ' + (fairShare * 100).toFixed(4) + '%. ' +
