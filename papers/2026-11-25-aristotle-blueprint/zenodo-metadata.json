@@ -1,0 +1,75 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "version": "1",
+ "publication_date": "2026-11-25",
+ "title": "Which Platonic Solids Fill Space: Aristotle's Error, Machine-Checked",
+ "subjects": [
+  {
+   "term": "MSC2020 52C22: Tilings in n dimensions",
+   "identifier": "https://zbmath.org/classification/?q=cc:52C22",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B10: Three-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 68V20: Formalization of mathematics in connection with theorem provers",
+   "identifier": "https://zbmath.org/classification/?q=cc:68V20",
+   "scheme": "url"
+  }
+ ],
+ "description": "<p>Aristotle wrote that regular tetrahedra fill space; Regiomontanus is credited with showing that they do not. We give a Lean 4 proof of a stronger statement: no tiling of 3-space by convex polytopes, in which every tile is a similar copy of the regular tetrahedron, exists, even when the copies have different sizes, are reflected, and do not meet face to face. The same holds for the regular octahedron, dodecahedron and icosahedron. Helper tiles whose dihedral angles are rational multiples of π (cubes, for instance) do not help: with them no tile can be a copy of the polyhedron. And in a tiling by all five Platonic solids together with such helpers, no tile is a dodecahedron or an icosahedron. The proof reads each dihedral angle from the set itself, uses that the angles round an edge add up to 2π, and that π, arctan φ, arccos(1/√6) and arccos √(2/3) are linearly independent over ℚ. None of the theorems is new; this work gives their machine-checked proofs, at one public commit checked by Palomar's preflight.</p>",
+ "keywords": [
+  "DICTO",
+  "Aristotle",
+  "Platonic solids",
+  "tiling",
+  "space-filling",
+  "dihedral angle",
+  "regular tetrahedron",
+  "Regiomontanus",
+  "Lean 4",
+  "Mathlib",
+  "formalization"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "https://github.com/DICTOR-Master/platonic-fill-lean/tree/541a0fab604e569b17b8173ab63691920095b3bd",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.5281/zenodo.23529497",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24518897",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1090/noti918",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}
