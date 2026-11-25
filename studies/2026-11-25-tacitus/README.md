@@ -176,6 +176,34 @@ scripts/ (extract_polyhedra.py, tacitus.py, post.py, exact_check.py, summarize.p
 data/poly.jsonl, data/4d.jsonl, data/aequi-0/1/2.jsonl (per set: N, |G|, silent, forced, beyond, explanation class),
 data/post.json (beyond and near-miss dice with exact covers), data/exact.json; logs/ (summary.md = full tables).
 
+
+## Second step (25 Nov, evening): area weights and the fingerprint of the accidental silences
+
+Script scripts/tacitus_iii.py, data/iii/ (area-poly.json, area-aequi.json, fingerprint.json), dbb job tacitus-iii FINAL ok.
+
+**(A) Variant (iii): each face weighted by its area** (Steinhardt's q_l with Mickel et al.'s Minkowski area weights; outside-clues
+lead 2). Control: degree 1 is silent for every one of the 163 polyhedra and all 15 126 Aequi (Minkowski: Σ A_f n_f = 0), so degree 1
+is counted as forced, not beyond. Every Aequus was rebuilt from its depths and its fairness re-checked to 1e-9 before use (0 errors).
+- Polyhedra: beyond symmetry only the Johnson solids already found in variant (i) (J12 in 5; J27, J37 in 2; J34 in 2, 4, 8, 14;
+  J73 in 2, 4; J72, J74, J75 in 2, 3, 4). Area weights add nothing new among the classical solids.
+- Aequi: 230 of 15 126 silent beyond symmetry with area weights: degree 5 in 219 (D2 88, D3 75, D2d 57, S6 4, ...), degree 2 in 8,
+  degree 3 in 1, and **degrees 7 and 11 in three T dice of the two-placement set** (2026-11-20:789 in 7; :923 in 3, 7, 11; :968
+  in 11). Unweighted, no die is accidentally silent above degree 5, so these three are the first candidates of a higher silence;
+  they are floating-point (threshold 1e-11) and need the exact check before any claim (LEAD 5 below).
+
+**(B) Fingerprint of the 286 accidental silences of variant (i).** For each die and degree, the degree-k moment of each face orbit
+and their Gram matrix:
+- degree 3 (111): **98 are two face orbits with exactly opposite moments**; 13 are four orbits with moments on one line.
+- degree 2 (90): 36 two opposed orbits; 49 three to five orbits with moments on one line (rank 1); 5 of rank 2.
+- degree 4 (13): every one has its moments on one line (3 or 6 orbits), except one of rank 3.
+- degree 5 (72): 45 two opposed orbits; 6 several orbits on one line; in 21 the orbits' own degree-5 moments vanish to rounding
+  (each orbit silent by itself, not covered by the subgroup test) - to be checked exactly.
+So most accidental silences are a cancellation between whole kinds of face, usually two opposed orbits: the "one identity" of
+LEAD 1 is likely a statement about pairs of orbits with opposite moments.
+
+5. (LEAD, new) Exact check of the three T dice silent in degrees 7 and 11 with area weights (areas exact in Q(√5)).
+6. (LEAD, new) Characterise "two opposed orbits" in degree 3: which pairs of frame orbits have exactly opposite cubic moments.
+
 ## LEADS
 
 1. Explain the 286 accidental Aequi silences: allow signed splits (Theorem 2(c) style) and blocks leaving the frame; see whether
