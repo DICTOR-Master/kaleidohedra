@@ -1,5 +1,6 @@
 // Aequi picker data from the numberings study (k-research studies/2026-11-24-aequi-numberings):
-//   aequi/names.json       the 1232 approved names, in picker order (entry n-1 = "Minana #377" for n = 377; DICTO 25 Nov: hashtag, fewer characters)
+//   aequi/names.json       READ ONLY here since 25 Nov: all 10 725 names ("Minana #377", "Goko-goko #5555") are written by
+//                          k-research studies/2026-11-24-aequi-catalogue-2/app_data.py; this script checks the first 1232 against names.csv
 //   aequi/numberings.json  face numbers for every finished die: { "<n>": { o, s, b } }, each a list with the
 //                          number on face i (face i = the i-th plane of planesFor). o = opposites (N + 1), only for
 //                          centrally symmetric dice; s = spin-down; b = balanced. Plain (face i gets i + 1) needs no data.
@@ -16,12 +17,13 @@ const D = dice.dice.length;
 
 // names
 const rows = (await readFile(path.join(study, 'names.csv'), 'utf8')).trim().split(/\r?\n/).slice(1).map((l) => l.split(','));
-if (rows.length !== D) throw new Error(`names.csv has ${rows.length} rows, the picker ${D} dice`);
+const NJ = JSON.parse(await readFile(path.join(root, 'aequi/names.json'), 'utf8'));
+if (rows.length !== 1232) throw new Error(`names.csv has ${rows.length} rows, expected the 1232 numbered dice`);
 const names = rows.map((r, i) => {
   if (+r[0] !== i + 1 || !/^\S/.test(r[1])) throw new Error(`names.csv row ${i + 1}: ${r.join(',')}`);
   return `${r[1]} #${i + 1}`;
 });
-if (new Set(names.map((s) => s.replace(/ #\d+$/, ''))).size !== D) throw new Error('names not distinct');
+names.forEach((n, i) => { if (NJ[i].replace('-', '') !== n) throw new Error(`names.json entry ${i + 1} (${NJ[i]}) differs from names.csv (${n})`); });
 
 // numberings
 const isPerm = (a, N) => Array.isArray(a) && a.length === N && new Set(a).size === N && a.every((x) => Number.isInteger(x) && x >= 1 && x <= N);
@@ -33,7 +35,7 @@ for (const f of files) {
   const e = dice.dice[x.n - 1];
   const dirs = e.o.flatMap((oi) => dice.groups[e.g][oi].dirs);
   if (x.N !== e.N || x.group !== e.g || JSON.stringify(x.face_direction) !== JSON.stringify(dirs)) throw new Error(`${f}: face order differs from the picker`);
-  if (x.name_shown.replace(/ \((?:no\. |No\.)(\d+)\)$/, " #$1") !== names[x.n - 1]) throw new Error(`${f}: name differs from names.csv`);
+  if (x.name_shown.replace(/ \((?:no\. |No\.)(\d+)\)$/, " #$1") !== names[x.n - 1] && x.n <= 1232) throw new Error(`${f}: name differs from names.csv`);
   const s = x.schemes, r = {};
   if (s.opposite && s.opposite.available && isPerm(s.opposite.numbers, e.N)) {
     const o = s.opposite.numbers;
@@ -56,6 +58,5 @@ for (const f of files) {
   if (s.balanced && isPerm(s.balanced.numbers, e.N)) { r.b = s.balanced.numbers; nB++; }
   out[x.n] = r;
 }
-await writeFile(path.join(root, 'aequi/names.json'), JSON.stringify(names) + '\n');
 await writeFile(path.join(root, 'aequi/numberings.json'), JSON.stringify(out) + '\n');
 console.log(`names ${names.length}; numbered dice ${files.length}: opposites ${nO}, spin-down ${nS}, balanced ${nB}`);
