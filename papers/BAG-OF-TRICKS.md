@@ -27,3 +27,6 @@ What we reach for, cheapest decisive test first. Each line: the trick, what it d
 
 ## How we tell it
 - **House style**: papers/HOUSE-STYLE.md (Winston: promise in a sober tone, cycling, fence, signposts, contributions close; Pledge, Turn, Prestige as backbone).
+
+## Integer codes for exact polyhedral data in Lean (#119, 25 Nov 2026)
+Code numbers in Z[sqrt d] as integer pairs with correctness lemmas (ev_add, ev_mul, inner_evv, zpos_spec); then all edge data and sign facts are checked by kernel integer computation (`decide +kernel`). Small proofs, fast builds; this let the truncated icosidodecahedron build (GenTID.lean, 135 decides) where slack lemmas had hit the 800,000-heartbeat limit. Source: dehn-packets-lean, Packets/Exact.lean. Use it for any worked example with coordinates.
