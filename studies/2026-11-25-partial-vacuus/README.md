@@ -64,3 +64,16 @@ logs/special_assoc.log): **no special depth**. Their low symmetry (order 2) leav
 1. DONE (part 1b above).
 2. Thickness rule: plates of thickness t, the smallest open core per solid (DICTO: a true Vacuus barely exists; every build is partial).
 3. DICTO's B1NR cube as a measured example (core size from his build, when he gives it).
+
+## Prior art (DICTO 26 Nov: "prior art"; sources checked 26 Nov 2026)
+- The **excavated dodecahedron**: Wenninger, *Polyhedron Models* (1971), model 28, "third stellation of icosahedron" (the Ef1g1
+  stellation in Coxeter, Du Val, Flather and Petrie, *The Fifty-Nine Icosahedra*, 1938). Who first called it "excavated" was not found.
+  Sources: Wikipedia "Excavated dodecahedron" and "List of Wenninger polyhedron models" (checked); the books themselves not opened.
+- The **great dodecahedron**: Poinsot (1809); Kepler–Poinsot polyhedron (Wikipedia, checked).
+- **Excavating any solid by face pyramids of a chosen height** is a standard operation (augment faces with pyramids of negative height)
+  in Robert Webb's *Stella4D*; Robert Austin's blog (robertlovespi.net, tags "excavation"/"excavated") shows excavated tetrahedra,
+  octahedra, snub cubes and truncated icosahedra made with it, and notes that taller pits on the octahedron meet at the centre.
+  Polytope Wiki has "excavated truncated rhombicuboctahedron". Checked: search pages only, posts not each opened.
+- Not found anywhere: the family read **from the Vacuus outward** (the centre built out into a scaled dual core), the special sizes
+  as the points where every pit wall lies on a face of a core solid, and the census over all Platonic/Archimedean/Catalan pairs
+  (12 depths, including the rhombic triacontahedron on a 1/φ copy of itself). Those are DICTO's reading and this study's results.
