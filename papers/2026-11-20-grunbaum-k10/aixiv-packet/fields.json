@@ -1,0 +1,25 @@
+{
+ "fields": {
+  "title": "Ten Faces in Every Zone: Grünbaum's Question at k = 10",
+  "authors": "DICTO",
+  "abstract": "A zone of a polyhedron with parallelogram faces is a belt of faces joined across parallel edges. Grünbaum asked in 2010 whether, for each even k ≥ 4, some rhombic monohedral parallelohedron (a polyhedron with congruent rhombic faces whose translates fill space) has every zone of exactly k faces; the cube gives 4, the rhombic dodecahedra 6, his doubly indented rhombic icosahedra 8, and \"no information is available for any k ≥ 10\" [1]. We answer k = 10. Main theorem (Theorem 1): GET A and GET B, the rhombic triacontahedron less four oblate golden rhombohedra taken at four of its three-face corners, are polyhedra of Grünbaum's spherical type with 30 congruent golden rhombic faces, every one of their six zones has exactly 10 faces, and their translates by one lattice fill space face to face. The proof is an exact computation in ℤ[φ]; for GET B it is also a Lean 4 proof checked by the kernel (§9). GET A and GET B are not congruent, even as mirror images, yet they have the same lattice, the same 16 cell types and the same volume 20 + 32φ (Theorem 2). Both are indentations of the triacontahedron, so they contradict Grünbaum's tentative remark that none of its other indentations \"seem to be parallelohedra\" (Corollary 3). In one copy of the triacontahedron, the four dimples of GET A, of GET B and of the indented rhombic triacontahedron of Hall (2016) lie on one inscribed cube: on a square face, at a corner and its three neighbours, and at alternate corners (Proposition 6). Within one class of surfaces, those whose six zones cross each other exactly twice, every face-to-face lattice tiler built from golden rhombohedra consists, like GET, of 16 golden rhombohedra of 16 different types, the four missing types oblate (Theorem 10, exact computation). GET A was first shown, without proof, in a vZome array by J. Kostick (2022); GET B was not found in the sources checked.",
+  "primary_category": "math.MG",
+  "categories": [
+   "math.MG",
+   "cs.LO"
+  ],
+  "msc_class": "52C22, 52B10, 52C07",
+  "license": "CC BY-SA 4.0",
+  "ai_contribution": "ai-derived",
+  "ai_models": "Claude Code (Opus)",
+  "ai_statement": "The question taken up, the name GET and the second solid, GET B, are DICTO's; GET A was first shown, without proof, by J. Kostick (2022), and is credited to him. The exact computations, the Lean 4 proof for GET B and the drafting were done with Claude (Anthropic); DICTO checked and approved each step.",
+  "repo_url": "https://github.com/DICTOR-Master/grunbaum-k10-lean",
+  "process_summary": "November 2026: DICTO studied Grünbaum's 2010 question on rhombic monohedral parallelohedra at k = 10, proved that GET A (first shown without proof by J. Kostick, 2022) answers it, and found a second solid, GET B, not in the sources checked. Every claim was computed exactly in Z[phi]; the GET B statements were proved in Lean 4 and registered on Palomar (PALOMAR-2026-11-20-000013).",
+  "verification_notes": "Exact computation in Z[phi] for every theorem. For GET B also a Lean 4 proof with Mathlib, no sorry and only the standard axioms, registered on Palomar (PALOMAR-2026-11-20-000013), which ran its comparator.",
+  "negative_results": "Grünbaum's question for k >= 12 is not answered here.",
+  "external_url": "https://doi.org/10.5281/zenodo.24389006",
+  "comments": "Paper #115 of DICTO's series; Version 3 (10.5281/zenodo.24491349) of Zenodo concept record 10.5281/zenodo.24389006 (this PDF is identical to that version). Lean entry PALOMAR-2026-11-20-000013. Licence CC BY-SA 4.0."
+ },
+ "pdf": "dicto-115-grunbaum-k10.pdf",
+ "zenodo_record": "24491349"
+}

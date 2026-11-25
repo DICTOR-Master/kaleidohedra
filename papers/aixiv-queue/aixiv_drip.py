@@ -5,7 +5,7 @@
 # <dir>/aixiv-packet/aixiv-submit-result.json and the queue entry marked submitted. Privacy: the fields are scanned first with the
 # commit guard's private pattern list (kept outside the repository).
 import json, os, sys, base64, re, time, urllib.request, urllib.parse
-n, d = sys.argv[1], sys.argv[2]; DRY = '--dry' in sys.argv
+n, d = sys.argv[1], sys.argv[2]; DRY = '--dry' in sys.argv; NODRY = '--no-dry' in sys.argv   # DICTO 26 Nov: submit with no dry run
 B = os.path.expanduser('~/k-research/papers'); Q = os.path.join(B, 'aixiv-queue', 'queue.json')
 T = open(os.path.expanduser('~/.config/aixiv/token')).read().strip(); H = {'Authorization': 'Bearer ' + T, 'User-Agent': 'research-client'}
 def get(u): return json.load(urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=60))
@@ -24,8 +24,8 @@ same = [p.get('id') or p.get('aixiv_id') for p in L if (p.get('title') or '').st
 if same: sys.exit(f'STOP: already on aiXiv as {same}')
 f['pdf_b64'] = base64.b64encode(open(f"{B}/{d}/aixiv-packet/{pk['pdf']}", 'rb').read()).decode()
 n0 = get('https://aixiv.online/api/v1/me')['papers']
-r = post('https://aixiv.online/api/v1/submit?dry_run=1', f)
-json.dump({k: v for k, v in r.items() if k != 'pdf_b64'}, open(f'{B}/{d}/aixiv-packet/dry-run-result.json', 'w'), indent=1, ensure_ascii=False)
+r = {'ok': True} if NODRY else post('https://aixiv.online/api/v1/submit?dry_run=1', f)
+if not NODRY: json.dump({k: v for k, v in r.items() if k != 'pdf_b64'}, open(f'{B}/{d}/aixiv-packet/dry-run-result.json', 'w'), indent=1, ensure_ascii=False)
 time.sleep(5); n1 = get('https://aixiv.online/api/v1/me')['papers']
 print(f"#{n} dry run ok={r.get('ok')} papers {n0}->{n1} {str(r.get('body', ''))[:400]}", flush=True)
 if not r.get('ok') or n1 != n0: sys.exit('STOP: dry run failed or changed the account')
@@ -35,6 +35,17 @@ json.dump(r, open(f'{B}/{d}/aixiv-packet/aixiv-submit-result.json', 'w'), indent
 time.sleep(20); n2 = get('https://aixiv.online/api/v1/me')['papers']
 print(f"#{n} submit ok={r.get('ok')} id={r.get('aixiv_id')} url={r.get('abs_url')} papers {n1}->{n2} {str(r.get('body', ''))[:400]}", flush=True)
 ok = bool(r.get('ok')) and n2 == n1 + 1
+# 26 Nov: the submit call ignores ai_statement (only the edit call takes it), which left the AI statement empty on every paper.
+# Set it at once with PATCH and read it back.
+if ok and f.get('ai_statement'):
+    aid = r['aixiv_id']
+    req = urllib.request.Request(f'https://aixiv.online/api/v1/papers/{aid}', data=json.dumps({'ai_statement': f['ai_statement']}).encode(), headers={**H, 'Content-Type': 'application/json'}, method='PATCH')
+    try: pr = json.load(urllib.request.urlopen(req, timeout=120))
+    except urllib.error.HTTPError as e: pr = {'ok': False, 'http': e.code, 'body': e.read().decode()[:500]}
+    time.sleep(3); back = get(f'https://aixiv.online/api/v1/papers/{aid}'); back = back.get('paper', back)
+    st = (back.get('ai_process') or {}).get('statement')
+    print(f'#{n} ai_statement PATCH ok={pr.get("ok", True)}; read back: {"SET" if st == f["ai_statement"] else "MISSING: " + str(st)[:80]}', flush=True)
+    ok = ok and st == f['ai_statement']
 q = json.load(open(Q))
 for e in q['queue']:
     if e['n'] == n: e.update(status='submitted' if ok else 'FAILED', aixiv=r.get('aixiv_id'), date=time.strftime('%Y-%m-%d %H:%M'))
