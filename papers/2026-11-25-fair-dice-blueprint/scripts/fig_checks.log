@@ -1,0 +1,17 @@
+Figure 2: D2d die (row 787), N = 8 faces, 8 corners (exact rationals)
+  polar: 8 corners, 8 facets (exact); die corners 8: facets <-> corners True
+  face 0: 3 corners, solid angle pi/2 (angles pi/2, pi/2, pi/2), curvature at n_k/d_k pi/2, same cone exactly: True, 70-digit check 1.81e-71 -> True
+  face 1: 3 corners, solid angle pi/2 (angles pi/2, pi/2, pi/2), curvature at n_k/d_k pi/2, same cone exactly: True, 70-digit check 1.81e-71 -> True
+  face 2: 3 corners, solid angle pi/2 (angles pi/2, pi/2, pi/2), curvature at n_k/d_k pi/2, same cone exactly: True, 70-digit check 1.81e-71 -> True
+  face 3: 3 corners, solid angle pi/2 (angles pi/2, pi/2, pi/2), curvature at n_k/d_k pi/2, same cone exactly: True, 70-digit check 1.81e-71 -> True
+  face 4: 4 corners, solid angle pi/2 (angles pi/2, 3*pi/4, pi/2, 3*pi/4), curvature at n_k/d_k pi/2, same cone exactly: True, 70-digit check 1.81e-71 -> True
+  face 5: 4 corners, solid angle pi/2 (angles 3*pi/4, pi/2, 3*pi/4, pi/2), curvature at n_k/d_k pi/2, same cone exactly: True, 70-digit check 0.0 -> True
+  face 6: 4 corners, solid angle pi/2 (angles 3*pi/4, pi/2, 3*pi/4, pi/2), curvature at n_k/d_k pi/2, same cone exactly: True, 70-digit check 0.0 -> True
+  face 7: 4 corners, solid angle pi/2 (angles pi/2, 3*pi/4, pi/2, 3*pi/4), curvature at n_k/d_k pi/2, same cone exactly: True, 70-digit check 1.81e-71 -> True
+Figure 3, I = three cube directions (3): complement = spherical 3-gon, area pi/2 (angles pi/2, pi/2, pi/2); region within pi/2 of I: area 7*pi/2 = 10.995574287564276335; sum of kappa over I = 6*pi/7 = 2.6927937030769656330; condition holds: True; sampling check True
+Figure 3, I = the seven directions about (1, 1, 1) (7): complement = spherical 3-gon, area -pi + 3*acos(1/3) (angles acos(1/3), acos(1/3), acos(1/3)); region within pi/2 of I: area -3*acos(1/3) + 5*pi = 12.015085015926642146; sum of kappa over I = 2*pi = 6.2831853071795864769; condition holds: True; sampling check True
+Figure 1 Aequus DI-32, Ih 1: N=32, corners 60, max |Omega_k - 4pi/N| = 7.41e-61, |sum - 4pi| = 1.45e-70 (70 digits)
+Figure 1 Aequus CO-14, Oh 1: N=14, corners 24, max |Omega_k - 4pi/N| = 3.15e-61, |sum - 4pi| = 4.35e-70 (70 digits)
+Figure 1 Aequus TC-10, Td 1: N=10, corners 16, max |Omega_k - 4pi/N| = 1.58e-60, |sum - 4pi| = 1.45e-70 (70 digits)
+Figure 1 Aequus OD-20, Th 3: N=20, corners 36, max |Omega_k - 4pi/N| = 1.65e-59, |sum - 4pi| = 1.45e-70 (70 digits)
+FINAL ok
