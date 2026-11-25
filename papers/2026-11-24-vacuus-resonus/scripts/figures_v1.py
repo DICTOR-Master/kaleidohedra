@@ -4,8 +4,8 @@
                       Figure 2 (the cube: its Vacuus, 6 plates, and its Resonus, 3 planes, side by side) and Figure 3 (the 5 Platonic
                       and 13 Archimedean polyhedra, each with its Vacuus drawn as fins: the triangle from the centre O to every edge,
                       which spans that edge's plate). Frames by the renderer's shots.mjs (Playwright) on the print host.
-  compose <shots> <figdir> : Figure 1 (the four build renders of study 2026-11-24-vacuus-build-renders, 2 x 2), Figure 2 and Figure 3.
-  fig1 <figdir>             : Figure 1 alone.
+  compose <shots> <figdir> : Figure 1 (the card models, both forms), Figure 2 (the B1NR cube), and the cube and Platonic/Archimedean figures.
+  fig1 <figdir>             : Figures 1 and 2 alone.
 Coordinates are the standard ones (floats for drawing only); every polyhedron is checked against the exact catalogue
 (study 2026-11-24-vacuus-resonus-catalogue, data/vacuus-resonus-catalogue.csv): corners, edges, faces, all edges equal, and the number
 of Vacuus plates (distinct planes through O and an edge) and Resonus planes (distinct planes through O parallel to a face). Ends FINAL ok."""
@@ -18,9 +18,8 @@ HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 STUDIES = os.path.normpath(os.path.join(ROOT, '..', '..', 'studies'))
 CSV = os.path.join(STUDIES, '2026-11-24-vacuus-resonus-catalogue', 'data', 'vacuus-resonus-catalogue.csv')
 BUILDS = os.path.join(STUDIES, '2026-11-24-vacuus-build-renders', 'renders')
-# Figure 1(a), 25 Nov: DICTO's cardboard octahedron redrawn from his Template 2 (four pieces: A, B and the third square in two halves
-# C1, C2; slots as on the template), assembled with the pieces pulled apart as an inset (study 2026-11-25-slot-assemblies, fig1a.py)
-FIG1A = os.path.join(STUDIES, '2026-11-25-slot-assemblies', 'renders', 'fig1a-dicto-octahedron-four-pieces.jpg')
+# Figure 1, 25 Nov (DICTO's choice): the card models of the three planes, octahedral form (his cardboard octahedron) and cubic form
+CARDS = os.path.join(BUILDS, 'cards-two-forms.png')
 phi = (1 + 5 ** 0.5) / 2
 BG = (20, 22, 28)
 EDGE = '#efe9d8'; FIN = '#8fa9c4'; RES = '#d9b98c'; VPL = '#8fa9c4'; CORE = '#f4f0e6'
@@ -179,16 +178,17 @@ def compose(SH, FIG):
         return xs.min() > pad and ys.min() > pad and xs.max() < im.size[0] - pad and ys.max() < im.size[1] - pad
     f_lab = ImageFont.truetype(FONT, 26); f_sm = ImageFont.truetype(FONT, 21); mark = 'DICTO · dictospheres.com'
     TXT = (226, 222, 212); GOLD = (224, 184, 74)
-    # Figure 1: the four builds, 2 x 2, labels a-d
-    b = ['octahedron-cardboard-cards', 'cube-b1nr-skeleton', 'cuboctahedron-ring-fins', 'dodecahedron-ring-fins']
-    lab = ['a  cardboard octahedron, four pieces', 'b  B1NR cube', 'c  B1NR cuboctahedron, ring fins', 'd  B1NR dodecahedron, ring fins']
-    T = 760; S = Image.new('RGB', (2 * T + 60, 2 * (T + 50) + 70), BG); d = ImageDraw.Draw(S)
-    for k, n in enumerate(b):
-        src = FIG1A if k == 0 else os.path.join(BUILDS, n + '.jpg')
-        im = Image.open(src).convert('RGB'); chk(f'Figure 1: build render {n} fully inside its frame', bbox_ok(im))
-        x, y = 20 + (k % 2) * (T + 20), 20 + (k // 2) * (T + 50)
-        S.paste(im.resize((T, T), Image.LANCZOS), (x, y)); d.text((x + 10, y + T + 8), lab[k], font=f_lab, fill=TXT)
-    d.text((S.size[0] - 20, S.size[1] - 18), mark, font=f_sm, fill=GOLD, anchor='rd'); S.save(os.path.join(FIG, 'fig1-four-builds.jpg'), quality=91)
+    # Figure 1 (25 Nov, DICTO's choice): the card models of the three planes, both forms, whole and pulled apart, full width, copied
+    # unchanged from study 2026-11-24-vacuus-build-renders (scripts/cards.py, renders/cards-two-forms.png)
+    im = Image.open(CARDS).convert('RGB'); CB = (20, 15, 12)
+    a = np.asarray(im).astype(int); m = np.abs(a - a[2, 2]).sum(2) > 24; ys, xs = np.nonzero(m)
+    chk('Figure 1: card models inside the frame', xs.min() > 6 and ys.min() > 6 and xs.max() < im.size[0] - 6 and ys.max() < im.size[1] - 6)
+    im = im.resize((1860, round(im.size[1] * 1860 / im.size[0])), Image.LANCZOS); im.save(os.path.join(FIG, 'fig1-cards-two-forms.jpg'), quality=92)   # under 4 Mpx (print.mjs size guard)
+    # Figure 2: the B1NR cube alone (the build render, unchanged), centred in a full-width card; the ring-fin renders wait for the next version
+    im = Image.open(os.path.join(BUILDS, 'cube-b1nr-skeleton.jpg')).convert('RGB'); chk('Figure 2: build render cube-b1nr-skeleton fully inside its frame', bbox_ok(im))
+    T = 1100; S = Image.new('RGB', (int(1.75 * T), T + 40), BG); d = ImageDraw.Draw(S)
+    S.paste(im.resize((T, T), Image.LANCZOS), ((S.size[0] - T) // 2, 10))
+    d.text((S.size[0] - 20, S.size[1] - 18), mark, font=f_sm, fill=GOLD, anchor='rd'); S.save(os.path.join(FIG, 'fig2-b1nr-cube.jpg'), quality=91)
     if SH is None: return
     # Figure 2: the cube, Vacuus | Resonus
     T = 900; S = Image.new('RGB', (2 * T + 60, T + 120), BG); d = ImageDraw.Draw(S)
@@ -214,5 +214,5 @@ def compose(SH, FIG):
 if __name__ == '__main__':
     if sys.argv[1] == 'scenes': scenes(sys.argv[2])
     elif sys.argv[1] == 'compose': compose(sys.argv[2], sys.argv[3])
-    elif sys.argv[1] == 'fig1': compose(None, sys.argv[2])     # Figure 1 alone, from the build renders (no scene shots needed)
+    elif sys.argv[1] == 'fig1': compose(None, sys.argv[2])     # Figures 1 and 2 alone, from the build renders (no scene shots needed)
     print('FINAL ok' if all(OK) else 'FINAL FAIL')
