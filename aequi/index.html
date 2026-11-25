@@ -514,7 +514,14 @@ function updatePick() {
     if (one) {
       html += '<div class="msg">One kind of face: under its full symmetry <b>' + one.g + '</b> these faces form a single family (' + esc(one.plain) + '), so every face is alike and the solid is fair by symmetry alone. The Aequi have two or more kinds of face.</div>';
     } else {
-      html += '<div class="msg">This set of faces is not in the catalogue.</div>';
+      var fs = G.fairSolve(planes, t.length);   // solve for the fair die here (Theorem A: at most one)
+      if (fs.ok) {
+        planes = fs.P;
+        html += '<div class="msg">Fair die computed here: not in the catalogue and not certified. Depths ' +
+          fs.depths.map(function (d) { return d.toFixed(9); }).join(' : ') + '; every face within ' + fs.err.toExponential(0) + ' of 4π/' + planes.length + '.</div>';
+      } else {
+        html += '<div class="msg">These faces cannot make a fair die: as the depths are adjusted, one kind of face disappears before the chances can be made equal.</div>';
+      }
     }
   }
   S = G.buildSolid(planes);

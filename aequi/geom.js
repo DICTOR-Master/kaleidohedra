@@ -72,6 +72,58 @@
     return s;
   }
 
+  // Solve for the fair die on given kinds of face (Theorem A: at most one). planes: [{n, k}] with kinds k = 0..m-1; one depth per kind,
+  // kind 0 at depth 1. Newton's method on log-depths with a finite-difference Jacobian. Returns {ok, depths, S, err} (ok: every face
+  // present and every face's solid angle within 1e-9 of 4 pi / N).
+  function fairSolve(planes, m) {
+    var N = planes.length, target = 4 * Math.PI / N, cnt = [];
+    for (var j = 0; j < m; j++) cnt.push(0);
+    planes.forEach(function (p) { cnt[p.k]++; });
+    var x = []; for (j = 0; j < m; j++) x.push(0);
+    function evalF(x) {
+      var P = planes.map(function (p) { return { n: p.n, d: Math.exp(x[p.k]), k: p.k }; }), S = buildSolid(P), om = [];
+      for (var j = 0; j < m; j++) om.push(0);
+      S.faces.forEach(function (f) { om[f.k] += faceSolidAngle(S, f); });
+      return { F: om.map(function (o, j) { return o / cnt[j] - target; }), S: S, P: P };
+    }
+    function solveLin(A, b) {   // Gaussian elimination with partial pivoting
+      var n = b.length, M = A.map(function (r, i) { return r.concat([b[i]]); });
+      for (var c = 0; c < n; c++) {
+        var piv = c; for (var r = c + 1; r < n; r++) if (Math.abs(M[r][c]) > Math.abs(M[piv][c])) piv = r;
+        var t = M[c]; M[c] = M[piv]; M[piv] = t; if (Math.abs(M[c][c]) < 1e-300) return null;
+        for (r = c + 1; r < n; r++) { var f = M[r][c] / M[c][c]; for (var q = c; q <= n; q++) M[r][q] -= f * M[c][q]; }
+      }
+      var y = []; for (var i = n - 1; i >= 0; i--) { var s2 = M[i][n]; for (var q2 = i + 1; q2 < n; q2++) s2 -= M[i][q2] * y[q2]; y[i] = s2 / M[i][i]; }
+      return y;
+    }
+    var cur = evalF(x), best = cur;
+    for (var it = 0; it < 80; it++) {
+      var Fr = cur.F.slice(1), err = Math.max.apply(null, cur.F.map(Math.abs));
+      if (err < 1e-12 || m === 1) break;
+      var J = [];   // d F_j / d x_q for j, q = 1..m-1
+      for (var q = 1; q < m; q++) {
+        var xh = x.slice(); xh[q] += 1e-6; var Fh = evalF(xh).F;
+        J.push(Fh.slice(1).map(function (v, j) { return (v - Fr[j]) / 1e-6; }));
+      }
+      var Jt = Fr.map(function (_, j) { return J.map(function (col) { return col[j]; }); });
+      var dx = solveLin(Jt, Fr.map(function (v) { return -v; }));
+      if (!dx) break;
+      var lam = 1, nx, nxt;
+      for (var ls = 0; ls < 30; ls++) {   // damped step: accept when the residual falls
+        nx = x.slice(); for (q = 1; q < m; q++) nx[q] += lam * Math.max(-1, Math.min(1, dx[q - 1]));
+        nxt = evalF(nx);
+        if (Math.max.apply(null, nxt.F.map(Math.abs)) < err) break;
+        lam /= 2;
+      }
+      if (ls === 30) break;
+      x = nx; cur = nxt;
+    }
+    var errF = 0, ok = cur.S.faces.length === N;
+    cur.S.faces.forEach(function (f) { errF = Math.max(errF, Math.abs(faceSolidAngle(cur.S, f) - target)); });
+    ok = ok && errF < 1e-9;
+    return { ok: ok, depths: x.map(Math.exp), S: cur.S, P: cur.P, err: errF };
+  }
+
   // is the plane through the centre with unit normal m a mirror of the solid? (reflect every face plane)
   function isMirror(S, m) {
     for (var i = 0; i < S.faces.length; i++) {
@@ -187,7 +239,7 @@
     });
     return best;
   }
-  var api = { singleOrbit: singleOrbit, ORDER: ORDER, buildSolid: buildSolid, faceSolidAngle: faceSolidAngle, triSolidAngle: triSolidAngle,
+  var api = { singleOrbit: singleOrbit, ORDER: ORDER, buildSolid: buildSolid, fairSolve: fairSolve, faceSolidAngle: faceSolidAngle, triSolidAngle: triSolidAngle,
     vacuusPlates: vacuusPlates, resonusPlates: resonusPlates, isMirror: isMirror, planesFor: planesFor, prepare: prepare, lookup: lookup,
     inverse: inverse, dot: dot, cross: cross };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.AequiGeom = api;
