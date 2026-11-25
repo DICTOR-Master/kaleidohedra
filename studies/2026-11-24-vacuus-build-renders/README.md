@@ -17,7 +17,7 @@ Result (renders/, frames on a dark ground; preview-sheet.jpg shows all nine). DI
    outline. Pull-apart: each card moved 9/5 along its own normal (disjoint, as 9/5 > 1), the group recentred in the picture.
    Not the cube's Resonus cards: the cube [-1,1]^3 has its Resonus in the same three planes, but its cards are its middle squares, side 2,
    larger and turned 45 degrees.
-2. B1NR cube (cube-b1nr-skeleton*.jpg), [-1,1]^3: the hull skeleton (12 edges) + the Vacuus skeleton (8 corner-to-centre struts): the
+2. B1NR cube REDRAWN 25 Nov from DICTO's description and his website photo (media/vacuus-solid-cube.jpg): bottle rings folded into rounded triangles; each of the 12 fins (centre + one cube edge) a 3 x 3 grid of 9 rings sharing sides, no overlap, no struts, open space at the centre where the 12 fins meet (scripts/b1nr_rings.py, cube-b1nr-rings*.jpg; 108 rings). The strut skeleton below is WITHDRAWN. Old text: B1NR cube (cube-b1nr-skeleton*.jpg), [-1,1]^3: the hull skeleton (12 edges) + the Vacuus skeleton (8 corner-to-centre struts): the
    empty cube that is six square pyramids meeting at the centre. Clear bottle-like tubes (see-through, bright core line, see-through
    joints). Pull-apart: the six pyramid frames (4 base edges + 4 struts each) moved 27/5 along the face normals (was 9/5, where two
    frames overlapped in the picture). Checked in the drawn view by projected bounding boxes (joint balls included): all six boxes

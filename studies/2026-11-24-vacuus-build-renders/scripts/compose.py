@@ -4,17 +4,17 @@ from PIL import Image, ImageDraw, ImageFont
 SH, OUT, SHEET = sys.argv[1:4]
 BG = (20, 22, 28)
 FONT = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; FB = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
-names = ['octahedron-cardboard-cards', 'octahedron-cardboard-cards-pulled', 'cube-b1nr-skeleton', 'cube-b1nr-skeleton-pulled',
+names = ['octahedron-cardboard-cards', 'octahedron-cardboard-cards-pulled', 'cube-b1nr-rings', 'cube-b1nr-rings-fin',
          'cuboctahedron-ring-fins', 'cuboctahedron-ring-fins-axis3', 'cuboctahedron-ring-fins-pulled', 'dodecahedron-ring-fins', 'dodecahedron-ring-fins-axis5']
 caps = ['Cardboard octahedron: three square cards', 'The three cards pulled apart',
-        'B1NR cube: hull + centre struts, empty', 'Its six pyramid frames pulled apart',
+        'B1NR cube: 108 rings, 9 per fin, open centre', 'One fin: 9 rounded-triangle rings',
         'Cuboctahedron: 24 rings, one per fin', 'Down a three-fold axis', 'Its four hexagon plates pulled apart',
         'Dodecahedron: 30 rings, one per fin', 'Down a five-fold axis']
 tiles = []
 for i, n in enumerate(names):
     fr = Image.open(f'{SH}/p{i}.png').convert('RGBA'); bg = Image.new('RGBA', fr.size, BG + (255,)); im = Image.alpha_composite(bg, fr).convert('RGB')
     im.save(f'{OUT}/{n}.jpg', quality=92); tiles.append(im)
-T = 520; rows = [[0, 1], [2, 3], [4, 5, 6], [7, 8]]; heads = ['1  Cardboard octahedron Vacuus', '2  B1NR cube', '3  B1NR cuboctahedron Vacuus: bottle rings in the fins (no hull)', '4  B1NR dodecahedron Vacuus: bottle rings in the fins (no hull)']
+T = 520; rows = [[0, 1], [2, 3], [4, 5, 6], [7, 8]]; heads = ['1  Cardboard octahedron Vacuus', '2  B1NR cube Vacuus: bottle rings folded into rounded triangles (no hull)', '3  B1NR cuboctahedron Vacuus: bottle rings in the fins (no hull)', '4  B1NR dodecahedron Vacuus: bottle rings in the fins (no hull)']
 W = 3 * T + 80; H = 140 + len(rows) * (T + 110) + 40
 S = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(S)
 f1, f2, f3 = ImageFont.truetype(FB, 34), ImageFont.truetype(FB, 24), ImageFont.truetype(FONT, 18)
