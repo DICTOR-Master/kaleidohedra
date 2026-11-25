@@ -28,14 +28,4 @@ export default [
     for (const m of ['translucent', 'wireframe', 'solid']) { await h.page.tap(`[data-star-mode="${m}"]`); await h.wait(250); assert.equal(await h.page.getAttribute(`[data-star-mode="${m}"]`, 'aria-pressed'), 'true'); }
     h.noErrors(); await h.close();
   } },
-  { name: 'Other stellations: the excavated dodecahedron opens, 60 faces, no Schläfli, no errors', async run(b) {
-    const h = await open(b, { wizard: true });
-    await h.page.tap('.dicto-dim-content [data-family="STARS_OTHER"]'); await h.wait(700);
-    const ids = await h.page.evaluate(() => [...document.querySelectorAll('[data-action^="tool:polyShape:"]')].map((x) => x.dataset.action.split(':').pop()));
-    assert.deepEqual(ids, ['EXCAVATED_DODECAHEDRON']);
-    await h.page.tap('[data-action="tool:polyShape:EXCAVATED_DODECAHEDRON"]'); await h.wait(900);
-    const text = await h.page.evaluate(() => document.querySelector('.poly-detail-stats')?.textContent ?? '');
-    assert.ok(/60/.test(text), `60 faces in the details: ${text}`); assert.ok(!/Schläfli/.test(text), 'no Schläfli for a non-uniform solid');
-    h.noErrors(); await h.close();
-  } },
 ];

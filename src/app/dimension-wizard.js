@@ -67,7 +67,7 @@ import { isConvex } from '../krp-core/src/assembly/faceRegistration.js';
 import { favourites, recent, isFavourite, toggleFavourite } from './poly-prefs.js';
 import { netEligible, mountNetViewer } from './net-viewer.js';
 import { mountStarView, mountDuoprismView, mountRadialView } from './shape-views.js';
-import { STAR_POLYHEDRON_IDS, STAR_POLYHEDRON_META, STAR_POLYHEDRA, OTHER_STAR_IDS } from '../krp-core/src/polyhedra/starPolyhedra.js';
+import { STAR_POLYHEDRON_IDS, STAR_POLYHEDRON_META, STAR_POLYHEDRA } from '../krp-core/src/polyhedra/starPolyhedra.js';
 import { FOURD_CAPABLE_IDS } from '../krp-core/src/polyhedra/fourD.js';
 import { FOUR_D_SHAPE_PARAMS, resolveParamsKey } from '../krp-core/src/polyhedra/radialProjection.js';
 import { SITE, SITES, setActiveSite, activeSite, themeOf } from './site.js';
@@ -769,8 +769,8 @@ export const DICTO_PIECE_IDS = DICTO_POLY.ids;
 // The shape a face was tapped on, while picking: its space-filling partners come first (as the old site).
 let partnerIds = [];
 const gold = (id) => (DICTO_POLY.ids.includes(id) || TRANSITIONAL_IDS.includes(id) || REULEAUX_ADDITION_IDS.includes(id) ? ' dicto-gold' : '');
-const polyIds = (key) => (key === 'PARTNERS' ? partnerIds : key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : key === 'FAVOURITES' ? favourites() : key === 'RECENT' ? recent() : key === 'STARS' ? STAR_POLYHEDRON_IDS : key === 'STARS_OTHER' ? OTHER_STAR_IDS : familyIds(key));
-const polyLabel = (key) => (key === 'PARTNERS' ? t('poly.d.pairs', getSettings().language) : key === DICTO_POLY.key ? DICTO_POLY.label : key === 'FAVOURITES' ? t('wiz.poly.favourites', getSettings().language) : key === 'RECENT' ? t('wiz.poly.recent', getSettings().language) : key === 'STARS' ? 'Kepler–Poinsot' : key === 'STARS_OTHER' ? 'Other stellations' : FAMILY_META[key].label);
+const polyIds = (key) => (key === 'PARTNERS' ? partnerIds : key === DICTO_POLY.key ? DICTO_POLY.ids.filter((id) => polyShapeName(id) !== id) : key === 'FAVOURITES' ? favourites() : key === 'RECENT' ? recent() : key === 'STARS' ? STAR_POLYHEDRON_IDS : familyIds(key));
+const polyLabel = (key) => (key === 'PARTNERS' ? t('poly.d.pairs', getSettings().language) : key === DICTO_POLY.key ? DICTO_POLY.label : key === 'FAVOURITES' ? t('wiz.poly.favourites', getSettings().language) : key === 'RECENT' ? t('wiz.poly.recent', getSettings().language) : key === 'STARS' ? 'Kepler–Poinsot' : FAMILY_META[key].label);
 // ---- the shape browser (step D4, DICTO 2026-10-09: inside DICTO) ----
 // A shape's faces by kind, each { kind, count, regular }: what its details list and search reads.
 const faceKindCache = new Map();
@@ -794,7 +794,7 @@ function faceKindsOf(id) {
 }
 const faceWord = (k, L) => (k.kind === 'polygon' ? t('poly.face.polygon', L, { n: k.n }) : t(`poly.face.${k.kind}`, L));
 // Every shape the browser knows: DICTO's, then each family's.
-const browsable = () => [...new Set([...DICTO_POLY.ids, ...POLY_FAMILIES.flatMap((k) => familyIds(k)), ...STAR_POLYHEDRON_IDS, ...OTHER_STAR_IDS])].filter((id) => (POLYHEDRA[id] || STAR_POLYHEDRA[id]) && polyShapeName(id) !== id);
+const browsable = () => [...new Set([...DICTO_POLY.ids, ...POLY_FAMILIES.flatMap((k) => familyIds(k)), ...STAR_POLYHEDRON_IDS])].filter((id) => (POLYHEDRA[id] || STAR_POLYHEDRA[id]) && polyShapeName(id) !== id);
 // Search: every word must match the name, a family, a face kind (in this language or English) or,
 // as a number, the face count.
 function searchShapes(q, L) {
@@ -840,7 +840,6 @@ function dimensionEntries(dim) {
     { app: 'dicto', kind: 'shapes', key: DICTO_POLY.key },
     POLY_FAMILIES.filter((key) => familyIds(key).length).map((key) => ({ app: P, kind: 'shapes', key })),
     { app: P, kind: 'shapes', key: 'STARS' },
-    { app: P, kind: 'shapes', key: 'STARS_OTHER' },
   );
   if (dim === '4D') return [...LATTICES_4D.map((lat) => ({ app: R, kind: 'lattice', lat })), { app: P, kind: 'shapes', key: 'POLYTOPES_4D' }];
   return [{ app: R, kind: 'catalogue' }]; // 5D, 6D
@@ -1192,7 +1191,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     html += sectionHtml('tools', '', '', t('wiz.books.tools', L), TOOLS_SHELF.map((s) => toolItem(s, L)), L);
     html += `<div class="bm-none" hidden>${t('wiz.books.none', L)}</div><div class="poly-search-results"></div>`;
     if (passes('polyhedraverse', filter)) {
-      const keys = [DICTO_POLY.key, 'FAVOURITES', 'RECENT', ...POLY_FAMILIES.filter((key) => familyIds(key).length), 'STARS', 'STARS_OTHER'];
+      const keys = [DICTO_POLY.key, 'FAVOURITES', 'RECENT', ...POLY_FAMILIES.filter((key) => familyIds(key).length), 'STARS'];
       html += `<div class="bm-shapes-title">${t('wiz.kind.shapes', L)}</div><div class="bm-shapes">${keys.map((key) => {
         const ids = polyIds(key);
         return ids.length ? `<button type="button" class="dim-wizard-card-btn${key === DICTO_POLY.key ? ' dicto-gold' : ''}" data-family="${key}">${previewSlot(() => polyShapeEdges(ids[0]))}
@@ -1571,7 +1570,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
           <dt>${t('poly.d.edges', L)}</dt><dd>${s.edges.length}</dd>
           <dt>${t('poly.d.vertices', L)}</dt><dd>${s.vertices.length}</dd>
           <dt>${t('poly.d.shape', L)}</dt><dd>${isConvex(s) ? t('poly.d.convex', L) : t('poly.d.notConvex', L)}</dd>
-          ${star && STAR_POLYHEDRON_META[id] ? `<dt>Schläfli</dt><dd>${STAR_POLYHEDRON_META[id].schlafli}</dd><dt>${t('poly.d.density', L)}</dt><dd>${STAR_POLYHEDRON_META[id].density}</dd>` : ''}
+          ${star ? `<dt>Schläfli</dt><dd>${STAR_POLYHEDRON_META[id].schlafli}</dd><dt>${t('poly.d.density', L)}</dt><dd>${STAR_POLYHEDRON_META[id].density}</dd>` : ''}
           ${pairs.length ? `<dt>${t('poly.d.pairs', L)}</dt><dd>${pairs.map((x) => `<button type="button" class="poly-detail-pair" data-shape="${x}">${polyShapeName(x).replaceAll('_', ' ')}</button>`).join(' ')}</dd>` : ''}
         </dl>
       </div>`;
