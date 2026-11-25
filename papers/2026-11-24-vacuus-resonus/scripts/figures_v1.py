@@ -4,7 +4,7 @@
                       Figure 2 (the cube: its Vacuus, 6 plates, and its Resonus, 3 planes, side by side) and Figure 3 (the 5 Platonic
                       and 13 Archimedean polyhedra, each with its Vacuus drawn as fins: the triangle from the centre O to every edge,
                       which spans that edge's plate). Frames by the renderer's shots.mjs (Playwright) on the print host.
-  compose <shots> <figdir> : Figure 1 (the card models, both forms), Figure 2 (the B1NR cube), and the cube and Platonic/Archimedean figures.
+  compose <shots> <figdir> : Figure 1 (DICTO's four-piece card models, both forms), Figure 2 (the B1NR cube), and the cube and Platonic/Archimedean figures.
   fig1 <figdir>             : Figures 1 and 2 alone.
 Coordinates are the standard ones (floats for drawing only); every polyhedron is checked against the exact catalogue
 (study 2026-11-24-vacuus-resonus-catalogue, data/vacuus-resonus-catalogue.csv): corners, edges, faces, all edges equal, and the number
@@ -18,8 +18,6 @@ HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 STUDIES = os.path.normpath(os.path.join(ROOT, '..', '..', 'studies'))
 CSV = os.path.join(STUDIES, '2026-11-24-vacuus-resonus-catalogue', 'data', 'vacuus-resonus-catalogue.csv')
 BUILDS = os.path.join(STUDIES, '2026-11-24-vacuus-build-renders', 'renders')
-# Figure 1, 25 Nov (DICTO's choice): the card models of the three planes, octahedral form (his cardboard octahedron) and cubic form
-CARDS = os.path.join(BUILDS, 'cards-two-forms.png')
 phi = (1 + 5 ** 0.5) / 2
 BG = (20, 22, 28)
 EDGE = '#efe9d8'; FIN = '#8fa9c4'; RES = '#d9b98c'; VPL = '#8fa9c4'; CORE = '#f4f0e6'
@@ -178,12 +176,44 @@ def compose(SH, FIG):
         return xs.min() > pad and ys.min() > pad and xs.max() < im.size[0] - pad and ys.max() < im.size[1] - pad
     f_lab = ImageFont.truetype(FONT, 26); f_sm = ImageFont.truetype(FONT, 21); mark = 'DICTO · dictospheres.com'
     TXT = (226, 222, 212); GOLD = (224, 184, 74)
-    # Figure 1 (25 Nov, DICTO's choice): the card models of the three planes, both forms, whole and pulled apart, full width, copied
-    # unchanged from study 2026-11-24-vacuus-build-renders (scripts/cards.py, renders/cards-two-forms.png)
-    im = Image.open(CARDS).convert('RGB'); CB = (20, 15, 12)
-    a = np.asarray(im).astype(int); m = np.abs(a - a[2, 2]).sum(2) > 24; ys, xs = np.nonzero(m)
-    chk('Figure 1: card models inside the frame', xs.min() > 6 and ys.min() > 6 and xs.max() < im.size[0] - 6 and ys.max() < im.size[1] - 6)
-    im = im.resize((1860, round(im.size[1] * 1860 / im.size[0])), Image.LANCZOS); im.save(os.path.join(FIG, 'fig1-cards-two-forms.jpg'), quality=92)   # under 4 Mpx (print.mjs size guard)
+    # Figure 1 (25 Nov, DICTO's choice): "DICTO's three-plane card models: four pieces", sheet 1 of study 2026-11-25-slot-assemblies
+    # (scripts/compose.py, commit 191df008): his construction A, B, C1, C2 from his templates, diagonal (octahedral) and axial (cubic) form,
+    # whole and pulled apart. Same layout and text, composed here from the study's full-resolution 1600 px shots at scale K (under 4 Mpx).
+    import json
+    SA = os.path.join(STUDIES, '2026-11-25-slot-assemblies'); meta = json.load(open(os.path.join(SA, 'data', 'scenes.json')))
+    K = 1.35; z = lambda v: int(round(v * K)); BG1 = (20, 22, 28); SUB = (200, 200, 205); GRN = (140, 200, 140); TXT1 = (232, 226, 214)
+    FB = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+    f1, f2, f3, fl = ImageFont.truetype(FB, z(34)), ImageFont.truetype(FB, z(22)), ImageFont.truetype(FONT, z(18)), ImageFont.truetype(FB, z(26))
+    idx = {(m['cut'], m['scheme'], m['view']): i for i, m in enumerate(meta)}
+    def tile(i, T):
+        m = meta[i]; fr = Image.open(os.path.join(SA, 'renders', 'shots', f'p{i}.png')).convert('RGBA')
+        im = Image.alpha_composite(Image.new('RGBA', fr.size, BG1 + (255,)), fr).convert('RGB'); chk(f"Figure 1: {m['cut']} {m['view']} inside its frame", bbox_ok(im))
+        im = im.resize((T, T), Image.LANCZOS)
+        if m.get('labels'):
+            dd = ImageDraw.Draw(im); k = T / fr.size[0]
+            for nm, x, y in m['labels']: dd.text((x * k, y * k), nm, font=fl, fill=(250, 246, 236), anchor='mm', stroke_width=z(3), stroke_fill=(40, 30, 20))
+        return im
+    T = z(600); Wd = 2 * T + z(120); Ht = z(170) + 2 * (T + z(20)) + z(170)
+    S = Image.new('RGB', (Wd, Ht), BG1); d = ImageDraw.Draw(S)
+    d.text((z(40), z(30)), "DICTO's three-plane card models: four pieces", font=f1, fill=TXT1)
+    d.text((z(40), z(80)), 'A: one slot, edge to centre. B: a slot from the other edge to the centre and two short edge slots.', font=f3, fill=SUB)
+    d.text((z(40), z(104)), 'C1, C2: the third square cut in two along the line where it meets A; one short slot each. Top: assembled. Bottom: pulled apart.', font=f3, fill=SUB)
+    for c, (cut, ttl) in enumerate((('octahedron', 'Diagonal (octahedral) form'), ('cube', 'Axial (cubic) form: the Resonus squares'))):
+        x = z(40) + c * (T + z(40)); d.text((x, z(140)), ttl, font=f2, fill=GOLD)
+        for r, v in enumerate(('whole', 'pulled')): S.paste(tile(idx[(cut, 'a', v)], T), (x, z(175) + r * (T + z(20))))
+    y = z(175) + 2 * (T + z(20)) + z(10)
+    d.text((z(40), y), 'PROVED POSSIBLE (both forms): A and B slide together on their centre slots; C1 and C2 slide onto B from either side,', font=f3, fill=GRN)
+    d.text((z(40), y + z(26)), "their slots meeting B's short edge slots, straight edges against A. Pieces 80 mm across, slots 1.5 mm, as on the templates.", font=f3, fill=SUB)
+    d.text((z(40), y + z(52)), 'Three whole cards can never be put together by sliding: one card must be cut; four pieces is the fewest.', font=f3, fill=SUB)
+    d.text((Wd - z(40), Ht - z(26)), mark, font=f3, fill=GOLD, anchor='rd')
+    # tighten for the page: every run of empty rows (background only) longer than z(36) is shortened to z(36); nothing drawn is cut
+    A = np.asarray(S).astype(int); full = (np.abs(A - np.array(BG1)).sum(2) > 24).any(1); keep, run = [], 0
+    for r, f in enumerate(full):
+        run = 0 if f else run + 1
+        if f or run <= z(36): keep.append(r)
+    S = Image.fromarray(np.asarray(S)[keep]); chk('Figure 1: only empty rows removed (%d of %d)' % (len(full) - len(keep), len(full)), all(full[r] == False for r in set(range(len(full))) - set(keep)))
+    chk('Figure 1 under 4 Mpx (%d x %d)' % S.size, S.size[0] * S.size[1] < 4e6)
+    S.save(os.path.join(FIG, 'fig1-dicto-four-pieces.jpg'), quality=92)
     # Figure 2: the B1NR cube alone (the build render, unchanged), centred in a full-width card; the ring-fin renders wait for the next version
     im = Image.open(os.path.join(BUILDS, 'cube-b1nr-skeleton.jpg')).convert('RGB'); chk('Figure 2: build render cube-b1nr-skeleton fully inside its frame', bbox_ok(im))
     T = 1100; S = Image.new('RGB', (int(1.75 * T), T + 40), BG); d = ImageDraw.Draw(S)
