@@ -185,3 +185,13 @@ Cut the resin along the die's own Vacuus planes (through O and each die edge): t
 - Not new as mathematics (the central fan over a convex polytope's faces); it gives the baseline: scutoid behaviour (side changes,
   Y vertices) needs a cut that is NOT the Vacuus. No main point linking Vacuus and Scutoid-Frusta from this; at most one line in the
   Scutoid-Frusta paper's definitions, if DICTO wants it.
+
+## Minana #377 round a 60-face core (26 Nov 2026; DICTO's plan: "build die 377 Minana onto the fullerene core using scutoids")
+Name: no. 377 = Minana #377 (the system's name: 3-7-7 = mi-na-na). DICTO: the core must have 60 faces to match Minana's 60, one piece
+per face. Run: the pentakis dodecahedron (dual of C60), five-fold corners at Minana's 12 squares (checked exactly), mould = Minana's
+own planes at 6/5 s0, centroid seeds (scripts/pentakis_in_minana.py, logs/pentakis_minana_6-5_cen.log). Valid exact partition:
+60 Scutoid-Frusta, all convex, all keep side count (3), no Y vertex, 3 kinds.
+**Exact obstruction:** under T_h the core's 60 faces fall in orbits 12 + 24 + 24, Minana's in 12 + 12 + 12 + 24, so NO symmetric
+one-to-one pairing of core faces with Minana's faces exists; the outer ends are cells on Minana's surface, not its faces. The same holds
+for every icosahedral 60-face core (a 60-face orbit of I_h always splits 12 + 24 + 24 under T_h). Next (DICTO: "c116 should do"): a
+fullerene C116 (12 pentagons + 48 hexagons) with T_h symmetry, if one exists (fullgen enumeration; waiting on permission to run it).
