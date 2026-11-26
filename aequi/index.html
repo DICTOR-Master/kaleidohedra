@@ -107,6 +107,7 @@ input[type=range]::-moz-range-thumb { width: 36px; height: 36px; border-radius: 
 .err { color: #c0392b; }
 input.cpick { width: 30px; height: 30px; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: none; flex: 0 0 auto; }
 .toast { font-size: 13px; color: var(--muted); }
+.rollout { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); background: rgba(30,40,60,0.88); color: #fff; padding: 8px 16px; border-radius: 18px; font-size: 16px; pointer-events: none; }
 </style>
 </head>
 <body>
@@ -120,7 +121,7 @@ input.cpick { width: 30px; height: 30px; padding: 0; border: 1px solid var(--lin
     </div>
   </header>
   <main class="stage">
-    <div class="view" id="view"><div class="hint">drag to turn · pinch to zoom</div></div>
+    <div class="view" id="view"><div class="hint">drag to turn · pinch to zoom</div><div id="rollOut" class="rollout" hidden></div></div>
     <section class="panel" id="panel" aria-live="polite"></section>
   </main>
   <footer class="dock" id="dockPick">
@@ -134,6 +135,7 @@ input.cpick { width: 30px; height: 30px; padding: 0; border: 1px solid var(--lin
       <button class="btn" id="resBtn" aria-pressed="false">Resonus</button>
       <button class="btn" id="handBtn" aria-pressed="false" hidden>Other hand</button>
       <button class="btn" id="clearBtn">Clear</button>
+      <button class="btn" id="rollBtn" title="Roll this die: every face equally likely">Roll</button>
       <button class="btn" id="stlBtn" hidden>3D print</button>
     </div>
     <div class="scroll" id="choices"></div>
@@ -191,6 +193,7 @@ camera.position.set(0, 0, 5.2); scene.add(camera);
 scene.add(new THREE.HemisphereLight(0xffffff, 0x50555c, 0.62));
 var key = new THREE.DirectionalLight(0xffffff, 0.62); key.position.set(2.5, 3, 4); camera.add(key);
 var holder = new THREE.Group(); scene.add(holder);
+var CUR = null, rolling = false;
 holder.quaternion.setFromEuler(new THREE.Euler(-0.42, 0.62, 0.08));
 var content = null, dirty = true;
 function themeBg() { scene.background = new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--view-bg').trim() || '#e9e6df'); dirty = true; }
@@ -428,6 +431,7 @@ function renderChoices() {
 $('modeTick').onclick = function () { st.mode = 'tick'; $('modeTick').setAttribute('aria-pressed', 'true'); $('modeList').setAttribute('aria-pressed', 'false'); renderChoices(); };
 $('modeList').onclick = function () { st.mode = 'list'; $('modeList').setAttribute('aria-pressed', 'true'); $('modeTick').setAttribute('aria-pressed', 'false'); renderChoices(); var s = $('choices').querySelector('.sel'); if (s) s.scrollIntoView({ block: 'center' }); };
 $('clearBtn').onclick = function () { setGroup(st.g, []); };
+$('rollBtn').onclick = rollDie;
 function toggleVac() { st.vac = !st.vac; $('vacBtn').setAttribute('aria-pressed', st.vac); $('vacBtn2').setAttribute('aria-pressed', st.vac); if (tab === 'pick') updatePick(); else updateFair(false); }
 $('vacBtn').onclick = toggleVac; $('vacBtn2').onclick = toggleVac;
 function toggleRes() { st.res = !st.res; $('resBtn').setAttribute('aria-pressed', st.res); $('resBtn2').setAttribute('aria-pressed', st.res); if (tab === 'pick') updatePick(); else updateFair(false); }
@@ -435,6 +439,28 @@ $('resBtn').onclick = toggleRes; $('resBtn2').onclick = toggleRes;
 $('handBtn').onclick = function () { st.hand = !st.hand; $('handBtn').setAttribute('aria-pressed', st.hand); updatePick(); };
 
 var RES = null;   // the Resonus plates on show (for the note)
+
+// Roll the die (DICTO 26 Nov 2026): one face chosen uniformly (crypto random), the die tumbles and settles with that face toward you.
+// Fair by construction: every face of an Aequus subtends 4π/N, so each face is equally likely, 1 in N.
+function rollDie() {
+  if (!CUR || rolling) return;
+  var S = CUR.S, N = S.faces.length, r = new Uint32Array(1), lim = Math.floor(4294967296 / N) * N, i;
+  do { crypto.getRandomValues(r); } while (r[0] >= lim); i = r[0] % N;   // no modulo bias
+  var n = S.faces[i].n.slice(); if (CUR.mirror) n[0] = -n[0];
+  var target = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(n[0], n[1], n[2]).normalize(), new THREE.Vector3(0, 0, 1));
+  target.premultiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), Math.random() * 2 * Math.PI));
+  var start = holder.quaternion.clone(), ax = new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize(), t0 = performance.now(), T = 1400;
+  var num = i + 1, e = CUR.e;
+  if (e && st.num !== 'off' && !st.vac && !st.res) { var k = numScheme(e); var L = numbersFor(e, k); if (L) num = L[i]; }
+  rolling = true; $('rollOut').hidden = true;
+  (function step(now) {
+    var u = Math.min(1, (now - t0) / T), ease = 1 - Math.pow(1 - u, 3);
+    var spin = new THREE.Quaternion().setFromAxisAngle(ax, (1 - ease) * 6 * Math.PI);
+    holder.quaternion.copy(start).slerp(target, ease).premultiply(spin); dirty = true;
+    if (u < 1) requestAnimationFrame(step);
+    else { rolling = false; $('rollOut').innerHTML = 'Rolled <b>' + num + '</b> · face ' + (i + 1) + ' of ' + N + ', each 1 in ' + N; $('rollOut').hidden = false; }
+  })(t0);
+}
 function show(S, colours, mirror) {
   RES = null;
   if (st.vac || st.res) {
@@ -528,7 +554,7 @@ function updatePick() {
       }
     }
   }
-  S = G.buildSolid(planes);
+  S = G.buildSolid(planes); CUR = { S: S, e: e, mirror: !!(e && e.h && st.hand) };
   var N = e ? e.N : planes.length;
   console.assert(S.faces.length === N, 'face count ' + S.faces.length + ' differs from N = ' + N);
   if (e) console.assert(S.verts.length === e.c, 'corner count ' + S.verts.length + ' differs from ' + e.c);
