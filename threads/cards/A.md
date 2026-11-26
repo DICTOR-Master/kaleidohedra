@@ -7,9 +7,9 @@ Entry preflight FINAL ok; blueprint #123 read ok; DICTO submits; registered.
 ## State
 - Done: Theorem 4 (a) (M1), Theorem 2 pencil lemma + Theorem 4 (b) any dimension (M5, 26 Nov, FINAL ok).
 - Lattice webs (M4) done; fins (M2) and factor 3 (M3) belong to other papers.
-- Next piece: Theorem 1 (heart iff centrally symmetric) needs ridges of a polytope in Lean.
+- Theorem 1 (<=) done (M6a, IsRidge = nonempty exposed face of dim finrank-2; heart_of_symm). Left: (=>), needs every corner of a polytope on a ridge.
 ## Next
-- Theorem 1: define ridges as exposed faces of codimension 2 of a full-dimensional polytope; prove (=>) negation maps ridges to ridges; prove every corner lies on a ridge (d >= 2), then (<=).
+- Theorem 1 (=>): prove every extreme point of a full-dimensional polytope (hull of a finite set, dim >= 2) lies on a ridge (face lattice: facets through a vertex, two adjacent facets meet in a ridge); then symmetric ridges => symmetric corners => X = -X.
 ## Files
 studies/2026-11-25-lean-vacuus-resonus (VacuusResonus/*.lean, check.sh, logs); build on dicto-big-brother ~/lean/vacuus-resonus;
 master copy ~/dicto-geometry-lean/lib/VacuusResonus; paper papers/2026-11-24-vacuus-resonus.
