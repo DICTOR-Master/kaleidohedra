@@ -33,7 +33,14 @@ Facets m = 2 (n - 2), ridges m = 3 (n - 3), corners m = n.
 * plate_eq_iff (27 Nov): the complete characterisation, both directions (converse via wt_rev and plateOf_affine: affinely related
   weights give the same plate).
 * Axioms: propext, Classical.choice, Quot.sound only (logs-axioms.log).
-Next (step 6): the count of distinct plates (A402191) and the Resonus planes 2^(n-1) - 1; then assemble the new entry.
+## Step 6: DONE 27 Nov (Count.lean): #120 Theorem 3 (iii), the number of plates = A402191
+* card_plateSet_struct: #plates = #(ridges with a < c) + #(middle-block classes) (injectivity from plate_eq_iff).
+* card_middles_odd / card_middles_even: the classes number 2^(n-1) - 1 (n odd), 2^(n-2) - 1 (n even), n >= 3.
+* card_keysLt: the first term is the multinomial sum over a < c, a + b + c = n, a, b, c >= 1 of n!/(a! b! c!).
+* card_plateSet: the closed formula of A402191 for every n >= 3; plates_three .. plates_eight: 3, 15, 65, 225, 770, 2443
+  (kernel evaluation of the formula; no native_decide).
+* Axioms: propext, Classical.choice, Quot.sound only. Proof drafted by a Fable subagent, rebuilt and checked independently.
+Next: the Resonus planes 2^(n-1) - 1 (if wanted in the entry); then assemble the new Palomar entry (steps 3-6).
 
 ## (old) Next: step 4 (#120 Theorem 3 (i) on the real ridge)
 span of the centred ridge (m = 3) = permPlate B1 B2 B3 (the old span_permFlat, now with the facet equations PROVED, not assumed).
