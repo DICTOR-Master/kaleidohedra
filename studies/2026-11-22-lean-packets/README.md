@@ -60,3 +60,4 @@ order removes the dodecahedron in step 1 of (b), so the parity case of the paper
 - 22 Nov 16:10 alert lean-tid (exit 1 at start) was the quoting-error relaunch; superseded by the running relaunch (gen/run_tid.sh); GenTID2 compiling again ~35 min at last check.
 
 - 22 Nov: dbb job lean-tid FINAL ok: the truncated icosidodecahedron from exact coordinates (`tid_edgeAngle`), now a helper in theorem4a_copies/theorem4b_copies; axioms propext, Classical.choice, Quot.sound; 0 sorry. GenTID2 took 48 min to compile (parallel parts 3-5 about 3.5 min each). Palomar note: adding it to the entry would push the checker far past its 30-min cap unless GenTID2 is slimmed.
+- TID generator: GenTID3/4/5 import only GenTID2, GenTID6 imports 3,4,5 (parallel compile); apply with the next TID rebuild. (lean-tid run 11-23 ended FINAL ok; TID stays a lead as above.)
