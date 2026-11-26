@@ -74,3 +74,15 @@ from the centre of mass was measured. Numerical (least squares, 1e-15 level), no
   symmetry of order 2 lie in classes the catalogue does not contain. Matching the others (orders 4 to 16) against catalogue
   entries of the same group and face count is the next step; then exact certification.
 - Each pattern realises as a family (the edge sizes left free by the cones); the numbers count patterns, not single solids.
+
+## Step 9: against the Aequi catalogue (scripts/catalogue_match.py, logs/catalogue_match.log, catalogue_match.json)
+Each fair die's symmetry group (named from the cube symmetries that keep its pattern) and combinatorial type (face-adjacency
+graph with side counts) against every catalogue die of the same group and face count (catalogue 2, built from its planes; the
+first 1232 have no die of these groups and face counts except T, Th, Td, O, Oh, which ours do not hit below full symmetry).
+- 137 of the 138 fair dice checked are NEW AS COMBINATORIAL TYPES (no catalogue die of the same group, face count and graph):
+  N 24: C1 45, Cs 39, C2 16, C2v 15, C2h 4, C3v 3, C4v 2, D2h 2, D3d 3, D4h 2, Oh 3 (the Catalans, which the catalogue keeps
+  among its first numbers outside these batches); N 16: D2d 1, D4h 1; N 48: Oh 1 (the disdyakis dodecahedron).
+- One N 24 D3d die has the same type as a catalogue die (see the log): it may be a member of that die's family.
+- Groups C1, Cs, C2, C2v, C3v, C4v are not in the catalogue at all.
+- Caveats: same combinatorial type does not mean the same die, and a new type is new only up to this check; the solid angles
+  rest on the two piece kinds identified at 58 digits (to prove), and fairness from the centre of mass is numerical.
