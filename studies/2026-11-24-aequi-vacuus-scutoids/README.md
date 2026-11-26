@@ -201,3 +201,8 @@ fullgen (G. Brinkmann and A. Dress; plantri 5.8 release, B. McKay's site, Apache
 1812 isomers, 1 Ih (known). C116: 1,207,119 isomers; symmetry counts in logs/c116_fullgen.log; **exactly one has T_h** (planar code
 in data/c116/Full_codes_116_Th). Next: its face orbits under T_h (must be 12 + 12 + 12 + 24 to pair one-to-one with Minana's faces),
 its pentagons' sites, an exact T_h embedding, then the cell inside Minana.
+- Face orbits (scripts/c116_orbits.py, logs/c116_orbits.log; automorphism group order 24 = T_h, FINAL ok): 12 pentagons, 12 hexagons,
+  12 hexagons, 24 hexagons. **Same orbit sizes as Minana #377** (12 squares, 12 heptagons, 12 hexagons, 24 hexagons), so a symmetric
+  one-to-one pairing of faces is possible: pentagons -> squares (the dodecahedron sites), the two 12-hexagon orbits -> heptagons and
+  hexagons, 24 -> 24. Which 12-hexagon orbit goes to the heptagons is decided by the embedding (next: a T_h realisation of this C116
+  with its pentagons on the 12 dodecahedron axes, then the cell inside Minana).
