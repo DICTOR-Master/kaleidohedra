@@ -115,3 +115,16 @@ the core's face planes, so the outer surface is made of the core's planes: the e
 other size the walls lie in new planes (the Vacuus plates swung about the edges): no stellation, the build-out's own family.
 To check (LEAD 7): which of the 8 true-core depths are stellations of their core in the classical sense (Fifty-Nine Icosahedra
 diagram), beyond the two classics.
+
+## Stellations and Tacitus of the twelve special solids (26 Nov; DICTO "do that and then run the harmonic silence scan")
+- **Stellations.** In the 8 true-core cases every pit wall lies in a face plane of the core Q, and the body has no other faces (the
+  pits cover all of P's faces), so its whole surface is made of Q's planes: it is a union of cells of Q's stellation diagram, i.e.
+  a stellation of Q in the general sense. The two on the icosahedron/dodecahedron are classical (Fifty-Nine Icosahedra Ef1g1; the great
+  dodecahedron); the six on the triakis icosahedron, deltoidal hexecontahedron, pentakis dodecahedron and rhombic triacontahedron
+  are stellations of Catalan solids; which cells they use (and whether they meet Miller's rules) is LEAD 7.
+- **Tacitus (scripts/tacitus_excavated.py, logs/tacitus_excavated.log; FINAL ok).** Face directions = the pit walls (merged when
+  coplanar), unit and area weights, degrees 1–20: **no silence beyond symmetry in any of the twelve.** Every icosahedral one has the
+  full group (order 120) and is silent in degrees 1, 2, 3, 4, 5, 7, 8, 9, 11, 13 (and the odd degrees beyond), the octahedral ones
+  (order 48) in 1, 2, 3, 5 and the odd degrees, the tetrahedral one (order 24) in 1, 2, 5: exactly what symmetry forces.
+  Fault met and fixed: a first pass chose each wall's outward side by a test along the wall itself (sign effectively random), which
+  broke the symmetry and showed false "silences"; fixed to point into the pit; the other scripts' sign rules checked (origin-based).
