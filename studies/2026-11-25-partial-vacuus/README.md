@@ -135,3 +135,9 @@ adds 12 inward pentagonal pyramids): the icosahedron I's corners do not lie on D
 of step 2 are not shown to be the excavated dodecahedron's pits; the apex fraction from I's radius would be 0.7918, not 5 − 2√5.
 Not settled: the pyramids' apexes must be read from the Vajrayana #35 construction itself (faces, not corners). Double Vision not yet
 looked at. No claim either way.
+**Settled for step 2 (26 Nov, from the piece coordinates in pieces.json):** the 12 inward pentagonal pyramids of step 2 (Cleo star →
+D′) are pits of the build-out family of the dodecahedron D′ exactly: every apex on its face axis, all at one depth
+**s = 15/2 − 3√5 ≈ 0.7918** (= 3/2 − (3√5 − 6)). So the step-2 gap = the 12 pits of the excavated dodecahedron of the family at that
+size + 30 valley tetrahedra. It is not a special size (not chain stage 3, 5 − 2√5): a member of DICTO's family, not one of the
+stellation points. The other steps' added pieces are outward (Shields, pyramids over faces): no other inward pits in the cycle.
+Double Vision: not yet tested.
