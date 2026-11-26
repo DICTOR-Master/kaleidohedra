@@ -49,3 +49,17 @@ shapes is cut along them.)
 ## Next
 3. Line lattices on face planes; 4. repeated planes in space (affine arrangements); 5. cells of the periodic arrangements
 (classical ones credited: Sommerville, Goldberg; icosahedral families -> de Bruijn multigrid / Ammann planes, quasiperiodic).
+
+## Step 6-7: solid angles and fair-sized dice from the cube + octahedron pieces (27 Nov 2026; DICTO: fair dice search)
+scripts/angles.py, relations.py, fairsearch.py; logs/angles.log, relations.log, fairsearch.log; angles.json, relations.json, fairdice.json.
+- Every piece of the cube + octahedron planes is one of two kinds (identified at 58 digits, integer relations; not yet proved):
+  A = 1/16 - theta/8, B = -1/24 + theta/8 of the sphere, theta = arccos(1/3)/pi (irrational). So a union of pieces has a
+  rational share iff #A = #B = a, share a/48, and a die with such faces has N = 48/a faces. (Same pieces for cuboctahedron +
+  rhombic dodecahedron. Icosidodecahedron + rhombic triacontahedron: four kinds, three irrationals; equal counts of all four.)
+- Complete search (CP-SAT, all solutions; faces = convex unions with #A = #B; no T-junctions; each tiling kept only if it is the
+  pattern seen from O of a convex polyhedron, LP), up to the 48 symmetries:
+  N 48: 1 (disdyakis dodecahedron); N 24: 4353 tilings, 158 up to symmetry, 136 realised as convex polyhedra (3 with full
+  symmetry = tetrakis hexahedron, deltoidal icositetrahedron, triakis octahedron; then symmetry 16: 2, 12: 4, 8: 4, 6: 3, 4: 20,
+  2: 55, 1: 45; faces all triangles in 125, triangles + quadrilaterals in 10, quadrilaterals in 1); N 16: 99 tilings, 7 up to
+  symmetry, 3 realised (symmetry 16: 1, 8: 2; all triangles).
+- These faces subtend equal solid angles from O. Fair dice need that from the centre of mass: step 8 (fair_centroid.py).
