@@ -128,3 +128,10 @@ diagram), beyond the two classics.
   (order 48) in 1, 2, 3, 5 and the odd degrees, the tetrahedral one (order 24) in 1, 2, 5: exactly what symmetry forces.
   Fault met and fixed: a first pass chose each wall's outward side by a test along the wall itself (sign effectively random), which
   broke the symmetry and showed false "silences"; fixed to point into the pit; the other scripts' sign rules checked (origin-based).
+
+## Nested-shell gaps (DICTO 26 Nov, open)
+Golden cycle data (study 2026-10-25-gnomon-shapes, stations-exact.json) hold CORNERS only. First test, step 2 (Cleo star -> D′, which
+adds 12 inward pentagonal pyramids): the icosahedron I's corners do not lie on D′'s face axes in the stored frame (0 of 12), so the pits
+of step 2 are not shown to be the excavated dodecahedron's pits; the apex fraction from I's radius would be 0.7918, not 5 − 2√5.
+Not settled: the pyramids' apexes must be read from the Vajrayana #35 construction itself (faces, not corners). Double Vision not yet
+looked at. No claim either way.
