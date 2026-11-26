@@ -206,3 +206,15 @@ its pentagons' sites, an exact T_h embedding, then the cell inside Minana.
   one-to-one pairing of faces is possible: pentagons -> squares (the dodecahedron sites), the two 12-hexagon orbits -> heptagons and
   hexagons, 24 -> 24. Which 12-hexagon orbit goes to the heptagons is decided by the embedding (next: a T_h realisation of this C116
   with its pentagons on the 12 dodecahedron axes, then the cell inside Minana).
+
+## C116 core in Minana #377, face to face (26 Nov 2026; DICTO "yes build the c116 core in minana"; scripts/c116_in_minana.py)
+- **C116 realised exactly**: canonical iteration (tangency 1e-4, planarity 4e-6), then 60 rational face planes, T_h-symmetric by
+  construction (orbit images under the 24 signed permutation matrices); every one of the 116 corners strictly inside all 57 other
+  planes (exact): a convex T_h polyhedron with exactly C116's faces.
+- **Pairing**: all T_h-equivariant bijections core faces -> Minana faces (pentagons->squares, 12-hexagon orbits -> heptagons /
+  hexagons both ways, 24 -> 24: 4 x 4 x 4 x 24 x 2 choices). The best keeps **108 of the 174 neighbour pairs**; 66 must change.
+- **Cell: not built.** With so many changes the method's change zones (clusters with one Y vertex each) merge: by nearest direction
+  one cluster of 108 inner + 108 outer corners; by best neighbours, clusters whose face sets differ. Both runs stop at the method's
+  own checks (logs/c116_minana_6-5.log). So C116 -> Minana is too far apart for one layer of Scutoid-Frusta built this way; it needs
+  either a different construction (e.g. several Y vertices per change, or an intermediate layer) or a die/core pair closer in
+  neighbours. Measure for DICTO's idea (other Aequi, other symmetries): neighbour pairs kept by the best equivariant pairing.

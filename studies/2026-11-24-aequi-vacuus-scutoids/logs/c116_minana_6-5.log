@@ -1,0 +1,15 @@
+canonical iteration: edge tangency error 1.24e-04, face planarity error 4.31e-06
+frame: T_h half-turn axes on x, y, z; every automorphism a signed permutation matrix
+EXACT: 60 rational planes, T_h-symmetric by construction; the 116 corners lie strictly inside every non-incident plane: C116 realised
+core orbits: [(12, 5), (12, 6), (12, 6), (24, 6)]  Minana orbits: [(12, 4), (12, 6), (12, 7), (24, 6)]
+choices per orbit [4, 4, 4, 24]; best equivariant pairing keeps 108 of 174 neighbour pairs (nearest-direction pairing kept 108)
+PAIRING: bijection core face -> Minana face (pentagon->square, hexagon->heptagon/hexagon, 24->24); angle between paired normals max 125.00 deg, mean 30.39 deg
+=== amber  c116  minana  s0 = 1080993560107075603200000/2111702220110740562140433+484186088247589396800000/2111702220110740562140433r5 = 1.024608  s = 6/5 s0 = 1.229529  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 60  (47.5s)
+outer pattern: assigned mould faces (face-to-face)
+outer pattern computed (52.1s); faces with an empty outer cell: []
+adjacency: inner pairs 174, outer pairs 174, shared 108, outer-only 66, inner-only 66
+pinched inner edges: 126 {('hex', 'pent'): 60, ('hex', 'hex'): 66}
+RESULT minana 6/5 cen: valid=False  cluster face sets differ inner [0, 1, 2, 17, 19, 20, 21, 22, 23, 25, 53, 54, 55, 56, 58, 59] outer [0, 1, 2, 7, 17, 19, 20, 21, 22, 25, 39, 53, 55, 56, 58, 59]
+(52.6s)

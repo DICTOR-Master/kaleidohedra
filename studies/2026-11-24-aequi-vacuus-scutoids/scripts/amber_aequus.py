@@ -32,6 +32,7 @@ mp.mp.dps = 40
 from aequus_solid import build
 T12 = [(c, sg) for (c, sg) in TH if sg[0]*sg[1]*sg[2] == 1]   # the frame rotation group T: every Aequus has it
 T0 = time.time()
+ASSIGN = None   # 26 Nov: optional {core face F: mould plane index}; outer end of F = that whole mould face (face-to-face pairing)
 def pr(*a): print(*a, flush=True)
 def key(v): return tuple(x.key() for x in v)
 def fl(v): return np.array([float(x) for x in v])
@@ -294,6 +295,11 @@ def main():
             if len(P) >= 3:
                 A = area2(P)
                 if any(x.sign() != 0 for x in A): cells[F].append((mi, P))
+    if ASSIGN is not None:   # face-to-face pairing: outer end of F is exactly its assigned mould face; a point's cells = faces it lies on
+        MFd = dict(MF); assert sorted(ASSIGN.values()) == sorted(MFd), "ASSIGN must be a bijection onto the mould faces"
+        cells = {F: [(ASSIGN[F], MFd[ASSIGN[F]])] for F in range(NF)}
+        def cellset(x): return frozenset(F for F in range(NF) if (dot(H[ASSIGN[F]][0], x) - H[ASSIGN[F]][1]).sign() == 0)
+        pr("outer pattern: assigned mould faces (face-to-face)")
     empty = [F for F in range(NF) if not cells[F]]
     pr(f"outer pattern computed ({time.time()-T0:.1f}s); faces with an empty outer cell: {empty}")
     res = dict(solid=solid, s0=str(s0), s0_float=float(s0), n_faces=NF, contact_edges=cedges, contact_faces=cfaces, lattice=lat, factor=str(fac), s=float(s), seeds=seedmode, tau=str(tau), contact_vertices=contact)
@@ -435,6 +441,7 @@ def main():
         mi_ = [sum((X[v][j] for v in I), Z)/len(I) for j in range(3)]; mo_ = [sum((X[c][j] for c in O), Z)/len(O) for j in range(3)]
         # Y vertex: on the ray from C1's centre through the mean of the cluster's vertices, at fraction tau between C1 and the mould
         d = [sum((X[v][j] for v in I), Z) + sum((X[c][j] for c in O), Z) for j in range(3)]
+        if all(x.sign() == 0 for x in d): return finish(False, f"a cluster of {len(I)} inner and {len(O)} outer vertices is centred on O (no Y-vertex direction); cluster sizes {sorted((sum(1 for q in m_ if q[0] == 'i'), sum(1 for q in m_ if q[0] == 'o')) for m_ in clusters.values())[-5:]}")
         t_in = None
         for fi, (nF, cF) in enumerate(planes):
             f = faces[fi][0]
