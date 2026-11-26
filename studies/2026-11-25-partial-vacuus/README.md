@@ -154,3 +154,8 @@ Double Vision: not yet tested.
 - What remains ours (DICTO): reaching them from the Vacuus by building out the core; the special sizes as the only points of each
   family where the excavation is a stellation; their exact depths (all quadratic; golden 1/φ³, 2/φ² and silver 3/δ² forms); the census
   over the whole Vacuus catalogue and McCooey's self-duals; the golden cycle's step-2 pits as a family member (15/2 − 3√5).
+**All nested pairs of the golden-cycle / Double Vision stations (26 Nov):** for every pair X ⊂ Y among I, D′, ID, OG, rTI, TI, H, jtI,
+RT, M, I·φ³ (convex hulls), tested whether every face of Y has exactly one corner of X on its axis with the pyramid (face + that
+corner) clear of X (sampled): **only I in D′** (s = 15/2 − 3√5, the step-2 pits above). No other shell gap holds a full set of pits of
+any family; the Double Vision chain I ⊂ ID ⊂ O ⊂ TI ⊂ H ⊂ RT ⊂ I·φ³ included as far as its shells are in the station data (its
+octahedron O is not in that file: not tested).
