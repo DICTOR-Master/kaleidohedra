@@ -158,3 +158,17 @@ To resume, from scripts/ with a python that has numpy, scipy, mpmath, python-fli
 - certification: done (FINAL ok); to repeat: `PY=<python> bash run_certify.sh`;
 - CIRT-30: done (FINAL ok); to repeat: `<python> cirt30_exact.py > ../logs/cirt30_exact.log` (the pentagon is the long step);
 - renders: `<python> render_cells.py scenes`, `node shots.mjs ../renders/shots/cells.html ../renders/shots` (playwright), `<python> render_cells.py compose`.
+
+## Lead 1 tested (26 Nov 2026): do non-heart dice force side changes? NO.
+All five non-heart Aequi in the sc, bcc and fcc moulds (6/5 s0, centroid seeds; scripts/run_cells.sh with NONHEART="62 237 499";
+logs/cells; every cell valid, exact volume gap 0, FINAL ok). Pieces that change side count:
+| no. | die | sc | bcc | fcc |
+|---|---|---|---|---|
+| 61 | TRT-16, T 3 | 16 of 16 | 0 | 0 |
+| 62 | TRT-16, T 4 | 0 | 0 | 0 |
+| 236 | Td, 28 faces | 0 | 0 | 0 |
+| 237 | Td, 28 faces | 0 | 0 | 0 |
+| 499 | T, 28 faces | 28 of 28 | 28 of 28 | 28 of 28 |
+Non-heart does not force side changes (62, 236, 237 never change). Side changes were seen only in non-heart dice, but only three
+heart dice were built (377, DI-32, CO-14), too few to read anything into. No Vacuus-kind law here; not for any paper. Note: the
+pieces depend on the cutting rule (centroid seeds), so any such pattern would first need a rule that is not a free choice.

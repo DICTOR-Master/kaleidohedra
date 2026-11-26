@@ -1,0 +1,19 @@
+=== amber  aequus-237  sc  s0 = -1381650163422595/788993690774603+1381650163422595/788993690774603r5 = 2.164546  s = 6/5 s0 = 2.597456  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 6  (0.5s)
+outer pattern computed (1.0s); faces with an empty outer cell: []
+adjacency: inner pairs 60, outer pairs 60, shared 60, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 34: (inner, outer) vertex counts {(1, 1): 34}; Y vertices 0; persistent inner edges 60/60
+sampling cross-check: 6000 points (4754 in the resin), points not covered exactly once: 0, max winding rounding 8.47e-15
+volume sum - resin = 0 (exact 0); resin = 13.769370; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 28, scutoid frusta with a Y vertex 0, kinds 2 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hex face 0 (4 per cell): facets 16 vertices 13 Y 0 neighbours change False vol 0.717766  C1-side neighbours [4, 7, 12, 16, 21, 26] mould-side [4, 7, 12, 16, 21, 26]
+     angles at C1 edges: [99.4402]
+     all dihedrals: 90.0 [1/2pi]; 92.55902164 [not in basis]; 99.44018634 [not in basis]; 111.9846689 [not in basis]; 125.9950702 [not in basis]; 202.4539407 [not in basis]
+  kind quad face 4 (24 per cell): facets 7 vertices 8 Y 0 neighbours change False vol 0.454096  C1-side neighbours [0, 21, 25, 26] mould-side [0, 21, 25, 26]
+     angles at C1 edges: [97.7612, 102.6214, 124.8941, 135.2954]
+     all dihedrals: 45.0 [1/4pi]; 60.0 [1/3pi]; 68.01533105 [not in basis]; 90.0 [1/2pi]; 97.76124391 [not in basis]; 102.6214165 [not in basis]; 117.0024649 [not in basis]; 124.8940991 [not in basis]; 133.7204892 [not in basis]; 135.295424 [not in basis]; 157.5460593 [not in basis]
+SCUTOID FRUSTA: 28 pieces; keep their side count 28; change it 0; neighbour set changes (Y vertex) 0; convex 24/28
+RESULT sc 6/5 cen: valid=True  partition; scutoid frusta with a Y vertex 0; kinds 2; Y vertices 0; 157.7612 present False
+(5.7s)

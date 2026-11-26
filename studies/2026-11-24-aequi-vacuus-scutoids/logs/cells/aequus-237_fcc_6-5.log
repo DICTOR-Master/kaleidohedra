@@ -1,0 +1,19 @@
+=== amber  aequus-237  fcc  s0 = 15278140712769400743704224480198/6941596666748365536916535230455+2258370311527531043632231369238/6941596666748365536916535230455r5 = 2.928434  s = 6/5 s0 = 3.514121  seeds cen  tau 1/2
+solid vertices on the mould surface: 0; edges on it 0; faces on it 0
+mould faces 12  (0.5s)
+outer pattern computed (0.9s); faces with an empty outer cell: []
+adjacency: inner pairs 60, outer pairs 60, shared 60, outer-only 0, inner-only 0
+pinched inner edges: 0 {}
+clusters 34: (inner, outer) vertex counts {(1, 1): 34}; Y vertices 0; persistent inner edges 60/60
+sampling cross-check: 1848 points (1214 in the resin), points not covered exactly once: 0, max winding rounding 6.85e-15
+volume sum - resin = 0 (exact 0); resin = 7.093929; problems 0: []
+PARTITION (manifold, embedded, cancelling, exact volume).  pieces 28, scutoid frusta with a Y vertex 0, kinds 2 (T_h orbit members congruent: True); 157.7612 present: False
+  kind hex face 0 (4 per cell): facets 16 vertices 13 Y 0 neighbours change False vol 0.227563  C1-side neighbours [4, 7, 12, 16, 21, 26] mould-side [4, 7, 12, 16, 21, 26]
+     angles at C1 edges: [125.0467]
+     all dihedrals: 113.3303441 [not in basis]; 113.6195195 [not in basis]; 120.0 [2/3pi]; 125.0467063 [not in basis]; 151.0928974 [not in basis]; 154.6884142 [not in basis]
+  kind quad face 4 (24 per cell): facets 7 vertices 8 Y 0 neighbours change False vol 0.257653  C1-side neighbours [0, 21, 25, 26] mould-side [0, 21, 25, 26]
+     angles at C1 edges: [97.7612, 102.6214, 109.6889, 124.8941]
+     all dihedrals: 60.0 [1/3pi]; 66.38048049 [not in basis]; 90.0 [1/2pi]; 97.76124391 [not in basis]; 102.6214165 [not in basis]; 102.6557929 [not in basis]; 109.688904 [not in basis]; 123.334828 [not in basis]; 124.8940991 [not in basis]; 208.9071026 [not in basis]
+SCUTOID FRUSTA: 28 pieces; keep their side count 28; change it 0; neighbour set changes (Y vertex) 0; convex 4/28
+RESULT fcc 6/5 cen: valid=True  partition; scutoid frusta with a Y vertex 0; kinds 2; Y vertices 0; 157.7612 present False
+(5.1s)
