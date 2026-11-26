@@ -28,7 +28,9 @@ def lp_start(N, pr):
             r = np.zeros(nv); r[3 * k + q] = 1; r[3 * l + q] = -1; r[3 * N + t] = -m[q]; Aeq.append(r); beq.append(0)
     for q in range(3):
         r = np.zeros(nv); r[q:3 * N:3] = 1; Aeq.append(r); beq.append(0)
-    res = linprog(np.zeros(nv), A_eq=np.array(Aeq), b_eq=np.array(beq), bounds=[(None, None)] * (3 * N) + [(1, None)] * len(lam), method='highs')
+    cost = np.zeros(nv); rng = np.random.default_rng(int(os.environ.get('SEED', 0)))
+    if os.environ.get('SEED'): cost[3 * N:] = rng.uniform(0, 1, len(lam))
+    res = linprog(cost, A_eq=np.array(Aeq), b_eq=np.array(beq), bounds=[(None, None)] * (3 * N) + [(1, None)] * len(lam), method='highs')
     return res.x[:3 * N].reshape(N, 3)
 def poly(n):
     hs = np.hstack([n, -np.ones((len(n), 1))]); H = HalfspaceIntersection(hs, np.zeros(3)); return H.intersections
@@ -50,7 +52,9 @@ def face_angles(n, cpt):
         out.append(sum(tri_angle(on[0] - cpt, on[i] - cpt, on[i + 1] - cpt) for i in range(1, len(on) - 1)))
     return np.array(out)
 res_all = []
+ONLY = [int(x) for x in os.environ['IDX'].split(',')] if os.environ.get('IDX') else None
 for idx, r in enumerate(R):
+    if ONLY is not None and idx not in ONLY: continue
     faces = r['faces']; N = len(faces); owner, pr = pairs_of(faces)
     n0 = lp_start(N, pr); keys = list(pr.keys())
     def resid(z):
@@ -70,11 +74,11 @@ for idx, r in enumerate(R):
     fair = kept and dev < 1e-9 and np.linalg.norm(cm) < 1e-9
     res_all.append(dict(index=idx, N=N, symmetry_order=r['symmetry_order'], fair=bool(fair), centroid_offset=float(np.linalg.norm(cm)), max_angle_dev=dev, pattern_kept=bool(kept), normals=n.tolist()))
     if idx % 10 == 0 or not fair: print(f'die {idx}: N {N} sym {r["symmetry_order"]}: fair {fair} (centre offset {np.linalg.norm(cm):.1e}, angle dev {dev:.1e}, pattern kept {kept})', flush=True)
-json.dump(res_all, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../fairdice_centroid.json'), 'w'))
+json.dump(res_all, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../fairdice_centroid' + ('_retry_s' + os.environ['SEED'] if os.environ.get('IDX') else '') + '.json'), 'w'))
 from collections import Counter
 for N in (48, 24, 16):
     rs = [x for x in res_all if x['N'] == N]
     print(f'N {N}: fair {sum(x["fair"] for x in rs)} of {len(rs)}; fair by symmetry order', sorted(Counter(x['symmetry_order'] for x in rs if x['fair']).items(), reverse=True), flush=True)
 ctl = [x for x in res_all if x['symmetry_order'] == 48]
 print('control: the four Catalan dice (full symmetry) fair:', all(x['fair'] for x in ctl), len(ctl))
-print('FINAL ok' if ctl and all(x['fair'] for x in ctl) else 'FINAL FAIL (control)')
+print('FINAL ok' if (ONLY is not None) or (ctl and all(x['fair'] for x in ctl)) else 'FINAL FAIL (control)')

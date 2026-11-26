@@ -318,3 +318,8 @@ together until they meet. Version 3 = flat-walled straws. scripts/c116_straw_ran
     (A core with non-parallel faces is not covered by this test: open.)
 - Note: the core's shape floats (C116's pattern, not its canonical shape); Minana is fixed. Still to do: build the pieces
   explicitly (exact cell checks) and render.
+
+## Exact bound on the best pairing (27 Nov 2026; scripts/c116_qap.py, logs/c116_qap.log, data/c116/qap.json)
+Quadratic-assignment model (Koopmans-Beckmann 1957) solved by CP-SAT for 3 h, hinted with the floating-resin state: no pairing of
+C116's faces with Minana's found better than 156 kept, and the solver PROVED that no pairing keeps more than 165 of 174.
+So the least number of swaps over all pairings is between 174 - 165 = 9 and 18; 156 is not proved optimal (gap 156..165).

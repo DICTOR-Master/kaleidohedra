@@ -63,3 +63,14 @@ scripts/angles.py, relations.py, fairsearch.py; logs/angles.log, relations.log, 
   2: 55, 1: 45; faces all triangles in 125, triangles + quadrilaterals in 10, quadrilaterals in 1); N 16: 99 tilings, 7 up to
   symmetry, 3 realised (symmetry 16: 1, 8: 2; all triangles).
 - These faces subtend equal solid angles from O. Fair dice need that from the centre of mass: step 8 (fair_centroid.py).
+
+## Step 8: fair from the centre of mass (scripts/fair_centroid.py, logs/fair_centroid.log, fair_centroid_retry.log)
+For each realised pattern the planes were moved (face cones kept) until the centre of mass is O; then each face's solid angle
+from the centre of mass was measured. Numerical (least squares, 1e-15 level), not yet certified exactly.
+- Fair: N 48: 1 of 1; N 24: 136 of 136 (die 9 needed a second start); N 16: 2 of 3. Die 137 (N 16, symmetry 8) keeps an
+  angle error 3.3e-9 from every start: not shown fair (likely the centre of mass cannot be put at O with that pattern).
+- Control: the four Catalans (full symmetry) fair.
+- Against the catalogue (10 725 Aequi; groups down to order 4: C2h, D2, S4): the 45 fair dice with no symmetry and the 55 with
+  symmetry of order 2 lie in classes the catalogue does not contain. Matching the others (orders 4 to 16) against catalogue
+  entries of the same group and face count is the next step; then exact certification.
+- Each pattern realises as a family (the edge sizes left free by the cones); the numbers count patterns, not single solids.
