@@ -18,7 +18,16 @@ the coordinates in blocks <= t sum to top (their count). exists_vertex_flag (a c
 flagFace_isExposed; vectorSpan_flagFace (directions = sum 0 on every block); **finrank_vectorSpan_flagFace: dimension n - m**.
 Facets m = 2 (n - 2), ridges m = 3 (n - 3), corners m = n.
 
-## Next: step 4 (#120 Theorem 3 (i) on the real ridge)
+## Step 4: DONE (RidgePlate.lean; build OK; axioms only propext, Classical.choice, Quot.sound: logs-axioms.log)
+- top_eq: top n k = k(2n - k + 1)/2; centre = ((n+1)/2, ...).
+- centred_mem_permFlat: centred ridge points satisfy the facet equations of permFlat (PROVED from the faces of P n).
+- **span_centred_ridge** (#120 Theorem 3 (i) on the real ridge): for key : Fin n -> Fin 3 surjective, the span of the centred
+  face of key = permPlate B1 B2 B3 = {y | sum y = 0, c(a+b) sum_B1 y + a(b+c) sum_B3 y = 0}. PermPlate.lean is the earlier
+  study's file, unchanged, compiling on v4.37.
+
+## Next: step 5 (plate coincidences and the count A402191); also the Resonus planes 2^(n-1) - 1
+
+## (old) Next: step 4 (#120 Theorem 3 (i) on the real ridge)
 span of the centred ridge (m = 3) = permPlate B1 B2 B3 (the old span_permFlat, now with the facet equations PROVED, not assumed).
 
 ## (old) Next: step 3b
