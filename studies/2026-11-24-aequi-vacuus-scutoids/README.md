@@ -172,3 +172,16 @@ logs/cells; every cell valid, exact volume gap 0, FINAL ok). Pieces that change 
 Non-heart does not force side changes (62, 236, 237 never change). Side changes were seen only in non-heart dice, but only three
 heart dice were built (377, DI-32, CO-14), too few to read anything into. No Vacuus-kind law here; not for any paper. Note: the
 pieces depend on the cutting rule (centroid seeds), so any such pattern would first need a rule that is not a free choice.
+
+## The Vacuus cut (26 Nov 2026; scripts/vacuus_cut.py, logs/vcut; idea proposed by Claude, tested at DICTO's "yes test the vacuus cut")
+Cut the resin along the die's own Vacuus planes (through O and each die edge): the piece over face F is cone(O, F) ∩ mould beyond F.
+8 dice (heart 377, DI-32, CO-14; non-heart 61, 62, 236, 237, 499) x sc, bcc, fcc at 6/5 s0, exact Q(√5); volume gap 0 in all 24 cells, FINAL ok.
+- By construction (proof in two lines: an intersection of half-spaces; the cones over the die's faces meet only along Vacuus planes):
+  every piece is convex, its neighbours are exactly the die's face neighbours, one lateral face per die edge, NO Y vertex, never a
+  side change. The Vacuus cut is the cut that never makes a scutoid: the pieces are frusta of pyramids, with a flat outer end (one
+  mould face) or a bent one (several mould faces, across mould edges).
+- Flat vs bent outer ends depend on die and mould, not on Vacuus kind (e.g. CO-14: 6 flat in sc, 8 in bcc, 0 in fcc; 236 and 237:
+  24 flat in sc and fcc, 4 in bcc; 61 and 62: none flat in any mould).
+- Not new as mathematics (the central fan over a convex polytope's faces); it gives the baseline: scutoid behaviour (side changes,
+  Y vertices) needs a cut that is NOT the Vacuus. No main point linking Vacuus and Scutoid-Frusta from this; at most one line in the
+  Scutoid-Frusta paper's definitions, if DICTO wants it.
