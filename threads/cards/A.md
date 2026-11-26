@@ -5,6 +5,8 @@ DICTO 26 Nov, "yes to all": formalize #120 Theorems 1, 2, 4 (any dimension) and 
 ## Pass
 Entry preflight FINAL ok; blueprint #123 read ok; DICTO submits; registered.
 ## State
+- 26 Nov: ENTRY ASSEMBLED ~/vacuus-resonus-lean (local git bd004e5+README): 6 theorems (T4a, T2, T4b, T1 <=, T3 (i), web_iff), Challenge/Solution, comparator.json, formalization.yaml (plain tone; source #120 formalizes, Ziegler background). Full lake build on dbb OK. Local comparator script clashes with hard-linked packages: use the GitHub preflight.
+- Release plan changed: no separate blueprint #123; #120 v2 (adds lattice webs + Lean names) is released with the entry (fewer papers, less self-promotion).
 - Done: Theorem 4 (a) (M1), Theorem 2 pencil lemma + Theorem 4 (b) any dimension (M5, 26 Nov, FINAL ok).
 - Lattice webs (M4) done; fins (M2) and factor 3 (M3) belong to other papers.
 - Theorem 1 (<=) done (M6a, IsRidge = nonempty exposed face of dim finrank-2; heart_of_symm). Left: (=>), needs every corner of a polytope on a ridge.

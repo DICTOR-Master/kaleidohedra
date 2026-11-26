@@ -3,6 +3,7 @@ Lattice webs of the Vacuus and the Resonus (study 2026-11-25-vacuus-resonus-latt
 cube and rhombic-dodecahedron webs). DICTO, with Claude (Anthropic).
 -/
 import Mathlib
+import VacuusResonus.PolarLink
 
 /-!
 # Lattice webs (M4)
@@ -142,9 +143,6 @@ theorem web_iff {P : Set E} (hc : Convex ℝ P) (hs : ∀ x ∈ P, -x ∈ P)
 end General
 
 section Concrete
-
-/-- Coordinate 3-space. -/
-abbrev E3 := EuclideanSpace ℝ (Fin 3)
 
 /-- The cube `[-1/2, 1/2]³`. -/
 def cube : Set E3 := {x | ∀ i, |x i| ≤ 1 / 2}
