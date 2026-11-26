@@ -20,3 +20,13 @@ M5 plate coincidence classification and count (Theorem 3 (ii)-(iii), A402191): t
 M6 one-sided polar bipolar + heart iff for polytopes (optional). M7 face duality (library investment only).
 Verdict: Theorems 2/4, heart <=, web_iff will not clear the bar in any wording (framing, not theorems). Best value: M1+M2.
 Before starting: search for an existing permutohedron/Rado formalization outside Mathlib (related_formalizations).
+
+## Prior-formalisation search (26 Nov 2026, before starting M1-M2)
+Sources checked: Mathlib (GitHub code search: no "permutohedron", "permutahedron", vector majorization; "Rado" hits unrelated);
+all public Lean code on GitHub for permutohedron / permutahedron / majorization; web searches (Lean, Isabelle, Coq, Mathlib + Rado,
+majorization, permutahedron facets); Coq-Polyhedra (general faces, not permutohedra).
+**Found: Rado's theorem is already formalized** in TauCeti (TauCetiProject/TauCeti, Apache-2.0, downstream of Mathlib),
+TauCeti/Analysis/Convex/PermutationOrbit.lean: `mem_convexHull_range_comp_perm_iff` (x in the convex hull of the rearrangements of an
+antitone w iff majorized by w), with the rearrangement-inequality direction and Robin Hood transfer closure (TauCeti/Analysis/Convex/
+Majorization.lean). Also Schur-Horn there. So M1-M2 are NOT new; credit TauCeti (related_formalizations) and build M3-M5 on it.
+Other hits (majorization only, not Rado): physlib QuantumInfo/ForMathlib/Majorization.lean, QuAIR/Lean-QIT, LeanPool DavisKahan.
