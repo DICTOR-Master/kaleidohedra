@@ -12,8 +12,9 @@ A ridge is an ordered partition `key : Fin n → Fin 3` into nonempty blocks `B�
 `plateOf (wt key)` with weights `c(a+b)` on `B₁`, `0` on `B₂`, `a(b+c)` on `B₃` (`permPlate_eq_plateOf`).
 * `mem_permPlate_iff`: the plate in weight form; `affine_of_plate_eq`: equal plates give affinely related weights;
   `wt_rev`: a ridge read backwards has the same weights; `l_ne_zero`: the affine factor is not zero.
-* In progress (Coincide_WIP.lean, not built): `plate_eq_of_ne` (**#120 Theorem 3 (ii), a ≠ c**: the second ridge is the
-  first or the first read backwards) and the a = c case (middle block equal or complementary).
+* `plate_eq_of_ne` (**#120 Theorem 3 (ii), a ≠ c**): two ridges share a plate only if the second is the first or the first
+  read backwards. Of the six relabellings of the blocks, the other four force `2ab = 0` or `2bc = 0`.
+* `middle_of_plate_eq` (**#120 Theorem 3 (ii), a = c**): the second ridge has the same middle block or its complement.
 -/
 
 open Finset
@@ -93,5 +94,161 @@ theorem l_ne_zero {key key' : Fin n → Fin 3} (hk' : Function.Surjective key') 
   have := sz_pos hk' 0; have := sz_pos hk' 1; have := sz_pos hk' 2
   simp at e0 e1; nlinarith
 
+/-- The weight of a coordinate depends only on its block. -/
+noncomputable def W (key : Fin n → Fin 3) (p : Fin 3) : ℝ :=
+  if p = 0 then sz key 2 * (sz key 0 + sz key 1) else if p = 2 then sz key 0 * (sz key 1 + sz key 2) else 0
+
+theorem wt_eq_W (key : Fin n → Fin 3) (i : Fin n) : wt key i = W key (key i) := rfl
+
+theorem W_zero (key : Fin n → Fin 3) : W key 0 = sz key 2 * (sz key 0 + sz key 1) := by
+  unfold W; rw [if_pos rfl]
+theorem W_one (key : Fin n → Fin 3) : W key 1 = 0 := by
+  unfold W; rw [if_neg (by decide : (1 : Fin 3) ≠ 0), if_neg (by decide : (1 : Fin 3) ≠ 2)]
+theorem W_two (key : Fin n → Fin 3) : W key 2 = sz key 0 * (sz key 1 + sz key 2) := by
+  unfold W; rw [if_neg (by decide : (2 : Fin 3) ≠ 0), if_pos rfl]
+
+theorem fin3 (x : Fin 3) : x = 0 ∨ x = 1 ∨ x = 2 := by revert x; decide
+
+theorem fin3_perm (x y z : Fin 3) (hxy : x ≠ y) (hxz : x ≠ z) (hyz : y ≠ z) :
+    (x = 0 ∧ y = 1 ∧ z = 2) ∨ (x = 2 ∧ y = 1 ∧ z = 0) ∨ (x = 0 ∧ y = 2 ∧ z = 1) ∨ (x = 1 ∧ y = 0 ∧ z = 2) ∨
+      (x = 1 ∧ y = 2 ∧ z = 0) ∨ (x = 2 ∧ y = 0 ∧ z = 1) := by
+  revert x y z; decide
+
+/-- Relabelling: if `key' = π ∘ key` with `π` injective, block `π b` of `key'` is block `b` of `key`. -/
+theorem sz_relabel {key key' : Fin n → Fin 3} {π : Fin 3 → Fin 3} (hπ : Function.Injective π)
+    (hk : ∀ i, key' i = π (key i)) (b : Fin 3) : sz key' (π b) = sz key b := by
+  simp only [sz]; congr 2; ext i; simp only [block, mem_filter, mem_univ, true_and, hk]; exact hπ.eq_iff
+
+/-- **#120 Theorem 3 (ii), outer blocks of different sizes.** Two ridges share a plate only if the second is the first, or
+the first read backwards. -/
+theorem plate_eq_of_ne {key key' : Fin n → Fin 3} (hk : Function.Surjective key) (hk' : Function.Surjective key')
+    (hac : sz key 0 ≠ sz key 2)
+    (h : VacuusResonus.permPlate (block key 0) (block key 1) (block key 2) =
+      VacuusResonus.permPlate (block key' 0) (block key' 1) (block key' 2)) :
+    key' = key ∨ key' = Fin.rev ∘ key := by
+  obtain ⟨l, m, hlm⟩ := affine_of_plate_eq h
+  have hl := l_ne_zero hk' hlm
+  have pa := sz_pos hk 0; have pb := sz_pos hk 1; have pc := sz_pos hk 2
+  choose r hr using hk
+  -- the weights of key at its three blocks are distinct
+  have hxy : sz key 2 * (sz key 0 + sz key 1) ≠ sz key 0 * (sz key 1 + sz key 2) := by
+    intro e; apply hac
+    have h3 : sz key 1 * (sz key 2 - sz key 0) = 0 := by linear_combination e
+    rcases mul_eq_zero.1 h3 with h4 | h4
+    · linarith
+    · linarith
+  have q0 := mul_pos pc (add_pos pa pb); have q2 := mul_pos pa (add_pos pb pc)
+  have Winj : Function.Injective (W key) := by
+    intro p q e
+    rcases fin3 p with rfl | rfl | rfl <;> rcases fin3 q with rfl | rfl | rfl <;>
+      simp only [W_zero, W_one, W_two] at e <;>
+      first | rfl | (exfalso; exact hxy e) | (exfalso; exact hxy e.symm) | (exfalso; linarith)
+  obtain ⟨π, hπ⟩ : ∃ π : Fin 3 → Fin 3, ∀ b, π b = key' (r b) := ⟨_, fun _ => rfl⟩
+  have E : ∀ b, W key' (π b) = l * W key b + m := by
+    intro b; rw [hπ]; have := hlm (r b); rwa [wt_eq_W, wt_eq_W, hr] at this
+  have πinj : Function.Injective π := by
+    intro b b' e; apply Winj
+    have h1 := E b; have h2 := E b'; rw [e] at h1
+    exact mul_left_cancel₀ hl (by linarith)
+  have πsurj : Function.Surjective π := Finite.injective_iff_surjective.1 πinj
+  have W'inj : Function.Injective (W key') := by
+    intro p q e
+    obtain ⟨b, rfl⟩ := πsurj p; obtain ⟨b', rfl⟩ := πsurj q
+    rw [E, E] at e; congr 1; exact Winj (mul_left_cancel₀ hl (by linarith))
+  -- key' = π ∘ key
+  have hkey : ∀ i, key' i = π (key i) := fun i =>
+    W'inj (by rw [show W key' (key' i) = wt key' i from rfl, hlm i, wt_eq_W, E])
+  have S := sz_relabel πinj hkey
+  have S0 := S 0; have S1 := S 1; have S2 := S 2
+  have E0 := E 0; have E1 := E 1; have E2 := E 2
+  -- the six relabellings
+  rcases fin3_perm (π 0) (π 1) (π 2) (πinj.ne (by decide)) (πinj.ne (by decide)) (πinj.ne (by decide)) with
+    ⟨x0, x1, x2⟩ | ⟨x0, x1, x2⟩ | ⟨x0, x1, x2⟩ | ⟨x0, x1, x2⟩ | ⟨x0, x1, x2⟩ | ⟨x0, x1, x2⟩
+  -- identity: the same ridge
+  · left; funext i; rw [hkey i]
+    rcases fin3 (key i) with hi | hi | hi <;> simp only [hi, x0, x1, x2]
+  -- reversal: the same ridge read backwards
+  · right; funext i; rw [hkey i]
+    rcases fin3 (key i) with hi | hi | hi <;> simp only [Function.comp_apply, hi, x0, x1, x2] <;> decide
+  all_goals
+    exfalso
+    rw [x0] at S0 E0; rw [x1] at S1 E1; rw [x2] at S2 E2
+    simp only [W_zero, W_one, W_two] at E0 E1 E2
+    simp only [S0, S1, S2] at E0 E1 E2
+  -- (0 2 1): forces 2bc = 0
+  · have hl1 : l = -1 := by
+      have h3 : (l + 1) * (sz key 0 * (sz key 1 + sz key 2)) = 0 := by linear_combination E1 - E2
+      rcases mul_eq_zero.1 h3 with h4 | h4 <;> linarith
+    subst hl1
+    have h5 : 2 * (sz key 1 * sz key 2) = 0 := by linear_combination E0 - E1
+    linarith [mul_pos pb pc]
+  -- (1 0 2): forces 2ab = 0
+  · have hl1 : l = -1 := by
+      have h3 : (l + 1) * (sz key 2 * (sz key 0 + sz key 1)) = 0 := by linear_combination E1 - E0
+      rcases mul_eq_zero.1 h3 with h4 | h4 <;> linarith
+    subst hl1
+    have h5 : 2 * (sz key 0 * sz key 1) = 0 := by linear_combination E2 - E1
+    linarith [mul_pos pa pb]
+  -- (1 2 0): forces 2ab = 0
+  · have hl1 : l = -1 := by
+      have h3 : (l + 1) * (sz key 2 * (sz key 0 + sz key 1)) = 0 := by linear_combination E1 - E0
+      rcases mul_eq_zero.1 h3 with h4 | h4 <;> linarith
+    subst hl1
+    have h5 : 2 * (sz key 0 * sz key 1) = 0 := by linear_combination E2 - E1
+    linarith [mul_pos pa pb]
+  -- (2 0 1): forces 2bc = 0
+  · have hl1 : l = -1 := by
+      have h3 : (l + 1) * (sz key 0 * (sz key 1 + sz key 2)) = 0 := by linear_combination E1 - E2
+      rcases mul_eq_zero.1 h3 with h4 | h4 <;> linarith
+    subst hl1
+    have h5 : 2 * (sz key 1 * sz key 2) = 0 := by linear_combination E0 - E1
+    linarith [mul_pos pb pc]
+
+theorem sz_rev (key : Fin n → Fin 3) (b : Fin 3) : sz (Fin.rev ∘ key) b = sz key (Fin.rev b) := by
+  simp only [sz]; congr 2; ext i; simp only [block, mem_filter, mem_univ, true_and, Function.comp_apply]
+  constructor
+  · intro h; rw [← h, Fin.rev_rev]
+  · intro h; rw [h, Fin.rev_rev]
+
+/-- Outer blocks of equal size: the weight is `0` on the middle block and one constant elsewhere. -/
+theorem wt_two_level {key : Fin n → Fin 3} (hac : sz key 0 = sz key 2) (i : Fin n) :
+    wt key i = if key i = 1 then 0 else sz key 2 * (sz key 0 + sz key 1) := by
+  rcases fin3 (key i) with hi | hi | hi
+  · rw [(wt_of key i).1 hi, if_neg (by rw [hi]; decide)]
+  · rw [(wt_of key i).2.1 hi, if_pos hi]
+  · rw [(wt_of key i).2.2 hi, if_neg (by rw [hi]; decide), hac]; ring
+
+/-- **#120 Theorem 3 (ii), outer blocks of equal size.** Two ridges share a plate only if the second has the same middle
+block as the first, or its complement. (Its outer blocks are then of equal size too, by `plate_eq_of_ne`.) -/
+theorem middle_of_plate_eq {key key' : Fin n → Fin 3} (hk : Function.Surjective key) (hk' : Function.Surjective key')
+    (hac : sz key 0 = sz key 2)
+    (h : VacuusResonus.permPlate (block key 0) (block key 1) (block key 2) =
+      VacuusResonus.permPlate (block key' 0) (block key' 1) (block key' 2)) :
+    block key' 1 = block key 1 ∨ block key' 1 = (block key 1)ᶜ := by
+  have r0 : Fin.rev (0 : Fin 3) = 2 := rfl; have r2 : Fin.rev (2 : Fin 3) = 0 := rfl
+  have hac' : sz key' 0 = sz key' 2 := by
+    by_contra hne
+    rcases plate_eq_of_ne hk' hk hne h.symm with e | e
+    · rw [e] at hac; exact hne hac
+    · apply hne; have h2 := hac; rw [e, sz_rev, sz_rev, r0, r2] at h2; exact h2.symm
+  obtain ⟨l, m, hlm⟩ := affine_of_plate_eq h
+  have hl := l_ne_zero hk' hlm
+  have hX := mul_pos (sz_pos hk 2) (add_pos (sz_pos hk 0) (sz_pos hk 1))
+  have hX' := mul_pos (sz_pos hk' 2) (add_pos (sz_pos hk' 0) (sz_pos hk' 1))
+  have hlX : l * (sz key 2 * (sz key 0 + sz key 1)) ≠ 0 := mul_ne_zero hl hX.ne'
+  obtain ⟨i1, g1⟩ := hk 1
+  have e1 := hlm i1; rw [wt_two_level hac' i1, wt_two_level hac i1, if_pos g1] at e1
+  by_cases c1 : key' i1 = 1
+  · rw [if_pos c1] at e1
+    left; ext i; simp only [block, mem_filter, mem_univ, true_and]
+    have ei := hlm i; rw [wt_two_level hac' i, wt_two_level hac i] at ei
+    by_cases a : key i = 1 <;> by_cases b : key' i = 1 <;> simp only [a, b, ↓reduceIte, iff_self] at ei ⊢ <;>
+      first | (exfalso; linarith) | (exfalso; exact hlX (by linarith))
+  · rw [if_neg c1] at e1
+    right; ext i; simp only [block, mem_filter, mem_univ, true_and, mem_compl]
+    have ei := hlm i; rw [wt_two_level hac' i, wt_two_level hac i] at ei
+    by_cases a : key i = 1 <;> by_cases b : key' i = 1 <;>
+      simp only [a, b, ↓reduceIte, iff_self, not_true_eq_false, not_false_eq_true] at ei ⊢ <;>
+      first | (exfalso; linarith) | (exfalso; exact hlX (by linarith))
 
 end PermFaces
