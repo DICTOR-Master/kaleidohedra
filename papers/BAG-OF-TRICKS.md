@@ -33,3 +33,9 @@ Code numbers in Z[sqrt d] as integer pairs with correctness lemmas (ev_add, ev_m
 
 ## Palomar preflight request_id (25 Nov 2026)
 The workflow request_id must be exactly 12 lowercase alphanumeric characters (e.g. dehnpacket01, fairdicelean); it is fixed in .github/workflows/palomar-preflight.yml, not a dispatch input. Set it when packaging each new entry.
+
+## Face-pattern distance and floating resin (Scutoid-Frusta shells, 27 Nov 2026)
+Treat two solids' face patterns as triangulations; a pairing of faces keeps some neighbour pairs; each dual edge flip gains at most
+one, so edges - kept bounds the swaps from below. Find pairings two ways: enumerate all orbit assignments and equivariant pairings
+(symmetric), and floating resin (random turns, Hungarian best-facing assignment + Procrustes refit until stable). C116 -> Minana #377:
+symmetric best 144/174 (30 swaps, one floor), floating best 156/174 (18 swaps, one floor, symmetry S6). Study 2026-11-24-aequi-vacuus-scutoids.

@@ -17,7 +17,7 @@ F = json.load(open(os.path.join(HERE, '../data/c116/floors.json')))['realised']
 byfloor = {r['floor']: r for r in F}
 sig = {int(k): v for k, v in json.load(open(os.path.join(HERE, '../data/c116/pairing_local.json'))).items()}
 if L == 0:   # 27 Nov: ONE layer, C116 -> Minana directly with the best alignment (data/c116/onefloor.json, c116_onefloor.py)
-    sig = {int(k): v for k, v in json.load(open(os.path.join(HERE, '../data/c116/onefloor.json')))['pairing'].items()}
+    sig = {int(k): v for k, v in json.load(open(os.path.join(HERE, '../data/c116/' + os.environ.get('ONEFLOOR', 'onefloor.json'))))['pairing'].items()}
 Dm = A.build("aequus-377")
 MN = np.array([[float(x) for x in u] for u, c in Dm["planes"]]); MN /= np.linalg.norm(MN, axis=1)[:, None]
 def aligned_planes(r):
@@ -57,5 +57,5 @@ for mi, poly in A.mould_faces(H1):
         d = det3(poly[0], poly[q], poly[q + 1]); vol = vol + (d if d.sign() > 0 else -d)
 A.CELLVOL["layer"] = vol / 6; A.shell = shell; A.ASSIGN = ASSIGN
 A.build = lambda name: dict(V=V, faces=faces, planes=planes, name=name)
-sys.argv = [argv[0], f"c116-layer{L}", "layer", fac, "cen"]
+sys.argv = [argv[0], f"c116-layer{L}" + os.environ.get("TAG", ""), "layer", fac, "cen"]
 A.main()

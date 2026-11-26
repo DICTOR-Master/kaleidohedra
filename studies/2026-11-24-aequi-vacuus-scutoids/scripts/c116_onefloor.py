@@ -8,7 +8,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 d = json.load(open(os.path.join(HERE, '../data/c116/pairing.json'))); faces, mf = d['faces'], d['minana_faces']
 rows = json.load(open(os.path.join(HERE, '../data/c116/orbitpairs.json')))
 best = max((r for r in rows if r['best']), key=lambda r: (r['best']['kept'], -r['best']['max_dist']))
-sig = {int(k): v for k, v in best['best_pairing'].items()}; iv = {v: k for k, v in sig.items()}
+sig = {int(k): v for k, v in best['best_pairing'].items()}
+SUF = os.environ.get('FLOAT', '')
+if SUF:   # 27 Nov: the floating-resin best-synchronized state (c116_float.py), no symmetry imposed
+    fl = json.load(open(os.path.join(HERE, '../data/c116/float.json')))[0]; sig = {k: int(v) for k, v in enumerate(fl['pairing'])}
+    best = dict(assignment='floating resin, best synchronized (no symmetry imposed)', best=fl)
+iv = {v: k for k, v in sig.items()}
 print('alignment:', best['assignment'], best['best'], flush=True)
 def corners(fl):   # corners = triples of faces meeting at a vertex
     at = {}
@@ -39,6 +44,7 @@ for u, (e, c) in zip(used, swaps):
 exact = T == T1
 print('all swaps at once give Minana #377 corners exactly:', exact, flush=True)
 json.dump(dict(assignment=best['assignment'], pairing={str(k): v for k, v in sig.items()},
-               swaps=[[sorted(e), sorted(c[0]) if c else None] for e, c in swaps]), open(os.path.join(HERE, '../data/c116/onefloor.json'), 'w'))
+               swaps=[[sorted(e), sorted(c[0]) if c else None] for e, c in swaps]), open(os.path.join(HERE, f'../data/c116/onefloor{"_float" if SUF else ""}.json'), 'w'))
 print('ONE FLOOR' if one and indep and exact else 'NOT ONE FLOOR')
+print('gained pairs at distance 2 (one swap each):', sum(1 for e, c in swaps if c), 'of', len(swaps), flush=True)
 print('FINAL ok' if len(T0) == len(T1) == 116 else 'FINAL FAIL (corner counts)')

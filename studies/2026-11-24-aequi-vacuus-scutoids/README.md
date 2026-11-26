@@ -270,3 +270,33 @@ scripts/c116_orbitpairs.py, c116_onefloor.py, c116_layers.py (LAYER 0), render_c
   (18-23 flat facets per piece, where a convex hexagonal piece with one Y has about 9), so joined columns cannot be convex either.
   Convex pieces need a straight-walled construction (open).
 - Render: renders/RENDER-c116-minana-one-layer.png (pulled apart, assembled).
+
+## Floating resin (27 Nov 2026; DICTO: "the resin method of exchange: fixed start and end points, floating until best alignment synchronizes")
+scripts/c116_float.py, c116_floatsym.py; logs/c116_float.log, c116_onefloor_float.log, c116_layer0_float.log, c116_floatsym.log.
+- The core floats (any turn, mirror allowed), no symmetry imposed. The resin settles: each core face takes the Minana face it faces
+  best (one-to-one, largest total cosine), then the core turns to fit that pairing; repeat until nothing changes. 4000 random starts,
+  3751 settled states.
+- **The best-synchronized state keeps 156 of 174 neighbour pairs**: more than the best symmetric pairing (144). It found the 144 state's
+  level often (424 states at 144) but the top is higher. 18 pairs to gain, all one swap; the 18 swaps touch no common corner and give
+  Minana's corners exactly: ONE floor. One layer of Scutoid-Frusta, exact valid cell: 60 pieces, 18 Y vertices.
+- Price: it keeps 6 of the 24 symmetries (3 rotations about one 3-fold axis, 3 mirror-type: the group S6). Changes: 6 pentagons ->
+  squares, 6 pentagons -> heptagons, 6 hexagons -> squares, 6 hexagons -> heptagons, 36 hexagons keep six sides.
+- 156 is the best FOUND, not proved best (the most pairs two face patterns can share is a hard matching problem in general).
+- So two answers: fully symmetric, 30 swaps (best possible among symmetric pairings, proved by enumeration and the one-pair-per-swap
+  bound); symmetry S6, 18 swaps (best found by floating resin).
+
+## The general method for other Aequi (27 Nov 2026; DICTO: "replicate this study with other Aequi")
+For a fair die (Aequus) D and a candidate core K with the same number of faces:
+1. Face patterns as triangulations (faces = points, corners = triangles). The neighbour pairs D and K share under a pairing of faces
+   measure how close they are; each swap (dual edge flip) gains at most one pair, so 174 - kept (in general: edges - kept) is a lower
+   bound on swaps, and a gained pair d apart needs at least d - 1 swaps.
+2. Pairing, two routes, run both: (a) symmetric: match face orbits of equal size, enumerate EVERY assignment of orbits (not one chosen
+   by eye) and every equivariant pairing (c116_orbitpairs.py); (b) floating resin: no symmetry imposed, random starts, settle by best
+   facing + refit turn (c116_float.py). Keep the best of each; report the symmetry each keeps.
+3. If all gained pairs are one swap away and the swaps touch no common corner: ONE floor (c116_onefloor.py). Otherwise: solve one
+   site, copy by symmetry (sectoring, c116_longsite.py), group swaps into floors by dependency (c116_floors.py), realise each floor
+   as an exact convex solid.
+4. Build each layer with the amber method (ASSIGN = the pairing), all checks exact (c116_layers.py; LAYER 0 = one layer).
+5. Candidate cores: same face count, orbits matching the die's under its symmetry group (fullgen / plantri for fullerene-type cores);
+   rank candidates by step 2's best kept count before building anything.
+Open: pieces are never convex with this wall construction (folded walls); a straight-walled construction is needed for convex pieces.

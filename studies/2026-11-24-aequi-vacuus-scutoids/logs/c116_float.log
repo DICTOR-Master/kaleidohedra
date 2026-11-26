@@ -1,0 +1,25 @@
+PROGRESS 0.00  distinct settled states 1
+PROGRESS 0.12  distinct settled states 494
+PROGRESS 0.25  distinct settled states 978
+PROGRESS 0.38  distinct settled states 1448
+PROGRESS 0.50  distinct settled states 1916
+PROGRESS 0.62  distinct settled states 2385
+PROGRESS 0.75  distinct settled states 2843
+PROGRESS 0.88  distinct settled states 3304
+settled states: 3751
+top 10 by synchronization (total cosine of 60):
+   {'total_cos': 58.54478, 'kept': 156, 'hits': 1}
+   {'total_cos': 58.54478, 'kept': 156, 'hits': 1}
+   {'total_cos': 58.54478, 'kept': 156, 'hits': 1}
+   {'total_cos': 58.54478, 'kept': 156, 'hits': 1}
+   {'total_cos': 58.54478, 'kept': 156, 'hits': 1}
+   {'total_cos': 58.54478, 'kept': 156, 'hits': 1}
+   {'total_cos': 58.54478, 'kept': 156, 'hits': 1}
+   {'total_cos': 58.54478, 'kept': 156, 'hits': 1}
+   {'total_cos': 58.544779, 'kept': 156, 'hits': 1}
+   {'total_cos': 58.544779, 'kept': 156, 'hits': 2}
+most neighbour pairs kept by any settled state: 156 ; best possible (enumeration): 144
+BEST-SYNCHRONIZED STATE keeps 156 of 174 (found from 1 of 4000 starts)
+kept counts over settled states: [(156, 31), (154, 47), (152, 31), (150, 116), (148, 17), (146, 68), (144, 424), (142, 661), (140, 749), (138, 435), (136, 594), (134, 301)]
+the 144 pairing itself among settled states: False
+FINAL ok
