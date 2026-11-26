@@ -1,0 +1,15 @@
+tetrahedron              on triakis octahedron           s=9 - 6*sqrt(2)            D corners  12 {'P* corner': 0, 'spike tip on a P* face axis': 0, 'on a P* edge line': 12, 'other': 0}  spike heights []  SPIKED P*: False
+octahedron               on triakis tetrahedron          s=3/5                      D corners  24 {'P* corner': 0, 'spike tip on a P* face axis': 0, 'on a P* edge line': 24, 'other': 0}  spike heights []  SPIKED P*: False
+octahedron               on deltoidal hexecontahedron    s=12/11 - 3*sqrt(5)/11     D corners  24 {'P* corner': 0, 'spike tip on a P* face axis': 0, 'on a P* edge line': 24, 'other': 0}  spike heights []  SPIKED P*: False
+octahedron               on disdyakis triacontahedron    s=3 - 6*sqrt(5)/5          D corners  24 {'P* corner': 0, 'spike tip on a P* face axis': 0, 'on a P* edge line': 24, 'other': 0}  spike heights []  SPIKED P*: False
+dodecahedron             on icosahedron                  s=5 - 2*sqrt(5)            D corners  20 {'P* corner': 0, 'spike tip on a P* face axis': 20, 'on a P* edge line': 0, 'other': 0}  spike heights [np.float64(3.0)]  SPIKED P*: True
+dodecahedron             on triakis icosahedron          s=10/11 - 3*sqrt(5)/11     D corners  60 {'P* corner': 0, 'spike tip on a P* face axis': 0, 'on a P* edge line': 60, 'other': 0}  spike heights []  SPIKED P*: False
+dodecahedron             on deltoidal hexecontahedron    s=sqrt(5)/3                D corners  60 {'P* corner': 0, 'spike tip on a P* face axis': 0, 'on a P* edge line': 60, 'other': 0}  spike heights []  SPIKED P*: False
+icosahedron              on dodecahedron                 s=-6 + 3*sqrt(5)           D corners  12 {'P* corner': 0, 'spike tip on a P* face axis': 12, 'on a P* edge line': 0, 'other': 0}  spike heights [np.float64(2.236067978)]  SPIKED P*: True
+icosahedron              on pentakis dodecahedron        s=-9/11 + 6*sqrt(5)/11     D corners  60 {'P* corner': 0, 'spike tip on a P* face axis': 0, 'on a P* edge line': 60, 'other': 0}  spike heights []  SPIKED P*: False
+icosahedron              on deltoidal hexecontahedron    s=30/11 - 9*sqrt(5)/11     D corners  60 {'P* corner': 0, 'spike tip on a P* face axis': 0, 'on a P* edge line': 60, 'other': 0}  spike heights []  SPIKED P*: False
+rhombic triacontahedron  on rhombic triacontahedron      s=3 - sqrt(5)              D corners  30 {'P* corner': 0, 'spike tip on a P* face axis': 0, 'on a P* edge line': 30, 'other': 0}  spike heights []  SPIKED P*: False
+triakis icosahedron      on deltoidal hexecontahedron    s=42/19 - 11*sqrt(5)/19    D corners  60 {'P* corner': 0, 'spike tip on a P* face axis': 0, 'on a P* edge line': 60, 'other': 0}  spike heights []  SPIKED P*: False
+control (great dodecahedron -> small stellated dodecahedron: 12 spike tips on the dodecahedron face axes): True
+hypothesis holds for 2 of 12
+FINAL ok

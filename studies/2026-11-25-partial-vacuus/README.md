@@ -164,3 +164,17 @@ Ogdoecontahedron O (80 faces; polar of H) at its Double Vision station, exact in
 (the middle toggle), matching the stored render copy (progenitors data/full-cycle.json st.O) at every corner, frames shared through
 the ID. Stored as data-double-vision-O.json (corners a + b√5). Gap test with O against every station, both ways: **no pair holds a
 full set of pits.** So in the golden cycle and Double Vision together, only I in D′ (step 2, s = 15/2 − 3√5) does.
+
+## Polar test: a Resonus counterpart? (26 Nov; DICTO "get it happening asap; even a negative result is a result")
+scripts/polar_test.py, data-polar-test.json, logs/polar_test.log (FINAL ok; control: great dodecahedron -> small stellated
+dodecahedron, 12 spike tips). Polar reciprocal D of each special Vacuus-Solid (one corner per distinct wall plane, its pole).
+- **Always (all 12, and by a one-line argument for every Vacuus-Solid):** every corner of D lies on an edge line of the polar P*.
+  Each wall contains an edge of P, so its pole lies on the polar line of that edge, which is the line of the matching edge of P*.
+- **Spiked P* (the hypothesis) only for the two classics:** the great dodecahedron's polar is the small stellated dodecahedron
+  (12 tips on the dodecahedron's face axes, height √5 in units of its face distance), and the excavated dodecahedron's polar has
+  20 corners on the icosahedron's face axes at height 3: the corners of the great stellated dodecahedron (DICTO's Cleo star).
+  There, several extended edges of P* meet at one point on a face axis, which is the stellation point.
+- **The other 10:** corners on the extended edges of P*, not meeting at face axes: no spikes.
+**Answer:** the Resonus-side counterpart of a Vacuus-Solid is an *edge-extended* polar (corners pushed out along P*'s edge lines),
+and it is a spiked polar exactly at the two classics. Negative for the spike hypothesis in general; positive as a law (corners on
+P*'s edge lines always), and it singles out the classics again. Into the Vacuus-Solids paper as a section (DICTO to confirm).
