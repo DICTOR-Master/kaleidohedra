@@ -1,8 +1,8 @@
-⚠ [5328/6190] Replayed PermFaces.Facets
+⚠ [5328/5830] Replayed PermFaces.Facets
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [5329/6190] Ran PermFaces.Facets:irArts
+⚠ [5329/5830] Ran PermFaces.Facets:irArts
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [5330/6190] Replayed PermFaces.FacetDim
+⚠ [5330/5830] Replayed PermFaces.FacetDim
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/FacetDim.lean:34:27: This simp argument is unused:
@@ -51,10 +51,10 @@ Hint: Omit it from the simp argument list.
 Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-⚠ [5331/6190] Ran PermFaces.FacetDim:irArts
+⚠ [5331/5830] Ran PermFaces.FacetDim:irArts
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [5332/6190] Replayed PermFaces.Flags
+⚠ [5332/5830] Replayed PermFaces.Flags
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -118,33 +118,16 @@ warning: PermFaces/Flags.lean:247:10: `if_neg` has been deprecated: Use `ite_eq_
 
 Hint: Replace the deprecated name:
   i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
-⚠ [5333/6190] Ran PermFaces.Flags:irArts
+⚠ [5333/5830] Ran PermFaces.Flags:irArts
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18305/18311] Replayed PermFaces.PermPlate
+⚠ [18305/18315] Replayed PermFaces.PermPlate
 warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18306/18311] Ran PermFaces.PermPlate:irArts
+⚠ [18306/18315] Ran PermFaces.PermPlate:irArts
 warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18307/18311] Built PermFaces.RidgePlate (1.9s)
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18308/18311] Ran PermFaces.RidgePlate:irArts
+⚠ [18307/18315] Replayed PermFaces.RidgePlate
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -155,7 +138,13 @@ warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from p
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18309/18311] Built PermFaces (1.3s)
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18308/18315] Ran PermFaces.RidgePlate:irArts
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -164,12 +153,13 @@ warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from p
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18309/18315] Replayed PermFaces.PlateEq
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18310/18315] Ran PermFaces.PlateEq:irArts
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18311/18315] Built PermFaces.Coincide (1.5s)
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -190,17 +180,8 @@ warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from p
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18310/18311] Ran PermFaces:irArts
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -217,6 +198,11 @@ warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from p
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Coincide.lean:44:28: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [18312/18315] Ran PermFaces.Coincide:irArts
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -227,4 +213,180 @@ warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from p
 warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-Build completed successfully (18311 jobs).
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18313/18315] Built PermFaces (1.3s)
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18314/18315] Ran PermFaces:irArts
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PermPlate.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/PlateEq.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+Build completed successfully (18315 jobs).

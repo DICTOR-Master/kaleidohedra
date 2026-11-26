@@ -25,7 +25,12 @@ Facets m = 2 (n - 2), ridges m = 3 (n - 3), corners m = n.
   face of key = permPlate B1 B2 B3 = {y | sum y = 0, c(a+b) sum_B1 y + a(b+c) sum_B3 y = 0}. PermPlate.lean is the earlier
   study's file, unchanged, compiling on v4.37.
 
-## Next: step 5 (plate coincidences and the count A402191); also the Resonus planes 2^(n-1) - 1
+## Step 5: IN PROGRESS (Coincide.lean builds; Coincide_WIP.lean not yet)
+Built: PlateEq.lean (earlier study, unchanged); mem_permPlate_iff (plate in weight form: c(a+b) on B1, 0 on B2, a(b+c) on B3);
+affine_of_plate_eq; wt_rev; l_ne_zero. Proof plan checked by hand: equal plates give v = l u + m with l != 0; key' = pi o key;
+of the six relabellings pi, identity and reversal are consistent, the other four force 2ab = 0 or 2bc = 0 (impossible).
+To do: make the WIP proof compile (less automation, explicit cases), then the a = c case, then the count A402191 and the
+Resonus planes 2^(n-1) - 1.
 
 ## (old) Next: step 4 (#120 Theorem 3 (i) on the real ridge)
 span of the centred ridge (m = 3) = permPlate B1 B2 B3 (the old span_permFlat, now with the facet equations PROVED, not assumed).
