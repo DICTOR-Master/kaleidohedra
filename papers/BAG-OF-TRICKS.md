@@ -39,3 +39,6 @@ Treat two solids' face patterns as triangulations; a pairing of faces keeps some
 one, so edges - kept bounds the swaps from below. Find pairings two ways: enumerate all orbit assignments and equivariant pairings
 (symmetric), and floating resin (random turns, Hungarian best-facing assignment + Procrustes refit until stable). C116 -> Minana #377:
 symmetric best 144/174 (30 swaps, one floor), floating best 156/174 (18 swaps, one floor, symmetry S6). Study 2026-11-24-aequi-vacuus-scutoids.
+
+## Palomar pipeline pin vs Lean version (27 Nov 2026)
+The workflow pins a PalomarSubmission commit (uses: ...@SHA and pipeline_commit). An old pin refuses a newer Lean (diagnostic palomar.toolchain_unrecognised, "Do not change the repository"): the fix is on their side, so move the pin to the current PalomarSubmission main before the first preflight of an entry on a new toolchain.
