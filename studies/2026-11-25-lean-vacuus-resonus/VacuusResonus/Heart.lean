@@ -23,7 +23,7 @@ open scoped RealInnerProductSpace Pointwise
 
 namespace VacuusResonus
 
-variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
+variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 /-- A ridge of `X`: an exposed face of dimension `finrank E - 2`. -/
 def IsRidge (X R : Set E) : Prop :=
@@ -32,7 +32,6 @@ def IsRidge (X R : Set E) : Prop :=
 /-- The heart kind: the opposite of every ridge is a ridge. -/
 def IsHeart (X : Set E) : Prop := ∀ R, IsRidge X R → IsRidge X (-R)
 
-omit [FiniteDimensional ℝ E] in
 theorem isExposed_neg {X F : Set E} (h : IsExposed ℝ X F) : IsExposed ℝ (-X) (-F) := by
   intro hne
   obtain ⟨l, hl⟩ := h (by simpa using hne.neg)
@@ -46,7 +45,6 @@ theorem isExposed_neg {X F : Set E} (h : IsExposed ℝ X F) : IsExposed ℝ (-X)
   · rintro ⟨hx, hmax⟩
     exact ⟨by simpa using hx, fun y hy => by simpa using hmax (-y) (by simpa using hy)⟩
 
-omit [FiniteDimensional ℝ E] in
 theorem vectorSpan_neg (F : Set E) : vectorSpan ℝ (-F) = (vectorSpan ℝ F).map (-LinearMap.id) := by
   rw [vectorSpan_def, vectorSpan_def, Submodule.map_span]
   congr 1
@@ -56,7 +54,6 @@ theorem vectorSpan_neg (F : Set E) : vectorSpan ℝ (-F) = (vectorSpan ℝ F).ma
   · rintro ⟨a, ha, b, hb, rfl⟩; exact ⟨-a - -b, ⟨-a, by simpa using ha, -b, by simpa using hb, rfl⟩, by abel⟩
   · rintro ⟨w, ⟨a, ha, b, hb, rfl⟩, rfl⟩; exact ⟨-a, by simpa using ha, -b, by simpa using hb, by abel⟩
 
-omit [FiniteDimensional ℝ E] in
 theorem finrank_vectorSpan_neg (F : Set E) :
     Module.finrank ℝ (vectorSpan ℝ (-F)) = Module.finrank ℝ (vectorSpan ℝ F) := by
   rw [vectorSpan_neg]
@@ -68,7 +65,6 @@ theorem heart_of_symm {X : Set E} (hs : -X = X) : IsHeart X := by
   refine ⟨hne.neg, ?_, by rw [finrank_vectorSpan_neg]; exact hdim⟩
   simpa [hs] using isExposed_neg hexp
 
-omit [FiniteDimensional ℝ E] in
 /-- A ridge and its opposite span the same plane through `O`. -/
 theorem span_neg (R : Set E) : Submodule.span ℝ (-R) = Submodule.span ℝ R := by
   apply le_antisymm <;> rw [Submodule.span_le]
