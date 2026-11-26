@@ -79,7 +79,7 @@ theorem sum_le_top {x : Fin n → ℝ} (hx : x ∈ P n) (S : Finset (Fin n)) : �
       _ = top n S.card := by rw [← add_mul, hab, one_mul]
 
 /-- A permutation of the coordinates carrying the first `|S|` positions onto `S`, so the bound is attained. -/
-theorem exists_top (S : Finset (Fin n)) : ∃ y ∈ P n, ∑ i ∈ S, y i = top n S.card := by
+theorem exists_vertex_top (S : Finset (Fin n)) : ∃ π : Equiv.Perm (Fin n), ∑ i ∈ S, (w n ∘ π) i = top n S.card := by
   classical
   set F : Finset (Fin n) := univ.filter fun j : Fin n => (j : ℕ) < S.card
   have hF : F.card = S.card := by
@@ -102,10 +102,14 @@ theorem exists_top (S : Finset (Fin n)) : ∃ y ∈ P n, ∑ i ∈ S, y i = top 
       obtain ⟨i, hi, rfl⟩ := hj
       by_contra h; exact hout _ h (by simpa using hi)
     · simp [hF]
-  refine ⟨w n ∘ τ.symm, subset_convexHull ℝ _ ⟨τ.symm, rfl⟩, ?_⟩
+  refine ⟨τ.symm, ?_⟩
   have := sum_map S τ.symm.toEmbedding (w n)
   simp only [Equiv.toEmbedding_apply] at this
   rw [Function.comp_def]; simp only; rw [← this, hmap, top, TauCeti.prefixSum_def]
+
+theorem exists_top (S : Finset (Fin n)) : ∃ y ∈ P n, ∑ i ∈ S, y i = top n S.card := by
+  obtain ⟨π, h⟩ := exists_vertex_top S
+  exact ⟨w n ∘ π, subset_convexHull ℝ _ ⟨π, rfl⟩, h⟩
 
 /-- The face of `S`: the points of `P n` where the facet inequality of `S` is an equality. -/
 def facet (S : Finset (Fin n)) : Set (Fin n → ℝ) := {x | x ∈ P n ∧ ∑ i ∈ S, x i = top n S.card}

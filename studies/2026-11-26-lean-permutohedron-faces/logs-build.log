@@ -1,0 +1,156 @@
+⚠ [5329/5337] Replayed PermFaces.Facets
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [5330/5337] Ran PermFaces.Facets:irArts
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [5331/5337] Replayed PermFaces.FacetDim
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/FacetDim.lean:34:27: This simp argument is unused:
+  Prod.ext_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dirs, pairL, sumL]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PermFaces/FacetDim.lean:108:51: This simp argument is unused:
+  sum_ite_eq'
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.add_apply, Finset.sum_apply, Pi.smul_apply, Pi.sub_apply, smul_eq_mul, mul_sub, sum_sub_distrib,
+    Pi.single_apply, mul_ite, mul_one, mul_zero, ← sum_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PermFaces/FacetDim.lean:108:64: This simp argument is unused:
+  ← sum_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.add_apply, Finset.sum_apply, Pi.smul_apply, Pi.sub_apply, smul_eq_mul, mul_sub, sum_sub_distrib,
+    Pi.single_apply, mul_ite, mul_one, mul_zero, sum_ite_eq']
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PermFaces/FacetDim.lean:116:6: Unused tactic linter: there are no goals left for `all_goals (split_ifs <;> simp_all)`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: PermFaces/FacetDim.lean:119:6: Unused tactic linter: there are no goals left for `all_goals (split_ifs <;> simp_all)`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: PermFaces/FacetDim.lean:116:16: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: PermFaces/FacetDim.lean:119:16: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: PermFaces/FacetDim.lean:142:57: This simp argument is unused:
+  ← mul_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairL, sumL, Pi.single_apply, sum_add_distrib, sum_ite_eq', hi₀, hj, hi, hj₀]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [5332/5337] Ran PermFaces.FacetDim:irArts
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [5333/5337] Built PermFaces.Flags (946ms)
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Flags.lean:52:21: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: PermFaces/Flags.lean:147:54: This simp argument is unused:
+  vsub_eq_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hlow, Pi.sub_apply, sum_sub_distrib] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PermFaces/Flags.lean:212:57: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: PermFaces/Flags.lean:219:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: PermFaces/Flags.lean:220:44: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: PermFaces/Flags.lean:212:34: This simp argument is unused:
+  sum_ite_eq'
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_apply, Pi.smul_apply, Pi.sub_apply, smul_eq_mul, mul_sub, sum_sub_distrib,
+    Pi.single_apply, mul_ite, mul_one, mul_zero, mem_univ, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PermFaces/Flags.lean:212:47: This simp argument is unused:
+  mem_univ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_apply, Pi.smul_apply, Pi.sub_apply, smul_eq_mul, mul_sub, sum_sub_distrib,
+    Pi.single_apply, mul_ite, mul_one, mul_zero, sum_ite_eq', if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PermFaces/Flags.lean:212:57: This simp argument is unused:
+  if_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_apply, Pi.smul_apply, Pi.sub_apply, smul_eq_mul, mul_sub, sum_sub_distrib,
+    Pi.single_apply, mul_ite, mul_one, mul_zero, sum_ite_eq', mem_univ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: PermFaces/Flags.lean:247:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [5334/5337] Ran PermFaces.Flags:irArts
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [5335/5337] Built PermFaces (625ms)
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [5336/5337] Ran PermFaces:irArts
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: PermFaces/Facets.lean: imports `Mathlib.Analysis.Convex.Exposed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+Build completed successfully (5337 jobs).
