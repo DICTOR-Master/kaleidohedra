@@ -159,3 +159,8 @@ RT, M, I·φ³ (convex hulls), tested whether every face of Y has exactly one co
 corner) clear of X (sampled): **only I in D′** (s = 15/2 − 3√5, the step-2 pits above). No other shell gap holds a full set of pits of
 any family; the Double Vision chain I ⊂ ID ⊂ O ⊂ TI ⊂ H ⊂ RT ⊂ I·φ³ included as far as its shells are in the station data (its
 octahedron O is not in that file: not tested).
+**Double Vision's O rebuilt and stored (26 Nov, DICTO "rebuild octahedron shell and store data"; scripts/rebuild_O.py, FINAL ok):** the
+Ogdoecontahedron O (80 faces; polar of H) at its Double Vision station, exact in Q(√5): O = c · poles(H), **c = (9 + 3√5)/8 = 3φ²/4**
+(the middle toggle), matching the stored render copy (progenitors data/full-cycle.json st.O) at every corner, frames shared through
+the ID. Stored as data-double-vision-O.json (corners a + b√5). Gap test with O against every station, both ways: **no pair holds a
+full set of pits.** So in the golden cycle and Double Vision together, only I in D′ (step 2, s = 15/2 − 3√5) does.
