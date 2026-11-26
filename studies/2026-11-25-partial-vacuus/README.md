@@ -141,3 +141,16 @@ D′) are pits of the build-out family of the dodecahedron D′ exactly: every a
 size + 30 valley tetrahedra. It is not a special size (not chain stage 3, 5 − 2√5): a member of DICTO's family, not one of the
 stellation points. The other steps' added pieces are outward (Shields, pyramids over faces): no other inward pits in the cycle.
 Double Vision: not yet tested.
+
+## Prior art, stellations of the cores (searched 26 Nov; search pages and summaries, papers not opened)
+- Rhombic triacontahedron: Ede (1958, 13 basic series); **Messer (1995), all 226 fully supported stellations named** (MathWorld
+  "Rhombic Triacontahedron Stellations"; G. Hart, "Stellations of the Rhombic Triacontahedron"); Pawley (restrictions for a complete
+  enumeration); Gingrich (Miller's-rules counts 358 833 097 / 155 014 690); R. Webb (Great Stella reproduces Messer's 227; software3d.com).
+  The self-similar excavation of the RT (depth 3 − √5, core 1/φ) is a stellation of the RT, so it is almost certainly one of Messer's
+  226: to be identified by its cells and credited (LEAD 7).
+- Archimedean duals (triakis icosahedron, pentakis dodecahedron, deltoidal hexecontahedron): stellations enumerated in part by
+  R. Webb (MathWorld "Archimedean Dual Stellations", from Webb's tables); Wenninger, Dual Models (1983). The three cores' excavations
+  are stellations of these: likely in those enumerations as shapes; to identify and credit.
+- What remains ours (DICTO): reaching them from the Vacuus by building out the core; the special sizes as the only points of each
+  family where the excavation is a stellation; their exact depths (all quadratic; golden 1/φ³, 2/φ² and silver 3/δ² forms); the census
+  over the whole Vacuus catalogue and McCooey's self-duals; the golden cycle's step-2 pits as a family member (15/2 − 3√5).
