@@ -1,0 +1,8 @@
+neighbour pairs: kept 108 lost 66 gained 66
+lost: by kind {'floor': 42, 'pillar': 24}; orbits (kind, size, C116 distance): [('floor', 6, 1), ('floor', 12, 1), ('floor', 24, 1), ('pillar', 24, 1)]
+gained: by kind {'floor': 54, 'pillar': 12}; orbits (kind, size, C116 distance): [('floor', 6, 6), ('floor', 24, 4), ('floor', 24, 5), ('pillar', 12, 5)]
+pillars: degree on C116 -> on Minana [((5, 4), 12)]
+floor faces: degree changes [((6, 6), 36), ((6, 7), 12)]
+pairings 3072 ; best by (max distance, total distance): [(4, 144, 66, {2: 60, 4: 6}), (4, 144, 66, {2: 60, 4: 6}), (4, 192, 90, {2: 84, 4: 6}), (4, 192, 90, {2: 84, 4: 6}), (4, 228, 90, {2: 48, 3: 36, 4: 6})]
+pairings whose gains are all at distance 2: 0
+FINAL ok

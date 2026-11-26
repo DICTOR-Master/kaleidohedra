@@ -218,3 +218,15 @@ its pentagons' sites, an exact T_h embedding, then the cell inside Minana.
   own checks (logs/c116_minana_6-5.log). So C116 -> Minana is too far apart for one layer of Scutoid-Frusta built this way; it needs
   either a different construction (e.g. several Y vertices per change, or an intermediate layer) or a die/core pair closer in
   neighbours. Measure for DICTO's idea (other Aequi, other symmetries): neighbour pairs kept by the best equivariant pairing.
+
+## Pillars and floors (26 Nov 2026; DICTO: pentagon->square pieces as pillars, the other faces change floor by floor; "long and short changes"; "divided face changes too, if necessary")
+scripts/c116_pillars.py, c116_stages.py, c116_diag.py; logs/c116_pillars.log, c116_stages_local.log, c116_diag.log.
+- Pillars: all 12 go 5 neighbours -> 4. Of the 66 lost pairs 24 touch a pillar, 42 are floor-only; of the 66 gained, 12 / 54.
+- Pairing matters: the most-neighbours pairing gains pairs 4-6 steps apart (not local). Over all 3072 T_h-equivariant pairings, the best
+  by distance gains **60 pairs at distance 2 (short: one swap each) and 6 at distance 4 (long)** (data/c116/pairing_local.json).
+- Floors as T_h-symmetric rounds of swaps (dual edge flips): floor 1 = 24 independent swaps, 108 -> 132 of 174. Then stuck:
+  36 of the 42 missing pairs are one swap away but that swap would break a pair already right (needs undo-and-redo), and the 6 long
+  ones need several swaps. Allowing any edge to swap, the T_h-symmetric states run out within 6 rounds (beam 400): no fully
+  symmetric floor sequence found beyond 132.
+- Open choices for DICTO: let middle floors keep less symmetry (only start and end T_h), or divided faces (a piece branches) at the
+  6 long changes and the 36 locked ones.

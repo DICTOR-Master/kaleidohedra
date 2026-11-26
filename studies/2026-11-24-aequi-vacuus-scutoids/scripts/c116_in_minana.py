@@ -181,13 +181,14 @@ def equivariant_choices(o, mo_):
             else:
                 if len(set(sig.values())) == len(o): out.append(sig)
     return out
-bestA = None
+bestA = None; ALL = []
 for h7, h6 in (c12h, c12h[::-1]):
     ch = [equivariant_choices(c12p, m4), equivariant_choices(h7, m7), equivariant_choices(h6, m6), equivariant_choices(c24, m24)]
     for combo in itertools.product(*ch):
         sig = {}
         for d_ in combo: sig.update(d_)
         keep = sum(1 for e in cadj if frozenset(sig[x] for x in e) in madj)
+        ALL.append(dict(sig))
         if bestA is None or keep > bestA[0]: bestA = (keep, sig)
 pr(f"choices per orbit {[len(c) for c in ch]}; best equivariant pairing keeps {bestA[0]} of 174 neighbour pairs (nearest-direction pairing kept "
    f"{sum(1 for e in cadj if frozenset(best[1][x] for x in e) in madj)})")
@@ -195,6 +196,13 @@ ASSIGN = bestA[1] if os.environ.get('PAIR', 'adjacency') == 'adjacency' else bes
 ang = [np.degrees(np.arccos(np.clip(cdir[k] @ mdir[t], -1, 1))) for k, t in ASSIGN.items()]
 pr(f"PAIRING: bijection core face -> Minana face (pentagon->square, hexagon->heptagon/hexagon, 24->24); angle between paired normals max {max(ang):.2f} deg, mean {np.mean(ang):.2f} deg")
 
+if os.environ.get('DUMP_PAIRING'):   # for c116_stages.py: faces, automorphisms on faces, matrices, pairing, Minana faces, realisation
+    import json
+    json.dump(dict(faces=faces, gface=gface, S=[Sg.tolist() for Sg in S], assign={str(k): int(v) for k, v in ASSIGN.items()},
+                   minana_faces=[list(map(int, vs)) for vs, kk in Dm["faces"]], P=P.tolist()),
+              open(os.path.join(HERE, '../data/c116/pairing.json'), 'w'))
+    json.dump([{str(k): int(v) for k, v in s_.items()} for s_ in ALL], open(os.path.join(HERE, '../data/c116/pairings_all.json'), 'w'))
+    pr("pairing dumped to data/c116/pairing.json"); sys.exit(0)
 # ---- 4. the cell ----
 H1 = [(u, c) for (u, c) in MP]
 def shell(lat, s): return [(u, s * c) for (u, c) in H1]
