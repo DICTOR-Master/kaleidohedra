@@ -632,9 +632,12 @@ def main():
     fid = {frozenset(f): i for i, (f, k) in enumerate(faces)}
     def gface(g, fi): return fid[frozenset(keyv[key(act(g, V[i]))] for i in faces[fi][0])]
     orbits, done = [], set()
-    for fi in range(NF):
-        if fi in done: continue
-        orb = sorted({gface(g, fi) for g in T12}); done |= set(orb); orbits.append(orb)
+    try:
+        for fi in range(NF):
+            if fi in done: continue
+            orb = sorted({gface(g, fi) for g in T12}); done |= set(orb); orbits.append(orb)
+    except KeyError:   # 26 Nov: a core without exact T_h symmetry (C116 floors): each piece its own orbit
+        orbits = [[fi] for fi in range(NF)]; pr("core not exactly T_h-symmetric: pieces compared one by one")
     def nrm(t): return cross(vsub(X[t[1]], X[t[0]]), vsub(X[t[2]], X[t[0]]))
     lam_any = False; recs = []; geom = []
     for pc in pieces:

@@ -239,3 +239,20 @@ So C116 turns into Minana's face pattern with swaps only (no divided faces neede
 (The earlier whole-shell searches, beam and divided faces, never got past 132/168; stopped.) Still to do: confirm the final triangle
 set equals Minana's exactly (edge sets agree), group the site sequence's swaps into floors of non-touching swaps, then realise each
 floor as a convex T_h solid and build the Scutoid-Frusta layers (pillars = the 12 pentagon->square pieces).
+
+## The C116 -> Minana #377 shell, built (26 Nov 2026, night; scripts/c116_floors.py, c116_layers.py; logs/c116_floors.log, c116_layer1-3.log)
+- Path: 90 swaps (the floor-1 orbit + the 11-swap site sequence copied to the 6 sites, cut where Minana is first reached); final corners
+  equal Minana's EXACTLY. Grouped by dependency into **3 floors** of non-touching swaps: 36, 24, 30. Fully symmetric floor schedules
+  were tried (step-by-step across sites, whole-orbit scheduler) and stall: the sites must take turns; the two middle floors keep 3 of
+  the 24 symmetries (a three-fold turn), the start (C116) and the end (Minana) all 24.
+- Each floor realised as an EXACT convex solid with 60 faces (canonical iteration, rational planes, every corner strictly inside every
+  non-incident plane), turned (mirror allowed) so face k points along its Minana face: paired directions within 31 / 26 / 22 deg.
+- **Three layers of Scutoid-Frusta, each a valid exact cell** (amber method with ASSIGN = same face label; manifold, embedded,
+  cancelling walls, volume gap exactly 0; FINAL ok):
+  layer 1 C116 -> floor 1: 60 pieces, 36 Y vertices, 48 change side count, 12 keep;
+  layer 2 floor 1 -> floor 2: 60 pieces, 24 Y vertices, 24 change, 36 keep;
+  layer 3 floor 2 -> Minana: 60 pieces, 30 Y vertices, 48 change, 12 keep.
+  The layers nest exactly: the mould of layer L is floor L's planes scaled by its factor, the core of layer L+1 the same planes unscaled,
+  so layer L+1 scaled by that factor sits on layer L with no gap.
+- Not yet: renders; checking that the 12 pentagon->square pieces line up as continuous pillars through all three layers; the
+  amber analysis assumed T_h orbits (it now falls back to one-by-one when the core is not exactly symmetric).
