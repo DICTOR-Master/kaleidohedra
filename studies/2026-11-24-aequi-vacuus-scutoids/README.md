@@ -230,3 +230,12 @@ scripts/c116_pillars.py, c116_stages.py, c116_diag.py; logs/c116_pillars.log, c1
   symmetric floor sequence found beyond 132.
 - Open choices for DICTO: let middle floors keep less symmetry (only start and end T_h), or divided faces (a piece branches) at the
   6 long changes and the 36 locked ones.
+
+## C116 -> Minana #377 REACHED by sectoring (26 Nov 2026; DICTO: "sector the study so it is only having to solve a part which can be multiplied")
+scripts/c116_longsite.py, logs/c116_longsite.log, data/c116/longsite.json. Floor 1: 24 independent symmetric swaps (108 -> 132/174).
+Then ONE long-change site (faces 1 and 43, 4 steps apart, 26-face neighbourhood) solved locally by a guided beam: a sequence of 11
+swaps. Applied at all T_h images of the site, in order: the result is T_h-symmetric and has **all 174 of Minana's neighbour pairs**.
+So C116 turns into Minana's face pattern with swaps only (no divided faces needed): 24 + the copies of the 11-swap site sequence.
+(The earlier whole-shell searches, beam and divided faces, never got past 132/168; stopped.) Still to do: confirm the final triangle
+set equals Minana's exactly (edge sets agree), group the site sequence's swaps into floors of non-touching swaps, then realise each
+floor as a convex T_h solid and build the Scutoid-Frusta layers (pillars = the 12 pentagon->square pieces).

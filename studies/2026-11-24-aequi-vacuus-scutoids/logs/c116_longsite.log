@@ -1,0 +1,28 @@
+triangles 116 116 edges 174 174 shared 108
+depth 1: best score 132 / 174 (overall 132), states 3
+PROGRESS 1.000
+after floor 1: missing 42 ; long ones (distance > 2): [([1, 43], 4), ([4, 50], 4), ([8, 40], 4), ([12, 53], 4), ([16, 37], 4), ([20, 56], 4)]
+site [1, 43] neighbourhood faces 26
+local depth 1: best (gap, -local pairs) (3, -42), candidates 59
+PROGRESS 0.083
+local depth 2: best (gap, -local pairs) (2, -42), candidates 1793
+PROGRESS 0.167
+local depth 3: best (gap, -local pairs) (2, -43), candidates 37329
+PROGRESS 0.250
+local depth 4: best (gap, -local pairs) (2, -44), candidates 86902
+PROGRESS 0.333
+local depth 5: best (gap, -local pairs) (1, -45), candidates 79377
+PROGRESS 0.417
+local depth 6: best (gap, -local pairs) (1, -45), candidates 106738
+PROGRESS 0.500
+local depth 7: best (gap, -local pairs) (1, -46), candidates 92328
+PROGRESS 0.583
+local depth 8: best (gap, -local pairs) (1, -47), candidates 80118
+PROGRESS 0.667
+local depth 9: best (gap, -local pairs) (1, -47), candidates 112611
+PROGRESS 0.750
+local depth 10: best (gap, -local pairs) (1, -48), candidates 96305
+PROGRESS 0.833
+local solution (swaps only): [('swap', (2, 24)), ('swap', (34, 44)), ('swap', (24, 35)), ('swap', (35, 44)), ('swap', (35, 36)), ('swap', (43, 45)), ('swap', (42, 43)), ('swap', (36, 44)), ('swap', (1, 25)), ('swap', (1, 23)), ('swap', (24, 36))]
+multiplied by T_h: symmetric True; Minana pairs 174 / 174 (was 132)
+FINAL ok

@@ -1,0 +1,10 @@
+name = "PermFaces"
+defaultTargets = ["PermFaces"]
+
+[[require]]
+name = "TauCeti"
+git = "https://github.com/TauCetiProject/TauCeti"
+rev = "6d810e58e90dc1a8f89e5cb6056ee36c26da67d3"
+
+[[lean_lib]]
+name = "PermFaces"
