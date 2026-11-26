@@ -239,8 +239,77 @@
     });
     return best;
   }
+
+  // ---- Fixed numbering of every set of kinds (DICTO 26 Nov 2026: "a gnomon that knows"; no precount) ----
+  // The catalogue keeps Nos. 1-10725. Every other set of 2+ kinds gets a fixed number: block of its group (groups in the frozen order
+  // below, each block 2^k - k - 1 sets for the k kinds offered on 26 Nov 2026), then the rank of its ticked kinds (bits) in the block.
+  // A set is first raised to the largest group in which it is a union of orbits, then turned/mirrored to its smallest form.
+  var FROZEN = ['Ih', 'Oh', 'O', 'Td', 'Th', 'T', 'D6h', 'D4h', 'D3h', 'D3d', 'C4h', 'D2d', 'D2h', 'D4', 'D3', 'S6', 'C2h', 'S4', 'D2'];
+  var GORDER = { Ih: 120, Oh: 48, O: 24, Td: 24, Th: 24, T: 12, D6h: 24, D4h: 16, D3h: 12, D3d: 12, C4h: 8, D2d: 8, D2h: 8, D4: 8, D3: 6, S6: 6, C2h: 4, S4: 4, D2: 4 };
+  var CATALOGUE_LAST = 10725;
+  function blockSize(k) { return Math.pow(2, k) - k - 1; }
+  function rankInBlock(bits, k) {   // bits: sorted kind indices (2+); rank 0.. among masks with 2+ bits, by mask value
+    var mask = 0; bits.forEach(function (b) { mask += Math.pow(2, b); });
+    var below = 1; for (var p = 0; p < k; p++) if (Math.pow(2, p) < mask) below++;   // masks < mask with 0 or 1 bit
+    return mask - below;
+  }
+  function asOrbits(data, g, dirsets) {   // dir sets -> orbit indices of g, or null
+    var orbs = data.groups[g], out = [];
+    for (var i = 0; i < dirsets.length; i++) {
+      var key = dirsets[i].slice().sort(function (a, b) { return a - b; }).join(','), hit = -1;
+      for (var j = 0; j < orbs.length; j++) if (orbs[j].dirs.slice().sort(function (a, b) { return a - b; }).join(',') === key) { hit = j; break; }
+      if (hit < 0) return null; out.push(hit);
+    }
+    return out;
+  }
+  function unionAsOrbits(data, g, dirs) {   // is the direction set a union of whole orbits of g? -> orbit indices, else null
+    var s = {}; dirs.forEach(function (d) { s[d] = 1; }); var out = [], cov = 0;
+    for (var j = 0; j < data.groups[g].length; j++) {
+      var o = data.groups[g][j], c = o.dirs.filter(function (d) { return s[d]; }).length;
+      if (c === o.dirs.length) { out.push(j); cov += c; } else if (c) return null;
+    }
+    return cov === dirs.length ? out : null;
+  }
+  function dieNumber(data, g, ticked) {
+    var r = lookup(data, g, ticked); if (r) return { n: r.die.k + 1, g: r.die.g, catalogued: true, die: r.die };   // catalogue number (prepare sets k = No. - 1)
+    var dirs = [].concat.apply([], ticked.map(function (oi) { return data.groups[g][oi].dirs; }));
+    var best = g, bestOrb = ticked;
+    FROZEN.forEach(function (g2) {
+      if (!data.groups[g2] || !data.groups[g2].length || GORDER[g2] <= GORDER[best]) return;
+      var o = unionAsOrbits(data, g2, dirs); if (o && o.length >= 2) { best = g2; bestOrb = o; }
+    });
+    var k = data.groups[best].length, min = null;
+    data.T.forEach(function (t) {
+      var o = asOrbits(data, best, bestOrb.map(function (oi) { return data.groups[best][oi].dirs.map(function (d) { return t.p[d]; }); }));
+      if (!o) return; o.sort(function (a, b) { return a - b; });
+      var rk = rankInBlock(o, k); if (min === null || rk < min) min = rk;
+    });
+    var off = CATALOGUE_LAST; for (var i = 0; i < FROZEN.length && FROZEN[i] !== best; i++) off += blockSize(data.groups[FROZEN[i]] ? data.groups[FROZEN[i]].length : 0);
+    return { n: off + 1 + min, g: best, catalogued: false };
+  }
+  // Names: the approved goroawase rule (study 2026-11-24-aequi-numberings), hyphen after two syllables for 4+ (DICTO 25 Nov);
+  // poem groups by length (DICTO 26 Nov): Kamigo 5, Nakashichi 7, Shimo-no-ku 14 (7-7), Haiku 16 digits + final n (5-7-5).
+  var READ = { 0: ['o', 're', 'maru'], 1: ['i', 'hi'], 2: ['ni', 'fu'], 3: ['mi', 'sa'], 4: ['yo', 'shi'], 5: ['go', 'ko'], 6: ['mu', 'ro'], 7: ['na'], 8: ['ya', 'ha'], 9: ['ku'] };
+  function syllables(n) {
+    var out = []; String(n).split('').forEach(function (ch) { var rs = READ[+ch], x = rs[0]; if (out.length && x === out[out.length - 1] && rs.length > 1) x = rs[1]; out.push(x); });
+    return out;
+  }
+  function cap(w) { return w.charAt(0).toUpperCase() + w.slice(1); }
+  function dieName(n) {
+    var sy = syllables(n), w = sy.slice(0, 2).join('') + (sy.length >= 4 ? '-' : '') + sy.slice(2).join('');
+    return cap(w) + ' #' + n;
+  }
+  function poem(n) {
+    var sy = syllables(n), L = sy.length;
+    function line(a, b) { return cap(sy.slice(a, b).join('')); }
+    if (L === 5) return { form: 'Kamigo', lines: [line(0, 5)] };
+    if (L === 7) return { form: 'Nakashichi', lines: [line(0, 7)] };
+    if (L === 14) return { form: 'Shimo-no-ku', lines: [line(0, 7), line(7, 14)] };
+    if (L === 16) { sy.push('n'); return { form: 'Haiku', lines: [line(0, 5), line(5, 12), line(12, 17)] }; }
+    return null;
+  }
   var api = { singleOrbit: singleOrbit, ORDER: ORDER, buildSolid: buildSolid, fairSolve: fairSolve, faceSolidAngle: faceSolidAngle, triSolidAngle: triSolidAngle,
     vacuusPlates: vacuusPlates, resonusPlates: resonusPlates, isMirror: isMirror, planesFor: planesFor, prepare: prepare, lookup: lookup,
-    inverse: inverse, dot: dot, cross: cross };
+    inverse: inverse, dot: dot, cross: cross, dieNumber: dieNumber, dieName: dieName, poem: poem, syllables: syllables, blockSize: blockSize, FROZEN: FROZEN };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.AequiGeom = api;
 })(this);

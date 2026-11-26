@@ -517,10 +517,14 @@ function updatePick() {
       var fs = G.fairSolve(planes, t.length);   // solve for the fair die here (Theorem A: at most one)
       if (fs.ok) {
         planes = fs.P;
-        html += '<div class="msg">Fair die computed here: not in the catalogue and not certified. Depths ' +
+        var num = G.dieNumber(data, st.g, t), pm = G.poem(num.n);
+        html += '<div class="msg"><b>' + esc(G.dieName(num.n)) + '</b>' + (num.g !== st.g ? ' (its full symmetry is ' + num.g + ')' : '') +
+          (pm ? ' · ' + esc(pm.form) + ': <i>' + pm.lines.map(esc).join(' / ') + '</i>' : '') +
+          '<br>One of ours by the numbering rule (every set of kinds has its fixed number); computed here, not yet certified. Depths ' +
           fs.depths.map(function (d) { return d.toFixed(9); }).join(' : ') + '; every face within ' + fs.err.toExponential(0) + ' of 4π/' + planes.length + '.</div>';
       } else {
-        html += '<div class="msg">These faces cannot make a fair die: as the depths are adjusted, one kind of face disappears before the chances can be made equal.</div>';
+        var num0 = G.dieNumber(data, st.g, t);
+        html += '<div class="msg">No. ' + num0.n + ': these faces cannot make a fair die: as the depths are adjusted, one kind of face disappears before the chances can be made equal.</div>';
       }
     }
   }
