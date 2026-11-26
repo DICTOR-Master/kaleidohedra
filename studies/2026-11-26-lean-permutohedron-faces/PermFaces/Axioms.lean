@@ -12,3 +12,12 @@ import PermFaces
 #print axioms PermFaces.card_plateSet
 #print axioms PermFaces.plates_three
 #print axioms PermFaces.plates_eight
+#print axioms PermFaces.dirs_eq_iff
+#print axioms PermFaces.card_resonusSet
+#print axioms PermFaces.resonus_eight
+#print axioms PermFaces.resonus_parallel
+#print axioms PermFaces.dirs_eq_plate_iff
+#print axioms PermFaces.card_resonus_inter_plate
+#print axioms PermFaces.card_resonus_diff_plate
+#print axioms PermFaces.resonusSet_subset_plateSet_of_odd
+#print axioms PermFaces.card_resonus_diff_plate_even

@@ -40,7 +40,14 @@ Facets m = 2 (n - 2), ridges m = 3 (n - 3), corners m = n.
 * card_plateSet: the closed formula of A402191 for every n >= 3; plates_three .. plates_eight: 3, 15, 65, 225, 770, 2443
   (kernel evaluation of the formula; no native_decide).
 * Axioms: propext, Classical.choice, Quot.sound only. Proof drafted by a Fable subagent, rebuilt and checked independently.
-Next: the Resonus planes 2^(n-1) - 1 (if wanted in the entry); then assemble the new Palomar entry (steps 3-6).
+## Step 7: DONE 27 Nov (Resonus.lean): the Resonus of the permutohedron (#120 Theorem 5 part)
+* dirs_eq_plateOf, dirs_eq_iff / vectorSpan_facet_eq_iff: parallel facets S, S' share one plane iff S' = S or S' = complement.
+* card_resonusSet: 2^(n-1) - 1 Resonus planes (all n); resonus_three .. resonus_eight: 3, 7, 15, 31, 63, 127.
+* resonus_parallel: each Resonus plane is the direction space of a facet (the facet lies in a translate), finrank n - 2.
+* dirs_eq_plate_iff: a Resonus plane equals a Vacuus plate iff the ridge has a = c and S is its middle block or the complement;
+  card_resonus_inter_plate = #middles; n odd: every Resonus plane is a Vacuus plate; n even: exactly 2^(n-2) are not (|S| odd).
+* Axioms: propext, Classical.choice, Quot.sound only. Drafted by a Fable subagent, rebuilt and checked independently.
+Next: assemble the new Palomar entry (steps 3-7).
 
 ## (old) Next: step 4 (#120 Theorem 3 (i) on the real ridge)
 span of the centred ridge (m = 3) = permPlate B1 B2 B3 (the old span_permFlat, now with the facet equations PROVED, not assumed).

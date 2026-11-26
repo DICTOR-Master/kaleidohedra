@@ -5,3 +5,4 @@ import PermFaces.RidgePlate
 import PermFaces.PlateEq
 import PermFaces.Coincide
 import PermFaces.Count
+import PermFaces.Resonus
