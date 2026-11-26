@@ -195,3 +195,9 @@ own planes at 6/5 s0, centroid seeds (scripts/pentakis_in_minana.py, logs/pentak
 one-to-one pairing of core faces with Minana's faces exists; the outer ends are cells on Minana's surface, not its faces. The same holds
 for every icosahedral 60-face core (a 60-face orbit of I_h always splits 12 + 24 + 24 under T_h). Next (DICTO: "c116 should do"): a
 fullerene C116 (12 pentagons + 48 hexagons) with T_h symmetry, if one exists (fullgen enumeration; waiting on permission to run it).
+
+## C116 with T_h symmetry (26 Nov 2026; DICTO: "yes run fullgen for c116")
+fullgen (G. Brinkmann and A. Dress; plantri 5.8 release, B. McKay's site, Apache 2.0), complete enumeration. Control: C60 gives
+1812 isomers, 1 Ih (known). C116: 1,207,119 isomers; symmetry counts in logs/c116_fullgen.log; **exactly one has T_h** (planar code
+in data/c116/Full_codes_116_Th). Next: its face orbits under T_h (must be 12 + 12 + 12 + 24 to pair one-to-one with Minana's faces),
+its pentagons' sites, an exact T_h embedding, then the cell inside Minana.
