@@ -4,3 +4,4 @@ import PermFaces
 #print axioms PermFaces.span_centred_ridge
 #print axioms PermFaces.plate_eq_of_ne
 #print axioms PermFaces.middle_of_plate_eq
+#print axioms PermFaces.plate_eq_iff

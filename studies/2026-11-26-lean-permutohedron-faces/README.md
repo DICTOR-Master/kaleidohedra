@@ -30,6 +30,8 @@ Facets m = 2 (n - 2), ridges m = 3 (n - 3), corners m = n.
   weights v = l u + m with l != 0; the second ridge is a relabelling pi of the first; of the six relabellings, identity and
   reversal remain, the other four force 2ab = 0 or 2bc = 0.
 * middle_of_plate_eq (a = c): the second ridge has the same middle block or its complement (and its outer blocks are equal too).
+* plate_eq_iff (27 Nov): the complete characterisation, both directions (converse via wt_rev and plateOf_affine: affinely related
+  weights give the same plate).
 * Axioms: propext, Classical.choice, Quot.sound only (logs-axioms.log).
 Next (step 6): the count of distinct plates (A402191) and the Resonus planes 2^(n-1) - 1; then assemble the new entry.
 

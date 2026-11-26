@@ -15,6 +15,7 @@ A ridge is an ordered partition `key : Fin n → Fin 3` into nonempty blocks `B�
 * `plate_eq_of_ne` (**#120 Theorem 3 (ii), a ≠ c**): two ridges share a plate only if the second is the first or the first
   read backwards. Of the six relabellings of the blocks, the other four force `2ab = 0` or `2bc = 0`.
 * `middle_of_plate_eq` (**#120 Theorem 3 (ii), a = c**): the second ridge has the same middle block or its complement.
+* `plate_eq_iff`: the complete characterisation (both directions).
 -/
 
 open Finset
@@ -218,6 +219,17 @@ theorem wt_two_level {key : Fin n → Fin 3} (hac : sz key 0 = sz key 2) (i : Fi
   · rw [(wt_of key i).2.1 hi, if_pos hi]
   · rw [(wt_of key i).2.2 hi, if_neg (by rw [hi]; decide), hac]; ring
 
+/-- If the first ridge has outer blocks of equal size, so has any ridge with the same plate. -/
+theorem outer_eq_of_plate_eq {key key' : Fin n → Fin 3} (hk : Function.Surjective key) (hk' : Function.Surjective key')
+    (hac : sz key 0 = sz key 2)
+    (h : VacuusResonus.permPlate (block key 0) (block key 1) (block key 2) =
+      VacuusResonus.permPlate (block key' 0) (block key' 1) (block key' 2)) : sz key' 0 = sz key' 2 := by
+  have r0 : Fin.rev (0 : Fin 3) = 2 := rfl; have r2 : Fin.rev (2 : Fin 3) = 0 := rfl
+  by_contra hne
+  rcases plate_eq_of_ne hk' hk hne h.symm with e | e
+  · rw [e] at hac; exact hne hac
+  · apply hne; have h2 := hac; rw [e, sz_rev, sz_rev, r0, r2] at h2; exact h2.symm
+
 /-- **#120 Theorem 3 (ii), outer blocks of equal size.** Two ridges share a plate only if the second has the same middle
 block as the first, or its complement. (Its outer blocks are then of equal size too, by `plate_eq_of_ne`.) -/
 theorem middle_of_plate_eq {key key' : Fin n → Fin 3} (hk : Function.Surjective key) (hk' : Function.Surjective key')
@@ -225,12 +237,7 @@ theorem middle_of_plate_eq {key key' : Fin n → Fin 3} (hk : Function.Surjectiv
     (h : VacuusResonus.permPlate (block key 0) (block key 1) (block key 2) =
       VacuusResonus.permPlate (block key' 0) (block key' 1) (block key' 2)) :
     block key' 1 = block key 1 ∨ block key' 1 = (block key 1)ᶜ := by
-  have r0 : Fin.rev (0 : Fin 3) = 2 := rfl; have r2 : Fin.rev (2 : Fin 3) = 0 := rfl
-  have hac' : sz key' 0 = sz key' 2 := by
-    by_contra hne
-    rcases plate_eq_of_ne hk' hk hne h.symm with e | e
-    · rw [e] at hac; exact hne hac
-    · apply hne; have h2 := hac; rw [e, sz_rev, sz_rev, r0, r2] at h2; exact h2.symm
+  have hac' := outer_eq_of_plate_eq hk hk' hac h
   obtain ⟨l, m, hlm⟩ := affine_of_plate_eq h
   have hl := l_ne_zero hk' hlm
   have hX := mul_pos (sz_pos hk 2) (add_pos (sz_pos hk 0) (sz_pos hk 1))
@@ -250,5 +257,62 @@ theorem middle_of_plate_eq {key key' : Fin n → Fin 3} (hk : Function.Surjectiv
     by_cases a : key i = 1 <;> by_cases b : key' i = 1 <;>
       simp only [a, b, ↓reduceIte, iff_self, not_true_eq_false, not_false_eq_true] at ei ⊢ <;>
       first | (exfalso; linarith) | (exfalso; exact hlX (by linarith))
+
+/-- Affinely related weights (factor not zero) give the same plate. -/
+theorem plateOf_affine {u v : Fin n → ℝ} {l m : ℝ} (hl : l ≠ 0) (h : ∀ i, v i = l * u i + m) :
+    VacuusResonus.plateOf v = VacuusResonus.plateOf u := by
+  ext y
+  simp only [VacuusResonus.plateOf, Submodule.mem_inf, LinearMap.mem_ker, VacuusResonus.dotL, LinearMap.coe_mk,
+    AddHom.coe_mk, one_mul]
+  have e : ∑ i, v i * y i = l * ∑ i, u i * y i + m * ∑ i, y i := by
+    simp only [h, add_mul, sum_add_distrib, mul_sum, mul_assoc]
+  rw [e]
+  constructor
+  · rintro ⟨h1, h2⟩; refine ⟨h1, ?_⟩; rw [h1, mul_zero, add_zero] at h2; exact (mul_eq_zero.1 h2).resolve_left hl
+  · rintro ⟨h1, h2⟩; exact ⟨h1, by rw [h1, h2]; ring⟩
+
+theorem permPlate_eq_plateOf_wt (key : Fin n → Fin 3) :
+    VacuusResonus.permPlate (block key 0) (block key 1) (block key 2) = VacuusResonus.plateOf (wt key) := by
+  ext y; exact mem_permPlate_iff
+
+/-- **#120 Theorem 3 (ii), complete.** Two ridges (ordered partitions into three nonempty blocks) have the same Vacuus plate
+exactly when: the outer blocks differ in size and the second ridge is the first or the first read backwards; or both ridges
+have outer blocks of equal size and the same middle block or complementary middle blocks. -/
+theorem plate_eq_iff {key key' : Fin n → Fin 3} (hk : Function.Surjective key) (hk' : Function.Surjective key') :
+    VacuusResonus.permPlate (block key 0) (block key 1) (block key 2) =
+        VacuusResonus.permPlate (block key' 0) (block key' 1) (block key' 2) ↔
+      (sz key 0 ≠ sz key 2 ∧ (key' = key ∨ key' = Fin.rev ∘ key)) ∨
+      (sz key 0 = sz key 2 ∧ sz key' 0 = sz key' 2 ∧
+        (block key' 1 = block key 1 ∨ block key' 1 = (block key 1)ᶜ)) := by
+  constructor
+  · intro h
+    by_cases hac : sz key 0 = sz key 2
+    · exact Or.inr ⟨hac, outer_eq_of_plate_eq hk hk' hac h, middle_of_plate_eq hk hk' hac h⟩
+    · exact Or.inl ⟨hac, plate_eq_of_ne hk hk' hac h⟩
+  · rintro (⟨-, rfl | rfl⟩ | ⟨hac, hac', hB | hB⟩)
+    · rfl
+    · rw [permPlate_eq_plateOf_wt, permPlate_eq_plateOf_wt, wt_rev]
+    · rw [permPlate_eq_plateOf_wt, permPlate_eq_plateOf_wt]
+      have hX := mul_pos (sz_pos hk 2) (add_pos (sz_pos hk 0) (sz_pos hk 1))
+      have hX' := mul_pos (sz_pos hk' 2) (add_pos (sz_pos hk' 0) (sz_pos hk' 1))
+      have hmem : ∀ i, key' i = 1 ↔ key i = 1 := fun i => by
+        have := Finset.ext_iff.1 hB i; simpa [block] using this
+      refine (plateOf_affine (l := sz key' 2 * (sz key' 0 + sz key' 1) / (sz key 2 * (sz key 0 + sz key 1))) (m := 0)
+        (div_ne_zero hX'.ne' hX.ne') fun i => ?_).symm
+      rw [wt_two_level hac' i, wt_two_level hac i]
+      by_cases hi : key i = 1
+      · rw [if_pos ((hmem i).2 hi), if_pos hi]; ring
+      · rw [if_neg (fun h' => hi ((hmem i).1 h')), if_neg hi, div_mul_cancel₀ _ hX.ne', add_zero]
+    · rw [permPlate_eq_plateOf_wt, permPlate_eq_plateOf_wt]
+      have hX := mul_pos (sz_pos hk 2) (add_pos (sz_pos hk 0) (sz_pos hk 1))
+      have hX' := mul_pos (sz_pos hk' 2) (add_pos (sz_pos hk' 0) (sz_pos hk' 1))
+      have hmem : ∀ i, key' i = 1 ↔ ¬ key i = 1 := fun i => by
+        have := Finset.ext_iff.1 hB i; simpa [block] using this
+      refine (plateOf_affine (l := -(sz key' 2 * (sz key' 0 + sz key' 1) / (sz key 2 * (sz key 0 + sz key 1))))
+        (m := sz key' 2 * (sz key' 0 + sz key' 1)) (neg_ne_zero.2 (div_ne_zero hX'.ne' hX.ne')) fun i => ?_).symm
+      rw [wt_two_level hac' i, wt_two_level hac i]
+      by_cases hi : key i = 1
+      · rw [if_neg (fun h' => (hmem i).1 h' hi), if_pos hi]; ring
+      · rw [if_pos ((hmem i).2 hi), if_neg hi, neg_mul, div_mul_cancel₀ _ hX.ne']; ring
 
 end PermFaces
