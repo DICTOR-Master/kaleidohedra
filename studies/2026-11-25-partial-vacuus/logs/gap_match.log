@@ -1,11 +1,11 @@
 Traceback (most recent call last):
-  File "/home/dicto/k-research/studies/2026-11-25-partial-vacuus/scripts/gap_match.py", line 44, in <module>
+  File "studies/2026-11-25-partial-vacuus/scripts/gap_match.py", line 44, in <module>
     T, vol, P = solid(st[nm]); r = excavated_of_hull(P, vol); out[nm] = r
                 ~~~~~^^^^^^^^
-  File "/home/dicto/k-research/studies/2026-11-25-partial-vacuus/scripts/gap_match.py", line 19, in solid
+  File "studies/2026-11-25-partial-vacuus/scripts/gap_match.py", line 19, in solid
     T = np.array([[[fl(c) for c in v] for v in t] for t in tris]); vol = sum(np.dot(t[0], np.cross(t[1], t[2])) for t in T) / 6
                     ~~^^^
-  File "/home/dicto/k-research/studies/2026-11-25-partial-vacuus/scripts/gap_match.py", line 16, in fl
+  File "studies/2026-11-25-partial-vacuus/scripts/gap_match.py", line 16, in fl
     def fl(q): return float(eval(q[0] + '*1.0')) + float(eval(q[1] + '*1.0')) * r5
                             ~~~~^^^^^^^^^^^^^^^
   File "<string>", line 1

@@ -7,7 +7,7 @@ Entry preflight FINAL ok; blueprint #123 read ok; DICTO submits; registered.
 ## State
 - 26 Nov: preflight 1 failed on intake only (request_id must be 12 chars); fixed to vacresonlean, commit 8f12f7e4, rerun 45761289408 in progress. #120 v2 draft in reading folder (WAITING 6).
 - 26 Nov: public repo DICTOR-Master/vacuus-resonus-lean (main, f31a43fc) created (DICTO yes); preflight run 45760814867 started.
-- 26 Nov: ENTRY ASSEMBLED ~/vacuus-resonus-lean (local git bd004e5+README): 6 theorems (T4a, T2, T4b, T1 <=, T3 (i), web_iff), Challenge/Solution, comparator.json, formalization.yaml (plain tone; source #120 formalizes, Ziegler background). Full lake build on dbb OK. Local comparator script clashes with hard-linked packages: use the GitHub preflight.
+- 26 Nov: ENTRY ASSEMBLED vacuus-resonus-lean (local git bd004e5+README): 6 theorems (T4a, T2, T4b, T1 <=, T3 (i), web_iff), Challenge/Solution, comparator.json, formalization.yaml (plain tone; source #120 formalizes, Ziegler background). Full lake build on the compute host OK. Local comparator script clashes with hard-linked packages: use the GitHub preflight.
 - Release plan changed: no separate blueprint #123; #120 v2 (adds lattice webs + Lean names) is released with the entry (fewer papers, less self-promotion).
 - Done: Theorem 4 (a) (M1), Theorem 2 pencil lemma + Theorem 4 (b) any dimension (M5, 26 Nov, FINAL ok).
 - Lattice webs (M4) done; fins (M2) and factor 3 (M3) belong to other papers.
@@ -22,5 +22,6 @@ Entry preflight FINAL ok; blueprint #123 read ok; DICTO submits; registered.
 - If (2) runs long: entry v1 states Theorem 1 (<=) only, exactly; v2 adds (=>).
 - Theorem 1 (=>): prove every extreme point of a full-dimensional polytope (hull of a finite set, dim >= 2) lies on a ridge (face lattice: facets through a vertex, two adjacent facets meet in a ridge); then symmetric ridges => symmetric corners => X = -X.
 ## Files
-studies/2026-11-25-lean-vacuus-resonus (VacuusResonus/*.lean, check.sh, logs); build on dicto-big-brother ~/lean/vacuus-resonus;
-master copy ~/dicto-geometry-lean/lib/VacuusResonus; paper papers/2026-11-24-vacuus-resonus.
+studies/2026-11-25-lean-vacuus-resonus (VacuusResonus/*.lean, check.sh, logs); build on the compute host;
+master copy dicto-geometry-lean/lib/VacuusResonus; paper papers/2026-11-24-vacuus-resonus.
+- 26 Nov: SUBMITTED to Palomar by DICTO (repo vacuus-resonus-lean, commit 8f12f7e4, preflight passed). Next: review result, then registration; #120 v2 release still waits on his read ok.
