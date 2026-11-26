@@ -256,3 +256,17 @@ floor as a convex T_h solid and build the Scutoid-Frusta layers (pillars = the 1
   so layer L+1 scaled by that factor sits on layer L with no gap.
 - Not yet: renders; checking that the 12 pentagon->square pieces line up as continuous pillars through all three layers; the
   amber analysis assumed T_h orbits (it now falls back to one-by-one when the core is not exactly symmetric).
+
+## Best alignment: C116 -> Minana #377 in ONE layer (27 Nov 2026; DICTO: "was the pentagon to square position ultimately the best change alignment overall?")
+scripts/c116_orbitpairs.py, c116_onefloor.py, c116_layers.py (LAYER 0), render_c116_one.py; logs/c116_orbitpairs.log, c116_onefloor.log, c116_layer0*.log.
+- All 6 assignments of the three 12-face orbits (1536 T_h-equivariant pairings each) scored. Pentagons -> squares (the earlier choice)
+  keeps at most 108 of 174 neighbour pairs (control). **Best: one 12-hexagon orbit -> squares, pentagons -> hexagons, the other
+  12-hexagon orbit -> heptagons: 144 kept, 30 to gain, all 2 apart.** Since a swap gains at most one pair, 30 swaps is the least.
+- The 30 swaps touch no common corner and done at once give Minana's corners exactly: ONE floor (c116_onefloor.py, ONE FLOOR, FINAL ok).
+- One layer of Scutoid-Frusta, exact valid cell (manifold, embedded, cancelling, volume gap 0): 60 pieces, 30 Y vertices; 24 keep six
+  sides, 12 hexagon->square, 12 pentagon->hexagon, 12 hexagon->heptagon. Valid at every height tried (factor 21/20, 11/10, 6/5, 13/10,
+  7/5, 3/2, 2, 3). Compared with the pentagon->square route: 30 swaps instead of 90, 1 layer instead of 3.
+- Convexity: 0 of 60 pieces convex at every height, and 0/60 in each of the three earlier layers. The method's walls are folded
+  (18-23 flat facets per piece, where a convex hexagonal piece with one Y has about 9), so joined columns cannot be convex either.
+  Convex pieces need a straight-walled construction (open).
+- Render: renders/RENDER-c116-minana-one-layer.png (pulled apart, assembled).

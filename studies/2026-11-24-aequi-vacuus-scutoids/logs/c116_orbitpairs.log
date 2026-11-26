@@ -1,0 +1,10 @@
+C116 orbits (size, sides): [(12, 5), (12, 6), (12, 6), (24, 6)] ; Minana: [(12, 4), (12, 6), (12, 7), (24, 6)]
+6-gonA->7-gon, 5-gon->4-gon, 6-gonC->6-gon: equivariant pairings 1536 (choices per orbit [4, 4, 4, 24]); best: kept 108/174, swaps >= 66, gained-pair distances {2: 36, 3: 24, 6: 6}, side change 24
+6-gonA->7-gon, 5-gon->6-gon, 6-gonC->4-gon: equivariant pairings 1536 (choices per orbit [4, 4, 4, 24]); best: kept 108/174, swaps >= 66, gained-pair distances {2: 66}, side change 48
+6-gonA->4-gon, 5-gon->7-gon, 6-gonC->6-gon: equivariant pairings 1536 (choices per orbit [4, 4, 4, 24]); best: kept 96/174, swaps >= 78, gained-pair distances {2: 48, 3: 24, 6: 6}, side change 48
+6-gonA->4-gon, 5-gon->6-gon, 6-gonC->7-gon: equivariant pairings 1536 (choices per orbit [4, 4, 4, 24]); best: kept 144/174, swaps >= 30, gained-pair distances {2: 30}, side change 48
+6-gonA->6-gon, 5-gon->7-gon, 6-gonC->4-gon: equivariant pairings 1536 (choices per orbit [4, 4, 4, 24]); best: kept 84/174, swaps >= 90, gained-pair distances {2: 60, 3: 24, 4: 6}, side change 48
+6-gonA->6-gon, 5-gon->4-gon, 6-gonC->7-gon: equivariant pairings 1536 (choices per orbit [4, 4, 4, 24]); best: kept 108/174, swaps >= 66, gained-pair distances {2: 60, 4: 6}, side change 24
+control (pentagons -> squares best keeps 108, as before): True
+BEST ALIGNMENT OVERALL: 6-gonA->4-gon, 5-gon->6-gon, 6-gonC->7-gon {'kept': 144, 'lower_bound_swaps': 30, 'max_dist': 2, 'dist_swaps': 30, 'dists': {2: 30}, 'side_change': 48}
+FINAL ok

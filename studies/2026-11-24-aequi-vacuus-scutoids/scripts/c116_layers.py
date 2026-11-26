@@ -2,7 +2,7 @@
 With Claude (Anthropic). Layer L: core = floor L-1 (exact convex solid, data/c116/floors.json; floor 0 = C116), mould = floor L's face
 planes (layer 3: Minana #377's own planes), every core face paired with the mould face of the same label (layer 3: label k -> Minana
 face sigma(k), the local pairing). Cell by amber_aequus.py with ASSIGN (outer end of each piece = its paired face), all its checks.
-Usage: python c116_layers.py LAYER FACTOR   (LAYER 1, 2, 3; e.g. 6/5)"""
+Usage: python c116_layers.py LAYER FACTOR   (LAYER 1, 2, 3; e.g. 6/5; LAYER 0 = one layer C116 -> Minana, best alignment)"""
 import os, sys, json
 sys.set_int_max_str_digits(0)
 import numpy as np
@@ -16,6 +16,8 @@ L, fac = int(argv[1]), argv[2]
 F = json.load(open(os.path.join(HERE, '../data/c116/floors.json')))['realised']
 byfloor = {r['floor']: r for r in F}
 sig = {int(k): v for k, v in json.load(open(os.path.join(HERE, '../data/c116/pairing_local.json'))).items()}
+if L == 0:   # 27 Nov: ONE layer, C116 -> Minana directly with the best alignment (data/c116/onefloor.json, c116_onefloor.py)
+    sig = {int(k): v for k, v in json.load(open(os.path.join(HERE, '../data/c116/onefloor.json')))['pairing'].items()}
 Dm = A.build("aequus-377")
 MN = np.array([[float(x) for x in u] for u, c in Dm["planes"]]); MN /= np.linalg.norm(MN, axis=1)[:, None]
 def aligned_planes(r):
@@ -42,12 +44,12 @@ def solid(r):
         nrm = cross([V[idx[1]][q] - V[idx[0]][q] for q in range(3)], [V[idx[2]][q] - V[idx[0]][q] for q in range(3)])
         faces.append((idx if dot(nrm, V[idx[0]]).sign() > 0 else idx[::-1], f"{len(idx)}-gon"))
     return V, faces, planes
-V, faces, planes = solid(byfloor[L - 1])
-if L < 3:
+V, faces, planes = solid(byfloor[max(L - 1, 0)])
+if 0 < L < 3:
     H1 = [p for p in solid(byfloor[L])[2]]; ASSIGN = {k: k for k in range(60)}
 else:
     H1 = [(u, c) for (u, c) in Dm["planes"]]; ASSIGN = {k: sig[k] for k in range(60)}
-print(f'layer {L}: core floor {L - 1} ({len(V)} corners), mould {"floor " + str(L) if L < 3 else "Minana #377"}', flush=True)
+print(f'layer {L}: core floor {L - 1} ({len(V)} corners), mould {"floor " + str(L) if 0 < L < 3 else "Minana #377"}', flush=True)
 def shell(lat, s): return [(u, s * c) for (u, c) in H1]
 Z = Q(0); vol = Z
 for mi, poly in A.mould_faces(H1):
