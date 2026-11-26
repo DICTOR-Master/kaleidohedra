@@ -9,7 +9,7 @@ Entry preflight FINAL ok; blueprint #123 read ok; DICTO submits; registered.
 - Lattice webs (M4) done; fins (M2) and factor 3 (M3) belong to other papers.
 - Theorem 1 (<=) done (M6a, IsRidge = nonempty exposed face of dim finrank-2; heart_of_symm). Left: (=>), needs every corner of a polytope on a ridge.
 ## Next
-- ORDER (26 Nov): (1) Theorem 3 (i) next: permutohedron facet planes in centred coordinates, sum over S of y <= m(n-m)/2 (m = |S|);
+- DONE 26 Nov: Theorem 3 (i) (M7, span_permFlat, FINAL ok). (1) Theorem 3 (ii) next (equality criterion). Was: permutohedron facet planes in centred coordinates, sum over S of y <= m(n-m)/2 (m = |S|);
   ridge (B1,B2,B3) = facets S1 = B1 (h1 = a(b+c)/2), S2 = B1+B2 (h2 = (a+b)c/2); pencil lemma in V0 = {sum y = 0} gives
   c(a+b) sum_B1 y + a(b+c) sum_B3 y = 0 (checked by hand 26 Nov). Then (ii) the equality criterion.
 - (2) Theorem 1 (=>) groundwork in the master library: every extreme point of a full-dimensional polytope (d >= 2) lies on a ridge
