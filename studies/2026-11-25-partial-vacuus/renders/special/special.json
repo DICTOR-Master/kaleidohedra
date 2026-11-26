@@ -1,33 +1,5 @@
 [
  {
-  "P": "tetrahedron",
-  "Q": "triakis octahedron",
-  "s": "9 - 6*sqrt(2)",
-  "core_faces": 12,
-  "Q_faces": 24
- },
- {
-  "P": "octahedron",
-  "Q": "triakis tetrahedron",
-  "s": "3/5",
-  "core_faces": 24,
-  "Q_faces": 12
- },
- {
-  "P": "octahedron",
-  "Q": "deltoidal hexecontahedron",
-  "s": "12/11 - 3*sqrt(5)/11",
-  "core_faces": 24,
-  "Q_faces": 60
- },
- {
-  "P": "octahedron",
-  "Q": "disdyakis triacontahedron",
-  "s": "3 - 6*sqrt(5)/5",
-  "core_faces": 24,
-  "Q_faces": 120
- },
- {
   "P": "dodecahedron",
   "Q": "icosahedron",
   "s": "5 - 2*sqrt(5)",
@@ -81,6 +53,27 @@
   "Q": "deltoidal hexecontahedron",
   "s": "42/19 - 11*sqrt(5)/19",
   "core_faces": 60,
+  "Q_faces": 60
+ },
+ {
+  "P": "tetrahedron",
+  "Q": "triakis octahedron",
+  "s": "9 - 6*sqrt(2)",
+  "core_faces": 12,
+  "Q_faces": 24
+ },
+ {
+  "P": "octahedron",
+  "Q": "disdyakis triacontahedron",
+  "s": "3 - 6*sqrt(5)/5",
+  "core_faces": 24,
+  "Q_faces": 120
+ },
+ {
+  "P": "octahedron",
+  "Q": "deltoidal hexecontahedron",
+  "s": "12/11 - 3*sqrt(5)/11",
+  "core_faces": 24,
   "Q_faces": 60
  }
 ]

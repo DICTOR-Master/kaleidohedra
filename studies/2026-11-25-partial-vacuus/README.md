@@ -178,3 +178,15 @@ dodecahedron, 12 spike tips). Polar reciprocal D of each special Vacuus-Solid (o
 **Answer:** the Resonus-side counterpart of a Vacuus-Solid is an *edge-extended* polar (corners pushed out along P*'s edge lines),
 and it is a spiked polar exactly at the two classics. Negative for the spike hypothesis in general; positive as a law (corners on
 P*'s edge lines always), and it singles out the classics again. Into the Vacuus-Solids paper as a section (DICTO to confirm).
+
+## Exact check of the special sizes (26 Nov 2026; scripts/exact_check.py, logs/exact_check.log, FINAL ok)
+Every number in Q(√5) or Q(√2) as a pair of fractions; Platonic solids from standard coordinates, Catalan cores as polars of the
+Archimedean solids; floats only to find candidates. Claim per pair: for one axis rotation of Q, every pit wall of P at s lies on a
+face plane of λQ with ONE λ > 0. Controls: the two classics pass; both at s ± 1/1000 fail.
+- **Eleven special sizes proved exactly**, minimal polynomials as listed in part 1b. Eight build the whole core (every face of λQ
+  carries a wall); three are planes only (tetrahedron/triakis octahedron 12 of 24, octahedron/deltoidal hexecontahedron 24 of 60,
+  octahedron/disdyakis triacontahedron 24 of 120). Exact λ: e.g. dodecahedron/icosahedron λ = (3−√5)/2 = 1/φ², rhombic
+  triacontahedron λ = 1/φ, triakis icosahedron/deltoidal hexecontahedron λ = 1.
+- **Correction:** octahedron / triakis tetrahedron at s = 3/5 is NOT special. Exactly, 12 walls lie on face planes of Q (λ = 1)
+  and 12 on those of −Q (λ = −1): the octahedron is centrally symmetric, Q is not. The float search compared normals up to sign.
+  It stays in the paper as a near miss (walls on the planes of Q and its opposite). Count: 11, not 12.
