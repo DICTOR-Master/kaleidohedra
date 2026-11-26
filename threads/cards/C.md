@@ -5,9 +5,10 @@ DICTO 26 Nov: "keep going: full group listing, paper and prior art search, maybe
 ## Pass
 Scope list (every result with its home) checked by DICTO; draft PDF in the reading folder; read ok; released.
 ## State
+- Scope list approved by DICTO 26 Nov (yes to all 15 items; figures: build-out sheet + twelve specials).
 - Results: family from every Vacuus; 12 exact special depths (8 true cores, all Ih); census 163 + McCooey 162 + associahedra.
 - Golden/silver forms; Tacitus: symmetry only; golden-cycle step 2 = family member at 15/2 - 3 sqrt5; prior art recorded.
 ## Next
-- Write the scope list (paper-scope-check rule) for DICTO, then the draft (gold standard #43 v3, Winston style).
+- Draft to gold standard #43 v3 (Winston style). Background: Vacuus paragraph (true Vacuus = t 0; #87 #110 #120; DICTO 'a true vacuus or resonus barely exists'); Resonus one line (special sizes: walls on a core's Resonus planes moved out to its faces; #120); Tacitus one line (no silence beyond symmetry).
 ## Files
 studies/2026-11-25-partial-vacuus (README, scripts, data-*.json, renders/sheet, renders/special); memory term-vacuus-solids.
