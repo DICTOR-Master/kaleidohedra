@@ -55,3 +55,12 @@ span of the centred ridge (m = 3) = permPlate B1 B2 B3 (the old span_permFlat, n
 ## (old) Next: step 3b
 vectorSpan of the facet = {v | sum over S = 0 and sum over the complement = 0}, finrank n - 2 (for nonempty proper S, n >= 2);
 then ridges (S1 strictly inside S2): exposed, finrank n - 3.
+
+## Every nonempty exposed face from an ordered partition (Complete.lean)
+* exposed_eq_flagFace: every nonempty exposed face of P n is flagFace key for a surjective key : Fin n -> Fin m (Abel summation
+  over blocks of equal coefficient, sum_le_top, exists_vertex_flag); exposed_eq_flagFace_of_finrank: dimension n - k gives k
+  blocks; ridge_eq_flagFace (k = 3), facet_eq_flagFace / facet_eq_facet (k = 2).
+* plateSet_eq_ridge_planes (n >= 3): the plates are exactly the planes through the centre and the nonempty exposed faces of
+  dimension n - 3, defined with no partitions; card_ridge_planes: their number is the A402191 closed formula.
+* Not covered: faces as convex extreme sets (Mathlib has no polytope extreme = exposed). Axioms: the three standard only.
+  Drafted by a Fable subagent, rebuilt and checked independently.

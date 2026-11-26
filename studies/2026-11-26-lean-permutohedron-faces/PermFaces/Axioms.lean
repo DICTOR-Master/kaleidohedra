@@ -21,3 +21,10 @@ import PermFaces
 #print axioms PermFaces.card_resonus_diff_plate
 #print axioms PermFaces.resonusSet_subset_plateSet_of_odd
 #print axioms PermFaces.card_resonus_diff_plate_even
+#print axioms PermFaces.exposed_eq_flagFace
+#print axioms PermFaces.exposed_eq_flagFace_of_finrank
+#print axioms PermFaces.ridge_eq_flagFace
+#print axioms PermFaces.facet_eq_flagFace
+#print axioms PermFaces.facet_eq_facet
+#print axioms PermFaces.plateSet_eq_ridge_planes
+#print axioms PermFaces.card_ridge_planes

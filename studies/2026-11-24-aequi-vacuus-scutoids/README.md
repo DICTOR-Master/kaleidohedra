@@ -323,3 +323,11 @@ together until they meet. Version 3 = flat-walled straws. scripts/c116_straw_ran
 Quadratic-assignment model (Koopmans-Beckmann 1957) solved by CP-SAT for 3 h, hinted with the floating-resin state: no pairing of
 C116's faces with Minana's found better than 156 kept, and the solver PROVED that no pairing keeps more than 165 of 174.
 So the least number of swaps over all pairings is between 174 - 165 = 9 and 18; 156 is not proved optimal (gap 156..165).
+
+## Hollow-straw layer, built and rendered (27 Nov 2026; scripts/hollow_straw.py, render_layer.py; logs/hollow_straw.log)
+Straw t = { 0 <= D_t <= d_t, D_t/d_t <= D_s/d_s, D_s >= 0 } (D_t = c_t - n_t . x, offsets d from c116_straw_lp.py): an
+intersection of half-spaces, so every piece is CONVEX with flat walls. Checks (floats): 60 pieces; volumes sum to the shell
+(difference 1.3e-15); every piece meets the core exactly in its C116 face and Minana exactly in its face (side counts match
+the pairing); 18 Y vertices (one per swap); changes 6 pentagon->square, 6 pentagon->heptagon, 6 hexagon->square,
+6 hexagon->heptagon, 36 keep six sides. Renders: renders/RENDER-c116-minana-straw.png (Hollow-straw) and
+RENDER-c116-minana-float.png (the floating-resin amber layer, folded walls), PDF in the reading folder.
