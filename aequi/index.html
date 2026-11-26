@@ -108,12 +108,15 @@ input[type=range]::-moz-range-thumb { width: 36px; height: 36px; border-radius: 
 input.cpick { width: 30px; height: 30px; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: none; flex: 0 0 auto; }
 .toast { font-size: 13px; color: var(--muted); }
 .rollout { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); background: rgba(30,40,60,0.88); color: #fff; padding: 8px 16px; border-radius: 18px; font-size: 16px; pointer-events: none; }
+.back { text-decoration: none; color: inherit; border: 1px solid var(--line); border-radius: 18px; padding: 6px 12px; font-size: 15px; white-space: nowrap; }
+.back:hover { background: var(--view-bg); }
 </style>
 </head>
 <body>
 
 <div id="app">
   <header>
+    <a class="back" href="/" title="Back to the Kaleidohedra app">&#8592; Kaleidohedra</a>
     <h1>Aequi picker</h1>
     <div class="tabs" role="tablist">
       <button id="tabPick" role="tab" aria-selected="true">Pick a die</button>
