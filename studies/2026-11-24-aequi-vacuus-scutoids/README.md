@@ -300,3 +300,21 @@ For a fair die (Aequus) D and a candidate core K with the same number of faces:
 5. Candidate cores: same face count, orbits matching the die's under its symmetry group (fullgen / plantri for fullerene-type cores);
    rank candidates by step 2's best kept count before building anything.
 Open: pieces are never convex with this wall construction (folded walls); a straight-walled construction is needed for convex pieces.
+
+## Hollow-straw (DICTO, 27 Nov 2026): flat-walled straws (version 3)
+DICTO's idea: start and end shapes fixed, a balloon-like drinking straw between each pair of paired faces, all straws pumped up
+together until they meet. Version 3 = flat-walled straws. scripts/c116_straw_rank.py, c116_straw_lp.py; logs/c116_straw_*.log.
+- First attempt (c116_straw.py, least squares on core + pressures) was mis-set: equal pressures are easy, the "no other straw higher"
+  conditions failed by hundreds; stopped. Replaced by the two exact-structure steps below.
+- **The pump settings** (c116_straw_rank.py): the pressures allowed by Minana's corners form a 64-dimensional family = one pump
+  setting mu_k per straw (60) + one common affine function (4): f_k = mu_k (n . x - c) for Minana's face sigma(k). So straw k wins
+  where mu_k x (distance to its Minana plane) is smallest: every wall flat, every straw convex.
+- **Linear programme** (c116_straw_lp.py): with the core as the level set {min mu_k D_k = 1}, core face k is PARALLEL to its Minana
+  face sigma(k), set in by d_k = 1/mu_k. Flat-walled straws exist (this way) iff some offsets give C116's face pattern: an LP.
+  * floating pairing (18 swaps): FEASIBLE, margin 0.032; offsets rounded to rationals and checked EXACTLY (0 violations): a convex
+    core with C116's face pattern whose every face is parallel to its Minana face, and a Hollow-straw layer with flat walls and
+    CONVEX pieces (data/c116/straw_lp_onefloor_float.json).
+  * symmetric pairing (30 swaps): best margin 0 (1e-16): no strict solution with a parallel-faced core; only a degenerate limit.
+    (A core with non-parallel faces is not covered by this test: open.)
+- Note: the core's shape floats (C116's pattern, not its canonical shape); Minana is fixed. Still to do: build the pieces
+  explicitly (exact cell checks) and render.
