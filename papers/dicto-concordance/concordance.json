@@ -865,6 +865,70 @@
         "Version 2 published 20 Nov 2026 (10.5281/zenodo.24396137): figures redrawn with hidden lines; no result changes."
       ],
       "doi_v2": "24396137"
+    },
+    "117": {
+      "title": "From Dehn Packets to Scutoids: How the Fullerene Star Fills Space",
+      "doi": "24411660",
+      "date": "2026-11-21",
+      "version": 1,
+      "notes": [
+        "Published 2026-11-21 (Version 1, 10.5281/zenodo.24411660; folder papers/2026-11-21-dehn-packets).",
+        "Results: DICTO’s idea: every solid carries a packet, its Dehn invariant, and pieces that fill space together must have packets that cancel. A screen of 47 centre pyramids against 80 pieces finds 97 exact cancellations, two of them new and icosahedral; neither of those fills space, but the Fullerene Star does, in cells of resin cut into Scutoid-Frusta."
+      ]
+    },
+    "118": {
+      "title": "Icosahedral Cores in Golden Rhombohedra: Scutoid-Frusta Cells for the Ammann–Kramer–Neri Tiling",
+      "doi": "24491405",
+      "date": "2026-11-25",
+      "version": 1,
+      "notes": [
+        "Published 2026-11-25 (Version 1, 10.5281/zenodo.24491405; folder papers/2026-11-22-amber-ammann).",
+        "Results: Set one icosahedral core at the centre of every cell of the never-repeating three-dimensional Penrose tiling by two golden rhombohedra, all the same size and the same way up: the resin between core and cell can be cut entirely into Scutoid-Frusta, 72 pieces per cell in 8 kinds, and no kind occurs in both cells, so the cells can be read back from the pieces."
+      ]
+    },
+    "119": {
+      "title": "Cancelling Packets That Cannot Fill Space, in Lean",
+      "doi": "24518897",
+      "date": "2026-11-25",
+      "version": 1,
+      "notes": [
+        "Published 2026-11-25 (Version 1, 10.5281/zenodo.24518897; folder papers/2026-11-22-dehn-packets-blueprint).",
+        "Results: Twelve dodecahedron centre pyramids and one truncated icosahedron have Dehn packets that cancel exactly, and so do twenty icosahedron centre pyramids and one truncated dodecahedron; yet neither pair fills space, with or without helpers. This paper and its Lean 4 source check the proof of #117 by machine.",
+        "Palomar: registered PALOMAR-2026-11-26-000007."
+      ]
+    },
+    "120": {
+      "title": "The Vacuus and the Resonus: Form and Emptiness in the Planes of Polyhedra",
+      "doi": "24521888",
+      "date": "2026-11-25",
+      "version": 1,
+      "notes": [
+        "Published 2026-11-25 (Version 1, 10.5281/zenodo.24521888; folder papers/2026-11-24-vacuus-resonus).",
+        "Results: DICTO’s Vacuus is the set of planes through the centre and each edge of a solid; its Resonus, the planes through the centre parallel to each face. Both are read off the polar solid: each Vacuus plate is at right angles to an edge of the polar, each Resonus plane to a line to its corner. Which solids’ planes coincide, and which lie in their mirrors, is settled here.",
+        "Palomar: Lean entry (public repo vacuus-resonus-lean) preflight passed 26 Nov 2026; submit together with Version 2."
+      ]
+    },
+    "121": {
+      "title": "Fair Dice from Curvature: Alexandrov’s Theorem, Machine-Checked",
+      "doi": "24522000",
+      "date": "2026-11-25",
+      "version": 1,
+      "notes": [
+        "Published 2026-11-25 (Version 1, 10.5281/zenodo.24522000; folder papers/2026-11-25-fair-dice-blueprint).",
+        "Results: When does a set of face directions make a fair die, every face seen from the centre under the same solid angle? Exactly when Alexandrov’s condition holds, and then the die is unique up to size. This paper and its Lean 4 proof give Alexandrov’s theorem on prescribed curvature for polytopes and the fair dice of #112 as its corollary.",
+        "Palomar: fair-dice entry registered 26 Nov 2026 (number to record)."
+      ]
+    },
+    "122": {
+      "title": "Which Platonic Solids Fill Space: Aristotle’s Error, Machine-Checked",
+      "doi": "24523529",
+      "date": "2026-11-25",
+      "version": 1,
+      "notes": [
+        "Published 2026-11-25 (Version 1, 10.5281/zenodo.24523529; folder papers/2026-11-25-aristotle-blueprint).",
+        "Results: Aristotle wrote that regular tetrahedra fill space; they do not. A Lean 4 proof shows that no tiling of space uses only copies of the regular tetrahedron, octahedron, dodecahedron or icosahedron, even with different sizes and without meeting face to face; and that in any tiling by the five Platonic solids with rational-angle helpers, no tile is a dodecahedron or an icosahedron.",
+        "Palomar: Aristotle entry passed review; registration under way (26 Nov 2026)."
+      ]
     }
   },
   "strands": [
