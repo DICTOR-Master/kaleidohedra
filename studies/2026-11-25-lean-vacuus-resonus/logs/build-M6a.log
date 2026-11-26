@@ -1,0 +1,16 @@
+Thu Nov 26 13:37:36 JST 2026
+⚠ [8931/8931] Built VacuusResonus.Heart (2.6s)
+warning: VacuusResonus/Heart.lean:66:0: automatically included section variable(s) unused in theorem `VacuusResonus.heart_of_symm`:
+  [FiniteDimensional ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Build completed successfully (8931 jobs).
+'VacuusResonus.isExposed_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'VacuusResonus.vectorSpan_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'VacuusResonus.finrank_vectorSpan_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'VacuusResonus.heart_of_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'VacuusResonus.span_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+sorry/admit/axiom/native_decide hits:
+0
