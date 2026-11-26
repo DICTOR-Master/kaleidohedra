@@ -123,3 +123,11 @@ Studies 2026-11-24-resonus (Theorem 1), 2026-11-25-one-structure (A1), 2026-11-2
 1. M2: the components of S \ Γ (the open regions π(relint f)) as a topological statement, to formalise A1 (a) word for word.
 2. M2 (b): O on the boundary (both sides false), to complete A1.
 3. M1: link to the Alexandrov `rayPolytope` (polar corners n j / d j) so that a_F is formally a corner of the polar.
+
+## M5. The pencil lemma and the polar link in any dimension (26 Nov; #120 Theorems 2 and 4 (b); `logs/build-M5.log`, FINAL ok)
+`VacuusResonus/Pencil.lean`, any real inner-product space. `ridgeFlat u₁ h₁ u₂ h₂` = points on both facet planes.
+- `ridgeFlat_nonempty`: independent `u₁, u₂` → the flat is not empty (Gram determinant ≠ 0).
+- `span_ridgeFlat` (**Theorem 2, pencil lemma**): `span ℝ (ridgeFlat …) = (ℝ ∙ (h₂ • u₁ - h₁ • u₂))ᗮ` for `h₁, h₂ ≠ 0`.
+- `span_eq_of_affineSpan`: a ridge whose affine span is the flat spans the same plane (its Vacuus plate).
+- `vacuusPlate_polar` (**Theorem 4 (b), any dimension**): with `h₁ = h₂ = 1`, the plate is `(ℝ ∙ (a - b))ᗮ`.
+Standard axioms only. Next for the entry (DICTO 26 Nov, yes to all): Theorem 1 (heart iff centrally symmetric), Theorem 3 (i)-(ii).
