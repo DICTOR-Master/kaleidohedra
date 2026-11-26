@@ -1169,7 +1169,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     }
     if (s.href) {
       const label = t(s.label, L);
-      return itemHtml({ key: s.id, label, sub: t(s.sub, L), pieces: [{ label, href: s.href }], pic: `<span class="bm-thumb bm-glyph">${s.glyph}</span>` });
+      return itemHtml({ key: s.id, label, sub: t(s.sub, L), pieces: [{ label, href: s.href }], pic: s.thumb ? `<img class="bm-thumb" src="assets/worlds/${s.thumb}.webp" alt="" loading="lazy" width="48" height="48">` : `<span class="bm-thumb bm-glyph">${s.glyph}</span>` });   // DICTO 26 Nov: pictures for Amber cells and Aequi
     }
     const label = t(s.open === 'almanac' ? 'alm.title' : 'wiz.books.guide', L);
     return itemHtml({ key: s.id, label, pieces: [{ label, open: s.open }], pic: `<span class="bm-thumb bm-glyph">${s.open === 'almanac' ? '📖' : '?'}</span>` });
