@@ -105,3 +105,13 @@ listed separately from now on. LEAD 6: identify those four cores (likely a Td/Oh
   are the two classics (dodecahedron 5 − 2√5, icosahedron 3√5 − 6); pits disjoint at every size tested in all 163. As solid as the
   classics at some core size: all 31 Platonic, Archimedean and Catalan solids, all 10 bipyramids and 10 trapezohedra, 22 of 92
   Johnson solids, 1 of 10 prisms, 1 of 10 antiprisms.
+
+## Golden and silver forms of the depths; parallel with Poinsot (DICTO 26 Nov question)
+5 − 2√5 = √5/φ³ (excavated dodecahedron); 3√5 − 6 = 3/φ³ (great dodecahedron); 3 − √5 = 2/φ² (rhombic triacontahedron on itself,
+core scale 1/φ); 9 − 6√2 = 3/δ², δ = 1 + √2 the silver ratio (tetrahedron on triakis octahedron). (Checked numerically to 1e-15.)
+Parallel: Kepler (1619) and Poinsot (1809) found the star solids; Cauchy (1813) showed they are stellations (faces of the
+dodecahedron/icosahedron extended); Bertrand (1858) obtained them by faceting. At a special size of the build-out the pit walls lie in
+the core's face planes, so the outer surface is made of the core's planes: the excavation meets the stellation route there. At every
+other size the walls lie in new planes (the Vacuus plates swung about the edges): no stellation, the build-out's own family.
+To check (LEAD 7): which of the 8 true-core depths are stellations of their core in the classical sense (Fifty-Nine Icosahedra
+diagram), beyond the two classics.
