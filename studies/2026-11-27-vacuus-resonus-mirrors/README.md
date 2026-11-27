@@ -86,3 +86,36 @@ first 1232 have no die of these groups and face counts except T, Th, Td, O, Oh, 
 - Groups C1, Cs, C2, C2v, C3v, C4v are not in the catalogue at all.
 - Caveats: same combinatorial type does not mean the same die, and a new type is new only up to this check; the solid angles
   rest on the two piece kinds identified at 58 digits (to prove), and fairness from the centre of mass is numerical.
+
+## Steps 10-11: icosidodecahedron + rhombic triacontahedron (scripts/fairsearch_any.py, PAIR env; logs/fairsearch_ih*.log)
+Same search, generic script (it reproduces the cube pair: 1 die at N 48, 136 at N 24). 480 pieces, 4 kinds, each 120 times
+(one per mirror chamber). Faces searched: two pieces of each kind (equal solid angle 1/60 of the sphere; whether other mixtures
+of kinds also give exactly 1/60 is not settled here).
+- N = 120 (one piece of each kind): complete, 1 die, the disdyakis triacontahedron (control).
+- N = 60, one run with no symmetry imposed: stopped at the 3 million partition cap, then ran out of time sorting (incomplete).
+- N = 60, step 11 (SUB env): five runs, each imposing one symmetry of prime order: half-turn C2, third-turn C3, fifth-turn C5,
+  mirror Cs, inversion Ci. In I_h every symmetry group other than the trivial one contains one of these, and each class is one
+  conjugacy class (one representative suffices), so together the runs are COMPLETE for every die with any symmetry.
+  All five finished (status OPTIMAL). Partitions / realised as convex polyhedra: C2 69,633 / 8,913; C3 1,025 / 142;
+  C5 97 / 23; Cs 147,457 / 21,896; Ci 45,057 / 449. Pilot of SUB on the cube pair: C2 17 dice, Cs 41, controls found.
+- Merged (MERGE=1, duplicates removed up to I_h; logs/fairsearch_ih_merge.log; fairdice_icosidodecahedron_symmetric.json.gz):
+  **30,864 distinct 60-face convex polyhedra with nontrivial symmetry**, every face two pieces of each kind:
+
+  | symmetry order | faces by sides | dice |
+  |---|---|---|
+  | 120 | 60 triangles | 2 (pentakis dodecahedron, triakis icosahedron) |
+  | 120 | 60 quadrilaterals | 1 (deltoidal hexecontahedron) |
+  | 24 | 60 triangles | 1 |
+  | 20 | 40 tri + 20 quad / 60 tri | 5 / 5 |
+  | 12 | 60 tri | 15 |
+  | 10 | 40 tri + 20 quad / 60 tri | 5 / 11 |
+  | 8 | 60 tri | 19 |
+  | 6 | 60 tri | 67 |
+  | 4 | 40 tri + 20 quad / 60 tri | 66 / 642 |
+  | 3 | 60 tri | 83 |
+  | 2 | 40 tri + 20 quad / 60 tri | 1,355 / 28,587 |
+
+  Controls: the three full-symmetry Catalan-type dice found in every run.
+- Status: equal solid angles exact (piece counting); realised = the LP found a convex polyhedron with this face pattern seen from
+  O. Still to do, as for the cube pair: fair from the centre of mass (step 8 method), exact certification, catalogue match
+  (step 9). Dice with NO symmetry are not covered (the unimposed run passed 3 million partitions).

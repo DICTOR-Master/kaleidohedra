@@ -1,0 +1,70 @@
+control (correction): octahedron / triakis tetrahedron at 3/5: one-lam check FAILS (correct) ; all 24 walls on face planes of Q or -Q, lam values ['-1', '1']
+controls: negative (must fail) at s +- 1/1000 for the two classics
+  dodecahedron on icosahedron at s+1/1000: FAILS (good)
+  dodecahedron on icosahedron at s-1/1000: FAILS (good)
+  icosahedron on dodecahedron at s+1/1000: FAILS (good)
+  icosahedron on dodecahedron at s-1/1000: FAILS (good)
+the eleven (exact):
+  OK dodecahedron (12 faces, 60 walls) on icosahedron: s = 5+-2√5 [x^2 + (-10) x + (5)], lam = 3/2+-1/2√5; walls on 20 of 20 faces of lam Q (whole core)
+PROGRESS 0.091 dodecahedron on icosahedron
+  OK dodecahedron (12 faces, 60 walls) on triakis icosahedron: s = 10/11+-3/11√5 [x^2 + (-20/11) x + (5/11)], lam = 1; walls on 60 of 60 faces of lam Q (whole core)
+PROGRESS 0.182 dodecahedron on triakis icosahedron
+  OK dodecahedron (12 faces, 60 walls) on deltoidal hexecontahedron: s = 0+1/3√5 [x^2 + (0) x + (-5/9)], lam = 2+1√5; walls on 60 of 60 faces of lam Q (whole core)
+PROGRESS 0.273 dodecahedron on deltoidal hexecontahedron
+  OK icosahedron (20 faces, 60 walls) on dodecahedron: s = -6+3√5 [x^2 + (12) x + (-9)], lam = -1/2+1/2√5; walls on 12 of 12 faces of lam Q (whole core)
+PROGRESS 0.364 icosahedron on dodecahedron
+  OK icosahedron (20 faces, 60 walls) on pentakis dodecahedron: s = -9/11+6/11√5 [x^2 + (18/11) x + (-9/11)], lam = 1/2+1/2√5; walls on 60 of 60 faces of lam Q (whole core)
+PROGRESS 0.455 icosahedron on pentakis dodecahedron
+  OK icosahedron (20 faces, 60 walls) on deltoidal hexecontahedron: s = 30/11+-9/11√5 [x^2 + (-60/11) x + (45/11)], lam = 5/2+3/2√5; walls on 60 of 60 faces of lam Q (whole core)
+PROGRESS 0.545 icosahedron on deltoidal hexecontahedron
+  OK rhombic triacontahedron (30 faces, 120 walls) on rhombic triacontahedron: s = 3+-1√5 [x^2 + (-6) x + (4)], lam = -1/2+1/2√5; walls on 30 of 30 faces of lam Q (whole core)
+PROGRESS 0.636 rhombic triacontahedron on rhombic triacontahedron
+  OK triakis icosahedron (60 faces, 180 walls) on deltoidal hexecontahedron: s = 42/19+-11/19√5 [x^2 + (-84/19) x + (61/19)], lam = 1; walls on 60 of 60 faces of lam Q (whole core)
+PROGRESS 0.727 triakis icosahedron on deltoidal hexecontahedron
+  OK tetrahedron (4 faces, 12 walls) on triakis octahedron: s = 9+-6√2 [x^2 + (-18) x + (9)], lam = -1+1√2; walls on 12 of 24 faces of lam Q (planes only)
+PROGRESS 0.818 tetrahedron on triakis octahedron
+  OK octahedron (8 faces, 24 walls) on deltoidal hexecontahedron: s = 12/11+-3/11√5 [x^2 + (-24/11) x + (9/11)], lam = 1; walls on 24 of 60 faces of lam Q (planes only)
+PROGRESS 0.909 octahedron on deltoidal hexecontahedron
+  OK octahedron (8 faces, 24 walls) on disdyakis triacontahedron: s = 3+-6/5√5 [x^2 + (-6) x + (9/5)], lam = -1/2+1/2√5; walls on 24 of 120 faces of lam Q (planes only)
+PROGRESS 1.000 octahedron on disdyakis triacontahedron
+FINAL ok
+piece kinds (fraction of sphere : count): [(0.001021680996, 120), (0.001991578907, 120), (0.002385381127, 120), (0.002934692303, 120)]
+pieces 480 kinds 4 shared edges 720
+imposed symmetry C5 element 20
+      size 2: 720 partial unions
+      size 3: 1200 partial unions
+      size 4: 2040 partial unions
+      size 5: 3360 partial unions
+      size 6: 5100 partial unions
+      size 7: 5400 partial unions
+      size 8: 3300 partial unions
+a = 2 (N = 60): candidate fair-sized convex faces 420
+   T-junction constraints 18120
+   partitions found 97 (status OPTIMAL)
+PROGRESS sorted 0
+   distinct up to O_h: 51; realised as convex polyhedra: 23
+      N 60: symmetry 120, faces by sides {4: 60}
+      N 60: symmetry 10, faces by sides {3: 40, 4: 20}
+      N 60: symmetry 10, faces by sides {3: 60}
+      N 60: symmetry 10, faces by sides {3: 60}
+      N 60: symmetry 10, faces by sides {3: 60}
+      N 60: symmetry 10, faces by sides {3: 60}
+      N 60: symmetry 10, faces by sides {3: 60}
+      N 60: symmetry 10, faces by sides {3: 40, 4: 20}
+      N 60: symmetry 10, faces by sides {3: 60}
+      N 60: symmetry 10, faces by sides {3: 40, 4: 20}
+      N 60: symmetry 20, faces by sides {3: 40, 4: 20}
+      N 60: symmetry 10, faces by sides {3: 60}
+      N 60: symmetry 10, faces by sides {3: 60}
+      N 60: symmetry 120, faces by sides {3: 60}
+      N 60: symmetry 10, faces by sides {3: 40, 4: 20}
+      N 60: symmetry 20, faces by sides {3: 40, 4: 20}
+      N 60: symmetry 20, faces by sides {3: 40, 4: 20}
+      N 60: symmetry 10, faces by sides {3: 60}
+      N 60: symmetry 20, faces by sides {3: 60}
+      N 60: symmetry 120, faces by sides {3: 60}
+      N 60: symmetry 10, faces by sides {3: 60}
+      N 60: symmetry 20, faces by sides {3: 60}
+      N 60: symmetry 20, faces by sides {3: 60}
+full-symmetry dice found (controls, Catalan-type): [(60, {4: 60}), (60, {3: 60}), (60, {3: 60})]
+FINAL ok

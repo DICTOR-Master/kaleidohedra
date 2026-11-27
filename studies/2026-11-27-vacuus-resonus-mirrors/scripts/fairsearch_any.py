@@ -148,6 +148,35 @@ def realise(faces):
         r = np.zeros(nv); r[q:3 * N:3] = 1; Aeq.append(r); beq.append(0)
     res = linprog(np.zeros(nv), A_eq=np.array(Aeq), b_eq=np.array(beq), bounds=bounds, method='highs')
     return res.status == 0
+# Step 11 (27 Nov): SUB env imposes one cyclic symmetry of prime order (C2, C3, C5 rotations, Cs mirror, Ci inversion): every die
+# with any symmetry has one of these, so the five runs together are complete for all dice with nontrivial symmetry.
+SUB = os.environ.get('SUB', '')
+def _cls(M):
+    d, t = np.linalg.det(M), np.trace(M)
+    if d > 0:
+        for name, tv in (('C2', -1.0), ('C3', 0.0), ('C5', 1 + 2 * np.cos(2 * np.pi / 5))):
+            if abs(t - tv) < 1e-9: return name
+    else:
+        if abs(t - 1) < 1e-9: return 'Cs'
+        if abs(t + 3) < 1e-9: return 'Ci'
+    return None
+GSUB = None
+if SUB:
+    gi = next(i for i, M in enumerate(mats) if _cls(M) == SUB); GSUB = G[gi]
+    print('imposed symmetry', SUB, 'element', gi, flush=True)
+if os.environ.get('MERGE'):   # union of the five SUB runs, duplicates removed up to the full group
+    base = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../fairdice_' + PA.replace(' ', '-'))
+    allr = {}; per = {}
+    for S in ('C2', 'C3', 'C5', 'Cs', 'Ci'):
+        R = json.load(open(base + '_' + S + '.json')); per[S] = len(R)
+        for r in R:
+            key = min(tuple(sorted(tuple(sorted(g[i] for i in F)) for F in r['faces'])) for g in G)
+            allr.setdefault(key, r)
+    U = list(allr.values()); print('per run:', per, '; distinct dice with nontrivial symmetry:', len(U), flush=True)
+    tab = _C((r['symmetry_order'], tuple(sorted(_C(r['side_counts']).items()))) for r in U)
+    for (o, sc), c in sorted(tab.items(), key=lambda t: (-t[0][0], t[0][1])): print(f'   symmetry order {o:3d}  faces by sides {dict(sc)}: {c}')
+    json.dump(U, open(base + '_symmetric.json', 'w'))
+    print('FINAL ok' if all(r['symmetry_order'] >= 2 for r in U) and any(r['symmetry_order'] == GO for r in U) else 'FINAL FAIL'); sys.exit(0)
 from ortools.sat.python import cp_model
 results = []
 for a in [int(x) for x in os.environ.get('AS', '1,2,3').split(',')]:
@@ -158,6 +187,10 @@ for a in [int(x) for x in os.environ.get('AS', '1,2,3').split(',')]:
     for t, S in enumerate(C):
         for i in S: cover[i].append(x[t])
     for i in range(NP): m.AddExactlyOne(cover[i])
+    if GSUB is not None:
+        idx = {S: t for t, S in enumerate(C)}
+        for t, S in enumerate(C):
+            m.Add(x[t] == x[idx[frozenset(GSUB[i] for i in S)]])
     # no T-junctions (a convex polyhedron cannot have them): if face t passes straight through a vertex v of the arrangement,
     # all pieces at v outside t belong to ONE face
     around = {}
@@ -191,7 +224,8 @@ for a in [int(x) for x in os.environ.get('AS', '1,2,3').split(',')]:
     st = so.Solve(m, CB())
     print(f'   partitions found {len(sols)} (status {so.StatusName(st)})', flush=True)
     canon_seen = set(); kept = 0
-    for sol in sols:
+    for ns, sol in enumerate(sols):
+        if ns % 20000 == 0: print(f'PROGRESS sorted {ns}', flush=True)
         faces = [sorted(C[t]) for t in sol]
         key = min(tuple(sorted(tuple(sorted(g[i] for i in F)) for F in faces)) for g in G)
         if key in canon_seen: continue
@@ -205,7 +239,7 @@ for a in [int(x) for x in os.environ.get('AS', '1,2,3').split(',')]:
     for r in [r for r in results if r['N'] == N][:40]:
         from collections import Counter
         print(f'      N {N}: symmetry {r["symmetry_order"]}, faces by sides {dict(Counter(r["side_counts"]))}', flush=True)
-json.dump(results, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../fairdice_' + PA.replace(' ', '-') + '.json'), 'w'))
+json.dump(results, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../fairdice_' + PA.replace(' ', '-') + (('_' + SUB) if SUB else '') + '.json'), 'w'))
 full = [r for r in results if r['symmetry_order'] == GO]
 print('full-symmetry dice found (controls, Catalan-type):', [(r['N'], dict(_C(r['side_counts']))) for r in full])
 print('FINAL ok' if full else 'FINAL FAIL (no full-symmetry control found)')
