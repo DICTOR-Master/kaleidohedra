@@ -311,5 +311,10 @@ Files (built, no errors or warnings; axioms propext, Classical.choice, Quot.soun
   twice: the surgered set is a polygon of the flipped network, same number of edges, same crossing edges).
 Scope (stated exactly): the formal Theorem A is the n <= 2 case, which is all that Corollary A1 uses; the n = 4 symmetric cases
 (parallelogram, toggle mirror) of the paper are not formalised.
-Next: Milestone 2d: Corollary A1 in Lean (centre c = p + q from Lemma 2; the bijection between such polygons through v in G sigma and
+Milestone 2d DONE (28 Nov): `bijOn_surgery` (Corollary A1 at one flip: for a set S of at most two crossing edges kept by the
 G (flipAt sigma k), and equal counts for every length and crossing profile).
+  half-turn and v in the root half, the surgery is a bijection between the polygons through v with crossing edges S in G sigma and in
+  G (flipAt sigma k), keeping the number of edges) and `bijOn_two_crossings` (S = the vertical bonds at p != q, centre p + q by
+  Lemma 2). Built, standard axioms only. The case S = {} (no crossing) is `bijOn_surgery` with any centre c = 2 sigma(k).
+Next: Milestone 2e: all bilayers at once (Corollary A1 in full: change the letters one at a time; a polygon of length l meets only
+finitely many bilayers, #102 Lemma 4) -- then Milestone 3 (Theorem B).

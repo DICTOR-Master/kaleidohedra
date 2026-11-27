@@ -241,4 +241,65 @@ theorem surgery_polygon {σ : ℤ → ZMod 3} {k : ℤ} {c : ℤ × ℤ} (hc : G
     have : surgS c k ∘ surgS c k = id := funext (surgS_surgS c k)
     rw [this, Finset.image_id]
 
+/-- The vertical bond of bilayer `k` at the planar point `p`. -/
+def vert (k : ℤ) (p : ℤ × ℤ) : Sym2 Atom := s((k, p, 0), (k, p, 1))
+
+theorem htS_vert (c : ℤ × ℤ) (k : ℤ) (p : ℤ × ℤ) : htS c (vert k p) = vert k (c - p) := rfl
+
+theorem isCrossS_vert (k : ℤ) (p : ℤ × ℤ) : IsCrossS k (vert k p) := by
+  rw [vert, isCrossS_mk]; right; unfold IsFar; simp
+
+open Classical in
+/-- Polygons of `G σ` through the atom `v` whose crossing edges at bilayer `k` are exactly `S`. -/
+def PolysThrough (σ : ℤ → ZMod 3) (k : ℤ) (v : Atom) (S : Finset (Sym2 Atom)) : Set (Finset (Sym2 Atom)) :=
+  {E | IsPolygon σ E ∧ 0 < degS E v ∧ E.filter (IsCrossS k) = S}
+
+open Classical in
+theorem mapsTo_surgery {σ : ℤ → ZMod 3} {k : ℤ} {c : ℤ × ℤ} (hc : GoodCentre σ k c) {v : Atom}
+    (hv : ¬ IsFar k v) {S : Finset (Sym2 Atom)} (hS : S.card ≤ 2) (hSc : ∀ e ∈ S, htS c e ∈ S) :
+    Set.MapsTo (fun (E : Finset (Sym2 Atom)) => E.image (surgS c k)) (PolysThrough σ k v S) (PolysThrough (flipAt σ k) k v S) := by
+  intro E ⟨hE, hvE, hcross⟩
+  have hP : ∀ e ∈ E, IsCrossS k e → htS c e ∈ E := by
+    intro e he hcr
+    have heS : e ∈ S := by rw [← hcross]; exact Finset.mem_filter.mpr ⟨he, hcr⟩
+    have := hSc e heS
+    rw [← hcross] at this
+    exact (Finset.mem_filter.mp this).1
+  obtain ⟨hpoly, -, hcr⟩ := surgery_polygon hc hE (by rw [hcross]; exact hS) hP
+  exact ⟨hpoly, by rw [degS_surg_root c k E hv]; exact hvE, by rw [hcr, hcross]⟩
+
+open Classical in
+/-- **Corollary A1 at one flip.** For a set `S` of at most two crossing edges kept by the half-turn about
+`c` (`c ≡ 2·σ k`), and an atom `v` of the root half, the surgery is a bijection between the polygons through
+`v` with crossing edges `S` in `G σ` and those in the flipped network; it keeps the number of edges. -/
+theorem bijOn_surgery {σ : ℤ → ZMod 3} {k : ℤ} {c : ℤ × ℤ} (hc : GoodCentre σ k c) {v : Atom}
+    (hv : ¬ IsFar k v) {S : Finset (Sym2 Atom)} (hS : S.card ≤ 2) (hSc : ∀ e ∈ S, htS c e ∈ S) :
+    Set.BijOn (fun (E : Finset (Sym2 Atom)) => E.image (surgS c k)) (PolysThrough σ k v S) (PolysThrough (flipAt σ k) k v S) ∧
+      ∀ E : Finset (Sym2 Atom), (E.image (surgS c k)).card = E.card := by
+  refine ⟨⟨mapsTo_surgery hc hv hS hSc, ?_, ?_⟩, fun E => Finset.card_image_of_injective _ (surgS_injective c k)⟩
+  · intro E₁ _ E₂ _ h
+    exact Finset.image_injective (surgS_injective c k) h
+  · intro E' hE'
+    have hback := mapsTo_surgery (goodCentre_flipAt hc) hv hS hSc hE'
+    rw [flipAt_flipAt] at hback
+    refine ⟨E'.image (surgS c k), hback, ?_⟩
+    simp only [Finset.image_image]
+    have : surgS c k ∘ surgS c k = id := funext (surgS_surgS c k)
+    rw [this, Finset.image_id]
+
+open Classical in
+/-- The two-crossing case: the crossing edges are the vertical bonds at two points `p ≠ q` of the
+position of bilayer `k`, and the centre is `c = p + q` (Lemma 2). -/
+theorem bijOn_two_crossings {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : ¬ IsFar k v) {p q : ℤ × ℤ}
+    (hp : (p.1 : ZMod 3) = σ k ∧ (p.2 : ZMod 3) = σ k) (hq : (q.1 : ZMod 3) = σ k ∧ (q.2 : ZMod 3) = σ k) :
+    Set.BijOn (fun (E : Finset (Sym2 Atom)) => E.image (surgS (p + q) k)) (PolysThrough σ k v {vert k p, vert k q})
+      (PolysThrough (flipAt σ k) k v {vert k p, vert k q}) := by
+  obtain ⟨hcentre, hp', hq'⟩ := halfturn_two_points hp hq
+  refine (bijOn_surgery hcentre hv (Finset.card_le_two) ?_).1
+  intro e he
+  simp only [Finset.mem_insert, Finset.mem_singleton] at he ⊢
+  rcases he with rfl | rfl
+  · right; rw [htS_vert, hp']
+  · left; rw [htS_vert, hq']
+
 end LoopEqualityProof
