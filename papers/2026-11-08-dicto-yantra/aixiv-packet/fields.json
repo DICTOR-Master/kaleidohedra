@@ -1,0 +1,25 @@
+{
+ "fields": {
+  "title": "The DICTO Yantra: Unique and Traditional, Exact but Not Constructible",
+  "authors": "DICTO",
+  "abstract": "The DICTO Yantra is the only Śrī Yantra that meets Huet's conditions, Kulaichev's (b), (c) and (d), with (d) stated as the incircle of the bindu, the Cleo-Antonius product uv = 2/φ³ in place of (a), and admissibility, and it has the traditional form: 43 triangles, 18 marmas and 24 sandhis (Theorem 15 and Proposition 11). The proof is computer-assisted, a certified computation: exact divisor lemma and elimination over ℚ(√5), real roots certified by three isolators, ball arithmetic and the Krawczyk test; an independent second census agrees. Kulaichev's own conditions force exactly one figure too, and it is not the traditional yantra: Kulaichev's yantra is the only Śrī Yantra that meets Huet's conditions, Kulaichev's four conditions and admissibility, and it has 45 regions, 41 triangles and 4 four-sided, and 28 sandhis, not 43 triangles and 24 sandhis (Theorem 14, a computer-assisted proof of the same kind). Theorem 14's result is also proved in Lean 4 with Mathlib, by a separate, kernel-checked route, registered on Palomar as PALOMAR-2026-11-17-000006. This answers the uniqueness question Kulaichev asked in 1984. Both yantras are solved exactly: the great slopes of the DICTO Yantra on the Cleo-Antonius and of Kulaichev's classical yantra have minimal polynomials of degree 160 and 348 (Theorems 9 and 10).",
+  "primary_category": "math.MG",
+  "categories": [
+   "math.MG",
+   "cs.LO"
+  ],
+  "msc_class": "51M04, 51M15, 01A32",
+  "license": "CC BY-SA 4.0",
+  "ai_contribution": "ai-derived",
+  "ai_models": "Claude Code (Opus)",
+  "ai_statement": "DICTO: ideas, names, constructions and direction: the DICTO Yantra, its Cleo-Antonius pair, and the decision to solve the Sri Yantra exactly and to take up Kulaichev's uniqueness question. Computation, proofs, verification and drafting with Claude (Anthropic): the exact elimination over Q(sqrt5), the certified root isolation, the uniqueness proofs and the Lean 4 proof of Theorem 14. Kulaichev's question (1984) and conditions, and Huet's conditions, are theirs and credited in the paper.",
+  "repo_url": "https://github.com/DICTOR-Master/kulaichev-yantra-lean",
+  "process_summary": "8-20 November 2026: DICTO took up the Sri Yantra and Kulaichev's 1984 uniqueness question, chose the Cleo-Antonius pair for the DICTO Yantra and directed the work; Claude (Anthropic) computed the exact solutions, certified the real roots, proved the uniqueness theorems and wrote the Lean 4 proof of Theorem 14. The paper has nine versions on Zenodo; this is Version 9.",
+  "verification_notes": "Exact elimination over Q(sqrt5); real roots certified by three isolators, ball arithmetic and the Krawczyk test; an independent second census agrees. Theorem 14 is also proved in Lean 4 with Mathlib (no sorry, standard axioms only), registered on Palomar as PALOMAR-2026-11-17-000006.",
+  "negative_results": "Neither yantra can be drawn exactly with straightedge and compass (great slopes of degree 160 and 348). Kulaichev's own four conditions force one figure, and it is not the traditional yantra (45 regions, 28 sandhis).",
+  "external_url": "https://doi.org/10.5281/zenodo.24052633",
+  "comments": "Paper #103 of DICTO's series; Version 9 (10.5281/zenodo.24491365) of Zenodo concept record 10.5281/zenodo.24052633 (this PDF is identical to that version). Lean: https://github.com/DICTOR-Master/kulaichev-yantra-lean (Palomar PALOMAR-2026-11-17-000006)."
+ },
+ "pdf": "dicto-103-dicto-yantra.pdf",
+ "zenodo_record": "24491365"
+}

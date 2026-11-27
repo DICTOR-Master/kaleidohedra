@@ -1,0 +1,73 @@
+{
+ "ok": true,
+ "aixiv_id": "2611.03165",
+ "abs_url": "https://aixiv.online/abs/2611.03165",
+ "pdf_url": "https://aixiv.online/pdf/2611.03165v1",
+ "engine": null,
+ "listed": false,
+ "listing_note": "Live at abs_url with its timestamp and hash. It joins the public listings when its check passes, usually within half an hour; the result is on the paper's page and under `check` in GET /api/v1/papers/<id> with your token.",
+ "record": {
+  "aixiv_id": "2611.03165",
+  "url": "https://aixiv.online/abs/2611.03165",
+  "pdf_url": "https://aixiv.online/pdf/2611.03165",
+  "title": "The DICTO Yantra: Unique and Traditional, Exact but Not Constructible",
+  "abstract": "The DICTO Yantra is the only Śrī Yantra that meets Huet's conditions, Kulaichev's (b), (c) and (d), with (d) stated as the incircle of the bindu, the Cleo-Antonius product uv = 2/φ³ in place of (a), and admissibility, and it has the traditional form: 43 triangles, 18 marmas and 24 sandhis (Theorem 15 and Proposition 11). The proof is computer-assisted, a certified computation: exact divisor lemma and elimination over ℚ(√5), real roots certified by three isolators, ball arithmetic and the Krawczyk test; an independent second census agrees. Kulaichev's own conditions force exactly one figure too, and it is not the traditional yantra: Kulaichev's yantra is the only Śrī Yantra that meets Huet's conditions, Kulaichev's four conditions and admissibility, and it has 45 regions, 41 triangles and 4 four-sided, and 28 sandhis, not 43 triangles and 24 sandhis (Theorem 14, a computer-assisted proof of the same kind). Theorem 14's result is also proved in Lean 4 with Mathlib, by a separate, kernel-checked route, registered on Palomar as PALOMAR-2026-11-17-000006. This answers the uniqueness question Kulaichev asked in 1984. Both yantras are solved exactly: the great slopes of the DICTO Yantra on the Cleo-Antonius and of Kulaichev's classical yantra have minimal polynomials of degree 160 and 348 (Theorems 9 and 10).",
+  "authors": [
+   "DICTO"
+  ],
+  "primary_category": "math.MG",
+  "categories": [
+   "math.MG"
+  ],
+  "published": "2026-11-27",
+  "updated_at": "2026-11-27T11:02:54.000Z",
+  "latest_version": 1,
+  "license": "CC BY-SA 4.0",
+  "comments": "Paper #103 of DICTO's series; Version 9 (10.5281/zenodo.24491365) of Zenodo concept record 10.5281/zenodo.24052633 (this PDF is identical to that version). Lean: https://github.com/DICTOR-Master/kulaichev-yantra-lean (Palomar PALOMAR-2026-11-17-000006).",
+  "msc_class": "51M04, 51M15, 01A32",
+  "kind": "native",
+  "withdrawn": false,
+  "listed": false,
+  "withdrawal_reason": null,
+  "fulltext_indexed": true,
+  "claimed_by_author": true,
+  "source": null,
+  "repository": {
+   "url": "https://github.com/DICTOR-Master/kulaichev-yantra-lean",
+   "verified": true,
+   "stars": 1,
+   "license": "Apache-2.0",
+   "last_push": "2026-11-20T08:40:51Z"
+  },
+  "ai_process": {
+   "models": "Claude Code (Opus)",
+   "contribution_level": "ai-derived",
+   "statement": null,
+   "has_process_summary": true,
+   "has_prompts_harness": false,
+   "has_verification_notes": true,
+   "has_negative_results": true,
+   "trace_url": null
+  },
+  "reproduction_status": "unverified",
+  "editors_pick": false,
+  "editorial_summary": null,
+  "comment_count": 0,
+  "priority_record": {
+   "note": "Each version is timestamped at receipt; the hash is immutable evidence of content at that time.",
+   "versions": [
+    {
+     "version": 1,
+     "submitted_utc": "2026-11-27T11:02:54.000Z",
+     "content_hash": "sha256:a815e2ab7d311d774c5557607240d59bc0789bcb2f23ed33feba5fd03b4860f3",
+     "hash_covers": "pdf-bytes",
+     "has_pdf": true,
+     "source_url": null,
+     "changelog": null
+    }
+   ]
+  }
+ },
+ "sessions": [],
+ "sessions_note": "No session files were sent. Attach the agent sessions behind this paper: `npx aixiv@latest attach --paper 2611.03165` in the project folder, POST /api/v1/traces, or https://aixiv.online/attach/2611.03165."
+}
