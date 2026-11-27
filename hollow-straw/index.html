@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hollow-straw · Kaleidohedra</title>
+<meta name="description" content="DICTO's Hollow-straw transformation: the fullerene C116 turns into the fair die Minana #377, both ends fixed, every face moving into its partner face. Scrub the change, watch the 18 neighbour swaps, pull the 60 straws apart.">
+<link rel="icon" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root {
+  --bg: #f5f3ee; --surface: #ffffff; --surface-2: #efece5; --text: #1c1e22; --muted: #5c626a;
+  --line: #d8d3c9; --accent: #2e5c8a; --accent-text: #ffffff; --view-bg: #e9e6df;
+  --shadow: 0 1px 3px rgba(0,0,0,.08);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141619; --surface: #1e2125; --surface-2: #272b30; --text: #ebe9e3; --muted: #a2a8af;
+    --line: #363a40; --accent: #8db5df; --accent-text: #10161d; --view-bg: #1a1d21;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141619; --surface: #1e2125; --surface-2: #272b30; --text: #ebe9e3; --muted: #a2a8af;
+  --line: #363a40; --accent: #8db5df; --accent-text: #10161d; --view-bg: #1a1d21;
+  --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow-x: hidden; }
+body { background: var(--bg); color: var(--text); font: 16px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-text-size-adjust: 100%; }
+a { color: var(--accent); }
+#app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; max-width: 100vw; }
+header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--surface); flex-wrap: wrap; }
+header h1 { font-size: 19px; margin: 0; font-weight: 650; letter-spacing: .01em; white-space: nowrap; }
+header nav { margin-left: auto; display: flex; gap: 14px; font-size: 14px; flex-wrap: wrap; }
+.mark { position: fixed; right: 10px; bottom: 6px; font-size: 10px; letter-spacing: .18em; color: var(--muted); opacity: .8; z-index: 5; pointer-events: none; }
+.mark a { pointer-events: auto; }
+.stage { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.view { position: relative; flex: 1 1 58%; min-height: 220px; background: var(--view-bg); touch-action: none; overflow: hidden; }
+.view canvas { display: block; width: 100%; height: 100%; }
+.hint { position: absolute; left: 12px; bottom: 8px; font-size: 12px; color: var(--muted); pointer-events: none; }
+.panel { flex: 0 1 auto; max-height: 26vh; overflow-y: auto; padding: 12px 16px; background: var(--surface); border-top: 1px solid var(--line); }
+@media (orientation: landscape) and (min-width: 700px) {
+  .stage { flex-direction: row; }
+  .view { flex: 1 1 60%; }
+  .panel { flex: 0 0 38%; max-width: 440px; max-height: none; border-top: none; border-left: 1px solid var(--line); }
+}
+.dock { flex: 0 0 auto; display: flex; flex-direction: column; gap: 10px; padding: 12px 16px calc(14px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--line); box-shadow: 0 -2px 8px rgba(0,0,0,.05); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; flex-wrap: wrap; }
+.seg button, .btn { min-height: 48px; font: inherit; font-size: 16px; color: var(--text); background: var(--surface-2); border: none; padding: 0 14px; }
+.btn { border: 1px solid var(--line); border-radius: 12px; }
+.seg button[aria-pressed="true"], .btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.seg button[hidden], .btn[hidden] { display: none; }
+.sliderrow { display: flex; align-items: center; gap: 12px; }
+.sliderrow[hidden] { display: none; }
+.sliderrow label { font-size: 15px; color: var(--muted); white-space: nowrap; }
+input[type=range] { -webkit-appearance: none; appearance: none; flex: 1 1 auto; min-width: 0; height: 48px; background: transparent; margin: 0; touch-action: none; }
+input[type=range]::-webkit-slider-runnable-track { height: 10px; border-radius: 5px; background: var(--line); }
+input[type=range]::-moz-range-track { height: 10px; border-radius: 5px; background: var(--line); }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); margin-top: -15px; border: 3px solid var(--surface); box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+input[type=range]::-moz-range-thumb { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); border: 3px solid var(--surface); }
+h2 { font-size: 18px; margin: 0 0 4px; }
+p { margin: 0 0 8px; font-size: 15px; }
+.sub { color: var(--muted); font-size: 14px; }
+table.kinds { border-collapse: collapse; width: 100%; font-size: 14px; margin: 6px 0 8px; }
+table.kinds td { padding: 5px 4px; border-top: 1px solid var(--line); vertical-align: middle; }
+table.kinds td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sw { display: inline-block; width: 16px; height: 16px; border-radius: 4px; border: 1px solid rgba(0,0,0,.25); vertical-align: -3px; }
+.note { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+.links { font-size: 14px; margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.err { color: #c0392b; }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <header>
+    <h1>Hollow-straw</h1>
+    <nav><a href="/amber/">Amber cells</a><a href="/aequi/">Aequi fair dice</a><a href="/">Kaleidohedra</a></nav>
+  </header>
+  <main class="stage">
+    <div class="view" id="view"><div class="hint">drag to turn · pinch to zoom</div></div>
+    <section class="panel" id="panel" aria-live="polite"><p>Loading…</p></section>
+  </main>
+  <footer class="dock">
+    <div class="row">
+      <div class="seg" role="group" aria-label="View">
+        <button data-mode="change" aria-pressed="true">The change</button>
+        <button data-mode="straws" aria-pressed="false">The 60 straws</button>
+      </div>
+      <button class="btn" id="playBtn" aria-pressed="false">Play</button>
+      <button class="btn" id="ghostBtn" aria-pressed="true">C116 inside</button>
+      <button class="btn" id="dieBtn" aria-pressed="true">Die outline</button>
+    </div>
+    <div class="sliderrow" id="lamRow">
+      <label for="lam">C116</label>
+      <input type="range" id="lam" min="0" max="1" step="any" value="0" aria-label="How far the change has gone, from C116 to Minana #377">
+      <label for="lam">die</label>
+    </div>
+    <div class="sliderrow" id="expRow" hidden>
+      <label for="explode">together</label>
+      <input type="range" id="explode" min="0" max="1.2" step="any" value="0.5" aria-label="Pull the straws apart from the centre">
+      <label for="explode">apart</label>
+    </div>
+  </footer>
+  <div class="mark">DICTO · <a href="https://dictospheres.com">dictospheres.com</a></div>
+</div>
+
+<script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+<script>
+(function () {
+'use strict';
+var $ = function (id) { return document.getElementById(id); };
+var EDGE = 0x2b261e, GHOST = 0x6b7680;
+var state = { mode: 'change', lam: 0, ghost: true, die: true, f: 0.5, play: false };
+
+// ---------------- viewer (as the Amber and Aequi pages)
+var view = $('view');
+var renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+view.insertBefore(renderer.domElement, view.firstChild);
+var scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+camera.position.set(0, 0, 5.2); scene.add(camera);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x50555c, 0.62));
+var key = new THREE.DirectionalLight(0xffffff, 0.62); key.position.set(2.5, 3, 4); camera.add(key);
+var holder = new THREE.Group(); scene.add(holder);
+holder.quaternion.setFromEuler(new THREE.Euler(0.38, -0.55, 0.05));
+var dirty = true, zoom = 1;
+function themeBg() { scene.background = new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--view-bg').trim() || '#e9e6df'); dirty = true; }
+themeBg();
+if (window.matchMedia) { var mq = window.matchMedia('(prefers-color-scheme: dark)'); (mq.addEventListener ? mq.addEventListener('change', themeBg) : mq.addListener(themeBg)); }
+function resize() {
+  var w = view.clientWidth, h = view.clientHeight; if (!w || !h) return;
+  renderer.setSize(w, h, false); camera.aspect = w / h;
+  camera.position.z = (w < h ? 5.2 * Math.max(1, h / w * 0.82) : 5.2) * zoom; camera.updateProjectionMatrix(); dirty = true;
+}
+new ResizeObserver(resize).observe(view);
+(function loop() { if (dirty) { renderer.render(scene, camera); dirty = false; } requestAnimationFrame(loop); })();
+var pts = {}, lastPinch = 0;
+view.addEventListener('pointerdown', function (e) { view.setPointerCapture(e.pointerId); pts[e.pointerId] = { x: e.clientX, y: e.clientY }; });
+view.addEventListener('pointermove', function (e) {
+  if (!pts[e.pointerId]) return;
+  var ids = Object.keys(pts), p = pts[e.pointerId], dx = e.clientX - p.x, dy = e.clientY - p.y;
+  if (ids.length === 1) {
+    var ang = Math.sqrt(dx * dx + dy * dy) * 0.009;
+    if (ang > 0) { holder.quaternion.premultiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(dy, dx, 0).normalize(), ang)); dirty = true; }
+    p.x = e.clientX; p.y = e.clientY;
+  } else if (ids.length >= 2) {
+    p.x = e.clientX; p.y = e.clientY;
+    var a = pts[ids[0]], b = pts[ids[1]], d = Math.hypot(a.x - b.x, a.y - b.y);
+    if (lastPinch) { zoom = Math.min(3, Math.max(0.35, zoom * lastPinch / d)); resize(); }
+    lastPinch = d;
+  }
+});
+function up(e) { delete pts[e.pointerId]; if (Object.keys(pts).length < 2) lastPinch = 0; }
+view.addEventListener('pointerup', up); view.addEventListener('pointercancel', up);
+view.addEventListener('wheel', function (e) { e.preventDefault(); zoom = Math.min(3, Math.max(0.35, zoom * Math.exp(e.deltaY * 0.001))); resize(); }, { passive: false });
+
+// ---------------- building
+var sharedEdge = new THREE.LineBasicMaterial({ color: EDGE });
+function polyMesh(V, F, cols, opacity) {
+  var pos = [], col = [], c = new THREE.Color();
+  F.forEach(function (f, k) {
+    c.set(cols[k]);
+    for (var t = 1; t + 1 < f.length; t++) [f[0], f[t], f[t + 1]].forEach(function (i) { pos.push(V[i][0], V[i][1], V[i][2]); col.push(c.r, c.g, c.b); });
+  });
+  var g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
+  var m = new THREE.MeshPhongMaterial({ vertexColors: true, flatShading: true, shininess: 18, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+  if (opacity < 1) { m.transparent = true; m.opacity = opacity; m.depthWrite = false; }
+  return new THREE.Mesh(g, m);
+}
+function faceEdges(V, F, mat) {
+  var pos = [];
+  F.forEach(function (f) { for (var i = 0; i < f.length; i++) { var a = V[f[i]], b = V[f[(i + 1) % f.length]]; pos.push(a[0], a[1], a[2], b[0], b[1], b[2]); } });
+  var g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); return new THREE.LineSegments(g, mat);
+}
+var D = null, R = 0, frames = [], ghost = null, dieLine = null, straws = [], strawRoot = new THREE.Group(), changeRoot = new THREE.Group();
+holder.add(changeRoot); holder.add(strawRoot);
+function build() {
+  D.frames[D.frames.length - 1].v.forEach(function (v) { R = Math.max(R, Math.hypot(v[0], v[1], v[2])); });
+  D.frames.forEach(function (fr) {
+    var g = new THREE.Group(); g.add(polyMesh(fr.v, fr.f, D.colour, 1)); g.add(faceEdges(fr.v, fr.f, sharedEdge)); g.visible = false;
+    changeRoot.add(g); frames.push({ lam: fr.lam, g: g });
+  });
+  var f0 = D.frames[0], fN = D.frames[D.frames.length - 1];
+  ghost = new THREE.Group(); ghost.add(polyMesh(f0.v, f0.f, D.colour, 0.35)); ghost.add(faceEdges(f0.v, f0.f, new THREE.LineBasicMaterial({ color: GHOST, transparent: true, opacity: 0.7 })));
+  dieLine = faceEdges(fN.v, fN.f, new THREE.LineBasicMaterial({ color: GHOST, transparent: true, opacity: 0.8 }));
+  changeRoot.add(ghost); changeRoot.add(dieLine);
+  D.straws.forEach(function (s) {
+    var g = new THREE.Group(), c = [0, 0, 0];
+    s.v.forEach(function (v) { c[0] += v[0]; c[1] += v[1]; c[2] += v[2]; }); c = c.map(function (x) { return x / s.v.length; });
+    var pos = [], col = new THREE.Color(D.colour[s.k]), cl = [];
+    s.t.forEach(function (t) { t.forEach(function (i) { pos.push(s.v[i][0], s.v[i][1], s.v[i][2]); cl.push(col.r, col.g, col.b); }); });
+    var geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setAttribute('color', new THREE.Float32BufferAttribute(cl, 3)); geo.computeVertexNormals();
+    g.add(new THREE.Mesh(geo, new THREE.MeshPhongMaterial({ vertexColors: true, flatShading: true, shininess: 18, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 })));
+    var lp = []; s.e.forEach(function (e) { var a = s.v[e[0]], b = s.v[e[1]]; lp.push(a[0], a[1], a[2], b[0], b[1], b[2]); });
+    var lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(lp, 3)); g.add(new THREE.LineSegments(lg, sharedEdge));
+    strawRoot.add(g); straws.push({ g: g, c: c });
+  });
+}
+function nearest(l) { var b = frames[0]; frames.forEach(function (f) { if (Math.abs(f.lam - l) < Math.abs(b.lam - l)) b = f; }); return b; }
+function place() {
+  if (!D) return;
+  var change = state.mode === 'change';
+  changeRoot.visible = change; strawRoot.visible = !change;
+  var cur = nearest(state.lam); frames.forEach(function (f) { f.g.visible = change && f === cur; });
+  ghost.visible = change && state.ghost && state.lam > 0.02; dieLine.visible = change && state.die && state.lam < 0.98;
+  var ff = state.f; straws.forEach(function (s) { s.g.position.set(s.c[0] * ff, s.c[1] * ff, s.c[2] * ff); });
+  var s = 1.05 / (R * (change ? 1 : 1 + ff)); holder.scale.setScalar(s);
+  $('lamRow').hidden = !change; $('expRow').hidden = change; $('playBtn').hidden = !change; $('ghostBtn').hidden = !change; $('dieBtn').hidden = !change;
+  status(); dirty = true;
+}
+function status() {
+  var done = D.swaps.filter(function (w) { return w.lam <= state.lam; }).length;
+  $('stat').textContent = state.mode === 'change'
+    ? 'λ = ' + state.lam.toFixed(3) + ' · swaps done: ' + done + ' of ' + D.swaps.length + (state.lam <= 0 ? ' · C116' : state.lam >= 1 ? ' · Minana #377' : '')
+    : '60 straws, one for each face of C116, each ending on its face of Minana #377';
+}
+function panel() {
+  var leg = Object.keys(D.legend).map(function (c) { return '<tr><td><span class="sw" style="background:' + c + '"></span> ' + D.legend[c] + '</td></tr>'; }).join('');
+  $('panel').innerHTML =
+    '<h2>C116 into Minana #377</h2><p class="sub" id="stat"></p>' +
+    '<p>DICTO\'s Hollow-straw: both ends are fixed, the fullerene C116 in its own shape inside and the fair die Minana #377 outside. ' +
+    'Every face of C116 moves and turns into its partner face of the die, all at once. At every moment the moving faces enclose one solid, and each solid lies inside the next, so the straws, the regions the faces sweep, fill the space between C116 and the die without overlapping.</p>' +
+    '<p>On the way, neighbouring faces change partners 18 times: four faces meet at a point and two of them stop touching while the other two start. These are the 18 swaps; they make the straws Scutoid-Frusta.</p>' +
+    '<table class="kinds">' + leg + '</table><p class="note">Colours: each face and straw in the colour of the die face it becomes (the Aequi page\'s colours, by the solid whose plane it lies on).</p>' +
+    '<p class="note">Proved in exact arithmetic (C116\'s planes rounded to 10<sup>−9</sup>, the die\'s fair depths to 15 digits): the start is C116, the end the die, every intermediate solid lies inside the next, and the only changes are the 18 swaps. The picture shows ' + D.frames.length + ' of the intermediate solids; the straws are drawn from them.</p>' +
+    '<div class="links"><a href="/amber/">Amber cells</a><a href="/aequi/">Aequi fair dice</a><span>Paper in preparation</span><a href="/">Back to Kaleidohedra</a></div>';
+  status();
+}
+function sync() {
+  document.querySelectorAll('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.mode === state.mode)); });
+  $('playBtn').setAttribute('aria-pressed', String(state.play)); $('playBtn').textContent = state.play ? 'Pause' : 'Play';
+  $('ghostBtn').setAttribute('aria-pressed', String(state.ghost)); $('dieBtn').setAttribute('aria-pressed', String(state.die));
+}
+document.querySelectorAll('[data-mode]').forEach(function (b) { b.onclick = function () { state.mode = b.dataset.mode; state.play = false; sync(); place(); }; });
+$('ghostBtn').onclick = function () { state.ghost = !state.ghost; sync(); place(); };
+$('dieBtn').onclick = function () { state.die = !state.die; sync(); place(); };
+$('lam').oninput = function () { state.lam = parseFloat(this.value) || 0; state.play = false; sync(); place(); };
+$('explode').oninput = function () { state.f = parseFloat(this.value) || 0; place(); };
+var t0 = 0;
+function tick(ts) {
+  if (!state.play) return;
+  if (!t0) t0 = ts; var dt = (ts - t0) / 1000; t0 = ts;
+  state.lam = Math.min(1, state.lam + dt / 8); $('lam').value = state.lam; place();
+  if (state.lam >= 1) { state.play = false; sync(); return; }
+  requestAnimationFrame(tick);
+}
+$('playBtn').onclick = function () { state.play = !state.play; if (state.play) { if (state.lam >= 1) state.lam = 0; t0 = 0; requestAnimationFrame(tick); } sync(); };
+fetch('/hollow-straw/c116-minana.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) {
+  D = d; build(); panel(); sync(); place();
+}).catch(function (e) { $('panel').innerHTML = '<p class="err">Could not load the data (' + e.message + ').</p>'; });
+})();
+</script>
+</body>
+</html>

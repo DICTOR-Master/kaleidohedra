@@ -52,6 +52,7 @@ async function main() {
   if (SITE_ID === 'rhombiverse') staticEntries.push('googlec4db6e568a2c28ac.html'); // its search-console verification
   staticEntries.push('aequi'); // DICTO's Aequi picker, the link the fair-dice papers cite (in every door: the one-site build needs identical shared files)
   staticEntries.push('amber'); // DICTO's Amber cells page (in every door, as aequi)
+  staticEntries.push('hollow-straw'); // DICTO's Hollow-straw page, C116 into Minana #377 (in every door, as aequi)
   for (const entry of staticEntries) {
     await cp(path.join(root, entry), path.join(dist, entry), { recursive: true });
   }
