@@ -4801,6 +4801,30 @@
      13,
      11
     ]
+   ],
+   [
+    "Hollow-straw criterion",
+    "C116 -> Minana nested with the fewest swaps, exact; exploration of C60, C80, C140 x every same-size Aequus running (study 2026-11-27-hollow-straw-criterion)",
+    "when is moving each face plane into its partner nested with the fewest swaps; joins scutoids, foam T1, kinetic hulls, fullerenes, fair dice",
+    []
+   ],
+   [
+    "The hull of every polytope with its polar",
+    "Platonic: one cell per face, Schlegel diagram = Vacuus-Solid (exact); Klitzing lists only equal-edge cases",
+    "general condition and proof; Archimedean and Catalan tests",
+    []
+   ],
+   [
+    "Dehn zero exactly when space-filling, for the Vacuus/Resonus plane pieces",
+    "truncated octahedron, up to three cuts: 9 of 200 Dehn-zero, all fill space (exact)",
+    "four cuts and non-convex unions; false in general (Dehn invariant page)",
+    []
+   ],
+   [
+    "Which arrangement cells make Aequi",
+    "48,988 icosahedral-pair Aequi with symmetry (numerical)",
+    "a rule; dice with no symmetry",
+    []
    ]
   ],
   "weak": [
@@ -6409,6 +6433,41 @@
     "study": "studies/2026-11-26-self-dual-forms",
     "goes_to": "V SF A paper (Vacuus/Resonus/Tacitus rows)",
     "status": "settled (computed; near misses at 40 digits)"
+   },
+   {
+    "date": "2026-11-27",
+    "result": "DICTO's Hollow-straw TRANSFORMATION C116 -> Minana #377 (both ends fixed, C116 in its own shape; every face plane moves and turns into its partner, a_k(lam) = (1-lam)a_k + lam m_sigma(k)): nested, every face present throughout, exactly the 18 floor swaps; proved in exact Q(sqrt5) arithmetic (C116 planes rounded to 1e-9 rationals, Minana with its 15-digit depth stand-ins). Replaces the flat-walled variant (my variant, die-pressed core; straight-skeleton credit belongs to that variant only).",
+    "study": "studies/2026-11-24-aequi-vacuus-scutoids (c116_transform.py, c116_transform_exact.py, render_transform.py)",
+    "goes_to": "C116 -> Minana paper, Theorem 1; Hollow-straw app page",
+    "status": "exact"
+   },
+   {
+    "date": "2026-11-27",
+    "result": "Vacuus-Solids special members: the walls lie in Q's face planes, never on its faces; lam*Q is the real core (corners = pit tips) only for the excavated dodecahedron and the great dodecahedron; meets the pits at some corners for dodecahedron/icosahedron on the deltoidal hexecontahedron and tetrahedron/triakis octahedron; planes only for the other six; no pit enters Q. Exact (Q(sqrt5), Q(sqrt2)). Figure 2 and text of the draft corrected (DICTO: 'is it mathematically sound?').",
+    "study": "studies/2026-11-25-partial-vacuus (core_or_planes.py, exact_core_or_planes.py)",
+    "goes_to": "Vacuus-Solids draft, Theorem 1 text and Figure 2",
+    "status": "exact"
+   },
+   {
+    "date": "2026-11-27",
+    "result": "Vacuus-Solids as Schlegel diagrams (DICTO's observation): for the five Platonic solids, conv(P x 0 u mu P* x 1) has exactly the facets P, core, and one join per face/edge/corner (pits, edge wedges, corner pyramids); exact incl. completeness (2-faces close every facet; control with a facet left out fails). The polytopes are known: 16-cell (K-4.2), octacube (K-4.15), ikadoe (K-4.78) (Klitzing); copy core gives the prism. Plates for all five.",
+    "study": "studies/2026-11-27-vacuus-solids-4d (cayley4d.py, plates4d.py)",
+    "goes_to": "Vacuus-Solids draft, Section 8, Proposition 3",
+    "status": "exact (Platonic); Archimedean/Catalan open"
+   },
+   {
+    "date": "2026-11-27",
+    "result": "Aequi, icosahedral pair (60 faces), every die with some symmetry: 53,156 candidates (equal solid angles from O); 48,988 Aequi from the centre of mass (numerical); 4,168 being settled by a stronger solver (margin 1e-3; 1,219 Aequi among the first 1,509).",
+    "study": "studies/2026-11-27-vacuus-resonus-mirrors (fairsearch_any.py, fair_centroid.py, fair_centroid_retry.py)",
+    "goes_to": "fair-dice part of the Vacuus/Resonus arrangement work; catalogue after exact certification",
+    "status": "numerical, run in progress"
+   },
+   {
+    "date": "2026-11-27",
+    "result": "Map 'Where the Vacuus meets known mathematics': six results x classical theories touched, sources with status (opened / record only / not opened), four gaps ranked (Hollow-straw criterion; hull of every polytope with its polar; Dehn zero iff space-filling for the plane pieces; which arrangement cells make Aequi).",
+    "study": "papers/classical-map",
+    "goes_to": "Concordance (gaps.ranked below); reading copy MAP-VACUUS-AND-KNOWN-MATHEMATICS-2026-11-27.pdf",
+    "status": "working map"
    }
   ]
  },
@@ -6841,6 +6900,56 @@
    "kind": "lead",
    "lib": false,
    "conf": "Wikipedia pointer opened; Kepler scan not opened",
+   "status": "to read"
+  },
+  {
+   "field": "Polytopes",
+   "cite": "R. Klitzing, Convex segmentochora, Symmetry: Culture and Science 11 (2000) 139-181; list at bendwavy.org/klitzing; Polytope Wiki K-4.15, K-4.78",
+   "says": "hulls of two polyhedra in parallel spaces, all edges equal: tet || dual tet = 16-cell (K-4.2), oct || cube = octacube (K-4.15), ike || doe = ikadoe (K-4.78), with their cells",
+   "touches": "Vacuus-Solids Section 8: the Platonic Vacuus-Solids are Schlegel diagrams of these",
+   "kind": "credit",
+   "lib": false,
+   "conf": "list and wiki pages opened; article not opened",
+   "status": "credited"
+  },
+  {
+   "field": "Polytopes",
+   "cite": "B. Huber, J. Rambau, F. Santos, The Cayley trick, lifting subdivisions and the Bohne-Dress theorem on zonotopal tilings, J. Eur. Math. Soc. 2 (2000) 179-198",
+   "says": "Section 2.4: the Cayley embedding places polytopes in parallel affine spaces (after Sturmfels 1994)",
+   "touches": "Vacuus-Solids Section 8 construction",
+   "kind": "credit",
+   "lib": false,
+   "conf": "opened",
+   "status": "credited"
+  },
+  {
+   "field": "Biology",
+   "cite": "P. Gomez-Galvez et al., Scutoids are a geometrical solution to three-dimensional packing of epithelia, Nat. Commun. 9 (2018) 2960",
+   "says": "Voronoi tube model: apical and basal Voronoi diagrams of the same seeds; apico-basal intercalation analogous to the T1 transition",
+   "touches": "Hollow-straw transformation: the same neighbour change, between two fixed polyhedra",
+   "kind": "credit",
+   "lib": false,
+   "conf": "opened",
+   "status": "credited"
+  },
+  {
+   "field": "Computational geometry",
+   "cite": "J. Basch, L. J. Guibas, J. Hershberger, Data structures for mobile data, J. Algorithms 31 (1999) 1-28",
+   "says": "kinetic data structures: certificates, events when a certificate may change sign; convex hull of moving points",
+   "touches": "the exact Hollow-straw certificate (event sweep)",
+   "kind": "credit",
+   "lib": false,
+   "conf": "preprint opened",
+   "status": "credited"
+  },
+  {
+   "field": "Geometric modelling",
+   "cite": "A. Shapiro, A. Tal, Polyhedron realization for shape transformation (Technion)",
+   "says": "morphing convex polyhedra by merging their edge structures and interpolating vertices; non-self-intersection listed as open",
+   "touches": "Hollow-straw criterion: nearest found; ours interpolates paired face planes",
+   "kind": "lead",
+   "lib": false,
+   "conf": "record only",
    "status": "to read"
   }
  ],
