@@ -54,7 +54,17 @@ Sequences:
 
 Candidates waiting for a home paper (DICTO 24 Nov): the type-B Vacuus count (5^n - 2*3^n + 1)/2 (not in OEIS), plus any genuinely new Resonus/Vacuus sequences found by studies/2026-11-24-resonus-sequences; they go in only after the Vacuus and Resonus paper is released. Entry 2 (4H) and Sweep 1 (pyrochlore) go first (working pages in working/).
 
-Comments:
+Comments found 28 Nov 2026 (DICTO: "the loop equality theorem... how many more OEIS sequences does this apply to?"; OEIS searched 28 Nov):
+- A288457 (Chebyshev coefficients of the density of states of diamond) and A288461 (the same for fcc): their own %C says the
+  coefficients are fixed by the closed-walk counts W_k at the site, so by the Loop Equality they are the same at every atom of every
+  stacking (A288457) and every sphere of every close-packed stacking, hcp included (A288461).
+- A293237 (escape probability of a random walk on fcc): the return probability is 1 - 1/sum W_k/12^k, so it is the same for every
+  sphere of every close-packed stacking.
+  All three are one-line consequences NOT printed in #102: rule 13 needs them printed first (#102 next version, a corollary).
+- NOT covered (do not comment): A038515 (polygons differ from length 18, #102 Thm 5: a separate comment), A001394 and other open
+  self-avoiding walks (differ from length 15, Herrero), coordination sequences and theta series (differ), A338672 kagome (2D).
+- Lead, outside the plan: no OEIS entry for the escape probability of the diamond lattice (fcc A293237 and bcc A293238 exist); the value
+  is classical (not ours); check the literature before any entry.
 - A038515 (diamond polygons, #102 Thm 5). READY once the factor of 2 in #102's wording is checked.
 - A008651, with sweep 3.
 - A402191: its three-valued part, after approval.
