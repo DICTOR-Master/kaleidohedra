@@ -54,6 +54,24 @@ Sequences:
 
 Candidates waiting for a home paper (DICTO 24 Nov): the type-B Vacuus count (5^n - 2*3^n + 1)/2 (not in OEIS), plus any genuinely new Resonus/Vacuus sequences found by studies/2026-11-24-resonus-sequences; they go in only after the Vacuus and Resonus paper is released. Entry 2 (4H) and Sweep 1 (pyrochlore) go first (working pages in working/).
 
+Others' results that close gaps but are not in the OEIS (DICTO 28 Nov: "who are they, what does their work concern, how does it relate
+to our open gaps"; checked 28 Nov):
+- C. P. Herrero, Structural characterization of ice polymorphs from self-avoiding walks, Chem. Phys. 439 (2014), arXiv:1402.5036
+  (abstract read): self-avoiding walk counts C_n for eight ice networks to n = 27. Ice Ih's network is lonsdaleite's; ice Ic's is
+  diamond's (A001394, which does not cite Herrero). OEIS has NO entry for self-avoiding walks on lonsdaleite / ice Ih (searched).
+  Relation: #102 (open walks differ between stackings from n = 15; polygons from 18, Thm 5). Possible new entry, credited to Herrero,
+  terms from his table (paper to be opened).
+- J. S. Joyce (diamond Green function as K(k+)K(k-)) and A. J. Guttmann, Lattice Green functions in all dimensions, J. Phys. A 43
+  (2010), arXiv:1004.1435 (snippet read): closed forms for the diamond lattice Green function, hence its return/escape probability.
+  OEIS has fcc A293237 and bcc A293238 but NO diamond escape probability. Relation: the Loop Equality makes that constant the same for
+  every atom of every stacking (lonsdaleite included). Value to be taken from the sources, not from a snippet (an unverified
+  12 Gamma(1/3)^6/(2^(4/3) pi^4) appeared in a search result).
+- M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972): closed walks equal on periodic polytypes; not
+  mentioned in A002895 / A002899 (our planned comments add it, with #102 for every stacking).
+- To check before naming as closing a gap: O'Keeffe 1991 (polytype coordination sequences: may already give our entries 2-5);
+  McLarnan, Z. Kristallogr. 155 (1981) 269-291 (polytype counts: may give sweep 5 by hexagonal layers).
+- No literature found yet for closed walks on the pyrochlore network (our sweeps 1-2).
+
 Comments found 28 Nov 2026 (DICTO: "the loop equality theorem... how many more OEIS sequences does this apply to?"; OEIS searched 28 Nov):
 - A288457 (Chebyshev coefficients of the density of states of diamond) and A288461 (the same for fcc): their own %C says the
   coefficients are fixed by the closed-walk counts W_k at the site, so by the Loop Equality they are the same at every atom of every
