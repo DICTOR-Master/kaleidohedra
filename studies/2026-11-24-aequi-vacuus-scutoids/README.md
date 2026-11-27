@@ -344,3 +344,7 @@ four or more planes meet.
 - All 18 Y corners lie at the same depth lam = 0.644221...: the layer passes through one polyhedron where all 18 swaps happen at once
   (the LP's offsets put every swap on one level).
 So Theorem 1 (60 convex flat-walled Scutoid-Frusta, C116 -> Minana #377, 18 Y corners) is exact; the float build stays for renders.
+- Prior art (27 Nov): this construction is the weighted straight skeleton of Minana (planes moving inward at individual speeds d_t),
+  stopped at lam = 1: Aichholzer-Aurenhammer-Alberts-Gärtner 1995; Eppstein-Erickson 1999; Aurenhammer 2008 (Comput. Geom.);
+  Barequet-Eppstein-Goodrich-Vaxman 2008 (arXiv 0805.0022); Aurenhammer-Walzl 2016 (Discrete Comput. Geom.). New here: the speeds
+  chosen by an LP so the stopped offset has a prescribed face pattern (not a full search).
