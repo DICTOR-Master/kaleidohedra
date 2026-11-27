@@ -425,3 +425,8 @@ Item 2 (product structure) formal shape: `IsLinkageOn L B` (degree 1 on B, 0 or 
 Item 2 DONE (28 Nov): Parts.lean `parts_to_polygon`, `polygon_to_parts` (both directions of the product structure), whole library
 builds, standard axioms. Countdown 20 (items 18-20 literature checks also done: papers/2026-11-28-loop-equality-lean/literature-checks).
 Item 3 DONE (28 Nov): Transfer.lean flip_transfer (involution lemmas linkage_image, conn_image), built, standard axioms. Countdown 16.
+Item 4 design (28 Nov, decision 1 given to DICTO): Theorem B in Lean in PER-SITE form: for v on the root side of k, polygons of G'
+through v = sum over crossing sets S (finite: inside box v (2l)), pairings M, M' (single cycle) of w_v(S, M) * f(c - S, c - M'),
+w_v = root linkages of G through v, f = far linkages of G (flip transfer). Then Delta = -1/2 sum A_w A_f by finite-sum algebra.
+Equivalent to the paper's translate-weighted form; the paper will quote the Lean form.
+Step 4a: root bonds unchanged by the flip (`bond_root_flip`).
