@@ -19,6 +19,7 @@ DICTO · plan for the next version of paper #112 (Version 1: 20 November 2026, D
 7. **Designations.** The Aequi Diaconis–Keller (all 1088 dice with two kinds of face, in tribute to Persi Diaconis and Joseph B. Keller; the tribute is ours), the Aequi Permutahedra (fair by symmetry; rolling face to face walks the mirrors), fair by symmetry (m = 1).
 8. **The Non-Periodic Table of the Aequi.** One full-width figure: symmetry group by kinds of face, counts and thumbnails, all 10 725.
 9. **Names.** Goroawase names read from each number, written "Name #N", with a hyphen after the second syllable from four syllables on (Ini-mimu #1236, Io-nanigo #10725); the picker as the public record of every die.
+   **Widened 27 Nov (DICTO: "enumerating the innumerable should include how we made it possible to access 6.8 quadrillion shapes"; "and naming them ... any one"):** section 9 becomes *Every die reached*: one die per choice (Theorem A); a number for every choice computed both ways (set rank, after No. 10 725); a name for every number (the syllable rule and the poem forms Kamigo, Nakashichi, Shimo-no-ku, Haiku); built on demand in the picker; the count per group (6 773 000 493 470 481 possible) kept apart from the proved.
 10. **Claimed here, known and used, sources checked.** As in Version 1, extended.
 11. **Contributions.** The list of what the version gives.
 
