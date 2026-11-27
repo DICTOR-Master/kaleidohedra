@@ -77,4 +77,16 @@ s^3 - 3s^2 - 3s - 1 = 0, i.e. (s + 1)^3 = 2 s^3, so s = 1/(cbrt2 - 1) and
 The cube root of 2 (the Delian number, doubling the cube) fits the October exact study, which put Samson's chain in Q(cbrt2) (radius^2
 falls by exactly 1/9 per turn: the shape repeats at a third of the size, up to a turn). For comparison the four-tetrahedra truncated
 tetrahedron has r = 2/3 exactly: Samson's ratio is that 2/3 times 1 + cbrt2 + cbrt4 (an observation, no reason known).
-Status: identified numerically to the precision of the data; an exact derivation from the core rule is the next step.
+Status: superseded by the exact derivation below.
+
+## Samson's fixed shape: EXACT derivation (27 Nov; scripts/samson_exact.py, sympy, FINAL ok)
+1. Samson is DICTO's Delian-bond piece (#51): the unit cube with its four odd corners cut off at leg a = 2^(-1/3). Faces: 4 triangles
+   (distance sqrt3/2 - a/sqrt3 along the odd diagonals w) and 6 cut squares (distance 1/2 along the axes).
+2. Turn 1 (core rule, #78 Prop. 5): triangle tips make a tetrahedron (faces at t d/3 along -w); square tips an octahedron (faces at
+   t/(2 sqrt3) along all diagonals). The core is the truncated tetrahedron with planes along -w at A = t(3 - 2a)/(6 sqrt3) and along
+   +w at B = 3t/(6 sqrt3): B/A = 3/(3 - 2a), and 1 < B/A < 3 for 0 < a < 1.
+3. Every later turn: the core of a truncated tetrahedron T(A, B) is T(tB/3 along -w, tA/3 along +w) = its point reflection scaled by
+   t/3, for EVERY A, B. So the rule fixes every such shape; the proportion is inherited from turn 1, not chosen by the rule.
+4. Edge ratio of T(A, B): r = 2a/(3(1 - a)); at Samson's a = 2^(-1/3): r = 2/(3(cbrt2 - 1)) = (2/3)(1 + cbrt2 + cbrt4), exactly.
+Conclusion: the Delian number in Samson's fixed shape comes from DICTO's Delian cut itself; the core rule only preserves it, with radius
+x t/3 per turn (t^2/9 per two turns, as study 2 found). Same for t = 2 and t = phi, as observed.
