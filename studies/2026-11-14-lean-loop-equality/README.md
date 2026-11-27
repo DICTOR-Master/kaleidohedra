@@ -285,3 +285,8 @@ Refined (DICTO 28 Nov: "some of those questions though closed will not have been
      of Grigorchuk-Zuk and Lenz-Pogorzelski-Schmidt for each stacking (Q6).
  (c) Open mathematics: local laws for open walks (Q1, Q2); Nagle's entropy difference to all orders (Q3); uniform statements over all
      stackings (Q6, beyond what Theorem 1 gives at once); Xu-Lin-Zhang (Q7).
+ (d) (DICTO 28 Nov: "and truly still open questions"): long-standing problems open in the literature itself, which our setting touches
+     but does not claim to close. Candidates, each to be confirmed open from a current source before printing: the exact connective
+     constant of the diamond lattice (known exactly only for the honeycomb, Duminil-Copin and Smirnov); the exact residual entropy of
+     ice (Pauling's estimate, Nagle's series; no closed form); Xu-Lin-Zhang's question on S_h and S_c (moved here from (c)).
+     (c) keeps only the new questions our own results raise (Q1-Q3 laws, Q6 uniform statements).
