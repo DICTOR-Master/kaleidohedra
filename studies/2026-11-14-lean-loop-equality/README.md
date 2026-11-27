@@ -418,3 +418,7 @@ Paper #125: 12 title (DICTO) · 13 Theorem B section · 14 two figures · 15 cor
 statements; Fable wording fixes · 17 general OEIS acknowledgement · 18 Thorpe "first formal proof" check · 19 open problems confirmed
 open · 20 Benito et al. opened · 21 second Fable attack after Theorem B · 22 DICTO's final read ok (then Zenodo release; Palomar
 submission is DICTO's).
+Item 1 DONE (28 Nov): entry/LoopEquality/Degree.lean `polygon_deg_le_two` (tree route), built, standard axioms. Countdown 21.
+Item 2 (product structure) formal shape: `IsLinkageOn L B` (degree 1 on B, 0 or 2 elsewhere, no nonempty closed subset, no loops);
+`SingleCycle P R F` (no nonempty proper Q of crossing points closed under both pairings Conn R (low p) (low q), Conn F (up p) (up q));
+`parts_to_polygon` (root linkage + vertical bonds + far linkage + SingleCycle = polygon; proof by `propagate`) and `polygon_to_parts`.
