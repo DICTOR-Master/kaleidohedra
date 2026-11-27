@@ -30,3 +30,11 @@ Steps 3 and 19 (known solid, prior art): the excavated dodecahedron (Wenninger 2
 draft's Section 6 reads the special sizes as stellations; which of Messer's 226 is the rhombic triacontahedron's member stays open.
 Not run here (reason): 4-5 (no line family), 8 harmonic fingerprint (next), 10-13 (no tiling found), 14-16 (Vacuus census of these
 non-convex solids: their faces are the walls, every pit already a Vacuus pyramid), 17 field: Q(√5) or Q(√2) as listed, 18 none yet.
+
+## Exact Dehn invariant of the rhombic triacontahedron member (scripts/rt_dehn_exact.py, logs/rt_dehn_exact.log, FINAL ok)
+Sector build: one pit carries every edge type. Material angles, exact in Q(sqrt5), each proved a rational multiple of pi (equal
+minimal polynomials of cos^2): knife edges (the RT's 60 edges) 2pi/5; pit edges to the 5-fold corners: pyramid angle 2pi/3; pit
+edges to the 3-fold corners: pyramid angle 4pi/5 (material angles 2pi minus these). Every term length (x) angle vanishes in
+R (x) R/Q pi: the Dehn invariant is EXACTLY ZERO. Controls: the plain RT's dihedral is 4pi/5; the excavated dodecahedron's angles
+(cos^2 = 5/9) are not rational multiples of pi. Consequence: Dehn does not rule out space-filling for this solid; whether it
+fills space is OPEN (zero is necessary, not sufficient; the plain RT also has Dehn zero and does not fill space).
