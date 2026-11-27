@@ -436,3 +436,7 @@ Item 4 progress: Counting.lean `ncard_polysCross` (product structure as a count)
 (polygons of the flipped stacking crossing at P = pairs of G-parts with far ends at c - P, half-turned far part closing one cycle),
 built, standard axioms. Remaining for item 4: sum over P (finite, in the box) and the -1/2 sum A_w A_f algebra.
 Item 12 DONE (28 Nov): title = option 1, DICTO: "1 with proviso of possible slight change later if prudent otherwise ok". Countdown 15.
+Item 4 DONE (28 Nov): TheoremB.lean `theoremB` (flip formula: #polys(flipAt sigma k) = #polys(sigma) + sum over nonempty crossing
+sets P in the window with vertical bonds of (#FlipParts - #PartsCross), all counted in G sigma), with ncard_polys_sum,
+polysCross_empty_flip, root_of_no_cross. Built, standard axioms. The -1/2 sum A_w A_f symmetrisation is finite algebra on top, needed
+only for the locality tables (item 10). Countdown 14.
