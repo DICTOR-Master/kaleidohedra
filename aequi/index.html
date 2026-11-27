@@ -136,6 +136,7 @@ input.cpick { width: 30px; height: 30px; padding: 0; border: 1px solid var(--lin
       </div>
       <button class="btn" id="vacBtn" aria-pressed="false">Vacuus</button>
       <button class="btn" id="resBtn" aria-pressed="false">Resonus</button>
+      <button class="btn" id="shBtn" aria-pressed="false" title="Only the planes in both the Vacuus and the Resonus">Shared only</button>
       <button class="btn" id="handBtn" aria-pressed="false" hidden>Other hand</button>
       <button class="btn" id="clearBtn">Clear</button>
       <button class="btn" id="rollBtn" title="Roll this die: every face equally likely">Roll</button>
@@ -149,6 +150,7 @@ input.cpick { width: 30px; height: 30px; padding: 0; border: 1px solid var(--lin
       <button class="btn" id="snapBtn">Snap to fair</button>
       <button class="btn" id="vacBtn2" aria-pressed="false">Vacuus</button>
       <button class="btn" id="resBtn2" aria-pressed="false">Resonus</button>
+      <button class="btn" id="shBtn2" aria-pressed="false" title="Only the planes in both the Vacuus and the Resonus">Shared only</button>
       <button class="btn" id="stlBtn2" hidden>3D print</button>
     </div>
     <div class="row">
@@ -292,7 +294,7 @@ $('tabFair').onclick = function () { setTab('fair'); };
 
 // ---------------- Pick a die
 var data = null, fair = null;
-var st = { g: null, ticked: [], mode: 'tick', vac: false, res: false, hand: false, num: 'off' };
+var st = { g: null, ticked: [], mode: 'tick', vac: false, res: false, sh: false, hand: false, num: 'off' };
 var NAMES = null, NUMS = null;   // approved names (names.json); face numbers of the finished dice (numberings.json)
 function nameOf(e) { return NAMES ? NAMES[e.k] : dieTitle(e); }
 // face numbers: off, plain (face i gets i + 1), and from numberings.json: o opposites (N + 1), s spin-down, b balanced
@@ -301,7 +303,7 @@ function schemesOf(e) { var x = NUMS && NUMS[e.k + 1]; return SCHEMES.filter(fun
 function numScheme(e) { var has = schemesOf(e).some(function (s) { return s[0] === st.num; }); return has ? st.num : 'plain'; }
 function numbersFor(e, k) { if (k === 'plain') { var p = []; for (var i = 0; i < e.N; i++) p.push(i + 1); return p; } return NUMS[e.k + 1][k]; }
 function numRow(e) {
-  if (st.vac || st.res) return '';
+  if (st.vac || st.res || st.sh) return '';
   var k = numScheme(e);
   return '<div class="numrow"><span class="sub" style="margin:0">Face numbers</span><div class="seg" id="numSeg" role="group" aria-label="Face numbers">' +
     schemesOf(e).map(function (s) { return '<button data-k="' + s[0] + '" aria-pressed="' + (s[0] === k) + '">' + s[1] + '</button>'; }).join('') + '</div></div>';
@@ -436,10 +438,16 @@ $('modeTick').onclick = function () { st.mode = 'tick'; $('modeTick').setAttribu
 $('modeList').onclick = function () { st.mode = 'list'; $('modeList').setAttribute('aria-pressed', 'true'); $('modeTick').setAttribute('aria-pressed', 'false'); renderChoices(); var s = $('choices').querySelector('.sel'); if (s) s.scrollIntoView({ block: 'center' }); };
 $('clearBtn').onclick = function () { setGroup(st.g, []); };
 $('rollBtn').onclick = rollDie;
-function toggleVac() { st.vac = !st.vac; $('vacBtn').setAttribute('aria-pressed', st.vac); $('vacBtn2').setAttribute('aria-pressed', st.vac); if (tab === 'pick') updatePick(); else updateFair(false); }
+function setSh(v) { st.sh = v; $('shBtn').setAttribute('aria-pressed', v); $('shBtn2').setAttribute('aria-pressed', v); }
+function toggleVac() { setSh(false); st.vac = !st.vac; $('vacBtn').setAttribute('aria-pressed', st.vac); $('vacBtn2').setAttribute('aria-pressed', st.vac); if (tab === 'pick') updatePick(); else updateFair(false); }
 $('vacBtn').onclick = toggleVac; $('vacBtn2').onclick = toggleVac;
-function toggleRes() { st.res = !st.res; $('resBtn').setAttribute('aria-pressed', st.res); $('resBtn2').setAttribute('aria-pressed', st.res); if (tab === 'pick') updatePick(); else updateFair(false); }
+function toggleRes() { setSh(false); st.res = !st.res; $('resBtn').setAttribute('aria-pressed', st.res); $('resBtn2').setAttribute('aria-pressed', st.res); if (tab === 'pick') updatePick(); else updateFair(false); }
 $('resBtn').onclick = toggleRes; $('resBtn2').onclick = toggleRes;
+function toggleSh() {   // DICTO 28 Nov: only the planes in both families, striped, in the die's outline
+  setSh(!st.sh); if (st.sh) { st.vac = st.res = false; ['vacBtn', 'vacBtn2', 'resBtn', 'resBtn2'].forEach(function (b) { $(b).setAttribute('aria-pressed', false); }); }
+  if (tab === 'pick') updatePick(); else updateFair(false);
+}
+$('shBtn').onclick = toggleSh; $('shBtn2').onclick = toggleSh;
 $('handBtn').onclick = function () { st.hand = !st.hand; $('handBtn').setAttribute('aria-pressed', st.hand); updatePick(); };
 
 var RES = null;   // the Resonus plates on show (for the note)
@@ -455,7 +463,7 @@ function rollDie() {
   target.premultiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), Math.random() * 2 * Math.PI));
   var start = holder.quaternion.clone(), ax = new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize(), t0 = performance.now(), T = 1400;
   var num = i + 1, e = CUR.e;
-  if (e && st.num !== 'off' && !st.vac && !st.res) { var k = numScheme(e); var L = numbersFor(e, k); if (L) num = L[i]; }
+  if (e && st.num !== 'off' && !st.vac && !st.res && !st.sh) { var k = numScheme(e); var L = numbersFor(e, k); if (L) num = L[i]; }
   rolling = true; $('rollOut').hidden = true;
   (function step(now) {
     var u = Math.min(1, (now - t0) / T), ease = 1 - Math.pow(1 - u, 3);
@@ -468,8 +476,9 @@ function rollDie() {
 var SHOWN = null;   // the solid on show (for the notes)
 function show(S, colours, mirror) {
   RES = null; SHOWN = S;
-  if (st.vac || st.res) {
+  if (st.vac || st.res || st.sh) {
     var plates = st.vac ? G.vacuusPlanes(S) : null, grp = new THREE.Group();
+    if (st.sh) { RES = G.resonusPlates(S).filter(function (p) { return isVacPlane(S, p.n); }); grp.add(resonusObject(S, RES, mirror)); setContent(grp); return null; }
     if (st.vac) grp.add(vacuusObject(S, plates, mirror));
     if (st.res) { RES = G.resonusPlates(S); grp.add(resonusObject(S, RES, mirror)); }
     setContent(grp);
@@ -482,9 +491,12 @@ function resonusObject(S, plates, mirror) {   // DICTO's Resonus: the central cr
   plates.forEach(function (p, i) {
     // each plate its own tint (DICTO 25 Nov: see the whole plates crossing, not a mosaic); the note still counts mirror / sloping
     var c = new THREE.Color().setHSL((i * 0.618034) % 1, 0.45, 0.62), P = p.pts;
-    if (isVacPlane(S, p.n)) {   // also a Vacuus plate: striped in its Resonus tint and its Vacuus colour, in every view (DICTO 28 Nov)
-      var tris = []; for (var j = 0; j < P.length; j++) { tris.push([O, P[j], P[(j + 1) % P.length]]); segs.push([P[j], P[(j + 1) % P.length]]); }
-      grp.add(stripedMesh(S, tris, p.n, '#' + c.getHexString(), p.mirror ? SAND : SLATE, 1)); return;
+    if (isVacPlane(S, p.n)) {   // also a Vacuus plate (DICTO 28 Nov): stripes only on what is truly both, the triangles from the centre to
+      // the edges in this plane; the rest of the cross-section (towards the corners) is Resonus only and keeps its plain tint
+      var n = p.n, vt = S.edges.filter(function (e) { var a = S.verts[e[0]], b = S.verts[e[1]]; return Math.abs(n[0] * a[0] + n[1] * a[1] + n[2] * a[2]) < 1e-9 && Math.abs(n[0] * b[0] + n[1] * b[1] + n[2] * b[2]) < 1e-9; })
+        .map(function (e) { return [O, S.verts[e[0]], S.verts[e[1]]]; });
+      var sm = stripedMesh(S, vt, n, '#' + c.getHexString(), p.mirror ? SAND : SLATE, 1);
+      sm.material.polygonOffsetFactor = -2; sm.material.polygonOffsetUnits = -2; grp.add(sm);   // in front of the plain plate it lies on
     }
     for (var i = 0; i < P.length; i++) {
       [O, P[i], P[(i + 1) % P.length]].forEach(function (v) { pos.push.apply(pos, v); col.push(c.r, c.g, c.b); });
@@ -506,12 +518,12 @@ function stripeTex(c1, c2) {   // diagonal stripes, c1 and c2 in equal bands
   var cv = document.createElement('canvas'); cv.width = cv.height = 64; var x = cv.getContext('2d');
   x.fillStyle = c1; x.fillRect(0, 0, 64, 64); x.strokeStyle = c2; x.lineWidth = 11;
   for (var k = -64; k <= 128; k += 32) { x.beginPath(); x.moveTo(k, 0); x.lineTo(k + 64, 64); x.stroke(); }
-  var t = new THREE.CanvasTexture(cv); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
+  var t = new THREE.CanvasTexture(cv); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); return t;
 }
 function stripedMesh(S, tris, n, c1, c2, opacity) {   // tris: list of [a, b, c]; uv = coordinates in the plane, about 8 bands across
   var e1 = Math.abs(n[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0], d = e1[0] * n[0] + e1[1] * n[1] + e1[2] * n[2];
   e1 = [e1[0] - d * n[0], e1[1] - d * n[1], e1[2] - d * n[2]]; var l = Math.hypot(e1[0], e1[1], e1[2]); e1 = e1.map(function (v) { return v / l; });
-  var e2 = [n[1] * e1[2] - n[2] * e1[1], n[2] * e1[0] - n[0] * e1[2], n[0] * e1[1] - n[1] * e1[0]], k = 4 / radius(S), pos = [], uv = [];
+  var e2 = [n[1] * e1[2] - n[2] * e1[1], n[2] * e1[0] - n[0] * e1[2], n[0] * e1[1] - n[1] * e1[0]], k = 2.2 / radius(S), pos = [], uv = [];
   tris.forEach(function (t) { t.forEach(function (v) { pos.push.apply(pos, v); uv.push(k * (v[0] * e1[0] + v[1] * e1[1] + v[2] * e1[2]), k * (v[0] * e2[0] + v[1] * e2[1] + v[2] * e2[2])); }); });
   var g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.computeVertexNormals();
   return new THREE.Mesh(g, new THREE.MeshPhongMaterial({ map: stripeTex(c1, c2), flatShading: true, shininess: 10, side: THREE.DoubleSide, transparent: opacity < 1, opacity: opacity, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
@@ -522,6 +534,7 @@ function vacNote(plates) {
 }
 function resNote() {
   if (!RES) return '';
+  if (st.sh) return '<p class="note">Shared only: ' + (RES.length ? RES.length + ' plane' + (RES.length === 1 ? ' is' : 's are') + ' in both the Vacuus and the Resonus: each plate in its Resonus colour, striped with its Vacuus colour on the triangles from the centre to its edges.' : 'no plane is in both the Vacuus and the Resonus of this die.') + '</p>';
   var m = RES.filter(function (p) { return p.mirror; }).length;
   var S = SHOWN, nb = S ? RES.filter(function (p) { return isVacPlane(S, p.n); }).length : 0;
   return '<p class="note">Resonus: ' + RES.length + ' plates, the cross-section through the centre parallel to each face (parallel faces share one). ' +
@@ -589,7 +602,7 @@ function updatePick() {
   if (e) console.assert(S.verts.length === e.c, 'corner count ' + S.verts.length + ' differs from ' + e.c);
   var mirrorShow = !!(e && e.h && st.hand);
   var plates = show(S, colours, mirrorShow);
-  var nk = e && !st.vac && !st.res ? numScheme(e) : 'off';
+  var nk = e && !st.vac && !st.res && !st.sh ? numScheme(e) : 'off';
   if (nk !== 'off') {   // the numbers sit beside the solid (not inside its mirrored scale, so they never read backwards)
     var both = new THREE.Group(); holder.remove(content); both.add(content); both.add(labelGroup(S, numbersFor(e, nk), colours, mirrorShow));
     content = both; holder.add(both); dirty = true;
