@@ -56,15 +56,10 @@ Sources checked; data and reproducibility; references.
 2. Theorem 1 = Hollow-straw convex layer; Theorem 2 = symmetric optimum (30 swaps). Floating resin a Proposition (best found).
 3. EXACT first (rule: exact before claimed): redo the Hollow-straw piece checks in exact rationals (now floats, volume diff 1e-15)
    and certify the 165 bound (or state it as a solver bound only) before the draft reaches you.
-4. Prior art, FOUND 27 Nov: the flat-walled Hollow-straw layer is the WEIGHTED STRAIGHT SKELETON of Minana (each face plane moves
-   inward, parallel, at its own speed d_t; walls = traces of the moving edges), stopped at lam = 1. Credit at point of use:
-   Aichholzer, Aurenhammer, Alberts, Gärtner 1995 (straight skeleton, polygons); Eppstein and Erickson 1999 (weighted);
-   Aurenhammer 2008, Comput. Geom. (weighted skeletons, fixed-share decomposition, convex polygons); Barequet, Eppstein, Goodrich,
-   Vaxman 2008, ESA, arXiv 0805.0022 (3D polyhedra); Aurenhammer and Walzl 2016, Discrete Comput. Geom. (mitered offsets of
-   nonconvex polytopes, weighted, any dimension). Ours: the convex case (no ambiguity), and the speeds CHOSEN by a linear programme
-   so the stopped offset has a prescribed face pattern (C116's); that inverse choice and its use for Scutoid-Frusta between a
-   fullerene and a fair die are what is new, as far as checked (not a full search). DICTO's Hollow-straw picture (straws pumped
-   until they meet) stays as the idea and its name; the skeleton is the known mathematics underneath it. Still to check: fullerene
-   cores in polyhedral shells.
+4. Prior art (corrected 27 Nov): the weighted straight skeleton (Aichholzer et al. 1995; Eppstein-Erickson 1999; Aurenhammer 2008;
+   Barequet et al. 2008; Aurenhammer-Walzl 2016) describes ONLY my flat-walled VARIANT (faces moved parallel, core pressed into the die's
+   planes). It is NOT DICTO's Hollow-straw: his fixes both ends and each C116 face turns and moves into its die face (a transformation),
+   which is not a straight skeleton. The skeleton credit goes nowhere near his method; it appears only if the variant is reported, as mine.
+   Prior art for HIS method: to search once it is built (what it actually is decides what to search).
 5. Names: Hollow-straw and floating resin are DICTO's, first use explained; Scutoid-Frusta hyphenated; "Scutoid-bubble Frusta"
    not used (Occam, as decided).
