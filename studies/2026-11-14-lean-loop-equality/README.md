@@ -263,3 +263,17 @@ kernel decide as checked certificates; l = 20 beyond the kernel without native_d
 literature; Guttmann-Jensen's absolute diamond counts enter as a stated hypothesis. Milestones, each self-contained:
  M1 plane lattice, Gamma+, Tog, Lemma 1 (flip = twist of the far half), Lemma 2.   M2 cut lemma, arcs, Theorem A.
  M3 product structure and Theorem B.   M4 six-crossing vanishing, reach lemma.   M5 l = 18 tables by decide.   Then the paper.
+
+### Open questions drawn from others' work (DICTO 28 Nov: "we can phrase some of others work as asked or open questions")
+Candidates for the paper's last section; each to be checked against its source before it is printed (stated exactly, credited):
+ Q1 (Herrero 2014): open self-avoiding walks on ice Ih and Ic differ from length 15. Is there an exact local law for open walks, as
+    Theorem B gives for polygons?
+ Q2 (Benito et al. 2023): self-avoiding walks on hcp and fcc differ beyond some length. Does a twist argument give the sphere-packing law?
+ Q3 (Nagle's ice series; #102 v5: first difference at 16 bonds): does the local law determine the residual-entropy difference between
+    ice Ih and Ic to all orders?
+ Q4 (Guttmann-Jensen 2009): can diamond's polygon counts, the constants of Theorem 5, be certified formally?
+ Q5 (Joyce; Guttmann 2010): the escape probability is the same at every site of every stacking (Theorem 1); can Joyce's closed form for
+    diamond's Green function be formalised?
+ Q6 (Grigorchuk-Zuk 2004; Lenz-Pogorzelski-Schmidt 2019): the per-site Ihara zeta function is the same at every site of every stacking;
+    which of their analytic results for infinite graphs (radius of convergence, spectral bounds) then hold uniformly over all stackings?
+ Q7 (Xu, Lin and Zhang, as in #102): the open question on S_h and S_c, which #102 does not decide.
