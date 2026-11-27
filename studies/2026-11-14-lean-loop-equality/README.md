@@ -329,3 +329,9 @@ at v onto G (tog a o sigma) at htA c v: equal counts); `ncard_polysA1_mirror` (b
 counts); `ncard_polysA1_flipBelow` (a flip below v keeps the counts at v: mirror + the flip above, `mirS_flipBelow`). Built, no sorry,
 standard axioms only. (A first attempt via relabelling alone did not close; replaced by the mirror before any build was claimed.)
 Next: 2f-2 (any finite run of c/h flips keeps the counts; stackings with the same c/h word near v) and 2f-3 (locality).
+Milestone 2f-2 DONE (28 Nov): FlipRuns.lean. `flipFor v sigma k` flips the c/h letter of bilayer k keeping the positions on v's
+side (above by flipAt when v is in the root half, below by flipBelow otherwise); `flipBelow_hex`, `flipFor_hex` (the c/h letter
+changes at k only); `ncard_polysA1_flipRun` (any finite run of such flips keeps the counts at v, every length); `flipRun_hex` (after a
+run, the letter at j is sigma's flipped once per occurrence of j). Built, no sorry, standard axioms only.
+Next: 2f-3, locality (a polygon of length l through v stays within bilayers |j - v.1| <= l; stackings agreeing there have the same
+polygons), which together with 2f-2 gives Corollary A1 for every stacking.
