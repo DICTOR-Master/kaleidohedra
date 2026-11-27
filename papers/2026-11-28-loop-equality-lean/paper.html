@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>The Loop Equality and the Half-Turn Surgery, Machine-Checked</title>
+<link rel="stylesheet" href="../paper.css">
+<style>table { font-size: 8.4pt; max-width: 100%; border-collapse: collapse; } td,th{padding:1px 5px; vertical-align: top; border-bottom: 0.3pt solid #ccc} th{text-align:left}
+p.hook{font-style:italic;color:#4a3f2a;border-left:2px solid #c9a24a;padding-left:3mm} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0}
+code{font-size:8.6pt}
+.status{border:2px solid #a00;border-radius:2mm;padding:2mm 3mm;margin:3mm 0;font-size:9pt;color:#300;background:#fff6f6}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>The Loop Equality and the Half-Turn Surgery, Machine-Checked<br><span style="font-size:0.72em;font-weight:normal">Corollary A of #102 in Lean, for every close-packed stacking</span></h1>
+<p class="sub">Cut the bond network of a close-packed stacking at one bilayer and turn the far half half a turn: every polygon that crosses each bilayer at most twice goes over to a polygon of the stacking with that bilayer's letter flipped. In Lean 4 with Mathlib, this gives the same number of such polygons, of every length, at every site of every stacking.</p>
+<div class="meta">
+<b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
+Paper #125 · Draft · 28 November 2026 · Licence CC BY-SA 4.0 · Lean package: https://github.com/DICTOR-Master/loop-equality-lean (commit efd98a2) · Study notes: research branch of github.com/DICTOR-Master/kaleidohedra, studies 2026-11-14-lean-loop-equality and 2026-11-15-polygon-bijection
+<br>DICTO: the Loop Equality question (#74), the decision to formalise and to write this paper with all the Lean mathematics, the four kinds of question in Section 7. Formalisation, proofs, verification and drafting with Claude (Anthropic).
+</div>
+<div class="status"><b>Status box (draft, removed at publication).</b> Version 1 draft. Every Lean statement named here is built and checked as stated in Section 5. To do before release: (1) check that no earlier formal proof of Thorpe's equality exists before keeping "as far as we know" in Section 7(a); (2) confirm each item of Section 7(d) as still open from a current source; (3) open Benito et al. 2023 (seen as a summary only, as in #102); (4) a figure of the cut and the half-turn (Figure 1). Next versions: Theorem B and the laws at lengths 18 and 20 (#102 Theorem 5), as their Lean milestones pass the comparator.</div>
+
+<h2>1. Introduction</h2>
+<p class="hook">Stack close-packed layers of atoms in any order, and bond each atom to its four nearest neighbours. Paper #102 proved that every site then has the same number of closed loops of each length. Its Version 6 added a picture that explains where this equality comes from for polygons: cut the network at one bilayer and turn everything above half a turn. Here that picture is checked by machine, for every stacking at once.</p>
+<p><b>What is known, what is new.</b> Thorpe (1972) showed that closed walks are equally many on periodic polytype structures [5]. Paper #102 proved the Loop Equality for every stacking, periodic or not, and checked it in Lean [1]: every site of every close-packed stacking has the same number of closed non-backtracking loops of each length. Version 6 of #102 added Theorem A, a half-turn surgery across one bilayer, and Corollary A: polygons that cross each bilayer at most twice are equally many in every stacking [1, §5]. New here: a complete Lean 4 / Mathlib proof of Corollary A for every pair of stackings, with every step from the cut to the count, packaged as a Palomar entry and checked by three independent kernels. The question answered: is the count of such polygons through a site the same in every stacking, by a proof a computer can check? Yes (Theorem 7).</p>
+<p>Contributions: (1) the formal statements and proofs of Lemmas 1 and 2 of the surgery, the cut lemma and the parity lemma (Section 3); (2) Theorem A for polygons crossing a bilayer at most twice, as a bijection that keeps length and crossing edges (Section 3); (3) Corollary A across one flip, across a flip on the other side by the mirror, along any run of flips, and with locality for every pair of stackings (Section 4); (4) the package in the format of the Palomar registry, with its checks (Section 5).</p>
+
+<h2>2. The network and its polygons</h2>
+<p>We use the definitions of #102 as they stand in its Lean package [1, 9]. A point of the plane is a pair <code>(i, j)</code> of integers standing for <code>(i a₁ + j a₂)/3</code>, with <code>a₁, a₂</code> unit vectors at 60°. The positions A, B, C are the residues 0, 1, 2 mod 3, and a point has position <code>c</code> when <code>i ≡ j ≡ c</code>. A <b>stacking</b> is a map <code>σ : ℤ → ZMod 3</code> with <code>σ(k+1) ≠ σ(k)</code>. Bilayer <code>k</code> has a lower atom <code>(k, p, 0)</code> and an upper atom <code>(k, p, 1)</code> at every point <code>p</code> of position <code>σ(k)</code>; these are the <b>sites</b>. Each lower atom is bonded to the upper atom above it (the vertical bond) and each upper atom to the three lower atoms of the next bilayer at distance <code>1/√3</code>. Bilayer <code>k</code> is <b>hexagonal</b> (h) when <code>σ(k−1) = σ(k+1)</code>, and cubic (c) otherwise.</p>
+<p>An edge set is a finite set of unordered pairs of atoms. A <b>polygon</b> is a nonempty finite set of bonds in which every atom has even degree, and no nonempty proper subset has that property: a minimal even edge set, which is a cycle. The <b>cut</b> at bilayer <code>k</code> separates the far half (the upper atom of bilayer <code>k</code> and everything above) from the root half; an edge <b>crosses</b> it when one end lies on each side. In Lean: <code>IsPolygon</code>, <code>IsAbove</code>, <code>Crosses</code>, <code>crossings</code>, and the set <code>polysAtMostTwice σ v l</code> of polygons through <code>v</code> with <code>l</code> edges that cross every bilayer at most twice.</p>
+
+<h2>3. The surgery</h2>
+<p class="hook">Flipping the c/h letter of one bilayer is the same as turning everything above it half a turn. A polygon that crosses that bilayer twice can be turned with it, by the half-turn that swaps its two crossing points.</p>
+<p class="thm"><b>Lemma 1</b> (one flip is one twist; <code>flip_is_twist</code>, <code>flipAt_hex</code>). Let <code>flipAt σ k</code> swap the letters above bilayer <code>k</code> by the map that fixes <code>σ(k)</code> and exchanges the other two. It is a stacking whose c/h letter differs from that of <code>σ</code> at bilayer <code>k</code> and nowhere else. The half-turn <code>p ↦ c − p</code> of the far half, with <code>c ≡ 2σ(k)</code> in both coordinates mod 3, carries the sites of <code>σ</code> onto those of <code>flipAt σ k</code>, fixes the root half, and within each half keeps bonds and non-bonds.</p>
+<p class="thm"><b>Lemma 2</b> (<code>halfturn_two_points</code>). Two points <code>p ≠ q</code> of one position are exchanged by the half-turn about their midpoint, and its centre <code>p + q</code> satisfies the centre condition.</p>
+<p class="thm"><b>Lemma 3</b> (the cut; <code>cut</code>). A bond from the far half to the root half at bilayer <code>k</code> is the vertical bond of bilayer <code>k</code> at one point.</p>
+<p class="thm"><b>Lemma 4</b> (parity; <code>even_card_cross</code>). A loopless edge set in which every atom has even degree crosses every cut an even number of times.</p>
+<p class="thm"><b>Theorem 5</b> (Theorem A of #102, at most two crossings; <code>surgery_polygon</code>, <code>bijOn_two_crossings</code>). Let <code>E</code> be a polygon crossing bilayer <code>k</code> at most twice, and let the half-turn about <code>c</code> carry its crossing edges onto themselves. Keep its root edges and crossing edges and turn its far edges. The result is a polygon of <code>flipAt σ k</code> with the same number of edges and the same crossing edges. For two crossing points <code>p ≠ q</code> and <code>c = p + q</code>, this is a bijection between the polygons through a root atom <code>v</code> with those crossing edges in the two networks.</p>
+<p><b>Proof in outline.</b> Degrees: root atoms keep their edges; a far atom has after the surgery the degree its half-turned image had before, because the crossing edges are carried onto themselves (<code>degS_surg_root</code>, <code>degS_surg_far</code>). So the result is even at every atom, and its edges are bonds by Lemma 1 and Lemma 3. Minimality: a smaller even subset of the result would have 0 or 2 crossing edges by Lemma 4. These are carried onto themselves, so the same surgery takes it back to a smaller even subset of <code>E</code>, which is impossible. The surgery undoes itself, which gives the bijection. ∎</p>
+
+<h2>4. From one flip to every stacking</h2>
+<p class="thm"><b>Theorem 6</b> (Corollary A across one flip; <code>ncard_polysA1_flip</code>). If <code>v</code> lies in the root half of bilayer <code>k</code>, then <code>σ</code> and <code>flipAt σ k</code> have equally many polygons through <code>v</code> with <code>l</code> edges crossing every bilayer at most twice, for every <code>l</code>.</p>
+<p>The half-turn is taken about the midpoint of each polygon's own two crossing points at <code>k</code>; a polygon that does not cross <code>k</code> is kept as it is. The surgery keeps the crossing number at every bilayer (<code>crossN_surg</code>), so the condition "at most twice" is kept too.</p>
+<p>Four further steps reach every stacking. The <b>mirror</b> (bilayer <code>j ↦ −j</code>, lower and upper exchanged) keeps the counts and turns a flip below <code>v</code> into a flip above (<code>ncard_polysA1_mirror</code>, <code>ncard_polysA1_flipBelow</code>). Any finite <b>run of flips</b> keeps the counts, and flips the c/h letter of each bilayer once for each time it is named (<code>ncard_polysA1_flipRun</code>, <code>flipRun_hex</code>). <b>Locality</b>: a polygon through <code>v</code> that reaches the far side of a cut must cross it, by minimality, and different cuts are crossed by different edges, so a polygon with <code>l</code> edges stays within <code>l + 1</code> bilayers of <code>v</code>; two stackings that agree there have the same such polygons (<code>must_cross</code>, <code>reach_bound</code>, <code>polysA1_local</code>). Finally a <b>relabelling</b> of the positions that fixes the letter of <code>v</code>'s bilayer, and a <b>lattice translation</b> back to <code>v</code>, keep the counts (<code>ncard_polysA1_relabel</code>, <code>ncard_polysA1_translate</code>).</p>
+<p class="thm"><b>Theorem 7</b> (Corollary A of #102, every stacking; <code>corollaryA1</code>). For any two stackings <code>σ, τ</code> and an atom <code>v</code> that is a site of both, the number of polygons through <code>v</code> with <code>l</code> edges crossing every bilayer at most twice is the same, for every <code>l</code>.</p>
+<p><b>Proof in outline.</b> Flip exactly the c/h letters in which <code>σ</code> and <code>τ</code> differ within <code>l + 1</code> bilayers of <code>v</code>; the counts do not change. The result has the letter of <code>v</code>'s bilayer and the c/h word of <code>τ</code> there. If its next letter differs from <code>τ</code>'s, relabel the two other positions and translate back to <code>v</code>. Two stackings with the same letters at two neighbouring bilayers and the same c/h word agree on the whole window (<code>eq_window</code>), and locality finishes the proof. ∎</p>
+
+<h2>5. The Lean package and its checks</h2>
+<p>The package extends the Lean entry of #102 [1, 9]. Its proof library gains nine modules; the statement surface <code>Challenge.lean</code> gains the definitions of Section 2 and the statement of Theorem 7, and <code>Solution.lean</code> proves it from the library.</p>
+<table>
+<tr><th>module</th><th>lines</th><th>content</th></tr>
+<tr><td>Twist</td><td>208</td><td>Lemmas 1 and 2</td></tr>
+<tr><td>Surgery</td><td>118</td><td>Lemma 3, the surgery on edges</td></tr>
+<tr><td>Polygons</td><td>192</td><td>the surgery and degrees on unordered edges</td></tr>
+<tr><td>TheoremA</td><td>305</td><td>Lemma 4, Theorem 5</td></tr>
+<tr><td>CorollaryA1</td><td>212</td><td>Theorem 6</td></tr>
+<tr><td>Relabel</td><td>298</td><td>relabelling, mirror, flips below</td></tr>
+<tr><td>FlipRuns</td><td>109</td><td>runs of flips</td></tr>
+<tr><td>Locality</td><td>179</td><td>locality</td></tr>
+<tr><td>Assembly</td><td>308</td><td>translations, the window, Theorem 7</td></tr>
+</table>
+<p>Checks, all on Lean v4.35.0-rc2 and Mathlib v4.35.0-rc2:</p>
+<table>
+<tr><th>check</th><th>result</th></tr>
+<tr><td>source requirements of the registry (module headers, file sizes)</td><td>pass</td></tr>
+<tr><td>statement surface: one <code>sorry</code> per compared theorem</td><td>18 theorems, 18</td></tr>
+<tr><td><code>sorry</code> or <code>native_decide</code> in any proof</td><td>none</td></tr>
+<tr><td>clean build</td><td>8955 jobs, no errors</td></tr>
+<tr><td>axioms of every main theorem</td><td><code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code> only</td></tr>
+<tr><td>comparator, three kernels (con-ron, nanoda, Lean's)</td><td>all accept (con-ron: 17,395 declarations)</td></tr>
+<tr><td>negative control: statement of Theorem 7 changed (<code>l</code> to <code>l + 1</code> on one side)</td><td>rejected</td></tr>
+</table>
+
+<h2>6. Scope</h2>
+<p>Theorem 7 counts all polygons through <code>v</code> that cross every bilayer at most twice, of a given length; it does not split them by crossing profile. Theorem A for four or more crossings (its symmetric cases in #102) is not formalised. Theorem B of the study behind #102 Version 6 (an exact local formula for the polygons that do differ between stackings) and the laws at lengths 18 and 20 are not formalised in this version; they are the next milestones.</p>
+
+<h2>7. Questions that this work poses to others' results</h2>
+<p><b>(a) Closed by others, and formalised here.</b> Thorpe's equality of closed walks on periodic polytypes [5] is the periodic case of the closed-walk theorem <code>W_closed</code> of the Loop Equality package [1], proved there for every stacking. As far as we know this is its first formal proof.</p>
+<p><b>(b) Closed by others, not formalised.</b> Diamond's polygon counts of Guttmann and Jensen [6], the constants that #102 Theorem 5 starts from; the self-avoiding walk counts of Herrero on the ice networks [7] and of Benito et al. on hcp and fcc [8]; the results of Grigorchuk and Żuk and of Lenz, Pogorzelski and Schmidt on zeta functions of infinite graphs [10, 11], for each stacking.</p>
+<p><b>(c) New questions raised here.</b> Is there an exact local law for open self-avoiding walks, on ice and on the sphere packings, as #102 gives for polygons? Does the local law fix the difference in residual entropy between hexagonal and cubic ice to all orders of Nagle's series [4]? Which statements about the per-site zeta function hold uniformly over all stackings, beyond what the Loop Equality gives at once?</p>
+<p><b>(d) Long-standing open problems that this setting touches.</b> The exact connective constant of the diamond lattice; the exact residual entropy of ice; the question of Xu, Lin and Zhang on the residual entropies of hexagonal and cubic ice [12], which #102 does not decide.</p>
+
+<h2>8. Conclusion</h2>
+<p>The half-turn surgery of #102 is now a machine-checked proof: for polygons that cross each bilayer at most twice, every site of every close-packed stacking has the same count of each length. The package is in the registry's format and passes its checks. The contributions are the formal Lemmas 1–4, Theorem 5 as a bijection, Theorem 6 and its extension to every stacking (Theorem 7), and the checked package.</p>
+
+<h2>References</h2>
+<p style="font-size:8.6pt">[1] DICTO, Every Site Hears the Same: the Loop Equality Is a Theorem, paper #102, Version 6, DICTO DOI: 10.5281/zenodo.24037664 (2026).<br>
+[2] L. de Moura, S. Ullrich, The Lean 4 theorem prover and programming language, in: Automated Deduction – CADE 28, Lecture Notes in Computer Science 12699, Springer (2021) 625–635.<br>
+[3] The mathlib Community, The Lean mathematical library, in: Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs (2020) 367–381.<br>
+[4] J. F. Nagle, Lattice statistics of hydrogen bonded crystals. I. The residual entropy of ice, J. Math. Phys. 7 (1966) 1484–1491.<br>
+[5] M. F. Thorpe, Random walks in polytype structures, J. Math. Phys. 13 (1972) 294–299.<br>
+[6] A. J. Guttmann (ed.), Polygons, Polyominoes and Polycubes, Lecture Notes in Physics 775, Springer (2009): diamond-lattice polygon data of Guttmann and Jensen, as given in OEIS A038515.<br>
+[7] C. P. Herrero, Structural characterization of ice polymorphs from self-avoiding walks, Chem. Phys. 439 (2014) 49–56; arXiv:1402.5036.<br>
+[8] M. Benito, I. Urrutia, N. Ch. Karayiannis, M. Laso, Crystals 13 (2023) 1316.<br>
+[9] DICTO, the Lean package of this paper: https://github.com/DICTOR-Master/loop-equality-lean.<br>
+[10] R. I. Grigorchuk, A. Żuk, The Ihara zeta function of infinite graphs, the KNS spectral measure and integrable maps (2004).<br>
+[11] D. Lenz, F. Pogorzelski, M. Schmidt, The Ihara zeta function for infinite graphs (2019).<br>
+[12] X.-Z. Xu, T.-Y. Lin, G.-M. Zhang, Equivalence of residual entropy of hexagonal and cubic ices from tensor network methods, arXiv:2511.22477 (2025).</p>
+</body></html>
