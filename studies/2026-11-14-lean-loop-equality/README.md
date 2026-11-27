@@ -349,3 +349,18 @@ c/h letters on the window, relabel by tog of v's letter if the next letter diffe
 MILESTONE 2 COMPLETE. Scope, stated exactly: the count is over all such polygons (every bilayer crossed at most twice), not split by
 crossing profile; the n = 4 symmetric cases of Theorem A are not formalised.
 Next: Milestone 3, Theorem B (the exact local formula for the rest: product structure, symmetrisation, locality f = all - bad).
+
+### Milestone 3 design (28 Nov): Theorem B in Lean
+Theorem B (study 2026-11-15-polygon-bijection §3): p_l(v; G') - p_l(v; G) = -1/2 sum A_w A_f. Formal route, each step built and committed:
+- 3a Linkages: `LAdj L a b := s(a,b) in L and a != b`; `Conn L := ReflTransGen (LAdj L)`; `IsLinkage L B` (ends B of degree 1, other
+  atoms degree 0 or 2, no nonempty closed subset, no loops); the PATH LEMMA: in a linkage each end is connected to exactly one other
+  end (degree <= 2 and acyclic => components are paths). Mathlib has Reachable / ReflTransGen but, as far as found, not this lemma: it
+  is the main new work of Milestone 3.
+- 3b Product structure: a polygon crossing k at the points S is a root linkage plus a far linkage with ends at S whose pairings join
+  into one cycle on S, and conversely (both directions).
+- 3c Flip transfer: by Lemma 1 the twist maps far linkages of G with ends gS and pairing gM onto far linkages of G' with ends S and
+  pairing M (bijection, sizes kept).
+- 3d Counting: finiteness of linkages of a given size near S (locality as in 2f-3), the translation-weighted root counts w, and the
+  symmetrisation algebra -> Theorem B.
+- 3e Locality of A: f = all - bad for n = 4 (needed before the l = 18 tables of Milestone 5).
+Compute: all Lean checks and builds on the compute host (entry workspace), as for Milestones 1-2.
