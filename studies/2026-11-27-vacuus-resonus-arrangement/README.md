@@ -34,6 +34,16 @@ P4 centred in the 3-space sum y = 0. All exact (fractions).
   pieces (data/dehn4.json).
 - Next: which candidates assemble into one solid (pieces glued face to face; convex or not), and whether that solid tiles space.
 
+## Step 3c-d: convex solids of whole pieces, Dehn filter, assembly (scripts/convex4.py, assemble4.py; logs, data/convex4.json, assemble4.json)
+- Convex unions of pieces = P4 cut by a convex cone bounded by some of the 19 planes. Complete up to 3 planes (KMAX = 3; k = 4 ran
+  out of the 1 h cap): **200 distinct convex solids up to symmetry; 9 have Dehn invariant 0**.
+- The 9 are exactly 3 halves (cut by one plane: a Vacuus plane [1,-5,1,3], a Resonus plane [1,-3,1,1], or a plane that is both,
+  [1,-1,-1,1]), 3 quarters and 3 eighths of P4 (piece counts = orbit sizes / 2, 4, 8).
+- Each one assembles: 2, 4 or 8 symmetric copies fill P4 exactly (exact cover of the 248 cells), so **all 9 fill space**
+  (P4 tiles on the bcc lattice). So the trigonometric filter is sharp here: up to 3 cutting planes, a convex solid of whole pieces
+  passes the Dehn test exactly when it is a half, quarter or eighth of P4, and every one of those fills space. No other convex
+  candidate at this level; new space-fillers, if any, need non-convex unions or k >= 4 (next, with a faster canonical form).
+
 ## Next
 2. Exact proofs of the relations (double/triple-angle identities, checked symbolically) and of independence where possible.
 3. The pieces of P4 cut by the 19 planes (bounded cells); their Dehn invariants in the angle basis; unions with Dehn invariant 0
