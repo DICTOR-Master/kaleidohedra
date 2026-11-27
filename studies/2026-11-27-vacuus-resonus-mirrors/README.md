@@ -137,3 +137,7 @@ die, resumable. The first version (margin 1e-6) was stopped: most "fair" ends we
 degenerate step-12 end point (the die shrunk towards a point), now re-solved with the size fixed. At 22:07: 3,627 of 4,168 done:
 2,845 Aequi (margin 1e-3), 177 Aequi only at margin 1e-4 (near-degenerate), 267 boundary (reaching O needs the pattern to change),
 338 open. Full result when the run ends.
+FINAL (fd-retry, ended 23:03, FINAL ok; merged into fairdice_centroid_retry_icosi.json.gz + _summary): all 4,168 settled as
+aequus 3,272 (Aequi at cone margin 1e-3), aequus_thin 204 (Aequi only at 1e-4, near-degenerate), boundary 306 (reaching fairness needs
+the face pattern to change), open 386. The 3,272 Aequi by order of their symmetry: 2: 3,208; 3: 15; 4: 42; 6: 5; 8: 2. Numerical
+(SLSQP); exact certification of the Aequi and the 386 open ones are the next steps.
