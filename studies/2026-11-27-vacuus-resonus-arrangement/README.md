@@ -25,3 +25,18 @@ P4 centred in the 3-space sum y = 0. All exact (fractions).
 2. Exact proofs of the relations (double/triple-angle identities, checked symbolically) and of independence where possible.
 3. The pieces of P4 cut by the 19 planes (bounded cells); their Dehn invariants in the angle basis; unions with Dehn invariant 0
    = space-filling candidates; then tiling tests.
+
+## DICTO's question (27 Nov): a shape from joining the cube and octahedron that fills space by itself
+Overlap family: cube |x_i| <= 1, octahedron |x|+|y|+|z| <= s, 1 < s < 3 (octahedron -> truncated octahedra (1 < s < 2) ->
+cuboctahedron (s = 2) -> truncated cubes (2 < s < 3) -> cube). **Exactly one member fills space: the Archimedean truncated
+octahedron, s = 3/2.** Proof (exact, by the pair's plane angles; theta = arccos(1/3), theta/pi irrational):
+- 1 < s < 2: square edges a = sqrt2 (s - 1), 24 of them, dihedral pi - arccos(1/sqrt3) = pi/2 + theta/2 (since 2 arccos(1/sqrt3) =
+  pi - theta); hexagon-hexagon edges b = sqrt2 (2 - s), 12, dihedral pi - theta. Dehn invariant (mod Q pi) = 24a (x) theta/2 -
+  12b (x) theta = 12 sqrt2 (2s - 3) (x) theta: zero iff s = 3/2 (x (x) theta = 0 iff x = 0, as theta is not in Q pi).
+- s = 2 and 2 < s < 3: the triangle edges carry pi/2 + theta/2 with positive total length, the octagon-octagon (cube) edges pi/2:
+  Dehn invariant nonzero, never a space-filler.
+- Dehn invariant zero is necessary for space-filling (Debrunner 1980); s = 3/2 tiles (Fedorov 1885; Kelvin 1887). Facts classical;
+  the one-line proof inside the family is ours.
+Hull family (convex hull of the two): at s = 2 the rhombic dodecahedron (space-filler, classical). Other s: 1 < s < 2 tetrakis
+type, 2 < s < 3 triakis type; whether any fills space is OPEN here (Dehn: needs both the base-edge and the lateral-edge angles
+rational multiples of pi unless the edge lengths are commensurate; to check exactly).
