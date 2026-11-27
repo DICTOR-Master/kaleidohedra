@@ -290,3 +290,12 @@ Refined (DICTO 28 Nov: "some of those questions though closed will not have been
      constant of the diamond lattice (known exactly only for the honeycomb, Duminil-Copin and Smirnov); the exact residual entropy of
      ice (Pauling's estimate, Nagle's series; no closed form); Xu-Lin-Zhang's question on S_h and S_c (moved here from (c)).
      (c) keeps only the new questions our own results raise (Q1-Q3 laws, Q6 uniform statements).
+
+### Milestone 1 DONE (28 Nov 2026): one flip is one twist (lean/LoopEquality/Twist.lean, 230 lines)
+Built in the entry workspace (Lean v4.35.0-rc2, Mathlib v4.35.0-rc2): `lake build LoopEquality.Twist` completed, no errors, no
+warnings; axioms of every main theorem: propext, Classical.choice, Quot.sound only. Proved: `flipAt_isStacking` (the flipped
+stacking is a stacking), `flipAt_hex` (the c/h letter changes at bilayer k and nowhere else), `flip_is_twist` (Lemma 1: the half-turn
+p -> c - p of the far half, c = 2 sigma(k) mod 3, carries sites onto sites of the flipped network, fixes the root half, and within each
+half preserves bonds and non-bonds), `halfturn_two_points` (Lemma 2). Uses the published definitions (namespace LoopEqualityProof).
+The file sits in the entry workspace as an extra module only; the Palomar entry's own files are unchanged.
+Next: Milestone 2 (cut lemma: the vertical bonds of bilayer k are the only bonds between the halves; arcs, crossing sets; Theorem A).
