@@ -42,15 +42,17 @@ and the count is proved at every single site, not on average.
 ## Files
 
 - `Challenge.lean`: the statement surface (definitions and statements, every
-  proof `sorry`), 17 compared theorems; read this first.
+  proof `sorry`), 18 compared theorems; read this first.
 - `Solution.lean`: the same definitions and statements with proofs. Each proof
   transfers a theorem of the proof library (namespace `LoopEqualityProof`, whose
   definitions are copies of the Challenge's) by definitional unfolding, with
   small transfer lemmas for the recursive definitions; the values are checked
   again by kernel evaluation.
-- `LoopEquality/`: the proof library, in 11 modules (Defs, Graph, Levels,
-  Network, Counts, Main, ClosedWalks, LocalFormula, Explicit, Fibonacci, Axioms).
-- `comparator.json`: the 17 compared theorems and the permitted axioms.
+- `LoopEquality/`: the proof library, in 20 modules (Defs, Graph, Levels,
+  Network, Counts, Main, ClosedWalks, LocalFormula, Explicit, Fibonacci, Axioms;
+  and, for Corollary A: Twist, Surgery, Polygons, TheoremA, CorollaryA1,
+  Relabel, FlipRuns, Locality, Assembly).
+- `comparator.json`: the 18 compared theorems and the permitted axioms.
 - `formalization.yaml`: metadata (v0.4).
 
 ## Proof account
@@ -101,11 +103,13 @@ outside `Challenge.lean`; `#print axioms` gives only `propext`,
 | Lemma 2 (a), Proposition | `W_closed`, `closedWalks`, `closedWalks_domb_small` (n < 10 only) |
 | Lemma 3 | `Graph.transfer`; summed: `Graph.loops_ncard_eq_FD` |
 | Fibonacci stacking (#102 checks) | `fibonacci`, `fibonacci_*`, `isH_eq_word` |
+| Lemmas 1, 2 (one flip is one twist); Theorem A for polygons crossing a bilayer at most twice; Corollary A (every stacking) | `IsPolygon`, `IsAbove`, `Crosses`, `crossings`, `polysAtMostTwice`, `corollaryA1` (library: `flip_is_twist`, `halfturn_two_points`, `surgery_polygon`, `bijOn_two_crossings`, `ncard_polysA1_flip`, `polysA1_local`) |
 
 **Not formalised:** the Ihara–Bass series for all m; Bala's identity for all n;
 the cut-and-project = substitution identity of the Fibonacci word at every
 position (classical, Morse–Hedlund 1940, Lothaire 2002); #102 Corollaries 1–3
-and Lemma 2 (c); equality of the vertical and slanted bond walk counts (not
+and Lemma 2 (c); Theorem A for four or more crossings (its symmetric cases),
+Theorem B and the laws at lengths 18 and 20; equality of the vertical and slanted bond walk counts (not
 needed).
 
 ## Literature and novelty

@@ -7,3 +7,6 @@ public import LoopEquality.Explicit
 public import LoopEquality.Fibonacci
 public import LoopEquality.Axioms
 public import LoopEquality.Assembly
+public import LoopEquality.Finiteness
+public import LoopEquality.Linkage
+public import LoopEquality.Product

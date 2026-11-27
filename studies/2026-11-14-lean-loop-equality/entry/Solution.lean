@@ -454,4 +454,10 @@ theorem corollaryA1 {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStac
   rw [polysAtMostTwice_eq_proof, polysAtMostTwice_eq_proof]
   exact LoopEqualityProof.corollaryA1 hσ hτ hvσ hvτ l
 
+/-- **Finiteness.** The polygons through `v` with `l` edges crossing every bilayer at
+most twice form a finite set, so the counts in `corollaryA1` are genuine counts. -/
+theorem polysAtMostTwice_finite (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) : (polysAtMostTwice σ v l).Finite := by
+  rw [polysAtMostTwice_eq_proof]
+  exact LoopEqualityProof.polysA1_finite σ v l
+
 end DictoLoopEquality
