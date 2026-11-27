@@ -23,7 +23,9 @@ if sys.argv[1] == "scenes":
     from aequus_solid import build
     import aequus_solid as AS
     from collections import Counter
-    R = json.load(open(os.path.join(ROOT, 'data/cells/stand/hollow_straw_float.json')))
+    LAYER = os.environ.get('LAYER', 'float')   # 27 Nov (DICTO: "C116 core pieces aren't the same shape"): the floating-resin layer keeps
+    # C116's own round shape; the Hollow-straw core is pressed parallel to the die's faces and looks like the die
+    R = json.load(open(os.path.join(ROOT, 'data/cells/stand', 'amber_c116-layer0float_layer_6-5_cen.json' if LAYER == 'float' else 'hollow_straw_float.json')))
     sig = {int(k): int(v) for k, v in json.load(open(os.path.join(ROOT, 'data/c116/onefloor_float.json')))['pairing'].items()}
     S = build("aequus-377")
     # orbit colour per Minana face: the app's dice.json orbit order, matched to each face by its exact plane direction
@@ -35,26 +37,34 @@ if sys.argv[1] == "scenes":
     mcol = [lab[A.key(u)] for u, c in S["planes"]]
     print('Minana #377 faces by colour key:', dict(Counter(mcol)), flush=True)
     assert sorted(Counter(mcol).values()) == [12, 12, 12, 24]
-    pcs = {int(p["F"]): p for p in R["pieces"]}          # hollow_straw.py numbers piece t by its MINANA face t (core face sigma^-1(t))
-    pcol = {t: mcol[t] for t in range(60)}
-    assert all(len(S["faces"][t][0]) == int(pcs[t]["sides_out"]) and sig[int(pcs[t]["core_face"])] == t for t in range(60)), "piece t must end on Minana face t"
+    pcs = {int(p["F"]): p for p in R["pieces"]}
     geo = {int(g["F"]): np.array(g["tris"]) for g in R["geom"]}
-    def dist_to_piece(c, T):
-        best = 9.0
-        for t in T:
-            a, b, cc = t; n = np.cross(b - a, cc - a); nn = np.linalg.norm(n)
-            if nn < 1e-14: continue
-            n /= nn; dpl = abs((c - a) @ n); p = c - ((c - a) @ n) * n
-            w = [np.cross(b - a, p - a) @ n, np.cross(cc - b, p - b) @ n, np.cross(a - cc, p - cc) @ n]
-            if min(w) >= -1e-9 or max(w) <= 1e-9: best = min(best, dpl)
-        return best
     V = np.array(R["solid_V"]); ctris, ccols = [], []
-    for f in R["solid_faces"]:
-        P = V[f]
-        for a in range(1, len(f) - 1):
-            t = P[[0, a, a + 1]]; c = t.mean(0)
-            k = min(range(60), key=lambda q: dist_to_piece(c, geo[q])); assert dist_to_piece(c, geo[k]) < 1e-6
-            ctris.append(t); ccols.append(colOf(pcol[k]))
+    if LAYER == 'float':     # piece k = C116 face k, ending on Minana face sigma(k); core face k = solid_faces[k]
+        C116 = json.load(open(os.path.join(ROOT, 'data/c116/pairing.json')))['faces']
+        assert all(len(S["faces"][sig[k]][0]) == int(pcs[k]["sides_out"]) and len(C116[k]) == int(pcs[k]["sides_in"]) == len(R["solid_faces"][k]) for k in range(60))
+        pcol = {k: mcol[sig[k]] for k in range(60)}
+        for k, f in enumerate(R["solid_faces"]):
+            P = V[f]
+            for a in range(1, len(f) - 1): ctris.append(P[[0, a, a + 1]]); ccols.append(colOf(pcol[k]))
+    else:                    # hollow_straw.py numbers piece t by its MINANA face t
+        pcol = {t: mcol[t] for t in range(60)}
+        assert all(len(S["faces"][t][0]) == int(pcs[t]["sides_out"]) and sig[int(pcs[t]["core_face"])] == t for t in range(60))
+        def dist_to_piece(c, T):
+            best = 9.0
+            for t in T:
+                a, b, cc = t; n = np.cross(b - a, cc - a); nn = np.linalg.norm(n)
+                if nn < 1e-14: continue
+                n /= nn; dpl = abs((c - a) @ n); p = c - ((c - a) @ n) * n
+                w = [np.cross(b - a, p - a) @ n, np.cross(cc - b, p - b) @ n, np.cross(a - cc, p - cc) @ n]
+                if min(w) >= -1e-9 or max(w) <= 1e-9: best = min(best, dpl)
+            return best
+        for f in R["solid_faces"]:
+            P = V[f]
+            for a in range(1, len(f) - 1):
+                t = P[[0, a, a + 1]]; c = t.mean(0)
+                k = min(range(60), key=lambda q: dist_to_piece(c, geo[q])); assert dist_to_piece(c, geo[k]) < 1e-6
+                ctris.append(t); ccols.append(colOf(pcol[k]))
     core = mesh_part(ctris, ccols, 0.0024)
     def pieces(shift):
         return [mesh_part(list(T + shift * T.reshape(-1, 3).mean(0)), [colOf(pcol[k])] * len(T), 0.0018) for k, T in geo.items()]
@@ -74,7 +84,7 @@ else:
     Cp.OUT = os.path.join(ROOT, "renders"); Cp.MARK = "DICTO · dictospheres.com"
     meta = json.load(open(os.path.join(D, "meta.json"))); hexrgb = lambda h: tuple(int(h[i:i + 2], 16) for i in (1, 3, 5))
     Cp.figure("RENDER-c116-minana-aequi.png", "From C116 to Minana #377: one layer of Scutoid-Frusta",
-              "Every core face and every piece in the colour of the Aequus face it becomes · 60 convex Scutoid-Frusta, 18 Y vertices, exact",
+              "Every C116 face and every piece in the colour of the Aequus face it becomes · floating-resin layer: 60 Scutoid-Frusta, 18 Y vertices, exact cell (volume gap 0)",
               [(os.path.join(D, "p0.png"), "the core", "fullerene C116"), (os.path.join(D, "p1.png"), "pulled apart", "core and 60 Scutoid-Frusta"),
                (os.path.join(D, "p2.png"), "assembled", "outer surface = Minana #377")],
               [(hexrgb(colOf(k)), f"{SOLID[k.replace('2', '')]} planes ({meta[k]})") for k in ('D', 'I2', 'RD', 'RT2') if k in meta], cell=1000)
