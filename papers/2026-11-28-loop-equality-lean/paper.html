@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>The Loop Equality and the Half-Turn Surgery, Machine-Checked</title>
+<html lang="en"><head><meta charset="utf-8"><title>Every Site Counts the Same Polygons: Corollary A of the Loop Equality, Machine-Checked</title>
 <link rel="stylesheet" href="../paper.css">
 <style>table { font-size: 8.4pt; max-width: 100%; border-collapse: collapse; } td,th{padding:1px 5px; vertical-align: top; border-bottom: 0.3pt solid #ccc} th{text-align:left}
 p.hook{font-style:italic;color:#4a3f2a;border-left:2px solid #c9a24a;padding-left:3mm} .thm{border-left:3px solid #b8962e;padding-left:3mm;margin:3mm 0}
@@ -8,14 +8,14 @@ code{font-size:8.6pt}
 </head><body>
 <img class="watermark" src="../dicto-logo.png" alt="">
 <img class="logo" src="../dicto-logo.png" alt="DICTO">
-<h1>The Loop Equality and the Half-Turn Surgery, Machine-Checked<br><span style="font-size:0.72em;font-weight:normal">Corollary A of #102 in Lean, for every close-packed stacking</span></h1>
-<p class="sub">Cut the bond network of a close-packed stacking at one bilayer and turn the far half half a turn: every polygon that crosses each bilayer at most twice goes over to a polygon of the stacking with that bilayer's letter flipped. In Lean 4 with Mathlib, this gives the same number of such polygons, of every length, at every site of every stacking.</p>
+<h1>Every Site Counts the Same Polygons<br><span style="font-size:0.72em;font-weight:normal">Corollary A of the Loop Equality, Machine-Checked</span></h1>
+<p class="sub">For polygons crossing each bilayer at most twice, in every close-packed stacking: every site has the same number of each length. Proved in Lean 4 with Mathlib by a half-turn of one half of the network.</p>
 <div class="meta">
 <b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
 Paper #125 · Draft · 28 November 2026 · Licence CC BY-SA 4.0 · Lean package: https://github.com/DICTOR-Master/loop-equality-lean (commit efd98a2) · Study notes: research branch of github.com/DICTOR-Master/kaleidohedra, studies 2026-11-14-lean-loop-equality and 2026-11-15-polygon-bijection
 <br>DICTO: the Loop Equality question (#74), the decision to formalise and to write this paper with all the Lean mathematics, the four kinds of question in Section 7. Formalisation, proofs, verification and drafting with Claude (Anthropic).
 </div>
-<div class="status"><b>Status box (draft, removed at publication).</b> Version 1 draft. Every Lean statement named here is built and checked as stated in Section 5. To do before release: (1) check that no earlier formal proof of Thorpe's equality exists before keeping "as far as we know" in Section 7(a); (2) confirm each item of Section 7(d) as still open from a current source; (3) open Benito et al. 2023 (seen as a summary only, as in #102); (4) a figure of the cut and the half-turn (Figure 1). Next versions: Theorem B and the laws at lengths 18 and 20 (#102 Theorem 5), as their Lean milestones pass the comparator.</div>
+<div class="status"><b>Status box (draft, removed at publication).</b> Read ok for now (DICTO, 28 November): <b>released only as a complete paper, after Theorem B.</b> Title chosen 28 November (option 1). Every Lean statement named here is built and checked as stated in Section 5. To add before release: (1) Theorem B in Lean, in the Palomar entry with the comparator and a negative control, and its section here; (2) the polygons' degree lemma (a minimal even set is a single cycle) and the product structure, which Theorem B rests on; (3) a figure of the cut and the half-turn (Figure 1), and one of a polygon split into its two linkages; (4) check that no earlier formal proof of Thorpe's equality exists before keeping "as far as we know" in Section 7(a); (5) confirm each item of Section 7(d) as still open from a current source; (6) open Benito et al. 2023 (seen as a summary only, as in #102); (7) the length-18 law (Milestones 4 and 5) if it is ready by then, otherwise stated as the next version.</div>
 
 <h2>1. Introduction</h2>
 <p class="hook">Stack close-packed layers of atoms in any order, and bond each atom to its four nearest neighbours. Paper #102 proved that every site then has the same number of closed loops of each length. Its Version 6 added a picture that explains where this equality comes from for polygons: cut the network at one bilayer and turn everything above half a turn. Here that picture is checked by machine, for every stacking at once.</p>
