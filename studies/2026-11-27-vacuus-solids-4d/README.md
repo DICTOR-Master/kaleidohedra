@@ -15,7 +15,7 @@ diagram of a 4D polytope, (a) with a scaled copy of P as core, (b) with the scal
   face * dual corner = **the pit over that face**; edge * dual edge = a tetrahedron (the wedge of material along the edge);
   corner * dual face = a pyramid from the corner onto a core face. Cube 28, octahedron 28, tetrahedron 16, dodecahedron 64, icosahedron 64.
 - Every predicted facet is exact (its points span one hyperplane, all other points strictly on one side); the float hull has exactly the
-  predicted number of facets (completeness); the view from (O, -1) lies beyond P x {0} only (exact sign check against every other facet).
+  predicted number of facets; the view from (O, -1) lies beyond P x {0} only (exact sign check against every other facet).
 - Core sizes mu = 1/20, 1/2, 9/10 tested for cube and dodecahedron: all hold (the facet structure does not depend on mu).
 - Negative control: the cube's octahedral core turned by a generic rotation (cos 3/5) is NOT such a shadow (the joins stop being flat).
 So DICTO's observation holds for both: the copy core gives the 4D prism, the dual core gives the 4D polytope conv(P u P*) stacked in
@@ -28,3 +28,10 @@ also cuts the material between the pits into the core, one wedge per edge and on
 **Leads.** (1) Prove the dual-core statement for every convex P with O inside (conditions: each face, edge and corner of P meets the
 relative interior of the matching normal cone; true for the five here); (2) test the Archimedean, Catalan and McCooey self-dual sets;
 (3) prior-art search on the name; (4) DICTO: observation only for now, nothing into a paper without his word.
+
+**Exact completeness (27 Nov; DICTO: "make the completeness check exact").** cayley4d.py, exact_complete(): every listed facet is a
+true facet (checked exactly); the 2-faces of each listed facet F are found as the 2-dimensional intersections of F with the other listed
+facets (two facets of a polytope meet in a face), and they must close F's boundary exactly: every edge of each 2-face shared with exactly
+one other found 2-face, and Euler V - E + F = 2. Then every 2-face of a listed facet lies in another listed facet; the facets of a
+polytope are connected across 2-faces, so the list is complete. All 14 cases pass (rank computations exact in Q(sqrt5), Q(sqrt2)).
+Control: the cube's dual-core list with one edge wedge left out FAILS (a 2-face of a neighbouring facet is not closed). FINAL ok.
