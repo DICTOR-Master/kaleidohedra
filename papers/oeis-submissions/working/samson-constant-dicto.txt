@@ -2,7 +2,9 @@ Name: Decimal expansion of 2/(3*(2^(1/3) - 1)).
 Data: 2,5,6,4,8,8,1,4,0,1,2,4,2,0,4,8,4,2,6,3,4,5,9,4,4,1,6,4,3,6,7,0,2,4,4,0,7,3,0,7,8,2,9,8,6,1,7,3,4,2,4,0,6,5,9,9,2,6,8,4,0,5,8,2,6,5,3,6,7,7,4,5,4,7,5,8,7,8,5,7,7,1,3,3,5,2,9,3,8,5,0,4,6,5,6,5,0,7,0,0,7,8,4,8,3
 Offset: 1,1
 Comments: Samson (#51, The Delian Bond) is the name for a unit cube with four alternate corners cut off at depth 2^(-1/3) (A270714) along the edges. In accordance with the Star Cores core rule its initial core is a truncated tetrahedron, and each and every later core is the same shape mirrored and scaled down. The long side of each hexagon (of that truncated tetrahedron) divided by the side of each triangle is this constant. A cut at depth a gives the ratio 2a/(3(1 - a)); a = 2^(-1/3) gives 2/(3(2^(1/3) - 1)).
-Links: DICTO, <a href="https://doi.org/10.5281/zenodo.23606828">The Delian Bond: Samson, Delilah and the Octet Between Kepler's Rhombic Dodecahedron and the Cube</a>, Zenodo (2026).  [+ the #51 next-version link with the derivation, when released]
+Links: DICTO, <a href="https://doi.org/10.5281/zenodo.23606828">The Delian Bond: Samson, Delilah and the Octet Between Kepler's Rhombic Dodecahedron and the Cube</a>, Zenodo (2026).
+Links: DICTO, <a href="https://github.com/DICTOR-Master/kaleidohedra/blob/faac610fe43c79e5057e6517d054dce9a47439c5/studies/2026-11-27-protocol-vacuus-solids/README.md">Samson's fixed shape: exact derivation</a>, study notes, GitHub (2026).
+Links: DICTO, <a href="https://doi.org/10.5281/zenodo.23782577">The Truncated Icosahedron Star (TI Star)</a>, Zenodo (2026).
 Formula: Equals 2/(3*(2^(1/3) - 1)) = (2/3)*(1 + 2^(1/3) + 2^(2/3)).
 Formula: Real root of 27*x^3 - 54*x^2 - 36*x - 8 = 0.
 Example: 2.564881401242048426345944164367024407307829861734241...
