@@ -41,3 +41,4 @@ d.text((W-M,H-60),'DICTO · dictospheres.com',font=f3,fill=(224,184,74),anchor='
 print('used height',y,'of',H)
 S.save(sys.argv[1],'PDF',resolution=300)
 S.resize((620,877)).save(sys.argv[2])
+if len(sys.argv) > 3: S.save(sys.argv[3], quality=92)   # full-size JPG for a paper figure (#120 v2 Figure 2, 27 Nov)
