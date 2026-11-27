@@ -1,0 +1,64 @@
+{
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "creators": [
+  {
+   "name": "DICTO",
+   "affiliation": "Independent artist, Osaka, Japan",
+   "orcid": "0009-0001-2620-2036"
+  }
+ ],
+ "language": "eng",
+ "license": "cc-by-sa-4.0",
+ "access_right": "open",
+ "version": "1",
+ "publication_date": "2026-11-27",
+ "title": "Building Out the Centre of the Vacuus: a Family of Excavated Polyhedra and Its Special Sizes",
+ "description": "<p>The Vacuus of a polyhedron P is the set of planes through its centre O and its edges (#87, #110, #120). Read as a solid frame it is a set of pyramids, one on each face, all with their tips at O. Grow O into a core, the polar of P scaled by a factor t between 0 and 1, and move each tip out to the core corner on its face axis: each pyramid becomes a pit, each Vacuus plate a pit wall, and P becomes an excavated polyhedron. This gives one family for every polyhedron, from the Vacuus (t = 0) to the solid (t = 1); we call its members Vacuus-Solids. At a special size every pit wall lies in a face plane of one other polyhedron Q. Among the Platonic, Archimedean and Catalan solids there are exactly eleven such sizes; every special depth is a root of a quadratic over the rationals in √2 or √5, and in eight of them, all icosahedral, the walls use every face plane of Q. The pits reach Q only in the two classical members, where Q is the core and its corners are the pit tips, and in three where they meet Q at some corners. With the polar itself as core, the whole catalogue of 163 solids and David McCooey's 162 self-dual polyhedra give only two special members: Wenninger's excavated dodecahedron and Poinsot's great dodecahedron. At a special size the excavation is a stellation of the core, which is where this family meets the classical construction of the star polyhedra. We also give the polar side of the family, the solidity of its members as models, and the near misses.\n\n1. Introduction\n<b>What is known and what is new.</b> Excavating a polyhedron by pyramids sunk into its faces is an old idea: the excavated dodecahedron is model 28 of Wenninger's <i>Polyhedron Models</i> [4] and one of the fifty-nine stellations of the icosahedron [3], the great dodecahedron is Poinsot's [2], and programs such as Stella make pits of any depth [5]. New here: reading the excavation as the Vacuus grown outward from its centre, which gives every polyhedron a one-parameter family with the Vacuus at one end; the condition for a special size and the complete list for the Platonic, Archimedean and Catalan solids; the census over the Vacuus catalogue and McCooey's self-duals; and the polar side.</p><p>Section 8 reads the Platonic Vacuus-Solids, drawn with their cores, as Schlegel diagrams of known four-dimensional polytopes: the 16-cell, the octacube and the ikadoe (Klitzing's segmentochora), exact.</p><p>Paper #123 of DICTO's series. DICTO: ideas, names, constructions and direction. Computation, proofs, verification and drafting with Claude (Anthropic).</p>",
+ "keywords": [
+  "DICTO",
+  "Vacuus",
+  "Vacuus-Solids",
+  "excavated polyhedra",
+  "stellations",
+  "great dodecahedron",
+  "excavated dodecahedron",
+  "Schlegel diagram",
+  "segmentochora",
+  "polyhedra"
+ ],
+ "subjects": [
+  {
+   "term": "MSC2020 52B10: Three-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B10",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B15: Symmetry properties of polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B15",
+   "scheme": "url"
+  },
+  {
+   "term": "MSC2020 52B11: n-dimensional polytopes",
+   "identifier": "https://zbmath.org/classification/?q=cc:52B11",
+   "scheme": "url"
+  }
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23345699",
+   "relation": "isPartOf",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24521888",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.24272477",
+   "relation": "references",
+   "scheme": "doi"
+  }
+ ]
+}
