@@ -379,3 +379,7 @@ and the entry carries the new theorem in Palomar's layout:
 - Not run here (as on 15 Nov): Palomar's GitHub workflow itself (needs a public repository at a fixed commit), Ruby metadata validator.
 Rule for every later milestone: each new theorem goes into the entry the same way (Challenge + Solution + comparator) and the
 comparator plus a negative control are rerun before the milestone counts as done.
+PUBLISHED (28 Nov 2026, DICTO "publish repository"): https://github.com/DICTOR-Master/loop-equality-lean (public), main = efd98a2
+(the entry branch `stackings`: Theorem 1 + Corollary A, 18 compared theorems). History checked before publishing: authors "DICTO"
+with a local placeholder address, no machine names, paths or personal e-mail. The compute-host repository keeps its old main
+(26fc584) untouched; its branch `stackings` is what was published. Palomar submission itself is DICTO's (fixed commit efd98a2...).
