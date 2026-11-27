@@ -430,3 +430,8 @@ through v = sum over crossing sets S (finite: inside box v (2l)), pairings M, M'
 w_v = root linkages of G through v, f = far linkages of G (flip transfer). Then Delta = -1/2 sum A_w A_f by finite-sum algebra.
 Equivalent to the paper's translate-weighted form; the paper will quote the Lean form.
 Step 4a: root bonds unchanged by the flip (`bond_root_flip`).
+DICTO 28 Nov on decision 1: "lets do it your way first and by sites if further proof is required after next attack" -> per-site
+form now; revisit after the second Fable attack.
+Item 4 progress: Counting.lean `ncard_polysCross` (product structure as a count), `ncard_partsCross_flip`, `theoremB_count`
+(polygons of the flipped stacking crossing at P = pairs of G-parts with far ends at c - P, half-turned far part closing one cycle),
+built, standard axioms. Remaining for item 4: sum over P (finite, in the box) and the -1/2 sum A_w A_f algebra.

@@ -14,3 +14,4 @@ public import LoopEquality.EverySite
 public import LoopEquality.Degree
 public import LoopEquality.Parts
 public import LoopEquality.Transfer
+public import LoopEquality.Counting

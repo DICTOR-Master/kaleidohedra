@@ -152,4 +152,80 @@ theorem ncard_polysCross {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {k : ℤ} {P
         · exact absurd (hFs _ h _ (by rw [vert_eq]; exact Sym2.mem_mk_left _ _)) (not_isFar_loA k p)
     · simp only [filter_root_three hRs hFs, filter_far_three hRs hFs]
 
+theorem bondS_vert_flip {σ : ℤ → ZMod 3} {k : ℤ} {p : ℤ × ℤ} :
+    BondS σ (vert k p) ↔ BondS (flipAt σ k) (vert k p) := by
+  unfold vert
+  rw [bondS_mk, bondS_mk]
+  unfold Bond IsSite
+  simp only [flipAt_of_le (le_refl k)]
+
+/-- Pairs (root linkage of `G σ` through `v` ending at `P`, far linkage of `G σ` ending at `c - P`) whose
+half-turned far part closes the root part into one cycle. -/
+def FlipParts (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) (k : ℤ) (P : Finset (ℤ × ℤ)) (c : ℤ × ℤ) :
+    Set (Finset (Sym2 Atom) × Finset (Sym2 Atom)) :=
+  {RF | RootL σ k P RF.1 ∧ FarL σ k (P.image (fun p => c - p)) RF.2 ∧ 0 < degS RF.1 v ∧
+    RF.1.card + P.card + RF.2.card = l ∧ SingleCycle k P RF.1 (RF.2.image (htS c))}
+
+theorem rootL_flip {σ : ℤ → ZMod 3} {k : ℤ} {c : ℤ × ℤ} (hc : GoodCentre σ k c) {P : Finset (ℤ × ℤ)}
+    {R : Finset (Sym2 Atom)} : RootL σ k P R ↔ RootL (flipAt σ k) k P R := by
+  unfold RootL
+  constructor
+  · rintro ⟨h1, h2, h3⟩
+    refine ⟨h1, h2, fun e he => ?_⟩
+    have hb := h3 e he; have hs := h2 e he
+    induction e using Sym2.ind with
+    | _ a b =>
+      rw [bondS_mk] at hb ⊢
+      exact (bond_root_flip hc (hs a (Sym2.mem_mk_left a b)) (hs b (Sym2.mem_mk_right a b))).mp hb
+  · rintro ⟨h1, h2, h3⟩
+    refine ⟨h1, h2, fun e he => ?_⟩
+    have hb := h3 e he; have hs := h2 e he
+    induction e using Sym2.ind with
+    | _ a b =>
+      rw [bondS_mk] at hb ⊢
+      exact (bond_root_flip hc (hs a (Sym2.mem_mk_left a b)) (hs b (Sym2.mem_mk_right a b))).mpr hb
+
+theorem image_sub_sub (c : ℤ × ℤ) (P : Finset (ℤ × ℤ)) :
+    (P.image (fun p => c - p)).image (fun p => c - p) = P := by
+  rw [Finset.image_image]
+  conv_rhs => rw [← Finset.image_id (s := P)]
+  apply Finset.image_congr; intro p _; simp
+
+/-- **The flip, counted.** Pairs of parts in `G (flipAt σ k)` correspond one to one, by the half-turn of the far
+part, with pairs in `G σ` whose far linkage ends at `c - P`. -/
+theorem ncard_partsCross_flip {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {k : ℤ} {c : ℤ × ℤ}
+    (hc : GoodCentre σ k c) (P : Finset (ℤ × ℤ)) :
+    (PartsCross (flipAt σ k) v l k P).ncard = (FlipParts σ v l k P c).ncard := by
+  have hc' := goodCentre_flipAt hc
+  have hinv := htA_invol c
+  have hS : htS c = Sym2.map (htA c) := rfl
+  apply Set.ncard_congr (fun RF _ => (RF.1, RF.2.image (htS c)))
+  · rintro ⟨R, F⟩ ⟨hR, ⟨hFl, hFs, hFb⟩, hdv, hcard, hsc⟩
+    obtain ⟨t1, t2, t3, t4, -⟩ := flip_transfer hc' hFl hFs hFb
+    rw [flipAt_flipAt] at t3
+    refine ⟨(rootL_flip hc).mpr hR, ⟨t1, t2, t3⟩, hdv, by rw [t4]; exact hcard, ?_⟩
+    show SingleCycle k P R ((F.image (htS c)).image (htS c))
+    rw [hS, image_image_invol hinv]; exact hsc
+  · rintro ⟨R, F⟩ ⟨R', F'⟩ - - h
+    simp only [Prod.mk.injEq] at h ⊢
+    refine ⟨h.1, ?_⟩
+    have := congrArg (fun X => X.image (htS c)) h.2
+    rw [hS] at this
+    rwa [image_image_invol hinv, image_image_invol hinv] at this
+  · rintro ⟨R, F⟩ ⟨hR, ⟨hFl, hFs, hFb⟩, hdv, hcard, hsc⟩
+    obtain ⟨t1, t2, t3, t4, -⟩ := flip_transfer hc hFl hFs hFb
+    rw [image_sub_sub] at t1
+    refine ⟨(R, F.image (htS c)), ⟨(rootL_flip hc).mp hR, ⟨t1, t2, t3⟩, hdv, by rw [t4]; exact hcard, hsc⟩, ?_⟩
+    simp only [Prod.mk.injEq, true_and]
+    rw [hS]; exact image_image_invol hinv F
+
+/-- **Theorem B, counting form.** For a good centre `c` of `σ` at `k`, a site side `v` on the root side of
+bilayer `k`, and a nonempty crossing set `P` with vertical bonds: the polygons of the flipped stacking through
+`v` crossing bilayer `k` exactly at `P` are as many as the pairs (root linkage of `G σ` through `v` ending at
+`P`, far linkage of `G σ` ending at `c - P`) whose half-turned far part closes the root part into one cycle. -/
+theorem theoremB_count {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {k : ℤ} {c : ℤ × ℤ} (hc : GoodCentre σ k c)
+    (hv : ¬ IsFar k v) {P : Finset (ℤ × ℤ)} (hP : P.Nonempty) (hV : ∀ p ∈ P, BondS σ (vert k p)) :
+    (PolysCross (flipAt σ k) v l k P).ncard = (FlipParts σ v l k P c).ncard := by
+  rw [ncard_polysCross hv hP (fun p hp => bondS_vert_flip.mp (hV p hp)), ncard_partsCross_flip hc P]
+
 end LoopEqualityProof
