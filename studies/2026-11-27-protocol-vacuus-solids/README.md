@@ -59,3 +59,12 @@ Share of the hull's pitted solid (pits under each hull face down to the star) th
   shaped), its own core; star fills 88%, pits at one size. Ophelia (D109) settles into period two instead (57-59%).
 Render: renders/SAMSON-STAR-VS-PITTED-HULL.png (turn 1 and turn 3; star, pitted hull, both). Off-axis pit test not settled: at turn 1
 Samson's own corners lie on hull faces, so the pits there are not simple pyramids (to rethink, not patch).
+
+## Four tetrahedra at their tips vs Samson's fixed point (27 Nov 2026; DICTO: four tetrahedra meeting at their tips form the four outward
+triangles of a truncated tetrahedron; "check its worth a look")
+- Four regular tetrahedra (edge 1) with their tips at the centre, pointing to the four tetrahedral directions, base corners toward the
+  other directions: outline = a truncated tetrahedron with triangles of side 1, hexagons with sides alternating 1 and 2/3, all corners on
+  the sphere of radius 1 (turned 60 degrees instead: the cuboctahedron). Not the regular truncated tetrahedron (that needs radius 1.1726).
+- Samson's fixed point (turns 2-5, both rules t = 2 and t = phi: the same shape): also a truncated tetrahedron with all corners on one
+  sphere, but the other way round: small triangles (side 0.29706), long hexagon sides 0.76194, ratio 2.56488, radius / triangle side
+  2.06141. So NOT the four-tetrahedra shape (ratio 2/3). Both rules reaching the same fixed shape is itself notable (closed form open).
