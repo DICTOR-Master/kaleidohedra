@@ -460,4 +460,12 @@ theorem polysAtMostTwice_finite (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) : (po
   rw [polysAtMostTwice_eq_proof]
   exact LoopEqualityProof.polysA1_finite σ v l
 
+/-- **Every site counts the same (Corollary A of #102, Version 6).** For every
+stacking and every site `v` of it, the polygons through `v` with `l` edges crossing
+every bilayer at most twice are as many as at diamond's site `(0, (0, 0), 0)`. -/
+theorem corollaryA_everySite {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (hv : IsSite σ v) (l : ℕ) :
+    (polysAtMostTwice σ v l).ncard = (polysAtMostTwice diamond (0, (0, 0), 0) l).ncard := by
+  rw [polysAtMostTwice_eq_proof, polysAtMostTwice_eq_proof]
+  exact LoopEqualityProof.corollaryA_everySite hσ hv l
+
 end DictoLoopEquality

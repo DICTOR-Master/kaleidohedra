@@ -10,3 +10,4 @@ public import LoopEquality.Assembly
 public import LoopEquality.Finiteness
 public import LoopEquality.Linkage
 public import LoopEquality.Product
+public import LoopEquality.EverySite
