@@ -299,3 +299,17 @@ p -> c - p of the far half, c = 2 sigma(k) mod 3, carries sites onto sites of th
 half preserves bonds and non-bonds), `halfturn_two_points` (Lemma 2). Uses the published definitions (namespace LoopEqualityProof).
 The file sits in the entry workspace as an extra module only; the Palomar entry's own files are unchanged.
 Next: Milestone 2 (cut lemma: the vertical bonds of bilayer k are the only bonds between the halves; arcs, crossing sets; Theorem A).
+
+### Milestone 2 DONE (28 Nov 2026): the cut, the surgery and Theorem A for at most two crossings
+Files (built, no errors or warnings; axioms propext, Classical.choice, Quot.sound only):
+- Surgery.lean (2a): `bond_symm`; the cut lemma `cut` (a far-root bond is the vertical bond of bilayer k); `crossing_bond_flip`;
+  the surgery `surg` on ordered edges with `surg_bond_iff` (bonds before iff after) and `surg_surg`.
+- Polygons.lean (2c part 1, replaces the ordered-edge Degrees.lean of 2b): the surgery `surgS` on unordered edges (`Sym2 Atom`),
+  `degS_surg_root`, `degS_surg_far` (degrees kept when the half-turn keeps the crossing edges).
+- TheoremA.lean (2c part 2): polygon = minimal nonempty closed (even-degree) set of bonds; `even_card_cross` (parity: a closed
+  loopless edge set crosses the cut an even number of times); `surgery_polygon` (Theorem A for polygons crossing bilayer k at most
+  twice: the surgered set is a polygon of the flipped network, same number of edges, same crossing edges).
+Scope (stated exactly): the formal Theorem A is the n <= 2 case, which is all that Corollary A1 uses; the n = 4 symmetric cases
+(parallelogram, toggle mirror) of the paper are not formalised.
+Next: Milestone 2d: Corollary A1 in Lean (centre c = p + q from Lemma 2; the bijection between such polygons through v in G sigma and
+G (flipAt sigma k), and equal counts for every length and crossing profile).
