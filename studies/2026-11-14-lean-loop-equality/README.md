@@ -404,3 +404,17 @@ E' = E \ {e}. (1) x, y joined in E' (parity). (2) K := (edges of E' inside the c
 E' is connected on the atoms of E. (3) E' has no cycle: a Mathlib cycle walk in it gives an even nonempty edge set (via
 `Walk.IsTrail.even_countP_edges_iff`, edges nodup) strictly inside E. (4) So E' is a tree on the atoms of E: |E'| = |V| - 1
 (`IsTree.card_edgeFinset`), |E| = |V|. (5) Handshake: degrees >= 2 summing to 2|V| are all 2.
+
+## READINESS COUNTDOWN (DICTO 28 Nov: "count down readiness as we go ... till Palomar paper is fully ready with all requirements")
+Done on 28 Nov: Corollary A in the entry; finiteness (`polysAtMostTwice_finite`); every site counts the same
+(`corollaryA_everySite`, vs diamond's site); 20 compared theorems; comparator accepted (con-ron 17,765 declarations, nanoda, Lean);
+negative controls rejected; repository public.
+Remaining (22), struck off as they pass:
+Lean / Palomar entry: 1 degree lemma `polygon_deg_le_two` · 2 product structure (3b) · 3 flip transfer (3c) · 4 counting and
+Theorem B (3d) · 5 Theorem B in the entry (Challenge/Solution/comparator + negative control) · 6 Corollary A profile by profile ·
+7 non-emptiness witness (a hexagon at l = 6) · 8 Challenge header, results list, naming, #102 Version 6 source · 9 README and
+formalization.yaml for all theorems; new public commit · 10 length-18 law (Milestones 4, 5) · 11 notability re-score.
+Paper #125: 12 title (DICTO) · 13 Theorem B section · 14 two figures · 15 correlation table and OEIS trail · 16 compared vs library
+statements; Fable wording fixes · 17 general OEIS acknowledgement · 18 Thorpe "first formal proof" check · 19 open problems confirmed
+open · 20 Benito et al. opened · 21 second Fable attack after Theorem B · 22 DICTO's final read ok (then Zenodo release; Palomar
+submission is DICTO's).
