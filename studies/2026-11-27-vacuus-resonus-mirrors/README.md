@@ -129,3 +129,11 @@ of kinds also give exactly 1/60 is not settled here).
 - Status: equal solid angles exact (piece counting); realised = the LP found a convex polyhedron with this face pattern seen from
   O. Still to do, as for the cube pair: fair from the centre of mass (step 8 method), exact certification, catalogue match
   (step 9). Dice with NO symmetry are not covered (the unimposed run passed 3 million partitions).
+
+## Step 13 (running, 27 Nov): settling the 4,168 candidates step 12 left open (scripts/fair_centroid_retry.py)
+SLSQP over the pattern-keeping cone set with a scale-free offset and a cone margin (1e-3 of the LP point's margin, then 1e-4); saves per
+die, resumable. The first version (margin 1e-6) was stopped: most "fair" ends were near-degenerate. Pilot of the final version
+(fd-retry-pilot2): controls 1, 2, 3 (fair in step 12) come out Aequi at margin 1e-3; 88 and 572 become Aequi; candidate 10736 was a
+degenerate step-12 end point (the die shrunk towards a point), now re-solved with the size fixed. At 22:07: 3,627 of 4,168 done:
+2,845 Aequi (margin 1e-3), 177 Aequi only at margin 1e-4 (near-degenerate), 267 boundary (reaching O needs the pattern to change),
+338 open. Full result when the run ends.
