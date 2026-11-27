@@ -389,3 +389,13 @@ two ends, by Mathlib's Connected.card_vert_le_card_edgeSet_add_one), `partner_un
 has exactly one partner: the pairing of a linkage is well defined. Built, standard axioms only.
 Next: 3b product structure. After Theorem B: Milestone 4 (f = all - bad; six-crossing terms vanish to l = 20) and Milestone 5
 (length-18 tables by kernel decide as certificates), each Palomar-ready (DICTO 28 Nov: "and length-18 milestones").
+Milestone 3b part 1 DONE (28 Nov): entry/LoopEquality/Product.lean `all_edges_of_touched`, `propagate` (a subset with even degree at
+every degree-2 atom of K contains all of a path of K once it contains one edge of it). Built, standard axioms.
+3b part 2 NEEDS FIRST (found 28 Nov): `polygon_deg_le_two`: a minimal even edge set (our IsPolygon) has every degree <= 2. Standard
+(a circuit is a cycle) but not yet proved. Route: if deg_E x >= 4, take e = s(x,y) in E; in E \ {e}, x and y are joined (parity, as in
+`partner_exists`); a Mathlib walk between them -> `Walk.bypass` (a path, `bypass_isPath`) -> cycle `cons e path`; its edge set F is
+even (`Walk.IsTrail.even_countP_edges_iff` with u = v) and has degree 2 at x (path endpoint: `neighborSet_toSubgraph_endpoint`), so
+F is a proper even subset of E: contradiction. Bridge needed: Walk.edges (nodup for trails) <-> our Finset (Sym2 Atom) and degS.
+Then 3b part 2: polygon -> (root part, far part) are linkages ending at the crossing points, and no proper set of crossing points is
+closed under both pairings (else the paths through it + their vertical bonds form a smaller closed set); 3b part 3: the converse by
+`propagate` (a closed subset contains a whole path once it meets it, hence closes up a set of crossing points under both pairings).
