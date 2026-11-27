@@ -10,8 +10,9 @@ From a Fullerene to a Fair Die: C116 Turned into Minana #377 by One Layer of Scu
 Known: fair dice (Aequi, #105/#118 catalogue); fullerenes and their enumeration (fullgen, Brinkmann and Dress); scutoids in
 biology (Gómez-Gálvez et al. 2018); Scutoid-Frusta (DICTO, #118 and the Scutoid-Frusta paper). Question: can a fullerene core
 be wrapped in one layer of pieces whose outside is a fair die, face to face, and how few side changes does it take?
-New: the unique C116 fullerene with symmetry T_h becomes Minana #377 in one layer; with DICTO's Hollow-straw method every piece
-is convex with flat walls.
+New: the unique C116 fullerene with symmetry T_h becomes Minana #377 in one layer (floating resin: the core keeps C116's own shape);
+with DICTO's Hollow-straw method every piece is convex with flat walls, but the core then keeps only C116's face pattern: its faces are
+pressed parallel to the die's, so it no longer looks like C116 (DICTO 27 Nov: never display what is not true; say this every time).
 
 ## Arc
 - Pledge. A fullerene core and a fair die with 60 faces each, the same orbit sizes under T_h (12+12+12+24). Wrap one in the other,
@@ -19,7 +20,8 @@ is convex with flat walls.
 - Turn. The obvious match (pentagons to squares) needs 90 swaps in 3 layers. Scoring every orbit assignment gives 30 swaps in one
   layer, the least among symmetric pairings. Letting the core float (DICTO's floating resin) gives 18 swaps, one layer.
 - Prestige. DICTO's Hollow-straw (straws pumped up between paired faces until they meet) makes every wall flat: 60 convex
-  Scutoid-Frusta, the core's faces parallel to the die's.
+  Scutoid-Frusta, the core's faces parallel to the die's. Its core has C116's face pattern, NOT C116's shape (pressed into the die's
+  planes); every figure and sentence must say so. Open: an exact certificate for the floating-resin layer, whose core is C116 itself.
 
 ## Sections
 1. Introduction: promise (Theorem 1 in one sentence), vision figure (Hollow-straw layer pulled apart), contributions.
@@ -37,7 +39,8 @@ is convex with flat walls.
 Sources checked; data and reproducibility; references.
 
 ## Figures
-1. Hollow-straw layer, pulled apart and assembled (render exists; neutral palette or app colours per rule).
+1. Lead figure: floating-resin layer in the Aequi colours (RENDER-c116-minana-aequi.png): C116 core in its own shape, pulled apart,
+   assembled. 2. Hollow-straw layer, captioned 'core with C116's face pattern, pressed parallel to the die's faces'.
 2. The four routes side by side: 90 / 30 / 18 swaps (floating-resin amber layer, folded walls, beside Hollow-straw).
 3. Face-pattern diagram: the 18 swaps marked on C116's pattern.
 

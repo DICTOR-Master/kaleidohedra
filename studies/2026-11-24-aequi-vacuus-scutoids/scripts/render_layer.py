@@ -40,8 +40,8 @@ else:
         sub = "60 Scutoid-Frusta, 18 Y vertices, exact cell (volume gap 0) · the core floated to its best alignment: 156 of 174 neighbour pairs kept, 18 single swaps"
     else:
         title = "From C116 to Minana #377: Hollow-straw, flat walls"
-        sub = "60 convex Scutoid-Frusta, 18 Y vertices · every straw pumped to meet its neighbours; every core face parallel to its Minana face"
+        sub = "60 convex Scutoid-Frusta, 18 Y vertices · core: C116's face pattern, pressed parallel to the die's faces (not C116's own shape)"
     Cp.figure(f"RENDER-c116-minana-{L}.png", title, sub,
-              [(os.path.join(D, "p0.png"), "pulled apart", "core in stone"), (os.path.join(D, "p1.png"), "assembled", "outer surface = Minana #377")],
+              [(os.path.join(D, "p0.png"), "pulled apart", "core in stone" if L == "float" else "core: C116 pattern, die-pressed"), (os.path.join(D, "p1.png"), "assembled", "outer surface = Minana #377")],
               [(hexrgb(STONE), "core")] + [(hexrgb(KIND[k]), f"{NAMES[k]} ({meta.get(f'{k[0]}-{k[1]}', 0)})") for k in KIND if f'{k[0]}-{k[1]}' in meta], cell=1000)
     print("composed")
