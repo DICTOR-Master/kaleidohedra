@@ -3,6 +3,13 @@
 DICTO · paper · with Claude (Anthropic). Home decided by DICTO 27 Nov: its own paper (not the Scutoid-Frusta paper).
 Gold standard #43 v3; Winston style; first paragraph = known, new, question answered. Data: study 2026-11-24-aequi-vacuus-scutoids.
 
+
+## CORRECTION 27 Nov (DICTO: "I have never wanted or asked for the core to be the same as the outer... it is a transformation!!!")
+DICTO's Hollow-straw fixes BOTH ends: C116 in its own shape inside, Minana #377 outside; the straws are swept as each C116 face plane
+turns and moves into its die face plane, all together (a transformation). The flat-walled layer (hollow_straw.py, hollow_straw_exact.py)
+moved the core parallel to the die: it is MY variant, not his method, and its certificate is not a certificate of his method.
+Next: build his method as a transformation (fixed ends, moving planes), check nesting and the swaps; then the theorems are rewritten.
+
 ## Working title
 From a Fullerene to a Fair Die: C116 Turned into Minana #377 by One Layer of Scutoid-Frusta
 
