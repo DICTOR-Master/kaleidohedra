@@ -50,3 +50,12 @@ scripts/dump_star_turns.mjs (the app's own chain, shape D109 Ophelia, doubling r
   60 faces; the deepest star points under the 60 faces lie at ONE common size (spread 1e-11), so the hull's Vacuus-Solid with pits
   down to the star is a genuine family member. The star holds 57% (turns 3, 5) and 59% (turn 4) of its volume; the rest is the material
   along the hull's edges. Numerically: not a Vacuus-Solid, but its edge-stripped relative. Turn 1 (642 corners, 440 faces): far apart.
+
+## All 386 Star Cores stars (scripts/dump_all_stars.mjs, star_vs_all.py, depth.py; data/stars_vs.json; numerical)
+Share of the hull's pitted solid (pits under each hull face down to the star) that the star fills, 330 meaningful cases:
+- Lahdeli (D77) turn 4, t = 2: 100%: trivial, the star is convex (cube + six half-height pyramids = the rhombic dodecahedron), no pits.
+- Samson (D71) turn 1, t = 2: 99.7%, pits deep (0.29-0.33 of the face distance) but not at one size: the closest real near-miss.
+- Samson from turn 2 on is a FIXED POINT (DICTO: "turn 3 the solid is the core itself"): 12 corners, 8 faces (truncated-tetrahedron
+  shaped), its own core; star fills 88%, pits at one size. Ophelia (D109) settles into period two instead (57-59%).
+Render: renders/SAMSON-STAR-VS-PITTED-HULL.png (turn 1 and turn 3; star, pitted hull, both). Off-axis pit test not settled: at turn 1
+Samson's own corners lie on hull faces, so the pits there are not simple pyramids (to rethink, not patch).
