@@ -219,4 +219,86 @@ theorem erase_acyclic {σ : ℤ → ZMod 3} {E : Finset (Sym2 Atom)} (hE : IsPol
   have hmem : s(x, y) ∈ F := by rw [hFE]; exact he
   exact Finset.notMem_erase _ _ (hFsub hmem)
 
+theorem eraseGraph_connected {σ : ℤ → ZMod 3} {E : Finset (Sym2 Atom)} (hE : IsPolygon σ E) {x y : Atom}
+    (he : s(x, y) ∈ E) : (eraseGraph E x y).Connected := by
+  have hxV : x ∈ atomsOf E := mem_atomsOf.mpr ⟨_, he, Sym2.mem_mk_left x y⟩
+  have base : ∀ z, Conn (E.erase s(x, y)) x z → ∀ hz : z ∈ atomsOf E,
+      (eraseGraph E x y).Reachable ⟨x, hxV⟩ ⟨z, hz⟩ := by
+    intro z h
+    induction h with
+    | refl => intro _; exact SimpleGraph.Reachable.refl _
+    | @tail b c hxb hbc ih =>
+      intro hc
+      have hb : b ∈ atomsOf E :=
+        mem_atomsOf.mpr ⟨_, Finset.mem_of_mem_erase hbc.1, Sym2.mem_mk_left b c⟩
+      exact (ih hb).trans (SimpleGraph.Adj.reachable (G := eraseGraph E x y) (eraseGraph_adj.mpr ⟨hbc.1, hbc.2⟩))
+  have : Nonempty {a // a ∈ atomsOf E} := ⟨⟨x, hxV⟩⟩
+  refine ⟨fun u w => ?_⟩
+  have hu := base u.1 (erase_connected hE he (mem_atomsOf.mp u.2)) u.2
+  have hw := base w.1 (erase_connected hE he (mem_atomsOf.mp w.2)) w.2
+  exact hu.symm.trans hw
+
+theorem card_edgeFinset_eraseGraph {σ : ℤ → ZMod 3} {E : Finset (Sym2 Atom)} (hE : IsPolygon σ E)
+    {x y : Atom} : (eraseGraph E x y).edgeFinset.card = (E.erase s(x, y)).card := by
+  have hnd := polygon_nodiag hE
+  apply Finset.card_bij (fun g _ => Sym2.map Subtype.val g)
+  · intro g hg
+    rw [SimpleGraph.mem_edgeFinset] at hg
+    induction g using Sym2.ind with
+    | _ a b => exact (eraseGraph_adj.mp hg).1
+  · intro g₁ _ g₂ _ h
+    exact Sym2.map.injective Subtype.val_injective h
+  · intro f hf
+    have hfE := Finset.mem_of_mem_erase hf
+    induction f using Sym2.ind with
+    | _ a b =>
+      have ha : a ∈ atomsOf E := mem_atomsOf.mpr ⟨_, hfE, Sym2.mem_mk_left a b⟩
+      have hb : b ∈ atomsOf E := mem_atomsOf.mpr ⟨_, hfE, Sym2.mem_mk_right a b⟩
+      have hab : a ≠ b := fun h => hnd _ hfE (by rw [h]; exact Sym2.mk_isDiag_iff.mpr rfl)
+      refine ⟨s(⟨a, ha⟩, ⟨b, hb⟩), ?_, rfl⟩
+      rw [SimpleGraph.mem_edgeFinset]
+      exact eraseGraph_adj.mpr ⟨hf, hab⟩
+
+/-- **A polygon is a single cycle: every degree is at most 2.** -/
+theorem polygon_deg_le_two {σ : ℤ → ZMod 3} {E : Finset (Sym2 Atom)} (hE : IsPolygon σ E) (z : Atom) :
+    degS E z ≤ 2 := by
+  obtain ⟨e, he⟩ := hE.1
+  induction e using Sym2.ind with
+  | _ x y =>
+    have hnd := polygon_nodiag hE
+    have htree : (eraseGraph E x y).IsTree := ⟨eraseGraph_connected hE he, erase_acyclic hE he⟩
+    have hcount := htree.card_edgeFinset
+    rw [card_edgeFinset_eraseGraph hE, Finset.card_erase_of_mem he, Fintype.card_coe] at hcount
+    -- handshake over the atoms of E
+    have hsum := handshake E (atomsOf E) hnd (fun f hf w _ _ u hu => mem_atomsOf.mpr ⟨f, hf, hu⟩)
+    have hall : E.filter (fun f => ∃ w ∈ atomsOf E, w ∈ f) = E := by
+      apply Finset.filter_true_of_mem
+      intro f hf
+      induction f using Sym2.ind with
+      | _ a b => exact ⟨a, mem_atomsOf.mpr ⟨_, hf, Sym2.mem_mk_left a b⟩, Sym2.mem_mk_left a b⟩
+    rw [hall] at hsum
+    have hpos : 0 < E.card := Finset.card_pos.mpr ⟨_, he⟩
+    -- every atom of E has degree at least 2 (even and positive)
+    have hge : ∀ w ∈ atomsOf E, 2 ≤ degS E w := by
+      intro w hw
+      obtain ⟨f, hf, hwf⟩ := mem_atomsOf.mp hw
+      have h1 : 0 < degS E w := Finset.card_pos.mpr ⟨f, Finset.mem_filter.mpr ⟨hf, hwf⟩⟩
+      obtain ⟨m, hm⟩ := hE.2.2.1 w
+      omega
+    by_cases hz : z ∈ atomsOf E
+    · by_contra hgt
+      push Not at hgt
+      have hlow : ∑ w ∈ (atomsOf E).erase z, 2 ≤ ∑ w ∈ (atomsOf E).erase z, degS E w :=
+        Finset.sum_le_sum (fun w hw => hge w (Finset.mem_of_mem_erase hw))
+      rw [Finset.sum_const, Finset.card_erase_of_mem hz, smul_eq_mul] at hlow
+      rw [← Finset.add_sum_erase _ _ hz] at hsum
+      have : 1 ≤ (atomsOf E).card := Finset.card_pos.mpr ⟨z, hz⟩
+      omega
+    · have : degS E z = 0 := by
+        unfold degS
+        rw [Finset.card_eq_zero, Finset.filter_eq_empty_iff]
+        intro f hf hzf
+        exact hz (mem_atomsOf.mpr ⟨f, hf, hzf⟩)
+      omega
+
 end LoopEqualityProof
