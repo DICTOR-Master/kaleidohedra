@@ -190,3 +190,16 @@ face plane of λQ with ONE λ > 0. Controls: the two classics pass; both at s ±
 - **Correction:** octahedron / triakis tetrahedron at s = 3/5 is NOT special. Exactly, 12 walls lie on face planes of Q (λ = 1)
   and 12 on those of −Q (λ = −1): the octahedron is centrally symmetric, Q is not. The float search compared normals up to sign.
   It stays in the paper as a near miss (walls on the planes of Q and its opposite). Count: 11, not 12.
+
+## Core or planes only? (27 Nov 2026; DICTO: "is it really mathematically sound to include the figs with the far more complex inner cores?")
+scripts/core_or_planes.py, logs/core_or_planes.log, data-core-or-planes.json (numerical: sampling and 1e-7 tests; exact check to follow).
+Theorem 1's condition (every pit wall lies in a face plane of lam Q) is about PLANES only. Tested for all 26 (P, s, Q) of the search:
+- The pit walls cover NONE of any Q's faces (0% in all 26): the walls extend Q's face planes outward; they never lie on Q's faces.
+- Q = the hull of the pit tips (a real core, the family's polar core) in exactly 2: the excavated dodecahedron (Q icosahedron) and the
+  great dodecahedron (P icosahedron, Q dodecahedron). The pits touch Q at its corners only.
+- Pit tips at corners of Q, Q larger than their hull, no pit entering Q: tetrahedron/triakis octahedron (4 of 4 tips),
+  dodecahedron/deltoidal hexecontahedron (12 of 12), icosahedron/deltoidal hexecontahedron (20 of 20).
+- Pits ENTER Q: octahedron/triakis tetrahedron (4 tips inside Q): Q is not a core at all.
+- All other pairs: every pit tip lies outside Q; Q floats inside without touching any pit: planes only.
+Consequence for the Vacuus-Solids draft: Figure 2 may draw Q inside as a core only for the two classics; the corner-touching three
+must be described as such; the others show shared planes, not a core.
