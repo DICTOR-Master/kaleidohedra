@@ -331,3 +331,16 @@ intersection of half-spaces, so every piece is CONVEX with flat walls. Checks (f
 the pairing); 18 Y vertices (one per swap); changes 6 pentagon->square, 6 pentagon->heptagon, 6 hexagon->square,
 6 hexagon->heptagon, 36 keep six sides. Renders: renders/RENDER-c116-minana-straw.png (Hollow-straw) and
 RENDER-c116-minana-float.png (the floating-resin amber layer, folded walls), PDF in the reading folder.
+
+## Hollow-straw layer, EXACT certificate (27 Nov 2026; scripts/hollow_straw_exact.py, logs/hollow_straw_exact.log, data/c116/hollow_straw_exact.json)
+By definition (no computation): each straw is an intersection of half-spaces (convex, flat walls); the straws cover the shell and
+overlap only on walls; straw t meets the core plane exactly in core face t and Minana's plane exactly in Minana's face t.
+Computed exactly (Minana's planes in Q(sqrt5), rational offsets): the level sets P(lam) = {D_s >= lam d_s} run from Minana (lam 0)
+to the core (lam 1) with planes moving parallel; walls are traces of P(lam)'s edges, and the face pattern can change only where
+four or more planes meet.
+- (1) The core P(1) has C116's face pattern: 116 corners, 0 violations (exact).
+- (2) All 487,635 sets of four planes: 18 float candidates, 18 exact Y corners, each with EXACTLY four planes through it.
+- (3) They are exactly the 18 swaps of the floating-resin floor (each at the swap's four faces). FINAL ok.
+- All 18 Y corners lie at the same depth lam = 0.644221...: the layer passes through one polyhedron where all 18 swaps happen at once
+  (the LP's offsets put every swap on one level).
+So Theorem 1 (60 convex flat-walled Scutoid-Frusta, C116 -> Minana #377, 18 Y corners) is exact; the float build stays for renders.
