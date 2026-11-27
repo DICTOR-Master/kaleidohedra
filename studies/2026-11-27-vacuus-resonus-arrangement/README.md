@@ -11,8 +11,8 @@ alternative spacefilling solutions." Fairness of dice is one use, not the aim. D
 P4 centred in the 3-space sum y = 0. All exact (fractions).
 - 36 edges give **15 Vacuus planes**; 14 facets give **7 Resonus planes**; 3 Resonus planes are also Vacuus planes, so the joint
   arrangement has **19 distinct planes** (agrees with #120 and the Lean entry: A402191(4) = 15, 2^3 - 1 = 7, 2^2 = 4 not ridge planes).
-- **93 lines** through the centre: 75 where 2 planes meet, 12 where 3 meet, 6 where 5 meet (the 6 four-fold-type axes of P4's
-  square faces... to confirm by direction).
+- **93 lines** through the centre: 75 where 2 planes meet, 12 where 3 meet, 6 where 5 meet (which symmetry axes these
+  are: to identify in step 2).
 - **248 cones** (cells from the centre): 2 + 2 x sum (m - 1).
 - Plane-pair angles, exact cos^2: 0 (15 pairs), 1/81 (12), 1/27 (24), 1/9 (18), 16/81 (24), 1/3 (24), 4/9 (24), 49/81 (6),
   64/81 (12), 25/27 (12).

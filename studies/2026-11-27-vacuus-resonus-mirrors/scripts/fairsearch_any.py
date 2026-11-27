@@ -121,33 +121,46 @@ assert len(mats) == GO, (len(mats), GO)
 for M in mats:
     img = [int(np.argmin(np.linalg.norm(cen - M @ c, axis=1))) for c in cen]
     assert sorted(img) == list(range(NP)); G.append(img)
-def realise(faces):
-    # LP: n_k - n_j = lam * m (m = normal of the shared great circle, pointing into k), lam >= 1
-    N = len(faces); owner = {}
-    for k, F in enumerate(faces):
-        for i in F: owner[i] = k
-    rows, rhs = [], []; lamv = []
-    seen = set()
+def face_pairs(faces):
+    # one entry per adjacent face pair (k < l), m = normal of their shared great circle pointing into k
+    owner = {i: k for k, F in enumerate(faces) for i in F}; out = {}
     for e, L in edges.items():
         if len(L) != 2: continue
         i, j = L; k, l = owner[i], owner[j]
-        if k == l or (k, l) in seen: continue
+        if k == l: continue
         a, b = tuple(e); m = np.cross(np.array(a), np.array(b)); m /= np.linalg.norm(m)
-        cj = np.mean([np.array(v) for v in VK[i]], axis=0)
-        if m @ cj < 0: m = -m                      # m points into face k (piece i's side)
-        seen.add((k, l)); seen.add((l, k)); lamv.append((k, l, m))
-    nv = 3 * N + len(lamv)
-    Aeq, beq = [], []
-    for t, (k, l, m) in enumerate(lamv):
-        for q in range(3):
-            r = np.zeros(nv); r[3 * k + q] = 1; r[3 * l + q] = -1; r[3 * N + t] = -m[q]; Aeq.append(r); beq.append(0)
-    r = np.zeros(nv); r[0:3 * N] = 0
-    bounds = [(None, None)] * (3 * N) + [(1, None)] * len(lamv)
-    # fix the free translation n_k -> n_k + c (O inside: sum of face normals direction free): pin n_0 = 0 offset via sum n_k = 0
+        if m @ np.mean([np.array(v) for v in VK[i]], axis=0) < 0: m = -m
+        if k > l: k, l, m = l, k, -m
+        out.setdefault((k, l), m)
+    return owner, out
+def pattern_rows(faces):
+    # step 11c (27 Nov): conditions written at the pattern's corners, one shared unit vector v per corner: faces at v tie there
+    # (n_a . v = n_b . v), every face at v beats every other face there by >= 1 ((n_k - n_j) . v >= 1). Since face k's cone is the
+    # convex hull of its corners, winning at its corners = winning on its whole cone: the face pattern from O is exactly this one.
+    # The tie equations around a corner use the SAME float vector, so their dependencies are exact (the edge-direction form was
+    # inconsistent by rounding and HiGHS could call a realisable pattern infeasible).
+    N = len(faces); at = {}
+    for k, F in enumerate(faces):
+        for v in outline(set(F)): at.setdefault(vkey(v), set()).add(k)
+    Aeq, Aub = [], []
+    for key, S in at.items():
+        v = np.array(key); S = sorted(S)
+        for a_, b_ in zip(S, S[1:]):
+            r = np.zeros(3 * N); r[3 * a_:3 * a_ + 3] = v; r[3 * b_:3 * b_ + 3] -= v; Aeq.append(r)
+        for k in S:
+            for j in range(N):
+                if j in S: continue
+                r = np.zeros(3 * N); r[3 * k:3 * k + 3] = -v; r[3 * j:3 * j + 3] += v; Aub.append(r)
     for q in range(3):
-        r = np.zeros(nv); r[q:3 * N:3] = 1; Aeq.append(r); beq.append(0)
-    res = linprog(np.zeros(nv), A_eq=np.array(Aeq), b_eq=np.array(beq), bounds=bounds, method='highs')
-    return res.status == 0
+        r = np.zeros(3 * N); r[q::3] = 1; Aeq.append(r)
+    return np.array(Aeq), np.array(Aub)
+def realise_n(N, faces, cost=None):
+    Aeq, Aub = pattern_rows(faces)
+    res = linprog(np.zeros(3 * N) if cost is None else cost, A_eq=Aeq, b_eq=np.zeros(len(Aeq)), A_ub=Aub, b_ub=-np.ones(len(Aub)),
+                  bounds=[(None, None)] * (3 * N), method='highs')
+    return res.x.reshape(N, 3) if res.status == 0 else None
+def realise(faces):
+    return realise_n(len(faces), faces) is not None
 # Step 11 (27 Nov): SUB env imposes one cyclic symmetry of prime order (C2, C3, C5 rotations, Cs mirror, Ci inversion): every die
 # with any symmetry has one of these, so the five runs together are complete for all dice with nontrivial symmetry.
 SUB = os.environ.get('SUB', '')

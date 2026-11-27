@@ -99,7 +99,8 @@ of kinds also give exactly 1/60 is not settled here).
   All five finished (status OPTIMAL). Partitions / realised as convex polyhedra: C2 69,633 / 8,913; C3 1,025 / 142;
   C5 97 / 23; Cs 147,457 / 21,896; Ci 45,057 / 449. Pilot of SUB on the cube pair: C2 17 dice, Cs 41, controls found.
 - Merged (MERGE=1, duplicates removed up to I_h; logs/fairsearch_ih_merge.log; fairdice_icosidodecahedron_symmetric.json.gz):
-  **30,864 distinct 60-face convex polyhedra with nontrivial symmetry**, every face two pieces of each kind:
+  **30,864 distinct 60-face convex polyhedra with nontrivial symmetry**, every face two pieces of each kind (PROVISIONAL: the
+  realisation LP was found unreliable in floats, step 11c; rerun with the corner form running):
 
   | symmetry order | faces by sides | dice |
   |---|---|---|
