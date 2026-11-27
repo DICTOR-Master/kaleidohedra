@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Where the Vacuus Meets Known Mathematics: a Map of Gaps</title>
+<link rel="stylesheet" href="../paper.css">
+<style>table{border-collapse:collapse;font-size:8.2pt;margin:3mm 0;width:100%} td,th{border-bottom:1px solid #ddd;padding:0.8mm 1.4mm;text-align:left;vertical-align:top} th{background:#f4efe4}
+p.hook{font-style:italic;color:#4a3f2a;border-left:2px solid #c9a24a;padding-left:3mm} h2,h3{break-after:avoid} tr{break-inside:avoid}
+.status{border:2px solid #a00;border-radius:2mm;padding:2mm 3mm;margin:3mm 0;font-size:9pt;color:#300;background:#fff6f6}
+.op{color:#1d5e2a;font-weight:bold} .ab{color:#8a5a00;font-weight:bold} .no{color:#9a1e1e;font-weight:bold}</style>
+</head><body>
+<img class="watermark" src="../dicto-logo.png" alt="">
+<img class="logo" src="../dicto-logo.png" alt="DICTO">
+<h1>Where the Vacuus Meets Known Mathematics<br><span style="font-size:0.72em;font-weight:normal">A map of the classical theories our results touch, and of the gaps between them</span></h1>
+<div class="meta"><b>DICTO</b> (artist, Osaka, Japan) · contact@dictospheres.com · https://dictospheres.com · ORCID 0009-0001-2620-2036<br>
+Working map · 27 November 2026 · for DICTO's reading. The question is DICTO's: everything done with the Vacuus and the Resonus turns up inside separate classical theories; connect them and look for the empty places. Drafting with Claude (Anthropic).</div>
+<div class="status"><b>How to read this map.</b> “Known” is written only from a source we opened ourselves; each source carries its status: <span class="op">opened</span> (text read), <span class="ab">record only</span> (title, abstract or a secondary page read, not the work itself), <span class="no">not opened</span>. A “gap” is a question we did not find answered in the sources checked; it is <i>not</i> a claim that it is new. Nothing here goes into a paper until the gap is searched properly and the result is proved.</div>
+
+<p class="hook">The Vacuus and the Resonus are made from the most basic parts of a polyhedron: its faces, its edges, its centre and its polar. Every big theory of polytopes is made from the same parts. So it is no surprise that our results keep landing inside known theories. The chance lies between them: where one of DICTO's constructions is the only thing that joins two theories that do not know each other.</p>
+
+<h2>1. Our results and the theories they touch</h2>
+<table>
+<tr><th>Our result (status)</th><th>Classical theory touched</th><th>What that theory knows (from the source)</th><th>Gap: not found in the sources checked</th></tr>
+
+<tr><td><b>Hollow-straw transformation</b>, DICTO's: C116 in its own shape becomes Minana #377 with both ends fixed; nested; exactly 18 swaps. <i>Exact</i> (27 Nov; inputs rounded as stated in the study).</td>
+<td>Scutoids in epithelia [1] <span class="op">opened</span><br>T1 process in foams [2] <span class="ab">record only</span><br>Kinetic data structures [3] <span class="op">opened</span><br>Fullerene isomers [4] <span class="op">opened</span></td>
+<td>[1]: a tube model in which apical and basal surfaces are Voronoi diagrams of the same seeds; the cells change neighbours between the surfaces, “a cell intercalation process along the apico-basal axis … analogous to the temporal T1 transition”. [2]: a T1 process: four cells swap neighbours. [3]: a moving configuration is followed by certificates; events are the times when certificates may change sign. [4]: C116 has 1,207,119 fullerene isomers.</td>
+<td><b>A polyhedral, exact version of the scutoid layer between two given solids.</b> When does moving every face plane of one polyhedron into its partner face of another stay nested and realise the fewest swaps? One case proved (C116 → Minana). No general criterion found. [1] works with Voronoi seeds on two surfaces, not with two fixed polyhedra and a face pairing.</td></tr>
+
+<tr><td><b>Vacuus-Solids as shadows of 4D polytopes</b>, DICTO's observation. <i>Exact</i> for the five Platonic solids (Vacuus-Solids draft, Proposition 3).</td>
+<td>Schlegel diagrams [5] <span class="op">opened</span> (encyclopaedia page)<br>Cayley embedding [6] <span class="op">opened</span><br>Segmentochora [7] <span class="op">opened</span> (list and wiki pages)</td>
+<td>[5]: projection of a polytope through a point just outside one facet (Schlegel 1886; Sommerville 1929). [6]: two polytopes placed in parallel affine spaces, Section 2.4 (after Sturmfels 1994). [7]: hulls of two polyhedra in parallel spaces with all edges equal: tetrahedron with its dual = the 16-cell (K-4.2); octahedron with cube = octacube (K-4.15); icosahedron with dodecahedron = ikadoe (K-4.78), a slice of the 600-cell.</td>
+<td><b>The hull of every polytope with its polar.</b> [7] lists only equal-edge cases, so only three dual pairs. Is the hull of any convex P and its polar always made of “one cell per face of P” plus the two ends, so that every Vacuus-Solid is a Schlegel diagram? Our proof needs a condition; Archimedean and Catalan solids are untested.</td></tr>
+
+<tr><td><b>Aequi from the Vacuus and Resonus planes</b> (icosahedral pair, 60 faces): 53,156 candidates with some symmetry; 48,988 Aequi. <i>Numerical</i>; 4,168 being settled.</td>
+<td>Fair dice [8] <span class="ab">record only</span><br>Plane arrangements and spherical areas</td>
+<td>[8] (from catalogue records only): there are fair dice beyond the face-transitive ones; a die is fair by symmetry when its symmetry group moves every face to every other.</td>
+<td><b>Which cell patterns of an arrangement can be Aequi.</b> Our data have no counterpart we found. Fair dice with no symmetry at all: none in our search yet; unknown whether any exist among these planes.</td></tr>
+
+<tr><td><b>Space-filling pieces cut by the planes</b> (truncated octahedron, 19 planes, up to 3 cuts): 200 convex solids; 9 have Dehn invariant 0, and those 9 are exactly the ones that fill space. <i>Exact</i> for that range.</td>
+<td>Dehn invariant [9] <span class="op">opened</span> (encyclopaedia page)<br>Debrunner 1980 [10] <span class="ab">record only</span><br>Vanishing cosine sums [11] <span class="ab">record only</span></td>
+<td>[9]: every space-filling tile has Dehn invariant zero; zero is necessary but not sufficient (there are Dehn-zero polyhedra that do not tile). [10] cited by [9] for aperiodic tiles. [11] classifies rational relations among cosines of rational angles (used in our proofs).</td>
+<td><b>Dehn zero exactly when it fills space</b>, inside this family of pieces. In general that is false [9]; up to three cuts it held without exception here. Does it hold for all unions of these pieces? If yes, the Vacuus and Resonus planes would be a family where Hilbert's third problem and tiling coincide.</td></tr>
+
+<tr><td><b>Special sizes of the Vacuus-Solids</b> (11; draft Theorem 1, exact): walls on the face planes of a second solid; real cores only for the two classics.</td>
+<td>Stellations [12] <span class="no">not opened</span><br>Excavated and Kepler–Poinsot solids [13] <span class="op">opened</span> (encyclopaedia pages, 26 Nov)</td>
+<td>[13]: the excavated dodecahedron and the great dodecahedron are classical.</td>
+<td>Which of Messer's 226 stellations of the rhombic triacontahedron is its special member (open in the draft). Why every member whose walls use every face plane of Q is icosahedral.</td></tr>
+
+<tr><td><b>Vacuus of the permutohedron</b> (#105, #120; Lean, Palomar-registered): its plates counted, OEIS A402191.</td>
+<td>The permutohedron and its faces [14] <span class="op">opened</span> (our OEIS entry)</td>
+<td>[14]: 3, 15, 65, 225, 770, … (James Baker, 14 Nov 2026).</td>
+<td>The matching count for the Resonus side, and whether the two counts are related by the polar (not searched yet).</td></tr>
+</table>
+
+<h2>2. The gaps, ranked</h2>
+<p>Ranked by how many separate theories one answer would join, and by how close our tools already are.</p>
+<ol>
+<li><b>Hollow-straw criterion.</b> Joins four theories (scutoids, foam T1 processes, kinetic hulls, fullerenes and fair dice) in one exact statement. We already have the exact machinery from the C116 proof. Next step: run the same exact test on other pairs (C60 with a 32-face Aequus, C80 with 42 faces) and look for the rule.</li>
+<li><b>The hull of a polytope and its polar.</b> Joins Schlegel diagrams, the Cayley embedding and the segmentochora; would make every Vacuus-Solid a 4D object. Next step: test the Archimedean and Catalan solids exactly, then attempt the proof of the general condition.</li>
+<li><b>Dehn zero exactly when space-filling</b> for these pieces. Joins Hilbert's third problem and tiling. Next step: four cuts (needs the faster search).</li>
+<li><b>Which arrangement cells make Aequi.</b> Next step: finish the 4,168, then look for a pattern in the 48,988.</li>
+</ol>
+<p>Before any gap is called new: a proper literature search for that one question (sources listed and opened), then an exact proof.</p>
+
+<h2>Sources</h2>
+<p>[1] P. Gómez-Gálvez et al., Scutoids are a geometrical solution to three-dimensional packing of epithelia, <i>Nature Communications</i> 9 (2018) 2960 — <span class="op">opened</span> (open-access PDF).</p>
+<p>[2] “T1 process”, Wikipedia, citing D. Weaire and S. Hutzler, <i>The Physics of Foams</i>, Oxford (1999) — <span class="ab">record only</span> (the book not opened).</p>
+<p>[3] J. Basch, L. J. Guibas, J. Hershberger, Data structures for mobile data — <span class="op">opened</span> (preprint copy); journal version <i>J. Algorithms</i> 31 (1999) 1–28 (record).</p>
+<p>[4] OEIS A007894, number of fullerenes with 2n vertices, b-file entry n = 58 — <span class="op">opened</span>.</p>
+<p>[5] “Schlegel diagram”, Wikipedia (Schlegel 1886; D. Sommerville 1929) — <span class="op">opened</span>; G. M. Ziegler, <i>Lectures on Polytopes</i>, Lecture 5 — <span class="no">not opened</span> (title confirmed).</p>
+<p>[6] B. Huber, J. Rambau, F. Santos, The Cayley trick, lifting subdivisions and the Bohne–Dress theorem on zonotopal tilings, <i>J. Eur. Math. Soc.</i> 2 (2000) 179–198, Section 2.4 — <span class="op">opened</span>.</p>
+<p>[7] R. Klitzing, Convex segmentochora, <i>Symmetry: Culture and Science</i> 11 (2000) 139–181; list at bendwavy.org/klitzing; Polytope Wiki pages for K-4.15 and K-4.78 — list and pages <span class="op">opened</span>, the article not opened.</p>
+<p>[8] P. Diaconis, J. B. Keller, Fair dice, <i>Amer. Math. Monthly</i> 96 (1989) 337–339 — <span class="ab">record only</span> (no free copy found).</p>
+<p>[9] “Dehn invariant”, Wikipedia, section Applications — <span class="op">opened</span>.</p>
+<p>[10] H. E. Debrunner, Über Zerlegungsgleichheit von Pflasterpolyedern mit Würfeln, <i>Arch. Math.</i> 35 (1980) 583–587 — <span class="ab">record only</span>.</p>
+<p>[11] J. H. Conway, A. J. Jones, Trigonometric diophantine equations (On vanishing sums of roots of unity), <i>Acta Arith.</i> 30 (1976) 229–240 — <span class="ab">record only</span> (free copy unreachable).</p>
+<p>[12] P. W. Messer, Stellations of the rhombic triacontahedron and beyond, <i>Structural Topology</i> 21 (1995); H. S. M. Coxeter et al., <i>The Fifty-Nine Icosahedra</i> (1938) — <span class="no">not opened</span>.</p>
+<p>[13] Wikipedia, “Excavated dodecahedron”, “Kepler–Poinsot polyhedron” — <span class="op">opened</span> (26 Nov, Vacuus-Solids draft).</p>
+<p>[14] OEIS A402191 — <span class="op">opened</span>.</p>
+</body></html>
