@@ -1,0 +1,192 @@
+<title>Samson Constant Worksheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one column in OEIS form order; each field: what it is, paste-ready choices, your box. */
+:root{--bg:#f6f7f9;--panel:#fff;--fg:#1d232b;--muted:#5a6573;--line:#d9dee5;--accent:#2f5d8a;--code:#eef1f5;--ok:#2e7d4f;--req:#a3461f;--note:#fbf6e8;
+--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#13171c;--panel:#1b2128;--fg:#e4e8ee;--muted:#9aa5b2;--line:#2c343e;--accent:#8db7e0;--code:#222a33;--ok:#6cc08f;--req:#e59a74;--note:#2a2618;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13171c;--panel:#1b2128;--fg:#e4e8ee;--muted:#9aa5b2;--line:#2c343e;--accent:#8db7e0;--code:#222a33;--ok:#6cc08f;--req:#e59a74;--note:#2a2618;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1{font-size:1.5rem;margin:0;text-wrap:balance}h2{font-size:1.1rem;margin:10px 0 0;color:var(--accent)}p{margin:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:9px;min-width:0}
+.top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.lab{font-weight:600;font-size:1.05rem}
+.tag{font:600 .72rem var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid}
+.tag.r{color:var(--req);border-color:var(--req)}.tag.o{color:var(--muted);border-color:var(--line)}
+.what{color:var(--muted)}
+.sub{font:600 .78rem var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.opt{display:flex;gap:8px;align-items:flex-start}
+.n{font:600 .8rem var(--sans);color:var(--muted);padding-top:9px;min-width:1.4em}
+pre{flex:1;min-width:0;margin:0;background:var(--code);border-radius:6px;padding:8px 10px;font:.86rem/1.5 var(--mono);white-space:pre-wrap;word-break:break-word}
+.bg{background:var(--note);border-radius:6px;padding:8px 10px}
+textarea{width:100%;box-sizing:border-box;min-height:3.4em;font:.9rem/1.5 var(--mono);color:var(--fg);background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:8px}
+button{font:600 .8rem var(--sans);color:var(--accent);background:none;border:1px solid var(--accent);border-radius:6px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+button.ok{color:var(--ok);border-color:var(--ok)}button:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px}summary{cursor:pointer;font-weight:600}
+.status{border-left:3px solid var(--accent);padding-left:12px}
+</style>
+<main>
+<header style="display:flex;flex-direction:column;gap:8px">
+<h1>OEIS worksheet: Samson's fixed-shape ratio 2/(3(&#8731;2 &minus; 1))</h1>
+<p class="status">PREPARED, NOT YET TO SUBMIT. It waits for (1) a free place (three entries are open, the limit) and (2) a released paper that prints the derivation, for the Links line. Digits checked two independent ways to 140 places (the formula, and the root of the cubic, which is irreducible); the program prints exactly the Data line; not in the OEIS (searched 27 Nov: these digits, and those of 1 + &#8731;2 + &#8731;4 and &#8731;2 + &#8731;4).</p>
+<p>How to use it: the fields are in the same order as the OEIS submission form. Each field says what it is and whether it is <b>required</b> or <b>optional</b>. Under <b>Ready to paste</b> are complete texts: choose one and press Copy. The box at the bottom of each field is yours to write in. At the end, <b>Copy my entry</b> collects what you wrote.</p>
+</header>
+
+<div class="card"><div class="top"><span class="lab">Name</span><span class="tag r">required</span></div><p class="what">A one-line title saying what the number is. Choose one.</p>
+<p class="sub">Ready to paste — choose one</p>
+<div class="opt"><span class="n">1</span><pre>Decimal expansion of 2/(3*(2^(1/3) - 1)).</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><span class="n">2</span><pre>Decimal expansion of (2/3)*(1 + 2^(1/3) + 2^(2/3)).</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-name" data-label="Name" aria-label="Your Name" placeholder="Your name (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Data</span><span class="tag r">required</span></div><p class="what">The digits, separated by commas (105 digits, 209 characters).</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>2,5,6,4,8,8,1,4,0,1,2,4,2,0,4,8,4,2,6,3,4,5,9,4,4,1,6,4,3,6,7,0,2,4,4,0,7,3,0,7,8,2,9,8,6,1,7,3,4,2,4,0,6,5,9,9,2,6,8,4,0,5,8,2,6,5,3,6,7,7,4,5,4,7,5,8,7,8,5,7,7,1,3,3,5,2,9,3,8,5,0,4,6,5,6,5,0,7,0,0,7,8,4,8,3</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-data" data-label="Data" aria-label="Your Data" placeholder="Your data (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Offset</span><span class="tag r">required</span></div><p class="what">Where the counting starts (the number is between 1 and 10). Paste exactly.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>1,1</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-offset" data-label="Offset" aria-label="Your Offset" placeholder="Your offset (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Comments</span><span class="tag o">optional</span></div><p class="what">Extra explanation. The OEIS does not allow AI-written comments, so there is nothing ready to paste here: write it yourself, or leave it empty.</p>
+<p class="sub">Background for you (not for pasting)</p><p class="bg">Facts you could put in your own words: Samson (#51, The Delian Bond) is the cube with four alternate corners cut off at depth 2^(-1/3) (A270714) along the edges. Under the Star Cores core rule (#78) its first core is a truncated tetrahedron, and every later core is the same shape mirrored and scaled by t/3. In that truncated tetrahedron, the long side of each hexagon divided by the side of each triangle is this constant. Exact derivation: a cut at depth a gives the ratio 2a/(3(1 - a)); a = 2^(-1/3) gives 2/(3(2^(1/3) - 1)).</p>
+<textarea id="f-comments" data-label="Comments" aria-label="Your Comments" placeholder="Your comments (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">References</span><span class="tag o">optional</span></div><p class="what">Leave EMPTY: the sources have links, so they go under Links only.</p>
+<textarea id="f-references" data-label="References" aria-label="Your References" placeholder="Your references (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Links</span><span class="tag o">optional</span></div><p class="what">Web links to the sources. NOT READY YET: the derivation must first be printed in a released paper (the link has to contain the claim).</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>DICTO, &lt;a href=&quot;https://doi.org/10.5281/zenodo.23529497&quot;&gt;The Delian Bond: Samson, Delilah and the Octet Between Kepler&#x27;s Rhombic Dodecahedron and the Cube&lt;/a&gt;, Zenodo (2026).</pre><button type="button" class="cp">Copy</button></div>
+<p class="sub">Background for you (not for pasting)</p><p class="bg">The Delian Bond link defines Samson and its cut. A second link, to the paper that prints the derivation, is added once that paper is released.</p>
+<textarea id="f-links" data-label="Links" aria-label="Your Links" placeholder="Your links (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Formula</span><span class="tag o">optional</span></div><p class="what">Exact formulas for the number. Choose one or both lines.</p>
+<p class="sub">Ready to paste — choose one</p>
+<div class="opt"><span class="n">1</span><pre>Equals 2/(3*(2^(1/3) - 1)) = (2/3)*(1 + 2^(1/3) + 2^(2/3)).</pre><button type="button" class="cp">Copy</button></div>
+<div class="opt"><span class="n">2</span><pre>Largest root of 27*x^3 - 54*x^2 - 36*x - 8 = 0.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-formula" data-label="Formula" aria-label="Your Formula" placeholder="Your formula (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Example</span><span class="tag o">optional</span></div><p class="what">The number written out. Paste this line.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>2.564881401242048426345944164367024407307829861734241...</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-example" data-label="Example" aria-label="Your Example" placeholder="Your example (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Program</span><span class="tag o">optional</span></div><p class="what">Computer code that prints the digits. It has been run and checked against the Data line.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>(Python)
+from mpmath import mp, cbrt, floor
+mp.dps = 120
+x = 2/(3*(cbrt(2) - 1))
+d = []
+for n in range(105):
+    k = int(floor(x)); d.append(k); x = (x - k)*10
+print(d)</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-program" data-label="Program" aria-label="Your Program" placeholder="Your program (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Crossrefs</span><span class="tag o">optional</span></div><p class="what">Related sequences. Paste exactly.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>Cf. A002580, A005480, A270714.</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-xref" data-label="Crossrefs" aria-label="Your Crossrefs" placeholder="Your crossrefs (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Keywords</span><span class="tag r">required</span></div><p class="what">Short tags. Paste exactly.</p>
+<p class="sub">Ready to paste</p>
+<div class="opt"><pre>nonn,cons,easy</pre><button type="button" class="cp">Copy</button></div>
+<textarea id="f-keyword" data-label="Keywords" aria-label="Your Keywords" placeholder="Your keywords (paste or write here)"></textarea></div>
+<div class="card"><div class="top"><span class="lab">Your whole entry</span><button type="button" id="all">Copy my entry</button></div><p class="what">Copies every field you filled in, labelled, in form order. Paste it back to me and I check it field by field.</p></div>
+<h2>Model entries to look at</h2><p class="what">Existing entries of the same kind, in full as the OEIS shows them. The letters mean: %N name, %S data, %F formula, %H links, %o program, %Y crossrefs, %K keywords, %O offset.</p>
+<details><summary>A002580: cube root of 2: look at Name, Offset and the RealDigits / PARI lines.</summary><pre style="margin-top:8px">%I A002580 M1354 N0521 #131 Oct 20 2026 15:52:05
+%S A002580 1,2,5,9,9,2,1,0,4,9,8,9,4,8,7,3,1,6,4,7,6,7,2,1,0,6,0,7,2,7,8,2,2,8,
+%T A002580 3,5,0,5,7,0,2,5,1,4,6,4,7,0,1,5,0,7,9,8,0,0,8,1,9,7,5,1,1,2,1,5,5,2,
+%U A002580 9,9,6,7,6,5,1,3,9,5,9,4,8,3,7,2,9,3,9,6,5,6,2,4,3,6,2,5,5,0,9,4,1,5,4,3,1,0,2,5
+%N A002580 Decimal expansion of cube root of 2.
+%C A002580 2^(1/3) is Hermite&#x27;s constant gamma_3. - _Jean-François Alcover_, Sep 02 2014, after Steven Finch.
+%C A002580 For doubling the cube using origami and a standard geometric construction employing two right angles see the W. Lang link, Application 2, p. 14, and the references given there. See also the L. Newton link. - _Wolfdieter Lang_, Sep 02 2014
+%C A002580 Length of an edge of a cube with volume 2. - _Jared Kish_, Oct 16 2014
+%C A002580 For any positive real c, the mappings R(x)=(c*x)^(1/4) and S(x)=sqrt(c/x) have the same unique attractor c^(1/3), to which their iterated applications converge from any complex plane point. The present case is obtained setting c=2. It is noteworthy that in this way one can evaluate cube roots using only square roots. The CROSSREFS list some other cases of cube roots to which this comment might apply. - _Stanislav Sykora_, Nov 11 2015
+%C A002580 The cube root of any positive number can be connected to the Philo lines (or Philon lines) for a 90-degree angle. If the equation x^3-2 is represented using Lill&#x27;s method, it can be shown that the path of the root 2^(1/3) creates the shortest segment (Philo line) from the x axis through (1,2) to the y axis. For more details see the article &quot;Lill&#x27;s method and the Philo Line for Right Angles&quot; linked below. - _Raul Prisacariu_, Apr 06 2024
+%D A002580 John H. Conway and Richard K. Guy, The Book of Numbers, New York: Springer-Verlag, 1996. See pp. 192-193.
+%D A002580 Jan Gullberg, Mathematics from the Birth of Numbers, W. W. Norton &amp; Co., NY &amp; London, 1997, §3.4 Irrational Numbers and §12.3 Euclidean Construction, pp. 84, 421.
+%D A002580 N. J. A. Sloane, A Handbook of Integer Sequences, Academic Press, 1973 (includes this sequence).
+%D A002580 N. J. A. Sloane and Simon Plouffe, The Encyclopedia of Integer Sequences, Academic Press, 1995 (includes this sequence).
+%D A002580 Horace S. Uhler, Many-figure approximations for cubed root of 2, cubed root of 3, cubed root of 4, and cubed root of 9 with chi2 data. Scripta Math. 18, (1952). 173-176.
+%D A002580 David Wells, The Penguin Dictionary of Curious and Interesting Numbers. Penguin Books, NY, 1986, Revised edition 1987, pp. 33-34.
+%H A002580 Harry J. Smith, &lt;a href=&quot;/A002580/b002580.txt&quot;&gt;Table of n, a(n) for n = 1..20000&lt;/a&gt;
+%H A002580 Laszlo C. Bardos, &lt;a href=&quot;https://www.cutoutfoldup.com/409-double-a-cube.php&quot;&gt;Double a Cube&lt;/a&gt;, CutOutFoldUp.
+%H A002580 Steven R. Finch, &lt;a href=&quot;https://arxiv.org/abs/2001.00578&quot;&gt;Errata and Addenda to Mathematical Constants&lt;/a&gt;. See Section 8.7. Hermite’s Constants.
+%H A002580 Wolfdieter Lang, &lt;a href=&quot;https://arxiv.org/abs/1409.4799&quot;&gt;Notes on Some Geometric and Algebraic Problems solved by Origami&lt;/a&gt;, arXiv:1409.4799 [math.MG], 2014.
+%H A002580 Liz Newton, &lt;a href=&quot;https://plus.maths.org/os/issue53/features/newton/index&quot;&gt;The power of origami&lt;/a&gt;.
+%H A002580 Simon Plouffe, Plouffe&#x27;s Inverter, &lt;a href=&quot;https://www.plouffe.fr/simon/constants/cuberoot2.txt&quot;&gt;The cube root of 2 to 20000 digits&lt;/a&gt;.
+%H A002580 Simon Plouffe, &lt;a href=&quot;https://web.archive.org/web/20150911212800/http://www.worldwideschool.org/library/books/sci/math/MiscellaneousMathematicalConstants/chap16.html&quot;&gt;2**(1/3) to 2000 places&lt;/a&gt;.
+%H A002580 Simon Plouffe, &lt;a href=&quot;https://www.plouffe.fr/simon/gendev/125992.html&quot;&gt;Generalized expansion of real constants&lt;/a&gt;.
+%H A002580 Raul Prisacariu, &lt;a href=&quot;https://web.archive.org/web/20231208023740/https://www.raulprisacariu.com/math/lills-method-and-the-philo-line-for-right-angles/&quot;&gt;Lill&#x27;s method and the Philo Line for Right Angles&lt;/a&gt;.
+%H A002580 H. S. Uhler, &lt;a href=&quot;/A002580/a002580.pdf&quot;&gt;Many-figure approximations for cubed root of 2, cubed root of 3, cubed root of 4, and cubed root of 9 with chi2 data&lt;/a&gt;, Scripta Math. 18, (1952). 173-176. [Annotated scanned copies of pages 175 and 176 only]
+%H A002580 Eric Weisstein&#x27;s World of Mathematics, &lt;a href=&quot;https://mathworld.wolfram.com/Constant.html&quot;&gt;Constant&lt;/a&gt;.
+%H A002580 Eric Weisstein&#x27;s World of Mathematics, &lt;a href=&quot;https://mathworld.wolfram.com/CubeRoot.html&quot;&gt;Cube Root&lt;/a&gt;.
+%H A002580 Eric Weisstein&#x27;s World of Mathematics, &lt;a href=&quot;https://mathworld.wolfram.com/DelianConstant.html&quot;&gt;Delian Constant&lt;/a&gt;.
+%H A002580 &lt;a href=&quot;/index/Al#algebraic_03&quot;&gt;Index entries for algebraic numbers, degree 3&lt;/a&gt;.
+%F A002580 (-2^(1/3) - 2^(1/3) * sqrt(-3))^3 = (-2^(1/3) + 2^(1/3) * sqrt(-3))^3 = 16. - _Alonso del Arte_, Jan 04 2015
+%F A002580 Set c=2 in the identities c^(1/3) = sqrt(c/sqrt(c/sqrt(c/...))) = sqrt(sqrt(c*sqrt(sqrt(c*sqrt(sqrt(...)))))). - _Stanislav Sykora_, Nov 11 2015
+%F A002580 Equals Product_{k&gt;=0} (1 + (-1)^k/(3*k + 2)). - _Amiram Eldar_, Jul 25 2020
+%F A002580 From _Peter Bala_, Mar 01 2022: (Start)
+%F A002580 Equals Sum_{n &gt;= 0} (1/(3*n+1) - 1/(3*n-2))*binomial(1/3,n) = (3/2)* hypergeom([-1/3, -2/3], [4/3], -1). Cf. A290570.
+%F A002580 Equals 4/3 - 4*Sum_{n &gt;= 1} binomial(1/3,2*n+1)/(6*n-1) = (4/3)*hypergeom ([1/2, -1/6], [3/2], 1).
+%F A002580 Equals hypergeom([-2/3, -1/6], [1/2], 1).
+%F A002580 Equals hypergeom([2/3, 1/6], [4/3], 1). (End)
+%e A002580 1.2599210498948731647672106072782283505702514...
+%p A002580 Digits:=100: evalf(2^(1/3)); # _Wesley Ivan Hurt_, Nov 12 2015
+%t A002580 RealDigits[N[2^(1/3), 5!]] (* _Vladimir Joseph Stephan Orlovsky_, Sep 04 2008 *)
+%t A002580 (* Alternative: *)
+%t A002580 RealDigits[CubeRoot[2],10,120][[1]] (* _Harvey P. Dale_, Aug 17 2026 *)
+%o A002580 (PARI)  default(realprecision, 20080); x=2^(1/3); for (n=1, 20000, d=floor(x); x=(x-d)*10; write(&quot;b002580.txt&quot;, n, &quot; &quot;, d));  \\ _Harry J. Smith_, May 07 2009
+%o A002580 (PARI)  default(realprecision, 100); x= 2^(1/3); for(n=1, 100, d=floor(x); x=(x-d)*10; print1(d, &quot;, &quot;))  \\ _Altug Alkan_, Nov 14 2015
+%Y A002580 Cf. A002945 (continued fraction), A270714 (reciprocal), A253583.
+%Y A002580 Cf. A246644.
+%Y A002580 Cf. A002581, A005480, A005481, A005482, A005486, A010581, A010582, A092039, A092041, A139340.
+%K A002580 nonn,easy,cons
+%O A002580 1,2
+%A A002580 _N. J. A. Sloane_</pre><p><a href="https://oeis.org/A002580" target="_blank" rel="noopener">Open A002580 on the OEIS</a></p></details>
+<details><summary>A005480: cube root of 4: the same short form, Offset 1,2.</summary><pre style="margin-top:8px">%I A005480 M3771 #68 Jul 02 2026 05:17:40
+%S A005480 1,5,8,7,4,0,1,0,5,1,9,6,8,1,9,9,4,7,4,7,5,1,7,0,5,6,3,9,2,7,2,3,0,8,
+%T A005480 2,6,0,3,9,1,4,9,3,3,2,7,8,9,9,8,5,3,0,0,9,8,0,8,2,8,5,7,6,1,8,2,5,2,
+%U A005480 1,6,5,0,5,6,2,4,2,1,9,1,7,3,2,7,3,5,4,4,2,1,3,2,6,2,2,2,0,9,5,7,0,2,2,9,3,4,7,6
+%N A005480 Decimal expansion of cube root of 4.
+%C A005480 Let h = 4^(1/3). Then (h+1,0) is the x-intercept of the shortest segment from the x-axis through (1,2) to the y-axis; see A197008. - _Clark Kimberling_, Oct 10 2011
+%C A005480 Let h = 4^(1/3). The relative maximum of xy(x+y)=1 is (-1/sqrt(h), h). - _Clark Kimberling_, Oct 05 2020
+%D A005480 N. J. A. Sloane and Simon Plouffe, The Encyclopedia of Integer Sequences, Academic Press, 1995 (includes this sequence).
+%D A005480 Horace S. Uhler, Many-figure approximations for cubed root of 2, cubed root of 3, cubed root of 4, and cubed root of 9 with chi2 data, Scripta Math. 18 (1952), pp. 173-176.
+%H A005480 Harry J. Smith, &lt;a href=&quot;/A005480/b005480.txt&quot;&gt;Table of n, a(n) for n = 1..20000&lt;/a&gt;
+%H A005480 Amrik Singh Nimbran, &lt;a href=&quot;https://doi.org/10.1007/s13226-016-0193-4&quot;&gt;Extending Euler&#x27;s product for sqrt(2)&lt;/a&gt;, Indian Journal of Pure and Applied Mathematics, Vol. 47, No. 4 (2016), pp. 697-703.
+%H A005480 Horace S. Uhler, &lt;a href=&quot;/A002580/a002580.pdf&quot;&gt;Many-figure approximations for cubed root of 2, cubed root of 3, cubed root of 4, and cubed root of 9 with chi2 data&lt;/a&gt;, Scripta Math. 18 (1952), pp. 173-176. [Annotated scanned copies of pages 175 and 176 only]
+%H A005480 &lt;a href=&quot;/index/Al#algebraic_03&quot;&gt;Index entries for algebraic numbers, degree 3&lt;/a&gt;.
+%F A005480 Equals Product_{k&gt;=0} (1 + (-1)^k/(3*k + 1)). - _Amiram Eldar_, Jul 25 2020
+%F A005480 Equals A002580^2. - _Michel Marcus_, Jan 08 2022
+%F A005480 Equals hypergeom([1/3, 1/6], [2/3], 1). - _Peter Bala_, Mar 02 2022
+%F A005480 From _Amiram Eldar_, Jul 02 2026: (Start)
+%F A005480 Equals Product_{k&gt;=1} (6*k-4)*(6*k-3)/((6*k-5)*(6*k-2)) (Nimbran, 2016, p. 700, eq. (19)).
+%F A005480 Equals Product_{k&gt;=1} (6*k-1)*(6*k+2)/((6*k-3)*(6*k+4)) (Nimbran, 2016, p. 700, eq. (20)). (End)
+%e A005480 1.587401051968199474751705639272308260391493327899853...
+%t A005480 RealDigits[N[4^(1/3), 200]] (* _Vladimir Joseph Stephan Orlovsky_, May 27 2010 *)
+%o A005480 (PARI)  default(realprecision, 20080); x=4^(1/3); for (n=1, 20000, d=floor(x); x=(x-d)*10; write(&quot;b005480.txt&quot;, n, &quot; &quot;, d));  \\ _Harry J. Smith_, May 07 2009, with a correction made May 19 2009
+%Y A005480 Cf. A002947 (continued fraction), A002580 (cube root of 2), A197008.
+%K A005480 nonn,cons,easy
+%O A005480 1,2
+%A A005480 _N. J. A. Sloane_
+%E A005480 Entry revised by _N. J. A. Sloane_, Apr 23 2006</pre><p><a href="https://oeis.org/A005480" target="_blank" rel="noopener">Open A005480 on the OEIS</a></p></details>
+<details><summary>A270714: (1/2)^(1/3), Samson&#x27;s cut depth: the shortest model (Name, %o, Keywords).</summary><pre style="margin-top:8px">%I A270714 #27 Apr 05 2026 09:18:52
+%S A270714 7,9,3,7,0,0,5,2,5,9,8,4,0,9,9,7,3,7,3,7,5,8,5,2,8,1,9,6,3,6,1,5,4,1,
+%T A270714 3,0,1,9,5,7,4,6,6,6,3,9,4,9,9,2,6,5,0,4,9,0,4,1,4,2,8,8,0,9,1,2,6,0,
+%U A270714 8,2,5,2,8,1,2,1,0,9,5,8,6,6,3,6,7,7
+%N A270714 Decimal expansion of (1/2)^(1/3).
+%C A270714 Let c = (1/2)^(1/3). A sphere of radius c*r has half the volume of a sphere of radius r. - _Rick L. Shepherd_, Aug 12 2016
+%C A270714 Let c = (1/2)^(1/3). The relative maximum of xy(x+y)=1 is (c,-1/c^2). - _Clark Kimberling_, Oct 05 2020
+%H A270714 Clark Kimberling, &lt;a href=&quot;/A270714/b270714.txt&quot;&gt;Table of n, a(n) for n = 0..10000&lt;/a&gt;
+%H A270714 &lt;a href=&quot;/index/Al#algebraic_03&quot;&gt;Index entries for algebraic numbers, degree 3&lt;/a&gt;
+%F A270714 Equals 1/A002580 = A002580*A235362 = A005480*A020761. [corrected and expanded by _Rick L. Shepherd_, Aug 12 2016]
+%F A270714 Equals Product_{k&gt;=1} (1 + (-1)^k/(3*k+1)). - _Amiram Eldar_, Aug 10 2020
+%e A270714 0.79370052598409973737585281963615413019574666394992650490414288091260825...
+%t A270714 RealDigits[(1/2)^(1/3), 10, 200][[1]]
+%o A270714 (PARI) (1/2)^(1/3) \\ _Altug Alkan_, Mar 22 2016
+%Y A270714 Cf. A002580, A005480, A235362, A269993.
+%K A270714 nonn,cons,easy
+%O A270714 0,1
+%A A270714 _Clark Kimberling_, Mar 22 2016</pre><p><a href="https://oeis.org/A270714" target="_blank" rel="noopener">Open A270714 on the OEIS</a></p></details>
+</main>
+<script>
+function flash(b,t){var o=b.id==='all'?'Copy my entry':'Copy';b.textContent=t;b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok')},1500)}
+function copy(text,b,sel){try{navigator.clipboard.writeText(text).then(function(){flash(b,'Copied')},function(){sel&&sel();b.textContent='Selected'})}catch(e){sel&&sel();b.textContent='Selected'}}
+document.querySelectorAll('button.cp').forEach(function(b){b.addEventListener('click',function(){var p=b.previousElementSibling;copy(p.innerText,b,function(){var r=document.createRange();r.selectNodeContents(p);var s=getSelection();s.removeAllRanges();s.addRange(r)})})});
+document.querySelectorAll('textarea').forEach(function(t){try{var v=localStorage.getItem('samson-'+t.id);if(v)t.value=v}catch(e){}t.addEventListener('input',function(){try{localStorage.setItem('samson-'+t.id,t.value)}catch(e){}})});
+document.getElementById('all').addEventListener('click',function(){var s=[];document.querySelectorAll('textarea').forEach(function(t){if(t.value.trim())s.push(t.dataset.label+':\n'+t.value.trim())});copy(s.join('\n\n')||'(nothing written yet)',this)});
+</script>
