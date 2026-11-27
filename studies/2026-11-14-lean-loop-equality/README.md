@@ -253,3 +253,13 @@ Palomar now requires every committed Lean file of a submitted repository to use 
 - **Rebuild from the repository copies (job ymod-small2, FINAL ok).** `entry/`: Palomar's source check passes; the clean `lake build` completes (8,947 jobs); the comparator accepts the solution with con-ron (4 workers), NanoDa and Lean's kernel ("Your solution is okay!"). `lean/`: the library `LoopEquality.*` builds clean (8,942 jobs); `LoopEquality.lean` (2 `sorry`, the statement), `OctahedralNesting.lean` (4 `sorry`, the statement), `SphereLoops.lean` (1 `sorry`, the statement) and `OctahedralNestingProof.lean` typecheck, and the four proved theorems depend only on `propext`, `Classical.choice` and `Quot.sound`.
 - **Whole repository.** `scripts/palomar_source_check.py` (repository root) checks every committed `.lean` file against these rules; it ends FINAL ok.
 - Nothing was submitted, and no workflow or runner was added.
+
+## 28 Nov 2026: a paper with all the Lean mathematics (DICTO: "3... we do a paper anyway with all the lean math"; 1 and 2 yes)
+Paper regardless of the Palomar score; Palomar only if an honest re-score reaches 4. Content: #102 Theorem 1 (formal, done) + Theorem 5's
+local laws: Theorem A (twist bijection, all lengths) and the l = 18 law via Theorem B with its finite tables (plan:
+studies/2026-11-15-polygon-bijection §7: parts 1-4 about 2,900-5,000 lines; l = 18 tables (1038 arcs, 7713 meeting pairs) plausible for
+kernel decide as checked certificates; l = 20 beyond the kernel without native_decide, so stated as checked, not formal). Others' work
+(Thorpe 1972, Herrero 2014, Joyce/Guttmann, Nagle, Grigorchuk-Zuk, Lenz-Pogorzelski-Schmidt, Guttmann-Jensen) enters as credited
+literature; Guttmann-Jensen's absolute diamond counts enter as a stated hypothesis. Milestones, each self-contained:
+ M1 plane lattice, Gamma+, Tog, Lemma 1 (flip = twist of the far half), Lemma 2.   M2 cut lemma, arcs, Theorem A.
+ M3 product structure and Theorem B.   M4 six-crossing vanishing, reach lemma.   M5 l = 18 tables by decide.   Then the paper.
