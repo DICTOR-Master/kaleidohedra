@@ -50,5 +50,16 @@ of bcc; so the pair gives both cubic lattices.
     [Proof sketch; to write out against the Conway-Jones list exactly.]
   * If l is rational (h = sqrt(r^2 - 2), r rational in (sqrt2, sqrt3)): one condition 48 beta - 24 r gamma in Q pi. Scan: all 6,388
     such r = p/q with q <= 200, PSLQ at 50 digits (coefficients up to 10^6): no zero. Not a proof (Baker-type argument needed).
-- 2 < s < 3 (octahedron + 8 triangular pyramids, triakis type): same analysis, not yet done.
+- 2 < s < 3 (octahedron + 8 triangular pyramids, apexes at the cube corners; u = s - 2 in (0,1)): outward normals (1,1,u),
+  (1,1,-u) across the 12 octahedron edges (length a = (u+2) sqrt2), (u,1,1) across the 24 lateral edges (length
+  l = sqrt(u^2 + 2u + 3)); cos phi_b = (2 - u^2)/(2 + u^2), cos phi_l = (2u + 1)/(2 + u^2); Dehn invariant = -12 a (x) phi_b -
+  24 l (x) phi_l (mod Q pi).
+  * a, l independent over Q: zero needs phi_b, phi_l both in Q pi. Exact for cos phi_b rational: the only rational-angle value in
+    (1/3, 1) is 1/2, giving u = sqrt(2/3) and cos phi_l = (3 + 2 sqrt6)/8, a quadratic irrational that is not the cosine of a rational
+    angle (those are (+-1 +- sqrt5)/4, +-sqrt2/2, +-sqrt3/2): no. Irrational cos phi_b: scan of all 31,224 rational base angles
+    p pi/q (q <= 400) in range, PSLQ for phi_l: no hit (not a proof).
+  * a = t l, t rational (u from a quadratic): scan of 1,991 cases (t = P/Q, Q <= 200): 12 t phi_b + 24 phi_l never in Q pi
+    (numerical, 50 digits).
+  So, so far: on both sides the only hull that fills space is the rhombic dodecahedron (s = 2); exact for the generic sizes on the
+  tetrakis side (Conway-Jones sketch), numerical for the rest.
 - s <= 1 the hull is the cube (a space-filler, trivially); s >= 3 the octahedron (not).
