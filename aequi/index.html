@@ -260,8 +260,7 @@ function edgeLines(S, segs) {
 function vacuusObject(S, plates, mirror) {
   var grp = new THREE.Group(), pos = [], col = [], cs = new THREE.Color(SLATE), cm = new THREE.Color(SAND), O = [0, 0, 0];
   plates.forEach(function (p) {   // one plate = one plane; its edge triangles share its colour. A plane that is also a Resonus plate is
-    if (p.both && st.res) return;  // drawn once, by the Resonus (striped there), when both are on show
-    if (p.both) { grp.add(stripedMesh(S, p.edges.map(function (e) { return [O, S.verts[e[0]], S.verts[e[1]]]; }), p.n, p.mirror ? SAND : SLATE, '#8f969e', 1)); return; }
+    if (p.both && st.res) return;  // drawn once, by the Resonus (striped there), when both are on show; Vacuus on its own: plain (DICTO 28 Nov)
     var c = p.mirror ? cm : cs;
     p.edges.forEach(function (e) { [O, S.verts[e[0]], S.verts[e[1]]].forEach(function (v) { pos.push.apply(pos, v); col.push(c.r, c.g, c.b); }); });
   });
