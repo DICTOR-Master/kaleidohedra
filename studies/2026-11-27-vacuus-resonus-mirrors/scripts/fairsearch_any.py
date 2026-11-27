@@ -139,24 +139,37 @@ def pattern_rows(faces):
     # convex hull of its corners, winning at its corners = winning on its whole cone: the face pattern from O is exactly this one.
     # The tie equations around a corner use the SAME float vector, so their dependencies are exact (the edge-direction form was
     # inconsistent by rounding and HiGHS could call a realisable pattern infeasible).
-    N = len(faces); at = {}
+    # step 11d: only NEIGHBOURING faces (k, l sharing an edge) need the margin, at every corner of k not on l: a piecewise-linear
+    # homogeneous function that is continuous and folds convexly across every edge is convex, hence the max of its pieces,
+    # so the face pattern from O is exactly this one. Sparse rows.
+    from scipy.sparse import lil_matrix
+    N = len(faces); at = {}; cor = []
     for k, F in enumerate(faces):
-        for v in outline(set(F)): at.setdefault(vkey(v), set()).add(k)
-    Aeq, Aub = [], []
+        ck = [vkey(v) for v in outline(set(F))]; cor.append(ck)
+        for v in ck: at.setdefault(v, set()).add(k)
+    eq, ub = [], []
     for key, S in at.items():
-        v = np.array(key); S = sorted(S)
-        for a_, b_ in zip(S, S[1:]):
-            r = np.zeros(3 * N); r[3 * a_:3 * a_ + 3] = v; r[3 * b_:3 * b_ + 3] -= v; Aeq.append(r)
-        for k in S:
-            for j in range(N):
-                if j in S: continue
-                r = np.zeros(3 * N); r[3 * k:3 * k + 3] = -v; r[3 * j:3 * j + 3] += v; Aub.append(r)
+        S = sorted(S)
+        for a_, b_ in zip(S, S[1:]): eq.append((a_, b_, key))
+    nb = set()
+    for k in range(N):
+        for l in range(N):
+            if k != l and len(set(cor[k]) & set(cor[l])) >= 2: nb.add((k, l))
+    for k, l in nb:
+        shared = set(cor[l])
+        for v in cor[k]:
+            if v not in shared: ub.append((l, k, v))      # (n_k - n_l) . v >= 1  ->  (n_l - n_k) . v <= -1
+    Aeq = lil_matrix((len(eq) + 3, 3 * N)); Aub = lil_matrix((len(ub), 3 * N))
+    for r, (a_, b_, v) in enumerate(eq):
+        for q in range(3): Aeq[r, 3 * a_ + q] += v[q]; Aeq[r, 3 * b_ + q] -= v[q]
     for q in range(3):
-        r = np.zeros(3 * N); r[q::3] = 1; Aeq.append(r)
-    return np.array(Aeq), np.array(Aub)
+        for k in range(N): Aeq[len(eq) + q, 3 * k + q] = 1
+    for r, (a_, b_, v) in enumerate(ub):
+        for q in range(3): Aub[r, 3 * a_ + q] += v[q]; Aub[r, 3 * b_ + q] -= v[q]
+    return Aeq.tocsr(), Aub.tocsr()
 def realise_n(N, faces, cost=None):
     Aeq, Aub = pattern_rows(faces)
-    res = linprog(np.zeros(3 * N) if cost is None else cost, A_eq=Aeq, b_eq=np.zeros(len(Aeq)), A_ub=Aub, b_ub=-np.ones(len(Aub)),
+    res = linprog(np.zeros(3 * N) if cost is None else cost, A_eq=Aeq, b_eq=np.zeros(Aeq.shape[0]), A_ub=Aub, b_ub=-np.ones(Aub.shape[0]),
                   bounds=[(None, None)] * (3 * N), method='highs')
     return res.x.reshape(N, 3) if res.status == 0 else None
 def realise(faces):

@@ -98,25 +98,34 @@ of kinds also give exactly 1/60 is not settled here).
   conjugacy class (one representative suffices), so together the runs are COMPLETE for every die with any symmetry.
   All five finished (status OPTIMAL). Partitions / realised as convex polyhedra: C2 69,633 / 8,913; C3 1,025 / 142;
   C5 97 / 23; Cs 147,457 / 21,896; Ci 45,057 / 449. Pilot of SUB on the cube pair: C2 17 dice, Cs 41, controls found.
+- Step 11b-d (27 Nov): the realisation LP was UNRELIABLE in floats (first in the edge-direction form n_k - n_l = lam m, whose rows
+  are redundant, then in an all-pairs corner form, slow): it rejected realisable patterns (e.g. C3 run 142 -> 303). Final form
+  (fairsearch_any.py pattern_rows): conditions at the pattern's corners with ONE shared vector per corner (ties exact by
+  construction), margin only between neighbouring faces at their non-shared corners; exact as a criterion (a continuous homogeneous
+  piecewise-linear function folding convexly across every edge is convex, hence the max of its pieces). Cube control unchanged:
+  136 at N 24. (The all-pairs form had 961 for Ci, the final 959: a 2-pattern numerical difference, to examine.)
 - Merged (MERGE=1, duplicates removed up to I_h; logs/fairsearch_ih_merge.log; fairdice_icosidodecahedron_symmetric.json.gz):
-  **30,864 distinct 60-face convex polyhedra with nontrivial symmetry**, every face two pieces of each kind (PROVISIONAL: the
-  realisation LP was found unreliable in floats, step 11c; rerun with the corner form running):
+  **53,156 distinct 60-face convex polyhedra with nontrivial symmetry** (replaces the provisional 30,864), every face two pieces
+  of each kind. Per run: C2 16,379; C3 303; C5 41; Cs 36,835; Ci 959.
 
   | symmetry order | faces by sides | dice |
   |---|---|---|
-  | 120 | 60 triangles | 2 (pentakis dodecahedron, triakis icosahedron) |
-  | 120 | 60 quadrilaterals | 1 (deltoidal hexecontahedron) |
-  | 24 | 60 triangles | 1 |
-  | 20 | 40 tri + 20 quad / 60 tri | 5 / 5 |
-  | 12 | 60 tri | 15 |
-  | 10 | 40 tri + 20 quad / 60 tri | 5 / 11 |
-  | 8 | 60 tri | 19 |
-  | 6 | 60 tri | 67 |
-  | 4 | 40 tri + 20 quad / 60 tri | 66 / 642 |
-  | 3 | 60 tri | 83 |
-  | 2 | 40 tri + 20 quad / 60 tri | 1,355 / 28,587 |
+  | 120 | 60 triangles / 60 quadrilaterals | 2 / 1 (pentakis dodecahedron, triakis icosahedron / deltoidal hexecontahedron) |
+  | 24 | 60 tri | 2 |
+  | 20 | 40 tri + 20 quad / 60 tri | 8 / 6 |
+  | 12 | 60 tri | 16 |
+  | 10 | 40 tri + 20 quad / 60 tri | 12 / 12 |
+  | 8 | 60 tri | 20 |
+  | 6 | 60 tri | 82 |
+  | 4 | 40 tri + 20 quad / 60 tri | 120 / 720 |
+  | 3 | 60 tri | 200 |
+  | 2 | 40 tri + 20 quad / 60 tri | 4,864 / 47,091 |
 
-  Controls: the three full-symmetry Catalan-type dice found in every run.
+- Step 12 (fair_centroid.py PAIR mode, subspace Newton inside the plane sets keeping the pattern; fair_centroid_merge.py;
+  logs/fair_centroid_ih_merge.log; fairdice_centroid_icosi_summary.json.gz): **48,988 of 53,156 fair from the centre of mass**
+  (numerical: centre of mass at O to 1e-9, pattern kept; solid angles then exactly 1/60 since the cones are whole pieces); by
+  symmetry order 120: 3, 24: 2, 20: 14, 12: 16, 10: 24, 8: 18, 6: 77, 4: 785, 3: 182, 2: 47,867. The other 4,168 (symmetry 2-4)
+  stalled with the centre of mass 1e-4 to 1e-3 from O: NOT shown unfair (damped Newton stopped); a stronger solver is the next step.
 - Status: equal solid angles exact (piece counting); realised = the LP found a convex polyhedron with this face pattern seen from
   O. Still to do, as for the cube pair: fair from the centre of mass (step 8 method), exact certification, catalogue match
   (step 9). Dice with NO symmetry are not covered (the unimposed run passed 3 million partitions).

@@ -92,7 +92,7 @@ for idx, r in enumerate(R):
     if PAIR_:
         # step 12: move only inside the linear space L of plane sets keeping every face cone (cross(n_k - n_l, m) = 0), by
         # minimum-norm Gauss-Newton steps on the 3 centre-of-mass equations; damped so every cone stays open (d . m > 0)
-        sv = np.linalg.svd(AEQ[:-3], compute_uv=False); Bm = np.linalg.svd(AEQ[:-3])[2]
+        AE = AEQ.toarray()[:-3]; sv = np.linalg.svd(AE, compute_uv=False); Bm = np.linalg.svd(AE)[2]
         rk = int((sv > 1e-9 * sv[0]).sum()); B = Bm[rk:].T            # basis of L: plane sets with this face pattern's ties
         def cm_of(v):
             return centroid(poly(v.reshape(N, 3)))
