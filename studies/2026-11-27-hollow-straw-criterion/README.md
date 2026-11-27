@@ -48,3 +48,7 @@ Facing alone does not explain rho* (all-facing pairs range from 0.66 to 0.99; th
 Conjecture (open): for every face pairing there is a core size below which DICTO's Hollow-straw transformation is nested; by the
 lemma this says every intermediate solid stays inside the die once the core is small enough. Next: an argument via the polar
 (the polar of P(lam) is the hull of the points (1 - lam) a_k + lam m_k), and the exact check of a few cases.
+
+## C140 (Goldberg GP(2,1), insphere form) x 28 dice of 72 faces: nested 28/28 at core sizes 0.5 and 0.7, 11/28 at 0.9;
+fewest changes 21/28 at 0.5 (failures mostly dice whose corners are not all three-way).
+**Overall (C60, C80, C140; 70 pairs): at core size 0.5 every pair is nested (70/70).** Numerical; the conjecture above stands.
