@@ -11,3 +11,9 @@ FIX (k-mix branch aequi-plate-count, not deployed): geom.js vacuusPlanes (plates
 in both families striped in both colours (DICTO: "maybe shared can be striped") and drawn once. Control scripts/check_planes.js: 0
 mismatches on 10,725 dice; Lucky 7 = #120's truncated octahedron row (15 plates, 15 full, 7 Resonus, 3 both). Page checked headless
 (scripts/aequi_shot.mjs, no page errors); before/after sheet in the reading folder.
+LIVE STATE (28 Nov, checked on the live site, Lucky 7 and Iyai #181, four views, no page errors): Vacuus = fins + struts as #87 defines
+(a flat-sheet variant was built and dropped: #87 joins two fins only when they share a strut); plates counted as planes; Vacuus in two
+slates (lighter on a mirror); Resonus plates solid; shared fins striped in the Resonus colour and the Vacuus slate; "Shared only" button;
+no construction lines (the die's edges not drawn where nothing of the die is drawn). Lucky 7 checked against #110 / Entry 8: fair to 1e-10,
+r/R = cot(2 pi/7), sloping plates at 2 pi/7 to the cube axes; 15 plates, 7 Resonus, 3 shared. Near misses (true, not faults): 12 fins
+7.118 deg from the 4 hexagon-direction Resonus plates.
