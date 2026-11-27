@@ -341,3 +341,11 @@ bilayers v.1 - l - 1 .. v.1 + l + 1; different cuts are crossed by different edg
 bilayers have exactly the same polygons). Built, no sorry, standard axioms only.
 Next: 2f-4, the assembly: Corollary A1 for every pair of stackings with v a site of both (flip run on the window from 2f-2, locality,
 a relabel fixing v's letter when the next letter differs, and a lattice translation).
+Milestone 2f-4 DONE (28 Nov): Assembly.lean. Lattice translations (`ncard_polysA1_translate`); positions from the c/h word
+(`eq_up`, `eq_down`, `eq_window`); `flipRun_at_v`; and **`corollaryA1`: for any two stackings sigma, tau and any atom v that is a site
+of both, and every l, the polygons through v with l edges crossing every bilayer at most twice are equally many** (flip the differing
+c/h letters on the window, relabel by tog of v's letter if the next letter differs, translate back to v, locality). Built
+(lake build LoopEquality.Assembly, 8940 jobs), no sorry in any file, axioms propext, Classical.choice, Quot.sound only.
+MILESTONE 2 COMPLETE. Scope, stated exactly: the count is over all such polygons (every bilayer crossed at most twice), not split by
+crossing profile; the n = 4 symmetric cases of Theorem A are not formalised.
+Next: Milestone 3, Theorem B (the exact local formula for the rest: product structure, symmetrisation, locality f = all - bad).

@@ -186,4 +186,123 @@ theorem eq_up {ρ τ : ℤ → ZMod 3} (hρ : IsStacking ρ) (hτ : IsStacking �
     rw [← hb] at hne2
     exact step_det (ρ (j0 + n)) (ρ (j0 + n + 1)) _ _ (fun h => hne3 h.symm) hne1 hne2 hx
 
+theorem mirS_eq {ρ : ℤ → ZMod 3} (i : ℤ) : mirS ρ i = ρ (-i) := rfl
+
+/-- Downward propagation, by the mirror. -/
+theorem eq_down {ρ τ : ℤ → ZMod 3} (hρ : IsStacking ρ) (hτ : IsStacking τ) {j0 : ℤ}
+    (h0 : ρ j0 = τ j0) (h1 : ρ (j0 + 1) = τ (j0 + 1)) (n : ℕ)
+    (hh : ∀ i : ℕ, i < n → (IsHex ρ (j0 - i) ↔ IsHex τ (j0 - i))) : ρ (j0 + 1 - (n + 1)) = τ (j0 + 1 - (n + 1)) := by
+  have m0 : mirS ρ (-(j0 + 1)) = mirS τ (-(j0 + 1)) := by rw [mirS_eq, mirS_eq, neg_neg]; exact h1
+  have m1 : mirS ρ (-(j0 + 1) + 1) = mirS τ (-(j0 + 1) + 1) := by
+    rw [mirS_eq, mirS_eq, show -(-(j0 + 1) + 1) = j0 by ring]; exact h0
+  have hh' : ∀ i : ℕ, i < n → (IsHex (mirS ρ) (-(j0 + 1) + 1 + i) ↔ IsHex (mirS τ) (-(j0 + 1) + 1 + i)) := by
+    intro i hi
+    have e : -(j0 + 1) + 1 + (i : ℤ) = -(j0 - i) := by ring
+    rw [e, mirS_hex, mirS_hex]; exact hh i hi
+  have := (eq_up (mirS_isStacking hρ) (mirS_isStacking hτ) m0 m1 n hh').2
+  rw [mirS_eq, mirS_eq, show -(-(j0 + 1) + (n : ℤ) + 1) = j0 + 1 - (n + 1) by ring] at this
+  exact this
+
+/-- Two stackings agreeing at `j0, j0 + 1` with the same c/h letters on `[j0 − m + 1, j0 + m]` agree on
+`[j0 − m, j0 + m + 1]`. -/
+theorem eq_window {ρ τ : ℤ → ZMod 3} (hρ : IsStacking ρ) (hτ : IsStacking τ) {j0 : ℤ} (m : ℕ)
+    (h0 : ρ j0 = τ j0) (h1 : ρ (j0 + 1) = τ (j0 + 1))
+    (hh : ∀ j, j0 - m + 1 ≤ j → j ≤ j0 + m → (IsHex ρ j ↔ IsHex τ j)) :
+    ∀ j, j0 - m ≤ j → j ≤ j0 + m + 1 → ρ j = τ j := by
+  intro j hj1 hj2
+  by_cases hup : j0 ≤ j
+  · obtain ⟨n, hn⟩ : ∃ n : ℕ, j = j0 + n := ⟨(j - j0).toNat, by omega⟩
+    by_cases hn0 : n = 0
+    · subst hn0; simpa [hn] using h0
+    · obtain ⟨n', rfl⟩ : ∃ n', n = n' + 1 := ⟨n - 1, by omega⟩
+      have := (eq_up hρ hτ h0 h1 n' (fun i hi => hh _ (by omega) (by omega))).2
+      rw [hn]; push_cast at this ⊢; rwa [← add_assoc]
+  · obtain ⟨n, hn⟩ : ∃ n : ℕ, j = j0 + 1 - (n + 1) := ⟨(j0 - j).toNat, by omega⟩
+    have := eq_down hρ hτ h0 h1 n (fun i hi => hh _ (by omega) (by omega))
+    rw [hn]; exact this
+
+/-- A flip for `v` keeps the letter of `v`'s bilayer. -/
+theorem flipFor_at_v (v : Atom) (σ : ℤ → ZMod 3) (k : ℤ) : flipFor v σ k v.1 = σ v.1 := by
+  unfold flipFor; split
+  · next h => apply flipBelow_of_le; unfold IsFar at h; omega
+  · next h => apply flipAt_of_le; unfold IsFar at h; omega
+
+theorem flipRun_at_v (v : Atom) : ∀ (ks : List ℤ) (σ : ℤ → ZMod 3), flipRun v σ ks v.1 = σ v.1
+  | [], _ => rfl
+  | k :: ks, σ => by
+    show flipRun v (flipFor v σ k) ks v.1 = _
+    rw [flipRun_at_v v ks, flipFor_at_v]
+
+theorem isStacking_tog {σ : ℤ → ZMod 3} (hσ : IsStacking σ) (a : ZMod 3) : IsStacking (fun j => tog a (σ j)) :=
+  fun j h => hσ j (tog_injective a h)
+
+theorem hex_tog {σ : ℤ → ZMod 3} (a : ZMod 3) (j : ℤ) : IsHex (fun i => tog a (σ i)) j ↔ IsHex σ j := by
+  unfold IsHex; exact (tog_injective a).eq_iff
+
+/-- **Corollary A1 (every stacking).** For any two stackings and an atom `v` that is a site of both, the
+number of polygons through `v` with `l` edges crossing every bilayer at most twice is the same. -/
+theorem corollaryA1 {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStacking τ) {v : Atom}
+    (hvσ : IsSite σ v) (hvτ : IsSite τ v) (l : ℕ) :
+    (PolysA1 σ v l).ncard = (PolysA1 τ v l).ncard := by
+  -- 1. flip the c/h letters that differ on the window
+  set W := Finset.Icc (v.1 - (l + 1 : ℕ) + 1) (v.1 + (l + 1 : ℕ)) with hW
+  set D := W.filter (fun j => ¬ (IsHex σ j ↔ IsHex τ j)) with hD
+  set σ1 := flipRun v σ D.toList with hσ1
+  have hσ1s : IsStacking σ1 := flipRun_isStacking _ hσ
+  have hcount1 : (PolysA1 σ1 v l).ncard = (PolysA1 σ v l).ncard := ncard_polysA1_flipRun v l _ σ
+  have hhex1 : ∀ j, v.1 - (l + 1 : ℕ) + 1 ≤ j → j ≤ v.1 + (l + 1 : ℕ) → (IsHex σ1 j ↔ IsHex τ j) := by
+    intro j h1 h2
+    rw [hσ1, flipRun_hex _ hσ j]
+    have hjW : j ∈ W := Finset.mem_Icc.mpr ⟨h1, h2⟩
+    by_cases hdiff : IsHex σ j ↔ IsHex τ j
+    · have : j ∉ D := fun h => (Finset.mem_filter.mp h).2 hdiff
+      rw [List.count_eq_zero_of_not_mem (by rwa [Finset.mem_toList])]
+      simp only [Nat.even_iff, Nat.zero_mod, iff_true]; exact hdiff
+    · have hjD : j ∈ D := Finset.mem_filter.mpr ⟨hjW, hdiff⟩
+      rw [List.count_eq_one_of_mem (Finset.nodup_toList D) (by rwa [Finset.mem_toList])]
+      simp only [Nat.even_iff, Nat.one_mod]
+      tauto
+  -- 2. the letter of v's bilayer agrees
+  have hv1 : σ1 v.1 = τ v.1 := by rw [hσ1, flipRun_at_v]; exact hvσ.1.symm.trans hvτ.1
+  -- 3. locality once the window agrees
+  have hloc : ∀ ρ : ℤ → ZMod 3, IsStacking ρ → ρ v.1 = τ v.1 → ρ (v.1 + 1) = τ (v.1 + 1) →
+      (∀ j, v.1 - (l + 1 : ℕ) + 1 ≤ j → j ≤ v.1 + (l + 1 : ℕ) → (IsHex ρ j ↔ IsHex τ j)) →
+      PolysA1 ρ v l = PolysA1 τ v l := by
+    intro ρ hρ h0 h1 hh
+    apply polysA1_local
+    intro j hj1 hj2
+    exact eq_window hρ hτ (l + 1) h0 h1 hh j (by push_cast; omega) (by push_cast; omega)
+  by_cases hnext : σ1 (v.1 + 1) = τ (v.1 + 1)
+  · rw [← hcount1, hloc σ1 hσ1s hv1 hnext hhex1]
+  · -- 4. relabel by tog a (a = the letter of v's bilayer), then translate back to v
+    obtain ⟨a, ha⟩ : ∃ a, a = σ1 v.1 := ⟨_, rfl⟩
+    obtain ⟨ρ, hρ⟩ : ∃ ρ : ℤ → ZMod 3, ρ = fun j => tog a (σ1 j) := ⟨_, rfl⟩
+    have hρs : IsStacking ρ := by rw [hρ]; exact isStacking_tog hσ1s a
+    have hρ0 : ρ v.1 = τ v.1 := by
+      rw [hρ]; show tog a (σ1 v.1) = τ v.1; rw [← ha, tog_self, ha, hv1]
+    have hρ1 : ρ (v.1 + 1) = τ (v.1 + 1) := by
+      rw [hρ]; show tog a (σ1 (v.1 + 1)) = τ (v.1 + 1)
+      have hx : τ (v.1 + 1) ≠ a := by rw [ha, hv1]; exact hτ v.1
+      have hy : σ1 (v.1 + 1) ≠ a := by rw [ha]; exact hσ1s v.1
+      exact ((eq_tog_iff_ne a _ _ hx hy).mpr (fun h => hnext h.symm)).symm
+    have hρhex : ∀ j, v.1 - (l + 1 : ℕ) + 1 ≤ j → j ≤ v.1 + (l + 1 : ℕ) → (IsHex ρ j ↔ IsHex τ j) := by
+      intro j h1 h2; rw [hρ, hex_tog]; exact hhex1 j h1 h2
+    set c : ℤ × ℤ := (((2 * a).val : ℤ), ((2 * a).val : ℤ)) with hc
+    have hcg : (c.1 : ZMod 3) = 2 * a ∧ (c.2 : ZMod 3) = 2 * a := by simp [hc]
+    have hrel := ncard_polysA1_relabel (σ := σ1) hcg v l
+    set d : ℤ × ℤ := v.2.1 + v.2.1 - c with hd
+    have hvpos : (v.2.1.1 : ZMod 3) = a ∧ (v.2.1.2 : ZMod 3) = a := by
+      rw [ha, hσ1, flipRun_at_v]; exact hvσ
+    have hd0 : (d.1 : ZMod 3) = 0 ∧ (d.2 : ZMod 3) = 0 := by
+      simp only [hd, Prod.fst_sub, Prod.snd_sub, Prod.fst_add, Prod.snd_add, Int.cast_sub, Int.cast_add,
+        hvpos.1, hvpos.2, hcg.1, hcg.2]
+      constructor <;> ring
+    have htr := ncard_polysA1_translate (σ := ρ) hd0 (htA c v) l
+    have hback : trA d (htA c v) = v := by
+      obtain ⟨j, p, u⟩ := v
+      simp only [trA, htA, hd]
+      congr 1; congr 1; abel
+    rw [hback] at htr
+    rw [← hcount1, hrel, ← hρ, htr, hloc ρ hρs hρ0 hρ1 hρhex]
+
 end LoopEqualityProof
