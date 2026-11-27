@@ -155,4 +155,68 @@ theorem erase_connected {σ : ℤ → ZMod 3} {E : Finset (Sym2 Atom)} (hE : IsP
     · exact hMclosed f hfM z hzf
   exact (Finset.mem_filter.mp hzC).2
 
+/-- The graph of `E \ {s(x, y)}` on the atoms of `E`. -/
+def eraseGraph (E : Finset (Sym2 Atom)) (x₀ y₀ : Atom) : SimpleGraph {a // a ∈ atomsOf E} where
+  Adj a b := s(a.1, b.1) ∈ E.erase s(x₀, y₀) ∧ a.1 ≠ b.1
+  symm := ⟨fun a b h => ⟨by rw [show s(b.1, a.1) = s(a.1, b.1) from Sym2.eq_swap]; exact h.1, fun e => h.2 e.symm⟩⟩
+  loopless := ⟨fun a h => h.2 rfl⟩
+
+theorem eraseGraph_adj {E : Finset (Sym2 Atom)} {x y : Atom} {a b : {a // a ∈ atomsOf E}} :
+    (eraseGraph E x y).Adj a b ↔ s(a.1, b.1) ∈ E.erase s(x, y) ∧ a.1 ≠ b.1 := Iff.rfl
+
+/-- After removing an edge of a polygon, no cycle is left. -/
+theorem erase_acyclic {σ : ℤ → ZMod 3} {E : Finset (Sym2 Atom)} (hE : IsPolygon σ E) {x y : Atom}
+    (he : s(x, y) ∈ E) : (eraseGraph E x y).IsAcyclic := by
+  intro u c hc
+  have ht : c.IsTrail := hc.isTrail
+  set F : Finset (Sym2 Atom) := ht.edgesFinset.image (Sym2.map Subtype.val) with hF
+  have hinj : Function.Injective (Sym2.map (Subtype.val : {a // a ∈ atomsOf E} → Atom)) :=
+    Sym2.map.injective Subtype.val_injective
+  have hFsub : F ⊆ E.erase s(x, y) := by
+    intro f hf
+    obtain ⟨g, hg, rfl⟩ := Finset.mem_image.mp hf
+    have hg' : g ∈ c.edges := hg
+    have hgE := c.edges_subset_edgeSet hg'
+    induction g using Sym2.ind with
+    | _ a b => exact (eraseGraph_adj.mp hgE).1
+  have hFne : F.Nonempty := by
+    have hne : c.edges ≠ [] := by
+      intro h
+      have := congrArg List.length h
+      rw [SimpleGraph.Walk.length_edges] at this
+      exact hc.not_nil (SimpleGraph.Walk.length_eq_zero_iff.mp this)
+    obtain ⟨g, hg⟩ := List.exists_mem_of_ne_nil _ hne
+    exact ⟨_, Finset.mem_image_of_mem _ (show g ∈ ht.edgesFinset from hg)⟩
+  have hFcl : Closed F := by
+    intro w
+    by_cases hw : w ∈ atomsOf E
+    · have key : degS F w = c.edges.countP (fun g => (⟨w, hw⟩ : {a // a ∈ atomsOf E}) ∈ g) := by
+        unfold degS
+        rw [hF, Finset.filter_image, Finset.card_image_of_injective _ hinj]
+        have hcongr : ht.edgesFinset.filter (fun g => w ∈ Sym2.map Subtype.val g) =
+            ht.edgesFinset.filter (fun g => (⟨w, hw⟩ : {a // a ∈ atomsOf E}) ∈ g) := by
+          apply Finset.filter_congr
+          intro g _
+          rw [Sym2.mem_map]
+          constructor
+          · rintro ⟨a, ha, rfl⟩; exact ha
+          · intro h; exact ⟨_, h, rfl⟩
+        rw [hcongr]
+        change Multiset.card (Multiset.filter _ ((c.edges : List (Sym2 {a // a ∈ atomsOf E})) :
+          Multiset (Sym2 {a // a ∈ atomsOf E}))) = _
+        rw [← Multiset.countP_eq_card_filter, Multiset.coe_countP]
+      rw [key]
+      exact (ht.even_countP_edges_iff _).mpr (fun h => absurd rfl h)
+    · have : degS F w = 0 := by
+        unfold degS
+        rw [Finset.card_eq_zero, Finset.filter_eq_empty_iff]
+        intro f hf hwf
+        obtain ⟨g, -, rfl⟩ := Finset.mem_image.mp hf
+        obtain ⟨a, -, rfl⟩ := Sym2.mem_map.mp hwf
+        exact hw a.2
+      rw [this]; exact Even.zero
+  have hFE := hE.2.2.2 F (hFsub.trans (Finset.erase_subset _ _)) hFne hFcl
+  have hmem : s(x, y) ∈ F := by rw [hFE]; exact he
+  exact Finset.notMem_erase _ _ (hFsub hmem)
+
 end LoopEqualityProof
