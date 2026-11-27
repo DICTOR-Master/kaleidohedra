@@ -1,0 +1,21 @@
+core radius 1.0088328905280657 1.0123419935334508 ; Minana radius 1.273834029663164 1.3911629556029863
+start pattern = C116 under the pairing: True ; corners 116
+PROGRESS 0.00 lam 0.000 corners 116 pairs 174 all faces True growing True
+PROGRESS 0.10 lam 0.100 corners 116 pairs 174 all faces True growing True
+PROGRESS 0.20 lam 0.200 corners 116 pairs 174 all faces True growing True
+PROGRESS 0.30 lam 0.300 corners 116 pairs 174 all faces True growing True
+PROGRESS 0.40 lam 0.400 corners 116 pairs 174 all faces True growing True
+PROGRESS 0.50 lam 0.500 corners 116 pairs 174 all faces True growing True
+PROGRESS 0.60 lam 0.600 corners 116 pairs 174 all faces True growing True
+PROGRESS 0.70 lam 0.700 corners 116 pairs 174 all faces True growing True
+PROGRESS 0.80 lam 0.800 corners 116 pairs 174 all faces True growing True
+PROGRESS 0.90 lam 0.900 corners 116 pairs 174 all faces True growing True
+end pattern = Minana #377 under the pairing: True ; corners 116
+PROGRESS 1.00 lam 1.000 corners 116 pairs 174 all faces True growing True
+swap times (lam) and counts: [(0.73951, 1), (0.73951, 2), (0.73952, 1), (0.75876, 1), (0.75877, 1), (0.75877, 2), (0.75886, 3), (0.75887, 1), (0.75887, 2)]
+every change is a set of single swaps of the floor: True ; swaps 18
+pattern changes: 12 ; single swaps 12 ; other changes 0
+pairs lost overall 18 gained overall 18 (the floor has 18 and 18)
+every face present throughout: True ; nested (every face moves outward everywhere): True
+RESULT: DICTO's transformation WORKS (numerically): nested, every face throughout, exactly the 18 swaps of the floor
+FINAL ok

@@ -349,3 +349,15 @@ So the VARIANT (60 convex flat-walled Scutoid-Frusta, core with C116's face patt
   stopped at lam = 1: Aichholzer-Aurenhammer-Alberts-Gärtner 1995; Eppstein-Erickson 1999; Aurenhammer 2008 (Comput. Geom.);
   Barequet-Eppstein-Goodrich-Vaxman 2008 (arXiv 0805.0022); Aurenhammer-Walzl 2016 (Discrete Comput. Geom.). New here: the speeds
   chosen by an LP so the stopped offset has a prescribed face pattern (not a full search).
+
+## DICTO's Hollow-straw as a transformation (27 Nov 2026; DICTO: "it is a transformation!!!", "yes build it")
+scripts/c116_transform.py, logs/c116_transform.log (FINAL ok), data/c116/transform.json. BOTH ENDS FIXED: C116 in its own shape (the
+floating-resin placement) inside, Minana #377 around it (same frame). Each C116 face plane k moves and turns into Minana plane sigma(k),
+all together: a_k(lam) = (1 - lam) a_k + lam m_sigma(k) (planes a . x = 1). P(lam) = the solid the 60 moving planes enclose; straw k = the
+region face k sweeps. Numerical checks on a grid of 400 steps, each change refined 800 times:
+- start = C116's pattern, end = Minana #377's (under the pairing); all 60 faces present at every step;
+- NESTED: every face moves outward at every corner at every step, so P(lam) only grows: the straws do not overlap and fill the shell;
+- the only pattern changes are the 18 swaps of the floating-resin floor, each a single swap (lost pair and gained pair on four faces),
+  in groups at lam 0.7395 and 0.7588 (the S6 symmetry times them in groups).
+So DICTO's Hollow-straw transformation exists for C116 -> Minana #377 with the core in C116's own shape. Walls are swept, not flat.
+Still to do: exact certificate; build the straws as solids; render; prior-art search for THIS construction.
