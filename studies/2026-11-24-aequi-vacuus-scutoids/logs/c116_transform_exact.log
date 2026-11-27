@@ -1,0 +1,25 @@
+(A) lam = 0: corners 116 exact and closed: True ; pattern = C116 under the pairing: True
+  event 1: lam in [0.739503926598, 0.739503927529] planes [4, 34, 35, 44] lost [(34, 35)] gained [(4, 44)] floor swap True; state after exact and closed: True  (34 s)
+  event 2: lam in [0.739504843918, 0.739505508379] planes [15, 16, 17, 52] lost [(15, 17)] gained [(16, 52)] floor swap True; state after exact and closed: True  (66 s)
+  event 3: lam in [0.739508591987, 0.739509224495] planes [53, 54, 55, 59] lost [(54, 59)] gained [(53, 55)] floor swap True; state after exact and closed: True  (99 s)
+  event 4: lam in [0.739511137748, 0.739511138690] planes [3, 5, 48, 56] lost [(3, 48)] gained [(5, 56)] floor swap True; state after exact and closed: True  (131 s)
+  event 5: lam in [0.739511584220, 0.739512195122] planes [41, 42, 43, 47] lost [(42, 47)] gained [(41, 43)] floor swap True; state after exact and closed: True  (163 s)
+  event 6: lam in [0.739517153748, 0.739518104832] planes [28, 29, 39, 40] lost [(29, 39)] gained [(28, 40)] floor swap True; state after exact and closed: True  (196 s)
+  event 7: lam in [0.758753776550, 0.758754730225] planes [8, 32, 33, 42] lost [(32, 33)] gained [(8, 42)] floor swap True; state after exact and closed: True  (228 s)
+  event 8: lam in [0.758757961783, 0.758758758759] planes [1, 2, 24, 35] lost [(2, 24)] gained [(1, 35)] floor swap True; state after exact and closed: True  (260 s)
+  event 9: lam in [0.758761206194, 0.758762046396] planes [12, 13, 14, 15] lost [(13, 14)] gained [(12, 15)] floor swap True; state after exact and closed: True  (292 s)
+  event 10: lam in [0.758765289648, 0.758765290219] planes [19, 20, 21, 54] lost [(19, 21)] gained [(20, 54)] floor swap True; state after exact and closed: True  (325 s)
+  event 11: lam in [0.758766192150, 0.758766192901] planes [48, 49, 50, 57] lost [(49, 57)] gained [(48, 50)] floor swap True; state after exact and closed: True  (357 s)
+  event 12: lam in [0.758766626360, 0.758767268863] planes [37, 38, 39, 46] lost [(38, 46)] gained [(37, 39)] floor swap True; state after exact and closed: True  (390 s)
+  event 13: lam in [0.758856122236, 0.758856774093] planes [14, 16, 28, 29] lost [(16, 29)] gained [(14, 28)] floor swap True; state after exact and closed: True  (432 s)
+  event 14: lam in [0.758858567660, 0.758858568512] planes [2, 3, 4, 5] lost [(3, 4)] gained [(2, 5)] floor swap True; state after exact and closed: True  (473 s)
+  event 15: lam in [0.758858720663, 0.758859118410] planes [17, 19, 52, 53] lost [(17, 53)] gained [(19, 52)] floor swap True; state after exact and closed: True  (508 s)
+  event 16: lam in [0.758865305235, 0.758865306201] planes [33, 34, 43, 44] lost [(34, 43)] gained [(33, 44)] floor swap True; state after exact and closed: True  (532 s)
+  event 17: lam in [0.758865388027, 0.758865388417] planes [55, 56, 57, 59] lost [(56, 59)] gained [(55, 57)] floor swap True; state after exact and closed: True  (557 s)
+  event 18: lam in [0.758866579096, 0.758866615266] planes [40, 41, 46, 47] lost [(40, 47)] gained [(41, 46)] floor swap True; state after exact and closed: True  (581 s)
+(A) lam = 1: corners 116 exact and closed: True ; pattern = Minana #377 under the pairing: True
+(B) events: 18 ; every state between events exact and closed: True ; no corner degenerates (det): True
+(C) nested (every plane moves outward at every corner over its whole life): True
+(D) exactly the 18 floor swaps, one per event: True
+RESULT: DICTO's Hollow-straw transformation is EXACT (C116 own shape, rounded to 1e-9; Minana with its 15-digit depth stand-ins)
+FINAL ok

@@ -361,3 +361,13 @@ region face k sweeps. Numerical checks on a grid of 400 steps, each change refin
   in groups at lam 0.7395 and 0.7588 (the S6 symmetry times them in groups).
 So DICTO's Hollow-straw transformation exists for C116 -> Minana #377 with the core in C116's own shape. Walls are swept, not flat.
 Still to do: exact certificate; build the straws as solids; render; prior-art search for THIS construction.
+EXACT certificate (scripts/c116_transform_exact.py, logs/c116_transform_exact.log, data/c116/transform_exact.json; FINAL ok, 10 min):
+exact Q(sqrt5) arithmetic; C116's own shape with each plane rounded to rationals (denominator <= 1e9); Minana #377 with the study's
+15-digit rational stand-ins of its fair depths (as in all exact work here); the layer scale as a rational.
+(A) lam = 0: 116 corners, exact, closed, C116's pattern; lam = 1: Minana #377's pattern. (B) every pattern change found by exact root
+isolation of the four-plane polynomials: exactly 18 events, each isolated in a rational interval (13 at lam ~ 0.7395, 5 more at ~ 0.7589
+... see log), every state between events exact and closed, no corner degenerates. (C) NESTED: on every corner's whole life every plane
+through it moves outward (no root, sign checked): P(lam) only grows, so the 60 straws do not overlap and fill the shell exactly.
+(D) the 18 events are exactly the 18 swaps of the floating-resin floor, one each.
+So DICTO's Hollow-straw transformation C116 -> Minana #377 (both ends fixed, C116 in its own shape) is proved in exact arithmetic,
+for these exact inputs. This replaces the flat-walled variant as the paper's Theorem 1.

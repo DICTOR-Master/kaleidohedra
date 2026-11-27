@@ -8,7 +8,8 @@ Gold standard #43 v3; Winston style; first paragraph = known, new, question answ
 DICTO's Hollow-straw fixes BOTH ends: C116 in its own shape inside, Minana #377 outside; the straws are swept as each C116 face plane
 turns and moves into its die face plane, all together (a transformation). The flat-walled layer (hollow_straw.py, hollow_straw_exact.py)
 moved the core parallel to the die: it is MY variant, not his method, and its certificate is not a certificate of his method.
-Next: build his method as a transformation (fixed ends, moving planes), check nesting and the swaps; then the theorems are rewritten.
+DONE 27 Nov: his method built (c116_transform.py) and proved EXACT (c116_transform_exact.py): C116 in its own shape -> Minana #377, nested,
+exactly the 18 floor swaps. This is Theorem 1. Lead figure: RENDER-c116-minana-transform.png. The flat-walled variant: a remark at most.
 
 ## Working title
 From a Fullerene to a Fair Die: C116 Turned into Minana #377 by One Layer of Scutoid-Frusta
