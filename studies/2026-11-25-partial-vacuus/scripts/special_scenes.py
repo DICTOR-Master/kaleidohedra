@@ -19,6 +19,18 @@ EX.sort(key=lambda e: (ORD.index(e['P']) if e['P'] in ORD else 99, e['Q'] not in
 COL = {'icosahedron': '#3a70cd', 'dodecahedron': '#8a5cc4', 'cube': '#488e48', 'octahedron': '#e8c852', 'tetrahedron': '#cd3e28'}
 POLY = {p['name']: p for p in json.load(open(os.path.join(HERE, '../../2026-11-25-tacitus/data/polyhedra.json')))}
 scenes, caps, insets = [], [], []
+# 27 Nov (DICTO: "is it really mathematically sound to include the figs with the far more complex inner cores?"): data-core-or-planes.json
+# says what Q really is for each member: the hull of the pit tips (a real core), touching the pits at its corners, or only sharing planes
+# (Q floats inside, no pit reaches it). Q is drawn inside the shell ONLY in the first two cases.
+COP = json.load(open(os.path.join(HERE, '../data-core-or-planes.json')))
+def kind_of(P, Q, s):
+    r = [c for c in COP if c['P'] == P and c['Q'] == Q and abs(c['s'] - s) < 1e-6]
+    assert len(r) == 1, (P, Q, s)
+    r = r[0]
+    if r['tips_at_corners'] == r['Q_corners'] and r['tips_out'] == 0 and r['tips_in'] == 0: return 'core'
+    if r['tips_at_corners'] > 0 and r['tips_in'] == 0: return 'touch'
+    if r['tips_in'] > 0: return 'entered'
+    return 'planes'
 def cedges(C):
     # edges of the core's true faces: a hull edge whose two triangles lie on different planes
     eq = [tuple(np.round(q, 6)) for q in C.equations]; own = {}
@@ -51,10 +63,13 @@ for e in EX:
     R = np.linalg.norm(V, axis=1).max()
     body = {'v': np.round(np.array(verts), 6).tolist(), 't': T, 'c': ['#e9e4da'] * len(T), 'a': 0.35, 'tubes': tubes, 'rad': 0.006 * R, 'balls': []}
     core = {'v': np.round(C.points, 6).tolist(), 't': [[int(x) for x in sm] for sm in C.simplices], 'c': [COL.get(e['Q'], '#6f675c')] * len(C.simplices), 'a': 0.95, 'tubes': cedges(C), 'rad': 0.004 * R, 'balls': []}
-    scenes.append({'E': float(1.62 * R), 'dir': [0.55, 0.35, 1.0], 'parts': [body, core]})
+    kd = kind_of(e['P'], e['Q'], float(s))
+    scenes.append({'E': float(1.62 * R), 'dir': [0.55, 0.35, 1.0], 'parts': [body, core] if kd in ('core', 'touch') else [body]})
     rc = np.linalg.norm(core_v, axis=1).max()   # inset: the core alone, same view, enlarged (scenes 11..21)
     insets.append({'E': float(1.62 * rc), 'dir': [0.55, 0.35, 1.0], 'parts': [dict(core, a=1.0, rad=0.012 * rc)]})
-    caps.append(dict(P=e['P'], Q=e['Q'], s=e['closed'], core_faces=nf, Q_faces=nq))
-    print(e['P'], 'on', e['Q'], 's =', e['closed'], 'walls bound', nf, 'faces; Q has', nq, '(whole core)' if nf == nq else '(planes only)', flush=True)
+    caps.append(dict(P=e['P'], Q=e['Q'], s=e['closed'], core_faces=nf, Q_faces=nq, kind=kd))
+    print(e['P'], 'on', e['Q'], 's =', e['closed'], 'kind', kd, 'walls bound', nf, 'faces; Q has', nq, '(whole core)' if nf == nq else '(planes only)', flush=True)
 R3.write(OUTH, scenes + insets); json.dump(caps, open(OUTH.replace('.html', '.json'), 'w'), indent=1)
-print('FINAL ok' if len(caps) == 11 and sum(c['core_faces'] == c['Q_faces'] for c in caps) == 8 else 'FINAL FAIL (expected 11 sizes, 8 whole cores)')
+from collections import Counter
+kc = Counter(c['kind'] for c in caps); print('kinds:', dict(kc))
+print('FINAL ok' if len(caps) == 11 and kc == Counter({'core': 2, 'touch': 3, 'planes': 6}) else 'FINAL FAIL (expected 11 sizes: 2 cores, 3 touching, 6 planes only)')

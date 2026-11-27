@@ -1,0 +1,15 @@
+solids 31 ['Archimedean', 'Catalan', 'Platonic']
+canonical frames: 31
+dodecahedron on icosahedron s = 5 - 2*sqrt(5) kind core walls bound 20 faces; Q has 20 (whole core)
+dodecahedron on triakis icosahedron s = 10/11 - 3*sqrt(5)/11 kind planes walls bound 60 faces; Q has 60 (whole core)
+dodecahedron on deltoidal hexecontahedron s = sqrt(5)/3 kind touch walls bound 60 faces; Q has 60 (whole core)
+icosahedron on dodecahedron s = -6 + 3*sqrt(5) kind core walls bound 12 faces; Q has 12 (whole core)
+icosahedron on pentakis dodecahedron s = -9/11 + 6*sqrt(5)/11 kind planes walls bound 60 faces; Q has 60 (whole core)
+icosahedron on deltoidal hexecontahedron s = 30/11 - 9*sqrt(5)/11 kind touch walls bound 60 faces; Q has 60 (whole core)
+rhombic triacontahedron on rhombic triacontahedron s = 3 - sqrt(5) kind planes walls bound 30 faces; Q has 30 (whole core)
+triakis icosahedron on deltoidal hexecontahedron s = 42/19 - 11*sqrt(5)/19 kind planes walls bound 60 faces; Q has 60 (whole core)
+tetrahedron on triakis octahedron s = 9 - 6*sqrt(2) kind touch walls bound 12 faces; Q has 24 (planes only)
+octahedron on disdyakis triacontahedron s = 3 - 6*sqrt(5)/5 kind planes walls bound 24 faces; Q has 120 (planes only)
+octahedron on deltoidal hexecontahedron s = 12/11 - 3*sqrt(5)/11 kind planes walls bound 24 faces; Q has 60 (planes only)
+kinds: {'core': 2, 'planes': 6, 'touch': 3}
+FINAL ok
