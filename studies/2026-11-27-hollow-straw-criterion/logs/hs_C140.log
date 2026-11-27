@@ -1,10 +1,10 @@
 Traceback (most recent call last):
-  File "/home/dicto/k-research/studies/2026-11-27-hollow-straw-criterion/scripts/hs_general.py", line 68, in <module>
+  File "studies/2026-11-27-hollow-straw-criterion/scripts/hs_general.py", line 68, in <module>
     Ac = core_planes(CORE); Nc = Ac / np.linalg.norm(Ac, axis=1)[:, None]
-  File "/home/dicto/k-research/studies/2026-11-27-hollow-straw-criterion/scripts/hs_general.py", line 39, in core_planes
+  File "studies/2026-11-27-hollow-straw-criterion/scripts/hs_general.py", line 39, in core_planes
     if name.startswith('GPc_'): pts = S.canonical(pts, m, n)
                                       ~~~~~~~~~~~^^^^^^^^^^^
-  File "/home/dicto/k-research/studies/2026-11-27-hollow-straw-criterion/scripts/../../2026-11-21-amber-goldberg/scripts/solids.py", line 142, in canonical
+  File "studies/2026-11-27-hollow-straw-criterion/scripts/../../2026-11-21-amber-goldberg/scripts/solids.py", line 142, in canonical
     j = pos[keyf(np.array(act(g, list(P[i]))))]; img.setdefault(j, []).append(g)
         ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 KeyError: (np.float64(0.384646), np.float64(-0.510133), np.float64(-0.769293))

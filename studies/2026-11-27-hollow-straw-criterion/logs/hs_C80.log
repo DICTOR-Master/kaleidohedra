@@ -36,9 +36,9 @@ PROGRESS 0.100
 die 561: simple corners True; kept 120 of 120, to lose 0, to gain 0, total cosine 40.9970  (5 s)
 PROGRESS 0.117
 Traceback (most recent call last):
-  File "/home/dicto/k-research/studies/2026-11-27-hollow-straw-criterion/scripts/hs_general.py", line 74, in <module>
+  File "studies/2026-11-27-hollow-straw-criterion/scripts/hs_general.py", line 74, in <module>
     S = A.build(f'aequus-{n}'); Md = np.array([[float(x) for x in u] for u, c in S['planes']]) / np.array([float(c) for u, c in S['planes']])[:, None]
-  File "/home/dicto/k-research/studies/2026-11-27-hollow-straw-criterion/scripts/../../2026-11-24-aequi-vacuus-scutoids/scripts/aequus_solid.py", line 40, in build
+  File "studies/2026-11-27-hollow-straw-criterion/scripts/../../2026-11-24-aequi-vacuus-scutoids/scripts/aequus_solid.py", line 40, in build
     D = json.load(open(os.path.join(HERE, "../src/dice.json"))); e = D["dice"][n - 1]
                                                                      ~~~~~~~~~^^^^^^^
 IndexError: list index out of range
