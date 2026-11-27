@@ -54,6 +54,12 @@ Sequences:
 
 Candidates waiting for a home paper (DICTO 24 Nov): the type-B Vacuus count (5^n - 2*3^n + 1)/2 (not in OEIS), plus any genuinely new Resonus/Vacuus sequences found by studies/2026-11-24-resonus-sequences; they go in only after the Vacuus and Resonus paper is released. Entry 2 (4H) and Sweep 1 (pyrochlore) go first (working pages in working/).
 
+After the Loop Equality Lean paper (DICTO 28 Nov: "after paper an extra link on several or all entries in OEIS"):
+one %H line per entry ONLY where the paper states and proves (or formally checks) something about THAT sequence (rule 13), sent one at
+a time within the 3-active limit, like for like. Qualify if printed: A400949, A402231 (formal proof of the per-site equality), A002895,
+A002899 (with the planned comments), A038515 (polygon law, l = 18 formal), the pyrochlore entries, A288457 / A288461 / A293237 (only if
+the corollary is printed). NOT on entries the paper only asks about (Q1-Q7: A001394 etc.): a question is not content for that entry.
+
 Others' results that close gaps but are not in the OEIS (DICTO 28 Nov: "who are they, what does their work concern, how does it relate
 to our open gaps"; checked 28 Nov):
 - C. P. Herrero, Structural characterization of ice polymorphs from self-avoiding walks, Chem. Phys. 439 (2014), arXiv:1402.5036
