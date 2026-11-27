@@ -68,3 +68,13 @@ triangles of a truncated tetrahedron; "check its worth a look")
 - Samson's fixed point (turns 2-5, both rules t = 2 and t = phi: the same shape): also a truncated tetrahedron with all corners on one
   sphere, but the other way round: small triangles (side 0.29706), long hexagon sides 0.76194, ratio 2.56488, radius / triangle side
   2.06141. So NOT the four-tetrahedra shape (ratio 2/3). Both rules reaching the same fixed shape is itself notable (closed form open).
+
+## Samson's fixed shape: closed form (27 Nov; DICTO "yes do please"; scripts/samson_cf.py; identified, not proved)
+The ratio hexagon side / triangle side of Samson's fixed truncated tetrahedron is r = 2.56488140124198 (float data of the app's chain),
+a root of 27r^3 - 54r^2 - 36r - 8 = 0 (integer relation found by mpmath findpoly, tolerance 1e-11). With r = 2s/3 this is
+s^3 - 3s^2 - 3s - 1 = 0, i.e. (s + 1)^3 = 2 s^3, so s = 1/(cbrt2 - 1) and
+    r = 2 / (3 (cbrt2 - 1)) = (2/3)(1 + cbrt2 + cbrt4)        (checked to 30 digits: the cubic vanishes; data agree to 1e-14).
+The cube root of 2 (the Delian number, doubling the cube) fits the October exact study, which put Samson's chain in Q(cbrt2) (radius^2
+falls by exactly 1/9 per turn: the shape repeats at a third of the size, up to a turn). For comparison the four-tetrahedra truncated
+tetrahedron has r = 2/3 exactly: Samson's ratio is that 2/3 times 1 + cbrt2 + cbrt4 (an observation, no reason known).
+Status: identified numerically to the precision of the data; an exact derivation from the core rule is the next step.
