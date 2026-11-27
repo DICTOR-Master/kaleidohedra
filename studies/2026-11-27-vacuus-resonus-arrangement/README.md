@@ -21,6 +21,19 @@ P4 centred in the 3-space sum y = 0. All exact (fractions).
   arccos(1/9) = pi - 2 arccos(2/3) (exact by the double-angle formula), arccos sqrt(1/3) = pi/3 - (1/3) arccos sqrt(25/27).
   Whether the five are independent over Q (with pi) is open (step 2).
 
+## Step 3: the pieces of P4 and their Dehn invariants (scripts/pieces4.py, dehn4.py; logs/pieces4.log, dehn4.log; data/pieces4.json, dehn4.json)
+- The 19 planes cut P4 into **248 pieces of 8 types** under P4's 48 symmetries (orbits 24, 48, 24, 8, 24, 48, 24, 48): four
+  tetrahedra (types 1, 2, 6, 8), two 5-vertex pieces (3, 7), one 6-vertex (5), one 7-vertex (4, orbit 8). Vertices exact;
+  every piece passes Euler V - E + F = 2.
+- Edge dihedral angles: 14 values, all reduced to pi and the SAME five basic angles as step 1 (PSLQ, identified not proved).
+- Dehn invariant of each type as an exact vector (5 coordinates used): rank 5, so the 8 types have a 3-dimensional space of
+  Dehn-zero combinations. Control passed: the whole P4 (each type with its orbit size) has Dehn invariant 0.
+- No single type is Dehn zero, so **no piece fills space by itself**.
+- Minimal nonnegative Dehn-zero combinations (type: count), = space-filling CANDIDATES (zero is necessary, not sufficient):
+  smallest: 6 x type 1 + 4 x type 2 + 1 x type 3 + 1 x type 4 + 1 x type 5 + 3 x type 7 (16 pieces); others with 53 to 346
+  pieces (data/dehn4.json).
+- Next: which candidates assemble into one solid (pieces glued face to face; convex or not), and whether that solid tiles space.
+
 ## Next
 2. Exact proofs of the relations (double/triple-angle identities, checked symbolically) and of independence where possible.
 3. The pieces of P4 cut by the 19 planes (bounded cells); their Dehn invariants in the angle basis; unions with Dehn invariant 0
