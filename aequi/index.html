@@ -174,7 +174,7 @@ var $ = function (id) { return document.getElementById(id); };
 // app colours, only for the solid each face family stands for; neutrals for the rhombic solids
 var COL = { C: '#488e48', O: '#e8c852', T: '#cd3e28', D: '#8a5cc4', I: '#3a70cd', RD: '#b3a489', RT: '#8e9aa5' };
 var SOLID = { C: 'cube', O: 'octahedron', T: 'tetrahedron', D: 'dodecahedron', I: 'icosahedron', RD: 'rhombic dodecahedron', RT: 'triacontahedron' };
-var SLATE = '#5e6e7f', SAND = '#e8dcc0', EDGE = 0x15181c;
+var SLATE = '#5e6e7f', SAND = '#a4b3c2', EDGE = 0x15181c;   // Vacuus: dark slate sloping, lighter slate on a mirror (DICTO 28 Nov; was sand)
 function mix(a, b, t) {
   var p = function (h, i) { return parseInt(h.substr(1 + 2 * i, 2), 16); };
   return '#' + [0, 1, 2].map(function (i) { return Math.round(p(a, i) * (1 - t) + p(b, i) * t).toString(16).padStart(2, '0'); }).join('');
@@ -495,7 +495,7 @@ function resonusObject(S, plates, mirror) {   // DICTO's Resonus: the central cr
       // the edges in this plane; the rest of the cross-section (towards the corners) is Resonus only and keeps its plain tint
       var n = p.n, vt = S.edges.filter(function (e) { var a = S.verts[e[0]], b = S.verts[e[1]]; return Math.abs(n[0] * a[0] + n[1] * a[1] + n[2] * a[2]) < 1e-9 && Math.abs(n[0] * b[0] + n[1] * b[1] + n[2] * b[2]) < 1e-9; })
         .map(function (e) { return [O, S.verts[e[0]], S.verts[e[1]]]; });
-      var sm = stripedMesh(S, vt, n, '#' + c.getHexString(), p.mirror ? SAND : SLATE, 1);
+      var sm = stripedMesh(S, vt, n, '#' + c.getHexString(), p.mirror ? SAND : SLATE, 1);   // stripes: its Resonus colour and its Vacuus slate (DICTO 28 Nov)
       sm.material.polygonOffsetFactor = -2; sm.material.polygonOffsetUnits = -2; grp.add(sm);   // in front of the plain plate it lies on
       if (st.sh) {   // Shared only (DICTO 28 Nov): just the truly shared parts, the centre-to-edge triangles, outlined; no plain plate
         vt.forEach(function (t) { segs.push([t[0], t[1]], [t[1], t[2]], [t[2], t[0]]); });
@@ -538,7 +538,7 @@ function vacNote(plates) {
 }
 function resNote() {
   if (!RES) return '';
-  if (st.sh) return '<p class="note">Shared only: ' + (RES.length ? RES.length + ' plane' + (RES.length === 1 ? ' is' : 's are') + ' in both the Vacuus and the Resonus. Shown: only their shared parts, the triangles from the centre to the edges in those planes, striped in the Resonus and the Vacuus colour.' : 'no plane is in both the Vacuus and the Resonus of this die.') + '</p>';
+  if (st.sh) return '<p class="note">Shared only: ' + (RES.length ? RES.length + ' plane' + (RES.length === 1 ? ' is' : 's are') + ' in both the Vacuus and the Resonus. Shown: only their shared parts, the triangles from the centre to the edges in those planes, striped in the plate\'s Resonus colour and its Vacuus slate.' : 'no plane is in both the Vacuus and the Resonus of this die.') + '</p>';
   var m = RES.filter(function (p) { return p.mirror; }).length;
   var S = SHOWN, nb = S ? RES.filter(function (p) { return isVacPlane(S, p.n); }).length : 0;
   return '<p class="note">Resonus: ' + RES.length + ' plates, the cross-section through the centre parallel to each face (parallel faces share one). ' +
