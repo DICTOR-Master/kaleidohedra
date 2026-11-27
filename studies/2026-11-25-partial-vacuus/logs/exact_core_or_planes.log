@@ -1,0 +1,13 @@
+dodecahedron             on icosahedron                s = 5+-2√5: tips {'corner': 12}; corners of lamQ that are tips 12 of 12; walls vs lamQ faces {'touch': 60}; pits separated by a wall plane 12 of 12 -> CORE
+dodecahedron             on triakis icosahedron        s = 10/11+-3/11√5: tips {'outside': 12}; corners of lamQ that are tips 0 of 32; walls vs lamQ faces {'apart': 60}; pits separated by a wall plane 12 of 12 -> PLANES
+dodecahedron             on deltoidal hexecontahedron  s = 0+1/3√5: tips {'corner': 12}; corners of lamQ that are tips 12 of 62; walls vs lamQ faces {'touch': 60}; pits separated by a wall plane 12 of 12 -> TOUCH
+icosahedron              on dodecahedron               s = -6+3√5: tips {'corner': 20}; corners of lamQ that are tips 20 of 20; walls vs lamQ faces {'touch': 60}; pits separated by a wall plane 20 of 20 -> CORE
+icosahedron              on pentakis dodecahedron      s = -9/11+6/11√5: tips {'outside': 20}; corners of lamQ that are tips 0 of 32; walls vs lamQ faces {'apart': 60}; pits separated by a wall plane 20 of 20 -> PLANES
+icosahedron              on deltoidal hexecontahedron  s = 30/11+-9/11√5: tips {'corner': 20}; corners of lamQ that are tips 20 of 62; walls vs lamQ faces {'touch': 60}; pits separated by a wall plane 20 of 20 -> TOUCH
+rhombic triacontahedron  on rhombic triacontahedron    s = 3+-1√5: tips {'outside': 30}; corners of lamQ that are tips 0 of 32; walls vs lamQ faces {'apart': 120}; pits separated by a wall plane 30 of 30 -> PLANES
+triakis icosahedron      on deltoidal hexecontahedron  s = 42/19+-11/19√5: tips {'outside': 60}; corners of lamQ that are tips 0 of 62; walls vs lamQ faces {'apart': 180}; pits separated by a wall plane 60 of 60 -> PLANES
+tetrahedron              on triakis octahedron         s = 9+-6√2: tips {'corner': 4}; corners of lamQ that are tips 4 of 14; walls vs lamQ faces {'touch': 12}; pits separated by a wall plane 4 of 4 -> TOUCH
+octahedron               on deltoidal hexecontahedron  s = 12/11+-3/11√5: tips {'outside': 8}; corners of lamQ that are tips 0 of 62; walls vs lamQ faces {'apart': 24}; pits separated by a wall plane 8 of 8 -> PLANES
+octahedron               on disdyakis triacontahedron  s = 3+-6/5√5: tips {'outside': 8}; corners of lamQ that are tips 0 of 62; walls vs lamQ faces {'apart': 24}; pits separated by a wall plane 8 of 8 -> PLANES
+exact kinds agree with the numerical check (2 CORE, 3 TOUCH, 6 PLANES): True
+FINAL ok

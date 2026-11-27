@@ -203,3 +203,11 @@ Theorem 1's condition (every pit wall lies in a face plane of lam Q) is about PL
 - All other pairs: every pit tip lies outside Q; Q floats inside without touching any pit: planes only.
 Consequence for the Vacuus-Solids draft: Figure 2 may draw Q inside as a core only for the two classics; the corner-touching three
 must be described as such; the others show shared planes, not a core.
+EXACT (scripts/exact_core_or_planes.py, logs/exact_core_or_planes.log, FINAL ok; Q(sqrt5) / Q(sqrt2), the eleven members of Theorem 1):
+for each pit tip, exact position against lamQ; for each wall, exact 2D separating-axis test of the wall triangle against lamQ's face in
+the same plane; for each pit, a wall plane with the whole pit on its far side. Result, agreeing with the numerical pass:
+CORE (every corner of lamQ a tip, every tip a corner, walls meet lamQ only at points): dodecahedron/icosahedron, icosahedron/dodecahedron.
+TOUCH (tips at some corners of lamQ, no tip inside, walls meet lamQ only at points): dodecahedron and icosahedron/deltoidal
+hexecontahedron (12 of 62, 20 of 62 corners), tetrahedron/triakis octahedron (4 of 14). PLANES (every tip outside lamQ, every wall
+triangle apart from lamQ's face): the other six. In all eleven every pit is separated from lamQ by one of its own wall planes: no pit
+enters lamQ.
