@@ -38,3 +38,15 @@ edges to the 3-fold corners: pyramid angle 4pi/5 (material angles 2pi minus thes
 R (x) R/Q pi: the Dehn invariant is EXACTLY ZERO. Controls: the plain RT's dihedral is 4pi/5; the excavated dodecahedron's angles
 (cos^2 = 5/9) are not rational multiples of pi. Consequence: Dehn does not rule out space-filling for this solid; whether it
 fills space is OPEN (zero is necessary, not sufficient; the plain RT also has Dehn zero and does not fill space).
+
+## Are the Star Cores stars Vacuus-Solids? (27 Nov 2026; DICTO: "turn 4 star from star cores app, turn 5 same, turn 3 star; turn 1 too spikey")
+scripts/dump_star_turns.mjs (the app's own chain, shape D109 Ophelia, doubling rule t = 2), star_is_vs.py (region test), star_vs_volume.py.
+- Exact structure (Section 8 of #123): a Vacuus-Solid of P with polar core is core + edge wedges + corner pyramids. A star "core with a
+  spike to each corner of P" is core + corner pyramids only. So such a star is the Vacuus-Solid WITH ITS EDGE WEDGES REMOVED: the same
+  tips and the same hollows, but the spikes stand apart where the Vacuus-Solid is joined by knife-edge wedges along P's edges. Check:
+  icosahedron + 20 spikes to the dodecahedron's corners has volume 2.918; the excavated dodecahedron 30 - 10 sqrt5 = 7.639 (my first
+  'positive control' assumed they were equal: they are not; the region test correctly called them different).
+- Ophelia, turns 3-5 (S = 60 corners, 32 faces; turns 3 and 5 identical, period two): the star's hull has 32 corners (all spike tips) and
+  60 faces; the deepest star points under the 60 faces lie at ONE common size (spread 1e-11), so the hull's Vacuus-Solid with pits
+  down to the star is a genuine family member. The star holds 57% (turns 3, 5) and 59% (turn 4) of its volume; the rest is the material
+  along the hull's edges. Numerically: not a Vacuus-Solid, but its edge-stripped relative. Turn 1 (642 corners, 440 faces): far apart.
