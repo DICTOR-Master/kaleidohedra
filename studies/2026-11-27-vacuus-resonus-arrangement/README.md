@@ -37,6 +37,18 @@ octahedron, s = 3/2.** Proof (exact, by the pair's plane angles; theta = arccos(
   Dehn invariant nonzero, never a space-filler.
 - Dehn invariant zero is necessary for space-filling (Debrunner 1980); s = 3/2 tiles (Fedorov 1885; Kelvin 1887). Facts classical;
   the one-line proof inside the family is ours.
-Hull family (convex hull of the two): at s = 2 the rhombic dodecahedron (space-filler, classical). Other s: 1 < s < 2 tetrakis
-type, 2 < s < 3 triakis type; whether any fills space is OPEN here (Dehn: needs both the base-edge and the lateral-edge angles
-rational multiples of pi unless the edge lengths are commensurate; to check exactly).
+Hull family (convex hull of the two): at s = 2 the rhombic dodecahedron (space-filler, classical). Lattices (DICTO 27 Nov: "an
+alternative or related construction of the fcc lattice"): hull at s = 2 = Voronoi cell of fcc; overlap at s = 3/2 = Voronoi cell
+of bcc; so the pair gives both cubic lattices.
+- 1 < s < 2 (cube + 6 square pyramids, height h = s - 1 < 1): 12 cube edges, length 2, dihedral pi/2 + 2 beta (tan beta = h);
+  24 lateral edges, length l = sqrt(2 + h^2), dihedral pi - gamma (cos gamma = 1/(1 + h^2) = cos^2 beta). Dehn invariant (mod Q pi)
+  = 48 (x) beta - 24 l (x) gamma.
+  * If l is irrational, 1 and l are independent over Q, so zero needs beta and gamma both in Q pi with 2 cos gamma - cos 2 beta = 1.
+    By Conway and Jones (1976, Acta Arith. 30) a rational value of such a two-cosine sum with rational angles forces both cosines
+    rational (the only irrational two-term case is cos pi/5 - cos 2pi/5 = 1/2, coefficients 1, -1), i.e. cos gamma in {0, 1/2, 1}:
+    impossible for 0 < h < 1 (cos gamma in (1/2, 1)). So NO space-filler with l irrational (this covers every transcendental h).
+    [Proof sketch; to write out against the Conway-Jones list exactly.]
+  * If l is rational (h = sqrt(r^2 - 2), r rational in (sqrt2, sqrt3)): one condition 48 beta - 24 r gamma in Q pi. Scan: all 6,388
+    such r = p/q with q <= 200, PSLQ at 50 digits (coefficients up to 10^6): no zero. Not a proof (Baker-type argument needed).
+- 2 < s < 3 (octahedron + 8 triangular pyramids, triakis type): same analysis, not yet done.
+- s <= 1 the hull is the cube (a space-filler, trivially); s >= 3 the octahedron (not).
