@@ -422,3 +422,5 @@ Item 1 DONE (28 Nov): entry/LoopEquality/Degree.lean `polygon_deg_le_two` (tree 
 Item 2 (product structure) formal shape: `IsLinkageOn L B` (degree 1 on B, 0 or 2 elsewhere, no nonempty closed subset, no loops);
 `SingleCycle P R F` (no nonempty proper Q of crossing points closed under both pairings Conn R (low p) (low q), Conn F (up p) (up q));
 `parts_to_polygon` (root linkage + vertical bonds + far linkage + SingleCycle = polygon; proof by `propagate`) and `polygon_to_parts`.
+Item 2 DONE (28 Nov): Parts.lean `parts_to_polygon`, `polygon_to_parts` (both directions of the product structure), whole library
+builds, standard axioms. Countdown 20 (items 18-20 literature checks also done: papers/2026-11-28-loop-equality-lean/literature-checks).
