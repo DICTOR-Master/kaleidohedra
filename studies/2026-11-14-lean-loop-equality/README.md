@@ -424,3 +424,4 @@ Item 2 (product structure) formal shape: `IsLinkageOn L B` (degree 1 on B, 0 or 
 `parts_to_polygon` (root linkage + vertical bonds + far linkage + SingleCycle = polygon; proof by `propagate`) and `polygon_to_parts`.
 Item 2 DONE (28 Nov): Parts.lean `parts_to_polygon`, `polygon_to_parts` (both directions of the product structure), whole library
 builds, standard axioms. Countdown 20 (items 18-20 literature checks also done: papers/2026-11-28-loop-equality-lean/literature-checks).
+Item 3 DONE (28 Nov): Transfer.lean flip_transfer (involution lemmas linkage_image, conn_image), built, standard axioms. Countdown 16.
