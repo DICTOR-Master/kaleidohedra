@@ -383,3 +383,9 @@ PUBLISHED (28 Nov 2026, DICTO "publish repository"): https://github.com/DICTOR-M
 (the entry branch `stackings`: Theorem 1 + Corollary A, 18 compared theorems). History checked before publishing: authors "DICTO"
 with a local placeholder address, no machine names, paths or personal e-mail. The compute-host repository keeps its old main
 (26fc584) untouched; its branch `stackings` is what was published. Palomar submission itself is DICTO's (fixed commit efd98a2...).
+Milestone 3a DONE (28 Nov): entry/LoopEquality/Linkage.lean. `handshake`; `partner_exists` (an end is joined to another end, by
+parity); `compGraph` (the component as a connected Mathlib SimpleGraph), `degree_compGraph`, `ends_le_two` (a component holds at most
+two ends, by Mathlib's Connected.card_vert_le_card_edgeSet_add_one), `partner_unique`. So in an edge set with degrees <= 2, each end
+has exactly one partner: the pairing of a linkage is well defined. Built, standard axioms only.
+Next: 3b product structure. After Theorem B: Milestone 4 (f = all - bad; six-crossing terms vanish to l = 20) and Milestone 5
+(length-18 tables by kernel decide as certificates), each Palomar-ready (DICTO 28 Nov: "and length-18 milestones").
