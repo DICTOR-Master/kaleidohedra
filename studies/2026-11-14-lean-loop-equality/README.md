@@ -399,3 +399,8 @@ F is a proper even subset of E: contradiction. Bridge needed: Walk.edges (nodup 
 Then 3b part 2: polygon -> (root part, far part) are linkages ending at the crossing points, and no proper set of crossing points is
 closed under both pairings (else the paths through it + their vertical bonds form a smaller closed set); 3b part 3: the converse by
 `propagate` (a closed subset contains a whole path once it meets it, hence closes up a set of crossing points under both pairings).
+Better route for `polygon_deg_le_two` (chosen 28 Nov; avoids counting at a vertex of a walk): E minimal even, e = s(x,y) in E,
+E' = E \ {e}. (1) x, y joined in E' (parity). (2) K := (edges of E' inside the component of x) + e is even and inside E, so K = E:
+E' is connected on the atoms of E. (3) E' has no cycle: a Mathlib cycle walk in it gives an even nonempty edge set (via
+`Walk.IsTrail.even_countP_edges_iff`, edges nodup) strictly inside E. (4) So E' is a tree on the atoms of E: |E'| = |V| - 1
+(`IsTree.card_edgeFinset`), |E| = |V|. (5) Handshake: degrees >= 2 summing to 2|V| are all 2.
