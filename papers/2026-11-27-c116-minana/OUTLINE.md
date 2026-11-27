@@ -14,49 +14,53 @@ exactly the 18 floor swaps. This is Theorem 1. Lead figure: RENDER-c116-minana-t
 ## Working title
 From a Fullerene to a Fair Die: C116 Turned into Minana #377 by One Layer of Scutoid-Frusta
 
-## First paragraph (known, new, question)
-Known: fair dice (Aequi, #105/#118 catalogue); fullerenes and their enumeration (fullgen, Brinkmann and Dress); scutoids in
-biology (Gómez-Gálvez et al. 2018); Scutoid-Frusta (DICTO, #118 and the Scutoid-Frusta paper). Question: can a fullerene core
-be wrapped in one layer of pieces whose outside is a fair die, face to face, and how few side changes does it take?
-New: the unique C116 fullerene with symmetry T_h becomes Minana #377 in one layer (floating resin: the core keeps C116's own shape);
-with DICTO's Hollow-straw method every piece is convex with flat walls, but the core then keeps only C116's face pattern: its faces are
-pressed parallel to the die's, so it no longer looks like C116 (DICTO 27 Nov: never display what is not true; say this every time).
+## First paragraph (known, new, question)  [rewritten 27 Nov evening to the day's results]
+Known: fair dice (Aequi, #105/#118 catalogue); fullerenes and their enumeration (fullgen; OEIS A007894: C116 has 1,207,119 isomers);
+scutoids in epithelia, where cells change neighbours between two surfaces (Gomez-Galvez et al. 2018, Voronoi seeds on two surfaces);
+Scutoid-Frusta (DICTO, #118). Question: can a fullerene core turn into a fair die through one layer of pieces, both shapes fixed, one
+piece per face, and how few neighbour changes does it take?
+New: DICTO's Hollow-straw transformation turns the T_h fullerene C116, in its own shape, into the fair die Minana #377: every face plane
+moves and turns into its partner face, all together; every intermediate solid lies inside the next (nested), and the neighbours change
+by exactly 18 swaps. Proved in exact arithmetic (inputs rounded as stated). A short lemma explains nesting: the transformation is nested
+exactly when every intermediate solid lies inside the die. The same method works for the Goldberg cores C60, C80, C140 with every
+catalogue Aequus of their face count once the core is small enough (70 of 70 pairs at half the die's size; numerical).
 
 ## Arc
-- Pledge. A fullerene core and a fair die with 60 faces each, the same orbit sizes under T_h (12+12+12+24). Wrap one in the other,
-  one piece per face; where neighbours differ a piece must change its side count (a Y corner, a swap).
-- Turn. The obvious match (pentagons to squares) needs 90 swaps in 3 layers. Scoring every orbit assignment gives 30 swaps in one
-  layer, the least among symmetric pairings. Letting the core float (DICTO's floating resin) gives 18 swaps, one layer.
-- Prestige. DICTO's Hollow-straw (straws pumped up between paired faces until they meet) makes every wall flat: 60 convex
-  Scutoid-Frusta, the core's faces parallel to the die's. Its core has C116's face pattern, NOT C116's shape (pressed into the die's
-  planes); every figure and sentence must say so. Open: an exact certificate for the floating-resin layer, whose core is C116 itself.
+- Pledge. A fullerene and a fair die with 60 faces each, the same orbit sizes under T_h (12+12+12+24). Turn one into the other, both
+  fixed; where neighbours differ, the change is a swap (four faces meet at a point).
+- Turn. The obvious face pairing (pentagons to squares) needs 90 swaps; the best symmetric pairing 30 (one floor); DICTO's floating
+  resin finds a pairing with 18 (one floor).
+- Prestige. DICTO's Hollow-straw: every face moves into its partner, all at once, and the solid only grows: 60 straws fill the space
+  between C116 and the die exactly, with exactly the 18 swaps. Proved exactly. And why it works: nested <=> always inside the die.
 
 ## Sections
-1. Introduction: promise (Theorem 1 in one sentence), vision figure (Hollow-straw layer pulled apart), contributions.
-2. Background: Minana #377 (catalogue no. 377, T_h, 12 squares, 12 heptagons, 36 hexagons); C116 T_h unique among 1,207,119
-   isomers (fullgen); face patterns as triangulations; swaps = dual edge flips; neighbour pairs kept; bound swaps >= 174 - kept.
-3. Theorem 2 (symmetric): over all 6 orbit assignments x 1536 equivariant pairings, at most 144 of 174 pairs kept; the best needs
-   exactly 30 swaps, non-touching, ONE floor; one valid layer, 30 Y corners. Near miss: pentagons -> squares, 108 kept, 90 swaps, 3 layers.
-4. Floating resin (DICTO): method, 4000 starts; 156 kept, 18 swaps, one floor, symmetry S6. Bound: no pairing keeps more than 165
-   (quadratic assignment, Koopmans-Beckmann; solver bound, to be certified).
-5. Theorem 1 (Hollow-straw, DICTO): pressures f_k = mu_k (distance to Minana plane k); straws = cells of the weighted distance
-   diagram; an LP gives the offsets; exact rational offsets: 60 convex flat-walled pieces, 18 Y corners. Fence: with the symmetric
-   pairing no parallel-faced core exists (LP margin 0); non-parallel cores open.
-6. The method for other Aequi (five steps).
-7. Contributions; open questions (156 vs 165; symmetric convex layer; next die/core pairs).
+1. Introduction: promise (Theorem 1 in one sentence), vision figure (the transformation: start, halfway, pulled apart, end), contributions.
+2. Background: Minana #377 (catalogue no. 377, T_h, 12 squares, 12 heptagons, 36 hexagons); C116 T_h among 1,207,119 isomers;
+   face patterns as triangulations; swaps = dual edge flips (the T1 process of foams); neighbour pairs kept; swaps >= pairs to gain.
+3. Theorem 2 (symmetric pairings): best 144 of 174 kept, 30 swaps, one floor; near miss pentagons -> squares 108 kept, 90 swaps.
+4. Proposition 3 (floating resin, DICTO): 156 kept, 18 swaps, one floor, symmetry S6 (best found; a solver bound of 165, stated as such).
+5. Theorem 1 (DICTO's Hollow-straw transformation, exact): definition a_k(lam) = (1-lam) a_k + lam m_sigma(k); nested; every face
+   throughout; exactly the 18 floor swaps at isolated times; certificate method (exact Q(sqrt5), root isolation, event sweep: kinetic
+   data structures, Basch-Guibas-Hershberger 1999); inputs rounded (C116 planes 1e-9, Minana's 15-digit depth stand-ins).
+   Lemma 4 (proved): nested <=> P(lam) inside the die for all lam.
+6. Other cores and dice: C60, C80, C140 with all 14 / 28 / 28 catalogue Aequi of their face counts: nested for every core size up to a
+   threshold >= 0.66 (numerical), 70/70 at 0.5; fewest changes fail mainly for dice with four-way corners. Conjecture.
+7. Contributions; open questions (156 vs 165; exact certificates for other pairs; the conjecture; which pairings give fewest changes).
+Remark (one paragraph, marked as Claude's variant): pressing the core parallel to the die gives flat-walled convex straws (a weighted
+straight skeleton, credited there), but the core then keeps only C116's face pattern, not its shape.
 Sources checked; data and reproducibility; references.
 
 ## Figures
-1. Lead figure: floating-resin layer in the Aequi colours (RENDER-c116-minana-aequi.png): C116 core in its own shape, pulled apart,
-   assembled. 2. Hollow-straw layer, captioned 'core with C116's face pattern, pressed parallel to the die's faces'.
-2. The four routes side by side: 90 / 30 / 18 swaps (floating-resin amber layer, folded walls, beside Hollow-straw).
-3. Face-pattern diagram: the 18 swaps marked on C116's pattern.
+1. Lead: the transformation, start / halfway / pulled apart / end (RENDER-c116-minana-transform.png), Aequi colours.
+2. C116 in its own shape with its 60 straws, Aequi colours (RENDER-c116-minana-aequi.png).
+3. The three routes: 90 / 30 / 18 swaps (face-pattern diagrams).
+4. The nesting threshold over the 70 Goldberg pairs (chart).
+App: the Hollow-straw page (kaleidohedra.dictospheres.com/hollow-straw/).
 
 ## Before drafting: decisions (mine; say no by number)
 1. Title as above.
-2. Theorem 1 = Hollow-straw convex layer; Theorem 2 = symmetric optimum (30 swaps). Floating resin a Proposition (best found).
-3. EXACT first (rule: exact before claimed): redo the Hollow-straw piece checks in exact rationals (now floats, volume diff 1e-15)
-   and certify the 165 bound (or state it as a solver bound only) before the draft reaches you.
+2. Theorem 1 = DICTO's Hollow-straw TRANSFORMATION (exact); Theorem 2 = symmetric optimum (30 swaps); Proposition 3 = floating resin (best found); Lemma 4 = nested iff inside the die.
+3. EXACT first: Theorem 1 is exact (done 27 Nov). The 165 bound stays a solver bound unless certified; Section 6 is numerical and says so.
 4. Prior art (corrected 27 Nov): the weighted straight skeleton (Aichholzer et al. 1995; Eppstein-Erickson 1999; Aurenhammer 2008;
    Barequet et al. 2008; Aurenhammer-Walzl 2016) describes ONLY my flat-walled VARIANT (faces moved parallel, core pressed into the die's
    planes). It is NOT DICTO's Hollow-straw: his fixes both ends and each C116 face turns and moves into its die face (a transformation),
