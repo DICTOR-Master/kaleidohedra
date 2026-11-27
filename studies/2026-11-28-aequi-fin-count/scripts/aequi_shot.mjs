@@ -1,0 +1,14 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch({ args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] });
+const p = await b.newPage({ viewport: { width: 1300, height: 900 } });
+const errs = []; p.on('pageerror', e => errs.push(String(e)));
+await p.goto('http://127.0.0.1:8765/aequi/index.html'); await p.waitForFunction(() => document.querySelectorAll('#groupSel option').length > 5, null, { timeout: 60000 });
+const val = await p.evaluate(() => Array.from(document.querySelectorAll('#groupSel option')).find(o => /^Oh\b/.test(o.value) || /^Oh\b/.test(o.textContent)).value);
+await p.selectOption('#groupSel', val); await p.click('#modeList'); await p.waitForTimeout(500);
+await p.click('.item[data-k="4"]'); await p.waitForTimeout(800);
+const title = await p.evaluate(() => (document.querySelector('.item.sel .nm') || {}).textContent);
+const notes = async () => p.evaluate(() => Array.from(document.querySelectorAll('.note')).map(n => n.textContent).filter(t => /^(Vacuus|Resonus):/.test(t)));
+await p.click('#vacBtn'); await p.waitForTimeout(1500); await p.screenshot({ path: '/tmp/kfix/shot-vac.png' }); console.log('vac', title, JSON.stringify(await notes()));
+await p.click('#vacBtn'); await p.click('#resBtn'); await p.waitForTimeout(1500); await p.screenshot({ path: '/tmp/kfix/shot-res.png' }); console.log('res', JSON.stringify(await notes()));
+await p.click('#vacBtn'); await p.waitForTimeout(1500); await p.screenshot({ path: '/tmp/kfix/shot-both.png' }); console.log('both', JSON.stringify(await notes()));
+console.log('errors', JSON.stringify(errs)); await b.close(); console.log(errs.length ? 'FINAL FAIL' : 'FINAL ok');

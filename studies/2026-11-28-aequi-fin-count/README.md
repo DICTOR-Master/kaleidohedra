@@ -7,3 +7,7 @@ Lucky 7 (catalogue No. 5, Oh, 14 faces, 24 corners): 36 edges drawn and counted 
 planes; 3 planes in both families (drawn twice, once as Vacuus triangles and once as a Resonus cross-section).
 Numerical (tolerance 1e-9). The papers define plates as planes (#120 section 2); their counts come from the study scripts, not the picker.
 Fix proposed to DICTO (not applied: app change needs his word): count and colour by plane; mark planes in both families once.
+FIX (k-mix branch aequi-plate-count, not deployed): geom.js vacuusPlanes (plates = planes; full / shared / fin), note counts planes, planes
+in both families striped in both colours (DICTO: "maybe shared can be striped") and drawn once. Control scripts/check_planes.js: 0
+mismatches on 10,725 dice; Lucky 7 = #120's truncated octahedron row (15 plates, 15 full, 7 Resonus, 3 both). Page checked headless
+(scripts/aequi_shot.mjs, no page errors); before/after sheet in the reading folder.
