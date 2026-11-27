@@ -277,3 +277,11 @@ Candidates for the paper's last section; each to be checked against its source b
  Q6 (Grigorchuk-Zuk 2004; Lenz-Pogorzelski-Schmidt 2019): the per-site Ihara zeta function is the same at every site of every stacking;
     which of their analytic results for infinite graphs (radius of convergence, spectral bounds) then hold uniformly over all stackings?
  Q7 (Xu, Lin and Zhang, as in #102): the open question on S_h and S_c, which #102 does not decide.
+Refined (DICTO 28 Nov: "some of those questions though closed will not have been formalized in Lean"): three kinds, stated as such.
+ (a) Closed and now formalised here: Thorpe 1972 (closed-walk equality on periodic polytypes, the periodic case of Theorem 1; confirm
+     the closed-walk theorem name in the package before saying so); the rooted Hashimoto-Bass local formula as used.
+ (b) Closed, not formalised (the formalisation is the open part): Guttmann-Jensen's diamond polygon counts (Q4); Joyce's closed form for
+     diamond's Green function (Q5); Herrero's and Benito et al.'s enumerations (the counts of Q1, Q2); the infinite-graph zeta results
+     of Grigorchuk-Zuk and Lenz-Pogorzelski-Schmidt for each stacking (Q6).
+ (c) Open mathematics: local laws for open walks (Q1, Q2); Nagle's entropy difference to all orders (Q3); uniform statements over all
+     stackings (Q6, beyond what Theorem 1 gives at once); Xu-Lin-Zhang (Q7).
