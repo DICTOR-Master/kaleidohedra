@@ -318,3 +318,9 @@ G (flipAt sigma k), and equal counts for every length and crossing profile).
   Lemma 2). Built, standard axioms only. The case S = {} (no crossing) is `bijOn_surgery` with any centre c = 2 sigma(k).
 Next: Milestone 2e: all bilayers at once (Corollary A1 in full: change the letters one at a time; a polygon of length l meets only
 finitely many bilayers, #102 Lemma 4) -- then Milestone 3 (Theorem B).
+Milestone 2e DONE (28 Nov): CorollaryA1.lean. `ncard_polysA1_flip`: for an atom v in the root half of bilayer k and every length l,
+G sigma and G (flipAt sigma k) have the same number of polygons through v with l edges crossing every bilayer at most twice. The
+half-turn centre is read from each polygon's own crossing set (`centreOf`: p + q for the vertical bonds at p != q; polygons not crossing
+k are unchanged); `crossN_surg` (the surgery keeps the crossing number at every bilayer); `cross_eq_vert`; `flipMap_flipMap`. Built,
+standard axioms only. Counts as Set.ncard (equal also when infinite; finiteness is not needed for the equality).
+Next: Milestone 2f: from one flip to every stacking (flips below v by the mirror k -> -k; finitely many flips; locality).
