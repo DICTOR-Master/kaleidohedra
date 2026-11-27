@@ -485,7 +485,7 @@ function resonusObject(S, plates, mirror) {   // DICTO's Resonus: the central cr
     var c = new THREE.Color().setHSL((i * 0.618034) % 1, 0.45, 0.62), P = p.pts;
     if (isVacPlane(S, p.n)) {   // also a Vacuus plate: striped in its Resonus tint and its Vacuus colour, in every view (DICTO 28 Nov)
       var tris = []; for (var j = 0; j < P.length; j++) { tris.push([O, P[j], P[(j + 1) % P.length]]); segs.push([P[j], P[(j + 1) % P.length]]); }
-      grp.add(stripedMesh(S, tris, p.n, '#' + c.getHexString(), p.mirror ? SAND : SLATE, 0.92)); return;
+      grp.add(stripedMesh(S, tris, p.n, '#' + c.getHexString(), p.mirror ? SAND : SLATE, 1)); return;
     }
     for (var i = 0; i < P.length; i++) {
       [O, P[i], P[(i + 1) % P.length]].forEach(function (v) { pos.push.apply(pos, v); col.push(c.r, c.g, c.b); });
@@ -496,7 +496,7 @@ function resonusObject(S, plates, mirror) {   // DICTO's Resonus: the central cr
   geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
   geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
   geo.computeVertexNormals();
-  grp.add(new THREE.Mesh(geo, new THREE.MeshPhongMaterial({ vertexColors: true, flatShading: true, shininess: 10, side: THREE.DoubleSide, transparent: true, opacity: 0.85 })));
+  grp.add(new THREE.Mesh(geo, new THREE.MeshPhongMaterial({ vertexColors: true, flatShading: true, shininess: 10, side: THREE.DoubleSide }   // solid (DICTO 28 Nov): see-through let the stripes of a shared plane show on plain plates in front)));
   grp.add(new THREE.LineSegments(new THREE.BufferGeometry().setAttribute('position', new THREE.Float32BufferAttribute([].concat.apply([], segs.map(function (sg) { return sg[0].concat(sg[1]); })), 3)), new THREE.LineBasicMaterial({ color: 0x111111, linewidth: 2 })));
   if (!st.vac) grp.add(edgeLines(S, S.edges.map(function (e) { return [S.verts[e[0]], S.verts[e[1]]]; })));
   var s = 1 / radius(S); grp.scale.set(mirror ? -s : s, s, s);
