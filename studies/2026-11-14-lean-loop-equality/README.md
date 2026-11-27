@@ -364,3 +364,18 @@ Theorem B (study 2026-11-15-polygon-bijection §3): p_l(v; G') - p_l(v; G) = -1/
   symmetrisation algebra -> Theorem B.
 - 3e Locality of A: f = all - bad for n = 4 (needed before the l = 18 tables of Milestone 5).
 Compute: all Lean checks and builds on the compute host (entry workspace), as for Milestones 1-2.
+
+### Palomar-ready (28 Nov 2026; DICTO: "make sure all parts are engineered for running on Palomar register without further work")
+The new modules now live in the entry itself (entry/LoopEquality/*.lean, the canonical copy; the duplicates under lean/ were removed)
+and the entry carries the new theorem in Palomar's layout:
+- Challenge.lean: plain definitions (edgeDeg, IsPolygon, IsAbove, Crosses, crossings, polysAtMostTwice) and `corollaryA1` with sorry;
+  Solution.lean: the same definitions word for word, transfer lemmas, and the proof from `LoopEqualityProof.corollaryA1`;
+  comparator.json: 18 theorems; formalization.yaml describes Corollary A.
+- Preflight on the compute host (entry branch `stackings`, commits 60150fe, 4a9ce3b): source checker pass (module headers, file sizes);
+  18 proof sorries in Challenge = 18 compared theorems; no sorry/native_decide in proofs (mentions only in comments); clean build
+  8955 jobs; comparator (job palomar-loop-v2-comparator): con-ron accepted 17395 declarations (--verified), nanoda accepts, Lean
+  kernel accepts, "Your solution is okay!"; negative control (job palomar-loop-v2-negctl): statement changed l -> l + 1 rejected
+  ("Challenge and solution theorem statement do not match: 'DictoLoopEquality.corollaryA1'"), Challenge restored.
+- Not run here (as on 15 Nov): Palomar's GitHub workflow itself (needs a public repository at a fixed commit), Ruby metadata validator.
+Rule for every later milestone: each new theorem goes into the entry the same way (Challenge + Solution + comparator) and the
+comparator plus a negative control are rerun before the milestone counts as done.

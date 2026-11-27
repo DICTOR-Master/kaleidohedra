@@ -367,4 +367,91 @@ theorem fibonacci_loop_equality (v : Atom) (hv : IsSite fibonacci v) (m : ℕ) [
   exact ⟨loop_equality fibonacci fibonacci_isStacking v hv m,
     loop_count_eq fibonacci fibonacci_isStacking v hv m⟩
 
+/-! ## Where the stackings differ: polygons crossing every bilayer at most twice
+
+Proofs: `LoopEquality.Twist` (one flip is one twist), `LoopEquality.Surgery` (the
+cut lemma, the surgery on edges), `LoopEquality.Polygons` (degrees),
+`LoopEquality.TheoremA` (parity, Theorem A for at most two crossings),
+`LoopEquality.CorollaryA1` (one flip), `LoopEquality.Relabel` (relabelling,
+mirror), `LoopEquality.FlipRuns` (runs of flips), `LoopEquality.Locality`,
+`LoopEquality.Assembly` (`LoopEqualityProof.corollaryA1`). The statement below is
+transferred from the library by the lemmas that follow the definitions. -/
+
+open Classical in
+/-- The number of edges of `E` at the atom `x`. -/
+noncomputable def edgeDeg (E : Finset (Sym2 Atom)) (x : Atom) : ℕ := (E.filter (fun e => x ∈ e)).card
+
+/-- A polygon of `G σ`. -/
+def IsPolygon (σ : ℤ → ZMod 3) (E : Finset (Sym2 Atom)) : Prop :=
+  E.Nonempty ∧ (∀ e ∈ E, ∃ a b, e = s(a, b) ∧ Bond σ a b) ∧ (∀ x, Even (edgeDeg E x)) ∧
+    ∀ F ⊆ E, F.Nonempty → (∀ x, Even (edgeDeg F x)) → F = E
+
+/-- The far side of the cut at bilayer `k`: the upper atom of bilayer `k` and everything above. -/
+def IsAbove (k : ℤ) (v : Atom) : Prop := k < v.1 ∨ (v.1 = k ∧ v.2.2 = 1)
+
+/-- The edge `e` crosses the cut at bilayer `k`. -/
+def Crosses (k : ℤ) (e : Sym2 Atom) : Prop := ∃ a b, e = s(a, b) ∧ IsAbove k a ∧ ¬ IsAbove k b
+
+open Classical in
+/-- The number of edges of `E` crossing the cut at bilayer `k`. -/
+noncomputable def crossings (E : Finset (Sym2 Atom)) (k : ℤ) : ℕ := (E.filter (Crosses k)).card
+
+/-- The polygons of `G σ` through `v` with `l` edges that cross every bilayer at most twice. -/
+def polysAtMostTwice (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) : Set (Finset (Sym2 Atom)) :=
+  {E | IsPolygon σ E ∧ 0 < edgeDeg E v ∧ E.card = l ∧ ∀ k, crossings E k ≤ 2}
+
+theorem edgeDeg_eq_proof (E : Finset (Sym2 Atom)) (x : Atom) : edgeDeg E x = LoopEqualityProof.degS E x := by
+  unfold edgeDeg LoopEqualityProof.degS
+  congr 1
+
+theorem bond_exists_iff_proof (σ : ℤ → ZMod 3) (e : Sym2 Atom) :
+    (∃ a b, e = s(a, b) ∧ Bond σ a b) ↔ LoopEqualityProof.BondS σ e := by
+  induction e using Sym2.ind with
+  | _ a b =>
+    rw [LoopEqualityProof.bondS_mk]
+    constructor
+    · rintro ⟨a', b', h, hb⟩
+      rcases Sym2.eq_iff.mp h with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
+      · exact hb
+      · exact LoopEqualityProof.bond_symm hb
+    · intro h; exact ⟨a, b, rfl, h⟩
+
+theorem isPolygon_iff_proof (σ : ℤ → ZMod 3) (E : Finset (Sym2 Atom)) :
+    IsPolygon σ E ↔ LoopEqualityProof.IsPolygon σ E := by
+  simp only [IsPolygon, LoopEqualityProof.IsPolygon, LoopEqualityProof.Closed, edgeDeg_eq_proof,
+    bond_exists_iff_proof]
+
+theorem crosses_iff_proof (k : ℤ) (e : Sym2 Atom) : Crosses k e ↔ LoopEqualityProof.IsCrossS k e := by
+  induction e using Sym2.ind with
+  | _ a b =>
+    rw [LoopEqualityProof.isCrossS_mk]
+    constructor
+    · rintro ⟨a', b', h, ha, hb⟩
+      rcases Sym2.eq_iff.mp h with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
+      · exact Or.inl ⟨ha, hb⟩
+      · exact Or.inr ⟨hb, ha⟩
+    · rintro (⟨ha, hb⟩ | ⟨ha, hb⟩)
+      · exact ⟨a, b, rfl, ha, hb⟩
+      · exact ⟨b, a, Sym2.eq_swap, hb, ha⟩
+
+theorem crossings_eq_proof (E : Finset (Sym2 Atom)) (k : ℤ) : crossings E k = LoopEqualityProof.crossN E k := by
+  classical
+  unfold crossings LoopEqualityProof.crossN
+  exact congrArg Finset.card (Finset.filter_congr (fun e _ => crosses_iff_proof k e))
+
+theorem polysAtMostTwice_eq_proof (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) :
+    polysAtMostTwice σ v l = LoopEqualityProof.PolysA1 σ v l := by
+  ext E
+  simp only [polysAtMostTwice, LoopEqualityProof.PolysA1, Set.mem_ofPred_eq, isPolygon_iff_proof,
+    edgeDeg_eq_proof, crossings_eq_proof]
+
+/-- **Corollary A1 (the half-turn surgery, every stacking).** For any two stackings
+and an atom `v` that is a site of both, the number of polygons through `v` with `l`
+edges crossing every bilayer at most twice is the same, for every `l`. -/
+theorem corollaryA1 {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStacking τ) {v : Atom}
+    (hvσ : IsSite σ v) (hvτ : IsSite τ v) (l : ℕ) :
+    (polysAtMostTwice σ v l).ncard = (polysAtMostTwice τ v l).ncard := by
+  rw [polysAtMostTwice_eq_proof, polysAtMostTwice_eq_proof]
+  exact LoopEqualityProof.corollaryA1 hσ hτ hvσ hvτ l
+
 end DictoLoopEquality

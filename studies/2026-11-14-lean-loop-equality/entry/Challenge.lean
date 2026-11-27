@@ -360,4 +360,42 @@ theorem fibonacci_loop_equality (v : Atom) (hv : IsSite fibonacci v) (m : ℕ) [
       ((nbLoops fibonacci v m).ncard : ℤ) = loopCount m := by
   sorry
 
+/-! ## Where the stackings differ: polygons crossing every bilayer at most twice
+
+A polygon is a nonempty finite set of bonds in which every atom has even degree and
+no nonempty proper subset has that property (a cycle). The cut at bilayer `k`
+separates the upper atoms of bilayer `k` and everything above from the rest; an
+edge crosses it when one end lies on each side. -/
+
+open Classical in
+/-- The number of edges of `E` at the atom `x`. -/
+noncomputable def edgeDeg (E : Finset (Sym2 Atom)) (x : Atom) : ℕ := (E.filter (fun e => x ∈ e)).card
+
+/-- A polygon of `G σ`. -/
+def IsPolygon (σ : ℤ → ZMod 3) (E : Finset (Sym2 Atom)) : Prop :=
+  E.Nonempty ∧ (∀ e ∈ E, ∃ a b, e = s(a, b) ∧ Bond σ a b) ∧ (∀ x, Even (edgeDeg E x)) ∧
+    ∀ F ⊆ E, F.Nonempty → (∀ x, Even (edgeDeg F x)) → F = E
+
+/-- The far side of the cut at bilayer `k`: the upper atom of bilayer `k` and everything above. -/
+def IsAbove (k : ℤ) (v : Atom) : Prop := k < v.1 ∨ (v.1 = k ∧ v.2.2 = 1)
+
+/-- The edge `e` crosses the cut at bilayer `k`. -/
+def Crosses (k : ℤ) (e : Sym2 Atom) : Prop := ∃ a b, e = s(a, b) ∧ IsAbove k a ∧ ¬ IsAbove k b
+
+open Classical in
+/-- The number of edges of `E` crossing the cut at bilayer `k`. -/
+noncomputable def crossings (E : Finset (Sym2 Atom)) (k : ℤ) : ℕ := (E.filter (Crosses k)).card
+
+/-- The polygons of `G σ` through `v` with `l` edges that cross every bilayer at most twice. -/
+def polysAtMostTwice (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) : Set (Finset (Sym2 Atom)) :=
+  {E | IsPolygon σ E ∧ 0 < edgeDeg E v ∧ E.card = l ∧ ∀ k, crossings E k ≤ 2}
+
+/-- **Corollary A1 (the half-turn surgery, every stacking).** For any two stackings
+and an atom `v` that is a site of both, the number of polygons through `v` with `l`
+edges crossing every bilayer at most twice is the same, for every `l`. -/
+theorem corollaryA1 {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStacking τ) {v : Atom}
+    (hvσ : IsSite σ v) (hvτ : IsSite τ v) (l : ℕ) :
+    (polysAtMostTwice σ v l).ncard = (polysAtMostTwice τ v l).ncard := by
+  sorry
+
 end DictoLoopEquality

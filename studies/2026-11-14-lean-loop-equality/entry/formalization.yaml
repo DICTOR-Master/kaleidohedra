@@ -15,7 +15,11 @@ project:
     every atom of every stacking, a local loop formula for any graph with q + 1
     neighbours at every vertex and equal closed-walk counts, the values for
     m <= 34, and that the aperiodic Fibonacci stacking satisfies the equality
-    with the same count. This formalises Theorem 1 of DICTO's paper #102.
+    with the same count. It also proves, for polygons (cycles) through a site
+    that cross every bilayer at most twice, that their number of each length is
+    the same in every stacking (the half-turn surgery of Theorem A and
+    Corollary A, with locality). This formalises Theorem 1 and Corollary A of
+    DICTO's paper #102.
   authors:
     - "DICTO"
   license: "Apache-2.0"

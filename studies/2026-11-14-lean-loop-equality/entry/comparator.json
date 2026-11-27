@@ -18,9 +18,14 @@
     "DictoLoopEquality.fibonacci_layer_type",
     "DictoLoopEquality.isH_eq_word",
     "DictoLoopEquality.fibonacci_not_periodic",
-    "DictoLoopEquality.fibonacci_loop_equality"
+    "DictoLoopEquality.fibonacci_loop_equality",
+    "DictoLoopEquality.corollaryA1"
   ],
   "definition_names": [],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
   "enable_nanoda": true
 }

@@ -112,10 +112,10 @@ theorem centreOf_pair {k : ℤ} {c₀ : ℤ × ℤ} {p q : ℤ × ℤ} (hpq : p 
   next h => exact absurd ⟨p, q, hpq, rfl⟩ h
 
 /-- A good default centre for the letter of bilayer `k`. -/
-noncomputable def c0 (σ : ℤ → ZMod 3) (k : ℤ) : ℤ × ℤ := (((2 * σ k).val : ℤ), ((2 * σ k).val : ℤ))
+noncomputable def cDefault (σ : ℤ → ZMod 3) (k : ℤ) : ℤ × ℤ := (((2 * σ k).val : ℤ), ((2 * σ k).val : ℤ))
 
-theorem goodCentre_c0 (σ : ℤ → ZMod 3) (k : ℤ) : GoodCentre σ k (c0 σ k) := by
-  unfold GoodCentre c0; simp
+theorem goodCentre_cDefault (σ : ℤ → ZMod 3) (k : ℤ) : GoodCentre σ k (cDefault σ k) := by
+  unfold GoodCentre cDefault; simp
 
 /-- The crossing set at `k` of a polygon in `PolysA1` is empty or two vertical bonds at points `p ≠ q`
 of the position of bilayer `k`. -/
@@ -145,7 +145,7 @@ theorem cross_set_cases {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {E : Finset (
 
 /-- The surgery at `k` about the centre read from the polygon's own crossing set. -/
 noncomputable def flipMap (σ : ℤ → ZMod 3) (k : ℤ) (E : Finset (Sym2 Atom)) : Finset (Sym2 Atom) :=
-  E.image (surgS (centreOf k (c0 σ k) (E.filter (IsCrossS k))) k)
+  E.image (surgS (centreOf k (cDefault σ k) (E.filter (IsCrossS k))) k)
 
 theorem mapsTo_flipMap {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : ¬ IsFar k v) (l : ℕ) :
     Set.MapsTo (flipMap σ k) (PolysA1 σ v l) (PolysA1 (flipAt σ k) v l) := by
@@ -154,10 +154,10 @@ theorem mapsTo_flipMap {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : ¬ IsFar
   obtain ⟨hpoly, hvE, hcard, hprof⟩ := hE'
   rcases cross_set_cases hE k with h0 | ⟨p, q, hpq, hS, hp, hq⟩
   · -- no crossing at k
-    have hm := mapsTo_surgery (goodCentre_c0 σ k) hv (S := ∅) (by simp) (by simp)
+    have hm := mapsTo_surgery (goodCentre_cDefault σ k) hv (S := ∅) (by simp) (by simp)
       (show E ∈ PolysThrough σ k v ∅ from ⟨hpoly, hvE, h0⟩)
     obtain ⟨hpoly', hv', -⟩ := hm
-    have hc : centreOf k (c0 σ k) (E.filter (IsCrossS k)) = c0 σ k := by
+    have hc : centreOf k (cDefault σ k) (E.filter (IsCrossS k)) = cDefault σ k := by
       rw [h0]
       unfold centreOf
       split
@@ -169,7 +169,7 @@ theorem mapsTo_flipMap {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : ¬ IsFar
     refine ⟨by rw [flipMap, hc]; exact hpoly', by rw [flipMap, hc]; exact hv', ?_, ?_⟩
     · rw [flipMap, Finset.card_image_of_injective _ (surgS_injective _ k), hcard]
     · intro j; rw [flipMap, crossN_surg]; exact hprof j
-  · have hc : centreOf k (c0 σ k) (E.filter (IsCrossS k)) = p + q := by rw [hS, centreOf_pair hpq]
+  · have hc : centreOf k (cDefault σ k) (E.filter (IsCrossS k)) = p + q := by rw [hS, centreOf_pair hpq]
     have hb := (bijOn_two_crossings hv hp hq).mapsTo (show E ∈ PolysThrough σ k v {vert k p, vert k q} from
       ⟨hpoly, hvE, hS⟩)
     obtain ⟨hpoly', hv', -⟩ := hb
@@ -177,17 +177,17 @@ theorem mapsTo_flipMap {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : ¬ IsFar
     · rw [flipMap, Finset.card_image_of_injective _ (surgS_injective _ k), hcard]
     · intro j; rw [flipMap, crossN_surg]; exact hprof j
 
-theorem c0_flipAt (σ : ℤ → ZMod 3) (k : ℤ) : c0 (flipAt σ k) k = c0 σ k := by
-  unfold c0; rw [flipAt_of_le le_rfl]
+theorem cDefault_flipAt (σ : ℤ → ZMod 3) (k : ℤ) : cDefault (flipAt σ k) k = cDefault σ k := by
+  unfold cDefault; rw [flipAt_of_le le_rfl]
 
 theorem flipMap_flipMap {σ : ℤ → ZMod 3} {k : ℤ} (E : Finset (Sym2 Atom)) :
     flipMap (flipAt σ k) k (flipMap σ k E) = E := by
   unfold flipMap
-  have hS : (E.image (surgS (centreOf k (c0 σ k) (E.filter (IsCrossS k))) k)).filter (IsCrossS k) =
+  have hS : (E.image (surgS (centreOf k (cDefault σ k) (E.filter (IsCrossS k))) k)).filter (IsCrossS k) =
       E.filter (IsCrossS k) := cross_image_surgS E
-  rw [hS, c0_flipAt, Finset.image_image]
-  have : surgS (centreOf k (c0 σ k) (E.filter (IsCrossS k))) k ∘
-      surgS (centreOf k (c0 σ k) (E.filter (IsCrossS k))) k = id := funext (surgS_surgS _ k)
+  rw [hS, cDefault_flipAt, Finset.image_image]
+  have : surgS (centreOf k (cDefault σ k) (E.filter (IsCrossS k))) k ∘
+      surgS (centreOf k (cDefault σ k) (E.filter (IsCrossS k))) k = id := funext (surgS_surgS _ k)
   rw [this, Finset.image_id]
 
 /-- **Corollary A1 across one flip.** For an atom `v` in the root half of bilayer `k` and every length
