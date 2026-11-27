@@ -324,3 +324,8 @@ half-turn centre is read from each polygon's own crossing set (`centreOf`: p + q
 k are unchanged); `crossN_surg` (the surgery keeps the crossing number at every bilayer); `cross_eq_vert`; `flipMap_flipMap`. Built,
 standard axioms only. Counts as Set.ncard (equal also when infinite; finiteness is not needed for the equality).
 Next: Milestone 2f: from one flip to every stacking (flips below v by the mirror k -> -k; finitely many flips; locality).
+Milestone 2f-1 DONE (28 Nov): Relabel.lean. `ncard_polysA1_relabel` (the whole-network half-turn p -> c - p, c = 2a, maps G sigma
+at v onto G (tog a o sigma) at htA c v: equal counts); `ncard_polysA1_mirror` (bilayer j -> -j with lower/upper exchanged: equal
+counts); `ncard_polysA1_flipBelow` (a flip below v keeps the counts at v: mirror + the flip above, `mirS_flipBelow`). Built, no sorry,
+standard axioms only. (A first attempt via relabelling alone did not close; replaced by the mirror before any build was claimed.)
+Next: 2f-2 (any finite run of c/h flips keeps the counts; stackings with the same c/h word near v) and 2f-3 (locality).
