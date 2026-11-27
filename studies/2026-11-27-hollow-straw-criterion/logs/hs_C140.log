@@ -1,0 +1,152 @@
+Traceback (most recent call last):
+  File "/home/dicto/k-research/studies/2026-11-27-hollow-straw-criterion/scripts/hs_general.py", line 68, in <module>
+    Ac = core_planes(CORE); Nc = Ac / np.linalg.norm(Ac, axis=1)[:, None]
+  File "/home/dicto/k-research/studies/2026-11-27-hollow-straw-criterion/scripts/hs_general.py", line 39, in core_planes
+    if name.startswith('GPc_'): pts = S.canonical(pts, m, n)
+                                      ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/dicto/k-research/studies/2026-11-27-hollow-straw-criterion/scripts/../../2026-11-21-amber-goldberg/scripts/solids.py", line 142, in canonical
+    j = pos[keyf(np.array(act(g, list(P[i]))))]; img.setdefault(j, []).append(g)
+        ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: (np.float64(0.384646), np.float64(-0.510133), np.float64(-0.769293))
+core GP_2_1: 72 faces, 140 corners, 210 neighbour pairs, sizes [5, 6]
+  die 160 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 26, pairs lost 113 gained 35 (needed 102/24) -> minimal False
+  die 160 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 27, pairs lost 113 gained 35 (needed 102/24) -> minimal False
+  die 160 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 31, pairs lost 113 gained 35 (needed 102/24) -> minimal False
+die 160: simple corners False; kept 108 of 210, to lose 102, to gain 24, total cosine 70.2729  (27 s)
+PROGRESS 0.036
+  die 161 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 5, pairs lost 82 gained 16 (needed 82/16) -> minimal True
+  die 161 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 5, pairs lost 82 gained 16 (needed 82/16) -> minimal True
+  die 161 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 5, pairs lost 82 gained 16 (needed 82/16) -> minimal True
+die 161: simple corners False; kept 128 of 210, to lose 82, to gain 16, total cosine 70.7761  (26 s)
+PROGRESS 0.071
+  die 217 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 6, pairs lost 36 gained 30 (needed 36/30) -> minimal True
+  die 217 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 6, pairs lost 36 gained 30 (needed 36/30) -> minimal True
+  die 217 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 6, pairs lost 36 gained 30 (needed 36/30) -> minimal True
+die 217: simple corners False; kept 174 of 210, to lose 36, to gain 30, total cosine 70.8408  (27 s)
+PROGRESS 0.107
+  die 262 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 12, pairs lost 88 gained 22 (needed 80/14) -> minimal False
+  die 262 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 12, pairs lost 88 gained 22 (needed 80/14) -> minimal False
+  die 262 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 12, pairs lost 88 gained 22 (needed 80/14) -> minimal False
+die 262: simple corners False; kept 130 of 210, to lose 80, to gain 14, total cosine 70.0420  (26 s)
+PROGRESS 0.143
+  die 384 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 15, pairs lost 57 gained 45 (needed 51/39) -> minimal False
+  die 384 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 15, pairs lost 57 gained 45 (needed 51/39) -> minimal False
+  die 384 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 14, pairs lost 57 gained 45 (needed 51/39) -> minimal False
+die 384: simple corners False; kept 159 of 210, to lose 51, to gain 39, total cosine 70.2555  (27 s)
+PROGRESS 0.179
+  die 385 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 9, pairs lost 36 gained 24 (needed 36/24) -> minimal True
+  die 385 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 9, pairs lost 36 gained 24 (needed 36/24) -> minimal True
+  die 385 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 9, pairs lost 36 gained 24 (needed 36/24) -> minimal True
+die 385: simple corners False; kept 174 of 210, to lose 36, to gain 24, total cosine 70.5830  (26 s)
+PROGRESS 0.214
+  die 386 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 11, pairs lost 42 gained 30 (needed 39/27) -> minimal False
+  die 386 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 11, pairs lost 42 gained 30 (needed 39/27) -> minimal False
+  die 386 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 11, pairs lost 42 gained 30 (needed 39/27) -> minimal False
+die 386: simple corners False; kept 171 of 210, to lose 39, to gain 27, total cosine 70.6010  (28 s)
+PROGRESS 0.250
+  die 387 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 35, pairs lost 47 gained 47 (needed 46/46) -> minimal False
+  die 387 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 39, pairs lost 47 gained 47 (needed 46/46) -> minimal False
+  die 387 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 41, pairs lost 47 gained 47 (needed 46/46) -> minimal False
+die 387: simple corners True; kept 164 of 210, to lose 46, to gain 46, total cosine 70.6001  (25 s)
+PROGRESS 0.286
+  die 420 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 10, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 420 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 11, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 420 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 11, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+die 420: simple corners True; kept 174 of 210, to lose 36, to gain 36, total cosine 70.6396  (25 s)
+PROGRESS 0.321
+  die 421 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 32, pairs lost 49 gained 49 (needed 46/46) -> minimal False
+  die 421 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 33, pairs lost 49 gained 49 (needed 46/46) -> minimal False
+  die 421 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 34, pairs lost 49 gained 49 (needed 46/46) -> minimal False
+die 421: simple corners True; kept 164 of 210, to lose 46, to gain 46, total cosine 70.6820  (29 s)
+PROGRESS 0.357
+  die 422 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 13, pairs lost 48 gained 48 (needed 48/48) -> minimal True
+  die 422 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 13, pairs lost 48 gained 48 (needed 48/48) -> minimal True
+  die 422 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 15, pairs lost 48 gained 48 (needed 48/48) -> minimal True
+die 422: simple corners True; kept 162 of 210, to lose 48, to gain 48, total cosine 70.5471  (29 s)
+PROGRESS 0.393
+  die 423 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 12, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 423 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 12, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 423 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 12, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+die 423: simple corners True; kept 174 of 210, to lose 36, to gain 36, total cosine 70.6913  (27 s)
+PROGRESS 0.429
+  die 424 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 16, pairs lost 37 gained 37 (needed 37/37) -> minimal True
+  die 424 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 18, pairs lost 37 gained 37 (needed 37/37) -> minimal True
+  die 424 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 18, pairs lost 37 gained 37 (needed 37/37) -> minimal True
+die 424: simple corners True; kept 173 of 210, to lose 37, to gain 37, total cosine 70.7659  (21 s)
+PROGRESS 0.464
+  die 902 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 9, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 902 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 10, pairs lost 39 gained 39 (needed 36/36) -> minimal False
+  die 902 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 9, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+die 902: simple corners True; kept 174 of 210, to lose 36, to gain 36, total cosine 70.7021  (26 s)
+PROGRESS 0.500
+  die 903 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 17, pairs lost 43 gained 43 (needed 43/43) -> minimal True
+  die 903 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 17, pairs lost 43 gained 43 (needed 43/43) -> minimal True
+  die 903 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 19, pairs lost 43 gained 43 (needed 43/43) -> minimal True
+die 903: simple corners True; kept 167 of 210, to lose 43, to gain 43, total cosine 70.6139  (21 s)
+PROGRESS 0.536
+  die 904 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 11, pairs lost 33 gained 33 (needed 33/33) -> minimal True
+  die 904 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 11, pairs lost 33 gained 33 (needed 33/33) -> minimal True
+  die 904 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 11, pairs lost 33 gained 33 (needed 33/33) -> minimal True
+die 904: simple corners True; kept 177 of 210, to lose 33, to gain 33, total cosine 70.6969  (23 s)
+PROGRESS 0.571
+  die 905 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 3, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 905 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 3, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 905 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 3, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+die 905: simple corners True; kept 174 of 210, to lose 36, to gain 36, total cosine 70.5697  (21 s)
+PROGRESS 0.607
+  die 906 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 1, pairs lost 12 gained 12 (needed 12/12) -> minimal True
+  die 906 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 1, pairs lost 12 gained 12 (needed 12/12) -> minimal True
+  die 906 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 1, pairs lost 12 gained 12 (needed 12/12) -> minimal True
+die 906: simple corners True; kept 198 of 210, to lose 12, to gain 12, total cosine 70.8573  (26 s)
+PROGRESS 0.643
+  die 907 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 20, pairs lost 67 gained 67 (needed 67/67) -> minimal True
+  die 907 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 20, pairs lost 67 gained 67 (needed 67/67) -> minimal True
+  die 907 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 24, pairs lost 67 gained 67 (needed 67/67) -> minimal True
+die 907: simple corners True; kept 143 of 210, to lose 67, to gain 67, total cosine 70.3658  (21 s)
+PROGRESS 0.679
+  die 908 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 17, pairs lost 51 gained 51 (needed 51/51) -> minimal True
+  die 908 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 17, pairs lost 51 gained 51 (needed 51/51) -> minimal True
+  die 908 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 17, pairs lost 51 gained 51 (needed 51/51) -> minimal True
+die 908: simple corners True; kept 159 of 210, to lose 51, to gain 51, total cosine 70.0956  (21 s)
+PROGRESS 0.714
+  die 909 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 2, pairs lost 24 gained 24 (needed 24/24) -> minimal True
+  die 909 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 2, pairs lost 24 gained 24 (needed 24/24) -> minimal True
+  die 909 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 2, pairs lost 24 gained 24 (needed 24/24) -> minimal True
+die 909: simple corners True; kept 186 of 210, to lose 24, to gain 24, total cosine 70.1627  (21 s)
+PROGRESS 0.750
+  die 910 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 18, pairs lost 35 gained 35 (needed 35/35) -> minimal True
+  die 910 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 18, pairs lost 35 gained 35 (needed 35/35) -> minimal True
+  die 910 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 18, pairs lost 35 gained 35 (needed 35/35) -> minimal True
+die 910: simple corners True; kept 175 of 210, to lose 35, to gain 35, total cosine 70.7866  (21 s)
+PROGRESS 0.786
+  die 911 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 18, pairs lost 55 gained 55 (needed 51/51) -> minimal False
+  die 911 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 20, pairs lost 55 gained 55 (needed 51/51) -> minimal False
+  die 911 rho 0.9: nested False, all faces True, start/end ok True/True, pattern changes 21, pairs lost 55 gained 55 (needed 51/51) -> minimal False
+die 911: simple corners True; kept 159 of 210, to lose 51, to gain 51, total cosine 70.2414  (21 s)
+PROGRESS 0.821
+  die 912 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 9, pairs lost 39 gained 39 (needed 39/39) -> minimal True
+  die 912 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 10, pairs lost 39 gained 39 (needed 39/39) -> minimal True
+  die 912 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 11, pairs lost 39 gained 39 (needed 39/39) -> minimal True
+die 912: simple corners True; kept 171 of 210, to lose 39, to gain 39, total cosine 70.8035  (21 s)
+PROGRESS 0.857
+  die 913 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 3, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 913 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 3, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 913 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 3, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+die 913: simple corners True; kept 174 of 210, to lose 36, to gain 36, total cosine 70.9631  (21 s)
+PROGRESS 0.893
+  die 914 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 17, pairs lost 39 gained 39 (needed 39/39) -> minimal True
+  die 914 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 18, pairs lost 39 gained 39 (needed 39/39) -> minimal True
+  die 914 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 17, pairs lost 39 gained 39 (needed 39/39) -> minimal True
+die 914: simple corners True; kept 171 of 210, to lose 39, to gain 39, total cosine 70.7990  (21 s)
+PROGRESS 0.929
+  die 915 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 3, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 915 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 3, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+  die 915 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 3, pairs lost 36 gained 36 (needed 36/36) -> minimal True
+die 915: simple corners True; kept 174 of 210, to lose 36, to gain 36, total cosine 70.8146  (19 s)
+PROGRESS 0.964
+  die 916 rho 0.5: nested True, all faces True, start/end ok True/True, pattern changes 15, pairs lost 32 gained 32 (needed 32/32) -> minimal True
+  die 916 rho 0.7: nested True, all faces True, start/end ok True/True, pattern changes 15, pairs lost 32 gained 32 (needed 32/32) -> minimal True
+  die 916 rho 0.9: nested True, all faces True, start/end ok True/True, pattern changes 15, pairs lost 32 gained 32 (needed 32/32) -> minimal True
+die 916: simple corners True; kept 178 of 210, to lose 32, to gain 32, total cosine 70.6112  (25 s)
+PROGRESS 1.000
+FINAL ok

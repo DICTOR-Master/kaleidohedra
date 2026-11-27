@@ -37,3 +37,14 @@ P(lam) lies inside P(1) = D. **Nested <=> P(lam) is inside the die for every lam
 - Same pattern (no change needed): C60 always nested; C80 die 112 (same pattern) not nested at 0.9: nesting is not only about swaps.
 Next: (1) test the FACING condition: each core face's normal points through its partner die face (the floating-resin aim); conjecture:
 facing => nested for every small enough core; (2) finish C140; (3) exact proofs for the clean cases.
+
+## Step 2: facing and the largest nested core size (logs/facing_C60.log, facing_C80.log; numerical, bisection to 1/128)
+For each pair: how many core faces point through their partner die face (facing), and the largest core size (core circumradius /
+die inradius) at which the transformation is still nested, rho*.
+- C60 x 14 dice: facing 32/32 in all; rho* from 0.66 (die 91) to 0.99 (the top of the range tested: dice 1, 27, 90, 152, 242).
+- C80 x 28 dice: facing 42/42 in 25, 30/42 in 3 (dice 347-349); rho* from 0.75 (die 164) to 0.99 (dice 2, 334, 557, 558).
+- In all 42 pairs the transformation is nested for every core size up to rho* (>= 0.66): a small enough core always works.
+Facing alone does not explain rho* (all-facing pairs range from 0.66 to 0.99; the three 30/42 pairs still reach about 0.78).
+Conjecture (open): for every face pairing there is a core size below which DICTO's Hollow-straw transformation is nested; by the
+lemma this says every intermediate solid stays inside the die once the core is small enough. Next: an argument via the polar
+(the polar of P(lam) is the hull of the points (1 - lam) a_k + lam m_k), and the exact check of a few cases.

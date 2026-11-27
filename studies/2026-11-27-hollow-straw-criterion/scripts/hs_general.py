@@ -81,7 +81,32 @@ for n in DICE:
     Ed_c = {tuple(sorted((inv[a], inv[b]))) for a, b in Ed}
     kept = len(Ec & Ed_c); need = len(Ed_c - Ec); need_lose = len(Ec - Ed_c)
     simple = all(len(f) == 3 for f in [set(np.where(np.abs(Md @ p - 1) < 1e-8)[0]) for p in Pd])
-    rec = dict(core=CORE, die=n, faces=len(Ac), die_simple=simple, cos_total=tot, kept=kept, edges_core=len(Ec), edges_die=len(Ed), to_gain=need, to_lose=need_lose, by_rho=[])
+    Rc = Nc @ R.T; facing = 0
+    for k in range(len(Ac)):
+        mk = Md[sig[k]]; dk = Rc[k]
+        if mk @ dk > 0:
+            pnt = dk / (mk @ dk); facing += int((Md @ pnt <= 1 + 1e-9).all())
+    rec_facing = facing
+    rec = dict(core=CORE, die=n, faces=len(Ac), die_simple=simple, cos_total=tot, facing=rec_facing, kept=kept, edges_core=len(Ec), edges_die=len(Ed), to_gain=need, to_lose=need_lose, by_rho=[])
+    def nested_at(rho):
+        a0 = (Ac @ R.T) * (rc / (rho * rin)); a1 = Md[sig]
+        for lam in np.linspace(0, 1, NG + 1):
+            Aa = (1 - lam) * a0 + lam * a1
+            try: P, F, E = poly(Aa)
+            except Exception: return False
+            for k in range(len(Aa)):
+                if F[k] and ((a1[k] - a0[k]) @ P[list(F[k])].T).max() > 1e-9: return False
+        return True
+    if os.environ.get('BISECT'):
+        lo, hi = 0.3, 1.0
+        if not nested_at(lo): rec['rho_star'] = None
+        else:
+            for _ in range(7):
+                mid = (lo + hi) / 2
+                if nested_at(mid): lo = mid
+                else: hi = mid
+            rec['rho_star'] = round(lo, 4)
+        pr(f'  die {n}: facing {rec_facing} of {len(Ac)} faces; largest nested core size about {rec.get("rho_star")}')
     for rho in RHO:
         a0 = (Ac @ R.T) * (rc / (rho * rin))                # core turned, scaled: circumradius = rho * die inradius (rho < 1: core inside die)
         a1 = Md[sig]
