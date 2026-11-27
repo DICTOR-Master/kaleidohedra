@@ -144,6 +144,29 @@
     });
   }
 
+  // Vacuus PLATES as in #120 (DICTO 28 Nov: the picker had counted one plate per edge): a plate is a PLANE through the centre and an
+  // edge; edges in one plane share it. Kind: full sheet (with each edge it carries the opposite edge), shared sheet (two or more edges,
+  // not full), single fin (one edge). both: the plane is also a Resonus plane (parallel to a face).
+  function vacuusPlanes(S) {
+    var out = [], eq = function (m, n) { return Math.abs(Math.abs(dot(m, n)) - 1) < 1e-9; };
+    S.edges.forEach(function (e) {
+      var a = S.verts[e[0]], b = S.verts[e[1]], m = cross(a, b), lm = len(m); if (lm < 1e-12) return;
+      m = scale(m, 1 / lm);
+      var q = out.filter(function (p) { return eq(p.n, m); })[0];
+      if (!q) { q = { n: m, edges: [], mirror: isMirror(S, m), both: S.faces.some(function (f) { return eq(f.n, m); }) }; out.push(q); }
+      q.edges.push(e);
+    });
+    var near = function (u, v) { return Math.abs(u[0] - v[0]) + Math.abs(u[1] - v[1]) + Math.abs(u[2] - v[2]) < 1e-7; };
+    out.forEach(function (q) {
+      var full = q.edges.every(function (e) {
+        var a = scale(S.verts[e[0]], -1), b = scale(S.verts[e[1]], -1);
+        return q.edges.some(function (f) { var c = S.verts[f[0]], d = S.verts[f[1]]; return (near(a, c) && near(b, d)) || (near(a, d) && near(b, c)); });
+      });
+      q.kind = q.edges.length === 1 ? 'fin' : full ? 'full' : 'shared';
+    });
+    return out;
+  }
+
   // the Resonus (DICTO): through the centre, one plane parallel to each face (parallel faces share it); each plate is the cross-section
   // of the solid in that plane, ordered round its normal
   function resonusPlates(S) {
@@ -309,7 +332,7 @@
     return null;
   }
   var api = { singleOrbit: singleOrbit, ORDER: ORDER, buildSolid: buildSolid, fairSolve: fairSolve, faceSolidAngle: faceSolidAngle, triSolidAngle: triSolidAngle,
-    vacuusPlates: vacuusPlates, resonusPlates: resonusPlates, isMirror: isMirror, planesFor: planesFor, prepare: prepare, lookup: lookup,
+    vacuusPlates: vacuusPlates, vacuusPlanes: vacuusPlanes, resonusPlates: resonusPlates, isMirror: isMirror, planesFor: planesFor, prepare: prepare, lookup: lookup,
     inverse: inverse, dot: dot, cross: cross, dieNumber: dieNumber, dieName: dieName, poem: poem, syllables: syllables, blockSize: blockSize, FROZEN: FROZEN };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.AequiGeom = api;
 })(this);

@@ -259,9 +259,11 @@ function edgeLines(S, segs) {
 }
 function vacuusObject(S, plates, mirror) {
   var grp = new THREE.Group(), pos = [], col = [], cs = new THREE.Color(SLATE), cm = new THREE.Color(SAND), O = [0, 0, 0];
-  plates.forEach(function (p) {
+  plates.forEach(function (p) {   // one plate = one plane; its edge triangles share its colour. A plane that is also a Resonus plate is
+    if (p.both && st.res) return;  // drawn once, by the Resonus (striped there), when both are on show
+    if (p.both) { grp.add(stripedMesh(S, p.edges.map(function (e) { return [O, S.verts[e[0]], S.verts[e[1]]]; }), p.n, p.mirror ? SAND : SLATE, '#8f969e', 1)); return; }
     var c = p.mirror ? cm : cs;
-    [O, S.verts[p.e[0]], S.verts[p.e[1]]].forEach(function (v) { pos.push.apply(pos, v); col.push(c.r, c.g, c.b); });
+    p.edges.forEach(function (e) { [O, S.verts[e[0]], S.verts[e[1]]].forEach(function (v) { pos.push.apply(pos, v); col.push(c.r, c.g, c.b); }); });
   });
   var geo = new THREE.BufferGeometry();
   geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
@@ -464,10 +466,11 @@ function rollDie() {
     else { rolling = false; $('rollOut').innerHTML = 'Rolled <b>' + num + '</b> · face ' + (i + 1) + ' of ' + N + ', each 1 in ' + N; $('rollOut').hidden = false; }
   })(t0);
 }
+var SHOWN = null;   // the solid on show (for the notes)
 function show(S, colours, mirror) {
-  RES = null;
+  RES = null; SHOWN = S;
   if (st.vac || st.res) {
-    var plates = st.vac ? G.vacuusPlates(S) : null, grp = new THREE.Group();
+    var plates = st.vac ? G.vacuusPlanes(S) : null, grp = new THREE.Group();
     if (st.vac) grp.add(vacuusObject(S, plates, mirror));
     if (st.res) { RES = G.resonusPlates(S); grp.add(resonusObject(S, RES, mirror)); }
     setContent(grp);
@@ -480,6 +483,10 @@ function resonusObject(S, plates, mirror) {   // DICTO's Resonus: the central cr
   plates.forEach(function (p, i) {
     // each plate its own tint (DICTO 25 Nov: see the whole plates crossing, not a mosaic); the note still counts mirror / sloping
     var c = new THREE.Color().setHSL((i * 0.618034) % 1, 0.45, 0.62), P = p.pts;
+    if (isVacPlane(S, p.n)) {   // also a Vacuus plate: striped in its Resonus tint and its Vacuus colour, in every view (DICTO 28 Nov)
+      var tris = []; for (var j = 0; j < P.length; j++) { tris.push([O, P[j], P[(j + 1) % P.length]]); segs.push([P[j], P[(j + 1) % P.length]]); }
+      grp.add(stripedMesh(S, tris, p.n, '#' + c.getHexString(), p.mirror ? SAND : SLATE, 0.92)); return;
+    }
     for (var i = 0; i < P.length; i++) {
       [O, P[i], P[(i + 1) % P.length]].forEach(function (v) { pos.push.apply(pos, v); col.push(c.r, c.g, c.b); });
       segs.push([P[i], P[(i + 1) % P.length]]);
@@ -495,19 +502,39 @@ function resonusObject(S, plates, mirror) {   // DICTO's Resonus: the central cr
   var s = 1 / radius(S); grp.scale.set(mirror ? -s : s, s, s);
   return grp;
 }
+var BOTHC = '#3f3a33';   // swatch for a plane in both the Vacuus and the Resonus (drawn once, striped in both colours: DICTO 28 Nov)
+function stripeTex(c1, c2) {   // diagonal stripes, c1 and c2 in equal bands
+  var cv = document.createElement('canvas'); cv.width = cv.height = 64; var x = cv.getContext('2d');
+  x.fillStyle = c1; x.fillRect(0, 0, 64, 64); x.strokeStyle = c2; x.lineWidth = 11;
+  for (var k = -64; k <= 128; k += 32) { x.beginPath(); x.moveTo(k, 0); x.lineTo(k + 64, 64); x.stroke(); }
+  var t = new THREE.CanvasTexture(cv); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
+}
+function stripedMesh(S, tris, n, c1, c2, opacity) {   // tris: list of [a, b, c]; uv = coordinates in the plane, about 8 bands across
+  var e1 = Math.abs(n[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0], d = e1[0] * n[0] + e1[1] * n[1] + e1[2] * n[2];
+  e1 = [e1[0] - d * n[0], e1[1] - d * n[1], e1[2] - d * n[2]]; var l = Math.hypot(e1[0], e1[1], e1[2]); e1 = e1.map(function (v) { return v / l; });
+  var e2 = [n[1] * e1[2] - n[2] * e1[1], n[2] * e1[0] - n[0] * e1[2], n[0] * e1[1] - n[1] * e1[0]], k = 4 / radius(S), pos = [], uv = [];
+  tris.forEach(function (t) { t.forEach(function (v) { pos.push.apply(pos, v); uv.push(k * (v[0] * e1[0] + v[1] * e1[1] + v[2] * e1[2]), k * (v[0] * e2[0] + v[1] * e2[1] + v[2] * e2[2])); }); });
+  var g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.computeVertexNormals();
+  return new THREE.Mesh(g, new THREE.MeshPhongMaterial({ map: stripeTex(c1, c2), flatShading: true, shininess: 10, side: THREE.DoubleSide, transparent: opacity < 1, opacity: opacity, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
+}
+function isVacPlane(S, n) { return S.edges.some(function (e) { var a = S.verts[e[0]], b = S.verts[e[1]]; return Math.abs(n[0] * a[0] + n[1] * a[1] + n[2] * a[2]) < 1e-9 && Math.abs(n[0] * b[0] + n[1] * b[1] + n[2] * b[2]) < 1e-9; }); }
 function vacNote(plates) {
   return vacNote1(plates) + resNote();
 }
 function resNote() {
   if (!RES) return '';
   var m = RES.filter(function (p) { return p.mirror; }).length;
+  var S = SHOWN, nb = S ? RES.filter(function (p) { return isVacPlane(S, p.n); }).length : 0;
   return '<p class="note">Resonus: ' + RES.length + ' plates, the cross-section through the centre parallel to each face (parallel faces share one). ' +
-    'Each plate in its own colour. On a mirror: ' + m + ' · sloping: ' + (RES.length - m) + '.</p>';
+    'Each plate in its own colour. On a mirror: ' + m + ' · sloping: ' + (RES.length - m) + '.' +
+    (nb ? ' <span class="sw" style="display:inline-block;vertical-align:-2px;background:repeating-linear-gradient(45deg,#9db 0 3px,' + SLATE + ' 3px 6px)"></span> striped: ' + nb + ' of them ' + (nb === 1 ? 'is' : 'are') + ' also Vacuus plates (planes holding edges)' + (st.vac ? ', drawn once' : '') + '.' : '') + '</p>';
 }
 function vacNote1(plates) {
   if (!plates) return '';
-  var m = plates.filter(function (p) { return p.mirror; }).length;
-  return '<p class="note">Vacuus: ' + plates.length + ' plates, one triangle from the centre to each edge. ' +
+  var m = plates.filter(function (p) { return p.mirror; }).length, ne = plates.reduce(function (t, p) { return t + p.edges.length; }, 0);
+  var k = function (x) { return plates.filter(function (p) { return p.kind === x; }).length; }, nb = plates.filter(function (p) { return p.both; }).length;
+  return '<p class="note">Vacuus: ' + plates.length + ' plates, the planes through the centre and an edge, carrying the ' + ne + ' edge triangles: ' +
+    k('full') + ' full sheets, ' + k('shared') + ' shared sheets, ' + k('fin') + ' single fins' + (nb ? '; ' + nb + ' also Resonus plates' : '') + '. ' +
     '<span class="sw" style="display:inline-block;vertical-align:-2px;background:' + SAND + '"></span> on a mirror: ' + m +
     ' · <span class="sw" style="display:inline-block;vertical-align:-2px;background:' + SLATE + '"></span> sloping: ' + (plates.length - m) + '.</p>';
 }
