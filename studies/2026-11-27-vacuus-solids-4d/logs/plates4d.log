@@ -1,0 +1,11 @@
+  tetrahedron: 4 corners, 4 faces, sizes [3]
+tetrahedron {'pit': 4, 'wedge': 6, 'corner': 4} core tetrahedron ; pieces + core tile P exactly (volumes): True
+  cube: 8 corners, 6 faces, sizes [4]
+cube {'pit': 6, 'wedge': 12, 'corner': 8} core octahedron ; pieces + core tile P exactly (volumes): True
+  octahedron: 6 corners, 8 faces, sizes [3]
+octahedron {'pit': 8, 'wedge': 12, 'corner': 6} core cube ; pieces + core tile P exactly (volumes): True
+  dodecahedron: 20 corners, 12 faces, sizes [5]
+dodecahedron {'pit': 12, 'wedge': 30, 'corner': 20} core icosahedron ; pieces + core tile P exactly (volumes): True
+  icosahedron: 12 corners, 20 faces, sizes [3]
+icosahedron {'pit': 20, 'wedge': 30, 'corner': 12} core dodecahedron ; pieces + core tile P exactly (volumes): True
+FINAL ok

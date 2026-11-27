@@ -1,0 +1,57 @@
+[
+ {
+  "P": "tetrahedron",
+  "core": "tetrahedron",
+  "core_scale": 0.19999999999999998,
+  "pieces": {
+   "pit": 4,
+   "wedge": 6,
+   "corner": 4
+  },
+  "volumes_add_up": true
+ },
+ {
+  "P": "cube",
+  "core": "octahedron",
+  "core_scale": 0.6,
+  "pieces": {
+   "pit": 6,
+   "wedge": 12,
+   "corner": 8
+  },
+  "volumes_add_up": true
+ },
+ {
+  "P": "octahedron",
+  "core": "cube",
+  "core_scale": 0.19999999999999998,
+  "pieces": {
+   "pit": 8,
+   "wedge": 12,
+   "corner": 6
+  },
+  "volumes_add_up": true
+ },
+ {
+  "P": "dodecahedron",
+  "core": "icosahedron",
+  "core_scale": 1.1366563145999493,
+  "pieces": {
+   "pit": 12,
+   "wedge": 30,
+   "corner": 20
+  },
+  "volumes_add_up": true
+ },
+ {
+  "P": "icosahedron",
+  "core": "dodecahedron",
+  "core_scale": 1.3708203932499365,
+  "pieces": {
+   "pit": 20,
+   "wedge": 30,
+   "corner": 12
+  },
+  "volumes_add_up": true
+ }
+]
