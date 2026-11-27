@@ -10,3 +10,13 @@ Status: PILOT, numerical, not a result.
 Next method (decided): widen the neighbour set, report empty cells as such, rerun; then follow one path through the type changes and test
 whether a face changes its number of sides (a swap -> Scutoid-Frusta straws). Pass: an exact convex, space-filling example with a swap,
 or a proof that two-kind splits cannot swap.
+
+NAME (DICTO, 28 Nov 2026): **Scutoid-Frusta bond** (replaces the placeholder "Scutoid bond").
+PILOT 3 (28 Nov, scripts/power_octet.py, FINAL ok): fault found and fixed: with unequal weights a centre can lie OUTSIDE its own
+power cell, and the cell was built from a point next to the centre; now an interior point is found by LP (largest inscribed ball),
+and a vanished cell is reported as empty. Volume control up + dn + oct = 2 per two unit cubes holds at all 625 grid points (0
+failures). 16 combinatorial types (data_pilot3_types.txt; numerical). Notable: in two regimes one tetrahedron class VANISHES and space
+is filled by only two kinds of convex cell: dn cells with 22 corners (4 triangles, 12 pentagons) + octahedron-centre cells that are
+tetrahedra (e.g. w_up = -0.6, w_dn = 0.4), and the mirror case: two-kind convex fillings, i.e. candidate bonds off #51's line.
+Next: follow a path in (w_up, w_dn) across type changes and test whether a face changes its number of sides (a swap), which is the
+Scutoid-Frusta bond's defining event; then exact coordinates for any pass.

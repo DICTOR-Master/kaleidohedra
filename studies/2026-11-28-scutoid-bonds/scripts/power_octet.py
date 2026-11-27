@@ -6,7 +6,8 @@ them may turn #51's single all-at-once change (the octet, t = 1/3) into separate
 sizes, along paths in (w_up, w_dn). Output: the combinatorial type of each cell at each point, and where it changes."""
 import itertools, numpy as np, sys
 from scipy.spatial import HalfspaceIntersection, ConvexHull
-R = range(-3, 4)
+from scipy.optimize import linprog
+R = range(-5, 6)
 cent = []
 for k in itertools.product(R, R, R):
     cent.append((np.array(k) + 0.5, 'up' if sum(k) % 2 == 0 else 'dn'))
@@ -15,11 +16,16 @@ P = np.array([c for c, _ in cent]); K = [k for _, k in cent]
 def cell(c0, W):
     hs = []
     for p, k in zip(P, K):
-        if np.allclose(p, c0) or np.linalg.norm(p - c0) > 2.6: continue
+        if np.allclose(p, c0) or np.linalg.norm(p - c0) > 4.1: continue
         # power bisector: |x-c0|^2 - w0 <= |x-p|^2 - wp  <=>  2(p-c0).x <= |p|^2-|c0|^2 - (wp - w0)
         a = 2 * (p - c0); b = p @ p - c0 @ c0 - (W[k] - W[kind[tuple(c0)]])
         hs.append(np.r_[a, -b])
-    hs = np.array(hs); h = HalfspaceIntersection(hs, c0 + 1e-3 * np.array([1, 2, 3]) / 10)
+    hs = np.array(hs)
+    # interior point by LP (Chebyshev centre): with unequal weights a centre can lie outside its own power cell
+    A, b = hs[:, :3], -hs[:, 3]; nrm = np.linalg.norm(A, axis=1)
+    res = linprog(np.r_[0, 0, 0, -1.0], A_ub=np.c_[A, nrm], b_ub=b, bounds=[(None, None)] * 3 + [(0, None)], method='highs')
+    if res.status != 0 or res.x[3] < 1e-9: raise ValueError('empty cell')
+    h = HalfspaceIntersection(hs, res.x[:3])
     V = h.intersections; ch = ConvexHull(V); fs = {}
     for eq, sm in zip(ch.equations, ch.simplices): fs.setdefault(tuple(np.round(eq, 6)), set()).update(sm)
     # merge numerically duplicate corners
@@ -31,7 +37,7 @@ def types(wu, wd):
     W = {'up': wu, 'dn': wd, 'oct': 0.0}; out = {}
     for k, c in reps.items():
         try: n, f, v = cell(c, W); out[k] = (n, f, round(v, 6))
-        except Exception as e: out[k] = None
+        except Exception as e: out[k] = ('empty', (), 0.0)   # the power cell can vanish: reported, volume 0
     return out
 # control: per two unit cubes there are one up, one down tetrahedron centre and one octahedron centre, so up + dn + oct = 2.
 # (earlier draft line: (weights giving t = 1/3: tet cell = regular tetrahedron of the octet, volume 1/3, oct cell volume 4/3... in this unit
@@ -46,7 +52,7 @@ for wu in np.linspace(-0.6, 0.6, 25):
     for wd in np.linspace(-0.6, 0.6, 25):
         T = types(wu, wd)
         if not all(T.values()): continue
-        bad += abs(T['up'][2] + T['dn'][2] + T['oct'][2] - 2) > 1e-6
+        bad += abs(T['up'][2] + T['dn'][2] + T['oct'][2] - 2) > 1e-5
         key = tuple((k, T[k][0], T[k][1]) for k in ('up', 'dn', 'oct'))
         seen.setdefault(key, []).append((round(wu, 3), round(wd, 3)))
 print('combinatorial types found:', len(seen))
