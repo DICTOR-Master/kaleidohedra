@@ -435,3 +435,4 @@ form now; revisit after the second Fable attack.
 Item 4 progress: Counting.lean `ncard_polysCross` (product structure as a count), `ncard_partsCross_flip`, `theoremB_count`
 (polygons of the flipped stacking crossing at P = pairs of G-parts with far ends at c - P, half-turned far part closing one cycle),
 built, standard axioms. Remaining for item 4: sum over P (finite, in the box) and the -1/2 sum A_w A_f algebra.
+Item 12 DONE (28 Nov): title = option 1, DICTO: "1 with proviso of possible slight change later if prudent otherwise ok". Countdown 15.
