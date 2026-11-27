@@ -11,3 +11,5 @@ public import LoopEquality.Finiteness
 public import LoopEquality.Linkage
 public import LoopEquality.Product
 public import LoopEquality.EverySite
+public import LoopEquality.Degree
+public import LoopEquality.Parts
