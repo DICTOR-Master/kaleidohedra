@@ -335,3 +335,9 @@ changes at k only); `ncard_polysA1_flipRun` (any finite run of such flips keeps 
 run, the letter at j is sigma's flipped once per occurrence of j). Built, no sorry, standard axioms only.
 Next: 2f-3, locality (a polygon of length l through v stays within bilayers |j - v.1| <= l; stackings agreeing there have the same
 polygons), which together with 2f-2 gives Corollary A1 for every stacking.
+Milestone 2f-3 DONE (28 Nov): Locality.lean. `must_cross` (a polygon through v that reaches the far side of a cut with v on the root
+side crosses it, by minimality); `reach_bound`, `reach_bound_below` (every atom of a polygon through v with l edges lies within
+bilayers v.1 - l - 1 .. v.1 + l + 1; different cuts are crossed by different edges); `polysA1_local` (stackings agreeing on those
+bilayers have exactly the same polygons). Built, no sorry, standard axioms only.
+Next: 2f-4, the assembly: Corollary A1 for every pair of stackings with v a site of both (flip run on the window from 2f-2, locality,
+a relabel fixing v's letter when the next letter differs, and a lattice translation).
