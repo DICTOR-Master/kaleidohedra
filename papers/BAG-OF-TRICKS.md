@@ -42,3 +42,10 @@ symmetric best 144/174 (30 swaps, one floor), floating best 156/174 (18 swaps, o
 
 ## Palomar pipeline pin vs Lean version (27 Nov 2026)
 The workflow pins a PalomarSubmission commit (uses: ...@SHA and pipeline_commit). An old pin refuses a newer Lean (diagnostic palomar.toolchain_unrecognised, "Do not change the repository"): the fix is on their side, so move the pin to the current PalomarSubmission main before the first preflight of an entry on a new toolchain.
+
+## Sector build (27 Nov 2026, DICTO)
+DICTO: "getting the build right for a representative sector of the overall and then replicating it into the whole shape ... to save
+computational time and energy". Build one fundamental sector of a symmetric construction exactly; copy it by the exact symmetry group
+(found as the orthogonal maps permuting the corners); control ONCE that the copied whole equals a direct full build (or that the copies
+tile exactly); afterwards measure on the sector only and multiply by orbit sizes. First use: studies/2026-11-27-protocol-vacuus-solids
+(scripts/protocol.py sym_group, sector vs direct walls for the eleven special Vacuus-Solids).

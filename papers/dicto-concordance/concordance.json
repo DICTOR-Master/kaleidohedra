@@ -11900,6 +11900,11 @@
     "what": "Agent token thrift with quality kept (DICTO's sparse/latent-attention idea: 'only if it simultaneously maintains quality and reduces agent running token cost')",
     "how": "agents read ledger-digest.txt (one generated line per ledger attempt, ~7 KB, rebuilt each session by ~/dicto-alerts/ledger_digest.py from concordance.json, never hand-edited) instead of the 260 KB Concordance file, and open a full entry only by its index; briefs never send agents to the 563 KB working notes, only the relevant lines",
     "why": "quality: every line is generated from the source and the full entry is one step away; cost: agents stop loading files that are mostly irrelevant to their task"
+   },
+   {
+    "date": "2026-11-27",
+    "what": "Sector build (DICTO: 'getting the build right for a representative sector of the overall and then replicating it into the whole shape ... to save computational time and energy')",
+    "how": "Build one fundamental sector of a symmetric construction exactly (one pit, one cell, one straw orbit); copy it by the shape's exact symmetry group; control once: the copied whole equals a direct full build (or tiles exactly), then every measurement runs on the sector alone. State the group and the sector size. First use: studies/2026-11-27-protocol-vacuus-solids (eleven special Vacuus-Solids, groups 120/48/24, copied walls = direct walls)."
    }
   ],
   "running_tests": {
