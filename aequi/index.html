@@ -497,6 +497,10 @@ function resonusObject(S, plates, mirror) {   // DICTO's Resonus: the central cr
         .map(function (e) { return [O, S.verts[e[0]], S.verts[e[1]]]; });
       var sm = stripedMesh(S, vt, n, '#' + c.getHexString(), p.mirror ? SAND : SLATE, 1);
       sm.material.polygonOffsetFactor = -2; sm.material.polygonOffsetUnits = -2; grp.add(sm);   // in front of the plain plate it lies on
+      if (st.sh) {   // Shared only (DICTO 28 Nov): just the truly shared parts, the centre-to-edge triangles, outlined; no plain plate
+        vt.forEach(function (t) { segs.push([t[0], t[1]], [t[1], t[2]], [t[2], t[0]]); });
+        return;
+      }
     }
     for (var i = 0; i < P.length; i++) {
       [O, P[i], P[(i + 1) % P.length]].forEach(function (v) { pos.push.apply(pos, v); col.push(c.r, c.g, c.b); });
@@ -534,7 +538,7 @@ function vacNote(plates) {
 }
 function resNote() {
   if (!RES) return '';
-  if (st.sh) return '<p class="note">Shared only: ' + (RES.length ? RES.length + ' plane' + (RES.length === 1 ? ' is' : 's are') + ' in both the Vacuus and the Resonus: each plate in its Resonus colour, striped with its Vacuus colour on the triangles from the centre to its edges.' : 'no plane is in both the Vacuus and the Resonus of this die.') + '</p>';
+  if (st.sh) return '<p class="note">Shared only: ' + (RES.length ? RES.length + ' plane' + (RES.length === 1 ? ' is' : 's are') + ' in both the Vacuus and the Resonus. Shown: only their shared parts, the triangles from the centre to the edges in those planes, striped in the Resonus and the Vacuus colour.' : 'no plane is in both the Vacuus and the Resonus of this die.') + '</p>';
   var m = RES.filter(function (p) { return p.mirror; }).length;
   var S = SHOWN, nb = S ? RES.filter(function (p) { return isVacPlane(S, p.n); }).length : 0;
   return '<p class="note">Resonus: ' + RES.length + ' plates, the cross-section through the centre parallel to each face (parallel faces share one). ' +
