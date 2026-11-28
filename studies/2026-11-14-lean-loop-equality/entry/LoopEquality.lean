@@ -37,3 +37,7 @@ public import LoopEquality.Path
 public import LoopEquality.Enum
 public import LoopEquality.Matching
 public import LoopEquality.Regroup
+public import LoopEquality.PathPairs
+public import LoopEquality.Counts
+public import LoopEquality.Sixteen
+public import LoopEquality.Mt

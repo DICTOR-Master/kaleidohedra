@@ -525,3 +525,9 @@ enumeration with a completeness proof; T(S); stacking normalisation; decide.
 Full local preflight v12 (28 Nov): clean build, source rules, 0 sorry/native_decide, 27 compared theorems all with standard
 axioms, comparator ok on con-ron / nanoda / Lean kernels, metadata parses, git clean: FINAL ok. Entry README and
 formalization.yaml updated to 27 theorems and Theorem 5 (a) to l = 15 (l = 16 and the laws at 18, 20 listed as not formalised).
+l = 16 (28 Nov, cont.): Sixteen.lean (G16, G16_translate, bonds_of_Wc, G16_support, term16, sumWc_16_iff: the change at
+l = 16 is minus the sum of the (6,6) terms; T16, near_of_Wc, mem_T16, sum16_regroup). FourPoint.fc_four_pred. PathPairs.lean
+(arcList, ncard_arcPairs_cond: arc pairs with an atom condition = filtered products of enumerated path lists). Counts.lean
+(meetCountL, throughCountL; ncard_meetPairs, Wc_four via the mirror, Af_four_enum). Mt.lean (the three matchings; root and far
+pairings carrying linkages are matchings; G16_mt). Remaining: the shape list Z with completeness, stacking normalisation,
+the kernel check.

@@ -251,6 +251,112 @@ theorem fc_four (hdis : ∀ p ∈ ({a, b} : Finset (ℤ × ℤ)), ∀ q ∈ ({c,
     · exact compPart_restPart_atoms F x₀
     · exact compPart_union_restPart F x₀
 
+/-- The same correspondence, with any condition `Q` on the linkage (read on the union of the two arcs). -/
+theorem fc_four_pred (hdis : ∀ p ∈ ({a, b} : Finset (ℤ × ℤ)), ∀ q ∈ ({c, d} : Finset (ℤ × ℤ)), p ≠ q) (s : ℕ)
+    (Q : Finset (Sym2 Atom) → Prop) :
+    ({F | F ∈ FarSet τ k {a, b, c, d} (pr2 a b ∪ pr2 c d) s ∧ Q F} : Set (Finset (Sym2 Atom))).ncard =
+      ({x | x ∈ TwoArcs τ k a b c d s ∧ Q (x.1 ∪ x.2)} : Set (Finset (Sym2 Atom) × Finset (Sym2 Atom))).ncard := by
+  symm
+  apply Set.ncard_congr (fun x _ => x.1 ∪ x.2)
+  · rintro x ⟨hx, hQ⟩
+    refine ⟨?_, hQ⟩
+    obtain ⟨h1, hp1, h2, hp2, hs, hd⟩ := hx
+    have hD := disjoint_of_atomDisj hd
+    refine ⟨⟨?_, ?_, ?_⟩, ?_, ?_⟩
+    · rw [quad_eq, Finset.image_union]; exact linkage_union h1.1 h2.1 hd
+    · intro e he w hw
+      rcases Finset.mem_union.mp he with h | h
+      · exact h1.2.1 e h w hw
+      · exact h2.2.1 e h w hw
+    · intro e he
+      rcases Finset.mem_union.mp he with h | h
+      · exact h1.2.2 e h
+      · exact h2.2.2 e h
+    · rw [Finset.card_union_of_disjoint hD]; exact hs
+    · ext ⟨p, q⟩
+      simp only [pairF, Finset.mem_filter, Finset.mem_product, pr2, Finset.mem_union]
+      constructor
+      · rintro ⟨⟨hp, hq⟩, hc⟩
+        exact (union_conn_iff ⟨h1, hp1, h2, hp2, hs, hd⟩ hdis hp hq).mp hc
+      · intro h
+        have hp : p ∈ ({a, b, c, d} : Finset (ℤ × ℤ)) := by
+          rw [quad_eq]; rcases h with ⟨h, -⟩ | ⟨h, -⟩
+          · exact Finset.mem_union_left _ h
+          · exact Finset.mem_union_right _ h
+        have hq : q ∈ ({a, b, c, d} : Finset (ℤ × ℤ)) := by
+          rw [quad_eq]; rcases h with ⟨-, h⟩ | ⟨-, h⟩
+          · exact Finset.mem_union_left _ h
+          · exact Finset.mem_union_right _ h
+        exact ⟨⟨hp, hq⟩, (union_conn_iff ⟨h1, hp1, h2, hp2, hs, hd⟩ hdis hp hq).mpr h⟩
+  · rintro x y ⟨hx, -⟩ ⟨hy, -⟩ hxy
+    have hxl : IsLinkageOn x.1 {upA k a, upA k b} := by rw [← image_pair]; exact hx.1.1
+    have hyl : IsLinkageOn y.1 {upA k a, upA k b} := by rw [← image_pair]; exact hy.1.1
+    have hxc : Conn x.1 (upA k a) (upA k b) := conn_of_pairF (by rw [hx.2.1]; simp [pr2])
+    have hyc : Conn y.1 (upA k a) (upA k b) := conn_of_pairF (by rw [hy.2.1]; simp [pr2])
+    have c1 := compPart_union hxl hxc hx.2.2.2.2.2
+    have c2 := compPart_union hyl hyc hy.2.2.2.2.2
+    have r1 := restPart_union hxl hxc hx.2.2.2.2.2
+    have r2 := restPart_union hyl hyc hy.2.2.2.2.2
+    change x.1 ∪ x.2 = y.1 ∪ y.2 at hxy
+    rw [hxy] at c1 r1
+    exact Prod.ext (c1.symm.trans c2) (r1.symm.trans r2)
+  · rintro F ⟨hF, hQ⟩
+    obtain ⟨hFl, hs, hN⟩ := hF
+    set x₀ := upA k a
+    have hconn : ∀ p ∈ ({a, b, c, d} : Finset (ℤ × ℤ)), (Conn F x₀ (upA k p) ↔ p ∈ ({a, b} : Finset (ℤ × ℤ))) := by
+      intro p hp
+      have : (a, p) ∈ pairF k F {a, b, c, d} ↔ Conn F x₀ (upA k p) := by
+        simp only [pairF, Finset.mem_filter, Finset.mem_product]
+        exact ⟨fun h => h.2, fun h => ⟨⟨by simp, hp⟩, h⟩⟩
+      rw [← this, hN]
+      simp only [pr2, Finset.mem_union, Finset.mem_product]
+      have ha : a ∈ ({a, b} : Finset (ℤ × ℤ)) := by simp
+      constructor
+      · rintro (⟨-, h⟩ | ⟨h, -⟩)
+        · exact h
+        · exact absurd rfl (hdis a ha a h)
+      · intro h; exact Or.inl ⟨ha, h⟩
+    have f1 : (({a, b, c, d} : Finset (ℤ × ℤ)).image (upA k)).filter (Conn F x₀) = ({a, b} : Finset (ℤ × ℤ)).image (upA k) := by
+      ext w; simp only [Finset.mem_filter, Finset.mem_image]
+      constructor
+      · rintro ⟨⟨p, hp, rfl⟩, hc⟩; exact ⟨p, (hconn p hp).mp hc, rfl⟩
+      · rintro ⟨p, hp, rfl⟩
+        have hpP : p ∈ ({a, b, c, d} : Finset (ℤ × ℤ)) := by rw [quad_eq]; exact Finset.mem_union_left _ hp
+        exact ⟨⟨p, hpP, rfl⟩, (hconn p hpP).mpr hp⟩
+    have f2 : (({a, b, c, d} : Finset (ℤ × ℤ)).image (upA k)).filter (fun w => ¬ Conn F x₀ w) =
+        ({c, d} : Finset (ℤ × ℤ)).image (upA k) := by
+      ext w; simp only [Finset.mem_filter, Finset.mem_image]
+      constructor
+      · rintro ⟨⟨p, hp, rfl⟩, hc⟩
+        refine ⟨p, ?_, rfl⟩
+        rw [quad_eq] at hp
+        rcases Finset.mem_union.mp hp with h | h
+        · exact absurd ((hconn p (by rw [quad_eq]; exact Finset.mem_union_left _ h)).mpr h) hc
+        · exact h
+      · rintro ⟨p, hp, rfl⟩
+        have hpP : p ∈ ({a, b, c, d} : Finset (ℤ × ℤ)) := by rw [quad_eq]; exact Finset.mem_union_right _ hp
+        refine ⟨⟨p, hpP, rfl⟩, fun hc => ?_⟩
+        exact hdis p ((hconn p hpP).mp hc) p hp rfl
+    have hab : Conn F (upA k a) (upA k b) := (hconn b (by simp)).mpr (by simp)
+    have hcd : Conn F (upA k c) (upA k d) := by
+      have : (c, d) ∈ pairF k F {a, b, c, d} := by rw [hN]; simp [pr2]
+      exact conn_of_pairF this
+    have hnc : ¬ Conn F x₀ (upA k c) := fun h =>
+      hdis c ((hconn c (by simp)).mp h) c (by simp) rfl
+    refine ⟨(compPart F x₀, restPart F x₀), ⟨⟨⟨?_, ?_, ?_⟩, ?_, ⟨?_, ?_, ?_⟩, ?_, ?_, ?_⟩, by
+      show Q (compPart F x₀ ∪ restPart F x₀); rw [compPart_union_restPart]; exact hQ⟩, ?_⟩
+    · rw [← f1]; exact linkage_compPart hFl.1 x₀
+    · intro e he w hw; exact hFl.2.1 e (Finset.filter_subset _ _ he) w hw
+    · intro e he; exact hFl.2.2 e (Finset.filter_subset _ _ he)
+    · exact pairF_full (conn_compPart Relation.ReflTransGen.refl hab)
+    · rw [← f2]; exact linkage_restPart hFl.1 x₀
+    · intro e he w hw; exact hFl.2.1 e (Finset.filter_subset _ _ he) w hw
+    · intro e he; exact hFl.2.2 e (Finset.filter_subset _ _ he)
+    · exact pairF_full (conn_restPart hnc hcd)
+    · rw [← Finset.card_union_of_disjoint (disjoint_compPart_restPart F x₀), compPart_union_restPart, hs]
+    · exact compPart_restPart_atoms F x₀
+    · exact compPart_union_restPart F x₀
+
 end Four
 
 end LoopEqualityProof
