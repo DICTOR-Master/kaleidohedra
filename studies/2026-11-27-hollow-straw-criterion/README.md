@@ -52,3 +52,13 @@ lemma this says every intermediate solid stays inside the die once the core is s
 ## C140 (Goldberg GP(2,1), insphere form) x 28 dice of 72 faces: nested 28/28 at core sizes 0.5 and 0.7, 11/28 at 0.9;
 fewest changes 21/28 at 0.5 (failures mostly dice whose corners are not all three-way).
 **Overall (C60, C80, C140; 70 pairs): at core size 0.5 every pair is nested (70/70).** Numerical; the conjecture above stands.
+
+## Step 3 (28 Nov): EXACT certificates for the next Scutoid-Frusta bridging solids (DICTO: "deploy yes and parallel testing")
+scripts/hs_exact.py generalises the C116 -> Minana #377 certificate (2026-11-24-aequi-vacuus-scutoids/scripts/c116_transform_exact.py)
+to any core and die, with the floating-resin pairing of hs_general.py (same seed, NST=150 as the sample runs). (A) start and end
+patterns exact and closed, (B) every event isolated exactly, (C) nested, (D) the events are exactly the needed neighbour changes,
+one swap each. Candidates (from the sample runs: nested at core size 0.9, exactly the needed changes, fewest changes > 0):
+C60 -> Kuo #90 (6 changes), C80 -> Nioku #209 (12), C140 = GP(2,1) -> Kuomu #906 (12); all at core size 0.7.
+Negative control: C60 -> die 18 at core size 0.8 (numerically not nested) must fail (C).
+Note: the first runs' (A) lines print "pattern = C116 / Minana #377 under the pairing" (a label left from the C116 script, fixed
+afterwards); in these logs they mean the core and the die.
