@@ -41,3 +41,4 @@ public import LoopEquality.PathPairs
 public import LoopEquality.Counts
 public import LoopEquality.Sixteen
 public import LoopEquality.Mt
+public import LoopEquality.ArcCounts

@@ -2,7 +2,7 @@ module
 
 public import Mathlib
 public import LoopEquality.Sixteen
-public import LoopEquality.Counts
+public import LoopEquality.ArcCounts
 
 @[expose] public section
 
