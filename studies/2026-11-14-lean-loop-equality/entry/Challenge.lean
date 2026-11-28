@@ -526,4 +526,68 @@ theorem corollaryA_everySite_profile {σ : ℤ → ZMod 3} (hσ : IsStacking σ)
     (polysWithProfile σ v l π).ncard = (polysWithProfile diamond (0, (0, 0), 0) l (profileFrom v π)).ncard := by
   sorry
 
+/-! ### Theorem B in #102's form -/
+
+open Classical in
+/-- The pairs of crossing points joined by a linkage below the cut. -/
+noncomputable def pairBelow (k : ℤ) (R : Finset (Sym2 Atom)) (P : Finset (ℤ × ℤ)) : Finset ((ℤ × ℤ) × (ℤ × ℤ)) :=
+  (P ×ˢ P).filter (fun pq => Joined R (lower k pq.1) (lower k pq.2))
+
+open Classical in
+/-- The pairs of crossing points joined by a linkage above the cut. -/
+noncomputable def pairAbove (k : ℤ) (F : Finset (Sym2 Atom)) (P : Finset (ℤ × ℤ)) : Finset ((ℤ × ℤ) × (ℤ × ℤ)) :=
+  (P ×ˢ P).filter (fun pq => Joined F (upper k pq.1) (upper k pq.2))
+
+/-- No nonempty proper subset of `P` is closed under both relations. -/
+def OneCycleRel (P : Finset (ℤ × ℤ)) (M M' : Finset ((ℤ × ℤ) × (ℤ × ℤ))) : Prop :=
+  ∀ Q ⊆ P, Q.Nonempty → (∀ p ∈ Q, ∀ q ∈ P, (p, q) ∈ M → q ∈ Q) → (∀ p ∈ Q, ∀ q ∈ P, (p, q) ∈ M' → q ∈ Q) → Q = P
+
+/-- The number of linkages below the cut through `v`, ending at `P`, with `r` edges and pairing `M`. -/
+noncomputable def rootCount (σ : ℤ → ZMod 3) (v : Atom) (k : ℤ) (P : Finset (ℤ × ℤ))
+    (M : Finset ((ℤ × ℤ) × (ℤ × ℤ))) (r : ℕ) : ℤ :=
+  ({R | rootLinkage σ k P R ∧ 0 < edgeDeg R v ∧ R.card = r ∧ pairBelow k R P = M} : Set (Finset (Sym2 Atom))).ncard
+
+/-- The number of linkages above the cut, ending at `P`, with `s` edges and pairing `N`. -/
+noncomputable def farCount (σ : ℤ → ZMod 3) (k : ℤ) (P : Finset (ℤ × ℤ)) (N : Finset ((ℤ × ℤ) × (ℤ × ℤ)))
+    (s : ℕ) : ℤ :=
+  ({F | farLinkage σ k P F ∧ F.card = s ∧ pairAbove k F P = N} : Set (Finset (Sym2 Atom))).ncard
+
+/-- The half-turn `p ↦ c - p` of a set of points and of a set of pairs. -/
+def halfTurnSet (c : ℤ × ℤ) (P : Finset (ℤ × ℤ)) : Finset (ℤ × ℤ) := P.image (fun p => c - p)
+def halfTurnPairs (c : ℤ × ℤ) (M : Finset ((ℤ × ℤ) × (ℤ × ℤ))) : Finset ((ℤ × ℤ) × (ℤ × ℤ)) :=
+  M.image (fun pq => (c - pq.1, c - pq.2))
+
+/-- How much the count below the cut changes under the half-turn. -/
+noncomputable def asymBelow (σ : ℤ → ZMod 3) (v : Atom) (k : ℤ) (c : ℤ × ℤ) (P : Finset (ℤ × ℤ))
+    (M : Finset ((ℤ × ℤ) × (ℤ × ℤ))) (r : ℕ) : ℤ :=
+  rootCount σ v k P M r - rootCount σ v k (halfTurnSet c P) (halfTurnPairs c M) r
+
+/-- How much the count above the cut changes under the half-turn. -/
+noncomputable def asymAbove (σ : ℤ → ZMod 3) (k : ℤ) (c : ℤ × ℤ) (P : Finset (ℤ × ℤ))
+    (N : Finset ((ℤ × ℤ) × (ℤ × ℤ))) (s : ℕ) : ℤ :=
+  farCount σ k P N s - farCount σ k (halfTurnSet c P) (halfTurnPairs c N) s
+
+open Classical in
+/-- The crossing sets: nonempty sets of points of the window or its half-turn whose vertical bonds are bonds. -/
+noncomputable def crossingFamily (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) (k : ℤ) (c : ℤ × ℤ) : Finset (Finset (ℤ × ℤ)) :=
+  (window v l ∪ halfTurnSet c (window v l)).powerset.filter
+    (fun P => P.Nonempty ∧ ∀ p ∈ P, Bond σ (lower k p) (upper k p))
+
+open Classical in
+/-- Pairings `M, M'` of `P` closing into one cycle and sizes `r, s` with `r + |P| + s = l`. -/
+noncomputable def pairingIndex (l : ℕ) (P : Finset (ℤ × ℤ)) :
+    Finset ((Finset ((ℤ × ℤ) × (ℤ × ℤ)) × Finset ((ℤ × ℤ) × (ℤ × ℤ))) × (ℕ × ℕ)) :=
+  (((P ×ˢ P).powerset ×ˢ (P ×ˢ P).powerset) ×ˢ (Finset.range (l + 1) ×ˢ Finset.range (l + 1))).filter
+    (fun x => x.2.1 + P.card + x.2.2 = l ∧ OneCycleRel P x.1.1 x.1.2)
+
+/-- **Theorem B of #102, in its own form.** Flip bilayer `k`, with `c ≡ 2·σ k` in both coordinates mod 3. For
+every atom `v` below the cut, twice the change in the number of polygons through `v` with `l` edges is minus the sum,
+over the crossing sets `P` and the pairings and sizes of `pairingIndex l P`, of the product of the two asymmetries. -/
+theorem theoremB_symmetric {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {k : ℤ} {c : ℤ × ℤ}
+    (hc : (c.1 : ZMod 3) = 2 * σ k ∧ (c.2 : ZMod 3) = 2 * σ k) (hv : ¬ IsAbove k v) :
+    2 * (((polysThrough (flip σ k) v l).ncard : ℤ) - (polysThrough σ v l).ncard) =
+      - ∑ P ∈ crossingFamily σ v l k c, ∑ x ∈ pairingIndex l P,
+          asymBelow σ v k c P x.1.1 x.2.1 * asymAbove σ k c P x.1.2 x.2.2 := by
+  sorry
+
 end DictoLoopEquality
