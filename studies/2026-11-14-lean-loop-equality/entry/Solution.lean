@@ -760,4 +760,11 @@ theorem theorem5a_short {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (
   rw [polysThrough_eq_proof, polysThrough_eq_proof]
   exact LoopEqualityProof.theorem5a_short hσ hv hl
 
+/-- **Theorem 5 (a) of #102 for l ≤ 13.** For every stacking and every site `v` of it, the polygons through `v` with
+`l ≤ 13` edges are as many, length by length, as at diamond's site `(0, (0, 0), 0)`. -/
+theorem theorem5a_upto13 {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (hv : IsSite σ v) {l : ℕ} (hl : l ≤ 13) :
+    (polysThrough σ v l).ncard = (polysThrough diamond (0, (0, 0), 0) l).ncard := by
+  rw [polysThrough_eq_proof, polysThrough_eq_proof]
+  exact LoopEqualityProof.theorem5a_upto13 hσ hv hl
+
 end DictoLoopEquality

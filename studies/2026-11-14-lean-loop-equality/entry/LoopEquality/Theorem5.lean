@@ -13,6 +13,8 @@ public import LoopEquality.Assembly
 public import LoopEquality.EverySite
 public import LoopEquality.TheoremB
 public import LoopEquality.Twelve
+public import LoopEquality.Short
+public import LoopEquality.Parity
 
 @[expose] public section
 
@@ -191,5 +193,13 @@ theorem theorem5a_12 {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (hv 
   have hvd : IsSite diamond (0, (0, 0), 0) := by unfold IsSite diamond; simp
   have h4 := corollaryFL hF hFm hσ3s diamond_isStacking hv3 hvd
   rw [h1, h2, h3, h4]
+
+/-- **Theorem 5 (a) of #102 for l ≤ 13.** -/
+theorem theorem5a_upto13 {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (hv : IsSite σ v) {l : ℕ} (hl : l ≤ 13) :
+    (Polys σ v l).ncard = (Polys diamond (0, (0, 0), 0) l).ncard := by
+  rcases (show l < 12 ∨ l = 12 ∨ l = 13 by omega) with h | rfl | rfl
+  · exact theorem5a_short hσ hv h
+  · exact theorem5a_12 hσ hv
+  · exact theorem5a_odd σ diamond v _ (by decide)
 
 end LoopEqualityProof
