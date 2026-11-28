@@ -68,3 +68,4 @@ the core's 1e-9 rounding splits the symmetric group into swaps about 1e-10 apart
 verified exactly, as float labels could not resolve them). Negative control C60 -> die 18 at 0.8: FAILS (C) as required.
 C80 -> Nioku #209 and C140 -> Kuomu #906: rerunning with the fix.
 C80 -> Nioku #209 at core size 0.7: EXACT (FINAL ok, hsx-nioku209b): (A)-(D) hold, 12 events, exactly the 12 needed swaps. C140 -> Kuomu #906 running.
+C140 (Goldberg GP(2,1)) -> Kuomu #906 at core size 0.7: EXACT (FINAL ok, hsx-kuomu906b): (A)-(D), 12 events, exactly the 12 needed swaps. All three candidates exact. Next (DICTO decision 2): full search per face count to confirm each is the best die; then a page each for the Scutoid-Frusta bridging solids dropdown.
