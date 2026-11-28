@@ -50,12 +50,12 @@ theorem degS_map {φ : Atom → Atom} (hφ : Function.Injective φ) (E : Finset 
     show φ x ∈ s(φ a, φ b) ↔ x ∈ s(a, b)
     rw [Sym2.mem_iff, Sym2.mem_iff, hφ.eq_iff, hφ.eq_iff]
 
-theorem ncard_polysA1_iso {σ σ' : ℤ → ZMod 3} (φ ψ : Atom → Atom) (hψφ : ∀ a, ψ (φ a) = a)
+theorem ncard_polysQ_iso {Q Q' : (ℤ → ℕ) → Prop} {σ σ' : ℤ → ZMod 3} (φ ψ : Atom → Atom) (hψφ : ∀ a, ψ (φ a) = a)
     (hφψ : ∀ a, φ (ψ a) = a) (hb : ∀ a b, Bond σ a b → Bond σ' (φ a) (φ b))
     (hb' : ∀ a b, Bond σ' a b → Bond σ (ψ a) (ψ b))
-    (hcr : ∀ E : Finset (Sym2 Atom), (∀ j, crossN E j ≤ 2) → ∀ j, crossN (E.image (Sym2.map φ)) j ≤ 2)
-    (hcr' : ∀ E : Finset (Sym2 Atom), (∀ j, crossN E j ≤ 2) → ∀ j, crossN (E.image (Sym2.map ψ)) j ≤ 2)
-    (v : Atom) (l : ℕ) : (PolysA1 σ v l).ncard = (PolysA1 σ' (φ v) l).ncard := by
+    (hcr : ∀ E : Finset (Sym2 Atom), Q (crossN E) → Q' (crossN (E.image (Sym2.map φ))))
+    (hcr' : ∀ E : Finset (Sym2 Atom), Q' (crossN E) → Q (crossN (E.image (Sym2.map ψ))))
+    (v : Atom) (l : ℕ) : (PolysQ Q σ v l).ncard = (PolysQ Q' σ' (φ v) l).ncard := by
   have hφi : Function.Injective φ := fun a b h => by rw [← hψφ a, h, hψφ]
   have hψi : Function.Injective ψ := fun a b h => by rw [← hφψ a, h, hφψ]
   have mapmap : ∀ E : Finset (Sym2 Atom), (E.image (Sym2.map φ)).image (Sym2.map ψ) = E := by
@@ -72,13 +72,13 @@ theorem ncard_polysA1_iso {σ σ' : ℤ → ZMod 3} (φ ψ : Atom → Atom) (hψ
       ∀ E : Finset (Sym2 Atom), Closed E → Closed (E.image (Sym2.map χ)) := by
     intro χ ω hχ hχω E hE x
     rw [← hχω x, degS_map hχ]; exact hE _
-  have maps : ∀ (τ τ' : ℤ → ZMod 3) (χ ω : Atom → Atom), Function.Injective χ → (∀ a, χ (ω a) = a) →
+  have maps : ∀ (P P' : (ℤ → ℕ) → Prop) (τ τ' : ℤ → ZMod 3) (χ ω : Atom → Atom), Function.Injective χ → (∀ a, χ (ω a) = a) →
       (∀ a, ω (χ a) = a) → (∀ a b, Bond τ a b → Bond τ' (χ a) (χ b)) →
-      (∀ E : Finset (Sym2 Atom), (∀ j, crossN E j ≤ 2) → ∀ j, crossN (E.image (Sym2.map χ)) j ≤ 2) →
+      (∀ E : Finset (Sym2 Atom), P (crossN E) → P' (crossN (E.image (Sym2.map χ)))) →
       (∀ E : Finset (Sym2 Atom), (E.image (Sym2.map χ)).image (Sym2.map ω) = E) →
       (∀ E : Finset (Sym2 Atom), Closed E → Closed (E.image (Sym2.map ω))) →
-      ∀ w, Set.MapsTo (fun E : Finset (Sym2 Atom) => E.image (Sym2.map χ)) (PolysA1 τ w l) (PolysA1 τ' (χ w) l) := by
-    intro τ τ' χ ω hχ hχω hωχ hbχ hcrχ hmm hclω w E ⟨⟨hne, hbond, hcl, hmin⟩, hv, hcard, hprof⟩
+      ∀ w, Set.MapsTo (fun E : Finset (Sym2 Atom) => E.image (Sym2.map χ)) (PolysQ P τ w l) (PolysQ P' τ' (χ w) l) := by
+    intro P P' τ τ' χ ω hχ hχω hωχ hbχ hcrχ hmm hclω w E ⟨⟨hne, hbond, hcl, hmin⟩, hv, hcard, hprof⟩
     refine ⟨⟨hne.image _, ?_, closed_map χ ω hχ hχω E hcl, ?_⟩, by rw [degS_map hχ]; exact hv,
       by rw [Finset.card_image_of_injective _ (Sym2.map.injective hχ), hcard], hcrχ E hprof⟩
     · intro f hf
@@ -103,14 +103,22 @@ theorem ncard_polysA1_iso {σ σ' : ℤ → ZMod 3} (φ ψ : Atom → Atom) (hψ
       have : Sym2.map χ ∘ Sym2.map ω = id := by
         funext e; exact map_left_inv hχω e
       rw [this, Finset.image_id]
-  have hf := maps σ σ' φ ψ hφi hφψ hψφ hb hcr mapmap (closed_map ψ φ hψi hψφ) v
-  have hg := maps σ' σ ψ φ hψi hψφ hφψ hb' hcr' mapmap' (closed_map φ ψ hφi hφψ) (φ v)
+  have hf := maps Q Q' σ σ' φ ψ hφi hφψ hψφ hb hcr mapmap (closed_map ψ φ hψi hψφ) v
+  have hg := maps Q' Q σ' σ ψ φ hψi hψφ hφψ hb' hcr' mapmap' (closed_map φ ψ hφi hφψ) (φ v)
   rw [hψφ] at hg
-  have hbij : Set.BijOn (fun E : Finset (Sym2 Atom) => E.image (Sym2.map φ)) (PolysA1 σ v l)
-      (PolysA1 σ' (φ v) l) :=
+  have hbij : Set.BijOn (fun E : Finset (Sym2 Atom) => E.image (Sym2.map φ)) (PolysQ Q σ v l)
+      (PolysQ Q' σ' (φ v) l) :=
     ⟨hf, fun E₁ _ E₂ _ h => Finset.image_injective (Sym2.map.injective hφi) h,
       fun E' hE' => ⟨E'.image (Sym2.map ψ), hg hE', mapmap' E'⟩⟩
   rw [← hbij.image_eq, hbij.injOn.ncard_image]
+
+theorem ncard_polysA1_iso {σ σ' : ℤ → ZMod 3} (φ ψ : Atom → Atom) (hψφ : ∀ a, ψ (φ a) = a)
+    (hφψ : ∀ a, φ (ψ a) = a) (hb : ∀ a b, Bond σ a b → Bond σ' (φ a) (φ b))
+    (hb' : ∀ a b, Bond σ' a b → Bond σ (ψ a) (ψ b))
+    (hcr : ∀ E : Finset (Sym2 Atom), (∀ j, crossN E j ≤ 2) → ∀ j, crossN (E.image (Sym2.map φ)) j ≤ 2)
+    (hcr' : ∀ E : Finset (Sym2 Atom), (∀ j, crossN E j ≤ 2) → ∀ j, crossN (E.image (Sym2.map ψ)) j ≤ 2)
+    (v : Atom) (l : ℕ) : (PolysA1 σ v l).ncard = (PolysA1 σ' (φ v) l).ncard :=
+  ncard_polysQ_iso (Q := AtMostTwo) (Q' := AtMostTwo) φ ψ hψφ hφψ hb hb' hcr hcr' v l
 
 /-! ## Bilayer shift, planar translation, mirror -/
 
@@ -267,6 +275,106 @@ theorem corollaryA_everySite {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : At
   have hvd : IsSite diamond (0, (0, 0), 0) := by unfold IsSite diamond; simp
   -- 4. compare with diamond
   have h4 := corollaryA1 hσ3s diamond_isStacking hv3 hvd l
+  rw [h1, h2, h3, h4]
+
+/-! ## Every site, profile by profile -/
+
+/-- The profile `π` read from `v`'s bilayer: upward from a lower atom, downward from an upper atom. -/
+def profAt (v : Atom) (π : ℤ → ℕ) : ℤ → ℕ := fun i => if v.2.2 = 0 then π (v.1 + i) else π (v.1 - i)
+
+theorem ncard_prof_shift (σ : ℤ → ZMod 3) (m : ℤ) (v : Atom) (l : ℕ) (π : ℤ → ℕ) :
+    (PolysQ (fun f => f = π) σ v l).ncard =
+      (PolysQ (fun f => f = fun i => π (i - m)) (fun j => σ (j - m)) (shiftA m v) l).ncard := by
+  apply ncard_polysQ_iso (shiftA m) (shiftA (-m)) (shiftA_shiftA m)
+    (fun a => by have := shiftA_shiftA (-m) a; rwa [neg_neg] at this)
+    (fun a b h => bond_shiftA m h)
+  · intro a b h
+    have := bond_shiftA (-m) h
+    simpa using this
+  · intro E hE
+    funext i
+    have := crossN_shift m E (i - m)
+    rw [sub_add_cancel] at this
+    rw [this, hE]
+  · intro E hE
+    funext i
+    have := crossN_shift (-m) E (i + m)
+    rw [add_neg_cancel_right] at this
+    rw [this, hE]; simp
+
+theorem ncard_prof_pos (σ : ℤ → ZMod 3) {d : ℤ × ℤ} {s : ZMod 3}
+    (hd : (d.1 : ZMod 3) = s ∧ (d.2 : ZMod 3) = s) (v : Atom) (l : ℕ) (π : ℤ → ℕ) :
+    (PolysQ (fun f => f = π) σ v l).ncard = (PolysQ (fun f => f = π) (fun j => σ j + s) (posA d v) l).ncard := by
+  have hd' : ((-d).1 : ZMod 3) = -s ∧ ((-d).2 : ZMod 3) = -s := by
+    refine ⟨?_, ?_⟩ <;> simp only [Prod.fst_neg, Prod.snd_neg, Int.cast_neg, hd.1, hd.2] <;> rfl
+  have hc : ∀ (e : ℤ × ℤ) (E : Finset (Sym2 Atom)), crossN (E.image (Sym2.map (posA e))) = crossN E :=
+    fun e E => funext (crossN_posA e E)
+  apply ncard_polysQ_iso (posA d) (posA (-d)) (posA_posA d)
+    (fun a => by have := posA_posA (-d) a; rwa [neg_neg] at this) (fun a b h => bond_posA hd h)
+  · intro a b h
+    have := bond_posA hd' h
+    have e : (fun j => σ j + s + -s) = σ := by funext j; exact add_neg_cancel_right (σ j) s
+    rwa [e] at this
+  · intro E hE; rw [hc]; exact hE
+  · intro E hE; rw [hc]; exact hE
+
+theorem mirQ_prof (π : ℤ → ℕ) : mirQ (fun f => f = π) = fun f => f = fun i => π (-i) := by
+  funext f; apply propext; constructor
+  · intro h; funext i; have := congrFun h (-i); simpa using this
+  · intro h; funext i; rw [h]; simp
+
+theorem ncard_prof_mirror (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) (π : ℤ → ℕ) :
+    (PolysQ (fun f => f = π) σ v l).ncard = (PolysQ (fun f => f = fun i => π (-i)) (mirS σ) (mirA v) l).ncard := by
+  rw [ncard_polysQ_mirror, mirQ_prof]
+
+/-- **Every site counts the same, profile by profile.** For every stacking `σ`, every site `v` of it and every
+crossing profile `π` with entries at most 2, the polygons through `v` with `l` edges and profile `π` are as many
+as at diamond's site `(0, (0, 0), 0)` with the same profile read from `v`'s bilayer (`profAt v π`). -/
+theorem corollaryA_everySite_profile {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (hv : IsSite σ v) (l : ℕ)
+    (π : ℤ → ℕ) (hπ : ∀ j, π j ≤ 2) :
+    (PolysQ (fun f => f = π) σ v l).ncard = (PolysQ (fun f => f = profAt v π) diamond (0, (0, 0), 0) l).ncard := by
+  obtain ⟨j, p, u⟩ := v
+  set σ1 : ℤ → ZMod 3 := fun i => σ (i - -j) with hσ1
+  have h1 := ncard_prof_shift σ (-j) (j, p, u) l π
+  have hs1 : shiftA (-j) (j, p, u) = (0, p, u) := by simp [shiftA]
+  rw [hs1] at h1
+  have hσ1s : IsStacking σ1 := by
+    intro i h
+    apply hσ (i + j)
+    have h' : σ (i + 1 - -j) = σ (i - -j) := h
+    rwa [show i + 1 - -j = i + j + 1 by ring, show i - -j = i + j by ring] at h'
+  have hv1 : IsSite σ1 (0, p, u) := by unfold IsSite at hv ⊢; simpa [hσ1] using hv
+  obtain ⟨σ2, hσ2s, hv2, h2⟩ : ∃ σ2 : ℤ → ZMod 3, IsStacking σ2 ∧ IsSite σ2 (0, p, 0) ∧
+      (PolysQ (fun f => f = fun i => π (i - -j)) σ1 (0, p, u) l).ncard =
+        (PolysQ (fun f => f = profAt (j, p, u) π) σ2 (0, p, 0) l).ncard := by
+    fin_cases u
+    · refine ⟨σ1, hσ1s, hv1, ?_⟩
+      have e : (fun i => π (i - -j)) = profAt (j, p, 0) π := by
+        funext i; simp only [profAt, ↓reduceIte]; congr 1; ring
+      rw [e]; rfl
+    · refine ⟨mirS σ1, mirS_isStacking hσ1s, ?_, ?_⟩
+      · have := isSite_mirA hv1; simpa [mirA] using this
+      · have hm := ncard_prof_mirror σ1 (0, p, 1) l (fun i => π (i - -j))
+        have hma : mirA (0, p, 1) = (0, p, 0) := by simp [mirA]
+        rw [hma] at hm
+        have e : profAt (j, p, 1) π = fun i => π (-i - -j) := by
+          funext i; simp only [profAt]; rw [ite_eq_right_iff.mpr (fun h => absurd h (by decide))]; congr 1; ring
+        show _ = (PolysQ (fun f => f = profAt (j, p, 1) π) (mirS σ1) (0, p, 0) l).ncard
+        rw [e]; exact hm
+  have hd : ((-p).1 : ZMod 3) = -σ2 0 ∧ ((-p).2 : ZMod 3) = -σ2 0 := by
+    unfold IsSite at hv2; simp only at hv2
+    refine ⟨?_, ?_⟩ <;> simp only [Prod.fst_neg, Prod.snd_neg, Int.cast_neg, hv2.1, hv2.2] <;> rfl
+  have h3 := ncard_prof_pos σ2 hd (0, p, 0) l (profAt (j, p, u) π)
+  have hp : posA (-p) (0, p, 0) = (0, (0, 0), 0) := by simp [posA]; rfl
+  rw [hp] at h3
+  set σ3 : ℤ → ZMod 3 := fun i => σ2 i + -σ2 0 with hσ3
+  have hσ3s : IsStacking σ3 := fun i h => hσ2s i (add_right_cancel h)
+  have hv3 : IsSite σ3 (0, (0, 0), 0) := by
+    unfold IsSite
+    refine ⟨?_, ?_⟩ <;> simp only [hσ3, Int.cast_zero] <;> exact (add_neg_cancel _).symm
+  have hvd : IsSite diamond (0, (0, 0), 0) := by unfold IsSite diamond; simp
+  have hb : ∀ i, profAt (j, p, u) π i ≤ 2 := fun i => by unfold profAt; split <;> exact hπ _
+  have h4 := corollaryA_profile hσ3s diamond_isStacking hv3 hvd l _ hb
   rw [h1, h2, h3, h4]
 
 end LoopEqualityProof
