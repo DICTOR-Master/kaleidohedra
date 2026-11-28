@@ -377,3 +377,6 @@ shell (12.66 against die - core 4.62). Now: each straw is the loft of its face p
 consecutive polygons zipped edge by edge in angle order (scripts/straw_loft.py); volumes add up to the shell to 0.13% (the loft's
 hull-between-steps approximation); every straw closed and free of self-crossing (scripts/loft_full.py, FINAL checks). app_data.py
 regenerated (frames to 6 decimals, crease edges only). Same construction for any pair: hollow-straw-criterion/scripts/hs_page_data.py.
+3D print gaps (28 Nov, measured on the page's STL output, set gap in face planes): set 0.2 mm -> median 0.172, 5% 0.123, min 0.055;
+set 0.5 mm -> median 0.434, 5% 0.307, min 0.144 (about 30% of wall points below 0.8 x set gap). Printing paused (DICTO: app first);
+when resumed: correct the in-plane shrink by each wall's slant, or name presets by their median.
