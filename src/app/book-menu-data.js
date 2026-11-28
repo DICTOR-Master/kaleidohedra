@@ -53,6 +53,11 @@ export const OTHERS_SHELF = [
 export const TOOLS_SHELF = [
   { id: 'bridging', label: 'wiz.books.bridging', sub: 'wiz.books.bridgingSub', glyph: '◎', thumb: 'bridging', pieces: [   // thumbnail: C60 into Kuo #90 (DICTO 28 Nov)
     { label: 'wiz.books.hollowStraw', href: '/hollow-straw/' },
+    { label: 'wiz.books.hsC60', href: '/hollow-straw/?d=c60-kuo90' },
+    { label: 'wiz.books.hsC80', href: '/hollow-straw/?d=c80-nioku209' },
+    { label: 'wiz.books.hsC80r', href: '/hollow-straw/?d=nioku209-c80' },
+    { label: 'wiz.books.hsC140', href: '/hollow-straw/?d=c140-kuomu906' },
+    { label: 'wiz.books.hsC140r', href: '/hollow-straw/?d=kuomu906-c140' },
   ] },
   { id: 'amber', href: '/amber/', label: 'wiz.books.amber', sub: 'wiz.books.amberSub', glyph: '⬢', thumb: 'amber' },
   { id: 'aequi', href: '/aequi/', label: 'wiz.books.aequi', sub: 'wiz.books.aequiSub', glyph: '⚀', thumb: 'aequi' },

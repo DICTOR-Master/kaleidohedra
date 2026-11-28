@@ -194,6 +194,8 @@ function faceEdges(V, F, mat) {
   F.forEach(function (f) { for (var i = 0; i < f.length; i++) { var a = V[f[i]], b = V[f[(i + 1) % f.length]]; pos.push(a[0], a[1], a[2], b[0], b[1], b[2]); } });
   var g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); return new THREE.LineSegments(g, mat);
 }
+var PAIR = (new URLSearchParams(location.search).get('d') || '').replace(/[^a-z0-9-]/g, '');   // ?d=c60-kuo90 etc.; none = C116
+var NM = { inner: 'C116', outer: 'Minana #377', title: 'C116 into Minana #377' };
 var D = null, R = 0, frames = [], ghost = null, dieLine = null, coreSolid = null, straws = [], strawRoot = new THREE.Group(), changeRoot = new THREE.Group();
 holder.add(changeRoot); holder.add(strawRoot);
 function build() {
@@ -207,7 +209,7 @@ function build() {
   dieLine = faceEdges(fN.v, fN.f, new THREE.LineBasicMaterial({ color: GHOST, transparent: true, opacity: 0.8 }));
   changeRoot.add(ghost); changeRoot.add(dieLine);
   // the core as a solid part (DICTO 28 Nov: the inner as a core, so every part can be 3D printed)
-  coreSolid = new THREE.Group(); coreSolid.add(polyMesh(f0.v, f0.f, f0.f.map(function () { return '#8d949c'; }), 1));
+  coreSolid = new THREE.Group(); coreSolid.add(polyMesh(f0.v, f0.f, D.colour, 1));   // each C116 face in its straw's colour: where the straw meets the core (DICTO 28 Nov)
   coreSolid.add(faceEdges(f0.v, f0.f, sharedEdge)); strawRoot.add(coreSolid);
   D.straws.forEach(function (s) {
     var g = new THREE.Group(), c = [0, 0, 0];
@@ -237,20 +239,31 @@ function place() {
 function status() {
   var done = D.swaps.filter(function (w) { return w.lam <= state.lam; }).length;
   $('stat').textContent = state.mode === 'change'
-    ? 'λ = ' + state.lam.toFixed(3) + ' · swaps done: ' + done + ' of ' + D.swaps.length + (state.lam <= 0 ? ' · C116' : state.lam >= 1 ? ' · Minana #377' : '')
-    : '60 straws, one for each face of C116, each ending on its face of Minana #377';
+    ? 'λ = ' + state.lam.toFixed(3) + ' · swaps done: ' + done + ' of ' + D.swaps.length + (state.lam <= 0 ? ' · ' + NM.inner : state.lam >= 1 ? ' · ' + NM.outer : '')
+    : D.straws.length + ' straws, one for each face of ' + NM.inner + ', each ending on its face of ' + NM.outer;
 }
 function panel() {
   var leg = Object.keys(D.legend).map(function (c) { return '<tr><td><span class="sw" style="background:' + c + '"></span> ' + D.legend[c] + '</td></tr>'; }).join('');
   $('panel').innerHTML =
-    '<h2>C116 into Minana #377</h2><p class="sub" id="stat"></p>' +
-    '<p>DICTO\'s Hollow-straw: both ends are fixed, the fullerene C116 in its own shape inside and the fair die Minana #377 outside. ' +
+    '<h2>' + NM.title + '</h2><p class="sub" id="stat"></p>' +
+    (PAIR ? '<p>DICTO\'s Hollow-straw: both ends are fixed, ' + NM.inner + ' in its own shape inside and ' + NM.outer + ' outside. Every face of ' + NM.inner + ' moves and turns into its partner face of ' + NM.outer + ', all at once. At every moment the moving faces enclose one solid, and each solid lies inside the next, so the straws, the regions the faces sweep, fill the space between them without overlapping.</p>' +
+      '<p>On the way, neighbouring faces change partners ' + D.nswaps + ' times: four faces meet at a point and two of them stop touching while the other two start. These are the swaps; they make the straws Scutoid-Frusta.</p>' +
+      '<table class="kinds">' + leg + '</table><p class="note">Colours: each face and straw in the colour of the die face it belongs to (the Aequi page\'s colours).</p>' +
+      '<p class="note">' + D.exact + ' The picture shows ' + D.frames.length + ' of the intermediate solids; the straws are drawn from them.</p>'
+    :     '<p>DICTO\'s Hollow-straw: both ends are fixed, the fullerene C116 in its own shape inside and the fair die Minana #377 outside. ' +
     'Every face of C116 moves and turns into its partner face of the die, all at once. At every moment the moving faces enclose one solid, and each solid lies inside the next, so the straws, the regions the faces sweep, fill the space between C116 and the die without overlapping.</p>' +
     '<p>On the way, neighbouring faces change partners 18 times: four faces meet at a point and two of them stop touching while the other two start. These are the 18 swaps; they make the straws Scutoid-Frusta.</p>' +
     '<table class="kinds">' + leg + '</table><p class="note">Colours: each face and straw in the colour of the die face it becomes (the Aequi page\'s colours, by the solid whose plane it lies on).</p>' +
-    '<p class="note">Proved in exact arithmetic (C116\'s planes rounded to 10<sup>−9</sup>, the die\'s fair depths to 15 digits): the start is C116, the end the die, every intermediate solid lies inside the next, and the only changes are the 18 swaps. The picture shows ' + D.frames.length + ' of the intermediate solids; the straws are drawn from them.</p>' +
+    '<p class="note">Proved in exact arithmetic (C116\'s planes rounded to 10<sup>−9</sup>, the die\'s fair depths to 15 digits): the start is C116, the end the die, every intermediate solid lies inside the next, and the only changes are the 18 swaps. The picture shows ' + D.frames.length + ' of the intermediate solids; the straws are drawn from them.</p>') +
     '<div class="links"><a href="/amber/">Amber cells</a><a href="/aequi/">Aequi fair dice</a><span>Paper in preparation</span><a href="/">Back to Kaleidohedra</a></div>';
   status();
+}
+function relabel() {   // the buttons and slider name the pair's own solids
+  document.querySelector('[data-mode="straws"]').textContent = 'The straws';
+  $('ghostBtn').textContent = NM.inner + ' inside'; $('coreBtn').textContent = NM.inner + ' core';
+  document.querySelector('label[for="lam"]').textContent = NM.inner;
+  $('lam').setAttribute('aria-label', 'How far the change has gone, from ' + NM.inner + ' to ' + NM.outer);
+  document.title = NM.title + ' · Hollow-straw · Kaleidohedra';
 }
 function sync() {
   document.querySelectorAll('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.mode === state.mode)); });
@@ -408,7 +421,8 @@ function tick(ts) {
   requestAnimationFrame(tick);
 }
 $('playBtn').onclick = function () { state.play = !state.play; if (state.play) { if (state.lam >= 1) state.lam = 0; t0 = 0; requestAnimationFrame(tick); } sync(); };
-fetch('/hollow-straw/c116-minana.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) {
+fetch('/hollow-straw/' + (PAIR ? PAIR : 'c116-minana') + '.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) {
+  if (PAIR && d.inner) { NM = { inner: d.inner, outer: d.outer, title: d.title }; relabel(); }
   D = d; build(); panel(); sync(); place();
 }).catch(function (e) { $('panel').innerHTML = '<p class="err">Could not load the data (' + e.message + ').</p>'; });
 })();
