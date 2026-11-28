@@ -21,3 +21,5 @@ public import LoopEquality.Pairings
 public import LoopEquality.BSym
 public import LoopEquality.Lemma7
 public import LoopEquality.Short
+public import LoopEquality.Parity
+public import LoopEquality.SingleArc
