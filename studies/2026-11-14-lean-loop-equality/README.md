@@ -469,3 +469,7 @@ M0 PILOT (28 Nov): Nat-coded half (pilot/Pilot.lean in the entry workspace, not 
 M0 fmax 10: kernel 231 s (61704 raw triples) -> brute force feasible for all Theorem 5 tables. M1 DONE: Short.lean theorem5a_short (l <= 11: every site = diamond, all polygons), built, standard axioms.
 Entry 26 theorems (theorem5a_short), con-ron 19043; pilot moved out of the entry to studies/.../pilot (it broke the source rules: 'must use the module header keyword'; caught by check-lean-sources, fixed same session).
 M2 progress: Parity.lean theorem5a_odd (no polygon of odd length); SingleArc.lean Fc_two (two-point far counts unchanged by the half-turn: flip transfer about c, then about the midpoint). Built, standard axioms.
+L5 (far, minimal size) design (28 Nov): with |F| = |Q| every edge holds exactly one end (end -> edge injective, card equal);
+each non-end atom is a lower atom (k+1, m, 0) of degree 2 joined to two ends p, q (an arc p - m - q). Mid-swap m -> p + q - m
+(the centre of the other triangle on p, q) maps minimal far linkages of tau onto those of any tau' with tau' k = tau k and
+tau' (k+1) the other letter: so Fc_tau(Q, M, |Q|) = Fc_tau'(Q, M, |Q|); with fc_transfer: Af(P, N, |P|) = 0.
