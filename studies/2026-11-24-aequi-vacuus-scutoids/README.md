@@ -370,3 +370,10 @@ through it moves outward (no root, sign checked): P(lam) only grows, so the 60 s
 (D) the 18 events are exactly the 18 swaps of the floating-resin floor, one each.
 So DICTO's Hollow-straw transformation C116 -> Minana #377 (both ends fixed, C116 in its own shape) is proved in exact arithmetic,
 for these exact inputs. This replaces the flat-walled variant as the paper's Theorem 1.
+
+## Hollow-straw page straws FIXED (28 Nov 2026)
+The page's straws (lofted corner to corner, hull of two polygons across a swap) OVERLAPPED: their volumes added up to 2.7 x the
+shell (12.66 against die - core 4.62). Now: each straw is the loft of its face polygon over all 88 frames at full precision,
+consecutive polygons zipped edge by edge in angle order (scripts/straw_loft.py); volumes add up to the shell to 0.13% (the loft's
+hull-between-steps approximation); every straw closed and free of self-crossing (scripts/loft_full.py, FINAL checks). app_data.py
+regenerated (frames to 6 decimals, crease edges only). Same construction for any pair: hollow-straw-criterion/scripts/hs_page_data.py.
