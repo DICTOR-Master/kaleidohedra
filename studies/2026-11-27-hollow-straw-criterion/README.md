@@ -67,3 +67,4 @@ closed; (B) 6 events, every state exact and closed; (C) nested; (D) exactly the 
 the core's 1e-9 rounding splits the symmetric group into swaps about 1e-10 apart; states are now got by the four-face flip and
 verified exactly, as float labels could not resolve them). Negative control C60 -> die 18 at 0.8: FAILS (C) as required.
 C80 -> Nioku #209 and C140 -> Kuomu #906: rerunning with the fix.
+C80 -> Nioku #209 at core size 0.7: EXACT (FINAL ok, hsx-nioku209b): (A)-(D) hold, 12 events, exactly the 12 needed swaps. C140 -> Kuomu #906 running.
