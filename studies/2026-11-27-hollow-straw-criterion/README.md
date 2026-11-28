@@ -82,4 +82,8 @@ rounded to 1e-9 (exact certificate for these inputs).
 - Nioku #209 -> C80: EXACT (hsr-nioku209): (A)-(D), 12 events, exactly the 12 needed swaps.
 (Their logs print the forward wording "pattern = the core / the die" and "GPc -> die ... core planes rounded"; in these runs the start
 is the die and the end the core solid, both rounded. Labels fixed afterwards.)
-- Kuomu #906 -> C140: running.
+- Kuomu #906 -> C140: EXACT (hsr-kuomu906): (A)-(D), 12 events, exactly the 12 needed swaps. All three reverses exact.
+Context (DICTO 28 Nov: "a scope investigation said that goldberg polyhedra were non-starters"): the 21 Nov Goldberg study
+(2026-11-21-amber-goldberg, 152 runs) found Goldberg cores in LATTICE moulds give 0 scutoids (their faces are the Voronoi cells of their
+tangent points; scutoids need large faces meeting small ones). Here the outer solid is a fair die, whose different face pattern forces
+the swaps: both directions exact for C60, C80, C140. Closed gap -> #124 next version (now numerical only there, Section on other cores).

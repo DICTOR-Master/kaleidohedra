@@ -112,13 +112,14 @@ theorem image_trE_neg (d : ℤ × ℤ) (E : Finset (Sym2 Atom)) : (E.image (trE 
   have : trE (-d) ∘ trE d = id := funext (trE_neg d)
   rw [this, Finset.image_id]
 
-theorem mapsTo_translate {σ : ℤ → ZMod 3} {d : ℤ × ℤ} (hd : (d.1 : ZMod 3) = 0 ∧ (d.2 : ZMod 3) = 0)
-    (v : Atom) (l : ℕ) :
-    Set.MapsTo (fun E : Finset (Sym2 Atom) => E.image (trE d)) (PolysA1 σ v l) (PolysA1 σ (trA d v) l) := by
+theorem mapsTo_translate {Q : (ℤ → ℕ) → Prop} {σ : ℤ → ZMod 3} {d : ℤ × ℤ}
+    (hd : (d.1 : ZMod 3) = 0 ∧ (d.2 : ZMod 3) = 0) (v : Atom) (l : ℕ) :
+    Set.MapsTo (fun E : Finset (Sym2 Atom) => E.image (trE d)) (PolysQ Q σ v l) (PolysQ Q σ (trA d v) l) := by
   intro E ⟨⟨hne, hbond, hcl, hmin⟩, hv, hcard, hprof⟩
   have hd' : ((-d).1 : ZMod 3) = 0 ∧ ((-d).2 : ZMod 3) = 0 := by simp [hd.1, hd.2]
   refine ⟨⟨hne.image _, ?_, closed_trE hcl, ?_⟩, by rw [degS_trE]; exact hv,
-    by rw [Finset.card_image_of_injective _ (trE_injective d), hcard], fun j => by rw [crossN_trE]; exact hprof j⟩
+    by rw [Finset.card_image_of_injective _ (trE_injective d), hcard],
+    by rw [show crossN (E.image (trE d)) = crossN E from funext (crossN_trE d E)]; exact hprof⟩
   · intro f hf
     obtain ⟨e, he, rfl⟩ := Finset.mem_image.mp hf
     have hb := hbond e he
@@ -141,20 +142,24 @@ theorem mapsTo_translate {σ : ℤ → ZMod 3} {d : ℤ × ℤ} (hd : (d.1 : ZMo
     exact h2.symm
 
 /-- **Translations.** A lattice translation by `d ≡ 0` (mod 3) keeps the counts. -/
-theorem ncard_polysA1_translate {σ : ℤ → ZMod 3} {d : ℤ × ℤ} (hd : (d.1 : ZMod 3) = 0 ∧ (d.2 : ZMod 3) = 0)
-    (v : Atom) (l : ℕ) : (PolysA1 σ v l).ncard = (PolysA1 σ (trA d v) l).ncard := by
+theorem ncard_polysQ_translate {Q : (ℤ → ℕ) → Prop} {σ : ℤ → ZMod 3} {d : ℤ × ℤ} (hd : (d.1 : ZMod 3) = 0 ∧ (d.2 : ZMod 3) = 0)
+    (v : Atom) (l : ℕ) : (PolysQ Q σ v l).ncard = (PolysQ Q σ (trA d v) l).ncard := by
   have hd' : ((-d).1 : ZMod 3) = 0 ∧ ((-d).2 : ZMod 3) = 0 := by simp [hd.1, hd.2]
-  have hf := mapsTo_translate (σ := σ) hd v l
-  have hb := mapsTo_translate (σ := σ) hd' (trA d v) l
+  have hf := mapsTo_translate (Q := Q) (σ := σ) hd v l
+  have hb := mapsTo_translate (Q := Q) (σ := σ) hd' (trA d v) l
   rw [trA_neg] at hb
-  have hbij : Set.BijOn (fun E : Finset (Sym2 Atom) => E.image (trE d)) (PolysA1 σ v l)
-      (PolysA1 σ (trA d v) l) := by
+  have hbij : Set.BijOn (fun E : Finset (Sym2 Atom) => E.image (trE d)) (PolysQ Q σ v l)
+      (PolysQ Q σ (trA d v) l) := by
     refine ⟨hf, fun E₁ _ E₂ _ h => Finset.image_injective (trE_injective d) h, fun E' hE' => ?_⟩
     refine ⟨E'.image (trE (-d)), hb hE', ?_⟩
     show (E'.image (trE (-d))).image (trE d) = E'
     have h2 := image_trE_neg (-d) E'
     rwa [neg_neg] at h2
   rw [← hbij.image_eq, hbij.injOn.ncard_image]
+
+theorem ncard_polysA1_translate {σ : ℤ → ZMod 3} {d : ℤ × ℤ} (hd : (d.1 : ZMod 3) = 0 ∧ (d.2 : ZMod 3) = 0)
+    (v : Atom) (l : ℕ) : (PolysA1 σ v l).ncard = (PolysA1 σ (trA d v) l).ncard :=
+  ncard_polysQ_translate (Q := AtMostTwo) hd v l
 
 /-! ## Positions from the c/h word -/
 
@@ -239,17 +244,16 @@ theorem isStacking_tog {σ : ℤ → ZMod 3} (hσ : IsStacking σ) (a : ZMod 3) 
 theorem hex_tog {σ : ℤ → ZMod 3} (a : ZMod 3) (j : ℤ) : IsHex (fun i => tog a (σ i)) j ↔ IsHex σ j := by
   unfold IsHex; exact (tog_injective a).eq_iff
 
-/-- **Corollary A1 (every stacking).** For any two stackings and an atom `v` that is a site of both, the
-number of polygons through `v` with `l` edges crossing every bilayer at most twice is the same. -/
-theorem corollaryA1 {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStacking τ) {v : Atom}
+/-- **Corollary A (every stacking), for any condition `Q` on the crossing numbers that keeps them at most 2.** -/
+theorem corollaryQ {Q : (ℤ → ℕ) → Prop} (hQ : Bounded2 Q) {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStacking τ) {v : Atom}
     (hvσ : IsSite σ v) (hvτ : IsSite τ v) (l : ℕ) :
-    (PolysA1 σ v l).ncard = (PolysA1 τ v l).ncard := by
+    (PolysQ Q σ v l).ncard = (PolysQ Q τ v l).ncard := by
   -- 1. flip the c/h letters that differ on the window
   set W := Finset.Icc (v.1 - (l + 1 : ℕ) + 1) (v.1 + (l + 1 : ℕ)) with hW
   set D := W.filter (fun j => ¬ (IsHex σ j ↔ IsHex τ j)) with hD
   set σ1 := flipRun v σ D.toList with hσ1
   have hσ1s : IsStacking σ1 := flipRun_isStacking _ hσ
-  have hcount1 : (PolysA1 σ1 v l).ncard = (PolysA1 σ v l).ncard := ncard_polysA1_flipRun v l _ σ
+  have hcount1 : (PolysQ Q σ1 v l).ncard = (PolysQ Q σ v l).ncard := ncard_polysQ_flipRun hQ v l _ σ
   have hhex1 : ∀ j, v.1 - (l + 1 : ℕ) + 1 ≤ j → j ≤ v.1 + (l + 1 : ℕ) → (IsHex σ1 j ↔ IsHex τ j) := by
     intro j h1 h2
     rw [hσ1, flipRun_hex _ hσ j]
@@ -267,9 +271,9 @@ theorem corollaryA1 {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStac
   -- 3. locality once the window agrees
   have hloc : ∀ ρ : ℤ → ZMod 3, IsStacking ρ → ρ v.1 = τ v.1 → ρ (v.1 + 1) = τ (v.1 + 1) →
       (∀ j, v.1 - (l + 1 : ℕ) + 1 ≤ j → j ≤ v.1 + (l + 1 : ℕ) → (IsHex ρ j ↔ IsHex τ j)) →
-      PolysA1 ρ v l = PolysA1 τ v l := by
+      PolysQ Q ρ v l = PolysQ Q τ v l := by
     intro ρ hρ h0 h1 hh
-    apply polysA1_local
+    apply polysQ_local
     intro j hj1 hj2
     exact eq_window hρ hτ (l + 1) h0 h1 hh j (by push_cast; omega) (by push_cast; omega)
   by_cases hnext : σ1 (v.1 + 1) = τ (v.1 + 1)
@@ -289,7 +293,7 @@ theorem corollaryA1 {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStac
       intro j h1 h2; rw [hρ, hex_tog]; exact hhex1 j h1 h2
     set c : ℤ × ℤ := (((2 * a).val : ℤ), ((2 * a).val : ℤ)) with hc
     have hcg : (c.1 : ZMod 3) = 2 * a ∧ (c.2 : ZMod 3) = 2 * a := by simp [hc]
-    have hrel := ncard_polysA1_relabel (σ := σ1) hcg v l
+    have hrel := ncard_polysQ_relabel Q (σ := σ1) hcg v l
     set d : ℤ × ℤ := v.2.1 + v.2.1 - c with hd
     have hvpos : (v.2.1.1 : ZMod 3) = a ∧ (v.2.1.2 : ZMod 3) = a := by
       rw [ha, hσ1, flipRun_at_v]; exact hvσ
@@ -297,12 +301,27 @@ theorem corollaryA1 {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStac
       simp only [hd, Prod.fst_sub, Prod.snd_sub, Prod.fst_add, Prod.snd_add, Int.cast_sub, Int.cast_add,
         hvpos.1, hvpos.2, hcg.1, hcg.2]
       constructor <;> ring
-    have htr := ncard_polysA1_translate (σ := ρ) hd0 (htA c v) l
+    have htr := ncard_polysQ_translate (Q := Q) (σ := ρ) hd0 (htA c v) l
     have hback : trA d (htA c v) = v := by
       obtain ⟨j, p, u⟩ := v
       simp only [trA, htA, hd]
       congr 1; congr 1; abel
     rw [hback] at htr
     rw [← hcount1, hrel, ← hρ, htr, hloc ρ hρs hρ0 hρ1 hρhex]
+
+/-- **Corollary A1 (every stacking).** For any two stackings and an atom `v` that is a site of both, the
+number of polygons through `v` with `l` edges crossing every bilayer at most twice is the same. -/
+theorem corollaryA1 {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStacking τ) {v : Atom}
+    (hvσ : IsSite σ v) (hvτ : IsSite τ v) (l : ℕ) :
+    (PolysA1 σ v l).ncard = (PolysA1 τ v l).ncard :=
+  corollaryQ bounded2_atMostTwo hσ hτ hvσ hvτ l
+
+/-- **Corollary A of #102, profile by profile.** Fix a length `l` and a crossing profile `π` (the number of
+crossings at each bilayer, each at most 2). For any two stackings and an atom `v` that is a site of both, the
+polygons through `v` with `l` edges and exactly that profile are equally many. -/
+theorem corollaryA_profile {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStacking τ) {v : Atom}
+    (hvσ : IsSite σ v) (hvτ : IsSite τ v) (l : ℕ) (π : ℤ → ℕ) (hπ : ∀ j, π j ≤ 2) :
+    (PolysQ (fun f => f = π) σ v l).ncard = (PolysQ (fun f => f = π) τ v l).ncard :=
+  corollaryQ (Q := fun f => f = π) (fun f (hf : f = π) j => hf ▸ hπ j) hσ hτ hvσ hvτ l
 
 end LoopEqualityProof

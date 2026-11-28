@@ -151,8 +151,8 @@ theorem bond_congr {σ τ : ℤ → ZMod 3} {a b : Atom} (ha : σ a.1 = τ a.1) 
     Bond σ a b ↔ Bond τ a b := by
   unfold Bond; rw [isSite_congr ha, isSite_congr hb]
 
-theorem polysA1_local_sub {σ τ : ℤ → ZMod 3} {v : Atom} {l : ℕ}
-    (h : ∀ j, v.1 - l - 1 ≤ j → j ≤ v.1 + l + 1 → σ j = τ j) : PolysA1 σ v l ⊆ PolysA1 τ v l := by
+theorem polysQ_local_sub {Q : (ℤ → ℕ) → Prop} {σ τ : ℤ → ZMod 3} {v : Atom} {l : ℕ}
+    (h : ∀ j, v.1 - l - 1 ≤ j → j ≤ v.1 + l + 1 → σ j = τ j) : PolysQ Q σ v l ⊆ PolysQ Q τ v l := by
   intro E ⟨⟨hne, hbond, hcl, hmin⟩, hv, hcard, hprof⟩
   have hpoly : IsPolygon σ E := ⟨hne, hbond, hcl, hmin⟩
   refine ⟨⟨hne, ?_, hcl, hmin⟩, hv, hcard, hprof⟩
@@ -172,8 +172,12 @@ theorem polysA1_local_sub {σ τ : ℤ → ZMod 3} {v : Atom} {l : ℕ}
 
 /-- **Locality.** Two stackings that agree on the bilayers within `l + 1` of `v` have exactly the same
 polygons through `v` with `l` edges crossing every bilayer at most twice. -/
+theorem polysQ_local {Q : (ℤ → ℕ) → Prop} {σ τ : ℤ → ZMod 3} {v : Atom} {l : ℕ}
+    (h : ∀ j, v.1 - l - 1 ≤ j → j ≤ v.1 + l + 1 → σ j = τ j) : PolysQ Q σ v l = PolysQ Q τ v l :=
+  Set.Subset.antisymm (polysQ_local_sub h) (polysQ_local_sub (fun j h1 h2 => (h j h1 h2).symm))
+
 theorem polysA1_local {σ τ : ℤ → ZMod 3} {v : Atom} {l : ℕ}
     (h : ∀ j, v.1 - l - 1 ≤ j → j ≤ v.1 + l + 1 → σ j = τ j) : PolysA1 σ v l = PolysA1 τ v l :=
-  Set.Subset.antisymm (polysA1_local_sub h) (polysA1_local_sub (fun j h1 h2 => (h j h1 h2).symm))
+  polysQ_local (Q := AtMostTwo) h
 
 end LoopEqualityProof

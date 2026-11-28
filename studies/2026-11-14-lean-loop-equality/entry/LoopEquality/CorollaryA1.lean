@@ -38,6 +38,21 @@ noncomputable def crossN (E : Finset (Sym2 Atom)) (j : ℤ) : ℕ := (E.filter (
 def PolysA1 (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) : Set (Finset (Sym2 Atom)) :=
   {E | IsPolygon σ E ∧ 0 < degS E v ∧ E.card = l ∧ ∀ j, crossN E j ≤ 2}
 
+/-- Polygons of `G σ` through `v` with `l` edges whose crossing numbers `j ↦ crossN E j` satisfy `Q`
+(`Q f := f = π` for one crossing profile `π`). -/
+def PolysQ (Q : (ℤ → ℕ) → Prop) (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) : Set (Finset (Sym2 Atom)) :=
+  {E | IsPolygon σ E ∧ 0 < degS E v ∧ E.card = l ∧ Q (crossN E)}
+
+/-- Every bilayer crossed at most twice. -/
+def AtMostTwo (f : ℤ → ℕ) : Prop := ∀ j, f j ≤ 2
+
+/-- `Q` allows only crossing numbers at most 2. -/
+def Bounded2 (Q : (ℤ → ℕ) → Prop) : Prop := ∀ f, Q f → ∀ j, f j ≤ 2
+
+theorem bounded2_atMostTwo : Bounded2 AtMostTwo := fun _ h => h
+
+theorem polysA1_eq_Q (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) : PolysA1 σ v l = PolysQ AtMostTwo σ v l := rfl
+
 theorem isFar_htA_any {c : ℤ × ℤ} {j : ℤ} {a : Atom} : IsFar j (htA c a) ↔ IsFar j a := Iff.rfl
 
 theorem isCrossS_surgS_any {c : ℤ × ℤ} {k j : ℤ} {e : Sym2 Atom} :
@@ -119,8 +134,8 @@ theorem goodCentre_cDefault (σ : ℤ → ZMod 3) (k : ℤ) : GoodCentre σ k (c
 
 /-- The crossing set at `k` of a polygon in `PolysA1` is empty or two vertical bonds at points `p ≠ q`
 of the position of bilayer `k`. -/
-theorem cross_set_cases {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {E : Finset (Sym2 Atom)}
-    (hE : E ∈ PolysA1 σ v l) (k : ℤ) :
+theorem cross_set_cases {Q : (ℤ → ℕ) → Prop} (hQ : Bounded2 Q) {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ}
+    {E : Finset (Sym2 Atom)} (hE : E ∈ PolysQ Q σ v l) (k : ℤ) :
     E.filter (IsCrossS k) = ∅ ∨ ∃ p q : ℤ × ℤ, p ≠ q ∧ E.filter (IsCrossS k) = {vert k p, vert k q} ∧
       ((p.1 : ZMod 3) = σ k ∧ (p.2 : ZMod 3) = σ k) ∧ ((q.1 : ZMod 3) = σ k ∧ (q.2 : ZMod 3) = σ k) := by
   obtain ⟨⟨hne, hbond, hcl, -⟩, -, -, hprof⟩ := hE
@@ -130,7 +145,7 @@ theorem cross_set_cases {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {E : Finset (
     induction e using Sym2.ind with
     | _ a b => rw [bondS_mk] at hb; exact bond_ne hb (Sym2.mk_isDiag_iff.mp hd)
   have hev := even_card_cross k E hcl hnd
-  have hle := hprof k
+  have hle := hQ _ hprof k
   unfold crossN at hle
   rcases Nat.lt_or_ge (E.filter (IsCrossS k)).card 1 with h0 | h1
   · left; exact Finset.card_eq_zero.mp (by omega)
@@ -147,12 +162,15 @@ theorem cross_set_cases {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {E : Finset (
 noncomputable def flipMap (σ : ℤ → ZMod 3) (k : ℤ) (E : Finset (Sym2 Atom)) : Finset (Sym2 Atom) :=
   E.image (surgS (centreOf k (cDefault σ k) (E.filter (IsCrossS k))) k)
 
-theorem mapsTo_flipMap {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : ¬ IsFar k v) (l : ℕ) :
-    Set.MapsTo (flipMap σ k) (PolysA1 σ v l) (PolysA1 (flipAt σ k) v l) := by
+theorem crossN_flipMap (σ : ℤ → ZMod 3) (k : ℤ) (E : Finset (Sym2 Atom)) :
+    crossN (flipMap σ k E) = crossN E := funext fun j => by rw [flipMap, crossN_surg]
+
+theorem mapsTo_flipMap {Q : (ℤ → ℕ) → Prop} (hQ : Bounded2 Q) {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom}
+    (hv : ¬ IsFar k v) (l : ℕ) : Set.MapsTo (flipMap σ k) (PolysQ Q σ v l) (PolysQ Q (flipAt σ k) v l) := by
   intro E hE
   have hE' := hE
   obtain ⟨hpoly, hvE, hcard, hprof⟩ := hE'
-  rcases cross_set_cases hE k with h0 | ⟨p, q, hpq, hS, hp, hq⟩
+  rcases cross_set_cases hQ hE k with h0 | ⟨p, q, hpq, hS, hp, hq⟩
   · -- no crossing at k
     have hm := mapsTo_surgery (goodCentre_cDefault σ k) hv (S := ∅) (by simp) (by simp)
       (show E ∈ PolysThrough σ k v ∅ from ⟨hpoly, hvE, h0⟩)
@@ -168,14 +186,14 @@ theorem mapsTo_flipMap {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : ¬ IsFar
       next => rfl
     refine ⟨by rw [flipMap, hc]; exact hpoly', by rw [flipMap, hc]; exact hv', ?_, ?_⟩
     · rw [flipMap, Finset.card_image_of_injective _ (surgS_injective _ k), hcard]
-    · intro j; rw [flipMap, crossN_surg]; exact hprof j
+    · rw [crossN_flipMap]; exact hprof
   · have hc : centreOf k (cDefault σ k) (E.filter (IsCrossS k)) = p + q := by rw [hS, centreOf_pair hpq]
     have hb := (bijOn_two_crossings hv hp hq).mapsTo (show E ∈ PolysThrough σ k v {vert k p, vert k q} from
       ⟨hpoly, hvE, hS⟩)
     obtain ⟨hpoly', hv', -⟩ := hb
     refine ⟨by rw [flipMap, hc]; exact hpoly', by rw [flipMap, hc]; exact hv', ?_, ?_⟩
     · rw [flipMap, Finset.card_image_of_injective _ (surgS_injective _ k), hcard]
-    · intro j; rw [flipMap, crossN_surg]; exact hprof j
+    · rw [crossN_flipMap]; exact hprof
 
 theorem cDefault_flipAt (σ : ℤ → ZMod 3) (k : ℤ) : cDefault (flipAt σ k) k = cDefault σ k := by
   unfold cDefault; rw [flipAt_of_le le_rfl]
@@ -193,12 +211,12 @@ theorem flipMap_flipMap {σ : ℤ → ZMod 3} {k : ℤ} (E : Finset (Sym2 Atom))
 /-- **Corollary A1 across one flip.** For an atom `v` in the root half of bilayer `k` and every length
 `l`, the polygons through `v` with `l` edges crossing every bilayer at most twice are equally many in
 `G σ` and in `G (flipAt σ k)`. -/
-theorem ncard_polysA1_flip {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : ¬ IsFar k v) (l : ℕ) :
-    (PolysA1 σ v l).ncard = (PolysA1 (flipAt σ k) v l).ncard := by
-  have hmaps := mapsTo_flipMap (σ := σ) hv l
-  have hback := mapsTo_flipMap (σ := flipAt σ k) hv l
+theorem ncard_polysQ_flip {Q : (ℤ → ℕ) → Prop} (hQ : Bounded2 Q) {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom}
+    (hv : ¬ IsFar k v) (l : ℕ) : (PolysQ Q σ v l).ncard = (PolysQ Q (flipAt σ k) v l).ncard := by
+  have hmaps := mapsTo_flipMap hQ (σ := σ) hv l
+  have hback := mapsTo_flipMap hQ (σ := flipAt σ k) hv l
   rw [flipAt_flipAt] at hback
-  have hbij : Set.BijOn (flipMap σ k) (PolysA1 σ v l) (PolysA1 (flipAt σ k) v l) := by
+  have hbij : Set.BijOn (flipMap σ k) (PolysQ Q σ v l) (PolysQ Q (flipAt σ k) v l) := by
     refine ⟨hmaps, ?_, ?_⟩
     · intro E₁ _ E₂ _ h
       have := congrArg (flipMap (flipAt σ k) k) h
@@ -208,5 +226,9 @@ theorem ncard_polysA1_flip {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : ¬ I
       have := flipMap_flipMap (σ := flipAt σ k) (k := k) E'
       rwa [flipAt_flipAt] at this
   rw [← hbij.image_eq, hbij.injOn.ncard_image]
+
+theorem ncard_polysA1_flip {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : ¬ IsFar k v) (l : ℕ) :
+    (PolysA1 σ v l).ncard = (PolysA1 (flipAt σ k) v l).ncard :=
+  ncard_polysQ_flip bounded2_atMostTwo hv l
 
 end LoopEqualityProof

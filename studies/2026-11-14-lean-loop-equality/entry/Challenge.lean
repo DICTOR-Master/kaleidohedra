@@ -502,4 +502,17 @@ every bilayer at most twice (a hexagon), so the counts compared by Corollary A a
 theorem polysAtMostTwice_diamond_six_pos : 0 < (polysAtMostTwice diamond (0, (0, 0), 0) 6).ncard := by
   sorry
 
+/-- The polygons of `G σ` through `v` with `l` edges whose crossing profile is `π`: exactly `π j` edges
+cross the cut at bilayer `j`, for every `j`. -/
+def polysWithProfile (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) (π : ℤ → ℕ) : Set (Finset (Sym2 Atom)) :=
+  {E | IsPolygon σ E ∧ 0 < edgeDeg E v ∧ E.card = l ∧ ∀ j, crossings E j = π j}
+
+/-- **Corollary A of #102, profile by profile.** Fix a length `l` and a crossing profile `π` with every entry
+at most 2. For any two stackings and an atom `v` that is a site of both, the polygons through `v` with `l`
+edges and exactly that profile are equally many. -/
+theorem corollaryA_profile {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStacking τ) {v : Atom}
+    (hvσ : IsSite σ v) (hvτ : IsSite τ v) (l : ℕ) (π : ℤ → ℕ) (hπ : ∀ j, π j ≤ 2) :
+    (polysWithProfile σ v l π).ncard = (polysWithProfile τ v l π).ncard := by
+  sorry
+
 end DictoLoopEquality

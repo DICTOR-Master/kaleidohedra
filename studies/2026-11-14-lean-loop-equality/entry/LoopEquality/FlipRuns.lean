@@ -68,11 +68,15 @@ theorem flipFor_hex {v : Atom} {σ : ℤ → ZMod 3} (hσ : IsStacking σ) (k j 
   · exact flipBelow_hex hσ k j
   · exact flipAt_hex hσ k j
 
-theorem ncard_polysA1_flipFor (v : Atom) (σ : ℤ → ZMod 3) (k : ℤ) (l : ℕ) :
-    (PolysA1 (flipFor v σ k) v l).ncard = (PolysA1 σ v l).ncard := by
+theorem ncard_polysQ_flipFor {Q : (ℤ → ℕ) → Prop} (hQ : Bounded2 Q) (v : Atom) (σ : ℤ → ZMod 3) (k : ℤ)
+    (l : ℕ) : (PolysQ Q (flipFor v σ k) v l).ncard = (PolysQ Q σ v l).ncard := by
   unfold flipFor; split
-  · next h => exact ncard_polysA1_flipBelow h l
-  · next h => exact (ncard_polysA1_flip h l).symm
+  · next h => exact ncard_polysQ_flipBelow hQ h l
+  · next h => exact (ncard_polysQ_flip hQ h l).symm
+
+theorem ncard_polysA1_flipFor (v : Atom) (σ : ℤ → ZMod 3) (k : ℤ) (l : ℕ) :
+    (PolysA1 (flipFor v σ k) v l).ncard = (PolysA1 σ v l).ncard :=
+  ncard_polysQ_flipFor bounded2_atMostTwo v σ k l
 
 /-- A run of flips, applied from the head of the list. -/
 noncomputable def flipRun (v : Atom) : (ℤ → ZMod 3) → List ℤ → ℤ → ZMod 3
@@ -85,12 +89,16 @@ theorem flipRun_isStacking {v : Atom} : ∀ (ks : List ℤ) {σ : ℤ → ZMod 3
   | k :: ks, _, h => flipRun_isStacking ks (flipFor_isStacking h k)
 
 /-- **Runs of flips keep the counts.** -/
-theorem ncard_polysA1_flipRun (v : Atom) (l : ℕ) : ∀ (ks : List ℤ) (σ : ℤ → ZMod 3),
-    (PolysA1 (flipRun v σ ks) v l).ncard = (PolysA1 σ v l).ncard
+theorem ncard_polysQ_flipRun {Q : (ℤ → ℕ) → Prop} (hQ : Bounded2 Q) (v : Atom) (l : ℕ) :
+    ∀ (ks : List ℤ) (σ : ℤ → ZMod 3), (PolysQ Q (flipRun v σ ks) v l).ncard = (PolysQ Q σ v l).ncard
   | [], _ => rfl
   | k :: ks, σ => by
-    show (PolysA1 (flipRun v (flipFor v σ k) ks) v l).ncard = _
-    rw [ncard_polysA1_flipRun v l ks, ncard_polysA1_flipFor]
+    show (PolysQ Q (flipRun v (flipFor v σ k) ks) v l).ncard = _
+    rw [ncard_polysQ_flipRun hQ v l ks, ncard_polysQ_flipFor hQ]
+
+theorem ncard_polysA1_flipRun (v : Atom) (l : ℕ) (ks : List ℤ) (σ : ℤ → ZMod 3) :
+    (PolysA1 (flipRun v σ ks) v l).ncard = (PolysA1 σ v l).ncard :=
+  ncard_polysQ_flipRun bounded2_atMostTwo v l ks σ
 
 /-- The c/h letter after a run: flipped once for each occurrence of `j` in `ks`. -/
 theorem flipRun_hex {v : Atom} : ∀ (ks : List ℤ) {σ : ℤ → ZMod 3}, IsStacking σ → ∀ j : ℤ,

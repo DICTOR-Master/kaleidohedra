@@ -612,4 +612,24 @@ theorem polysAtMostTwice_diamond_six_pos : 0 < (polysAtMostTwice diamond (0, (0,
   rw [polysAtMostTwice_eq_proof]
   exact LoopEqualityProof.polysA1_diamond_six_pos
 
+/-- The polygons of `G σ` through `v` with `l` edges whose crossing profile is `π`: exactly `π j` edges
+cross the cut at bilayer `j`, for every `j`. -/
+def polysWithProfile (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) (π : ℤ → ℕ) : Set (Finset (Sym2 Atom)) :=
+  {E | IsPolygon σ E ∧ 0 < edgeDeg E v ∧ E.card = l ∧ ∀ j, crossings E j = π j}
+
+theorem polysWithProfile_eq_proof (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) (π : ℤ → ℕ) :
+    polysWithProfile σ v l π = LoopEqualityProof.PolysQ (fun f => f = π) σ v l := by
+  ext E
+  simp only [polysWithProfile, LoopEqualityProof.PolysQ, Set.mem_setOf_eq, isPolygon_iff_proof,
+    edgeDeg_eq_proof, crossings_eq_proof, funext_iff]
+
+/-- **Corollary A of #102, profile by profile.** Fix a length `l` and a crossing profile `π` with every entry
+at most 2. For any two stackings and an atom `v` that is a site of both, the polygons through `v` with `l`
+edges and exactly that profile are equally many. -/
+theorem corollaryA_profile {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ : IsStacking τ) {v : Atom}
+    (hvσ : IsSite σ v) (hvτ : IsSite τ v) (l : ℕ) (π : ℤ → ℕ) (hπ : ∀ j, π j ≤ 2) :
+    (polysWithProfile σ v l π).ncard = (polysWithProfile τ v l π).ncard := by
+  rw [polysWithProfile_eq_proof, polysWithProfile_eq_proof]
+  exact LoopEqualityProof.corollaryA_profile hσ hτ hvσ hvτ l π hπ
+
 end DictoLoopEquality

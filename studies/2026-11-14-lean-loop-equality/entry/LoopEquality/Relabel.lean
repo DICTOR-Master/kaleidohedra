@@ -95,13 +95,14 @@ theorem image_htS_htS (c : ℤ × ℤ) (E : Finset (Sym2 Atom)) : (E.image (htS 
 theorem tog_tog_fun (a : ZMod 3) (σ : ℤ → ZMod 3) : (fun j => tog a (tog a (σ j))) = σ := by
   funext j; exact tog_tog a (σ j)
 
-theorem mapsTo_relabel {σ : ℤ → ZMod 3} {a : ZMod 3} {c : ℤ × ℤ}
+theorem mapsTo_relabel {Q : (ℤ → ℕ) → Prop} {σ : ℤ → ZMod 3} {a : ZMod 3} {c : ℤ × ℤ}
     (hc : (c.1 : ZMod 3) = 2 * a ∧ (c.2 : ZMod 3) = 2 * a) (v : Atom) (l : ℕ) :
-    Set.MapsTo (fun E : Finset (Sym2 Atom) => E.image (htS c)) (PolysA1 σ v l)
-      (PolysA1 (fun j => tog a (σ j)) (htA c v) l) := by
+    Set.MapsTo (fun E : Finset (Sym2 Atom) => E.image (htS c)) (PolysQ Q σ v l)
+      (PolysQ Q (fun j => tog a (σ j)) (htA c v) l) := by
   intro E ⟨⟨hne, hbond, hcl, hmin⟩, hv, hcard, hprof⟩
   refine ⟨⟨hne.image _, ?_, closed_htS hcl, ?_⟩, by rw [degS_htS]; exact hv,
-    by rw [Finset.card_image_of_injective _ (htS_injective c), hcard], fun j => by rw [crossN_htS]; exact hprof j⟩
+    by rw [Finset.card_image_of_injective _ (htS_injective c), hcard],
+    by rw [show crossN (E.image (htS c)) = crossN E from funext (crossN_htS c E)]; exact hprof⟩
   · intro f hf
     obtain ⟨e, he, rfl⟩ := Finset.mem_image.mp hf
     have hb := hbond e he
@@ -121,17 +122,22 @@ theorem mapsTo_relabel {σ : ℤ → ZMod 3} {a : ZMod 3} {c : ℤ × ℤ}
 
 /-- **Relabelling.** `G σ` at `v` and `G (tog a ∘ σ)` at `htA c v` (`c ≡ 2a`) have the same number of
 polygons of each length crossing every bilayer at most twice. -/
-theorem ncard_polysA1_relabel {σ : ℤ → ZMod 3} {a : ZMod 3} {c : ℤ × ℤ}
+theorem ncard_polysQ_relabel (Q : (ℤ → ℕ) → Prop) {σ : ℤ → ZMod 3} {a : ZMod 3} {c : ℤ × ℤ}
     (hc : (c.1 : ZMod 3) = 2 * a ∧ (c.2 : ZMod 3) = 2 * a) (v : Atom) (l : ℕ) :
-    (PolysA1 σ v l).ncard = (PolysA1 (fun j => tog a (σ j)) (htA c v) l).ncard := by
-  have hf := mapsTo_relabel (σ := σ) hc v l
-  have hb := mapsTo_relabel (σ := fun j => tog a (σ j)) hc (htA c v) l
+    (PolysQ Q σ v l).ncard = (PolysQ Q (fun j => tog a (σ j)) (htA c v) l).ncard := by
+  have hf := mapsTo_relabel (Q := Q) (σ := σ) hc v l
+  have hb := mapsTo_relabel (Q := Q) (σ := fun j => tog a (σ j)) hc (htA c v) l
   rw [tog_tog_fun, htA_htA] at hb
-  have hbij : Set.BijOn (fun E : Finset (Sym2 Atom) => E.image (htS c)) (PolysA1 σ v l)
-      (PolysA1 (fun j => tog a (σ j)) (htA c v) l) := by
+  have hbij : Set.BijOn (fun E : Finset (Sym2 Atom) => E.image (htS c)) (PolysQ Q σ v l)
+      (PolysQ Q (fun j => tog a (σ j)) (htA c v) l) := by
     refine ⟨hf, fun E₁ _ E₂ _ h => Finset.image_injective (htS_injective c) h, fun E' hE' => ?_⟩
     exact ⟨E'.image (htS c), hb hE', image_htS_htS c E'⟩
   rw [← hbij.image_eq, hbij.injOn.ncard_image]
+
+theorem ncard_polysA1_relabel {σ : ℤ → ZMod 3} {a : ZMod 3} {c : ℤ × ℤ}
+    (hc : (c.1 : ZMod 3) = 2 * a ∧ (c.2 : ZMod 3) = 2 * a) (v : Atom) (l : ℕ) :
+    (PolysA1 σ v l).ncard = (PolysA1 (fun j => tog a (σ j)) (htA c v) l).ncard :=
+  ncard_polysQ_relabel AtMostTwo hc v l
 
 /-- The mirror of an atom: bilayer `j ↦ −j`, lower and upper exchanged, planar point kept. -/
 def mirA (a : Atom) : Atom := (-a.1, a.2.1, 1 - a.2.2)
@@ -238,11 +244,21 @@ theorem image_mirE_mirE (E : Finset (Sym2 Atom)) : (E.image mirE).image mirE = E
 theorem mirS_mirS (σ : ℤ → ZMod 3) : mirS (mirS σ) = σ := by
   funext i; simp [mirS]
 
-theorem mapsTo_mirror {σ : ℤ → ZMod 3} (v : Atom) (l : ℕ) :
-    Set.MapsTo (fun E : Finset (Sym2 Atom) => E.image mirE) (PolysA1 σ v l) (PolysA1 (mirS σ) (mirA v) l) := by
+/-- The crossing condition seen in the mirror: bilayer `j` becomes bilayer `-j`. -/
+def mirQ (Q : (ℤ → ℕ) → Prop) (f : ℤ → ℕ) : Prop := Q (fun j => f (-j))
+
+theorem mirQ_mirQ (Q : (ℤ → ℕ) → Prop) : mirQ (mirQ Q) = Q := by
+  funext f; simp only [mirQ, neg_neg]
+
+theorem bounded2_mirQ {Q : (ℤ → ℕ) → Prop} (hQ : Bounded2 Q) : Bounded2 (mirQ Q) := by
+  intro f hf j; have := hQ _ hf (-j); simpa using this
+
+theorem mapsTo_mirror {Q : (ℤ → ℕ) → Prop} {σ : ℤ → ZMod 3} (v : Atom) (l : ℕ) :
+    Set.MapsTo (fun E : Finset (Sym2 Atom) => E.image mirE) (PolysQ Q σ v l)
+      (PolysQ (mirQ Q) (mirS σ) (mirA v) l) := by
   intro E ⟨⟨hne, hbond, hcl, hmin⟩, hv, hcard, hprof⟩
   refine ⟨⟨hne.image _, ?_, closed_mirE hcl, ?_⟩, by rw [degS_mirE]; exact hv,
-    by rw [Finset.card_image_of_injective _ mirE_injective, hcard], fun j => ?_⟩
+    by rw [Finset.card_image_of_injective _ mirE_injective, hcard], ?_⟩
   · intro f hf
     obtain ⟨e, he, rfl⟩ := Finset.mem_image.mp hf
     have hb := hbond e he
@@ -259,22 +275,31 @@ theorem mapsTo_mirror {σ : ℤ → ZMod 3} (v : Atom) (l : ℕ) :
       rw [mirE_mirE]; exact he
     have := hmin _ hsub (hFne.image _) (closed_mirE hFcl)
     rw [← this]; exact (image_mirE_mirE F).symm
-  · have := crossN_mirE E (-j)
-    rw [neg_neg] at this
-    rw [this]; exact hprof (-j)
+  · show Q (fun j => crossN (E.image mirE) (-j))
+    rw [show (fun j => crossN (E.image mirE) (-j)) = crossN E from funext (crossN_mirE E)]; exact hprof
 
 /-- **Mirror.** `G σ` at `v` and the mirrored network at `mirA v` have the same number of polygons of each
 length crossing every bilayer at most twice. -/
-theorem ncard_polysA1_mirror (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) :
-    (PolysA1 σ v l).ncard = (PolysA1 (mirS σ) (mirA v) l).ncard := by
-  have hf := mapsTo_mirror (σ := σ) v l
-  have hb := mapsTo_mirror (σ := mirS σ) (mirA v) l
-  rw [mirS_mirS, mirA_mirA] at hb
-  have hbij : Set.BijOn (fun E : Finset (Sym2 Atom) => E.image mirE) (PolysA1 σ v l)
-      (PolysA1 (mirS σ) (mirA v) l) :=
+theorem ncard_polysQ_mirror (Q : (ℤ → ℕ) → Prop) (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) :
+    (PolysQ Q σ v l).ncard = (PolysQ (mirQ Q) (mirS σ) (mirA v) l).ncard := by
+  have hf := mapsTo_mirror (Q := Q) (σ := σ) v l
+  have hb := mapsTo_mirror (Q := mirQ Q) (σ := mirS σ) (mirA v) l
+  rw [mirS_mirS, mirA_mirA, mirQ_mirQ] at hb
+  have hbij : Set.BijOn (fun E : Finset (Sym2 Atom) => E.image mirE) (PolysQ Q σ v l)
+      (PolysQ (mirQ Q) (mirS σ) (mirA v) l) :=
     ⟨hf, fun E₁ _ E₂ _ h => Finset.image_injective mirE_injective h,
       fun E' hE' => ⟨E'.image mirE, hb hE', image_mirE_mirE E'⟩⟩
   rw [← hbij.image_eq, hbij.injOn.ncard_image]
+
+/-- `AtMostTwo` is its own mirror. -/
+theorem mirQ_atMostTwo : mirQ AtMostTwo = AtMostTwo := by
+  funext f; apply propext; constructor
+  · intro h j; have := h (-j); simpa using this
+  · intro h j; exact h (-j)
+
+theorem ncard_polysA1_mirror (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) :
+    (PolysA1 σ v l).ncard = (PolysA1 (mirS σ) (mirA v) l).ncard := by
+  rw [polysA1_eq_Q, polysA1_eq_Q, ncard_polysQ_mirror AtMostTwo σ v l, mirQ_atMostTwo]
 
 /-- The stacking with the letters *below* bilayer `k` swapped by `tog (σ k)` (the c/h letter of bilayer `k`
 flipped, the positions at and above `k` kept). -/
@@ -289,10 +314,14 @@ theorem mirS_flipBelow (σ : ℤ → ZMod 3) (k : ℤ) : mirS (flipBelow σ k) =
 
 /-- **Corollary A1 across a flip below `v`.** If `v` lies in the far half of bilayer `k`, flipping the
 c/h letter of bilayer `k` by changing the letters below `k` keeps the counts at `v`. -/
-theorem ncard_polysA1_flipBelow {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : IsFar k v) (l : ℕ) :
-    (PolysA1 (flipBelow σ k) v l).ncard = (PolysA1 σ v l).ncard := by
-  rw [ncard_polysA1_mirror (flipBelow σ k) v l, mirS_flipBelow, ncard_polysA1_mirror σ v l]
+theorem ncard_polysQ_flipBelow {Q : (ℤ → ℕ) → Prop} (hQ : Bounded2 Q) {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom}
+    (hv : IsFar k v) (l : ℕ) : (PolysQ Q (flipBelow σ k) v l).ncard = (PolysQ Q σ v l).ncard := by
+  rw [ncard_polysQ_mirror Q (flipBelow σ k) v l, mirS_flipBelow, ncard_polysQ_mirror Q σ v l]
   have hroot : ¬ IsFar (-k) (mirA v) := fun h => (isFar_mirA.mp h) hv
-  exact (ncard_polysA1_flip hroot l).symm
+  exact (ncard_polysQ_flip (bounded2_mirQ hQ) hroot l).symm
+
+theorem ncard_polysA1_flipBelow {σ : ℤ → ZMod 3} {k : ℤ} {v : Atom} (hv : IsFar k v) (l : ℕ) :
+    (PolysA1 (flipBelow σ k) v l).ncard = (PolysA1 σ v l).ncard :=
+  ncard_polysQ_flipBelow bounded2_atMostTwo hv l
 
 end LoopEqualityProof
