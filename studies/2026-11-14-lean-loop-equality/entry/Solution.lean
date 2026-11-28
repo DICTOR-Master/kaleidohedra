@@ -632,4 +632,16 @@ theorem corollaryA_profile {σ τ : ℤ → ZMod 3} (hσ : IsStacking σ) (hτ :
   rw [polysWithProfile_eq_proof, polysWithProfile_eq_proof]
   exact LoopEqualityProof.corollaryA_profile hσ hτ hvσ hvτ l π hπ
 
+/-- The profile `π` read from the bilayer of `v`: upward from a lower atom, downward from an upper atom. -/
+def profileFrom (v : Atom) (π : ℤ → ℕ) : ℤ → ℕ := fun i => if v.2.2 = 0 then π (v.1 + i) else π (v.1 - i)
+
+/-- **Every site counts the same, profile by profile.** For every stacking `σ`, every site `v` of it and every
+crossing profile `π` with entries at most 2, the polygons through `v` with `l` edges and profile `π` are as many
+as at diamond's site `(0, (0, 0), 0)` with the profile read from `v`'s bilayer. -/
+theorem corollaryA_everySite_profile {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (hv : IsSite σ v) (l : ℕ)
+    (π : ℤ → ℕ) (hπ : ∀ j, π j ≤ 2) :
+    (polysWithProfile σ v l π).ncard = (polysWithProfile diamond (0, (0, 0), 0) l (profileFrom v π)).ncard := by
+  rw [polysWithProfile_eq_proof, polysWithProfile_eq_proof]
+  exact LoopEqualityProof.corollaryA_everySite_profile hσ hv l π hπ
+
 end DictoLoopEquality
