@@ -5,14 +5,15 @@ public import Mathlib
 @[expose] public section
 
 /-!
-# The Loop Equality (DICTO, paper #102, Theorem 1), with the explicit count
+# The Loop Equality (DICTO, paper #102, Theorem 1), with the explicit count, Corollary A and the flip formula
 
 This file is the statement surface: definitions and theorem statements only,
 every proof `sorry`. The proofs are in the library `LoopEquality`, re-exported
 by `Solution.lean`.
 
 Source: DICTO, *Every Site Hears the Same: the Loop Equality Is a Theorem*,
-Zenodo 2026, DOI 10.5281/zenodo.24127070 (version 4).
+Zenodo 2026, DOI 10.5281/zenodo.24127070 (version 4). Corollary A and the flip formula (Theorem B):
+DICTO, paper #125, *Loops and Polygons on Close-Packed Stackings* (Zenodo, DOI given at release).
 
 ## The model
 
@@ -60,6 +61,17 @@ zeta function.
   `fibonacci_loop_equality`: the Fibonacci stacking is an aperiodic close-packed
   stacking whose hexagonal layers follow the Fibonacci word, and the Loop
   Equality holds on it with the same explicit count.
+* `corollaryA1`, `polysAtMostTwice_finite`, `corollaryA_everySite`,
+  `polysAtMostTwice_diamond_six_pos`: a polygon is a minimal nonempty set of
+  bonds with every atom of even degree. The polygons through a site with `l`
+  edges that cross every bilayer at most twice are finitely many, are as many at
+  every site of every stacking as at diamond's site `(0, (0, 0), 0)`, and there
+  is at least one at `l = 6` (a hexagon) (Corollary A of #102).
+* `theoremB`: the flip formula. Flipping bilayer `k` (every letter above it
+  reflected through its letter) changes the number of polygons through a site
+  below the cut by a finite sum over crossing sets, each term counted in the
+  stacking before the flip: pairs of linkages below and above the cut that close
+  into one cycle, with the upper linkage half-turned or not.
 -/
 
 namespace DictoLoopEquality

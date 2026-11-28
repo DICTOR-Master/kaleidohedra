@@ -442,3 +442,4 @@ polysCross_empty_flip, root_of_no_cross. Built, standard axioms. The -1/2 sum A_
 only for the locality tables (item 10). Countdown 14.
 Item 5 DONE (28 Nov): Theorem B in the entry (Challenge/Solution, comparator 21 theorems: con-ron, nanoda, Lean accept; negative control l -> l+1 rejected 'do not match: theoremB'). Countdown 13.
 Item 7 DONE (28 Nov): Witness.lean hexagon through diamond's (0,(0,0),0), polysA1_diamond_six_pos; entry theorem polysAtMostTwice_diamond_six_pos (22 theorems): comparator accepts, negative control (6 -> 7) rejected. Countdown 12.
+Item 8 DONE (28 Nov): Challenge header lists Corollary A, the witness and the flip formula, names them (Corollary A of #102; Theorem B), sources #125 (its DOI is written in at release, with item 9).
