@@ -76,22 +76,20 @@ theorem sumG16_zero (σ : ℤ → ZMod 3) (h0 : σ 0 = 0) {v : Atom} (hv : ¬ Is
     · by_contra hne; exact hs (site_of_Wc (left_ne_zero_of_mul hne))
     · rfl
   set a := σ (-1); set b := σ 1
-  have hagree : ∀ (w : Atom) (P : Finset (ℤ × ℤ)), G16 σ 0 (0, 0) w P = G16 (sig a b) 0 (0, 0) w P :=
-    fun w P => G16_congr (by simp [sig, a]) (by simp [sig, h0]) (by simp [sig, b]) _ w P
-  have hc' : GoodCentre (sig a b) 0 (0, 0) := by unfold GoodCentre sig; simp
+  have hagree : ∀ (w : Atom) (P : Finset (ℤ × ℤ)), G16 σ 0 (0, 0) w P = G16b (sigR a) (sigF b) 0 (0, 0) w P :=
+    fun w P => G16_eq_b (by simp [sigR, a]) (by simp [sigR, h0]) (by simp [sigF, h0]) (by simp [sigF, b]) _ w P
+  have hc' : GoodCentre (sigF b) 0 (0, 0) := by unfold GoodCentre sigF; simp
+  have hk : sigR a 0 = sigF b 0 := by simp [sigR, sigF]
   set L := zqOf b
   have hprops := zq_props b
   unfold propsB at hprops
   simp only [Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true] at hprops
   obtain ⟨hnd, hq⟩ := hprops
-  have hcheck : ∀ q ∈ candQuads (sig a b) 0 (0, 0), nrm (toSet q) ∈ Zf L ∧ nrm (gP (0, 0) (toSet q)) ∈ Zf L := by
-    have := hcheck16 a b
-    unfold hcheckB at this
-    simp only [List.all_eq_true, Bool.and_eq_true, decide_eq_true_eq] at this
-    exact this
+  have hcheck : ∀ q ∈ candQuads (sigF b) 0 (0, 0), nrm (toSet q) ∈ Zf L ∧ nrm (gP (0, 0) (toSet q)) ∈ Zf L :=
+    hcheckF b
   have hZ : ∀ P, G16 σ 0 (0, 0) v P ≠ 0 → nrm P ∈ Zf L := by
     intro P hP; rw [hagree] at hP
-    exact G16_complete hc' v (b₀ := (0, 0)) (by simp [sig]) hcheck P hP
+    exact G16b_complete hk hc' v (b₀ := (0, 0)) (by simp [sigF]) hcheck P hP
   have hZn : ∀ S ∈ Zf L, nrm S = S := by
     intro S hS
     obtain ⟨q, hqL, hSq⟩ := List.mem_map.mp (List.mem_toFinset.mp hS)
@@ -101,7 +99,7 @@ theorem sumG16_zero (σ : ℤ → ZMod 3) (h0 : σ 0 = 0) {v : Atom} (hv : ¬ Is
   rw [List.sum_toFinset _ hnd, List.map_map]
   -- each class: the computable shape value
   have hterm : ∀ q ∈ L, ((fun S => ∑ f ∈ T16 v S, G16 σ 0 (0, 0) (posA (sc f) v) S) ∘ toSet) q =
-      shapeVal4 (sig a b) 0 (0, 0) v q.1 q.2.1 q.2.2.1 q.2.2.2 := by
+      shapeVal4B (sigR a) (sigF b) 0 (0, 0) v q.1 q.2.1 q.2.2.1 q.2.2.2 := by
     intro q hqL
     have hd := (hq q hqL).1.1
     have hr := (hq q hqL).1.2
@@ -111,8 +109,8 @@ theorem sumG16_zero (σ : ℤ → ZMod 3) (h0 : σ 0 = 0) {v : Atom} (hv : ¬ Is
     simp only [beq_iff_eq] at hr
     obtain ⟨⟨⟨⟨⟨⟨⟨r1, r2⟩, r3⟩, r4⟩, r5⟩, r6⟩, r7⟩, r8⟩ := hr
     have hV : ∀ p ∈ ({q.1, q.2.1, q.2.2.1, q.2.2.2} : Finset (ℤ × ℤ)),
-        (p.1 : ZMod 3) = sig a b 0 ∧ (p.2 : ZMod 3) = sig a b 0 := by
-      have s0 : sig a b 0 = 0 := by simp [sig]
+        (p.1 : ZMod 3) = sigF b 0 ∧ (p.2 : ZMod 3) = sigF b 0 := by
+      have s0 : sigF b 0 = 0 := by simp [sigF]
       intro p hp; rw [s0]
       simp only [Finset.mem_insert, Finset.mem_singleton] at hp
       rcases hp with rfl | rfl | rfl | rfl
@@ -122,7 +120,7 @@ theorem sumG16_zero (σ : ℤ → ZMod 3) (h0 : σ 0 = 0) {v : Atom} (hv : ¬ Is
       · exact ⟨res_zero r7, res_zero r8⟩
     simp only [Function.comp_apply, toSet]
     simp only [hagree]
-    rw [shape_sum hc' v hD hV, shapeVal_eq4 hD]
+    rw [shape_sum2 hc' v hD hV, shapeValB_eq4 hD]
   rw [List.map_congr_left hterm]
   -- the kind of v
   have hv' : v.1 < 0 ∨ (v.1 = 0 ∧ v.2.2 = 0) := by
@@ -143,13 +141,13 @@ theorem sumG16_zero (σ : ℤ → ZMod 3) (h0 : σ 0 = 0) {v : Atom} (hv : ¬ Is
     have hpos : (v.2.1.1 : ZMod 3) = 0 ∧ (v.2.1.2 : ZMod 3) = 0 := by
       have := hs; unfold IsSite at this; rw [hv0, h0] at this; exact this
     have e : ∀ q : (ℤ × ℤ) × (ℤ × ℤ) × (ℤ × ℤ) × (ℤ × ℤ),
-        shapeVal4 (sig a b) 0 (0, 0) v q.1 q.2.1 q.2.2.1 q.2.2.2 =
-        shapeVal4 (sig a b) 0 (0, 0) (0, (0, 0), 0) q.1 q.2.1 q.2.2.1 q.2.2.2 := fun q =>
-      shapeVal4_congr hv0 hu (by simpa using (ZMod.intCast_zmod_eq_zero_iff_dvd _ 3).mp hpos.1 |> Int.emod_eq_zero_of_dvd)
+        shapeVal4B (sigR a) (sigF b) 0 (0, 0) v q.1 q.2.1 q.2.2.1 q.2.2.2 =
+        shapeVal4B (sigR a) (sigF b) 0 (0, 0) (0, (0, 0), 0) q.1 q.2.1 q.2.2.1 q.2.2.2 := fun q =>
+      shapeVal4B_congr hv0 hu (by simpa using (ZMod.intCast_zmod_eq_zero_iff_dvd _ 3).mp hpos.1 |> Int.emod_eq_zero_of_dvd)
         (by simpa using (ZMod.intCast_zmod_eq_zero_iff_dvd _ 3).mp hpos.2 |> Int.emod_eq_zero_of_dvd) _ _ _ _
     simp only [e]
-    have hk := (sum16_kernel a b 0).1
-    unfold S16 at hk; exact hk
+    have hk := (sum16B_kernel a b 0).1
+    unfold S16B at hk; exact hk
   by_cases hvm : v.1 = -1
   · have hpos : (v.2.1.1 : ZMod 3) = a ∧ (v.2.1.2 : ZMod 3) = a := by
       have := hs; unfold IsSite at this; rw [hvm] at this; exact this
@@ -160,16 +158,16 @@ theorem sumG16_zero (σ : ℤ → ZMod 3) (h0 : σ 0 = 0) {v : Atom} (hv : ¬ Is
       apply Int.emod_eq_zero_of_dvd; apply (ZMod.intCast_zmod_eq_zero_iff_dvd _ 3).mp
       push_cast; rw [hpos.2]; simp
     have e : ∀ q : (ℤ × ℤ) × (ℤ × ℤ) × (ℤ × ℤ) × (ℤ × ℤ),
-        shapeVal4 (sig a b) 0 (0, 0) v q.1 q.2.1 q.2.2.1 q.2.2.2 =
-        shapeVal4 (sig a b) 0 (0, 0) (-1, ((a.val : ℤ), (a.val : ℤ)), v.2.2) q.1 q.2.1 q.2.2.1 q.2.2.2 := fun q =>
-      shapeVal4_congr (v' := (-1, ((a.val : ℤ), (a.val : ℤ)), v.2.2)) hvm rfl d1 d2 q.1 q.2.1 q.2.2.1 q.2.2.2
+        shapeVal4B (sigR a) (sigF b) 0 (0, 0) v q.1 q.2.1 q.2.2.1 q.2.2.2 =
+        shapeVal4B (sigR a) (sigF b) 0 (0, 0) (-1, ((a.val : ℤ), (a.val : ℤ)), v.2.2) q.1 q.2.1 q.2.2.1 q.2.2.2 := fun q =>
+      shapeVal4B_congr (v' := (-1, ((a.val : ℤ), (a.val : ℤ)), v.2.2)) hvm rfl d1 d2 q.1 q.2.1 q.2.2.1 q.2.2.2
     simp only [e]
-    have hk := (sum16_kernel a b v.2.2).2
-    unfold S16 at hk; exact hk
+    have hk := (sum16B_kernel a b v.2.2).2
+    unfold S16B at hk; exact hk
   · have hz : ∀ q : (ℤ × ℤ) × (ℤ × ℤ) × (ℤ × ℤ) × (ℤ × ℤ),
-        shapeVal4 (sig a b) 0 (0, 0) v q.1 q.2.1 q.2.2.1 q.2.2.2 = 0 := by
-      intro q; unfold shapeVal4
-      simp only [wR4_zero (σ := sig a b) (k := 0) (v := v) ⟨hv0, by omega⟩]; ring
+        shapeVal4B (sigR a) (sigF b) 0 (0, 0) v q.1 q.2.1 q.2.2.1 q.2.2.2 = 0 := by
+      intro q; unfold shapeVal4B
+      simp only [wR4_zero (σ := sigR a) (k := 0) (v := v) ⟨hv0, by omega⟩]; ring
     simp [hz]
 
 /-- **One flip keeps the polygons of length 16** (bilayer 0, letter 0). -/

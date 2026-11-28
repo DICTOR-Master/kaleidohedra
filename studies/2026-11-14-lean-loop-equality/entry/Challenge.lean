@@ -596,9 +596,9 @@ theorem theorem5a_short {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (
     (polysThrough σ v l).ncard = (polysThrough diamond (0, (0, 0), 0) l).ncard := by
   sorry
 
-/-- **Theorem 5 (a) of #102 for l ≤ 15.** For every stacking and every site `v` of it, the polygons through `v` with
-`l ≤ 15` edges are as many, length by length, as at diamond's site `(0, (0, 0), 0)`. -/
-theorem theorem5a_upto15 {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (hv : IsSite σ v) {l : ℕ} (hl : l ≤ 15) :
+/-- **Theorem 5 (a) of #102 for l ≤ 17.** For every stacking and every site `v` of it, the polygons through `v` with
+`l ≤ 17` edges are as many, length by length, as at diamond's site `(0, (0, 0), 0)`. -/
+theorem theorem5a_upto17 {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (hv : IsSite σ v) {l : ℕ} (hl : l ≤ 17) :
     (polysThrough σ v l).ncard = (polysThrough diamond (0, (0, 0), 0) l).ncard := by
   sorry
 

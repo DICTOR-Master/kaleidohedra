@@ -44,3 +44,10 @@ public import LoopEquality.Mt
 public import LoopEquality.ArcCounts
 public import LoopEquality.Weighted
 public import LoopEquality.ShapeVal
+public import LoopEquality.ArcLen
+public import LoopEquality.Height
+public import LoopEquality.LetterLocal
+public import LoopEquality.Complete16
+public import LoopEquality.Final16
+public import LoopEquality.Data16
+public import LoopEquality.Law16

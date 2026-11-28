@@ -48,8 +48,8 @@ them. Then:
   site below it by a finite sum counted before the flip (`theoremB`); in #102's
   own form, twice the change is minus the sum of products of the two halves'
   asymmetries under the half-turn (`theoremB_symmetric`).
-* **Theorem 5 (a) of #102 to length 15** (`theorem5a_short`, `theorem5a_upto15`).
-  At every site of every stacking the polygons through the site with l ≤ 15 edges
+* **Theorem 5 (a) of #102 to length 17** (`theorem5a_short`, `theorem5a_upto17`).
+  At every site of every stacking the polygons through the site with l ≤ 17 edges
   are as many as at diamond's site, length by length.
 
 The non-backtracking loops are the rooted cycles counted by the Ihara zeta
@@ -132,7 +132,7 @@ outside `Challenge.lean`; `#print axioms` gives only `propext`,
 the cut-and-project = substitution identity of the Fibonacci word at every
 position (classical, Morse–Hedlund 1940, Lothaire 2002); #102 Corollaries 1–3
 and Lemma 2 (c); Theorem A for four or more crossings (its symmetric cases),
-Theorem 5 (a) at length 16 and Theorem 5 (b), the laws at lengths 18 and 20; equality of the vertical and slanted bond walk counts (not
+Theorem 5 (b), the laws at lengths 18 and 20; equality of the vertical and slanted bond walk counts (not
 needed).
 
 ## Literature and novelty
