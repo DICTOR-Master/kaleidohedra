@@ -465,3 +465,4 @@ lines), milestones: M0 kernel pilot (Nat-coded half, arc search, meeting pairs, 
 -> M1 far flips (a) l <= 10 -> M2 single arcs, linkage = arcs, (a) l <= 12 -> M3 locality, regrouping, L5, (a) l <= 14, Lemma 7
 -> M4 enumerators, (a) l <= 16 -> M5 l = 18 law -> M6 l = 20 law. Fallback if slow at l = 20: chunk, pack paths, 3-fold turn,
 toggle identity; else release l <= 18 machine-checked, l = 20 checked outside Lean.
+M0 PILOT (28 Nov): Nat-coded half (pilot/Pilot.lean in the entry workspace, not in the library) reproduces Python exactly (30/168 arcs, 384/5760 raw meeting triples); kernel decide: fmax 6 in 3 s, fmax 8 in 17 s (incl. ~1 s start). fmax 10 running.
