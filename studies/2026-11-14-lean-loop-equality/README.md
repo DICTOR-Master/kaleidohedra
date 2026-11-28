@@ -517,3 +517,8 @@ ext with mem_ext = exact specification, ext_nodup, fc_two_enum: arc counts are l
 paths of 4 edges from an end atom, 24 of them arcs (= #102's 30 arcs of length <= 4 minus the 6 of length 2); decide ~3 s.
 Next: meeting pairs and root counts through v from the enumeration; reduction of the sum over crossing sets to a finite
 candidate list; normalisation of the stacking (only the letters near k matter) and of v; the l = 16 check by decide.
+l = 16 assembly (28 Nov): Matching.lean (linkage_four, pairF_four: a 4-end linkage pairs its ends by a matching).
+Regroup.lean: Wc_translate, Af_translate (lattice translations), class normalisation nrm by coordinate sum (shift,
+nrm_trP, shift_nrm), regroup: sum over crossing sets of G v = sum over class representatives S and lattice translates of v
+(G invariant under joint translation). Next: G for l = 16 and its invariance; Z = normalised meeting shapes from the arc
+enumeration with a completeness proof; T(S); stacking normalisation; decide.

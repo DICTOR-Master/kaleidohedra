@@ -35,3 +35,5 @@ public import LoopEquality.FourPoint
 public import LoopEquality.Meet
 public import LoopEquality.Path
 public import LoopEquality.Enum
+public import LoopEquality.Matching
+public import LoopEquality.Regroup
