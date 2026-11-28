@@ -410,4 +410,78 @@ theorem corollaryA_everySite {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : At
     (polysAtMostTwice σ v l).ncard = (polysAtMostTwice diamond (0, (0, 0), 0) l).ncard := by
   sorry
 
+/-! ### Theorem B: the flip formula -/
+
+/-- Flip bilayer `k`: every letter above bilayer `k` is reflected through the letter of bilayer `k`. -/
+def flip (σ : ℤ → ZMod 3) (k : ℤ) (j : ℤ) : ZMod 3 := if j ≤ k then σ j else 2 * σ k - σ j
+
+/-- The half-turn `p ↦ c - p` of the planar position of an atom. -/
+def halfTurn (c : ℤ × ℤ) (a : Atom) : Atom := (a.1, c - a.2.1, a.2.2)
+
+/-- The lower atom at position `p` of bilayer `k`. -/
+def lower (k : ℤ) (p : ℤ × ℤ) : Atom := (k, p, 0)
+
+/-- The upper atom at position `p` of bilayer `k`. -/
+def upper (k : ℤ) (p : ℤ × ℤ) : Atom := (k, p, 1)
+
+/-- `a` and `b` are joined by a path of edges of `L`. -/
+def Joined (L : Finset (Sym2 Atom)) : Atom → Atom → Prop :=
+  Relation.ReflTransGen (fun a b => s(a, b) ∈ L ∧ a ≠ b)
+
+/-- `L` is a linkage with ends `B`: degree 1 at each end, 0 or 2 at every other atom, no nonempty subset of
+`L` with every degree even, and no loops. -/
+def IsLinkage (L : Finset (Sym2 Atom)) (B : Finset Atom) : Prop :=
+  (∀ w ∈ B, edgeDeg L w = 1) ∧ (∀ w ∉ B, edgeDeg L w = 0 ∨ edgeDeg L w = 2) ∧
+    (∀ G ⊆ L, G.Nonempty → ¬ ∀ x, Even (edgeDeg G x)) ∧ (∀ e ∈ L, ¬ e.IsDiag)
+
+/-- A linkage of `G σ` below the cut at bilayer `k`, ending at the lower atoms of `P`. -/
+def rootLinkage (σ : ℤ → ZMod 3) (k : ℤ) (P : Finset (ℤ × ℤ)) (R : Finset (Sym2 Atom)) : Prop :=
+  IsLinkage R (P.image (lower k)) ∧ (∀ e ∈ R, ∀ w ∈ e, ¬ IsAbove k w) ∧
+    ∀ e ∈ R, ∃ a b, e = s(a, b) ∧ Bond σ a b
+
+/-- A linkage of `G σ` above the cut at bilayer `k`, ending at the upper atoms of `P`. -/
+def farLinkage (σ : ℤ → ZMod 3) (k : ℤ) (P : Finset (ℤ × ℤ)) (F : Finset (Sym2 Atom)) : Prop :=
+  IsLinkage F (P.image (upper k)) ∧ (∀ e ∈ F, ∀ w ∈ e, IsAbove k w) ∧
+    ∀ e ∈ F, ∃ a b, e = s(a, b) ∧ Bond σ a b
+
+/-- The pairings of the ends by `R` (below) and `F` (above) close into a single cycle: no nonempty proper
+subset of `P` is closed under both. -/
+def OneCycle (k : ℤ) (P : Finset (ℤ × ℤ)) (R F : Finset (Sym2 Atom)) : Prop :=
+  ∀ Q ⊆ P, Q.Nonempty → (∀ p ∈ Q, ∀ q ∈ P, Joined R (lower k p) (lower k q) → q ∈ Q) →
+    (∀ p ∈ Q, ∀ q ∈ P, Joined F (upper k p) (upper k q) → q ∈ Q) → Q = P
+
+/-- The polygons of `G σ` through `v` with `l` edges. -/
+def polysThrough (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) : Set (Finset (Sym2 Atom)) :=
+  {E | IsPolygon σ E ∧ 0 < edgeDeg E v ∧ E.card = l}
+
+/-- Pairs (linkage below through `v`, linkage above) of `G σ`, both ending at `P`, closing into one cycle,
+with `l` edges in all (counting the vertical bonds at `P`). -/
+def stayPairs (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) (k : ℤ) (P : Finset (ℤ × ℤ)) :
+    Set (Finset (Sym2 Atom) × Finset (Sym2 Atom)) :=
+  {RF | rootLinkage σ k P RF.1 ∧ farLinkage σ k P RF.2 ∧ 0 < edgeDeg RF.1 v ∧
+    RF.1.card + P.card + RF.2.card = l ∧ OneCycle k P RF.1 RF.2}
+
+/-- Pairs (linkage below through `v` ending at `P`, linkage above ending at `c - P`) of `G σ` whose
+half-turned upper part closes the lower part into one cycle, with `l` edges in all. -/
+def flipPairs (σ : ℤ → ZMod 3) (v : Atom) (l : ℕ) (k : ℤ) (P : Finset (ℤ × ℤ)) (c : ℤ × ℤ) :
+    Set (Finset (Sym2 Atom) × Finset (Sym2 Atom)) :=
+  {RF | rootLinkage σ k P RF.1 ∧ farLinkage σ k (P.image (fun p => c - p)) RF.2 ∧ 0 < edgeDeg RF.1 v ∧
+    RF.1.card + P.card + RF.2.card = l ∧ OneCycle k P RF.1 (RF.2.image (Sym2.map (halfTurn c)))}
+
+/-- The planar positions within `2l` of `v` in both coordinates. -/
+def window (v : Atom) (l : ℕ) : Finset (ℤ × ℤ) :=
+  Finset.Icc (v.2.1.1 - 2 * l) (v.2.1.1 + 2 * l) ×ˢ Finset.Icc (v.2.1.2 - 2 * l) (v.2.1.2 + 2 * l)
+
+open Classical in
+/-- **Theorem B (the flip formula).** Flip bilayer `k` of any stacking, with `c ≡ 2·σ k` in both
+coordinates, mod 3. For every atom `v` below the cut at bilayer `k`, the polygons through `v` with `l` edges
+after the flip are as many as before, plus the sum over the nonempty sets `P` of crossing positions (with
+vertical bonds) of `#flipPairs − #stayPairs`: every term is counted in the stacking before the flip. -/
+theorem theoremB {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {k : ℤ} {c : ℤ × ℤ}
+    (hc : (c.1 : ZMod 3) = 2 * σ k ∧ (c.2 : ZMod 3) = 2 * σ k) (hv : ¬ IsAbove k v) :
+    ((polysThrough (flip σ k) v l).ncard : ℤ) = (polysThrough σ v l).ncard +
+      ∑ P ∈ (window v l).powerset.filter (fun P => P.Nonempty ∧ ∀ p ∈ P, Bond σ (lower k p) (upper k p)),
+        (((flipPairs σ v l k P c).ncard : ℤ) - (stayPairs σ v l k P).ncard) := by
+  sorry
+
 end DictoLoopEquality

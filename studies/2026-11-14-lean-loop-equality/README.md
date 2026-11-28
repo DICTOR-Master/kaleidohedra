@@ -440,3 +440,4 @@ Item 4 DONE (28 Nov): TheoremB.lean `theoremB` (flip formula: #polys(flipAt sigm
 sets P in the window with vertical bonds of (#FlipParts - #PartsCross), all counted in G sigma), with ncard_polys_sum,
 polysCross_empty_flip, root_of_no_cross. Built, standard axioms. The -1/2 sum A_w A_f symmetrisation is finite algebra on top, needed
 only for the locality tables (item 10). Countdown 14.
+Item 5 DONE (28 Nov): Theorem B in the entry (Challenge/Solution, comparator 21 theorems: con-ron, nanoda, Lean accept; negative control l -> l+1 rejected 'do not match: theoremB'). Countdown 13.
