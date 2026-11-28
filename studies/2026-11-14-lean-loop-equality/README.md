@@ -446,3 +446,8 @@ Item 8 DONE (28 Nov): Challenge header lists Corollary A, the witness and the fl
 Paper items 13 (Theorem B section), 15 (correlation table + OEIS trail), 17 (OEIS acknowledgement) DONE (28 Nov); #102 v6 cited for Corollary A/Theorem B; draft PDF rebuilt. Countdown 8: Lean 6, 9, 10, 11; paper 14 figures, 16 library comparison (incl. A038515 factor), 21 second Fable, 22 read ok.
 Item 6 DONE (28 Nov): every step generalised to a crossing condition Q (PolysQ); corollaryA_profile in the entry (23 theorems; con-ron accepted 18893 declarations; nanoda, Lean accept; negative control bound 2 -> 3 rejected). DICTO 28 Nov: full #102 §5 scope before release (new items: Theorem 8 per profile; -1/2 sum A A algebra; locality + Lemma 7; Theorem 5(a),(b) tables).
 Countdown item 1 (Theorem 8 per profile) DONE 28 Nov: entry 24 theorems, con-ron 18903 declarations, negative control rejected.
+Item 2 design (28 Nov): Theorem B, -1/2 sum A_w A_f form, per site. 2a pairR/pairF (relations on P from Conn R / Conn F),
+OneCycleRel P M M' (SingleCycle iff OneCycleRel of the pairings). 2b linkages with r edges ending at P lie within 2r of P (finite).
+2c #PartsCross = sum over M, M' (subsets of P x P), r + |P| + s = l, OneCycleRel: W(P,M,r) * Fc(P,M',s). 2d Fc in the flipped
+stacking = Fc(c - P, c - M') before (flip_transfer). 2e symmetrisation over a g-invariant finite family of crossing sets.
+Countdown item 2 (Theorem B in #102's form) DONE in library 28 Nov: Pairings.lean + BSym.lean theoremB_sym (2*Delta = - sum A_w A_f over a half-turn-closed family of crossing sets), built, standard axioms. Next: into the entry.
