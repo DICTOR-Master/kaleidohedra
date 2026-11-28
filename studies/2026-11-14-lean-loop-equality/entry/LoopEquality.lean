@@ -33,3 +33,5 @@ public import LoopEquality.MinRoot
 public import LoopEquality.Split
 public import LoopEquality.FourPoint
 public import LoopEquality.Meet
+public import LoopEquality.Path
+public import LoopEquality.Enum

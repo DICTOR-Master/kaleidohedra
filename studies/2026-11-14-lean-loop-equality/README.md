@@ -511,3 +511,9 @@ atom-disjoint arcs. Meet.lean: fc_four_meet (count = sum_i Fc(ab,i) Fc(cd,s-i) -
 asymmetry = #meeting pairs at gP - #meeting pairs at P, via Fc_two). Standard axioms.
 Next: pairing relations of 4-end linkages are matchings; verified arc enumeration (arcs of length <= 4 for l = 16); the
 root side by the mirror; regrouping over translates; the finite check.
+Item 4, verified arc search (28 Nov): Path.lean (path_linkage: a simple path is an arc; arc_to_path: every arc is a simple
+path; conn_two_ends; path_unique; fc_two_paths: Fc({a,b}, i) = number of simple far paths). Enum.lean (computable nbrs /
+ext with mem_ext = exact specification, ext_nodup, fc_two_enum: arc counts are list lengths). Kernel test on diamond: 63 far
+paths of 4 edges from an end atom, 24 of them arcs (= #102's 30 arcs of length <= 4 minus the 6 of length 2); decide ~3 s.
+Next: meeting pairs and root counts through v from the enumeration; reduction of the sum over crossing sets to a finite
+candidate list; normalisation of the stacking (only the letters near k matter) and of v; the l = 16 check by decide.
