@@ -753,4 +753,11 @@ theorem theoremB_symmetric {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {k : ℤ} 
   apply Finset.sum_congr rfl; intro x _
   rw [asymBelow_eq_proof, asymAbove_eq_proof]
 
+/-- **Theorem 5 (a) of #102 for short polygons.** For every stacking and every site `v` of it, the polygons through
+`v` with at most 11 edges are as many, length by length, as at diamond's site `(0, (0, 0), 0)`. -/
+theorem theorem5a_short {σ : ℤ → ZMod 3} (hσ : IsStacking σ) {v : Atom} (hv : IsSite σ v) {l : ℕ} (hl : l < 12) :
+    (polysThrough σ v l).ncard = (polysThrough diamond (0, (0, 0), 0) l).ncard := by
+  rw [polysThrough_eq_proof, polysThrough_eq_proof]
+  exact LoopEqualityProof.theorem5a_short hσ hv hl
+
 end DictoLoopEquality

@@ -467,3 +467,4 @@ lines), milestones: M0 kernel pilot (Nat-coded half, arc search, meeting pairs, 
 toggle identity; else release l <= 18 machine-checked, l = 20 checked outside Lean.
 M0 PILOT (28 Nov): Nat-coded half (pilot/Pilot.lean in the entry workspace, not in the library) reproduces Python exactly (30/168 arcs, 384/5760 raw meeting triples); kernel decide: fmax 6 in 3 s, fmax 8 in 17 s (incl. ~1 s start). fmax 10 running.
 M0 fmax 10: kernel 231 s (61704 raw triples) -> brute force feasible for all Theorem 5 tables. M1 DONE: Short.lean theorem5a_short (l <= 11: every site = diamond, all polygons), built, standard axioms.
+Entry 26 theorems (theorem5a_short), con-ron 19043; pilot moved out of the entry to studies/.../pilot (it broke the source rules: 'must use the module header keyword'; caught by check-lean-sources, fixed same session).
