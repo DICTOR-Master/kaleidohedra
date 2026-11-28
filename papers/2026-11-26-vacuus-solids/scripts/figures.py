@@ -1,6 +1,6 @@
 # Vacuus-Solids paper: figures from the exact renders of study 2026-11-25-partial-vacuus (26 Nov 2026). With Claude (Anthropic).
 # fig1-family.jpg: dodecahedron, icosahedron, cube, cuboctahedron at three core sizes (frames p0-p11 of renders/sheet);
-# fig2-special.jpg: the eleven special sizes with their cores (renders/special); fig3-solidity.png: the solidity chart.
+# fig2a/fig2b-special.jpg: the eleven special sizes with their cores (renders/special), six and five; fig3-solidity.png: the solidity chart.
 import os, json, shutil
 from PIL import Image, ImageDraw, ImageFont
 HERE = os.path.dirname(os.path.abspath(__file__)); S = os.path.join(HERE, '../../../studies/2026-11-25-partial-vacuus/renders')
@@ -31,8 +31,25 @@ CLOSED = {'5 - 2*sqrt(5)': '5 − 2√5', '10/11 - 3*sqrt(5)/11': '(10 − 3√5
 LINE2 = {'core': 'core: %s\n(pit tips = its corners)', 'touch': 'Q: %s\n(meets the pits at its corners)',
          'planes': 'Q: %s\n(shares the wall planes only)'}
 INSET_LAB = ['core' if c['kind'] == 'core' else 'Q' for c in sp]
-grid([os.path.join(S, 'special/png/p%d.png' % k) for k in range(len(sp))], 3,
-     ['%s\n%s\ns = %s' % (c['P'], LINE2[c['kind']] % c['Q'], CLOSED[c['s']]) for c in sp],
-     os.path.join(F, 'fig2-special.jpg'), T=420, LH=132, insets=[os.path.join(S, 'special/png/p%d.png' % (k + len(sp))) for k in range(len(sp))])
+# 28 Nov (DICTO: the last two rows were cut in half at the page break; bigger, six on one page and five on the next, two
+# columns): two images, renders cropped to the middle 1200 px of 1600 (the solid spans 1000), 600 px cells.
+CROP = (200, 200, 1400, 1400)
+def grid2(ks, out, T=600, LH=112):
+    cols = 2; rows = (len(ks) + 1) // 2; W = Image.new('RGB', (cols * T, rows * (T + LH)), 'white'); d = ImageDraw.Draw(W)
+    f = ImageFont.truetype(FN, 25)
+    for i, k in enumerate(ks):
+        c = sp[k]
+        im = Image.open(os.path.join(S, 'special/png/p%d.png' % k)).convert('RGBA').crop(CROP).resize((T, T))
+        bg = Image.new('RGBA', (T, T), (255, 255, 255, 255)); bg.alpha_composite(im)
+        x, y = (i % cols) * T, (i // cols) * (T + LH); W.paste(bg.convert('RGB'), (x, y))
+        S2 = int(T * 0.25); ins = Image.open(os.path.join(S, 'special/png/p%d.png' % (k + len(sp)))).convert('RGBA').resize((S2, S2))
+        b2 = Image.new('RGBA', (S2, S2), (255, 255, 255, 255)); b2.alpha_composite(ins)
+        X, Y = x + T - S2 - 8, y + 8; W.paste(b2.convert('RGB'), (X, Y)); d.rectangle([X, Y, X + S2, Y + S2], outline=(170, 162, 150), width=1)
+        d.text((X + 6, Y + 4), INSET_LAB[k], font=ImageFont.truetype(FN, 18), fill=(110, 104, 95))
+        lab = '%s, s = %s\n%s' % (c['P'], CLOSED[c['s']], LINE2[c['kind']] % c['Q'])
+        d.multiline_text((x + 14, y + T + 4), lab, font=f, fill=(40, 36, 30), spacing=5)
+    W.save(out, quality=92)
+grid2(range(0, 6), os.path.join(F, 'fig2a-special.jpg'))
+grid2(range(6, len(sp)), os.path.join(F, 'fig2b-special.jpg'))
 shutil.copy(os.path.join(S, 'sheet/chart.png'), os.path.join(F, 'fig3-solidity.png'))
 print('FINAL ok')
