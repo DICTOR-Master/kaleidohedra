@@ -24,3 +24,5 @@ public import LoopEquality.Short
 public import LoopEquality.Parity
 public import LoopEquality.SingleArc
 public import LoopEquality.Minimal
+public import LoopEquality.Twelve
+public import LoopEquality.Theorem5

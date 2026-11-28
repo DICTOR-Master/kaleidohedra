@@ -474,3 +474,4 @@ each non-end atom is a lower atom (k+1, m, 0) of degree 2 joined to two ends p, 
 (the centre of the other triangle on p, q) maps minimal far linkages of tau onto those of any tau' with tau' k = tau k and
 tau' (k+1) the other letter: so Fc_tau(Q, M, |Q|) = Fc_tau'(Q, M, |Q|); with fc_transfer: Af(P, N, |P|) = 0.
 L5 far DONE: Minimal.lean Af_min (far asymmetry at size |P| is 0: middle-atom swap m -> p+q-m is a bijection of minimal far linkages between tau and flipAt tau k, then fc_transfer). Built, standard axioms.
+Theorem 5 (a) at l = 12 DONE (theorem5a_12; Twelve.lean term_zero_12, flip_keeps_12; Theorem5.lean FlipLaw, corollaryFL). With theorem5a_short (<= 11) and theorem5a_odd: (a) holds for all l <= 13. Next: l = 14 (needs the root side at minimal size with translation regrouping, L4).
