@@ -473,3 +473,4 @@ L5 (far, minimal size) design (28 Nov): with |F| = |Q| every edge holds exactly 
 each non-end atom is a lower atom (k+1, m, 0) of degree 2 joined to two ends p, q (an arc p - m - q). Mid-swap m -> p + q - m
 (the centre of the other triangle on p, q) maps minimal far linkages of tau onto those of any tau' with tau' k = tau k and
 tau' (k+1) the other letter: so Fc_tau(Q, M, |Q|) = Fc_tau'(Q, M, |Q|); with fc_transfer: Af(P, N, |P|) = 0.
+L5 far DONE: Minimal.lean Af_min (far asymmetry at size |P| is 0: middle-atom swap m -> p+q-m is a bijection of minimal far linkages between tau and flipAt tau k, then fc_transfer). Built, standard axioms.
