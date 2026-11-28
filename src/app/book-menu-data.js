@@ -49,8 +49,9 @@ export const OTHERS_SHELF = [
 ];
 
 // Studies and tools: `world` a K_WORLDS key; `family` the 1D/2D families (by id) with their dimension; `open` a page of the app;
-// `href` a page of its own beside the app (in every door; DICTO 2026-11-21: Amber cells and Aequi first, new work at the top).
+// `href` a page of its own beside the app (in every door; DICTO 2026-11-21: Amber cells and Aequi first, new work at the top; Hollow-straw added 28 Nov, DICTO "deploy yes").
 export const TOOLS_SHELF = [
+  { id: 'hollowStraw', href: '/hollow-straw/', label: 'wiz.books.hollowStraw', sub: 'wiz.books.hollowStrawSub', glyph: '◎' },
   { id: 'amber', href: '/amber/', label: 'wiz.books.amber', sub: 'wiz.books.amberSub', glyph: '⬢', thumb: 'amber' },
   { id: 'aequi', href: '/aequi/', label: 'wiz.books.aequi', sub: 'wiz.books.aequiSub', glyph: '⚀', thumb: 'aequi' },
   { id: 'studies', world: 'studies' },
