@@ -55,7 +55,7 @@ def solid(lam):
 tag = ('rev_' if SWAP else '') + f'{CORE}_{DIE}_rho{RHO}'
 try: ev = sorted({round(x['lam'], 4) for x in json.load(open(os.path.join(HERE, f'../data/exact_{tag}.json')))['events']})
 except Exception: ev = []
-grid = sorted(set(np.round(np.concatenate([np.linspace(0, 1, 61)] + [np.linspace(t - 0.003, t + 0.003, 9) for t in ev]), 6)))
+grid = sorted(set(np.round(np.concatenate([np.linspace(0, 1, int(os.environ.get('GRIDN', '61')))] + [np.linspace(t - 0.003, t + 0.003, 9) for t in ev]), 6)))
 grid = [x for x in grid if 0 <= x <= 1]
 F = [solid(l) for l in grid]
 frames = [dict(lam=float(l), v=np.round(P, 6).tolist(), f=[[int(i) for i in fc] for fc in faces]) for l, (P, faces, _, _) in zip(grid, F)]
@@ -76,7 +76,9 @@ nested = all((((1 - grid[i + 1]) * a0 + grid[i + 1] * a1) @ F[i][0].T <= 1 + 1e-
 names_ = json.load(open(os.path.join(os.path.expanduser('~'), 'k-mix/aequi/names.json'))) if os.path.exists(os.path.expanduser('~/k-mix/aequi/names.json')) else None
 dname = names_[DIE - 1] if names_ else f'die {DIE}'; cname = {'GPc_1_1': 'C60', 'GPc_2_0': 'C80', 'GP_2_1': 'C140'}.get(CORE, CORE)
 title = f'{dname} into {cname}' if SWAP else f'{cname} into {dname}'
-out = dict(title=title, colour=col, legend=legend, swaps=[dict(lam=t) for t in ev], frames=frames, straws=straws,
+exact = (f'Proved in exact arithmetic (both solids\' planes rounded to 10<sup>\u22129</sup>): the start is {dname}, the end {cname}, every intermediate solid lies inside the next, and the only changes are the {len(ev)} swaps.'
+         if SWAP else f'Proved in exact arithmetic ({cname}\'s planes rounded to 10<sup>\u22129</sup>, the die\'s fair depths to 15 digits): the start is {cname}, the end the die, every intermediate solid lies inside the next, and the only changes are the {len(ev)} swaps.')
+out = dict(title=title, inner=(dname if SWAP else cname), outer=(cname if SWAP else dname), nswaps=len(ev), exact=exact, colour=col, legend=legend, swaps=[dict(lam=t) for t in ev], frames=frames, straws=straws,
            checks=dict(nested_frames=bool(nested), straws_volume_ok=bool(vol_ok)))
 json.dump(out, open(os.environ['OUT'], 'w'), separators=(',', ':'))
 print(title, 'frames', len(frames), 'straws', len(straws), 'volume', vtot, 'shell', shell, 'nested', nested, 'volume ok', vol_ok, flush=True)

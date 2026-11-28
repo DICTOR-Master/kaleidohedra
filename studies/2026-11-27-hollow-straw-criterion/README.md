@@ -87,3 +87,7 @@ Context (DICTO 28 Nov: "a scope investigation said that goldberg polyhedra were 
 (2026-11-21-amber-goldberg, 152 runs) found Goldberg cores in LATTICE moulds give 0 scutoids (their faces are the Voronoi cells of their
 tangent points; scutoids need large faces meeting small ones). Here the outer solid is a fair die, whose different face pattern forces
 the swaps: both directions exact for C60, C80, C140. Closed gap -> #124 next version (now numerical only there, Section on other cores).
+APP (28 Nov, DICTO "deploy yes" + "reverse direction deploy too"): Scutoid-Frusta bridging solids dropdown now has C60 -> Kuo #90,
+C80 -> Nioku #209 and back, C140 -> Kuomu #906 and back (page data hs_page_data.py, frames nested, straws within 0.5% of the shell).
+HELD: Kuo #90 -> C60 (reverse): straws closed but 1.0% short of the shell at 61 and at 241 frames (not spacing); find the cause
+before it goes in.
