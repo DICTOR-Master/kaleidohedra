@@ -492,3 +492,6 @@ f14_g (each centre's part changes sign under its half-turn), f14_sum (Finset.sum
 sumWc_14, flip_keeps_14, theorem5a_of_law (the l = 12 assembly for any l), theorem5a_14, theorem5a_upto15.
 Axioms: propext, Classical.choice, Quot.sound. Entry: theorem5a_upto13 -> theorem5a_upto15 (27 theorems); comparator v12
 and negative control (l <= 15 -> l <= 16) running.
+Comparator v12 (28 Nov): "Your solution is okay!", 19321 declarations, three kernels; negative control (l <= 15 -> l <= 16)
+rejected ("do not match: theorem5a_upto15"). Next for l = 16: the minimal-root cancellation for any l (removes the (4, 8)
+terms); the (6, 6) terms with |P| = 4 need locality (item 3) and the counting tables (item 4, 48 meeting pairs).
