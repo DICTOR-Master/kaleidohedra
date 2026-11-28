@@ -1106,8 +1106,8 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
   const thumb = (key) => (WORLD_THUMBS.has(key) ? `<img class="bm-thumb" src="assets/worlds/${key}.webp" alt="" loading="lazy" width="48" height="48">` : null);
   const pictureOf = (key, piece) => thumb(key) ?? (piece.preview || piece.action?.startsWith('tool:') ? previewSlot(() => (piece.preview ? piece.preview() : pieceEdges(piece.action))) : '<span class="bm-thumb"></span>');
   // One entry: its picture, name and a small line under it. One piece: the row opens it. Several: the row unfolds them.
-  function itemHtml({ key, label, sub = '', pieces, pic, extra = '', tip = '', chips = '' }) {
-    const one = pieces.length === 1;
+  function itemHtml({ key, label, sub = '', pieces, pic, extra = '', tip = '', chips = '', drop = false }) {
+    const one = pieces.length === 1 && !drop;   // drop: a dropdown even with one piece (a family that will grow)
     const go = (p) => (p.href ? `data-href="${p.href}"` : p.openDim ? `data-open-dim="${p.openDim}"` : p.open ? `data-open="${p.open}"` : `data-action="${p.action}" data-app="${p.app}" data-wdim="${p.wdim ?? '3D'}"`);
     const open = openItems.has(key);
     return `<div class="bm-item" data-item="${key}" data-hay="${esc(`${label} ${sub} ${chips ? chipHay(chips) : ''}`.toLowerCase())}">
@@ -1166,6 +1166,11 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
       const all = s.dim === '1D' ? FAMILIES_1D : LATTICE_FAMILIES_2D;
       const pieces = s.families.map((id) => all.find((f) => f.id === id)).map((f) => ({ label: f.label, action: f.action, app: 'dicto', wdim: s.dim, preview: f.preview }));
       return itemHtml({ key: s.id, label: s.name, pieces, pic: previewSlot(pieces[0].preview) });
+    }
+    if (s.pieces) {   // a shelf family of pages of their own, always a dropdown (DICTO 28 Nov: Scutoid-Frusta bridging solids)
+      const label = t(s.label, L);
+      return itemHtml({ key: s.id, label, sub: t(s.sub, L), pieces: s.pieces.map((p) => ({ label: t(p.label, L), href: p.href })),
+        pic: `<span class="bm-thumb bm-glyph">${s.glyph}</span>`, drop: true });
     }
     if (s.href) {
       const label = t(s.label, L);
