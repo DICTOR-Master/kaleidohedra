@@ -48,6 +48,9 @@ them. Then:
   site below it by a finite sum counted before the flip (`theoremB`); in #102's
   own form, twice the change is minus the sum of products of the two halves'
   asymmetries under the half-turn (`theoremB_symmetric`).
+* **Theorem 5 (a) of #102 to length 15** (`theorem5a_short`, `theorem5a_upto15`).
+  At every site of every stacking the polygons through the site with l ≤ 15 edges
+  are as many as at diamond's site, length by length.
 
 The non-backtracking loops are the rooted cycles counted by the Ihara zeta
 function. For finite or periodic graphs, loop counts are usually reached through
@@ -57,7 +60,7 @@ and the count is proved at every single site, not on average.
 ## Files
 
 - `Challenge.lean`: the statement surface (definitions and statements, every
-  proof `sorry`), 25 compared theorems; read this first.
+  proof `sorry`), 27 compared theorems; read this first.
 - `Solution.lean`: the same definitions and statements with proofs. Each proof
   transfers a theorem of the proof library (namespace `LoopEqualityProof`, whose
   definitions are copies of the Challenge's) by definitional unfolding, with
@@ -68,7 +71,7 @@ and the count is proved at every single site, not on average.
   Surgery, Polygons, TheoremA, CorollaryA1, Relabel, FlipRuns, Locality, Assembly,
   Finiteness, EverySite, Witness; for Theorem B: Linkage, Product, Degree, Parts,
   Transfer, Counting, TheoremB, Pairings, BSym).
-- `comparator.json`: the 25 compared theorems and the permitted axioms.
+- `comparator.json`: the 27 compared theorems and the permitted axioms.
 - `formalization.yaml`: metadata (v0.4).
 
 ## Proof account
@@ -129,8 +132,7 @@ outside `Challenge.lean`; `#print axioms` gives only `propext`,
 the cut-and-project = substitution identity of the Fibonacci word at every
 position (classical, Morse–Hedlund 1940, Lothaire 2002); #102 Corollaries 1–3
 and Lemma 2 (c); Theorem A for four or more crossings (its symmetric cases),
-the locality of the asymmetries, Lemma 7 and Theorem 5 (equality with diamond to
-length 16, the laws at lengths 18 and 20); equality of the vertical and slanted bond walk counts (not
+Theorem 5 (a) at length 16 and Theorem 5 (b), the laws at lengths 18 and 20; equality of the vertical and slanted bond walk counts (not
 needed).
 
 ## Literature and novelty

@@ -522,3 +522,6 @@ Regroup.lean: Wc_translate, Af_translate (lattice translations), class normalisa
 nrm_trP, shift_nrm), regroup: sum over crossing sets of G v = sum over class representatives S and lattice translates of v
 (G invariant under joint translation). Next: G for l = 16 and its invariance; Z = normalised meeting shapes from the arc
 enumeration with a completeness proof; T(S); stacking normalisation; decide.
+Full local preflight v12 (28 Nov): clean build, source rules, 0 sorry/native_decide, 27 compared theorems all with standard
+axioms, comparator ok on con-ron / nanoda / Lean kernels, metadata parses, git clean: FINAL ok. Entry README and
+formalization.yaml updated to 27 theorems and Theorem 5 (a) to l = 15 (l = 16 and the laws at 18, 20 listed as not formalised).
