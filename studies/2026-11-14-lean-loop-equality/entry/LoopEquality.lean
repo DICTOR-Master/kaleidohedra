@@ -16,3 +16,4 @@ public import LoopEquality.Parts
 public import LoopEquality.Transfer
 public import LoopEquality.Counting
 public import LoopEquality.TheoremB
+public import LoopEquality.Witness

@@ -122,12 +122,13 @@ def refine(p, a, b, w):
     return a, b
 # ---- exact state at rational lam: corners (sets of 3 planes) verified exactly
 def planes_at(l): return [[AK[k][i] + Dk[k][i] * Q(l) for i in range(3)] for k in range(NF)]
-def state(l):
+def state(l, guess=None):
     Af = np.array([[float(AK[k][i]) + float(Dk[k][i]) * float(l) for i in range(3)] for k in range(NF)])
     P = HalfspaceIntersection(np.hstack([Af, -np.ones((NF, 1))]), np.zeros(3)).intersections
     labs = set()
-    for p in P:
+    for p in ([] if guess is not None else P):
         t = np.argsort(np.abs(Af @ p - 1))[:3]; labs.add(frozenset(int(i) for i in t))
+    if guess is not None: labs = set(guess)   # combinatorial flip from the previous state, verified exactly below
     PL = planes_at(l); ok = True
     from resin import det3
     for L in labs:
@@ -192,7 +193,9 @@ while True:
     F4 = first[2]; hi = max(z[1] for z in cands if z[2] == F4)
     nxt = min((z[0] for z in cands if z[2] != F4), default=Fr(1))
     lam1 = (hi + nxt) / 2 if nxt < 1 else (hi + 1) / 2
-    labs1, pairs1, ok1 = state(lam1)
+    present = {L for L in labs if L <= F4}
+    guess = (labs - present) | ({frozenset(T) for T in itertools.combinations(sorted(F4), 3)} - present)
+    labs1, pairs1, ok1 = state(lam1, guess)
     lost, gained = sorted(pairs - pairs1), sorted(pairs1 - pairs)
     sw = len(lost) == 1 and len(gained) == 1 and tuple(gained[0]) in need_set and tuple(lost[0]) in lose_set and set(lost[0]) | set(gained[0]) == set(F4)
     events.append(dict(lam_lo=str(first[0]), lam_hi=str(hi), lam=float(hi), planes=sorted(F4), lost=lost, gained=gained, one_floor_swap=sw, state_ok=ok1))

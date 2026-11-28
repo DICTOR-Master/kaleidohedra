@@ -441,3 +441,4 @@ sets P in the window with vertical bonds of (#FlipParts - #PartsCross), all coun
 polysCross_empty_flip, root_of_no_cross. Built, standard axioms. The -1/2 sum A_w A_f symmetrisation is finite algebra on top, needed
 only for the locality tables (item 10). Countdown 14.
 Item 5 DONE (28 Nov): Theorem B in the entry (Challenge/Solution, comparator 21 theorems: con-ron, nanoda, Lean accept; negative control l -> l+1 rejected 'do not match: theoremB'). Countdown 13.
+Item 7 DONE (28 Nov): Witness.lean hexagon through diamond's (0,(0,0),0), polysA1_diamond_six_pos; entry theorem polysAtMostTwice_diamond_six_pos (22 theorems): comparator accepts, negative control (6 -> 7) rejected. Countdown 12.

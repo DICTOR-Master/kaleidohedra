@@ -62,3 +62,8 @@ C60 -> Kuo #90 (6 changes), C80 -> Nioku #209 (12), C140 = GP(2,1) -> Kuomu #906
 Negative control: C60 -> die 18 at core size 0.8 (numerically not nested) must fail (C).
 Note: the first runs' (A) lines print "pattern = C116 / Minana #377 under the pairing" (a label left from the C116 script, fixed
 afterwards); in these logs they mean the core and the die.
+RESULTS (28 Nov): C60 -> Kuo #90 at core size 0.7: EXACT (FINAL ok, logs on host hsx-kuo90b): (A) both end patterns exact and
+closed; (B) 6 events, every state exact and closed; (C) nested; (D) exactly the 6 needed swaps, one per event (all near lam 0.9408:
+the core's 1e-9 rounding splits the symmetric group into swaps about 1e-10 apart; states are now got by the four-face flip and
+verified exactly, as float labels could not resolve them). Negative control C60 -> die 18 at 0.8: FAILS (C) as required.
+C80 -> Nioku #209 and C140 -> Kuomu #906: rerunning with the fix.

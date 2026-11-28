@@ -606,4 +606,10 @@ theorem theoremB {σ : ℤ → ZMod 3} {v : Atom} {l : ℕ} {k : ℤ} {c : ℤ �
   · intro P _
     rw [flipPairs_eq_proof, stayPairs_eq_proof]
 
+/-- **The count is not empty.** Diamond has a polygon through its site `(0, (0, 0), 0)` with 6 edges crossing
+every bilayer at most twice (a hexagon), so the counts compared by Corollary A are not all zero. -/
+theorem polysAtMostTwice_diamond_six_pos : 0 < (polysAtMostTwice diamond (0, (0, 0), 0) 6).ncard := by
+  rw [polysAtMostTwice_eq_proof]
+  exact LoopEqualityProof.polysA1_diamond_six_pos
+
 end DictoLoopEquality
