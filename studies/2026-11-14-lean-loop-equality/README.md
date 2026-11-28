@@ -495,3 +495,12 @@ and negative control (l <= 15 -> l <= 16) running.
 Comparator v12 (28 Nov): "Your solution is okay!", 19321 declarations, three kernels; negative control (l <= 15 -> l <= 16)
 rejected ("do not match: theorem5a_upto15"). Next for l = 16: the minimal-root cancellation for any l (removes the (4, 8)
 terms); the (6, 6) terms with |P| = 4 need locality (item 3) and the counting tables (item 4, 48 meeting pairs).
+minRoot_zero DONE (28 Nov, MinRoot.lean): the minimal-root terms of Theorem B sum to zero at EVERY length (the l = 14 argument
+for any l). At l = 16 only the (6, 6) terms with |P| = 4 remain; all such linkages are flat (two sublayers next to the cut).
+l16/l16_terms.py (dbb): sum over P, M != N of W(P,M,6) * A_f(P,N,6) = 0 for all 4 letter patterns x 2 site kinds (FINAL ok);
+60 / 36 (P, M) carry non-zero products that cancel only across translates of P (#102's weighted root side, probe16.py:
+both asymmetries sit on one pairing per shape). First run had a bug of mine (disjoint 2-arc + 4-arc = 8 atoms, tested 7, so
+it counted pairs meeting in one atom); found by comparing shape by shape with #102's probe16 (12 shapes, +-1 / -+5).
+Lean route for l = 16: (i) A_f(P,N,6) = meet(gP,gN) - meet(P,N) (single-arc products are half-turn symmetric, Fc_two);
+(ii) translation regrouping of the root count (atoms of v's kind on a 6-edge linkage: always 5 ends-sublayer, 3 lower);
+(iii) support: A_f(S,N,6) != 0 only on the pairing of S that holds the meeting shape; root likewise via the mirror.
