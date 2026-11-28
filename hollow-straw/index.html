@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Hollow-straw · Kaleidohedra</title>
-<meta name="description" content="DICTO's Hollow-straw transformation: the fullerene C116 turns into the fair die Minana #377, both ends fixed, every face moving into its partner face. Scrub the change, watch the 18 neighbour swaps, pull the 60 straws apart.">
+<meta name="description" content="DICTO's Hollow-straw transformation: the fullerene C116 turns into the Aequus Minana #377, both ends fixed, every face moving into its partner face. Scrub the change, watch the 18 neighbour swaps, pull the 60 straws apart.">
 <link rel="icon" href="/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
@@ -80,7 +80,7 @@ table.kinds td.num { text-align: right; white-space: nowrap; font-variant-numeri
 <div id="app">
   <header>
     <h1>Hollow-straw</h1>
-    <nav><a href="/amber/">Amber cells</a><a href="/aequi/">Aequi fair dice</a><a href="/">Kaleidohedra</a></nav>
+    <nav><a href="/?dicto&amp;shelf=tools&amp;item=bridging">← Back to the menu</a><a href="/amber/">Amber cells</a><a href="/aequi/">Aequi</a><a href="/">Kaleidohedra</a></nav>
   </header>
   <main class="stage">
     <div class="view" id="view"><div class="hint">drag to turn · pinch to zoom</div></div>
@@ -248,14 +248,14 @@ function panel() {
     '<h2>' + NM.title + '</h2><p class="sub" id="stat"></p>' +
     (PAIR ? '<p>DICTO\'s Hollow-straw: both ends are fixed, ' + NM.inner + ' in its own shape inside and ' + NM.outer + ' outside. Every face of ' + NM.inner + ' moves and turns into its partner face of ' + NM.outer + ', all at once. At every moment the moving faces enclose one solid, and each solid lies inside the next, so the straws, the regions the faces sweep, fill the space between them without overlapping.</p>' +
       '<p>On the way, neighbouring faces change partners ' + D.nswaps + ' times: four faces meet at a point and two of them stop touching while the other two start. These are the swaps; they make the straws Scutoid-Frusta.</p>' +
-      '<table class="kinds">' + leg + '</table><p class="note">Colours: each face and straw in the colour of the die face it belongs to (the Aequi page\'s colours).</p>' +
+      '<table class="kinds">' + leg + '</table><p class="note">Colours: each face and straw in the colour of the Aequus face it belongs to (the Aequi page\'s colours).</p>' +
       '<p class="note">' + D.exact + ' The picture shows ' + D.frames.length + ' of the intermediate solids; the straws are drawn from them.</p>'
-    :     '<p>DICTO\'s Hollow-straw: both ends are fixed, the fullerene C116 in its own shape inside and the fair die Minana #377 outside. ' +
-    'Every face of C116 moves and turns into its partner face of the die, all at once. At every moment the moving faces enclose one solid, and each solid lies inside the next, so the straws, the regions the faces sweep, fill the space between C116 and the die without overlapping.</p>' +
+    :     '<p>DICTO\'s Hollow-straw: both ends are fixed, the fullerene C116 in its own shape inside and the Aequus Minana #377 outside. ' +
+    'Every face of C116 moves and turns into its partner face of the Aequus, all at once. At every moment the moving faces enclose one solid, and each solid lies inside the next, so the straws, the regions the faces sweep, fill the space between C116 and the Aequus without overlapping.</p>' +
     '<p>On the way, neighbouring faces change partners 18 times: four faces meet at a point and two of them stop touching while the other two start. These are the 18 swaps; they make the straws Scutoid-Frusta.</p>' +
-    '<table class="kinds">' + leg + '</table><p class="note">Colours: each face and straw in the colour of the die face it becomes (the Aequi page\'s colours, by the solid whose plane it lies on).</p>' +
-    '<p class="note">Proved in exact arithmetic (C116\'s planes rounded to 10<sup>−9</sup>, the die\'s fair depths to 15 digits): the start is C116, the end the die, every intermediate solid lies inside the next, and the only changes are the 18 swaps. The picture shows ' + D.frames.length + ' of the intermediate solids; the straws are drawn from them.</p>') +
-    '<div class="links"><a href="/amber/">Amber cells</a><a href="/aequi/">Aequi fair dice</a><span>Paper in preparation</span><a href="/">Back to Kaleidohedra</a></div>';
+    '<table class="kinds">' + leg + '</table><p class="note">Colours: each face and straw in the colour of the Aequus face it becomes (the Aequi page\'s colours, by the solid whose plane it lies on).</p>' +
+    '<p class="note">Proved in exact arithmetic (C116\'s planes rounded to 10<sup>−9</sup>, the Aequus\'s fair depths to 15 digits): the start is C116, the end the Aequus, every intermediate solid lies inside the next, and the only changes are the 18 swaps. The picture shows ' + D.frames.length + ' of the intermediate solids; the straws are drawn from them.</p>') +
+    '<div class="links"><a href="/?dicto&shelf=tools&item=bridging">← Back to the menu</a><a href="/amber/">Amber cells</a><a href="/aequi/">Aequi</a><span>Paper in preparation</span><a href="/">Kaleidohedra</a></div>';
   status();
 }
 function relabel() {   // the buttons and slider name the pair's own solids

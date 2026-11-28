@@ -1093,6 +1093,15 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
   // picture taken in the world itself (assets/worlds/, scripts/capture-world-thumbs.mjs); then the others' lattices and tilings, the
   // studies and tools, and the shapes. The same order through every door.
   const openBooks = new Set(), openItems = new Set(), openPapers = new Set();
+  let scrollToItem = null;   // the item a back link asked for, scrolled into view once
+  // A page of its own can link back to its place in the menu (DICTO 28 Nov: "a back button to return to the dropdown"):
+  // ?shelf=<section id>&item=<item key> opens that section and that item.
+  try {
+    const q = new URLSearchParams(globalThis.location?.search ?? '');
+    const sh = q.get('shelf'), it = q.get('item');
+    if (sh && /^[A-Za-z0-9_-]+$/.test(sh)) openBooks.add(sh);
+    if (it && /^[A-Za-z0-9_-]+$/.test(it)) { openItems.add(it); scrollToItem = it; }
+  } catch (err) { /* no location: nothing to open */ }
   const esc = (x) => String(x).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
   const worldOf = (key) => K_WORLDS.find((w) => w.key === key) ?? LATTICES_3D.find((l) => l.key === key);
   // Where a world opens: DICTO's by the door (dictoOpen), Kaleidohedra's own (Generalized Permutohedra) in Kaleidohedra.
@@ -1216,6 +1225,11 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     root.querySelectorAll('[data-book-toggle]').forEach((btn) => btn.addEventListener('click', () => fold(btn, btn.nextElementSibling, openBooks, btn.dataset.bookToggle, btn.nextElementSibling.hidden)));
     root.querySelectorAll('[data-item-toggle]').forEach((btn) => btn.addEventListener('click', () => fold(btn, btn.nextElementSibling, openItems, btn.dataset.itemToggle, btn.nextElementSibling.hidden)));
     root.querySelectorAll('[data-papers-toggle]').forEach((btn) => btn.addEventListener('click', () => fold(btn, btn.nextElementSibling, openPapers, btn.dataset.papersToggle, btn.nextElementSibling.hidden)));
+    if (scrollToItem) {
+      const el = root.querySelector(`[data-item="${scrollToItem}"]`);
+      scrollToItem = null;
+      if (el) requestAnimationFrame(() => el.scrollIntoView({ block: 'center' }));
+    }
     root.querySelectorAll('[data-open-dim]').forEach((btn) => btn.addEventListener('click', () => {
       const dim = btn.dataset.openDim;
       if (dim === '5D' || dim === '6D') { showCatalogue(dim); return; }
