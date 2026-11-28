@@ -7,5 +7,5 @@ H=${PRINT_HOST:?set PRINT_HOST to the print host}
 R=${PRINT_DIR:-kaleidohedra-papers}
 rsync -a --delete --exclude '*.pdf' ./ $H:$R/$D/
 rsync -a ../paper.css ../dicto-logo.png ../print.mjs ../figcheck.mjs $H:$R/
-ssh $H "cd ~/$R && node figcheck.mjs $D && LIGHT_DPI=${LIGHT_DPI:-200} node print.mjs $D DRAFT-loop-equality-lean.pdf 'The Loop Equality and the Half-Turn Surgery, Machine-Checked' draft"
+ssh $H "cd ~/$R && node figcheck.mjs $D && LIGHT_DPI=${LIGHT_DPI:-200} node print.mjs $D DRAFT-loop-equality-lean.pdf 'Loops and Polygons on Close-Packed Stackings' draft"
 rsync -a $H:$R/$D/DRAFT-loop-equality-lean.pdf ./

@@ -12,8 +12,9 @@ every proof `sorry`. The proofs are in the library `LoopEquality`, re-exported
 by `Solution.lean`.
 
 Source: DICTO, *Every Site Hears the Same: the Loop Equality Is a Theorem*,
-Zenodo 2026, DOI 10.5281/zenodo.24127070 (version 4). Corollary A and the flip formula (Theorem B):
-DICTO, paper #125, *Loops and Polygons on Close-Packed Stackings* (Zenodo, DOI given at release).
+Zenodo 2026, DOI 10.5281/zenodo.24127070 (version 4). Corollary A and Theorem B (the flip formula, here
+in counting form): #102 Version 6, DOI 10.5281/zenodo.24241321, §5; their machine-checked proofs: DICTO,
+paper #125, *Loops and Polygons on Close-Packed Stackings* (Zenodo, DOI given at release).
 
 ## The model
 
