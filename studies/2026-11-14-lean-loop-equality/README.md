@@ -541,3 +541,9 @@ Design note for the last step: a deduplicated list of normalised shapes is too c
 Planned instead: anchor each labelled meeting pair of far arcs at the start of its first arc (no normalisation, no
 deduplication): sum = sum over anchored meeting pairs of [weighted root count at gP - at P]; the far meeting pairs are
 enumerated from the anchor (first arc from b0, second arc from every end point f in the 12-box, kept if it meets the first).
+l = 16 kernel feasibility (28 Nov): l16/shapes16.py: diamond's far letters give 384 anchored meeting pairs (= the M0 pilot's
+384), 68 crossing sets, 17 normalised shapes with half-turn images (l16/shapes16-diamond.txt). shapeVal over the 17 shapes
+sums to 0 for v = lower atom of bilayer 0 and for v = upper atom of bilayer -1 (per-shape values +-5, #102's weights).
+Kernel: with sums restricted to arcs of 2 and 4 edges, `decide +kernel` of the 17-shape total takes about 85 s, standard
+axioms. Remaining: restricted sums = full sums (no arcs of other lengths), shape list per far pattern with completeness,
+letter locality (far letters k, k+1; root k-1, k), v kinds, assembly into flip_keeps_16 and the entry.
