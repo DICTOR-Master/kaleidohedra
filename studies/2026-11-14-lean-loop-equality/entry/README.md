@@ -33,6 +33,21 @@ them. Then:
   `isH_eq_word`, `fibonacci_not_periodic`, `fibonacci_loop_equality`). The
   stacking whose hexagonal layers follow the Fibonacci word is an aperiodic
   close-packed stacking, and the Loop Equality holds on it with the same count.
+* **Polygons crossing each bilayer at most twice: Corollary A of #102**
+  (`corollaryA1`, `corollaryA_everySite`, `polysAtMostTwice_finite`,
+  `polysAtMostTwice_diamond_six_pos`). Polygons are minimal nonempty sets of bonds
+  with every degree even (cycles). Those through a site with l edges that cross
+  every bilayer at most twice are finitely many and as many at every site of every
+  stacking as at diamond's site; at l = 6 there is at least one (a hexagon).
+* **Profile by profile** (`corollaryA_profile`, `corollaryA_everySite_profile`).
+  The same holds for each crossing profile (the number of crossings at each
+  bilayer), as #102 states it; against diamond the profile is read from the site's
+  bilayer (`profileFrom`).
+* **Theorem B of #102, the flip formula** (`theoremB`, `theoremB_symmetric`).
+  Flipping the c/h letter of one bilayer changes the number of polygons through a
+  site below it by a finite sum counted before the flip (`theoremB`); in #102's
+  own form, twice the change is minus the sum of products of the two halves'
+  asymmetries under the half-turn (`theoremB_symmetric`).
 
 The non-backtracking loops are the rooted cycles counted by the Ihara zeta
 function. For finite or periodic graphs, loop counts are usually reached through
@@ -42,17 +57,18 @@ and the count is proved at every single site, not on average.
 ## Files
 
 - `Challenge.lean`: the statement surface (definitions and statements, every
-  proof `sorry`), 18 compared theorems; read this first.
+  proof `sorry`), 25 compared theorems; read this first.
 - `Solution.lean`: the same definitions and statements with proofs. Each proof
   transfers a theorem of the proof library (namespace `LoopEqualityProof`, whose
   definitions are copies of the Challenge's) by definitional unfolding, with
   small transfer lemmas for the recursive definitions; the values are checked
   again by kernel evaluation.
-- `LoopEquality/`: the proof library, in 20 modules (Defs, Graph, Levels,
-  Network, Counts, Main, ClosedWalks, LocalFormula, Explicit, Fibonacci, Axioms;
-  and, for Corollary A: Twist, Surgery, Polygons, TheoremA, CorollaryA1,
-  Relabel, FlipRuns, Locality, Assembly).
-- `comparator.json`: the 18 compared theorems and the permitted axioms.
+- `LoopEquality/`: the proof library (Defs, Graph, Levels, Network, Counts, Main,
+  ClosedWalks, LocalFormula, Explicit, Fibonacci, Axioms; for Corollary A: Twist,
+  Surgery, Polygons, TheoremA, CorollaryA1, Relabel, FlipRuns, Locality, Assembly,
+  Finiteness, EverySite, Witness; for Theorem B: Linkage, Product, Degree, Parts,
+  Transfer, Counting, TheoremB, Pairings, BSym).
+- `comparator.json`: the 25 compared theorems and the permitted axioms.
 - `formalization.yaml`: metadata (v0.4).
 
 ## Proof account
@@ -104,12 +120,17 @@ outside `Challenge.lean`; `#print axioms` gives only `propext`,
 | Lemma 3 | `Graph.transfer`; summed: `Graph.loops_ncard_eq_FD` |
 | Fibonacci stacking (#102 checks) | `fibonacci`, `fibonacci_*`, `isH_eq_word` |
 | Lemmas 1, 2 (one flip is one twist); Theorem A for polygons crossing a bilayer at most twice; Corollary A (every stacking) | `IsPolygon`, `IsAbove`, `Crosses`, `crossings`, `polysAtMostTwice`, `corollaryA1` (library: `flip_is_twist`, `halfturn_two_points`, `surgery_polygon`, `bijOn_two_crossings`, `ncard_polysA1_flip`, `polysA1_local`) |
+| Corollary A at every site, finite, not empty | `corollaryA_everySite`, `polysAtMostTwice_finite`, `polysAtMostTwice_diamond_six_pos` |
+| Corollary A for each crossing profile | `polysWithProfile`, `corollaryA_profile`, `profileFrom`, `corollaryA_everySite_profile` |
+| product structure (a polygon = two linkages joined at the cut, one cycle) | library: `polygon_deg_le_two`, `parts_to_polygon`, `polygon_to_parts`, `flip_transfer` |
+| Theorem B | `theoremB` (counting form: `flipPairs`, `stayPairs`, `window`), `theoremB_symmetric` (#102's form: `rootCount`, `farCount`, `asymBelow`, `asymAbove`, `crossingFamily`, `pairingIndex`) |
 
 **Not formalised:** the Ihara–Bass series for all m; Bala's identity for all n;
 the cut-and-project = substitution identity of the Fibonacci word at every
 position (classical, Morse–Hedlund 1940, Lothaire 2002); #102 Corollaries 1–3
 and Lemma 2 (c); Theorem A for four or more crossings (its symmetric cases),
-Theorem B and the laws at lengths 18 and 20; equality of the vertical and slanted bond walk counts (not
+the locality of the asymmetries, Lemma 7 and Theorem 5 (equality with diamond to
+length 16, the laws at lengths 18 and 20); equality of the vertical and slanted bond walk counts (not
 needed).
 
 ## Literature and novelty

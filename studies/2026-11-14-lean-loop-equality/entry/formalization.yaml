@@ -17,9 +17,11 @@ project:
     m <= 34, and that the aperiodic Fibonacci stacking satisfies the equality
     with the same count. It also proves, for polygons (cycles) through a site
     that cross every bilayer at most twice, that their number of each length is
-    the same in every stacking (the half-turn surgery of Theorem A and
-    Corollary A, with locality). This formalises Theorem 1 and Corollary A of
-    DICTO's paper #102.
+    the same in every stacking and at every site, finitely many and not all
+    absent, also profile by profile (the half-turn surgery of Theorem A and
+    Corollary A, with locality), and Theorem B, the flip formula, in counting
+    form and in #102's symmetrised form. This formalises Theorem 1, Corollary A
+    and Theorem B of DICTO's paper #102.
   authors:
     - "DICTO"
   license: "Apache-2.0"
@@ -40,7 +42,8 @@ sources:
     relationship: "formalizes"
     note: >-
       Theorem 1 (the Loop Equality), its explicit count and listed values, and
-      the closed-walk Proposition are formalised. The conjecture is from
+      the closed-walk Proposition are formalised. Corollary A and Theorem B are
+      in Version 6 of the paper (doi:10.5281/zenodo.24241321, section 5). The conjecture is from
       DICTO's paper #74 (doi:10.5281/zenodo.23730421).
     license: "CC-BY-SA-4.0"
     author_endorsement: "participated"
