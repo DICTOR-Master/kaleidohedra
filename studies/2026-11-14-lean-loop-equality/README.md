@@ -453,3 +453,15 @@ stacking = Fc(c - P, c - M') before (flip_transfer). 2e symmetrisation over a g-
 Countdown item 2 (Theorem B in #102's form) DONE in library 28 Nov: Pairings.lean + BSym.lean theoremB_sym (2*Delta = - sum A_w A_f over a half-turn-closed family of crossing sets), built, standard axioms. Next: into the entry.
 Item 2 in the entry 28 Nov: theoremB_symmetric (25 theorems; con-ron 19027 declarations; negative control 2* -> 3* rejected).
 Item 3: Lemma7.lean term_zero_of_large (terms with 3|P| > l vanish: only |P| <= 6 for l <= 20), built, standard axioms. NOTE: per site, the 6-crossing terms vanish only after summing over translates of P when the 6-bond side is the root side (#102 weights the root side over translates); the far 6-bond side vanishes termwise.
+
+## Theorem 5 plan (Fable review, 28 Nov; advisory, unmeasured timings)
+Feasible. Shortcuts: (1) minimal-size lemma L5 (a side with s = |P| edges is all 2-bond arcs, unique and disjoint; A = 0 there;
+gives Lemma 7) -> tables only to F <= l - 10: 48 meeting pairs (l = 16), 720 (l = 18), 7713 (l = 20), not 74,493; (2) one c/h
+letter per half; (3) Delta = Y - X as a join of two short lists of meeting pairs (no table in the kernel). Transfer matrices /
+generating functions NOT sound for self-avoiding polygons. Per-site sums need translation regrouping (L4) for the root weight.
+Statement (b) as differences from diamond, no absolute constants: p18(v;sigma) + 12h(k-2) + 30h(k-1) + 42h(k) + 24h(k+1) =
+p18(v0; diamond); p20: 30, 114, 204, 12. Diamond's 349236 / 2362200 only as a labelled hypothesis. Lemma list L0-L10 (~2500-3500
+lines), milestones: M0 kernel pilot (Nat-coded half, arc search, meeting pairs, join; #eval vs halves.py, then decide +kernel timing)
+-> M1 far flips (a) l <= 10 -> M2 single arcs, linkage = arcs, (a) l <= 12 -> M3 locality, regrouping, L5, (a) l <= 14, Lemma 7
+-> M4 enumerators, (a) l <= 16 -> M5 l = 18 law -> M6 l = 20 law. Fallback if slow at l = 20: chunk, pack paths, 3-fold turn,
+toggle identity; else release l <= 18 machine-checked, l = 20 checked outside Lean.
