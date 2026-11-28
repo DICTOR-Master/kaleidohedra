@@ -42,3 +42,5 @@ public import LoopEquality.Counts
 public import LoopEquality.Sixteen
 public import LoopEquality.Mt
 public import LoopEquality.ArcCounts
+public import LoopEquality.Weighted
+public import LoopEquality.ShapeVal

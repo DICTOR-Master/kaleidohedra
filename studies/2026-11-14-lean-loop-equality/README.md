@@ -531,3 +531,13 @@ l = 16 is minus the sum of the (6,6) terms; T16, near_of_Wc, mem_T16, sum16_regr
 (meetCountL, throughCountL; ncard_meetPairs, Wc_four via the mirror, Af_four_enum). Mt.lean (the three matchings; root and far
 pairings carrying linkages are matchings; G16_mt). Remaining: the shape list Z with completeness, stacking normalisation,
 the kernel check.
+l = 16 (28 Nov, cont. 2): Weighted.lean (sum_through_eq_weighted: summing the root count through v + 3f over all shifts f
+= weighted root count, each pair of root arcs weighted by its atoms of v's kind; so only v's layer and sublayer matter).
+ShapeVal.lean (oneCycle_two, not_oneCycle_self; wR, aF, shapeVal; shape_sum: the (6,6) terms of a shape summed over the
+translates of v = shapeVal, an explicit computable six-term sum). Mistake fixed same session: a new module named Counts.lean
+overwrote the walk-count module of that name (restored from git; arc counts now ArcCounts.lean; guard: ls before creating a
+module, full build before commit).
+Design note for the last step: a deduplicated list of normalised shapes is too costly for the kernel (about 15k candidates).
+Planned instead: anchor each labelled meeting pair of far arcs at the start of its first arc (no normalisation, no
+deduplication): sum = sum over anchored meeting pairs of [weighted root count at gP - at P]; the far meeting pairs are
+enumerated from the anchor (first arc from b0, second arc from every end point f in the 12-box, kept if it meets the first).
