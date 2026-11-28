@@ -1170,7 +1170,7 @@ export function createDimensionWizard({ onSelectFamily, pieceEdges, onClose = ()
     if (s.pieces) {   // a shelf family of pages of their own, always a dropdown (DICTO 28 Nov: Scutoid-Frusta bridging solids)
       const label = t(s.label, L);
       return itemHtml({ key: s.id, label, sub: t(s.sub, L), pieces: s.pieces.map((p) => ({ label: t(p.label, L), href: p.href })),
-        pic: `<span class="bm-thumb bm-glyph">${s.glyph}</span>`, drop: true });
+        pic: s.thumb ? `<img class="bm-thumb" src="assets/worlds/${s.thumb}.webp" alt="" loading="lazy" width="48" height="48">` : `<span class="bm-thumb bm-glyph">${s.glyph}</span>`, drop: true });
     }
     if (s.href) {
       const label = t(s.label, L);

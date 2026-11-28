@@ -54,6 +54,9 @@ header nav { margin-left: auto; display: flex; gap: 14px; font-size: 14px; flex-
 .seg button[hidden], .btn[hidden] { display: none; }
 .sliderrow { display: flex; align-items: center; gap: 12px; }
 .sliderrow[hidden] { display: none; }
+.printrow { flex-wrap: wrap; gap: 8px; }
+.printrow select, .printrow input[type=number] { min-height: 48px; font: inherit; font-size: 16px; color: var(--text); background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 0 10px; }
+.printrow input[type=number] { width: 5.5em; }
 .sliderrow label { font-size: 15px; color: var(--muted); white-space: nowrap; }
 input[type=range] { -webkit-appearance: none; appearance: none; flex: 1 1 auto; min-width: 0; height: 48px; background: transparent; margin: 0; touch-action: none; }
 input[type=range]::-webkit-slider-runnable-track { height: 10px; border-radius: 5px; background: var(--line); }
@@ -92,6 +95,7 @@ table.kinds td.num { text-align: right; white-space: nowrap; font-variant-numeri
       <button class="btn" id="playBtn" aria-pressed="false">Play</button>
       <button class="btn" id="ghostBtn" aria-pressed="true">C116 inside</button>
       <button class="btn" id="dieBtn" aria-pressed="true">Die outline</button>
+      <button class="btn" id="coreBtn" aria-pressed="false" hidden>C116 core</button>
     </div>
     <div class="sliderrow" id="lamRow">
       <label for="lam">C116</label>
@@ -103,6 +107,21 @@ table.kinds td.num { text-align: right; white-space: nowrap; font-variant-numeri
       <input type="range" id="explode" min="0" max="1.2" step="any" value="0.5" aria-label="Pull the straws apart from the centre">
       <label for="explode">apart</label>
     </div>
+    <div class="sliderrow printrow" id="printRow" hidden>
+      <label for="sizeMm">3D print: die</label>
+      <input type="number" id="sizeMm" min="20" max="400" step="1" value="60" aria-label="Diameter of the assembled die in millimetres">
+      <label for="sizeMm">mm</label>
+      <label for="fitSel">fit</label>
+      <select id="fitSel" aria-label="Gap left between neighbouring parts">
+        <option value="0">Exact (0 mm)</option>
+        <option value="0.1">Press fit (0.1 mm)</option>
+        <option value="0.2" selected>Snug (0.2 mm)</option>
+        <option value="0.3">Easy (0.3 mm)</option>
+        <option value="0.5">Loose (0.5 mm)</option>
+      </select>
+      <button class="btn" id="coreStl">Core STL</button>
+      <button class="btn" id="strawStl">Straws STL</button>
+    </div>
   </footer>
   <div class="mark">DICTO · <a href="https://dictospheres.com">dictospheres.com</a></div>
 </div>
@@ -113,7 +132,7 @@ table.kinds td.num { text-align: right; white-space: nowrap; font-variant-numeri
 'use strict';
 var $ = function (id) { return document.getElementById(id); };
 var EDGE = 0x2b261e, GHOST = 0x6b7680;
-var state = { mode: 'change', lam: 0, ghost: true, die: true, f: 0.5, play: false };
+var state = { mode: 'change', lam: 0, ghost: true, die: true, f: 0.5, play: false, core: false };
 
 // ---------------- viewer (as the Amber and Aequi pages)
 var view = $('view');
@@ -175,7 +194,7 @@ function faceEdges(V, F, mat) {
   F.forEach(function (f) { for (var i = 0; i < f.length; i++) { var a = V[f[i]], b = V[f[(i + 1) % f.length]]; pos.push(a[0], a[1], a[2], b[0], b[1], b[2]); } });
   var g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); return new THREE.LineSegments(g, mat);
 }
-var D = null, R = 0, frames = [], ghost = null, dieLine = null, straws = [], strawRoot = new THREE.Group(), changeRoot = new THREE.Group();
+var D = null, R = 0, frames = [], ghost = null, dieLine = null, coreSolid = null, straws = [], strawRoot = new THREE.Group(), changeRoot = new THREE.Group();
 holder.add(changeRoot); holder.add(strawRoot);
 function build() {
   D.frames[D.frames.length - 1].v.forEach(function (v) { R = Math.max(R, Math.hypot(v[0], v[1], v[2])); });
@@ -187,6 +206,9 @@ function build() {
   ghost = new THREE.Group(); ghost.add(polyMesh(f0.v, f0.f, D.colour, 0.35)); ghost.add(faceEdges(f0.v, f0.f, new THREE.LineBasicMaterial({ color: GHOST, transparent: true, opacity: 0.7 })));
   dieLine = faceEdges(fN.v, fN.f, new THREE.LineBasicMaterial({ color: GHOST, transparent: true, opacity: 0.8 }));
   changeRoot.add(ghost); changeRoot.add(dieLine);
+  // the core as a solid part (DICTO 28 Nov: the inner as a core, so every part can be 3D printed)
+  coreSolid = new THREE.Group(); coreSolid.add(polyMesh(f0.v, f0.f, f0.f.map(function () { return '#8d949c'; }), 1));
+  coreSolid.add(faceEdges(f0.v, f0.f, sharedEdge)); strawRoot.add(coreSolid);
   D.straws.forEach(function (s) {
     var g = new THREE.Group(), c = [0, 0, 0];
     s.v.forEach(function (v) { c[0] += v[0]; c[1] += v[1]; c[2] += v[2]; }); c = c.map(function (x) { return x / s.v.length; });
@@ -208,6 +230,7 @@ function place() {
   ghost.visible = change && state.ghost && state.lam > 0.02; dieLine.visible = change && state.die && state.lam < 0.98;
   var ff = state.f; straws.forEach(function (s) { s.g.position.set(s.c[0] * ff, s.c[1] * ff, s.c[2] * ff); });
   var s = 1.05 / (R * (change ? 1 : 1 + ff)); holder.scale.setScalar(s);
+  coreSolid.visible = !change && state.core; $('coreBtn').hidden = change; $('printRow').hidden = true;   // 3D print: kept hidden until finished (DICTO 28 Nov: the app first)
   $('lamRow').hidden = !change; $('expRow').hidden = change; $('playBtn').hidden = !change; $('ghostBtn').hidden = !change; $('dieBtn').hidden = !change;
   status(); dirty = true;
 }
@@ -232,11 +255,148 @@ function panel() {
 function sync() {
   document.querySelectorAll('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.mode === state.mode)); });
   $('playBtn').setAttribute('aria-pressed', String(state.play)); $('playBtn').textContent = state.play ? 'Pause' : 'Play';
+  $('coreBtn').setAttribute('aria-pressed', String(state.core));
   $('ghostBtn').setAttribute('aria-pressed', String(state.ghost)); $('dieBtn').setAttribute('aria-pressed', String(state.die));
 }
 document.querySelectorAll('[data-mode]').forEach(function (b) { b.onclick = function () { state.mode = b.dataset.mode; state.play = false; sync(); place(); }; });
 $('ghostBtn').onclick = function () { state.ghost = !state.ghost; sync(); place(); };
 $('dieBtn').onclick = function () { state.die = !state.die; sync(); place(); };
+$('coreBtn').onclick = function () { state.core = !state.core; sync(); place(); };
+
+// ---------------- 3D printing: closed parts as binary STL, in millimetres, with a fit gap
+// Each part is shrunk by half the gap on every face: a corner moves so that each face plane through it moves
+// inward by that amount (exact where three faces meet; least squares where more do).
+function prepPart(V, T) {
+  var key = {}, P = [], idx = V.map(function (p) { var k = p.map(function (x) { return Math.round(x * 1e5); }).join(','); if (!(k in key)) { key[k] = P.length; P.push(p.slice()); } return key[k]; });
+  var tri = []; T.forEach(function (t) { var a = idx[t[0]], b = idx[t[1]], c = idx[t[2]]; if (a !== b && b !== c && a !== c) tri.push([a, b, c]); });
+  var vol = 0; tri.forEach(function (t) { var a = P[t[0]], b = P[t[1]], c = P[t[2]]; vol += a[0] * (b[1] * c[2] - b[2] * c[1]) - a[1] * (b[0] * c[2] - b[2] * c[0]) + a[2] * (b[0] * c[1] - b[1] * c[0]); });
+  if (vol < 0) tri = tri.map(function (t) { return [t[0], t[2], t[1]]; });
+  return { P: P, T: tri };
+}
+function triNormal(a, b, c) {
+  var u = [b[0] - a[0], b[1] - a[1], b[2] - a[2]], v = [c[0] - a[0], c[1] - a[1], c[2] - a[2]];
+  var n = [u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0]], l = Math.hypot(n[0], n[1], n[2]);
+  return l > 1e-12 ? [n[0] / l, n[1] / l, n[2] / l] : null;
+}
+function inset(part, h) {
+  if (h <= 0) return part.P;
+  // per corner: the directions of the faces through it, near-parallel ones (within about 10 degrees, the finely cut
+  // curved walls) merged into one by an angle-weighted average; then each direction moves inward by h.
+  var N = part.P.map(function () { return []; });
+  part.T.forEach(function (t) {
+    var n = triNormal(part.P[t[0]], part.P[t[1]], part.P[t[2]]); if (!n) return;
+    t.forEach(function (i, j) {
+      var a = part.P[i], b = part.P[t[(j + 1) % 3]], c = part.P[t[(j + 2) % 3]];
+      var u = [b[0] - a[0], b[1] - a[1], b[2] - a[2]], v = [c[0] - a[0], c[1] - a[1], c[2] - a[2]];
+      var w = Math.acos(Math.max(-1, Math.min(1, (u[0] * v[0] + u[1] * v[1] + u[2] * v[2]) / (Math.hypot(u[0], u[1], u[2]) * Math.hypot(v[0], v[1], v[2]) || 1))));
+      var cl = N[i].find(function (m) { var l = Math.hypot(m[0], m[1], m[2]); return (m[0] * n[0] + m[1] * n[1] + m[2] * n[2]) / l > 0.985; });
+      if (cl) { cl[0] += w * n[0]; cl[1] += w * n[1]; cl[2] += w * n[2]; } else N[i].push([w * n[0], w * n[1], w * n[2]]);
+    });
+  });
+  return part.P.map(function (p, i) {
+    var ns = N[i].map(function (m) { var l = Math.hypot(m[0], m[1], m[2]) || 1; return [m[0] / l, m[1] / l, m[2] / l]; }), d;
+    if (ns.length === 1) d = ns[0].map(function (x) { return -h * x; });
+    else if (ns.length === 2) { var a = ns[0], b = ns[1], q = 1 + a[0] * b[0] + a[1] * b[1] + a[2] * b[2]; d = [0, 1, 2].map(function (j) { return -h * (a[j] + b[j]) / q; }); }
+    else {
+      var M = [[0, 0, 0], [0, 0, 0], [0, 0, 0]], r = [0, 0, 0];
+      ns.forEach(function (n) { for (var x = 0; x < 3; x++) { r[x] -= h * n[x]; for (var y = 0; y < 3; y++) M[x][y] += n[x] * n[y]; } });
+      var det3 = function (C) { return C[0][0] * (C[1][1] * C[2][2] - C[1][2] * C[2][1]) - C[0][1] * (C[1][0] * C[2][2] - C[1][2] * C[2][0]) + C[0][2] * (C[1][0] * C[2][1] - C[1][1] * C[2][0]); };
+      var det = det3(M);
+      var col = function (j) { var C = M.map(function (row) { return row.slice(); }); for (var x = 0; x < 3; x++) C[x][j] = r[x]; return det3(C); };
+      if (Math.abs(det) > 1e-6) d = [col(0) / det, col(1) / det, col(2) / det];
+      else { var s0 = [0, 0, 0]; ns.forEach(function (n) { s0[0] += n[0]; s0[1] += n[1]; s0[2] += n[2]; }); var l0 = Math.hypot(s0[0], s0[1], s0[2]) || 1; d = s0.map(function (x) { return -h * x / l0; }); }
+    }
+    var dl = Math.hypot(d[0], d[1], d[2]); if (dl > 3 * h) d = d.map(function (x) { return x * 3 * h / dl; });   // never more than 3x the inset
+    return [p[0] + d[0], p[1] + d[1], p[2] + d[2]];
+  });
+}
+function stlBlob(parts, scale) {
+  var n = 0; parts.forEach(function (q) { n += q.T.length; });
+  var buf = new ArrayBuffer(84 + 50 * n), dv = new DataView(buf), o = 84;
+  var head = 'DICTO dictospheres.com Hollow-straw C116 into Minana #377, millimetres';
+  for (var i = 0; i < 80; i++) dv.setUint8(i, i < head.length ? head.charCodeAt(i) & 127 : 32);
+  dv.setUint32(80, n, true);
+  parts.forEach(function (q) {
+    q.T.forEach(function (t) {
+      var a = q.P[t[0]], b = q.P[t[1]], c = q.P[t[2]], nn = triNormal(a, b, c) || [0, 0, 0];
+      [nn, a, b, c].forEach(function (v, j) { for (var x = 0; x < 3; x++) dv.setFloat32(o + 12 * j + 4 * x, j ? v[x] * scale : v[x], true); });
+      dv.setUint16(o + 48, 0, true); o += 50;
+    });
+  });
+  return new Blob([buf], { type: 'model/stl' });
+}
+function save(blob, name) { var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000); }
+function printSettings() {
+  var mm = Math.min(400, Math.max(20, parseFloat($('sizeMm').value) || 60)), gap = parseFloat($('fitSel').value) || 0;
+  var scale = mm / (2 * R); return { mm: mm, gap: gap, scale: scale, h: gap / 2 / scale, tag: mm + 'mm-gap' + String(gap).replace('.', 'p') + 'mm' };
+}
+// A straw with its gap built in (DICTO's choice 1): at every frame the face polygon is shrunk inward within its own
+// plane by h (cut by each edge moved in, so it cannot fold), and consecutive polygons are joined by zipping their
+// edges in angle order (the side of the hull of two convex polygons in nearly parallel planes).
+function sub(a, b) { return [a[0] - b[0], a[1] - b[1], a[2] - b[2]]; }
+function dot(a, b) { return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]; }
+function crs(a, b) { return [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]; }
+function unit(a) { var l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; }
+function polyNormal(Q) { var n = [0, 0, 0]; for (var i = 0; i < Q.length; i++) { var c = crs(Q[i], Q[(i + 1) % Q.length]); n[0] += c[0]; n[1] += c[1]; n[2] += c[2]; } return unit(n); }
+function cleanPoly(Q) {
+  var out = []; Q.forEach(function (q) { var l = out[out.length - 1]; if (!l || Math.hypot(q[0] - l[0], q[1] - l[1], q[2] - l[2]) > 1e-9) out.push(q); });
+  while (out.length > 1 && Math.hypot(out[0][0] - out[out.length - 1][0], out[0][1] - out[out.length - 1][1], out[0][2] - out[out.length - 1][2]) <= 1e-9) out.pop();
+  return out;
+}
+function shrinkPoly(Q, h) {
+  var n = polyNormal(Q), out = Q.map(function (p) { return p.slice(); });
+  for (var e = 0; e < Q.length; e++) {
+    var p = Q[e], q = Q[(e + 1) % Q.length], ed = sub(q, p); if (Math.hypot(ed[0], ed[1], ed[2]) < 1e-9) continue;
+    var m = unit(crs(n, ed)), off = dot(m, p) + h, res = [];   // keep x with m . x >= off
+    for (var i = 0; i < out.length; i++) {
+      var a = out[i], b = out[(i + 1) % out.length], fa = dot(m, a) - off, fb = dot(m, b) - off;
+      if (fa >= 0) res.push(a);
+      if ((fa >= 0) !== (fb >= 0)) { var t = fa / (fa - fb); res.push([a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]), a[2] + t * (b[2] - a[2])]); }
+    }
+    out = res; if (!out.length) break;
+  }
+  if (out.length < 3) { var c = [0, 0, 0]; Q.forEach(function (p) { c[0] += p[0] / Q.length; c[1] += p[1] / Q.length; c[2] += p[2] / Q.length; }); return [c]; }
+  return cleanPoly(out);
+}
+function loftStraw(k, h) {
+  var P = [], T = [];
+  function add(p) { P.push(p); return P.length - 1; }
+  var polys = D.frames.map(function (fr) { return shrinkPoly(cleanPoly(fr.f[k].map(function (i) { return fr.v[i]; })), h); });
+  var ids = polys.map(function (Q) { return Q.map(add); });
+  // caps: inner (frame 0) facing in, outer (last frame) facing out
+  var a0 = ids[0], aN = ids[ids.length - 1];
+  for (var t = 1; t + 1 < a0.length; t++) T.push([a0[0], a0[t + 1], a0[t]]);
+  for (t = 1; t + 1 < aN.length; t++) T.push([aN[0], aN[t], aN[t + 1]]);
+  for (var f = 0; f + 1 < polys.length; f++) {
+    var A = polys[f], B = polys[f + 1], ia = ids[f], ib = ids[f + 1];
+    var nc = unit(polyNormal(A.length > 2 ? A : B).map(function (x, j) { return x + polyNormal(B.length > 2 ? B : A)[j]; }));
+    var u = unit(Math.abs(nc[0]) < 0.9 ? crs(nc, [1, 0, 0]) : crs(nc, [0, 1, 0])), w = crs(nc, u);
+    var ang = function (Q, i) { if (Q.length < 2) return Infinity; var e = sub(Q[(i + 1) % Q.length], Q[i]), m = crs(e, nc); return Math.atan2(dot(m, w), dot(m, u)); };
+    var start = function (Q) { var b = 0, bv = Infinity; for (var i = 0; i < Q.length; i++) { var v = dot(Q[i], u) + 1e-7 * dot(Q[i], w); if (v < bv) { bv = v; b = i; } } return b; };   // support vertex in direction -u
+    var sa = start(A), sb = start(B), na = A.length > 1 ? A.length : 0, nb = B.length > 1 ? B.length : 0, x = 0, y = 0;
+    var TAU = 2 * Math.PI, from = function (x) { return ((x - Math.PI) % TAU + TAU) % TAU; };   // angle past the start direction -u, in [0, 2pi)
+    var ea = function (s) { return from(ang(A, (sa + s) % A.length)); };
+    var eb = function (s) { return from(ang(B, (sb + s) % B.length)); };
+    while (x < na || y < nb) {
+      var ca = ia[(sa + x) % A.length], cb = ib[(sb + y) % B.length];
+      if (y >= nb || (x < na && ea(x) <= eb(y))) { T.push([ca, ia[(sa + x + 1) % A.length], cb]); x++; }
+      else { T.push([ca, ib[(sb + y + 1) % B.length], cb]); y++; }
+    }
+  }
+  return prepPart(P, T);
+}
+$('coreStl').onclick = function () {
+  var ps = printSettings(), f0 = D.frames[0], T = [];
+  f0.f.forEach(function (f) { for (var t = 1; t + 1 < f.length; t++) T.push([f[0], f[t], f[t + 1]]); });
+  var part = prepPart(f0.v, T); part.P = inset(part, 2 * ps.h);   // the full gap at the core (convex: exact)
+  save(stlBlob([part], ps.scale), 'hollow-straw-c116-core-' + ps.tag + '.stl');
+};
+$('strawStl').onclick = function () {
+  var ps = printSettings();
+  var parts = ps.h > 0 ? D.straws.map(function (s) { return loftStraw(s.k, ps.h); })
+    : D.straws.map(function (s) { return prepPart(s.v, s.t); });
+  save(stlBlob(parts, ps.scale), 'hollow-straw-c116-minana-60-straws-' + ps.tag + '.stl');
+};
 $('lam').oninput = function () { state.lam = parseFloat(this.value) || 0; state.play = false; sync(); place(); };
 $('explode').oninput = function () { state.f = parseFloat(this.value) || 0; place(); };
 var t0 = 0;

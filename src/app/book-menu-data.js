@@ -51,7 +51,7 @@ export const OTHERS_SHELF = [
 // Studies and tools: `world` a K_WORLDS key; `family` the 1D/2D families (by id) with their dimension; `open` a page of the app;
 // `href` a page of its own beside the app (in every door; DICTO 2026-11-21: Amber cells and Aequi first, new work at the top; Scutoid-Frusta bridging solids added 28 Nov, a dropdown whose first transformation is Hollow-straw; DICTO: "further to follow").
 export const TOOLS_SHELF = [
-  { id: 'bridging', label: 'wiz.books.bridging', sub: 'wiz.books.bridgingSub', glyph: '◎', pieces: [
+  { id: 'bridging', label: 'wiz.books.bridging', sub: 'wiz.books.bridgingSub', glyph: '◎', thumb: 'bridging', pieces: [   // thumbnail: C60 into Kuo #90 (DICTO 28 Nov)
     { label: 'wiz.books.hollowStraw', href: '/hollow-straw/' },
   ] },
   { id: 'amber', href: '/amber/', label: 'wiz.books.amber', sub: 'wiz.books.amberSub', glyph: '⬢', thumb: 'amber' },
