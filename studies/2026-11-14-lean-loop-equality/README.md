@@ -504,3 +504,10 @@ it counted pairs meeting in one atom); found by comparing shape by shape with #1
 Lean route for l = 16: (i) A_f(P,N,6) = meet(gP,gN) - meet(P,N) (single-arc products are half-turn symmetric, Fc_two);
 (ii) translation regrouping of the root count (atoms of v's kind on a 6-edge linkage: always 5 ends-sublayer, 3 lower);
 (iii) support: A_f(S,N,6) != 0 only on the pairing of S that holds the meeting shape; root likewise via the mirror.
+Items 2-3 (28 Nov): Split.lean (compPart / restPart of a linkage are linkages on the ends joined / not joined to x0, no common
+atom; linkage_union joins atom-disjoint linkages; conn_union_left; conn_level_bound + farL_in_box: every atom of a linkage
+lies within 2|L| of an end; farSet_finite). FourPoint.lean fc_four: far linkages on {a,b,c,d} paired a b | c d = pairs of
+atom-disjoint arcs. Meet.lean: fc_four_meet (count = sum_i Fc(ab,i) Fc(cd,s-i) - #meeting pairs) and Af_four (far
+asymmetry = #meeting pairs at gP - #meeting pairs at P, via Fc_two). Standard axioms.
+Next: pairing relations of 4-end linkages are matchings; verified arc enumeration (arcs of length <= 4 for l = 16); the
+root side by the mirror; regrouping over translates; the finite check.

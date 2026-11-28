@@ -29,3 +29,7 @@ public import LoopEquality.Theorem5
 public import LoopEquality.Translate
 public import LoopEquality.Pairing14
 public import LoopEquality.Fourteen
+public import LoopEquality.MinRoot
+public import LoopEquality.Split
+public import LoopEquality.FourPoint
+public import LoopEquality.Meet
