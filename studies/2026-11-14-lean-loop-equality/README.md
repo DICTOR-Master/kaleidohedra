@@ -475,3 +475,8 @@ each non-end atom is a lower atom (k+1, m, 0) of degree 2 joined to two ends p, 
 tau' (k+1) the other letter: so Fc_tau(Q, M, |Q|) = Fc_tau'(Q, M, |Q|); with fc_transfer: Af(P, N, |P|) = 0.
 L5 far DONE: Minimal.lean Af_min (far asymmetry at size |P| is 0: middle-atom swap m -> p+q-m is a bijection of minimal far linkages between tau and flipAt tau k, then fc_transfer). Built, standard axioms.
 Theorem 5 (a) at l = 12 DONE (theorem5a_12; Twelve.lean term_zero_12, flip_keeps_12; Theorem5.lean FlipLaw, corollaryFL). With theorem5a_short (<= 11) and theorem5a_odd: (a) holds for all l <= 13. Next: l = 14 (needs the root side at minimal size with translation regrouping, L4).
+l = 14 plan (28 Nov): terms have |P| in {2, 4}; |P| = 2 vanish (Fc_two); |P| = 4 with sizes even (rootL_card_even, farL_card_even):
+(6,4) vanish (Af_min); (4,6) root minimal: per site, cancel in pairs by an involution on (P, M, R) with v in R: half-turn about
+v's own crossing point (v an end) or about the midpoint of v's arc (v a middle), then the middle swap; it fixes v and turns
+A_f into -A_f (A_f antisymmetric under every good half-turn: far counts are translation-invariant). Steps: Fc translation
+invariance; the root side through the mirror (root linkages of sigma at k = far linkages of the mirrored stacking at -k).

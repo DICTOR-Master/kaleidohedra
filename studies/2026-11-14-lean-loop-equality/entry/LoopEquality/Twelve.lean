@@ -13,6 +13,7 @@ public import LoopEquality.BSym
 public import LoopEquality.Lemma7
 public import LoopEquality.SingleArc
 public import LoopEquality.Minimal
+public import LoopEquality.Parity
 
 @[expose] public section
 
@@ -102,5 +103,63 @@ theorem flip_keeps_12 (σ : ℤ → ZMod 3) (k : ℤ) {v : Atom} (hv : ¬ IsFar 
     Finset.sum_eq_zero (fun P hP => Finset.sum_eq_zero (fun x hx => term_zero_12 (goodCentre_cDefault σ k) hP hx))
   rw [hz] at h
   omega
+
+/-- Every far linkage has an even number of edges: its lower atoms are not ends, so each has even degree. -/
+theorem farL_card_even {τ : ℤ → ZMod 3} {k : ℤ} {Q : Finset (ℤ × ℤ)} {F : Finset (Sym2 Atom)} (hF : FarL τ k Q F) :
+    Even F.card := by
+  rw [card_eq_sum_lower hF.2.2]
+  apply Finset.even_sum
+  intro x hx
+  have hx0 := (Finset.mem_filter.mp hx).2
+  have hnot : x ∉ Q.image (upA k) := by
+    intro h; obtain ⟨p, -, rfl⟩ := Finset.mem_image.mp h; simp [upA] at hx0
+  rcases hF.1.2.1 x hnot with h | h <;> rw [h]
+  · exact Even.zero
+  · exact even_two
+
+/-- Every root linkage has an even number of edges: its lower atoms are its ends (degree 1, evenly many) and
+others of even degree. -/
+theorem rootL_card_even {τ : ℤ → ZMod 3} {k : ℤ} {Q : Finset (ℤ × ℤ)} {R : Finset (Sym2 Atom)} (hR : RootL τ k Q R) :
+    Even R.card := by
+  rw [card_eq_sum_lower hR.2.2]
+  set A := (atomsOf R).filter (fun a => a.2.2 = 0)
+  have hB : Q.image (loA k) ⊆ A := by
+    intro b hb
+    have h1 := hR.1.1 b hb
+    obtain ⟨e, he⟩ := Finset.card_pos.mp (by unfold degS at h1; omega : 0 < (R.filter (fun e => b ∈ e)).card)
+    obtain ⟨p, -, rfl⟩ := Finset.mem_image.mp hb
+    exact Finset.mem_filter.mpr ⟨mem_atomsOf.mpr ⟨e, (Finset.mem_filter.mp he).1, (Finset.mem_filter.mp he).2⟩, rfl⟩
+  rw [← Finset.sum_sdiff hB]
+  have h1 : ∑ y ∈ Q.image (loA k), degS R y = (Q.image (loA k)).card := by
+    rw [Finset.card_eq_sum_ones]; exact Finset.sum_congr rfl (fun y hy => hR.1.1 y hy)
+  rw [h1]
+  apply Even.add
+  · apply Finset.even_sum; intro y hy
+    rcases hR.1.2.1 y (Finset.mem_sdiff.mp hy).2 with h | h <;> rw [h]
+    · exact Even.zero
+    · exact even_two
+  · exact linkage_even hR.1
+
+theorem Wc_odd_size {σ : ℤ → ZMod 3} {v : Atom} {k : ℤ} {P : Finset (ℤ × ℤ)} {M : Finset ((ℤ × ℤ) × (ℤ × ℤ))} {r : ℕ}
+    (h : ¬ Even r) : Wc σ v k P M r = 0 := by
+  have e : RootSet σ v k P M r = ∅ := by
+    ext R; simp only [RootSet, Set.mem_ofPred_eq, Set.mem_empty_iff_false, iff_false]
+    rintro ⟨hR, -, rfl, -⟩; exact h (rootL_card_even hR)
+  unfold Wc; rw [e]; simp
+
+theorem Fc_odd_size {σ : ℤ → ZMod 3} {k : ℤ} {P : Finset (ℤ × ℤ)} {N : Finset ((ℤ × ℤ) × (ℤ × ℤ))} {s : ℕ}
+    (h : ¬ Even s) : Fc σ k P N s = 0 := by
+  have e : FarSet σ k P N s = ∅ := by
+    ext F; simp only [FarSet, Set.mem_ofPred_eq, Set.mem_empty_iff_false, iff_false]
+    rintro ⟨hF, rfl, -⟩; exact h (farL_card_even hF)
+  unfold Fc; rw [e]; simp
+
+theorem Aw_odd_size {σ : ℤ → ZMod 3} {v : Atom} {k : ℤ} {c : ℤ × ℤ} {P : Finset (ℤ × ℤ)}
+    {M : Finset ((ℤ × ℤ) × (ℤ × ℤ))} {r : ℕ} (h : ¬ Even r) : Aw σ v k c P M r = 0 := by
+  unfold Aw; rw [Wc_odd_size h, Wc_odd_size h]; simp
+
+theorem Af_odd_size {σ : ℤ → ZMod 3} {k : ℤ} {c : ℤ × ℤ} {P : Finset (ℤ × ℤ)}
+    {N : Finset ((ℤ × ℤ) × (ℤ × ℤ))} {s : ℕ} (h : ¬ Even s) : Af σ k c P N s = 0 := by
+  unfold Af; rw [Fc_odd_size h, Fc_odd_size h]; simp
 
 end LoopEqualityProof
