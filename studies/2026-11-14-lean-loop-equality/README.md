@@ -547,3 +547,11 @@ sums to 0 for v = lower atom of bilayer 0 and for v = upper atom of bilayer -1 (
 Kernel: with sums restricted to arcs of 2 and 4 edges, `decide +kernel` of the 17-shape total takes about 85 s, standard
 axioms. Remaining: restricted sums = full sums (no arcs of other lengths), shape list per far pattern with completeness,
 letter locality (far letters k, k+1; root k-1, k), v kinds, assembly into flip_keeps_16 and the entry.
+l = 16 assembly (28 Nov, cont. 3): ArcLen (arcs have even length >= 2; sums reduce to lengths 2 and 4), Height (arcs of
+<= 4 edges stay in bilayers k, k+1), LetterLocal (G16_congr: only the letters of bilayers k-1, k, k+1), Complete16
+(path translation; candQuads generator, 384 candidates for diamond's letters = the pilot's 384; G16_complete), Final16
+(shapeVal4 fast form, v kinds, wR4_zero), Data16 (shape lists zq1, zq2 from l16/shapes16.py; kernel checks hcheck16,
+zq_props, sum16_kernel over 9 letter patterns x 3 kinds of v), Law16 (flip_of_sum, sumG16_zero, flip_keeps_16_norm,
+normalisation to any bilayer and letters, flipLaw_16, theorem5a_16, theorem5a_upto17). Law16 checks against a stub of
+Data16 (sorry in the three kernel facts); the real Data16 build: first run hit the kernel's default heartbeat limit on
+hcheck16 and sum16_kernel (zq_props passed); rerun with maxHeartbeats 0 on those two (job lean-data16b).
