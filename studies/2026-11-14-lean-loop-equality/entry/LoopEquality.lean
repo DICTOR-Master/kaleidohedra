@@ -27,3 +27,5 @@ public import LoopEquality.Minimal
 public import LoopEquality.Twelve
 public import LoopEquality.Theorem5
 public import LoopEquality.Translate
+public import LoopEquality.Pairing14
+public import LoopEquality.Fourteen

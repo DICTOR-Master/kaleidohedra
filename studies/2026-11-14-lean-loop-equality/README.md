@@ -485,3 +485,10 @@ swap: lands in the half-turned set, involutive), count_sym (equal counts for con
 transport Wc_mir. Remaining for l = 14: (i) support: W(P,M)*Af != 0 -> P in the window (polygon); (ii) the arc at v is unique
 (mid uniqueness: decide over shortVecs); (iii) Finset.sum_involution on (P, M) with centre 2 p0 (v an end) or p + q (v a middle);
 (iv) flip_keeps_14, FlipLaw 14, theorem5a_14, entry.
+Theorem 5 (a) at l = 14 DONE (28 Nov): Fourteen.lean. window_of_term (a non-zero term lives in the window: its parts close
+into a polygon, of sigma or of the flipped stacking); minFar_finite; cenAt / cenSet (centre of the arc at v); Wc_cen (the
+minimal root count through v split by centre, via the mirror); Wcen_g (count kept by the pairing map about that centre);
+f14_g (each centre's part changes sign under its half-turn), f14_sum (Finset.sum_involution), term14 (every other term is 0),
+sumWc_14, flip_keeps_14, theorem5a_of_law (the l = 12 assembly for any l), theorem5a_14, theorem5a_upto15.
+Axioms: propext, Classical.choice, Quot.sound. Entry: theorem5a_upto13 -> theorem5a_upto15 (27 theorems); comparator v12
+and negative control (l <= 15 -> l <= 16) running.
