@@ -73,3 +73,13 @@ FULL SEARCH (28 Nov, hs-full-C60 / hs-full-C80): only dice that amber_aequus can
 340 further 32-face dice (and the further 42-face dice) of the 10 725 catalogue were skipped (cannot build: IndexError). So the
 sample runs already covered EVERY buildable die of these face counts: Kuo #90, Nioku #209 and Kuomu #906 are the picks among all
 buildable dice. To widen: build the remaining dice as solids first (their fair depths exactly, as for the 1232), then rerun.
+
+## Step 4 (28 Nov): the REVERSE (DICTO: "reversing changes from Aequi to Goldberg"; yes to the restatement: the fair die as the
+inner core, its faces growing out into the Goldberg/fullerene solid). hs_exact.py SWAP=1: inner = the die turned back by R^T and
+scaled so its circumradius is 0.7 of the core solid's inradius; outer = the core solid; same face pairing; both solids' planes
+rounded to 1e-9 (exact certificate for these inputs).
+- Kuo #90 -> C60: EXACT (hsr-kuo90): (A)-(D), 6 events, exactly the 6 needed swaps.
+- Nioku #209 -> C80: EXACT (hsr-nioku209): (A)-(D), 12 events, exactly the 12 needed swaps.
+(Their logs print the forward wording "pattern = the core / the die" and "GPc -> die ... core planes rounded"; in these runs the start
+is the die and the end the core solid, both rounded. Labels fixed afterwards.)
+- Kuomu #906 -> C140: running.

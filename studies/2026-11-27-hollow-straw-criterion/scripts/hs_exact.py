@@ -71,14 +71,26 @@ Nd = Md / np.linalg.norm(Md, axis=1)[:, None]; Pd, Fd, Ed = poly(Md); rin = (1 /
 tot, R, sig = float_resin(Nc, Nd, np.random.default_rng(DIE))
 inv = {int(v): k for k, v in enumerate(sig)}
 Ed_c = {tuple(sorted((inv[a], inv[b]))) for a, b in Ed}
-need_set = set(Ed_c - Ec); lose_set = set(Ec - Ed_c)
-scale = rc / (RHO * rin)
-a0 = (Ac @ R.T) * scale
-AK = [[Q(Fr(float(x)).limit_denominator(10 ** 9)) for x in a] for a in a0]
-M = [[x / c for x in u] for u, c in S['planes']]
-Mk = [M[sig[k]] for k in range(NF)]
+SWAP = os.environ.get('SWAP') == '1'   # DICTO 28 Nov: the reverse, the fair die as the inner core growing into the core solid
+if not SWAP:
+    need_set = set(Ed_c - Ec); lose_set = set(Ec - Ed_c)
+    scale = rc / (RHO * rin)
+    a0 = (Ac @ R.T) * scale
+    AK = [[Q(Fr(float(x)).limit_denominator(10 ** 9)) for x in a] for a in a0]
+    M = [[x / c for x in u] for u, c in S['planes']]
+    Mk = [M[sig[k]] for k in range(NF)]
+else:
+    # inner: the die turned back by R^T (so its faces meet the core's in the forward pairing), scaled so its
+    # circumradius is RHO times the core's inradius; outer: the core solid itself. Plane k = die face sig[k] -> core face k.
+    rd = np.linalg.norm(Pd, axis=1).max(); rin_c = (1 / np.linalg.norm(Ac, axis=1)).min()
+    a0 = (Md @ R) * (rd / (RHO * rin_c))
+    AK = [[Q(Fr(float(x)).limit_denominator(10 ** 9)) for x in a0[sig[k]]] for k in range(NF)]
+    Mk = [[Q(Fr(float(x)).limit_denominator(10 ** 9)) for x in Ac[k]] for k in range(NF)]
+    Ec, Ed_c = Ed_c, Ec                    # start pattern: the die's; end pattern: the core's
+    need_set = set(Ed_c - Ec); lose_set = set(Ec - Ed_c)
+    scale = rd / (RHO * rin_c)
 Dk = [[Mk[k][i] - AK[k][i] for i in range(3)] for k in range(NF)]
-pr(f'core {CORE} ({NF} faces) -> die {DIE}, core size {RHO}: kept {len(Ec & Ed_c)}, to gain {len(need_set)}, to lose {len(lose_set)}')
+pr(f'{"REVERSE: die " + str(DIE) + " -> core " + CORE if SWAP else "core " + CORE + " -> die " + str(DIE)} ({NF} faces), inner size {RHO}: kept {len(Ec & Ed_c)}, to gain {len(need_set)}, to lose {len(lose_set)}')
 # ---- polynomials in lam with Q(sqrt5) coefficients: list of Q, low degree first
 def padd(p, q): n = max(len(p), len(q)); return [(p[i] if i < len(p) else Q(0)) + (q[i] if i < len(q) else Q(0)) for i in range(n)]
 def pneg(p): return [-c for c in p]
@@ -224,7 +236,7 @@ okD = (len(events) == len(need_set) and all(e['one_floor_swap'] for e in events)
        and {tuple(e['gained'][0]) for e in events} == need_set and {tuple(e['lost'][0]) for e in events} == lose_set)
 pr(f'(D) exactly the {len(need_set)} needed neighbour changes, one swap per event:', okD)
 json.dump(dict(core=CORE, die=DIE, rho=RHO, scale=str(scale), sigma=[int(x) for x in sig], events=events, A=[okA, okAend], C=okC, D=okD, det=okdet),
-          open(os.path.join(HERE, f'../data/exact_{CORE}_{DIE}_rho{RHO}.json'), 'w'))
+          open(os.path.join(HERE, f'../data/exact_{"rev_" if SWAP else ""}{CORE}_{DIE}_rho{RHO}.json'), 'w'))
 good = okA and okAend and okC and okD and okdet and all(e['state_ok'] for e in events)
-pr('RESULT:', f"DICTO's Hollow-straw transformation {CORE} -> die {DIE} is EXACT (core planes rounded to 1e-9; die with its 15-digit depth stand-ins)" if good else 'NOT certified: see above')
+pr('RESULT:', (f"DICTO's Hollow-straw transformation die {DIE} -> {CORE} (reverse) is EXACT (both solids' planes rounded to 1e-9)" if SWAP else f"DICTO's Hollow-straw transformation {CORE} -> die {DIE} is EXACT (core planes rounded to 1e-9; die with its 15-digit depth stand-ins)") if good else 'NOT certified: see above')
 pr('FINAL ok' if good else 'FINAL FAIL')
