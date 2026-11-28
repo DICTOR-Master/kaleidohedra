@@ -452,3 +452,4 @@ OneCycleRel P M M' (SingleCycle iff OneCycleRel of the pairings). 2b linkages wi
 stacking = Fc(c - P, c - M') before (flip_transfer). 2e symmetrisation over a g-invariant finite family of crossing sets.
 Countdown item 2 (Theorem B in #102's form) DONE in library 28 Nov: Pairings.lean + BSym.lean theoremB_sym (2*Delta = - sum A_w A_f over a half-turn-closed family of crossing sets), built, standard axioms. Next: into the entry.
 Item 2 in the entry 28 Nov: theoremB_symmetric (25 theorems; con-ron 19027 declarations; negative control 2* -> 3* rejected).
+Item 3: Lemma7.lean term_zero_of_large (terms with 3|P| > l vanish: only |P| <= 6 for l <= 20), built, standard axioms. NOTE: per site, the 6-crossing terms vanish only after summing over translates of P when the 6-bond side is the root side (#102 weights the root side over translates); the far 6-bond side vanishes termwise.
