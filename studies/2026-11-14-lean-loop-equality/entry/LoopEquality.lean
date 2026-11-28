@@ -20,3 +20,4 @@ public import LoopEquality.Witness
 public import LoopEquality.Pairings
 public import LoopEquality.BSym
 public import LoopEquality.Lemma7
+public import LoopEquality.Short
