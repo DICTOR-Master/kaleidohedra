@@ -55,8 +55,8 @@ def pairs_of(fl):
     return {(a, b) for S_ in at.values() for a in S_ for b in S_ if a < b}
 C116f = json.load(open(os.path.join(ROOT, 'data/c116/pairing.json')))['faces']
 ok_ends = pairs(F[0][1]) == pairs_of(C116f) and pairs(F[-1][1]) == {tuple(sorted((inv[a], inv[b]))) for a, b in pairs_of([vs for vs, kk in S['faces']])}
-# straws: the loft of each face over all frames (straw_loft.py; 28 Nov: the earlier hull-across-swap straws overlapped, total
-# 2.7 x the shell volume), with the volume check: the straws add up to die - core (to the loft's 0.13%)
+# straws: the loft of each face over all frames (straw_loft.py; 28 Nov. NOTE: the earlier straws were correct too, only their inner
+# cap was turned the wrong way; an earlier claim here that they overlapped was my measuring error), with the volume check: the straws add up to die - core (to the loft's 0.13%)
 from straw_loft import loft
 r6 = lambda X: np.round(np.asarray(X), 6).tolist()
 straws = []; vtot = 0
