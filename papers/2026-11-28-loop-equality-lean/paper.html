@@ -58,9 +58,12 @@ Paper #125 · Draft · 28 November 2026 · Licence CC BY-SA 4.0 · Lean package:
 <p><b>Proof in outline.</b> Sort the polygons by their crossing set at <code>k</code> (<code>ncard_polys_sum</code>). Those that do not cross lie on the root side and are the same in both stackings (<code>polysCross_empty_flip</code>). For the others, Theorem 11 counts the polygons of each stacking crossing at <code>P</code> as pairs of linkages (<code>ncard_polysCross</code>), and Lemma 12 turns the far linkages of <code>flipAt σ k</code> into far linkages of <code>σ</code> (<code>ncard_partsCross_flip</code>). ∎</p>
 <p class="thm"><b>Theorem 14</b> (Theorem B of #102, in its own form; <code>theoremB_symmetric</code>). Let <code>g</code> be the half-turn <code>p ↦ c − p</code> of crossing points and pairs. For each crossing set <code>P</code>, pairing <code>M</code> of its points by a root linkage and size <code>r</code>, let <code>W(P, M, r)</code> count the root linkages through <code>v</code>, and <code>F(P, M′, s)</code> the far linkages, with those ends, pairing and size; let <code>A<sub>w</sub>(P, M, r) = W(P, M, r) − W(gP, gM, r)</code> and <code>A<sub>f</sub>(P, M′, s) = F(P, M′, s) − F(gP, gM′, s)</code>. Then <code>2 · (p<sub>l</sub>(v; flipAt σ k) − p<sub>l</sub>(v; σ)) = − Σ A<sub>w</sub>(P, M, r) · A<sub>f</sub>(P, M′, s)</code>, over the crossing sets of a finite family closed under <code>g</code> and the pairings <code>M, M′</code> that close into one cycle with <code>r + |P| + s = l</code>. This is #102's <code>Δ = −½ Σ A<sub>root</sub> · A<sub>far</sub></code>, in whole numbers.</p>
 <p><b>Proof in outline.</b> Split each count of Theorem 13 by the two pairings and the two sizes: the pairs of linkages with given pairings and sizes are a product of two sets (<code>ncard_genParts</code>), so each count is <code>Σ W · F</code>, and the change at <code>P</code> is <code>− Σ W(P, M, r) · A<sub>f</sub>(P, M′, s)</code> (<code>change_at</code>). Extend the sum to a family of crossing sets closed under <code>g</code>; the added terms vanish, because a polygon crossing at <code>P</code> lies in the window (<code>change_zero</code>). Reindexing by <code>g</code> turns <code>A<sub>f</sub></code> into <code>−A<sub>f</sub></code> (<code>Af_g</code>, <code>sum_g</code>), and adding the two forms of the sum gives the asymmetry of <code>W</code>. ∎</p>
+<p class="thm"><b>Lemma 15</b> (#102, Lemma 7, first part; <code>term_zero_of_large</code>). A linkage none of whose edges joins two of its ends has at least as many edges as ends; on either side of the cut, no two crossing atoms are bonded. So in Theorem 14 every term whose crossing set has more than <code>l / 3</code> points is zero; for <code>l ≤ 20</code> only crossing sets of at most 6 points contribute.</p>
+<p class="thm"><b>Theorem 16</b> (#102, Theorem 5 (a), for short polygons; <code>theorem5a_short</code>). For every stacking and every site <code>v</code> of it, the polygons through <code>v</code> with <code>l ≤ 11</code> edges are as many, length by length, as at diamond's site.</p>
+<p><b>Proof in outline.</b> By Theorem 11 and Lemma 15, a polygon crossing a bilayer <code>n</code> times has at least <code>3n</code> edges (<code>three_crossN_le</code>); by Lemma 4, <code>n</code> is even. So with at most 11 edges it crosses every bilayer at most twice (<code>polys_eq_polysA1</code>), and Theorem 8 applies. ∎</p>
 
 <h2>6. The Lean package and its checks</h2>
-<p>The package extends the Lean entry of #102 [1, 9]. Its proof library gains twenty-one modules; the statement surface <code>Challenge.lean</code> gains the definitions of Sections 2 and 5 and the statements of Theorems 7, 8, 9, 13 and 14, and <code>Solution.lean</code> proves them from the library.</p>
+<p>The package extends the Lean entry of #102 [1, 9]. Its proof library gains twenty-three modules; the statement surface <code>Challenge.lean</code> gains the definitions of Sections 2 and 5 and the statements of Theorems 7, 8, 9, 13 and 14, and <code>Solution.lean</code> proves them from the library.</p>
 <table>
 <tr><th>module</th><th>lines</th><th>content</th></tr>
 <tr><td>Twist</td><td>208</td><td>Lemmas 1 and 2</td></tr>
@@ -84,21 +87,23 @@ Paper #125 · Draft · 28 November 2026 · Licence CC BY-SA 4.0 · Lean package:
 <tr><td>TheoremB</td><td>144</td><td>Theorem 13</td></tr>
 <tr><td>Pairings</td><td>190</td><td>pairings, counting by pairings, finiteness</td></tr>
 <tr><td>BSym</td><td>267</td><td>Theorem 14</td></tr>
+<tr><td>Lemma7</td><td>132</td><td>Lemma 15</td></tr>
+<tr><td>Short</td><td>97</td><td>Theorem 16</td></tr>
 </table>
 <p>Checks, all on Lean v4.35.0-rc2 and Mathlib v4.35.0-rc2:</p>
 <table>
 <tr><th>check</th><th>result</th></tr>
 <tr><td>source requirements of the registry (module headers, file sizes)</td><td>pass</td></tr>
-<tr><td>statement surface: one <code>sorry</code> per compared theorem</td><td>25 theorems, 25</td></tr>
+<tr><td>statement surface: one <code>sorry</code> per compared theorem</td><td>26 theorems, 26</td></tr>
 <tr><td><code>sorry</code> or <code>native_decide</code> in any proof</td><td>none</td></tr>
 <tr><td>clean build</td><td>8968 jobs, no errors</td></tr>
 <tr><td>axioms of every main theorem</td><td><code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code> only</td></tr>
-<tr><td>comparator, three kernels (con-ron, nanoda, Lean's)</td><td>all accept (con-ron: 19,027 declarations)</td></tr>
-<tr><td>negative controls: statements of Theorems 7, 8, 9, 13 and 14 and of the witness changed, one at a time</td><td>each rejected</td></tr>
+<tr><td>comparator, three kernels (con-ron, nanoda, Lean's)</td><td>all accept (con-ron: 19,043 declarations)</td></tr>
+<tr><td>negative controls: statements of Theorems 7, 8, 9, 13, 14 and 16 and of the witness changed, one at a time</td><td>each rejected</td></tr>
 </table>
 
 <h2>7. Scope</h2>
-<p>Corollary A is formalised in full, in aggregate and profile by profile (Theorems 7–9), and Theorem B in both its forms (Theorems 13 and 14). Not formalised in this version: Theorem A for four or more crossings (its symmetric cases in #102), the locality of the asymmetries, Lemma 7 (six-crossing terms vanish for <code>l ≤ 20</code>) and Theorem 5 (equality with diamond to length 16, the laws at lengths 18 and 20), which rest on computed tables.</p>
+<p>Corollary A is formalised in full, in aggregate and profile by profile (Theorems 7–9), Theorem B in both its forms (Theorems 13 and 14), the first part of Lemma 7 (Lemma 15) and Theorem 5 (a) for <code>l ≤ 11</code> (Theorem 16). Not formalised in this version: Theorem A for four or more crossings (its symmetric cases in #102), the locality of the asymmetries, the six-crossing part of Lemma 7, and Theorem 5 for <code>l</code> from 12 to 20, which rests on finite tables of meeting arcs. A first measurement shows these tables within the reach of Lean's kernel: a direct count of the meeting pairs of arcs used at length 20 is checked by the kernel in under four minutes.</p>
 
 <h2>8. What is known, what is checked, what is open</h2>
 <p>Each statement below is of one of four kinds: <b>proved and machine-checked</b> (here or in the Lean entry of #102); <b>proved elsewhere</b>, not machine-checked; a <b>new question</b>; or <b>open</b> in the field.</p>
