@@ -69,3 +69,7 @@ verified exactly, as float labels could not resolve them). Negative control C60 
 C80 -> Nioku #209 and C140 -> Kuomu #906: rerunning with the fix.
 C80 -> Nioku #209 at core size 0.7: EXACT (FINAL ok, hsx-nioku209b): (A)-(D) hold, 12 events, exactly the 12 needed swaps. C140 -> Kuomu #906 running.
 C140 (Goldberg GP(2,1)) -> Kuomu #906 at core size 0.7: EXACT (FINAL ok, hsx-kuomu906b): (A)-(D), 12 events, exactly the 12 needed swaps. All three candidates exact. Next (DICTO decision 2): full search per face count to confirm each is the best die; then a page each for the Scutoid-Frusta bridging solids dropdown.
+FULL SEARCH (28 Nov, hs-full-C60 / hs-full-C80): only dice that amber_aequus can build (the 1232 finished dice) can be tested; all
+340 further 32-face dice (and the further 42-face dice) of the 10 725 catalogue were skipped (cannot build: IndexError). So the
+sample runs already covered EVERY buildable die of these face counts: Kuo #90, Nioku #209 and Kuomu #906 are the picks among all
+buildable dice. To widen: build the remaining dice as solids first (their fair depths exactly, as for the 1232), then rerun.
