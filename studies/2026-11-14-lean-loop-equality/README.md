@@ -480,3 +480,8 @@ l = 14 plan (28 Nov): terms have |P| in {2, 4}; |P| = 2 vanish (Fc_two); |P| = 4
 v's own crossing point (v an end) or about the midpoint of v's arc (v a middle), then the middle swap; it fixes v and turns
 A_f into -A_f (A_f antisymmetric under every good half-turn: far counts are translation-invariant). Steps: Fc translation
 invariance; the root side through the mirror (root linkages of sigma at k = far linkages of the mirrored stacking at -k).
+l = 14 progress (28 Nov): Pairing14.lean: farSet_htS, swapF_htS (swap commutes with the half-turn), pairMap (half-turn then
+swap: lands in the half-turned set, involutive), count_sym (equal counts for conditions it keeps), cond_end, cond_mid, mirror
+transport Wc_mir. Remaining for l = 14: (i) support: W(P,M)*Af != 0 -> P in the window (polygon); (ii) the arc at v is unique
+(mid uniqueness: decide over shortVecs); (iii) Finset.sum_involution on (P, M) with centre 2 p0 (v an end) or p + q (v a middle);
+(iv) flip_keeps_14, FlipLaw 14, theorem5a_14, entry.
